@@ -1,11 +1,20 @@
 # Democracia En Red
-DemocraciaEnRed is an online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rullings.
+DemocraciaEnRed is an online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.
 
 The project is under the branch "development". Feel free to contribute.
 
 ![][1]
 [1]: http://partidodelared.org/images/browser.png
 
+## Requirements
+* [MongoDB](http://www.mongodb.org/downloads)
+* [NodeJS & NPM](http://nodejs.org/download)
+
+## Install
+1. Fork and/or clone or even just download this repository.
+2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation inside the directory).
+3. Run `npm install` in the root of this application.
+4. Run `make run` or `NODE_PATH=lib node app.js`.
 
 ## Useful links
 
