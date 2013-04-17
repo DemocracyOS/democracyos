@@ -1,0 +1,21 @@
+{
+  "auth": {
+    "facebook": {
+      "clientid" : "FBClientId",
+      "clientsecret": "FBClientSecret",
+      "callback": "http://localhost:3005/auth/facebook/callback"
+    },
+    "twitter": {
+      "consumerkey" : "TwitterConsumerKey",
+      "consumersecret": "TwitterConsumerSecret",
+      "callback": "http://127.0.0.1:3005/auth/twitter/callback"
+    }
+  },
+  "mailer": {
+    "service": "Gmail",
+    "auth": {
+      "user": "example@gmail.com",
+      "pass": "yourExamplePassword123"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+!!! 5
+html(lang='en')
+  head
+    //                                                      
+    //   Basic Page Needs                                   
+    //   ================================================== 
+    title Partido De La Red
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    
+    //                                                      
+    //   Mobile Specific Metas                              
+    //   ================================================== 
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    
+    //                                                      
+    //   CSS                                                
+    //   ================================================== 
+    // Boostrap
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    // Custom StyleSheets
+    link(rel='stylesheet', href='/socialbuttons/social-buttons.css')
+    link(rel='stylesheet', href='/css/main.css')
+    // Bootstrap responsive
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+    
+    // HTML5 shim, for IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+
+    // fav and touch icons
+    link(rel="shortcut icon", href="/images/favicon.ico")
+
+  body
+    #wrap
+      header.navbar.navbar-inverse.navbar-fixed-top
+        .navbar-inner
+          .container
+            button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.brand(href='#') Partido De La Red
+            .nav-collapse.collapse
+              ul.nav
+                li.active
+                  a(href='#') Home
+                li
+                  a(href='http://wiki.partidodelared.org') About
+                li
+                  a(href='#contact') Contact
+                li.dropdown
+                  a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Dropdown
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider
+                    li.nav-header Nav header
+                    li
+                      a(href='#') Separated link
+                    li
+                      a(href='#') One more separated link
+
+              a.nav.pull-right(id="fb-login-button", href="/auth/facebook", class="sb sb-small sb-facebook")
+                i
+                | Log in
+
+      .container
+        .row
+          block content
+        #push
+
+    footer
+      | Copyright © 2009-2013 Partido De La Red.
+
+    block bottom_js
+
+      //- Core 3rd parties libs
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
+      script(src='bootstrap/js/bootstrap.min.js')
+
+      //- Plugins on top of 3rd parties
+      script(src="/js/vendor/masonry/jquery.masonry.min.js")
+
+      //- General Site javascript
+      script(src='/js/site.js')
