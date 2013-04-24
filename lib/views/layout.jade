@@ -21,6 +21,7 @@ html(lang='en')
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
     // Custom StyleSheets
     link(rel='stylesheet', href='/socialbuttons/social-buttons.css')
+    link(rel='stylesheet', href='/css/v1.css')
     link(rel='stylesheet', href='/css/main.css')
     // Bootstrap responsive
     link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
@@ -57,34 +58,42 @@ html(lang='en')
               span.icon-bar
             a.brand(href='#') Partido De La Red
             .nav-collapse.collapse
-              ul.nav
+              ul#navigation.nav
                 li.active
-                  a(href='#') Home
+                  a(href='#') Explore
                 li
-                  a(href='http://wiki.partidodelared.org') About
+                  a(href='#contact') Add proposal
                 li
-                  a(href='#contact') Contact
-                li.dropdown
-                  a.dropdown-toggle(href='#', data-toggle='dropdown')
-                    | Dropdown
-                    b.caret
-                  ul.dropdown-menu
-                    li
-                      a(href='#') Action
-                    li
-                      a(href='#') Another action
-                    li
-                      a(href='#') Something else here
-                    li.divider
-                    li.nav-header Nav header
-                    li
-                      a(href='#') Separated link
-                    li
-                      a(href='#') One more separated link
+                  a(href='http://wiki.partidodelared.org') Docs
+                li
+                  a(href='http://wiki.partidodelared.org') Help
 
-              a.nav.pull-right(id="fb-login-button", href="/auth/facebook", class="sb sb-small sb-facebook")
-                i
-                | Log in
+              ul.nav.pull-right
+                - if (locals.citizen)
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown')
+                      span(style="margin-right:5px;"): img(src=citizen.avatar, width="18")
+                      | #{citizen.fullName}
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li.divider
+                      li.nav-header Nav header
+                      li
+                        a(href='#') Separated link
+                      li
+                        a(href='#') One more separated link
+                      li.divider
+                      li: a(href=url('/logout')) Logout
+                - else
+                  a.nav(id="fb-login-button", href="/auth/facebook", class="sb sb-small sb-facebook")
+                    i
+                    | Log in
 
       .container
         .row
