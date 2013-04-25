@@ -23,6 +23,7 @@ html(lang='en')
     link(rel='stylesheet', href='/socialbuttons/social-buttons.css')
     link(rel='stylesheet', href='/css/v1.css')
     link(rel='stylesheet', href='/css/main.css')
+    block page_styles
     // Bootstrap responsive
     link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
     
@@ -47,7 +48,8 @@ html(lang='en')
         location.href=location.href.substring(0,location.href.length-3);
       }
 
-  body
+  body(class=bodyClasses)
+    // Start of `Page Content`
     #wrap
       header.navbar.navbar-inverse.navbar-fixed-top
         .navbar-inner
@@ -61,8 +63,6 @@ html(lang='en')
               ul#navigation.nav
                 li.active
                   a(href='#') Explore
-                li
-                  a(href='#contact') Add proposal
                 li
                   a(href='http://wiki.partidodelared.org') Docs
                 li
@@ -96,13 +96,16 @@ html(lang='en')
                     | Log in
 
       .container
-        .row
-          block content
-        #push
+        block content
+
+      #push
 
     footer
       | Copyright © 2009-2013 Partido De La Red.
 
+    // End of `Page Content`  
+    // ====================== 
+    // Start of `Javascripts` 
     block bottom_js
 
       //- Core 3rd parties libs
@@ -114,3 +117,5 @@ html(lang='en')
 
       //- General Site javascript
       script(src='/js/site.js')
+
+    // End of `Javascripts`

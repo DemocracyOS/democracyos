@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	.hero-unit
+		h1 Partido de la red
+		p
+		p
+			| Este software tiene el objetivo de abrir el ancho de banda de la democracia bajo la siguiente premisa:
+		p: em No alcanza con votar cada dos años si podemos expresarnos todos los días usando la red.
+
+		p: a.btn.btn-primary.btn-large(href='#') Participa »
+
+	.row.box-homepage-list
+		- for(var i=0; i< 10; ++i){
+			.span3.box-homepage
+				h5(style="background-color:#aa3")= "#sofware"
+				.box-content
+					h4 
+						a(href="/issues/1234")= "Por una ciudad mejor"
+					p= "En una ciudad donde las cosas se resuelven entre todos... es la ciudad en que quiero vivir con[...]"
+
+				.users
+					a(href="/profiles/123123", rel="tooltip", title="Cristian Douce", data-placement="bottom", class="tt")
+						img(src="https://api.twitter.com/1/users/profile_image?screen_name=cristiandouce&size=bigger")
+				a(href="/issues/1233").arrow
+		- }
+	.clear
