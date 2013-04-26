@@ -99,7 +99,7 @@ p a:hover {
 a:hover {
   text-decoration: none;
 }
-/*header {
+header {
   background: #00f;
   background-image: -webkit-linear-gradient(#68a0b6 3.3%, #44798d);
   background-image: -moz-linear-gradient(#68a0b6 3.3%, #44798d);
@@ -117,14 +117,15 @@ header h1#logo a {
   width: 52px;
   height: 49px;
   margin: 5px 0;
-  background: url("../../images/logo.png?rand");
+  background: url("../images/logo.png?rand");
   display: block;
   text-indent: -1000em;
 }
-header .container .span9 {
+/*header .container .span9 {*/
+header .navbar-inner {
   background-color: #78c0d6;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
   background-image: -webkit-linear-gradient(#78c0d6 3.3%, #52adc7);
   background-image: -moz-linear-gradient(#78c0d6 3.3%, #52adc7);
   background-image: -o-linear-gradient(#78c0d6 3.3%, #52adc7);
@@ -133,6 +134,7 @@ header nav {
   display: inline-block;
 }
 header nav a,
+header .navbar .nav>li>a,
 header nav a:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -264,7 +266,7 @@ header .user-options .options-dropdown a:last-child {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border: 0;
-}*/
+}
 h3.block-title {
   font-weight: bold;
   font-size: 14px;
@@ -446,6 +448,7 @@ i.icon {
 .banner .issue-content p.issue-content-description {
   margin-bottom: 20px;
 }
+/* Ugly bug */
 /*a.nav {
   top: 64px;
   background: #fff url("../../images/arrow-left.png") center no-repeat;

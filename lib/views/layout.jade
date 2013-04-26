@@ -51,22 +51,34 @@ html(lang='en')
   body(class=bodyClasses)
     // Start of `Page Content`
     #wrap
-      header.navbar.navbar-inverse.navbar-fixed-top
-        .navbar-inner
-          .container
+      header.navbar.navbar-fixed-top
+        .container
+          .navbar-inner
             button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a.brand(href='#') Partido De La Red
+            h1#logo
+              a(href='/') Democracia en Red
+            a.brand.hidden-desktop(href='/') Democracia en Red
+
             .nav-collapse.collapse
-              ul#navigation.nav
+              ul.nav#navigation
                 li.active
-                  a(href='#') Explore
+                  nav
+                    a.votaciones(href='#')
+                      i
+                      | Explore
                 li
-                  a(href='http://wiki.partidodelared.org') Docs
+                  nav
+                    a.how-it-works(href='http://wiki.partidodelared.org', target="_blank")
+                      i
+                      | Docs
                 li
-                  a(href='http://wiki.partidodelared.org') Help
+                  nav
+                    a.how-it-works(href='http://github.com/DemocraciaEnRed/app', target="_blank")
+                      i
+                      | Contribute
 
               ul.nav.pull-right
                 - if (locals.citizen)
@@ -91,14 +103,15 @@ html(lang='en')
                       li.divider
                       li: a(href=url('/logout')) Logout
                 - else
-                  a.nav(id="fb-login-button", href="/auth/facebook", class="sb sb-small sb-facebook")
-                    i
-                    | Log in
+                  li.login: nav
+                    a.nav(href="/auth/facebook", class="sb sb-small sb-facebook")
+                      i
+                      | Log in
 
       .container
         block content
 
-      #push
+      .push-down
 
     footer
       | Copyright © 2009-2013 Partido De La Red.

@@ -17,7 +17,7 @@ body {
 }
 
 /* Set the fixed height of the footer here */
-#push,
+.push-down,
 footer {
   height: 60px;
 }
@@ -43,6 +43,46 @@ footer {
 ----------------------------------------------------- */
 /* Not required for template or sticky footer.  */
 
-#fb-login-button {
-  margin: 5px 0px;
+/* Facebook Login */
+.navbar .nav li.login nav {
+  padding:10px 15px 0px 15px;
+}
+
+/* Brand */
+.navbar a.brand {
+  margin: 10px 15px 10px 0px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff !important;
+  padding: 10px 0 10px 0;
+  opacity: 0.9;
+  margin-right: 30px;
+  display: inline-block;
+}
+
+/* Responsive button */
+.navbar button.btn.btn-navbar {
+  margin: 14px 15px 0px 0px;
+  padding-bottom:9px;
+}
+
+/* User dropdown responsive */
+.navbar .nav-collapse:not(.in) ul.nav.pull-right  {
+  padding:5px 10px;
+}
+
+.navbar .nav>li>a {
+  color: #fff !important;
+  text-shadow:none !important;
+}
+.navbar .nav>li>a:hover {
+  color: #333 !important;
+}
+
+.navbar .nav li.dropdown.open>.dropdown-toggle,
+.navbar .nav li.dropdown.active>.dropdown-toggle,
+.navbar .nav li.dropdown.open.active>.dropdown-toggle {
+  background:none !important;
 }
