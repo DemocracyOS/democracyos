@@ -77,8 +77,16 @@ function Config(app) {
      * Set custom `config` settings from
      * file `config.json`
      */
+    
+    var confFile = {};
+    
+    try {
+      confFile = require('./config.json');
+    } catch (e) {
+      debug( 'loading config settings from heroku only' )
+    }
 
-    app.set( 'config', utils.merge( heroku, require('./config.json') ) );
+    app.set( 'config', utils.merge( heroku, confFile ) );
     
     /**
      * Set `mongoUrl` setting from environment
