@@ -14,7 +14,7 @@ The project is under the branch "development". Feel free to contribute.
 1. Fork and/or clone or even just download this repository.
 2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation inside the directory).
 3. Run `npm install` in the root of this application.
-4. Run `make run` or `NODE_PATH=lib node app.js`.
+4. Run `make run` or `NODE_PATH=. node app.js`.
 
 ## Useful links
 
