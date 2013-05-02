@@ -5,13 +5,12 @@
 var express = require('express')
   , passport = require('passport')
   , nowww = require('nowww')
-  , debug = require('debug')('app:config')
-  , passport = require('passport')
+  , log = require('debug')('app:config')
   , MongoStore = require('connect-mongo')(express)
   , path = require('path')
-  , utils = require('utils')
   , heroku = require('./heroku')
-  , expressUrl = require('express-url');
+  , utils = require('lib/utils')
+  , expressUrl = require('lib/express-url');
 
 /**
  * Expose `Config`
@@ -34,7 +33,7 @@ function Config(app) {
   app.configure('development', function() {
 
     // Log config settigs load
-    debug( 'development settings' );
+    log( 'development settings' );
 
     /**
      * Load custom `config` settings from
@@ -59,7 +58,7 @@ function Config(app) {
   app.configure( 'production', function() {
 
     // Log config settigs load
-    debug( 'development settings' );
+    log( 'development settings' );
 
     /**
      * Set `nowww` middleware helper
@@ -83,7 +82,7 @@ function Config(app) {
     try {
       confFile = require('./config.json');
     } catch (e) {
-      debug( 'loading config settings from heroku only' )
+      log( 'loading config settings from heroku only' )
     }
 
     app.set( 'config', utils.merge( heroku, confFile ) );
@@ -109,7 +108,7 @@ function Config(app) {
 
   app.configure(function() {
     // Log config settigs load
-    debug( 'common settings' );
+    log( 'common settings' );
 
     /**
      * Set application http server port from `env`

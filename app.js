@@ -17,7 +17,7 @@ require('./config')(app)
  * with `app` configuration settings
  */
 
-require('models')(app);
+require('lib/models')(app);
 
 // Each module has its own routes and views
 // receives app as parameter to sincronize
@@ -27,19 +27,19 @@ require('models')(app);
  * PassportJS Auth Strategies and Routes
  */
 
-require('auth')(app);
+require('lib/auth')(app);
 
 /**
  * Homepage
  */
 
-app.use('/', require('homepage'));
+app.use('/', require('lib/homepage'));
 
 /**
  * SignUp routes
  */
 
-app.use('/signup', require('signup'));
+app.use('/signup', require('lib/signup'));
 
 /*
  * Start Web server

@@ -4,7 +4,7 @@
 
 run: install
 	@echo "Starting application..."
-	@NODE_PATH=lib \
+	@NODE_PATH=. \
 		node app.js
 
 install:
