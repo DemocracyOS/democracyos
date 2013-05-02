@@ -4,6 +4,7 @@
   text-align: center;
 }
 .page-homepage .box-homepage {
+  position:relative;
   background: #fff;
   /*min-width: 220px;*/
   float: left;
