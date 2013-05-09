@@ -29,7 +29,7 @@ In order to install a development instance of this applications, you need to `cp
 
 
 ### Heroku Settings
-In order to install this application with Heroku `PaaS` you shoud set `NODE_ENV=production` as well as the following config services:
+In order to install this application you shoud set the following config services:
 
 #### MongoDB
 * MONGOHQ_URL: MongoDB add-on database url
