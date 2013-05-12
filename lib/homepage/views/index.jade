@@ -7,6 +7,15 @@ block content
 		p ... is an online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.
 
 		p: a.btn.btn-primary.btn-large(href='#') Participa »
+	
+	.navbar.navbar-inverse
+		.navbar-inner
+			ul.nav
+				li.active: a(href="#") Popular Trends
+				li: a(href="#") Recently Updated
+				li: a(href="#") Urgent action
+			form.navbar-search.pull-right
+				input.search-query(type="text", placeholder="Search")
 
 	.row.box-homepage-list
 		- for(var i=0; i< 12; ++i){
