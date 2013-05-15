@@ -41,6 +41,13 @@ app.use('/', require('lib/homepage'));
 
 app.use('/signup', require('lib/signup'));
 
+
+/**
+ * Tag API Service
+ */
+
+app.use(require('lib/tag-api'));
+
 /*
  * Start Web server
  */
