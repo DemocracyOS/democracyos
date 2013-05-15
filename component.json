@@ -1,0 +1,5 @@
+{
+  "name": "democraciaenred.org",
+  "paths": ["lib"],
+  "local": ["boot"]
+}

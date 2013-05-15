@@ -2,17 +2,24 @@
 # pdr-app Makefile
 # 
 
-run: install
+run: packages components
 	@echo "Starting application..."
-	@NODE_PATH=. \
-		node app.js
+	@NODE_PATH=. node app.js
 
-install:
-	@echo "Install dependencies..."
+packages:
+	@echo "Installing dependencies..."
 	@npm install
+	@echo "Done.\n"
+
+components:
+	@echo "Installing components..."
+	@component install
+	@echo "Done.\n"
 
 clean:
-	@echo "Removing 'node_modules' path..."
-	@rm -rf node_modules
+	@echo "Removing dependencies and components."
+	@rm -rf node_modules components
+	@echo "Done.\n"
+
 
 .PHONY: clean
