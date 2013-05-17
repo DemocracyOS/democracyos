@@ -106,21 +106,6 @@ header {
   background-image: -o-linear-gradient(#68a0b6 3.3%, #44798d);
   padding-top: 4px;
 }
-header h1#logo {
-  display: inline-block;
-  margin: 0;
-  margin-left: 20px;
-  float: left;
-  margin-right: 30px;
-}
-header h1#logo a {
-  width: 52px;
-  height: 49px;
-  margin: 5px 0;
-  background: url("../images/logo.png?rand");
-  display: block;
-  text-indent: -1000em;
-}
 /*header .container .span9 {*/
 header .navbar-inner {
   background-color: #78c0d6;
@@ -868,10 +853,9 @@ a.close-compose:hover,
 .modal .close {
   text-align: center;
   opacity: 1;
-  height: auto;
+  height: 36px;
   line-height: 30px;
-  height: 18px;
-  width: 38px;
+  width: 36px;
   text-align: center;
   padding: 0;
   padding-bottom: 20px;

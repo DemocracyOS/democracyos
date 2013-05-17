@@ -1,0 +1,27 @@
+nav.container
+  h1#logo
+    a(href='/') Democracia en Red
+
+  ul.nav
+    li
+      a.home-page(href='#')
+        i
+        | Home
+    li
+      a.help(href='http://wiki.partidodelared.org', target="_blank")
+        i
+        | Help
+
+  ul.nav.pull-right
+    - if (locals.citizen)
+      li
+        a.profile(href='#')
+          span(style="margin-right:5px;"): img(src=citizen.avatar, width="18")
+          | #{citizen.fullName}
+      li
+        a.logout(href=url('/logout')) Logout
+    - else
+      li.login: nav
+        a.nav(href=url('/auth/facebook'), class="sb sb-small sb-facebook")
+          i
+          | Log in

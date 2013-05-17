@@ -7,82 +7,61 @@ body {
   /* The html and body elements cannot have any padding or margin. */
 }
 
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  /* Negative indent footer by it's height */
-  margin: 0 auto -60px;
+header {
+  background: #00f;
+  background-image: -webkit-linear-gradient(#68a0b6 3.3%, #44798d);
+  background-image: -moz-linear-gradient(#68a0b6 3.3%, #44798d);
+  background-image: -o-linear-gradient(#68a0b6 3.3%, #44798d);
+  padding-top: 4px;
 }
 
-/* Set the fixed height of the footer here */
-.push-down,
-footer {
-  height: 60px;
-}
-footer {
-  background-color: #f5f5f5;
-}
-
-/* Lastly, apply responsive CSS fixes as necessary */
-@media (max-width: 767px) {
-  footer {
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
+  header nav {
+    background-color:#78C0D6;
+    display: inline-block;
   }
-}
 
-#wrap > .container {
-  padding-top: 60px;
-}
+    header nav h1#logo {
+      display: inline-block;
+      margin: 0;
+      margin-left: 20px;
+      float: left;
+      margin-right: 30px;
+    }
 
-/* Custom page CSS
------------------------------------------------------ */
-/* Not required for template or sticky footer.  */
+    header nav h1#logo a {
+      width: 52px;
+      height: 49px;
+      margin: 5px 0;
+      background: url("../images/logo.png?rand");
+      display: block;
+      text-indent: -1000em;
+    }
 
-/* Facebook Login */
-.navbar .nav li.login nav {
-  padding:10px 15px 0px 15px;
-}
+    header nav :not(#logo) a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      color: #FFF;
+      padding: 10px 0 10px 0;
+      opacity: 0.9;
+      margin-right: 30px;
+      display: inline-block;
+    }
 
-/* Brand */
-.navbar a.brand {
-  margin: 10px 15px 10px 0px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff !important;
-  padding: 10px 0 10px 0;
-  opacity: 0.9;
-  margin-right: 30px;
-  display: inline-block;
-}
+    header nav ul {
+      display:inline-block;
+      margin:10px;
+    }
 
-/* Responsive button */
-.navbar button.btn.btn-navbar {
-  margin: 14px 15px 0px 0px;
-  padding-bottom:9px;
-}
+      header nav ul li {
+        display:inline-block;
+        float:left;
+      }
 
-/* User dropdown responsive */
-.navbar .nav-collapse:not(.in) ul.nav.pull-right  {
-  padding:5px 10px;
-}
+  section.container {
+    margin-top:-75px;
+    padding-top:75px;
 
-.navbar .nav>li>a {
-  color: #fff !important;
-  text-shadow:none !important;
-}
-.navbar .nav>li>a:hover {
-  color: #333 !important;
-}
-
-.navbar .nav li.dropdown.open>.dropdown-toggle,
-.navbar .nav li.dropdown.active>.dropdown-toggle,
-.navbar .nav li.dropdown.open.active>.dropdown-toggle {
-  background:none !important;
-}
+    height:100%;
+  }

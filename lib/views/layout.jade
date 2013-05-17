@@ -21,7 +21,6 @@ html(lang='en')
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
     // Custom StyleSheets
     link(rel='stylesheet', href='/socialbuttons/social-buttons.css')
-    link(rel='stylesheet', href='/css/v1.css')
     link(rel='stylesheet', href='/css/main.css')
     block page_styles
     // Bootstrap responsive
@@ -50,75 +49,20 @@ html(lang='en')
 
   body(class=bodyClasses)
     // Start of `Page Content`
-    #wrap
-      header.navbar.navbar-fixed-top
-        .container
-          .navbar-inner
-            button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            h1#logo
-              a(href='/') Democracia en Red
-            a.brand.hidden-desktop(href='/') Democracia en Red
-
-            .nav-collapse.collapse
-              ul.nav#navigation
-                li.active
-                  nav
-                    a.votaciones(href='#')
-                      i
-                      | Explore
-                li
-                  nav
-                    a.how-it-works(href='http://wiki.partidodelared.org', target="_blank")
-                      i
-                      | Docs
-                li
-                  nav
-                    a.how-it-works(href='http://github.com/DemocraciaEnRed/app', target="_blank")
-                      i
-                      | Contribute
-
-              ul.nav.pull-right
-                - if (locals.citizen)
-                  li.dropdown
-                    a.dropdown-toggle(href='#', data-toggle='dropdown')
-                      span(style="margin-right:5px;"): img(src=citizen.avatar, width="18")
-                      | #{citizen.fullName}
-                      b.caret
-                    ul.dropdown-menu
-                      li
-                        a(href='#') Compose Proposal
-                      li.divider
-                      li.nav-header Citizen Profile
-                      li
-                        a(href='#') Edit
-                      li
-                        a(href='#') View Public
-                      li
-                        a(href='#') Delegations
-                      li.divider
-                      li.nav-header Preferences
-                      li
-                        a(href='#') Settings
-                      li
-                        a(href='#') About
-                      li.divider
-                      li: a(href=url('/logout')) Logout
-                - else
-                  li.login: nav
-                    a.nav(href="/auth/facebook", class="sb sb-small sb-facebook")
-                      i
-                      | Log in
-
+    header
       .container
-        block content
+        include includes/header-nav
+    section.container
+      .row
+        aside
+          block aside
 
-      .push-down
+        section
+          block content
 
-    footer
-      | Copyright © 2009-2013 Partido De La Red.
+    block extras
+      // Extras
+      include includes/composer-modal
 
     // End of `Page Content`  
     // ====================== 
@@ -127,7 +71,7 @@ html(lang='en')
 
       //- Core 3rd parties libs
       script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
-      script(src='bootstrap/js/bootstrap.min.js')
+      // script(src='bootstrap/js/bootstrap.min.js')
 
       //- Plugins on top of 3rd parties
       script(src="/js/vendor/masonry/jquery.masonry.min.js")
