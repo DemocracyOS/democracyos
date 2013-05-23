@@ -17,21 +17,28 @@ html(lang='en')
     //                                                      
     //   CSS                                                
     //   ================================================== 
+
     // Boostrap
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
-    // Custom StyleSheets
-    link(rel='stylesheet', href='/socialbuttons/social-buttons.css')
-    link(rel='stylesheet', href='/css/main.css')
-    block page_styles
+
     // Bootstrap responsive
     link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
-    
+
+    // Custom StyleSheets
+    link(rel='stylesheet', href='/css/main.css')
+    block page_styles
+ 
     // HTML5 shim, for IE6-8 support of HTML5 elements
     //if lt IE 9
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
 
     // fav and touch icons
     link(rel="shortcut icon", href="/images/favicon.ico")
+
+    script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
+    script(type='text/javascript')
+      try{Typekit.load();}catch(e){}
+
 
     script
       // Get rid of the Facebook residue hash in the URI
@@ -49,16 +56,14 @@ html(lang='en')
 
   body(class=bodyClasses)
     // Start of `Page Content`
-    header
-      .container
-        include includes/header-nav
-    section.container
-      .row
-        aside
-          block aside
+    header.app-header
+      include includes/header-nav
 
-        section
-          block content
+    aside.nav-propousals
+      block aside
+
+    section.app-content
+      block content
 
     block extras
       // Extras

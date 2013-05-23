@@ -1,67 +1,69 @@
-/* Sticky footer styles
+/* General
 -------------------------------------------------- */
-
-html,
-body {
-  height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+body.home {
+  overflow: hidden;
 }
-
-header {
-  background: #00f;
-  background-image: -webkit-linear-gradient(#68a0b6 3.3%, #44798d);
-  background-image: -moz-linear-gradient(#68a0b6 3.3%, #44798d);
-  background-image: -o-linear-gradient(#68a0b6 3.3%, #44798d);
-  padding-top: 4px;
+header.app-header,
+section.app-content,
+aside.nav-propousals {
+  position: fixed;
 }
-
-  header nav {
-    background-color:#78C0D6;
-    display: inline-block;
-  }
-
-    header nav h1#logo {
-      display: inline-block;
-      margin: 0;
-      margin-left: 20px;
-      float: left;
-      margin-right: 30px;
-    }
-
-    header nav h1#logo a {
-      width: 52px;
-      height: 49px;
-      margin: 5px 0;
-      background: url("../images/logo.png?rand");
-      display: block;
-      text-indent: -1000em;
-    }
-
-    header nav :not(#logo) a {
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: bold;
-      color: #FFF;
-      padding: 10px 0 10px 0;
-      opacity: 0.9;
-      margin-right: 30px;
-      display: inline-block;
-    }
-
-    header nav ul {
-      display:inline-block;
-      margin:10px;
-    }
-
-      header nav ul li {
-        display:inline-block;
-        float:left;
-      }
-
-  section.container {
-    margin-top:-75px;
-    padding-top:75px;
-
-    height:100%;
-  }
+header.app-header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #00b3eb;
+  color: #fff;
+  padding-left: 30px;
+}
+header.app-header h1 {
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 12px;
+  width: 200px;
+}
+header.app-header h1 a {
+  color: #fff;
+}
+header.app-header nav {
+  display: inline-block;
+}
+header.app-header nav ul li {
+  display: inline-block;
+}
+aside.nav-propousals {
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  border-right: 1px solid #999;
+  overflow-y: scroll;
+}
+aside.nav-propousals li {
+  border-bottom: 1px solid #ccc;
+}
+aside.nav-propousals li a {
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #000;
+}
+aside.nav-propousals li a span.title {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+aside.nav-propousals li a span.created-by {
+  font-size: 12px;
+  opacity: 0.5;
+}
+aside.nav-propousals li.active a {
+  background: #f9f9f9;
+}
+section.app-content {
+  left: 250px;
+  top: 60px;
+  padding: 20px 100px;
+}

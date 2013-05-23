@@ -1,16 +1,16 @@
-nav.container
-  h1#logo
-    a(href='/') Democracia en Red
+h1#logo
+  a(href='/') Democracia en Red
 
-  ul.nav
-    li
-      a.home-page(href='#')
-        i
-        | Home
-    li
-      a.help(href='http://wiki.partidodelared.org', target="_blank")
-        i
-        | Help
+  nav 
+    ul.nav
+      li
+        a.home-page(href='#')
+          i
+          | Home
+      li
+        a.help(href='http://wiki.partidodelared.org', target="_blank")
+          i
+          | Help
 
   ul.nav.pull-right
     - if (locals.citizen)

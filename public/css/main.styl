@@ -1,0 +1,66 @@
+/* General
+-------------------------------------------------- */
+
+body.home 
+	overflow: hidden;
+
+header.app-header, section.app-content, aside.nav-propousals
+	position: fixed;
+
+header_height = 60px;
+padding_left = 30px;
+
+header.app-header
+	top: 0;
+	left: 0;
+	right: 0;
+	height: header_height;
+	background: #00b3eb;
+	color: white;
+	padding-left: padding_left;
+
+	h1 
+		text-transform: uppercase;
+		display: inline-block;
+		font-size: 12px;
+		width: 200px;
+		a
+			color: white;
+
+	nav 
+		display: inline-block;
+		ul 
+			li 
+				display: inline-block;
+
+aside.nav-propousals 
+	top: header_height;
+	left: 0;
+	bottom: 0;
+	width: 280px;
+	border-right: 1px solid #999;
+	overflow-y: scroll;
+	li 
+		border-bottom: 1px solid #ccc;
+		a 
+			padding-left: padding_left;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			color: black;
+			span.title
+				font-size: 16px;
+				font-weight: bold;
+				display: block;
+				margin-bottom: 10px;
+
+			span.created-by
+				font-size: 12px;
+				opacity: .5;
+
+		&.active 
+			a 
+				background: #f9f9f9;
+section.app-content
+	left: 250px;
+	top: header_height;
+	padding: 20px 100px;
