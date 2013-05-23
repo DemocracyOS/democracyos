@@ -62,6 +62,9 @@ block content
 			a(href="").meta-item.meta-delegation Delegated on Ricardo Rauch
 			a(href="").meta-item.meta-tag #Tag
 
+		//- .voting-process
+			//- span.
+
 		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
 		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
 		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
@@ -112,11 +115,16 @@ block content
 					{
 						value: 60,
 						color:"#a4cb53",
-						legend: "YES"
+						label: "YES",
+						labelColor: "white",
+						labelAlign: "center"
 					},
 					{
 						value : 40,
-						color : "#d95e59"
+						color : "#d95e59",
+						label: "NO",
+						labelColor: "white",
+						labelAlign: "center"
 					}			
 				]
 				new Chart(ctx).Pie(data);
