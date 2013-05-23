@@ -1,3 +1,5 @@
+/* Vars
+-------------------------------------------------- */
 /* General
 -------------------------------------------------- */
 html {
@@ -14,9 +16,11 @@ h6 {
 a {
   color: #000;
 }
-body.home {
-  overflow: hidden;
+img.avatar {
+  border-radius: 100%;
 }
+/* Header
+-------------------------------------------------- */
 header.app-header,
 section.app-content,
 aside.nav-proposal {
@@ -33,6 +37,7 @@ header.app-header {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
+  font-family: "freight-sans-pro", sans-serif;
 }
 header.app-header a {
   color: #fff;
@@ -63,6 +68,8 @@ header.app-header ul.user-nav li {
   display: inline-block;
   margin-left: 30px;
 }
+/* Proposal Aside Navigation
+-------------------------------------------------- */
 aside.nav-proposal {
   top: 60px;
   left: 0;
@@ -94,16 +101,18 @@ aside.nav-proposal li.active a {
   background: #f9f9f9;
 }
 section.app-content {
-  left: 250px;
+  left: 281px;
   top: 60px;
-  padding: 20px 100px;
+  padding: 20px 0 0 0;
   overflow-y: scroll;
   right: 0;
   bottom: 0;
+/* Proposal View
+	-------------------------------------------------- */
 }
 section.app-content article.proposal {
-  width: 560px;
-  margin: auto;
+  width: 540px;
+  margin-left: 100px;
 }
 section.app-content article.proposal h2 {
   margin-bottom: 20px;
@@ -130,4 +139,41 @@ section.app-content article.proposal hr {
 }
 section.app-content article.proposal .footer-notes {
   color: #666;
+  margin-bottom: 20px;
+}
+section.app-content article.proposal .participants {
+  font-weight: bold;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  border-top: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+}
+section.app-content article.proposal .participants .participant-profile img {
+  width: 30px;
+}
+/* Comments
+-------------------------------------------------- */
+.comments {
+  background: #f9f9f9;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.comments h4 {
+  margin-bottom: 30px;
+}
+.comments span {
+  margin-right: 20px;
+}
+.comments .pull-left {
+  width: 50px;
+}
+.comments a.avatar {
+  width: 24px;
+  display: inline-block;
+}
+.comments a.avatar img {
+  width: 100%;
+  border-radius: 100px;
 }

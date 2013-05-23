@@ -1,3 +1,9 @@
+/* Vars
+-------------------------------------------------- */
+header_height = 60px;
+spacing = 30px;
+nav_proposal_width = 280px;
+
 /* General
 -------------------------------------------------- */
 
@@ -10,14 +16,13 @@ h1,h2,h3,h4,h5,h6
 a 
 	color: black;
 
-body.home 
-	overflow: hidden;
+img.avatar
+	border-radius: 100%;
 
+/* Header
+-------------------------------------------------- */
 header.app-header, section.app-content, aside.nav-proposal
 	position: fixed;
-
-header_height = 60px;
-spacing = 30px;
 
 header.app-header
 	top: 0;
@@ -30,6 +35,7 @@ header.app-header
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 12px;
+	font-family: "freight-sans-pro",sans-serif;
 
 	a 
 		color: white;
@@ -58,11 +64,13 @@ header.app-header
 			display: inline-block;
 			margin-left: 30px;
 
+/* Proposal Aside Navigation
+-------------------------------------------------- */
 aside.nav-proposal 
 	top: header_height;
 	left: 0;
 	bottom: 0;
-	width: 280px;
+	width: nav_proposal_width;
 	border-right: 1px solid #999;
 	overflow-y: scroll;
 	li 
@@ -87,16 +95,19 @@ aside.nav-proposal
 				background: #f9f9f9;
 
 section.app-content
-	left: 250px;
+	left: nav_proposal_width + 1px;
 	top: header_height;
-	padding: 20px 100px;
+	padding: 20px 0 0 0;
 	overflow-y: scroll;
 	right: 0;
 	bottom: 0;
 
+
+	/* Proposal View
+	-------------------------------------------------- */
 	article.proposal
-		width: 560px;
-		margin: auto;
+		width: 540px;
+		margin-left: 100px;
 
 		h2 
 			margin-bottom: 20px;
@@ -118,5 +129,42 @@ section.app-content
 		hr 
 			border-top: 4px solid #eee;
 			width: 50%;
+
 		.footer-notes 
 			color: #666;
+			margin-bottom: 20px;
+
+		.participants
+			font-weight: bold;
+			padding: 10px 0;
+			margin-bottom: 30px;
+			border-top: 2px solid #f1f1f1;
+			border-bottom: 2px solid #f1f1f1;
+			.participant-profile img
+				width: 30px;
+
+
+
+/* Comments
+-------------------------------------------------- */
+.comments
+	background: #f9f9f9;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	h4 
+		margin-bottom: 30px;
+
+	span
+		margin-right: 20px;
+	.pull-left
+		width: 50px;
+	a.avatar 
+		width: 24px;
+		display: inline-block;
+		img 
+			width: 100%;
+			border-radius: 100px;
+
