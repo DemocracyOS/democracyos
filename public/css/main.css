@@ -1,5 +1,16 @@
 /* General
 -------------------------------------------------- */
+html {
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "freight-sans-pro", sans-serif;
+}
 body.home {
   overflow: hidden;
 }
@@ -16,21 +27,38 @@ header.app-header {
   background: #00b3eb;
   color: #fff;
   padding-left: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+header.app-header a {
+  color: #fff;
 }
 header.app-header h1 {
-  text-transform: uppercase;
   display: inline-block;
+  width: 300px;
   font-size: 12px;
-  width: 200px;
-}
-header.app-header h1 a {
-  color: #fff;
 }
 header.app-header nav {
   display: inline-block;
+  height: 60px;
 }
 header.app-header nav ul li {
   display: inline-block;
+}
+header.app-header nav ul li a {
+  margin-right: 30px;
+}
+header.app-header ul.user-nav {
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+  list-style: none;
+  margin-right: 30px;
+}
+header.app-header ul.user-nav li {
+  display: inline-block;
+  margin-left: 30px;
 }
 aside.nav-propousals {
   top: 60px;
@@ -56,7 +84,7 @@ aside.nav-propousals li a span.title {
   margin-bottom: 10px;
 }
 aside.nav-propousals li a span.created-by {
-  font-size: 12px;
+  font-size: 11px;
   opacity: 0.5;
 }
 aside.nav-propousals li.active a {

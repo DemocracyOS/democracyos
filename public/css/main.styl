@@ -1,6 +1,12 @@
 /* General
 -------------------------------------------------- */
 
+html
+	-webkit-font-smoothing: antialiased; 
+
+h1,h2,h3,h4,h5,h6
+	font-family: "freight-sans-pro",sans-serif;
+
 body.home 
 	overflow: hidden;
 
@@ -8,7 +14,7 @@ header.app-header, section.app-content, aside.nav-propousals
 	position: fixed;
 
 header_height = 60px;
-padding_left = 30px;
+spacing = 30px;
 
 header.app-header
 	top: 0;
@@ -17,21 +23,37 @@ header.app-header
 	height: header_height;
 	background: #00b3eb;
 	color: white;
-	padding-left: padding_left;
+	padding-left: spacing;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 12px;
+
+	a 
+		color: white;
 
 	h1 
-		text-transform: uppercase;
 		display: inline-block;
+		width: 300px;
 		font-size: 12px;
-		width: 200px;
-		a
-			color: white;
 
 	nav 
 		display: inline-block;
+		height: header_height;
 		ul 
 			li 
 				display: inline-block;
+				a 
+					margin-right: 30px;
+
+	ul.user-nav 
+		display: inline-block;
+		float: right;
+		margin-top: 20px;
+		list-style: none;
+		margin-right: spacing;
+		li 
+			display: inline-block;
+			margin-left: 30px;
 
 aside.nav-propousals 
 	top: header_height;
@@ -43,7 +65,7 @@ aside.nav-propousals
 	li 
 		border-bottom: 1px solid #ccc;
 		a 
-			padding-left: padding_left;
+			padding-left: spacing;
 			padding-top: 20px;
 			padding-bottom: 20px;
 			color: black;
@@ -54,7 +76,7 @@ aside.nav-propousals
 				margin-bottom: 10px;
 
 			span.created-by
-				font-size: 12px;
+				font-size: 11px;
 				opacity: .5;
 
 		&.active 
