@@ -7,10 +7,13 @@ html
 h1,h2,h3,h4,h5,h6
 	font-family: "freight-sans-pro",sans-serif;
 
+a 
+	color: black;
+
 body.home 
 	overflow: hidden;
 
-header.app-header, section.app-content, aside.nav-propousals
+header.app-header, section.app-content, aside.nav-proposal
 	position: fixed;
 
 header_height = 60px;
@@ -55,7 +58,7 @@ header.app-header
 			display: inline-block;
 			margin-left: 30px;
 
-aside.nav-propousals 
+aside.nav-proposal 
 	top: header_height;
 	left: 0;
 	bottom: 0;
@@ -82,7 +85,38 @@ aside.nav-propousals
 		&.active 
 			a 
 				background: #f9f9f9;
+
 section.app-content
 	left: 250px;
 	top: header_height;
 	padding: 20px 100px;
+	overflow-y: scroll;
+	right: 0;
+	bottom: 0;
+
+	article.proposal
+		width: 560px;
+		margin: auto;
+
+		h2 
+			margin-bottom: 20px;
+
+		.meta-data
+			margin-bottom: 20px;
+			font-size: 12px;
+			a.meta-item
+				margin-right: 30px;
+				color: #666;
+
+				&.meta-tag, &.meta-delegation
+					float: right;
+					margin-left: 30px;
+
+				&:last-child
+					margin-right: 0;
+
+		hr 
+			border-top: 4px solid #eee;
+			width: 50%;
+		.footer-notes 
+			color: #666;
