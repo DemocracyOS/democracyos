@@ -103,52 +103,77 @@ section.app-content
 	bottom: 0;
 
 
-	/* Proposal View
-	-------------------------------------------------- */
-	article.proposal
-		width: 540px;
-		margin-left: 100px;
+/* Proposal View
+-------------------------------------------------- */
+article.proposal
+	width: 520px;
+	margin-left: 100px;
 
-		h2 
-			margin-bottom: 20px;
+	h2 
+		margin-bottom: 20px;
 
-		.meta-data
-			margin-bottom: 20px;
-			font-size: 12px;
-			a.meta-item
-				margin-right: 30px;
-				color: #666;
-
-				&.meta-tag, &.meta-delegation
-					float: right;
-					margin-left: 30px;
-
-				&:last-child
-					margin-right: 0;
-
-		hr 
-			border-top: 4px solid #eee;
-			width: 50%;
-
-		.footer-notes 
+	.meta-data
+		margin-bottom: 20px;
+		font-size: 12px;
+		a.meta-item
+			margin-right: 30px;
 			color: #666;
-			margin-bottom: 20px;
 
-		.participants
+			&.meta-tag, &.meta-delegation
+				float: right;
+				margin-left: 20px;
+				margin-right: 0;
+
+	hr 
+		border-top: 4px solid #eee;
+		width: 50%;
+
+	.footer-notes 
+		color: #666;
+		margin-bottom: 20px;
+
+	.participants
+		font-weight: bold;
+		padding: 10px 0;
+		margin-bottom: 30px;
+		border-top: 2px solid #f1f1f1;
+		border-bottom: 2px solid #f1f1f1;
+		.participant-profile img
+			width: 30px;
+
+	.share-links
+		margin-bottom: 40px;
+		
+.proposal-options
+	width: 220px;
+	position: absolute;
+	top: 80px;
+	right: spacing;
+	.vote-options
+		margin-bottom: 20px;
+		.vote-option
+			width: 50%;
+			display: inline-block;	
+			color: white;
+			text-transform: uppercase;
 			font-weight: bold;
-			padding: 10px 0;
-			margin-bottom: 30px;
-			border-top: 2px solid #f1f1f1;
-			border-bottom: 2px solid #f1f1f1;
-			.participant-profile img
-				width: 30px;
+			text-align: center;
+			span 
+				padding: 20px;
+				display: block;
+			&.vote-yes
+				background-color: #a4cb53;
 
+			&.vote-no
+				background-color: #d95e59;
+				
 
 
 /* Comments
 -------------------------------------------------- */
 .comments
 	background: #f9f9f9;
+	border-top: 1px solid #f1f1f1;
 	padding-left: 100px;
 	padding-right: 100px;
 	padding-top: 50px;
@@ -159,12 +184,21 @@ section.app-content
 
 	span
 		margin-right: 20px;
-	.pull-left
-		width: 50px;
-	a.avatar 
-		width: 24px;
-		display: inline-block;
-		img 
-			width: 100%;
-			border-radius: 100px;
+
+	.comment-form
+		textarea
+			width: 500px;
+		margin-bottom: 50px;
+
+	.comment-list
+		.comment-item
+			.pull-left
+				width: 50px;
+				margin-right: 20px;
+				a.avatar 
+					width: 24px;
+					display: inline-block;
+					img 
+						width: 100%;
+						border-radius: 100px;
 

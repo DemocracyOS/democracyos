@@ -107,54 +107,83 @@ section.app-content {
   overflow-y: scroll;
   right: 0;
   bottom: 0;
-/* Proposal View
-	-------------------------------------------------- */
 }
-section.app-content article.proposal {
-  width: 540px;
+/* Proposal View
+-------------------------------------------------- */
+article.proposal {
+  width: 520px;
   margin-left: 100px;
 }
-section.app-content article.proposal h2 {
+article.proposal h2 {
   margin-bottom: 20px;
 }
-section.app-content article.proposal .meta-data {
+article.proposal .meta-data {
   margin-bottom: 20px;
   font-size: 12px;
 }
-section.app-content article.proposal .meta-data a.meta-item {
+article.proposal .meta-data a.meta-item {
   margin-right: 30px;
   color: #666;
 }
-section.app-content article.proposal .meta-data a.meta-item.meta-tag,
-section.app-content article.proposal .meta-data a.meta-item.meta-delegation {
+article.proposal .meta-data a.meta-item.meta-tag,
+article.proposal .meta-data a.meta-item.meta-delegation {
   float: right;
-  margin-left: 30px;
-}
-section.app-content article.proposal .meta-data a.meta-item:last-child {
+  margin-left: 20px;
   margin-right: 0;
 }
-section.app-content article.proposal hr {
+article.proposal hr {
   border-top: 4px solid #eee;
   width: 50%;
 }
-section.app-content article.proposal .footer-notes {
+article.proposal .footer-notes {
   color: #666;
   margin-bottom: 20px;
 }
-section.app-content article.proposal .participants {
+article.proposal .participants {
   font-weight: bold;
   padding: 10px 0;
   margin-bottom: 30px;
   border-top: 2px solid #f1f1f1;
   border-bottom: 2px solid #f1f1f1;
 }
-section.app-content article.proposal .participants .participant-profile img {
+article.proposal .participants .participant-profile img {
   width: 30px;
+}
+article.proposal .share-links {
+  margin-bottom: 40px;
+}
+.proposal-options {
+  width: 220px;
+  position: absolute;
+  top: 80px;
+  right: 30px;
+}
+.proposal-options .vote-options {
+  margin-bottom: 20px;
+}
+.proposal-options .vote-options .vote-option {
+  width: 50%;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+.proposal-options .vote-options .vote-option span {
+  padding: 20px;
+  display: block;
+}
+.proposal-options .vote-options .vote-option.vote-yes {
+  background-color: #a4cb53;
+}
+.proposal-options .vote-options .vote-option.vote-no {
+  background-color: #d95e59;
 }
 /* Comments
 -------------------------------------------------- */
 .comments {
   background: #f9f9f9;
+  border-top: 1px solid #f1f1f1;
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 50px;
@@ -166,14 +195,21 @@ section.app-content article.proposal .participants .participant-profile img {
 .comments span {
   margin-right: 20px;
 }
-.comments .pull-left {
-  width: 50px;
+.comments .comment-form {
+  margin-bottom: 50px;
 }
-.comments a.avatar {
+.comments .comment-form textarea {
+  width: 500px;
+}
+.comments .comment-list .comment-item .pull-left {
+  width: 50px;
+  margin-right: 20px;
+}
+.comments .comment-list .comment-item .pull-left a.avatar {
   width: 24px;
   display: inline-block;
 }
-.comments a.avatar img {
+.comments .comment-list .comment-item .pull-left a.avatar img {
   width: 100%;
   border-radius: 100px;
 }
