@@ -46,13 +46,13 @@ app.use('/signup', require('lib/signup'));
  * Tag API Service
  */
 
-app.use(require('lib/tag-api'));
+app.use(require('lib/tag'));
 
 /**
  * Proposal API Service
  */
 
-app.use(require('lib/proposal-api'));
+app.use(require('lib/proposal'));
 
 /*
  * Start Web server
