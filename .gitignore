@@ -14,5 +14,7 @@ results
 npm-debug.log
 node_modules
 
+components
+
 *.DS_Store
 config*.json
