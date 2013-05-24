@@ -1,17 +1,152 @@
 extends layout
 
 block aside
-	.span3
-		nav.well.sidebar-nav
-			ul.nav.navlist
-				li asdasdasdasd
-				li asdasdasdasd
-				li asdasdasdasd
-				li asdasdasdasd
-				li asdasdasdasd
-				li asdasdasdasd
-				li asdasdasdasd
+	nav.sidebar-nav
+		ul.nav.navlist
+			li.active
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+			li
+				a(href="")
+					span.title Title Example
+					span.created-by Creador por Ricardo Rauch hace 3 horas
+		
+
+		
 
 block content
-	.span9
-		p	asdasdasdasdasdasd
+	article.proposal
+		h2 Title Example
+
+		.meta-data
+			a(href="").meta-item.meta-time 10 days left
+			a(href="").meta-item.meta-location Buenos Aires, Argentina
+
+			a(href="").meta-item.meta-delegation Delegated on Ricardo Rauch
+			a(href="").meta-item.meta-tag #Tag
+
+		//- .voting-process
+			//- span.
+
+		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
+		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
+		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
+		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
+
+		hr 
+
+		footer.footer-notes  
+			h5 Referencias
+			ol 
+				li Referencia 1: http://wikipedia.org
+				li Referencia 2: http://wikipedia.org
+				li Referencia 3: http://wikipedia.org
+				li Referencia 4: http://wikipedia.org
+				li Referencia 5: http://wikipedia.org
+				li Referencia 6: http://wikipedia.org
+
+		.participants 
+			span 4 Participants 
+			a(href="").participant-profile
+				img(src="https://si0.twimg.com/profile_images/2583335118/yts2np89ifncbi0j3vgm.jpeg").avatar
+
+		p.share-links
+			strong Share: 
+			a(href="") Facebook 
+			a(href="") Twitter 
+			a(href="") Google Plus 
+
+	.proposal-options
+		.vote-box
+			h5 Vote
+			.vote-options
+				a(href="").vote-option.vote-yes
+					span Yes
+				a(href="").vote-option.vote-no
+					span No
+
+		//- h5 Delegations
+
+		.results-box
+			h5 Results
+			canvas(id="myChart", width="200", height="220")
+
+			script 
+				var ctx = document.getElementById("myChart").getContext("2d");
+				var data = [
+					{
+						value: 60,
+						color:"#a4cb53",
+						label: "YES",
+						labelColor: "white",
+						labelAlign: "center"
+					},
+					{
+						value : 40,
+						color : "#d95e59",
+						label: "NO",
+						labelColor: "white",
+						labelAlign: "center"
+					}			
+				]
+				new Chart(ctx).Pie(data);
+
+
+	.comments
+		.comment-form
+			h5 Tu comentario 
+			p 
+				textarea
+			input(type="submit", value="Submit Comment").btn
+
+
+		h4 Comments 
+		ul.media-list.comment-list
+			li.media.comment-item
+				a(href="").pull-left
+					img(src="https://si0.twimg.com/profile_images/2583335118/yts2np89ifncbi0j3vgm.jpeg").avatar
+
+				.media-body
+					h5.media-heading Media heading
+					p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
+
+
+
+
