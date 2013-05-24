@@ -1,0 +1,11 @@
+{
+  "name": "proposal",
+  "description": "proposal pages",
+  "dependencies": {
+    "visionmedia/superagent": "*",
+    "component/domify": "*"
+  },
+  "scripts": ["proposal.js"],
+  "styles": [ ],
+  "main": "proposal.js"
+}
