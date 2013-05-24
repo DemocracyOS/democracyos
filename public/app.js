@@ -10414,6 +10414,7 @@ require.register("boot/boot.js", function(exports, require, module){
  */
 
 // var composer = $('#create-proposal').modal();
+
 });
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/boot.js");
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/index.js");
