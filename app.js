@@ -12,12 +12,6 @@ var app = exports.app = express();
 
 require('./config')(app)
 
-/**
- * Build
- */
-
-app.use(require('lib/build'));
-
 /*
  * Register Models and Launch Mongoose
  * with `app` configuration settings

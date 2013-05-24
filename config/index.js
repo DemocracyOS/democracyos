@@ -49,13 +49,19 @@ function Config(app) {
 
     app.set( 'mongoUrl', 'mongodb://localhost/pdr-app' );
 
+    /**
+     * Build
+     */
+
+    app.use(require('lib/build'));
+
   });
 
   /**
    * Set `production` only settings
    */
 
-  app.configure( 'production', function() {
+  app.configure('production', function() {
 
     // Log config settigs load
     log( 'development settings' );
