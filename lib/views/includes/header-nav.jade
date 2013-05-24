@@ -20,7 +20,7 @@ ul.user-nav
         | #{citizen.fullName}
 
     li 
-      a(href="") Create Proposal
+      a#create-proposal(href="#proposal-composer", data-toggle="modal", role="button") Create Proposal
     li
       a.logout(href=url('/logout')) Logout
   - else
