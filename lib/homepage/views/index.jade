@@ -3,72 +3,35 @@ extends layout
 block aside
 	nav.sidebar-nav
 		ul.nav.navlist
-			li.active
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-		
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-		
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-		
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-		
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-		
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-		
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
-		
-			li
-				a(href="")
-					span.title Title Example
-					span.created-by Creador por Ricardo Rauch hace 3 horas
+			- each p in proposals
+				- var active = p.id === proposal.id ? 'active' : '';
+				li(class=active)
+					a(href="/proposal/"+p.id)
+						span.title=p.title
+						span.created-by Creador por #{p.author.fullName} hace 3 horas
 		
 
 		
 
 block content
 	article.proposal
-		h2 Title Example
+		h2=proposal.title
 
 		.meta-data
 			a(href="").meta-item.meta-time 10 days left
 			a(href="").meta-item.meta-location Buenos Aires, Argentina
 
-			a(href="").meta-item.meta-delegation Delegated on Ricardo Rauch
-			a(href="").meta-item.meta-tag #Tag
+			a(href="").meta-item.meta-delegation Delegated on #{proposal.author.fullName}
+			a(href="").meta-item.meta-tag ##{proposal.tag.hash}
 
 		//- .voting-process
 			//- span.
 
-		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
-		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
-		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
-		p	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.
+		//- Mejorar esto!
+		- var lines = proposal.essay.split('\n');
+		- each line in lines
+			- if (line.trim())
+				p=line.trim()
 
 		hr 
 
