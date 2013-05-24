@@ -77,8 +77,8 @@ aside.nav-proposal
 		border-bottom: 1px solid #ccc;
 		a 
 			padding-left: spacing;
-			padding-top: 20px;
-			padding-bottom: 20px;
+			padding-top: 14px;
+			padding-bottom: 14px;
 			color: black;
 			span.title
 				font-size: 16px;
@@ -167,7 +167,11 @@ article.proposal
 			&.vote-no
 				background-color: #d95e59;
 				
-
+	.vote-box, .results-box
+		border-left: 4px solid #eee;
+		padding-left: 20px;
+		h5 
+			text-transform: uppercase;
 
 /* Comments
 -------------------------------------------------- */
@@ -186,9 +190,10 @@ article.proposal
 		margin-right: 20px;
 
 	.comment-form
+		margin-bottom: 50px;
 		textarea
 			width: 500px;
-		margin-bottom: 50px;
+		
 
 	.comment-list
 		.comment-item

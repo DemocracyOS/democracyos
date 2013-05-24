@@ -83,8 +83,8 @@ aside.nav-proposal li {
 }
 aside.nav-proposal li a {
   padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   color: #000;
 }
 aside.nav-proposal li a span.title {
@@ -178,6 +178,15 @@ article.proposal .share-links {
 }
 .proposal-options .vote-options .vote-option.vote-no {
   background-color: #d95e59;
+}
+.proposal-options .vote-box,
+.proposal-options .results-box {
+  border-left: 4px solid #eee;
+  padding-left: 20px;
+}
+.proposal-options .vote-box h5,
+.proposal-options .results-box h5 {
+  text-transform: uppercase;
 }
 /* Comments
 -------------------------------------------------- */

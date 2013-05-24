@@ -18,6 +18,9 @@ ul.user-nav
       a.profile(href='#')
         span(style="margin-right:5px;"): img(src=citizen.avatar, width="18")
         | #{citizen.fullName}
+
+    li 
+      a(href="") Create Proposal
     li
       a.logout(href=url('/logout')) Logout
   - else
