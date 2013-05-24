@@ -54,6 +54,12 @@ app.use(require('lib/tag'));
 
 app.use(require('lib/proposal'));
 
+/**
+ * Comment API Service
+ */
+
+app.use(require('lib/comment'));
+
 /*
  * Start Web server
  */
