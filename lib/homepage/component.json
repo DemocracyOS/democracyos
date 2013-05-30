@@ -4,10 +4,9 @@
   "dependencies": {},
   "development": {},
   "main": "",
-  "scripts": [
-    "index.js"
-  ],
+  "scripts": [],
   "styles": [
     "main.css"
-  ]
+  ],
+  "main": ""
 }
