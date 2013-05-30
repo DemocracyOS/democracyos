@@ -2,7 +2,7 @@
 # pdr-app Makefile
 # 
 
-run: packages components
+run: packages
 	@echo "Starting application..."
 	@NODE_PATH=. node app.js
 
@@ -10,8 +10,6 @@ packages:
 	@echo "Installing dependencies..."
 	@npm install
 	@echo "Done.\n"
-
-components:
 	@echo "Installing components..."
 	@component install
 	@echo "Done.\n"
