@@ -1,0 +1,224 @@
+/* Vars
+-------------------------------------------------- */
+/* General
+-------------------------------------------------- */
+html {
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "freight-sans-pro", sans-serif;
+}
+a {
+  color: #000;
+}
+img.avatar {
+  border-radius: 100%;
+}
+/* Header
+-------------------------------------------------- */
+header.app-header,
+section.app-content,
+aside.nav-proposal {
+  position: fixed;
+}
+header.app-header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #00b3eb;
+  color: #fff;
+  padding-left: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "freight-sans-pro", sans-serif;
+}
+header.app-header a {
+  color: #fff;
+}
+header.app-header h1 {
+  display: inline-block;
+  width: 300px;
+  font-size: 12px;
+}
+header.app-header nav {
+  display: inline-block;
+  height: 60px;
+}
+header.app-header nav ul li {
+  display: inline-block;
+}
+header.app-header nav ul li a {
+  margin-right: 30px;
+}
+header.app-header ul.user-nav {
+  display: inline-block;
+  float: right;
+  margin-top: 20px;
+  list-style: none;
+  margin-right: 30px;
+}
+header.app-header ul.user-nav li {
+  display: inline-block;
+  margin-left: 30px;
+}
+/* Proposal Aside Navigation
+-------------------------------------------------- */
+aside.nav-proposal {
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  border-right: 1px solid #999;
+  overflow-y: scroll;
+}
+aside.nav-proposal li {
+  border-bottom: 1px solid #ccc;
+}
+aside.nav-proposal li a {
+  padding-left: 30px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  color: #000;
+}
+aside.nav-proposal li a span.title {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+aside.nav-proposal li a span.created-by {
+  font-size: 11px;
+  opacity: 0.5;
+}
+aside.nav-proposal li.active a {
+  background: #f9f9f9;
+}
+section.app-content {
+  left: 281px;
+  top: 60px;
+  padding: 20px 0 0 0;
+  overflow-y: scroll;
+  right: 0;
+  bottom: 0;
+}
+/* Proposal View
+-------------------------------------------------- */
+article.proposal {
+  width: 520px;
+  margin-left: 100px;
+}
+article.proposal h2 {
+  margin-bottom: 20px;
+}
+article.proposal .meta-data {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+article.proposal .meta-data a.meta-item {
+  margin-right: 30px;
+  color: #666;
+}
+article.proposal .meta-data a.meta-item.meta-tag,
+article.proposal .meta-data a.meta-item.meta-delegation {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+article.proposal hr {
+  border-top: 4px solid #eee;
+  width: 50%;
+}
+article.proposal .footer-notes {
+  color: #666;
+  margin-bottom: 20px;
+}
+article.proposal .participants {
+  font-weight: bold;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  border-top: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+}
+article.proposal .participants .participant-profile img {
+  width: 30px;
+}
+article.proposal .share-links {
+  margin-bottom: 40px;
+}
+.proposal-options {
+  width: 220px;
+  position: absolute;
+  top: 80px;
+  right: 30px;
+}
+.proposal-options .vote-options {
+  margin-bottom: 50px;
+}
+.proposal-options .vote-options .vote-option {
+  width: 50%;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+.proposal-options .vote-options .vote-option span {
+  padding: 20px;
+  display: block;
+}
+.proposal-options .vote-options .vote-option.vote-yes {
+  background-color: #a4cb53;
+}
+.proposal-options .vote-options .vote-option.vote-no {
+  background-color: #d95e59;
+}
+.proposal-options .vote-box,
+.proposal-options .results-box {
+  border-left: 4px solid #eee;
+  padding-left: 20px;
+}
+.proposal-options .vote-box h5,
+.proposal-options .results-box h5 {
+  text-transform: uppercase;
+}
+/* Comments
+-------------------------------------------------- */
+.comments {
+  background: #f9f9f9;
+  border-top: 1px solid #f1f1f1;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.comments h4 {
+  margin-bottom: 30px;
+}
+.comments span {
+  margin-right: 20px;
+}
+.comments .comment-form {
+  margin-bottom: 50px;
+}
+.comments .comment-form textarea {
+  width: 500px;
+}
+.comments .comment-list .comment-item .pull-left {
+  width: 50px;
+  margin-right: 20px;
+}
+.comments .comment-list .comment-item .pull-left a.avatar {
+  width: 24px;
+  display: inline-block;
+}
+.comments .comment-list .comment-item .pull-left a.avatar img {
+  width: 100%;
+  border-radius: 100px;
+}

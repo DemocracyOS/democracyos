@@ -1,0 +1,209 @@
+/* Vars
+-------------------------------------------------- */
+header_height = 60px;
+spacing = 30px;
+nav_proposal_width = 280px;
+
+/* General
+-------------------------------------------------- */
+
+html
+	-webkit-font-smoothing: antialiased; 
+
+h1,h2,h3,h4,h5,h6
+	font-family: "freight-sans-pro",sans-serif;
+
+a 
+	color: black;
+
+img.avatar
+	border-radius: 100%;
+
+/* Header
+-------------------------------------------------- */
+header.app-header, section.app-content, aside.nav-proposal
+	position: fixed;
+
+header.app-header
+	top: 0;
+	left: 0;
+	right: 0;
+	height: header_height;
+	background: #00b3eb;
+	color: white;
+	padding-left: spacing;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-family: "freight-sans-pro",sans-serif;
+
+	a 
+		color: white;
+
+	h1 
+		display: inline-block;
+		width: 300px;
+		font-size: 12px;
+
+	nav 
+		display: inline-block;
+		height: header_height;
+		ul 
+			li 
+				display: inline-block;
+				a 
+					margin-right: 30px;
+
+	ul.user-nav 
+		display: inline-block;
+		float: right;
+		margin-top: 20px;
+		list-style: none;
+		margin-right: spacing;
+		li 
+			display: inline-block;
+			margin-left: 30px;
+
+/* Proposal Aside Navigation
+-------------------------------------------------- */
+aside.nav-proposal 
+	top: header_height;
+	left: 0;
+	bottom: 0;
+	width: nav_proposal_width;
+	border-right: 1px solid #999;
+	overflow-y: scroll;
+	li 
+		border-bottom: 1px solid #ccc;
+		a 
+			padding-left: spacing;
+			padding-top: 14px;
+			padding-bottom: 14px;
+			color: black;
+			span.title
+				font-size: 16px;
+				font-weight: bold;
+				display: block;
+				margin-bottom: 10px;
+
+			span.created-by
+				font-size: 11px;
+				opacity: .5;
+
+		&.active 
+			a 
+				background: #f9f9f9;
+
+section.app-content
+	left: nav_proposal_width + 1px;
+	top: header_height;
+	padding: 20px 0 0 0;
+	overflow-y: scroll;
+	right: 0;
+	bottom: 0;
+
+
+/* Proposal View
+-------------------------------------------------- */
+article.proposal
+	width: 520px;
+	margin-left: 100px;
+
+	h2 
+		margin-bottom: 20px;
+
+	.meta-data
+		margin-bottom: 20px;
+		font-size: 12px;
+		a.meta-item
+			margin-right: 30px;
+			color: #666;
+
+			&.meta-tag, &.meta-delegation
+				float: right;
+				margin-left: 20px;
+				margin-right: 0;
+
+	hr 
+		border-top: 4px solid #eee;
+		width: 50%;
+
+	.footer-notes 
+		color: #666;
+		margin-bottom: 20px;
+
+	.participants
+		font-weight: bold;
+		padding: 10px 0;
+		margin-bottom: 30px;
+		border-top: 2px solid #f1f1f1;
+		border-bottom: 2px solid #f1f1f1;
+		.participant-profile img
+			width: 30px;
+
+	.share-links
+		margin-bottom: 40px;
+
+.proposal-options
+	width: 220px;
+	position: absolute;
+	top: 80px;
+	right: spacing;
+	.vote-options
+		margin-bottom: 50px;
+		.vote-option
+			width: 50%;
+			display: inline-block;	
+			color: white;
+			text-transform: uppercase;
+			font-weight: bold;
+			text-align: center;
+			span 
+				padding: 20px;
+				display: block;
+			&.vote-yes
+				background-color: #a4cb53;
+
+			&.vote-no
+				background-color: #d95e59;
+				
+	.vote-box, .results-box
+		border-left: 4px solid #eee;
+		padding-left: 20px;
+		h5 
+			text-transform: uppercase;
+
+/* Comments
+-------------------------------------------------- */
+.comments
+	background: #f9f9f9;
+	border-top: 1px solid #f1f1f1;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	h4 
+		margin-bottom: 30px;
+
+	span
+		margin-right: 20px;
+
+	.comment-form
+		margin-bottom: 50px;
+		textarea
+			width: 500px;
+		
+
+	.comment-list
+		.comment-item
+			.pull-left
+				width: 50px;
+				margin-right: 20px;
+				a.avatar 
+					width: 24px;
+					display: inline-block;
+					img 
+						width: 100%;
+						border-radius: 100px;
+

@@ -3,12 +3,11 @@
   "description": "Homepage page",
   "dependencies": {},
   "development": {},
-  "main": "index.js",
+  "main": "",
   "scripts": [
-    "index.js",
-    "template.js"
+    "index.js"
   ],
   "styles": [
-    "homepage.css"
+    "main.css"
   ]
 }

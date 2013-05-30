@@ -2,7 +2,7 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": { },
-  "local": [ ],
+  "local": [ "homepage" ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
   "images": [ ],
