@@ -30,35 +30,22 @@ require('lib/models')(app);
 require('lib/auth')(app);
 
 /**
- * Homepage
- */
-
-// app.use('/', require('lib/homepage'));
-
-/**
- * SignUp routes
- */
-
-app.use('/signup', require('lib/signup'));
-
-
-/**
  * Tag API Service
  */
 
-app.use(require('lib/tag'));
+app.use('/api', require('lib/tag'));
 
 /**
  * Proposal API Service
  */
 
-app.use(require('lib/proposal'));
+app.use('/api', require('lib/proposal'));
 
 /**
  * Comment API Service
  */
 
-app.use(require('lib/comment'));
+app.use('/api', require('lib/comment'));
 
 /**
  * Mount BootUp
