@@ -33,7 +33,7 @@ require('lib/auth')(app);
  * Homepage
  */
 
-app.use('/', require('lib/homepage'));
+// app.use('/', require('lib/homepage'));
 
 /**
  * SignUp routes
@@ -59,6 +59,12 @@ app.use(require('lib/proposal'));
  */
 
 app.use(require('lib/comment'));
+
+/**
+ * Mount BootUp
+ */
+
+app.use(require('lib/boot'));
 
 /*
  * Start Web server

@@ -1,12 +1,10 @@
 {
   "name": "boot",
   "description": "bootstrap component",
-  "dependencies": {
-    "component/dialog": "*"
-  },
+  "dependencies": { },
   "local": [ ],
   "scripts": [ "boot.js" ],
-  "styles": [ ],
+  "styles": [ "boot.css" ],
   "images": [ ],
   "main": "boot.js"
 }

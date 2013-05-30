@@ -1,0 +1,14 @@
+{
+  "name": "homepage",
+  "description": "Homepage page",
+  "dependencies": {},
+  "development": {},
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "homepage.css"
+  ]
+}
