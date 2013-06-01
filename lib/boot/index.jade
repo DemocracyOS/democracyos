@@ -67,9 +67,9 @@ block content
 		.vote-box
 			h5 Vote
 			.vote-options
-				a(href="").vote-option.vote-yes
+				a(href="#").vote-option.vote-yes
 					span Yes
-				a(href="").vote-option.vote-no
+				a(href="#").vote-option.vote-no
 					span No
 
 		//- h5 Delegations
@@ -100,7 +100,7 @@ block content
 
 
 	.comments
-		form.comment-form(method='post', action='/proposal/' + proposal.id + '/comment')
+		form.comment-form(method='post', action='/api/proposal/' + proposal.id + '/comment')
 			h5 Tu comentario 
 			p 
 				textarea(name="comment[text]")
@@ -115,7 +115,10 @@ block content
 						img(src=comment.author.avatar).avatar
 
 					.media-body
-						h5.media-heading #{comment.author.fullName} said:
+						h5.media-heading
+							| #{comment.author.fullName} 
+							small.ago(data-time=comment.createdAt.toString())
+							small :
 						p=comment.text
 
 
