@@ -2,6 +2,8 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": {
+    "component/dom": "*",
+    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "cristiandouce/timeago": "*"
   },
