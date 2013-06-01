@@ -20,8 +20,8 @@ block content
 		h2=proposal.title
 
 		.meta-data
-			a(href="").meta-item.meta-time 10 days left
-			a(href="").meta-item.meta-location Buenos Aires, Argentina
+			a.meta-item.meta-time(href="#") 10 days left
+			a.meta-item.meta-location(href="#") Buenos Aires, Argentina
 
 			a(href="").meta-item.meta-delegation Delegated on #{proposal.author.fullName}
 			a(href="").meta-item.meta-tag ##{proposal.tag.hash}
@@ -66,7 +66,18 @@ block content
 	.proposal-options
 		.vote-box
 			h5 Vote
-			.vote-options
+			- var hide = ''
+			- if(~proposal.vote.census.indexOf(citizen.id))
+				- hide = 'hide';
+				.meta-data
+					- if(~proposal.vote.positive.indexOf(citizen.id))
+						p.alert.alert-success(style="margin:0;") Has votado a favor de esta propuesta.
+					- else
+						p.alert.alert-error(style="margin:0;") Has votado en contra de esta propuesta.
+					a.meta-item.change-vote(href="#")
+						small Deseo cambiar mi voto.
+
+			.vote-options(class=hide)
 				a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
 					span Yes
 				a.vote-option.vote-no(href="#", data-proposal=proposal.id)
