@@ -76,27 +76,39 @@ block content
 
 		.results-box
 			h5 Results
-			canvas(id="myChart", width="200", height="220")
+			canvas(id="vote-chart", width="200", height="220")
 
-			script 
-				var ctx = document.getElementById("myChart").getContext("2d");
-				var data = [
-					{
-						value: 60,
-						color:"#a4cb53",
-						label: "YES",
-						labelColor: "white",
-						labelAlign: "center"
-					},
-					{
-						value : 40,
-						color : "#d95e59",
-						label: "NO",
-						labelColor: "white",
-						labelAlign: "center"
-					}			
-				]
-				new Chart(ctx).Pie(data);
+			script
+				(function () {
+					var container = document.getElementById('vote-chart');
+					var ctx = container.getContext("2d");
+					var vote = !{JSON.stringify(proposal.vote.toJSON())};
+					var data = [];
+					if (vote.census.length) {
+						data.push({
+							value: vote.positive.length,
+							color: "#a4cb53",
+							label: "YES",
+							labelColor: "white",
+							labelAlign: "center"
+						});
+						data.push({
+							value: vote.negative.length,
+							color: "#d95e59",
+							label: "NO",
+							labelColor: "white",
+							labelAlign: "center"
+						});
+
+						new Chart(ctx).Pie(data);
+					} else {
+						var p = document.createElement('p');
+						p.classList.add('alert');
+						p.classList.add('alert-info');
+						p.innerHTML = "No voting yet."
+						container.parentNode.insertBefore(p,container);
+					}
+				})();
 
 
 	.comments
