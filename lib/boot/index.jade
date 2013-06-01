@@ -23,7 +23,10 @@ block content
 			a.meta-item.meta-time(href="#") 10 days left
 			a.meta-item.meta-location(href="#") Buenos Aires, Argentina
 
-			a(href="").meta-item.meta-delegation Delegated on #{proposal.author.fullName}
+			- if (locals.citizen)
+				a(href="").meta-item.meta-delegation Delegated on #{citizen.fullName}
+			- else
+				span.meta-item.meta-delegation Not delegated yet
 			a(href="").meta-item.meta-tag ##{proposal.tag.hash}
 
 		//- .voting-process
@@ -67,7 +70,7 @@ block content
 		.vote-box
 			h5 Vote
 			- var hide = ''
-			- if(~proposal.vote.census.indexOf(citizen.id))
+			- if(locals.citizen && ~proposal.vote.census.indexOf(citizen.id))
 				- hide = 'hide';
 				.meta-data
 					- if(~proposal.vote.positive.indexOf(citizen.id))
