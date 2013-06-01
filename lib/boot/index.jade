@@ -67,9 +67,9 @@ block content
 		.vote-box
 			h5 Vote
 			.vote-options
-				a(href="#").vote-option.vote-yes
+				a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
 					span Yes
-				a(href="#").vote-option.vote-no
+				a.vote-option.vote-no(href="#", data-proposal=proposal.id)
 					span No
 
 		//- h5 Delegations
