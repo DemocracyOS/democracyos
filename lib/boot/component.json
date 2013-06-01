@@ -2,7 +2,8 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": {
-    "visionmedia/page.js": "*"
+    "visionmedia/page.js": "*",
+    "cristiandouce/timeago": "*"
   },
   "local": [ "homepage" ],
   "scripts": [ "boot.js" ],

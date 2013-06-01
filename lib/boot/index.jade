@@ -8,7 +8,9 @@ block aside
 				li(class=active)
 					a(href="/proposal/"+p.id)
 						span.title=p.title
-						span.created-by Creador por #{p.author.fullName} hace 3 horas
+						span.created-by
+							| Creador por #{p.author.fullName} 
+							span.ago(data-time=p.createdAt.toString())
 		
 
 		
