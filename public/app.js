@@ -4888,13 +4888,14 @@ var page = require('page')
   , timeago = require('timeago');
 
 /**
- * Inicia timeago en castellano
+ * Init `timeago` component with
+ * locale as `es`
  */
 
 timeago('.ago', {lang: 'es'});
 
 /**
- * Votar propuesta
+ * Vote proposal
  */
 
 dom('.vote-box .vote-option').on('click', function (ev) {
@@ -4921,6 +4922,18 @@ dom('.vote-box .vote-option').on('click', function (ev) {
     window.location.reload();
   });
 });
+
+
+/**
+ * Show/Hide voting options
+ */
+
+dom('.vote-box .meta-data .change-vote').on('click', function (ev) {
+  ev.preventDefault();
+  dom('.vote-box .vote-options').toggleClass('hide', false);
+  dom(this).toggleClass('hide', true);
+  dom(this).off('click');
+})
 });
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/boot.js");
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/index.js");
