@@ -1,12 +1,18 @@
 {
   "name": "homepage",
   "description": "Homepage page",
-  "dependencies": {},
+  "dependencies": {
+    "component/domify": "*",
+    "visionmedia/superagent": "*",
+    "visionmedia/page.js": "*"
+  },
   "development": {},
-  "main": "",
-  "scripts": [],
+  "local": [ "citizen", "proposal-article", "proposal-list", "proposal-options" ],
+  "scripts": [
+    "homepage.js"
+  ],
   "styles": [
     "main.css"
   ],
-  "main": ""
+  "main": "homepage.js"
 }
