@@ -1,0 +1,13 @@
+{
+  "name": "proposal-options",
+  "description": "proposal's options view",
+  "dependencies": {
+    "component/domify": "*"
+  },
+  "local": [ ],
+  "scripts": [ "proposal-options.js" ],
+  "templates": [ "options.jade" ],
+  "styles": [ ],
+  "images": [ ],
+  "main": "proposal-options.js"
+}

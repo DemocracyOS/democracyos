@@ -1,0 +1,57 @@
+.proposal-options
+  .vote-box
+    h5 Vote
+    - var hide = ''
+    - if(locals.citizen && ~proposal.vote.census.indexOf(citizen.id))
+      - hide = 'hide';
+      .meta-data
+        - if(~proposal.vote.positive.indexOf(citizen.id))
+          p.alert.alert-success(style="margin:0;") Has votado a favor de esta propuesta.
+        - else
+          p.alert.alert-error(style="margin:0;") Has votado en contra de esta propuesta.
+        a.meta-item.change-vote(href="#")
+          small Deseo cambiar mi voto.
+
+    .vote-options(class=hide)
+      a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
+        span Yes
+      a.vote-option.vote-no(href="#", data-proposal=proposal.id)
+        span No
+
+  //- h5 Delegations
+
+  .results-box
+    h5 Results
+    canvas(id="vote-chart", width="200", height="220")
+
+    script
+      (function () {
+        var container = document.getElementById('vote-chart');
+        var ctx = container.getContext("2d");
+        var vote = !{JSON.stringify(proposal.vote)};
+        var data = [];
+        if (vote.census.length) {
+          data.push({
+            value: vote.positive.length,
+            color: "#a4cb53",
+            label: "YES",
+            labelColor: "white",
+            labelAlign: "center"
+          });
+          data.push({
+            value: vote.negative.length,
+            color: "#d95e59",
+            label: "NO",
+            labelColor: "white",
+            labelAlign: "center"
+          });
+
+          new Chart(ctx).Pie(data);
+        } else {
+          var p = document.createElement('p');
+          p.classList.add('alert');
+          p.classList.add('alert-info');
+          p.innerHTML = "No voting yet."
+          container.parentNode.insertBefore(p,container);
+        }
+      })();
