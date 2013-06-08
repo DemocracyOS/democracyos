@@ -1,0 +1,10 @@
+nav.sidebar-nav
+  ul.nav.navlist
+    - each p in proposals
+      - var active = p._id === proposal._id ? 'active' : '';
+      li(class=active)
+        a(href="/proposal/"+p._id)
+          span.title=p.title
+          span.created-by
+            | Creador por #{p.author.fullName} 
+            span.ago(data-time=p.createdAt.toString())
