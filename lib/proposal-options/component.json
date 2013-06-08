@@ -2,7 +2,8 @@
   "name": "proposal-options",
   "description": "proposal's options view",
   "dependencies": {
-    "component/domify": "*"
+    "component/domify": "*",
+    "cristiandouce/Chart.js": "*"
   },
   "local": [ ],
   "scripts": [ "proposal-options.js" ],
