@@ -3128,6 +3128,196 @@ require.register("visionmedia-page.js/index.js", function(exports, require, modu
 })();
 
 });
+require.register("visionmedia-jade/lib/runtime.js", function(exports, require, module){
+
+/*!
+ * Jade - runtime
+ * Copyright(c) 2010 TJ Holowaychuk <tj@vision-media.ca>
+ * MIT Licensed
+ */
+
+/**
+ * Lame Array.isArray() polyfill for now.
+ */
+
+if (!Array.isArray) {
+  Array.isArray = function(arr){
+    return '[object Array]' == Object.prototype.toString.call(arr);
+  };
+}
+
+/**
+ * Lame Object.keys() polyfill for now.
+ */
+
+if (!Object.keys) {
+  Object.keys = function(obj){
+    var arr = [];
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        arr.push(key);
+      }
+    }
+    return arr;
+  }
+}
+
+/**
+ * Merge two attribute objects giving precedence
+ * to values in object `b`. Classes are special-cased
+ * allowing for arrays and merging/joining appropriately
+ * resulting in a string.
+ *
+ * @param {Object} a
+ * @param {Object} b
+ * @return {Object} a
+ * @api private
+ */
+
+exports.merge = function merge(a, b) {
+  var ac = a['class'];
+  var bc = b['class'];
+
+  if (ac || bc) {
+    ac = ac || [];
+    bc = bc || [];
+    if (!Array.isArray(ac)) ac = [ac];
+    if (!Array.isArray(bc)) bc = [bc];
+    a['class'] = ac.concat(bc).filter(nulls);
+  }
+
+  for (var key in b) {
+    if (key != 'class') {
+      a[key] = b[key];
+    }
+  }
+
+  return a;
+};
+
+/**
+ * Filter null `val`s.
+ *
+ * @param {*} val
+ * @return {Boolean}
+ * @api private
+ */
+
+function nulls(val) {
+  return val != null && val !== '';
+}
+
+/**
+ * join array as classes.
+ *
+ * @param {*} val
+ * @return {String}
+ * @api private
+ */
+
+function joinClasses(val) {
+  return Array.isArray(val) ? val.map(joinClasses).filter(nulls).join(' ') : val;
+}
+
+/**
+ * Render the given attributes object.
+ *
+ * @param {Object} obj
+ * @param {Object} escaped
+ * @return {String}
+ * @api private
+ */
+
+exports.attrs = function attrs(obj, escaped){
+  var buf = []
+    , terse = obj.terse;
+
+  delete obj.terse;
+  var keys = Object.keys(obj)
+    , len = keys.length;
+
+  if (len) {
+    buf.push('');
+    for (var i = 0; i < len; ++i) {
+      var key = keys[i]
+        , val = obj[key];
+
+      if ('boolean' == typeof val || null == val) {
+        if (val) {
+          terse
+            ? buf.push(key)
+            : buf.push(key + '="' + key + '"');
+        }
+      } else if (0 == key.indexOf('data') && 'string' != typeof val) {
+        buf.push(key + "='" + JSON.stringify(val) + "'");
+      } else if ('class' == key) {
+        if (val = exports.escape(joinClasses(val))) {
+          buf.push(key + '="' + val + '"');
+        }
+      } else if (escaped && escaped[key]) {
+        buf.push(key + '="' + exports.escape(val) + '"');
+      } else {
+        buf.push(key + '="' + val + '"');
+      }
+    }
+  }
+
+  return buf.join(' ');
+};
+
+/**
+ * Escape the given string of `html`.
+ *
+ * @param {String} html
+ * @return {String}
+ * @api private
+ */
+
+exports.escape = function escape(html){
+  return String(html)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+};
+
+/**
+ * Re-throw the given `err` in context to the
+ * the jade in `filename` at the given `lineno`.
+ *
+ * @param {Error} err
+ * @param {String} filename
+ * @param {String} lineno
+ * @api private
+ */
+
+exports.rethrow = function rethrow(err, filename, lineno){
+  if (!filename) throw err;
+  if (typeof window != 'undefined') throw err;
+
+  var context = 3
+    , str = require('fs').readFileSync(filename, 'utf8')
+    , lines = str.split('\n')
+    , start = Math.max(lineno - context, 0)
+    , end = Math.min(lines.length, lineno + context);
+
+  // Error context
+  var context = lines.slice(start, end).map(function(line, i){
+    var curr = i + start + 1;
+    return (curr == lineno ? '  > ' : '    ')
+      + curr
+      + '| '
+      + line;
+  }).join('\n');
+
+  // Alter exception message
+  err.path = filename;
+  err.message = (filename || 'Jade') + ':' + lineno
+    + '\n' + context + '\n\n' + err.message;
+  throw err;
+};
+
+});
 require.register("cristiandouce-moment/moment.js", function(exports, require, module){
 // moment.js
 // version : 2.0.0
@@ -4863,7 +5053,487 @@ function updateElement (el) {
   el.innerHTML = moment(el.getAttribute(this.attr)).fromNow();
 }
 });
+require.register("citizen/citizen.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
 
+var request = require('superagent')
+  , Emitter = require('emitter');
+
+/**
+ * Expose citizen
+ */
+
+module.exports = Citizen;
+
+/**
+ * Citizen
+ *
+ * @param {String} path citizen's load path
+ * @return {Citizen} `Citizen` instance
+ * @api public
+ */
+
+function Citizen (path) {
+  if (!(this instanceof Citizen)) {
+    return new Citizen(path);
+  };
+
+  this.$_path = path;
+}
+
+/**
+ * Inherit from `Emitter`
+ */
+
+Emitter(Citizen.prototype);
+
+/**
+ * Loads citizen from path
+ *
+ * @param {String} path citizen's load path
+ * @return {Citizen} `Citizen` instance.
+ * @api public
+ */
+
+Citizen.prototype.load = function(path) {
+  var _this = this;
+  this.$_path = path || this.$_path;
+
+  request
+  .get('/api/citizen/'.concat(this.$_path))
+  .set('Accept', 'application/json')
+  .on('error', _handleRequestError)
+  .end(function(res) {
+    if (!res.ok) return;
+
+    for (var prop in res.body) {
+      if (res.body.hasOwnProperty(prop)) {
+        _this[prop] = res.body[prop]
+      }
+    }
+
+    _this.emit('ready');
+  });
+
+  return this;
+}
+
+/**
+ * Call `fn` once Citizen is
+ * ready from loading
+ *
+ * @param {Function} fn callback fired on ready
+ * @return {Citizen} `Citizen` instance
+ * @api public
+ */
+
+Citizen.prototype.ready = function(fn) {
+  this.once('ready', fn);
+  return this;
+}
+
+/**
+ * Handle error from requests
+ *
+ * @param {Object} err from request
+ * @api private
+ */
+
+function _handleRequestError (err) {
+  console.log(err);
+}
+
+});
+require.register("proposal-article/proposal-article.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
+
+var domify = require('domify')
+  , article = require('./article')
+
+/**
+ * Expose ProposalArticle
+ */
+module.exports = ProposalArticle;
+
+/**
+ * Creates a new proposal-article view
+ * from proposals object.
+ *
+ * @param {Object} proposal proposal's object data
+ * @return {ProposalArticle} `ProposalArticle` instance.
+ * @api public
+ */
+
+function ProposalArticle (proposal) {
+  if (!(this instanceof ProposalArticle)) {
+    return new ProposalArticle(proposal);
+  };
+
+  this.proposal = proposal;
+  this.article = domify(article({ proposal: proposal }))[0];
+}
+
+/**
+ * Render
+ *
+ * @return {NodeElement} a prosal's article
+ * @api public
+ */
+
+ProposalArticle.prototype.render = function() {
+  return this.article;
+}
+
+});
+require.register("proposal-article/article.js", function(exports, require, module){
+module.exports = function anonymous(locals) {
+var buf = [];
+with (locals || {}) {
+buf.push("<article class=\"proposal\"><h2>" + (jade.escape(null == (jade.interp = proposal.title) ? "" : jade.interp)) + "</h2><div class=\"meta-data\"><a href=\"#\" class=\"meta-item meta-time\">10 days left</a><a href=\"#\" class=\"meta-item meta-location\">Buenos Aires, Argentina</a>");
+if (locals.citizen)
+{
+buf.push("<a href=\"\" class=\"meta-item meta-delegation\">Delegated on " + (jade.escape((jade.interp = citizen.fullName) == null ? '' : jade.interp)) + "</a>");
+}
+else
+{
+buf.push("<span class=\"meta-item meta-delegation\">Not delegated yet</span>");
+}
+buf.push("<a href=\"\" class=\"meta-item meta-tag\">#" + (jade.escape((jade.interp = proposal.tag.hash) == null ? '' : jade.interp)) + "</a></div>");
+var lines = proposal.essay.split('\n');
+// iterate lines
+;(function(){
+  var $$obj = lines;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var line = $$obj[$index];
+
+if (line.trim())
+{
+buf.push("<p>" + (jade.escape(null == (jade.interp = line.trim()) ? "" : jade.interp)) + "</p>");
+}
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      if ($$obj.hasOwnProperty($index)){      var line = $$obj[$index];
+
+if (line.trim())
+{
+buf.push("<p>" + (jade.escape(null == (jade.interp = line.trim()) ? "" : jade.interp)) + "</p>");
+}
+      }
+
+    }
+
+  }
+}).call(this);
+
+buf.push("<hr/><footer class=\"footer-notes\"> <h5>Referencias</h5><ol> <li>Referencia 1: http://wikipedia.org</li><li>Referencia 2: http://wikipedia.org</li><li>Referencia 3: http://wikipedia.org</li><li>Referencia 4: http://wikipedia.org</li><li>Referencia 5: http://wikipedia.org</li><li>Referencia 6: http://wikipedia.org</li></ol></footer><div class=\"participants\">");
+if ( 1 === proposal.participants.length )
+{
+buf.push("<span>1 Participant </span>");
+}
+else
+{
+buf.push("<span>" + (jade.escape((jade.interp = proposal.participants.length) == null ? '' : jade.interp)) + " Participants </span>");
+}
+// iterate proposal.participants
+;(function(){
+  var $$obj = proposal.participants;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var participant = $$obj[$index];
+
+buf.push("<a href=\"javascript:void();\" class=\"participant-profile\"><img" + (jade.attrs({ 'src':(participant.avatar), "class": ('avatar') }, {"src":true})) + "/></a>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      if ($$obj.hasOwnProperty($index)){      var participant = $$obj[$index];
+
+buf.push("<a href=\"javascript:void();\" class=\"participant-profile\"><img" + (jade.attrs({ 'src':(participant.avatar), "class": ('avatar') }, {"src":true})) + "/></a>");
+      }
+
+    }
+
+  }
+}).call(this);
+
+buf.push("</div><p class=\"share-links\"><strong>Share: </strong><a href=\"\">Facebook </a><a href=\"\">Twitter </a><a href=\"\">Google Plus</a></p></article>");
+}
+return buf.join("");
+}
+});
+require.register("proposal-list/proposal-list.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
+
+var domify = require('domify')
+  , list = require('./list');
+
+/**
+ * Expose ProposalList.
+ */
+
+module.exports = ProposalList;
+
+/**
+ * Proposal List view
+ *
+ * @param {Array} proposals list of proposals
+ * @param {Object} selected proposal object
+ * @return {ProposalList} `ProposalList` instance.
+ * @api public
+ */
+
+function ProposalList (proposals, selected) {
+  if (!(this instanceof ProposalList)) {
+    return new ProposalList(proposals);
+  }
+
+  this.proposals = proposals;
+  this.list = domify(list({ proposals: proposals, proposal: selected }))[0];
+
+}
+
+/**
+ * Render list
+ *
+ * @return {NodeElement} proposals list
+ * @api public
+ */
+
+ProposalList.prototype.render = function() {
+  return this.list;
+}
+});
+require.register("proposal-list/list.js", function(exports, require, module){
+module.exports = function anonymous(locals) {
+var buf = [];
+with (locals || {}) {
+buf.push("<nav class=\"sidebar-nav\"><ul class=\"nav navlist\">");
+// iterate proposals
+;(function(){
+  var $$obj = proposals;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var p = $$obj[$index];
+
+var active = p._id === proposal._id ? 'active' : '';
+buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      if ($$obj.hasOwnProperty($index)){      var p = $$obj[$index];
+
+var active = p._id === proposal._id ? 'active' : '';
+buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
+      }
+
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul></nav>");
+}
+return buf.join("");
+}
+});
+require.register("proposal-options/proposal-options.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
+
+var domify = require('domify')
+  , options = require('./options');
+
+/**
+ * Expose ProposalOptions.
+ */
+
+module.exports = ProposalOptions;
+
+/**
+ * Proposal Options view
+ *
+ * @param {Array} proposals list of proposals
+ * @param {Object} selected proposal object
+ * @return {ProposalOptions} `ProposalOptions` instance.
+ * @api public
+ */
+
+function ProposalOptions (proposal, citizen) {
+  if (!(this instanceof ProposalOptions)) {
+    return new ProposalOptions(proposals);
+  }
+
+  this.proposal = proposal;
+  this.citizen = citizen;
+  this.options = domify(options({ proposal: proposal, citizen: citizen }))[0];
+
+}
+
+/**
+ * Render options
+ *
+ * @return {NodeElement} proposals options
+ * @api public
+ */
+
+ProposalOptions.prototype.render = function() {
+  return this.options;
+}
+});
+require.register("proposal-options/options.js", function(exports, require, module){
+module.exports = function anonymous(locals) {
+var buf = [];
+with (locals || {}) {
+buf.push("<div class=\"proposal-options\"><div class=\"vote-box\"><h5>Vote</h5>");
+var hide = ''
+if(locals.citizen && ~proposal.vote.census.indexOf(citizen.id))
+{
+hide = 'hide';
+buf.push("<div class=\"meta-data\">");
+if(~proposal.vote.positive.indexOf(citizen.id))
+{
+buf.push("<p style=\"margin:0;\" class=\"alert alert-success\">Has votado a favor de esta propuesta.</p>");
+}
+else
+{
+buf.push("<p style=\"margin:0;\" class=\"alert alert-error\">Has votado en contra de esta propuesta.</p>");
+}
+buf.push("<a href=\"#\" class=\"meta-item change-vote\"><small>Deseo cambiar mi voto.</small></a></div>");
+}
+buf.push("<div" + (jade.attrs({ "class": ('vote-options') + ' ' + (hide) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-yes') }, {"href":true,"data-proposal":true})) + "><span>Yes</span></a><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-no') }, {"href":true,"data-proposal":true})) + "><span>No</span></a></div></div><div class=\"results-box\"><h5>Results</h5><canvas id=\"vote-chart\" width=\"200\" height=\"220\"></canvas><script>(function () {\n  var container = document.getElementById('vote-chart');\n  var ctx = container.getContext(\"2d\");\n  var vote = " + (((jade.interp = JSON.stringify(proposal.vote)) == null ? '' : jade.interp)) + ";\n  var data = [];\n  if (vote.census.length) {\n    data.push({\n      value: vote.positive.length,\n      color: \"#a4cb53\",\n      label: \"YES\",\n      labelColor: \"white\",\n      labelAlign: \"center\"\n    });\n    data.push({\n      value: vote.negative.length,\n      color: \"#d95e59\",\n      label: \"NO\",\n      labelColor: \"white\",\n      labelAlign: \"center\"\n    });\n    \n    new Chart(ctx).Pie(data);\n  } else {\n    var p = document.createElement('p');\n    p.classList.add('alert');\n    p.classList.add('alert-info');\n    p.innerHTML = \"No voting yet.\"\n    container.parentNode.insertBefore(p,container);\n  }\n})();</script></div></div>");
+}
+return buf.join("");
+}
+});
+require.register("homepage/homepage.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
+
+var page = require('page')
+  , request = require('superagent')
+  , domify = require('domify')
+  , Citizen = require('citizen')
+  , Article = require('proposal-article')
+  , List = require('proposal-list')
+  , Options = require('proposal-options');
+
+// Routing.
+page('/home', identify, load, function(ctx) {
+  // Build page's content
+  var list = new List(ctx.proposals, ctx.proposal);
+  var article = new Article(ctx.proposal); // !!MUST be aware of citizen's data too
+  var options = new Options(ctx.proposal, ctx.citizen);
+
+  // Render page's content
+  replaceWith('article.proposal', article.render());
+  replaceWith('nav.sidebar-nav', list.render());
+  replaceWith('.proposal-options', options.render());
+});
+
+/**
+ * Load citizen's data
+ *
+ * @param {Object} ctx page's context
+ * @param {Function} next callback after load
+ * @api private
+ */
+
+function identify (ctx, next) {
+  var citizen = new Citizen();
+  ctx.citizen = citizen;
+  citizen.load('me'); // What would happen on error?
+  citizen.ready(next);
+}
+
+/**
+ * Load homepage data
+ *
+ * @param {Object} ctx page's context
+ * @param {Function} next callback after load
+ * @api private
+ */
+
+function load (ctx, next) {
+  request
+  .get('/api/proposal/all')
+  .set('Accept', 'application/json')
+  .on('error', _handleRequestError)
+  .end(function(res) {
+    if (!res.ok) return;
+
+    ctx.proposals = res.body || [proposalExample];
+    ctx.proposal = res.body[0] || proposalExample;
+
+    next();
+  });
+}
+
+/**
+ * Handle error from requests
+ *
+ * @param {Object} err from request
+ * @api private
+ */
+
+function _handleRequestError (err) {
+  console.log(err);
+}
+
+/**
+ * replaceWith
+ *
+ * @param {String} selector query string selector
+ * @param {NodeElement} el `NodeElement` to replace with match
+ * @api private
+ */
+
+function replaceWith (selector, el) {
+  var match = document.querySelector(selector);
+  if (match) {
+    match.parentNode.replaceChild(el, match);
+  };
+}
+
+/**
+ * Mocked Proposal Object
+ */
+var proposalExample = {
+  title: "Title Example",
+  author: { fullName: "Ricardo Rauch", avatar: "https://si0.twimg.com/profile_images/2583335118/yts2np89ifncbi0j3vgm.jpeg" },
+  essay: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.",
+  tag: { hash: "Tag" },
+  participants: [{ fullName: "Ricardo Rauch", avatar: "https://si0.twimg.com/profile_images/2583335118/yts2np89ifncbi0j3vgm.jpeg" },],
+  createdAt: new Date(),
+  vote: {
+    census: [],
+    positive: [],
+    negative: [],
+    toJSON: function() {
+      return {census:[1,2,3],positive:[1,2],negative:[3]}
+    }
+  } 
+};
+
+
+});
 require.register("boot/boot.js", function(exports, require, module){
 /**
  * This JS is only a firs release while testing
@@ -4888,11 +5558,27 @@ var page = require('page')
   , timeago = require('timeago');
 
 /**
+ * Expose Jade as global var
+ * !! Ugly but needed until full
+ * component based development
+ * migration.
+ *
+ */
+
+jade = require("jade");
+
+/**
+ * Homepage module.
+ */
+
+require('homepage');
+
+/**
  * Init `timeago` component with
  * locale as `es`
  */
 
-timeago('.ago', {lang: 'es'});
+timeago('.ago', { lang: 'es', interval: 10 });
 
 /**
  * Vote proposal
@@ -4940,7 +5626,21 @@ dom('.vote-box .meta-data .change-vote').on('click', function (ev) {
   dom('.vote-box .vote-options').toggleClass('hide', false);
   dom(this).toggleClass('hide', true);
   dom(this).off('click');
-})
+});
+
+/**
+ * Render not found page.
+ */
+
+page('*', function(ctx, next) {
+  console.log('Should render Not found.');
+});
+
+/**
+ * Init page.js
+ */
+
+page();
 });
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/boot.js");
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/index.js");
@@ -4986,6 +5686,10 @@ require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/in
 
 require.alias("visionmedia-page.js/index.js", "boot/deps/page/index.js");
 
+require.alias("visionmedia-jade/lib/runtime.js", "boot/deps/jade/lib/runtime.js");
+require.alias("visionmedia-jade/lib/runtime.js", "boot/deps/jade/index.js");
+require.alias("visionmedia-jade/lib/runtime.js", "visionmedia-jade/index.js");
+
 require.alias("cristiandouce-timeago/index.js", "boot/deps/timeago/index.js");
 require.alias("cristiandouce-timeago/index.js", "boot/deps/timeago/index.js");
 require.alias("cristiandouce-moment/moment.js", "cristiandouce-timeago/deps/moment/moment.js");
@@ -4995,6 +5699,56 @@ require.alias("cristiandouce-moment/moment.js", "cristiandouce-moment/index.js")
 
 require.alias("cristiandouce-timeago/index.js", "cristiandouce-timeago/index.js");
 
+require.alias("homepage/homepage.js", "boot/deps/homepage/homepage.js");
+require.alias("homepage/homepage.js", "boot/deps/homepage/index.js");
+require.alias("component-domify/index.js", "homepage/deps/domify/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/lib/client.js");
+require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/index.js");
+require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
+
+require.alias("visionmedia-page.js/index.js", "homepage/deps/page/index.js");
+
+require.alias("citizen/citizen.js", "homepage/deps/citizen/citizen.js");
+require.alias("citizen/citizen.js", "homepage/deps/citizen/index.js");
+require.alias("component-emitter/index.js", "citizen/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "citizen/deps/superagent/lib/client.js");
+require.alias("visionmedia-superagent/lib/client.js", "citizen/deps/superagent/index.js");
+require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
+
+require.alias("citizen/citizen.js", "citizen/index.js");
+
+require.alias("proposal-article/proposal-article.js", "homepage/deps/proposal-article/proposal-article.js");
+require.alias("proposal-article/proposal-article.js", "homepage/deps/proposal-article/index.js");
+require.alias("component-domify/index.js", "proposal-article/deps/domify/index.js");
+
+require.alias("proposal-article/proposal-article.js", "proposal-article/index.js");
+
+require.alias("proposal-list/proposal-list.js", "homepage/deps/proposal-list/proposal-list.js");
+require.alias("proposal-list/proposal-list.js", "homepage/deps/proposal-list/index.js");
+require.alias("component-domify/index.js", "proposal-list/deps/domify/index.js");
+
+require.alias("proposal-list/proposal-list.js", "proposal-list/index.js");
+
+require.alias("proposal-options/proposal-options.js", "homepage/deps/proposal-options/proposal-options.js");
+require.alias("proposal-options/proposal-options.js", "homepage/deps/proposal-options/index.js");
+require.alias("component-domify/index.js", "proposal-options/deps/domify/index.js");
+
+require.alias("proposal-options/proposal-options.js", "proposal-options/index.js");
+
+require.alias("homepage/homepage.js", "homepage/index.js");
 
 require.alias("boot/boot.js", "boot/index.js");
 
