@@ -92,39 +92,6 @@ block content
 			h5 Results
 			canvas(id="vote-chart", width="200", height="220")
 
-			script
-				(function () {
-					var container = document.getElementById('vote-chart');
-					var ctx = container.getContext("2d");
-					var vote = !{JSON.stringify(proposal.vote.toJSON())};
-					var data = [];
-					if (vote.census.length) {
-						data.push({
-							value: vote.positive.length,
-							color: "#a4cb53",
-							label: "YES",
-							labelColor: "white",
-							labelAlign: "center"
-						});
-						data.push({
-							value: vote.negative.length,
-							color: "#d95e59",
-							label: "NO",
-							labelColor: "white",
-							labelAlign: "center"
-						});
-
-						new Chart(ctx).Pie(data);
-					} else {
-						var p = document.createElement('p');
-						p.classList.add('alert');
-						p.classList.add('alert-info');
-						p.innerHTML = "No voting yet."
-						container.parentNode.insertBefore(p,container);
-					}
-				})();
-
-
 	.comments
 		form.comment-form(method='post', action='/api/proposal/' + proposal.id + '/comment')
 			h5 Tu comentario 
