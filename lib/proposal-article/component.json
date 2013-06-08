@@ -1,0 +1,13 @@
+{
+  "name": "proposal-article",
+  "description": "proposal's article view",
+  "dependencies": {
+    "component/domify": "*"
+  },
+  "local": [ ],
+  "scripts": [ "proposal-article.js" ],
+  "templates": [ "article.jade" ],
+  "styles": [ ],
+  "images": [ ],
+  "main": "proposal-article.js"
+}

@@ -1,0 +1,49 @@
+article.proposal
+  h2=proposal.title
+
+  .meta-data
+    a.meta-item.meta-time(href="#") 10 days left
+    a.meta-item.meta-location(href="#") Buenos Aires, Argentina
+
+    - if (locals.citizen)
+      a(href="").meta-item.meta-delegation Delegated on #{citizen.fullName}
+    - else
+      span.meta-item.meta-delegation Not delegated yet
+    a(href="").meta-item.meta-tag ##{proposal.tag.hash}
+
+  //- .voting-process
+    //- span.
+
+  //- Mejorar esto!
+  - var lines = proposal.essay.split('\n');
+  - each line in lines
+    - if (line.trim())
+      p=line.trim()
+
+  hr 
+
+  footer.footer-notes  
+    h5 Referencias
+    ol 
+      li Referencia 1: http://wikipedia.org
+      li Referencia 2: http://wikipedia.org
+      li Referencia 3: http://wikipedia.org
+      li Referencia 4: http://wikipedia.org
+      li Referencia 5: http://wikipedia.org
+      li Referencia 6: http://wikipedia.org
+
+  .participants
+    - if ( 1 === proposal.participants.length )
+      span 1 Participant 
+    - else
+      span #{proposal.participants.length} Participants 
+
+    - each participant in proposal.participants
+      a(href="javascript:void();").participant-profile
+        img(src=participant.avatar).avatar
+
+  p.share-links
+    strong Share: 
+    a(href="") Facebook 
+    a(href="") Twitter 
+    a(href="") Google Plus
