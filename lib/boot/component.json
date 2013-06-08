@@ -5,6 +5,7 @@
     "component/dom": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
+    "visionmedia/jade": "*",
     "cristiandouce/timeago": "*"
   },
   "local": [ "homepage" ],
