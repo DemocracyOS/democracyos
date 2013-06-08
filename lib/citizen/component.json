@@ -1,0 +1,14 @@
+{
+  "name": "citizen",
+  "description": "citizen",
+  "dependencies": {
+    "component/emitter": "*",
+    "visionmedia/superagent": "*"
+  },
+  "local": [ ],
+  "scripts": [ "citizen.js" ],
+  "templates": [ ],
+  "styles": [ ],
+  "images": [ ],
+  "main": "citizen.js"
+}
