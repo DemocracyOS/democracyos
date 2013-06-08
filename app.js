@@ -48,6 +48,12 @@ app.use('/api', require('lib/proposal'));
 app.use('/api', require('lib/comment'));
 
 /**
+ * Citizen API Service
+ */
+
+app.use('/api', require('lib/citizen'));
+
+/**
  * Mount BootUp
  */
 
