@@ -5146,6 +5146,86 @@ function _handleRequestError (err) {
 }
 
 });
+require.register("proposal-list/proposal-list.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
+
+var domify = require('domify')
+  , list = require('./list');
+
+/**
+ * Expose ProposalList.
+ */
+
+module.exports = ProposalList;
+
+/**
+ * Proposal List view
+ *
+ * @param {Array} proposals list of proposals
+ * @param {Object} selected proposal object
+ * @return {ProposalList} `ProposalList` instance.
+ * @api public
+ */
+
+function ProposalList (proposals, selected) {
+  if (!(this instanceof ProposalList)) {
+    return new ProposalList(proposals);
+  }
+
+  this.proposals = proposals;
+  this.list = domify(list({ proposals: proposals, proposal: selected }))[0];
+
+}
+
+/**
+ * Render list
+ *
+ * @return {NodeElement} proposals list
+ * @api public
+ */
+
+ProposalList.prototype.render = function() {
+  return this.list;
+}
+});
+require.register("proposal-list/list.js", function(exports, require, module){
+module.exports = function anonymous(locals) {
+var buf = [];
+with (locals || {}) {
+buf.push("<nav class=\"sidebar-nav\"><ul class=\"nav navlist\">");
+// iterate proposals
+;(function(){
+  var $$obj = proposals;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var p = $$obj[$index];
+
+var active = p._id === proposal._id ? 'active' : '';
+buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      if ($$obj.hasOwnProperty($index)){      var p = $$obj[$index];
+
+var active = p._id === proposal._id ? 'active' : '';
+buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
+      }
+
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul></nav>");
+}
+return buf.join("");
+}
+});
 require.register("proposal-article/proposal-article.js", function(exports, require, module){
 /**
  * Module dependencies.
@@ -5272,85 +5352,245 @@ buf.push("</div><p class=\"share-links\"><strong>Share: </strong><a href=\"\">Fa
 return buf.join("");
 }
 });
-require.register("proposal-list/proposal-list.js", function(exports, require, module){
+require.register("component-event-manager/index.js", function(exports, require, module){
+
+
+/**
+ * Expose `EventManager`.
+ */
+
+module.exports = EventManager;
+
+/**
+ * Initialize an `EventManager` with the given
+ * `target` object which events will be bound to,
+ * and the `obj` which will receive method calls.
+ *
+ * @param {Object} target
+ * @param {Object} obj
+ * @api public
+ */
+
+function EventManager(target, obj) {
+  this.target = target;
+  this.obj = obj;
+  this._bindings = {};
+}
+
+/**
+ * Register bind function.
+ *
+ * @param {Function} fn
+ * @return {EventManager} self
+ * @api public
+ */
+
+EventManager.prototype.onbind = function(fn){
+  this._bind = fn;
+  return this;
+};
+
+/**
+ * Register unbind function.
+ *
+ * @param {Function} fn
+ * @return {EventManager} self
+ * @api public
+ */
+
+EventManager.prototype.onunbind = function(fn){
+  this._unbind = fn;
+  return this;
+};
+
+/**
+ * Bind to `event` with optional `method` name.
+ * When `method` is undefined it becomes `event`
+ * with the "on" prefix.
+ *
+ *    events.bind('login') // implies "onlogin"
+ *    events.bind('login', 'onLogin')
+ *
+ * @param {String} event
+ * @param {String} [method]
+ * @return {Function} callback
+ * @api public
+ */
+
+EventManager.prototype.bind = function(event, method){
+  var fn = this.addBinding.apply(this, arguments);
+  if (this._onbind) this._onbind(event, method, fn);
+  this._bind(event, fn);
+  return fn;
+};
+
+/**
+ * Add event binding.
+ *
+ * @param {String} event
+ * @param {String} method
+ * @return {Function} callback
+ * @api private
+ */
+
+EventManager.prototype.addBinding = function(event, method){
+  var obj = this.obj;
+  var method = method || 'on' + event;
+  var args = [].slice.call(arguments, 2);
+
+  // callback
+  function callback() {
+    var a = [].slice.call(arguments).concat(args);
+    obj[method].apply(obj, a);
+  }
+
+  // subscription
+  this._bindings[event] = this._bindings[event] || {};
+  this._bindings[event][method] = callback;
+
+  return callback;
+};
+
+/**
+ * Unbind a single binding, all bindings for `event`,
+ * or all bindings within the manager.
+ *
+ *     evennts.unbind('login', 'onLogin')
+ *     evennts.unbind('login')
+ *     evennts.unbind()
+ *
+ * @param {String} [event]
+ * @param {String} [method]
+ * @return {Function} callback
+ * @api public
+ */
+
+EventManager.prototype.unbind = function(event, method){
+  if (0 == arguments.length) return this.unbindAll();
+  if (1 == arguments.length) return this.unbindAllOf(event);
+  var fn = this._bindings[event][method];
+  if (this._onunbind) this._onunbind(event, method, fn);
+  this._unbind(event, fn);
+  return fn;
+};
+
+/**
+ * Unbind all events.
+ *
+ * @api private
+ */
+
+EventManager.prototype.unbindAll = function(){
+  for (var event in this._bindings) {
+    this.unbindAllOf(event);
+  }
+};
+
+/**
+ * Unbind all events for `event`.
+ *
+ * @param {String} event
+ * @api private
+ */
+
+EventManager.prototype.unbindAllOf = function(event){
+  var bindings = this._bindings[event];
+  if (!bindings) return;
+  for (var method in bindings) {
+    this.unbind(event, method);
+  }
+};
+
+});
+require.register("component-delegates/index.js", function(exports, require, module){
+
 /**
  * Module dependencies.
  */
 
-var domify = require('domify')
-  , list = require('./list');
+var Manager = require('event-manager')
+  , delegate = require('delegate')
+  , unbind = Manager.prototype.unbind
+  , bind = Manager.prototype.bind
 
 /**
- * Expose ProposalList.
+ * Expose `DelegateManager`.
  */
 
-module.exports = ProposalList;
+module.exports = DelegateManager;
 
 /**
- * Proposal List view
+ * Initialize a new DelegateManager.
  *
- * @param {Array} proposals list of proposals
- * @param {Object} selected proposal object
- * @return {ProposalList} `ProposalList` instance.
+ * TODO: this abstract isn't great at all,
+ * gets pretty leaky once we need to introduce
+ * some additional logic to .bind(), rework this
+ *
  * @api public
  */
 
-function ProposalList (proposals, selected) {
-  if (!(this instanceof ProposalList)) {
-    return new ProposalList(proposals);
-  }
+function DelegateManager(target, obj) {
+  if (!(this instanceof DelegateManager)) return new DelegateManager(target, obj);
+  Manager.call(this, target, obj);
 
-  this.proposals = proposals;
-  this.list = domify(list({ proposals: proposals, proposal: selected }))[0];
+  this.onbind(function(name, fn){
+    fn.callback = delegate.bind(target, fn.selector, name, fn);
+  });
 
+  this.onunbind(function(name, fn){
+    // TODO: selector support here as well...
+    // needs updating in delegate
+    delegate.unbind(target, name, fn.callback);
+  });
 }
 
 /**
- * Render list
- *
- * @return {NodeElement} proposals list
- * @api public
+ * Inherit from `Manager.prototype`.
  */
 
-ProposalList.prototype.render = function() {
-  return this.list;
+DelegateManager.prototype.__proto__ = Manager.prototype;
+
+/**
+ * Onbind event to expose selector.
+ */
+
+DelegateManager.prototype._onbind = function(event, method, fn){
+  fn.selector = this.event.selector;
+};
+
+/**
+ * Onunbind event to expose selector.
+ */
+
+DelegateManager.prototype._onunbind = function(event, method, fn){
+  fn.selector = this.event.selector;
+};
+
+/**
+ * Proxy bind to allow "<event> <selector>" syntax.
+ */
+
+DelegateManager.prototype.bind = function(str, method){
+  var event = this.event = parse(str);
+  var args = [event.name].concat([].slice.call(arguments, 1));
+  var fn = bind.apply(this, args);
+};
+
+/**
+ * Parse event / selector string.
+ *
+ * @param {String} string
+ * @return {Object}
+ * @api private
+ */
+
+function parse(str) {
+  var parts = str.split(' ');
+  var event = parts.shift();
+  var selector = parts.join(' ');
+  return { name: event, selector: selector };
 }
-});
-require.register("proposal-list/list.js", function(exports, require, module){
-module.exports = function anonymous(locals) {
-var buf = [];
-with (locals || {}) {
-buf.push("<nav class=\"sidebar-nav\"><ul class=\"nav navlist\">");
-// iterate proposals
-;(function(){
-  var $$obj = proposals;
-  if ('number' == typeof $$obj.length) {
 
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var p = $$obj[$index];
-
-var active = p._id === proposal._id ? 'active' : '';
-buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
-    }
-
-  } else {
-    var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      if ($$obj.hasOwnProperty($index)){      var p = $$obj[$index];
-
-var active = p._id === proposal._id ? 'active' : '';
-buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
-      }
-
-    }
-
-  }
-}).call(this);
-
-buf.push("</ul></nav>");
-}
-return buf.join("");
-}
 });
 require.register("cristiandouce-Chart.js/Chart.js", function(exports, require, module){
 /*!
@@ -7131,6 +7371,9 @@ require.register("proposal-options/proposal-options.js", function(exports, requi
  */
 
 var domify = require('domify')
+  , delegates = require('delegates')
+  , classes = require('classes')
+  , request = require('superagent')
   , options = require('./options')
   , Chart = require('Chart.js');
 
@@ -7157,10 +7400,91 @@ function ProposalOptions (proposal, citizen) {
   this.proposal = proposal;
   this.citizen = citizen;
   this.options = domify(options({ proposal: proposal, citizen: citizen }))[0];
+  this.events = delegates(this.options, this);
+  this.events.bind('click a.change-vote small', 'showvote');
+  this.events.bind('click .vote-box .vote-option span', 'vote');
+}
 
-  var chartContainer = this.options.querySelector('#vote-chart');
-  var context = chartContainer.getContext('2d');
-  var vote = proposal.vote;
+/**
+ * Show voting options
+ *
+ * @param {Object} ev event
+ * @api private
+ */
+
+ProposalOptions.prototype.showvote = function(ev) {
+  ev.preventDefault();
+
+  var voteOptions = this.options.querySelector('.vote-box .vote-options');
+  var voteChange = this.options.querySelector('a.change-vote');
+
+  classes(voteOptions).toggle('hide', false);
+  classes(voteChange).toggle('hide', true);
+}
+
+/**
+ * Vote for option
+ *
+ * @param {Object} ev event
+ * @api private
+ */
+
+ProposalOptions.prototype.vote = function(ev) {
+  ev.preventDefault();
+
+  var target = ev.target.parentNode
+    , id = target.getAttribute('data-proposal')
+    , value;
+
+  if (classes(target).has('vote-no')) {
+    value = 'negative';
+  } else if (classes(target).has('vote-yes')) {
+    value = 'positive';
+  }
+
+  request
+  .post('/api/proposal/:id/vote'.replace(':id', id))
+  .set('Accept', 'application/json')
+  .send({value:value})
+  .end(function (err, res) {
+    if (err) {
+      console.log(err);
+      return;
+    };
+
+    if (res.body.error) {
+      console.log(res.body.error);
+      if (res.body.action && res.body.action.redirect) {
+        return window.location.replace(res.body.action.redirect);
+      };
+    }
+    // reload location.
+    window.location.reload();
+  });
+}
+
+/**
+ * Render options
+ *
+ * @return {NodeElement} proposals options
+ * @api public
+ */
+
+ProposalOptions.prototype.render = function() {
+  this.renderChart();
+  return this.options;
+}
+
+/**
+ * Render chart into options block
+ *
+ * @return {ProposalOptions} `ProposalOptions` instance.
+ * @api public
+ */
+
+ProposalOptions.prototype.renderChart = function(arguments) {
+  var container = this.options.querySelector('#vote-chart');
+  var vote = this.proposal.vote;
   var data = [];
 
   if (vote.census.length) {
@@ -7179,25 +7503,14 @@ function ProposalOptions (proposal, citizen) {
       labelAlign: "center"
     });
 
-    new Chart(context).Pie(data);
+    new Chart(container.getContext('2d')).Pie(data);
   } else {
     var p = document.createElement('p');
     p.classList.add('alert');
     p.classList.add('alert-info');
     p.innerHTML = "No voting yet."
-    container.parentNode.insertBefore(p,container);
+    container.parentNode.insertBefore(p, container);
   }
-}
-
-/**
- * Render options
- *
- * @return {NodeElement} proposals options
- * @api public
- */
-
-ProposalOptions.prototype.render = function() {
-  return this.options;
 }
 });
 require.register("proposal-options/options.js", function(exports, require, module){
@@ -7220,7 +7533,87 @@ buf.push("<p style=\"margin:0;\" class=\"alert alert-error\">Has votado en contr
 }
 buf.push("<a href=\"#\" class=\"meta-item change-vote\"><small>Deseo cambiar mi voto.</small></a></div>");
 }
-buf.push("<div" + (jade.attrs({ "class": ('vote-options') + ' ' + (hide) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-yes') }, {"href":true,"data-proposal":true})) + "><span>Yes</span></a><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-no') }, {"href":true,"data-proposal":true})) + "><span>No</span></a></div></div><div class=\"results-box\"><h5>Results</h5><canvas id=\"vote-chart\" width=\"200\" height=\"220\"></canvas><script>(function () {\n  var container = document.getElementById('vote-chart');\n  var ctx = container.getContext(\"2d\");\n  var vote = " + (((jade.interp = JSON.stringify(proposal.vote)) == null ? '' : jade.interp)) + ";\n  var data = [];\n  if (vote.census.length) {\n    data.push({\n      value: vote.positive.length,\n      color: \"#a4cb53\",\n      label: \"YES\",\n      labelColor: \"white\",\n      labelAlign: \"center\"\n    });\n    data.push({\n      value: vote.negative.length,\n      color: \"#d95e59\",\n      label: \"NO\",\n      labelColor: \"white\",\n      labelAlign: \"center\"\n    });\n    \n    new Chart(ctx).Pie(data);\n  } else {\n    var p = document.createElement('p');\n    p.classList.add('alert');\n    p.classList.add('alert-info');\n    p.innerHTML = \"No voting yet.\"\n    container.parentNode.insertBefore(p,container);\n  }\n})();</script></div></div>");
+buf.push("<div" + (jade.attrs({ "class": ('vote-options') + ' ' + (hide) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-yes') }, {"href":true,"data-proposal":true})) + "><span>Yes</span></a><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-no') }, {"href":true,"data-proposal":true})) + "><span>No</span></a></div></div><div class=\"results-box\"><h5>Results</h5><canvas id=\"vote-chart\" width=\"200\" height=\"220\"></canvas></div></div>");
+}
+return buf.join("");
+}
+});
+require.register("proposal-comments/proposal-comments.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
+
+var domify = require('domify')
+  , comments = require('./comments');
+
+/**
+ * Expose ProposalComments.
+ */
+
+module.exports = ProposalComments;
+
+/**
+ * Proposal Comments view
+ *
+ * @param {Object} proposal for comments query
+ * @param {Array} replies comments replied
+ * @return {ProposalComments} `ProposalComments` instance.
+ * @api public
+ */
+
+function ProposalComments (proposal, replies) {
+  if (!(this instanceof ProposalComments)) {
+    return new ProposalComments(proposal);
+  };
+
+  this.proposal = proposal;
+  this.comments = domify(comments({ proposal: proposal, comments: replies }))[0];
+
+}
+
+/**
+ * Render proposal comments
+ * 
+ * @return {ProposalComments} `ProposalComments` instance.
+ * @api public
+ */
+
+ProposalComments.prototype.render = function() {
+  return this.comments;
+}
+
+
+});
+require.register("proposal-comments/comments.js", function(exports, require, module){
+module.exports = function anonymous(locals) {
+var buf = [];
+with (locals || {}) {
+buf.push("<div class=\"comments\"><form" + (jade.attrs({ 'method':('post'), 'action':('/api/proposal/' + proposal.id + '/comment'), "class": ('comment-form') }, {"method":true,"action":true})) + "><h5>Tu comentario </h5><p> <textarea name=\"comment[text]\"></textarea></p><input type=\"submit\" value=\"Submit Comment\" class=\"btn\"/></form><h4>Comments </h4><ul class=\"media-list comment-list\">");
+// iterate comments
+;(function(){
+  var $$obj = comments;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var comment = $$obj[$index];
+
+buf.push("<li class=\"media comment-item\"><a href=\"javascript:void();\" class=\"pull-left\"><img" + (jade.attrs({ 'src':(comment.author.avatar), "class": ('avatar') }, {"src":true})) + "/></a><div class=\"media-body\"><h5 class=\"media-heading\">" + (jade.escape((jade.interp = comment.author.fullName) == null ? '' : jade.interp)) + " <small" + (jade.attrs({ 'data-time':(comment.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></small><small>:</small></h5><p>" + (jade.escape(null == (jade.interp = comment.text) ? "" : jade.interp)) + "</p></div></li>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      if ($$obj.hasOwnProperty($index)){      var comment = $$obj[$index];
+
+buf.push("<li class=\"media comment-item\"><a href=\"javascript:void();\" class=\"pull-left\"><img" + (jade.attrs({ 'src':(comment.author.avatar), "class": ('avatar') }, {"src":true})) + "/></a><div class=\"media-body\"><h5 class=\"media-heading\">" + (jade.escape((jade.interp = comment.author.fullName) == null ? '' : jade.interp)) + " <small" + (jade.attrs({ 'data-time':(comment.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></small><small>:</small></h5><p>" + (jade.escape(null == (jade.interp = comment.text) ? "" : jade.interp)) + "</p></div></li>");
+      }
+
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul></div>");
 }
 return buf.join("");
 }
@@ -7233,22 +7626,26 @@ require.register("homepage/homepage.js", function(exports, require, module){
 var page = require('page')
   , request = require('superagent')
   , domify = require('domify')
+  , dom = require('dom')
   , Citizen = require('citizen')
   , Article = require('proposal-article')
   , List = require('proposal-list')
-  , Options = require('proposal-options');
+  , Options = require('proposal-options')
+  , Comments = require('proposal-comments');
 
 // Routing.
-page('/home', identify, load, function(ctx) {
+page('/home', identify, load, getComments, function(ctx) {
   // Build page's content
   var list = new List(ctx.proposals, ctx.proposal);
   var article = new Article(ctx.proposal); // !!MUST be aware of citizen's data too
   var options = new Options(ctx.proposal, ctx.citizen);
+  var comments = new Comments(ctx.proposal, ctx.comments);
 
   // Render page's content
-  replaceWith('article.proposal', article.render());
   replaceWith('nav.sidebar-nav', list.render());
+  replaceWith('article.proposal', article.render());
   replaceWith('.proposal-options', options.render());
+  replaceWith('.comments', comments.render());
 });
 
 /**
@@ -7290,6 +7687,27 @@ function load (ctx, next) {
 }
 
 /**
+ * Load comments from proposal
+ *
+ * @param {Object} ctx page's context
+ * @param {Function} next callback after load
+ * @api private
+ */
+
+function getComments (ctx, next) {
+  request
+  .get('/api/proposal/:id/comments'.replace(':id', ctx.proposal.id))
+  .set('Accept', 'application/json')
+  .on('error', _handleRequestError)
+  .end(function(res) {
+    if (!res.ok) return;
+
+    ctx.comments = res.body || commentsExample;
+
+    next();
+  });
+}
+/**
  * Handle error from requests
  *
  * @param {Object} err from request
@@ -7318,6 +7736,7 @@ function replaceWith (selector, el) {
 /**
  * Mocked Proposal Object
  */
+
 var proposalExample = {
   title: "Title Example",
   author: { fullName: "Ricardo Rauch", avatar: "https://si0.twimg.com/profile_images/2583335118/yts2np89ifncbi0j3vgm.jpeg" },
@@ -7335,6 +7754,15 @@ var proposalExample = {
   } 
 };
 
+/**
+ * Mocked Comments Array
+ */
+
+var commentsExample = [{
+  author: proposalExample.author,
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sodales mi. Nullam non nisi sit amet elit interdum pellentesque. Curabitur lobortis neque eu turpis dictum laoreet.",
+  createdAt: new Date()
+}];
 
 });
 require.register("boot/boot.js", function(exports, require, module){
@@ -7382,54 +7810,6 @@ require('homepage');
  */
 
 timeago('.ago', { lang: 'es', interval: 10 });
-
-/**
- * Vote proposal
- */
-
-dom('.vote-box .vote-option').on('click', function (ev) {
-  ev.preventDefault();
-  var id = this.getAttribute('data-proposal')
-    , value;
-
-  if (dom(this).hasClass('vote-no')) {
-    value = 'negative';
-  } else if (dom(this).hasClass('vote-yes')) {
-    value = 'positive';
-  }
-
-  request
-  .post('/api/proposal/:id/vote'.replace(':id', id))
-  .set('Accept', 'application/json')
-  .send({value:value})
-  .end(function (err, res) {
-    if (err) {
-      console.log(err);
-      return;
-    };
-
-    if (res.body.error) {
-      console.log(res.body.error);
-      if (res.body.action && res.body.action.redirect) {
-        return window.location.replace(res.body.action.redirect);
-      };
-    }
-    // reload location.
-    window.location.reload();
-  });
-});
-
-
-/**
- * Show/Hide voting options
- */
-
-dom('.vote-box .meta-data .change-vote').on('click', function (ev) {
-  ev.preventDefault();
-  dom('.vote-box .vote-options').toggleClass('hide', false);
-  dom(this).toggleClass('hide', true);
-  dom(this).off('click');
-});
 
 /**
  * Render not found page.
@@ -7506,6 +7886,36 @@ require.alias("homepage/homepage.js", "boot/deps/homepage/homepage.js");
 require.alias("homepage/homepage.js", "boot/deps/homepage/index.js");
 require.alias("component-domify/index.js", "homepage/deps/domify/index.js");
 
+require.alias("component-dom/index.js", "homepage/deps/dom/index.js");
+require.alias("component-type/index.js", "component-dom/deps/type/index.js");
+
+require.alias("component-event/index.js", "component-dom/deps/event/index.js");
+
+require.alias("component-delegate/index.js", "component-dom/deps/delegate/index.js");
+require.alias("component-matches-selector/index.js", "component-delegate/deps/matches-selector/index.js");
+require.alias("component-query/index.js", "component-matches-selector/deps/query/index.js");
+
+require.alias("component-event/index.js", "component-delegate/deps/event/index.js");
+
+require.alias("component-indexof/index.js", "component-dom/deps/indexof/index.js");
+
+require.alias("component-domify/index.js", "component-dom/deps/domify/index.js");
+
+require.alias("component-classes/index.js", "component-dom/deps/classes/index.js");
+require.alias("component-indexof/index.js", "component-classes/deps/indexof/index.js");
+
+require.alias("component-css/index.js", "component-dom/deps/css/index.js");
+
+require.alias("component-sort/index.js", "component-dom/deps/sort/index.js");
+
+require.alias("component-value/index.js", "component-dom/deps/value/index.js");
+require.alias("component-value/index.js", "component-dom/deps/value/index.js");
+require.alias("component-type/index.js", "component-value/deps/type/index.js");
+
+require.alias("component-value/index.js", "component-value/index.js");
+
+require.alias("component-query/index.js", "component-dom/deps/query/index.js");
+
 require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/lib/client.js");
 require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/index.js");
 require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
@@ -7533,27 +7943,54 @@ require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/in
 
 require.alias("citizen/citizen.js", "citizen/index.js");
 
-require.alias("proposal-article/proposal-article.js", "homepage/deps/proposal-article/proposal-article.js");
-require.alias("proposal-article/proposal-article.js", "homepage/deps/proposal-article/index.js");
-require.alias("component-domify/index.js", "proposal-article/deps/domify/index.js");
-
-require.alias("proposal-article/proposal-article.js", "proposal-article/index.js");
-
 require.alias("proposal-list/proposal-list.js", "homepage/deps/proposal-list/proposal-list.js");
 require.alias("proposal-list/proposal-list.js", "homepage/deps/proposal-list/index.js");
 require.alias("component-domify/index.js", "proposal-list/deps/domify/index.js");
 
 require.alias("proposal-list/proposal-list.js", "proposal-list/index.js");
 
+require.alias("proposal-article/proposal-article.js", "homepage/deps/proposal-article/proposal-article.js");
+require.alias("proposal-article/proposal-article.js", "homepage/deps/proposal-article/index.js");
+require.alias("component-domify/index.js", "proposal-article/deps/domify/index.js");
+
+require.alias("proposal-article/proposal-article.js", "proposal-article/index.js");
+
 require.alias("proposal-options/proposal-options.js", "homepage/deps/proposal-options/proposal-options.js");
 require.alias("proposal-options/proposal-options.js", "homepage/deps/proposal-options/index.js");
 require.alias("component-domify/index.js", "proposal-options/deps/domify/index.js");
+
+require.alias("component-delegates/index.js", "proposal-options/deps/delegates/index.js");
+require.alias("component-delegate/index.js", "component-delegates/deps/delegate/index.js");
+require.alias("component-matches-selector/index.js", "component-delegate/deps/matches-selector/index.js");
+require.alias("component-query/index.js", "component-matches-selector/deps/query/index.js");
+
+require.alias("component-event/index.js", "component-delegate/deps/event/index.js");
+
+require.alias("component-event-manager/index.js", "component-delegates/deps/event-manager/index.js");
+
+require.alias("component-classes/index.js", "proposal-options/deps/classes/index.js");
+require.alias("component-indexof/index.js", "component-classes/deps/indexof/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "proposal-options/deps/superagent/lib/client.js");
+require.alias("visionmedia-superagent/lib/client.js", "proposal-options/deps/superagent/index.js");
+require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
 
 require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/Chart.js");
 require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/index.js");
 require.alias("cristiandouce-Chart.js/Chart.js", "cristiandouce-Chart.js/index.js");
 
 require.alias("proposal-options/proposal-options.js", "proposal-options/index.js");
+
+require.alias("proposal-comments/proposal-comments.js", "homepage/deps/proposal-comments/proposal-comments.js");
+require.alias("proposal-comments/proposal-comments.js", "homepage/deps/proposal-comments/index.js");
+require.alias("component-domify/index.js", "proposal-comments/deps/domify/index.js");
+
+require.alias("proposal-comments/proposal-comments.js", "proposal-comments/index.js");
 
 require.alias("homepage/homepage.js", "homepage/index.js");
 
