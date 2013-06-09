@@ -3,11 +3,18 @@
   "description": "Homepage page",
   "dependencies": {
     "component/domify": "*",
+    "component/dom": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*"
   },
   "development": {},
-  "local": [ "citizen", "proposal-article", "proposal-list", "proposal-options" ],
+  "local": [
+    "citizen",
+    "proposal-list",
+    "proposal-article",
+    "proposal-options",
+    "proposal-comments"
+  ],
   "scripts": [
     "homepage.js"
   ],
