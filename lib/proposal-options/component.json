@@ -3,6 +3,9 @@
   "description": "proposal's options view",
   "dependencies": {
     "component/domify": "*",
+    "component/delegates": "1.0.0",
+    "component/classes": "*",
+    "visionmedia/superagent": "*",
     "cristiandouce/Chart.js": "*"
   },
   "local": [ ],
