@@ -1,0 +1,21 @@
+.comments
+  form.comment-form(method='post', action='/api/proposal/' + proposal.id + '/comment')
+    h5 Tu comentario 
+    p 
+      textarea(name="comment[text]")
+    input(type="submit", value="Submit Comment").btn
+
+
+  h4 Comments 
+  ul.media-list.comment-list
+    - each comment in comments
+      li.media.comment-item
+        a(href="javascript:void();").pull-left
+          img(src=comment.author.avatar).avatar
+
+        .media-body
+          h5.media-heading
+            | #{comment.author.fullName} 
+            small.ago(data-time=comment.createdAt.toString())
+            small :
+          p=comment.text
