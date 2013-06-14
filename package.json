@@ -30,6 +30,7 @@
     "express": "*",
     "jade": "*",
     "mongoose": "*",
+    "mongoose-voting": "0.1.1",
     "connect-mongo": "*",
     "debug": "*",
     "nowww": "*",
