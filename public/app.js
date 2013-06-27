@@ -7625,8 +7625,6 @@ require.register("homepage/homepage.js", function(exports, require, module){
 
 var page = require('page')
   , request = require('superagent')
-  , domify = require('domify')
-  , dom = require('dom')
   , Citizen = require('citizen')
   , Article = require('proposal-article')
   , List = require('proposal-list')
@@ -7634,7 +7632,7 @@ var page = require('page')
   , Comments = require('proposal-comments');
 
 // Routing.
-page('/home', identify, load, getComments, function(ctx) {
+page('/', identify, load, getComments, function(ctx) {
   // Build page's content
   var list = new List(ctx.proposals, ctx.proposal);
   var article = new Article(ctx.proposal); // !!MUST be aware of citizen's data too
@@ -7707,6 +7705,7 @@ function getComments (ctx, next) {
     next();
   });
 }
+
 /**
  * Handle error from requests
  *
@@ -7765,6 +7764,128 @@ var commentsExample = [{
 }];
 
 });
+require.register("proposal/proposal.js", function(exports, require, module){
+/**
+ * Module dependencies.
+ */
+
+var page = require('page')
+  , request = require('superagent')
+  , Citizen = require('citizen')
+  , Article = require('proposal-article')
+  , List = require('proposal-list')
+  , Options = require('proposal-options')
+  , Comments = require('proposal-comments');
+
+// Routing
+page('/proposal/:id', identify, load, getComments, function(ctx) {
+  // Build page's content
+  var list = new List(ctx.proposals, ctx.proposal);
+  var article = new Article(ctx.proposal); // !!MUST be aware of citizen's data too
+  var options = new Options(ctx.proposal, ctx.citizen);
+  var comments = new Comments(ctx.proposal, ctx.comments);
+
+  // Render page's content
+  replaceWith('nav.sidebar-nav', list.render());
+  replaceWith('article.proposal', article.render());
+  replaceWith('.proposal-options', options.render());
+  replaceWith('.comments', comments.render());
+});
+
+/**
+ * Load citizen's data
+ *
+ * @param {Object} ctx page's context
+ * @param {Function} next callback after load
+ * @api private
+ */
+
+function identify (ctx, next) {
+  var citizen = new Citizen();
+  ctx.citizen = citizen;
+  citizen.load('me'); // What would happen on error?
+  citizen.ready(next);
+}
+
+/**
+ * Load homepage data
+ *
+ * @param {Object} ctx page's context
+ * @param {Function} next callback after load
+ * @api private
+ */
+
+function load (ctx, next) {
+  request
+  .get('/api/proposal/all')
+  .set('Accept', 'application/json')
+  .on('error', _handleRequestError)
+  .end(function(res) {
+    if (!res.ok) return;
+
+    ctx.proposals = res.body || [proposalExample];
+
+    request
+    .get('/api/proposal/' + ctx.params.id)
+    .set('Accept', 'application/json')
+    .on('error', _handleRequestError)
+    .end(function(res) {
+      if (!res.ok) return;
+      ctx.proposal = res.body || proposalExample;
+      next();
+    });
+  });
+}
+
+/**
+ * Load comments from proposal
+ *
+ * @param {Object} ctx page's context
+ * @param {Function} next callback after load
+ * @api private
+ */
+
+function getComments (ctx, next) {
+  request
+  .get('/api/proposal/:id/comments'.replace(':id', ctx.proposal.id))
+  .set('Accept', 'application/json')
+  .on('error', _handleRequestError)
+  .end(function(res) {
+    if (!res.ok) return;
+
+    ctx.comments = res.body || commentsExample;
+
+    next();
+  });
+}
+
+/**
+ * Handle error from requests
+ *
+ * @param {Object} err from request
+ * @api private
+ */
+
+function _handleRequestError (err) {
+  console.log(err);
+}
+
+/**
+ * replaceWith
+ *
+ * @param {String} selector query string selector
+ * @param {NodeElement} el `NodeElement` to replace with match
+ * @api private
+ */
+
+function replaceWith (selector, el) {
+  var match = document.querySelector(selector);
+  if (match) {
+    match.parentNode.replaceChild(el, match);
+  };
+}
+
+});
 require.register("boot/boot.js", function(exports, require, module){
 /**
  * This JS is only a firs release while testing
@@ -7803,6 +7924,7 @@ jade = require("jade");
  */
 
 require('homepage');
+require('proposal');
 
 /**
  * Init `timeago` component with
@@ -7823,7 +7945,7 @@ page('*', function(ctx, next) {
  * Init page.js
  */
 
-page();
+page({click: true, dispatch: true, popstate: true});
 });
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/boot.js");
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/index.js");
@@ -7884,38 +8006,6 @@ require.alias("cristiandouce-timeago/index.js", "cristiandouce-timeago/index.js"
 
 require.alias("homepage/homepage.js", "boot/deps/homepage/homepage.js");
 require.alias("homepage/homepage.js", "boot/deps/homepage/index.js");
-require.alias("component-domify/index.js", "homepage/deps/domify/index.js");
-
-require.alias("component-dom/index.js", "homepage/deps/dom/index.js");
-require.alias("component-type/index.js", "component-dom/deps/type/index.js");
-
-require.alias("component-event/index.js", "component-dom/deps/event/index.js");
-
-require.alias("component-delegate/index.js", "component-dom/deps/delegate/index.js");
-require.alias("component-matches-selector/index.js", "component-delegate/deps/matches-selector/index.js");
-require.alias("component-query/index.js", "component-matches-selector/deps/query/index.js");
-
-require.alias("component-event/index.js", "component-delegate/deps/event/index.js");
-
-require.alias("component-indexof/index.js", "component-dom/deps/indexof/index.js");
-
-require.alias("component-domify/index.js", "component-dom/deps/domify/index.js");
-
-require.alias("component-classes/index.js", "component-dom/deps/classes/index.js");
-require.alias("component-indexof/index.js", "component-classes/deps/indexof/index.js");
-
-require.alias("component-css/index.js", "component-dom/deps/css/index.js");
-
-require.alias("component-sort/index.js", "component-dom/deps/sort/index.js");
-
-require.alias("component-value/index.js", "component-dom/deps/value/index.js");
-require.alias("component-value/index.js", "component-dom/deps/value/index.js");
-require.alias("component-type/index.js", "component-value/deps/type/index.js");
-
-require.alias("component-value/index.js", "component-value/index.js");
-
-require.alias("component-query/index.js", "component-dom/deps/query/index.js");
-
 require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/lib/client.js");
 require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/index.js");
 require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
@@ -7993,6 +8083,86 @@ require.alias("component-domify/index.js", "proposal-comments/deps/domify/index.
 require.alias("proposal-comments/proposal-comments.js", "proposal-comments/index.js");
 
 require.alias("homepage/homepage.js", "homepage/index.js");
+
+require.alias("proposal/proposal.js", "boot/deps/proposal/proposal.js");
+require.alias("proposal/proposal.js", "boot/deps/proposal/index.js");
+require.alias("visionmedia-superagent/lib/client.js", "proposal/deps/superagent/lib/client.js");
+require.alias("visionmedia-superagent/lib/client.js", "proposal/deps/superagent/index.js");
+require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
+
+require.alias("visionmedia-page.js/index.js", "proposal/deps/page/index.js");
+
+require.alias("citizen/citizen.js", "proposal/deps/citizen/citizen.js");
+require.alias("citizen/citizen.js", "proposal/deps/citizen/index.js");
+require.alias("component-emitter/index.js", "citizen/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "citizen/deps/superagent/lib/client.js");
+require.alias("visionmedia-superagent/lib/client.js", "citizen/deps/superagent/index.js");
+require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
+
+require.alias("citizen/citizen.js", "citizen/index.js");
+
+require.alias("proposal-list/proposal-list.js", "proposal/deps/proposal-list/proposal-list.js");
+require.alias("proposal-list/proposal-list.js", "proposal/deps/proposal-list/index.js");
+require.alias("component-domify/index.js", "proposal-list/deps/domify/index.js");
+
+require.alias("proposal-list/proposal-list.js", "proposal-list/index.js");
+
+require.alias("proposal-article/proposal-article.js", "proposal/deps/proposal-article/proposal-article.js");
+require.alias("proposal-article/proposal-article.js", "proposal/deps/proposal-article/index.js");
+require.alias("component-domify/index.js", "proposal-article/deps/domify/index.js");
+
+require.alias("proposal-article/proposal-article.js", "proposal-article/index.js");
+
+require.alias("proposal-options/proposal-options.js", "proposal/deps/proposal-options/proposal-options.js");
+require.alias("proposal-options/proposal-options.js", "proposal/deps/proposal-options/index.js");
+require.alias("component-domify/index.js", "proposal-options/deps/domify/index.js");
+
+require.alias("component-delegates/index.js", "proposal-options/deps/delegates/index.js");
+require.alias("component-delegate/index.js", "component-delegates/deps/delegate/index.js");
+require.alias("component-matches-selector/index.js", "component-delegate/deps/matches-selector/index.js");
+require.alias("component-query/index.js", "component-matches-selector/deps/query/index.js");
+
+require.alias("component-event/index.js", "component-delegate/deps/event/index.js");
+
+require.alias("component-event-manager/index.js", "component-delegates/deps/event-manager/index.js");
+
+require.alias("component-classes/index.js", "proposal-options/deps/classes/index.js");
+require.alias("component-indexof/index.js", "component-classes/deps/indexof/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "proposal-options/deps/superagent/lib/client.js");
+require.alias("visionmedia-superagent/lib/client.js", "proposal-options/deps/superagent/index.js");
+require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
+require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");
+
+require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce/index.js");
+
+require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
+
+require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/Chart.js");
+require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/index.js");
+require.alias("cristiandouce-Chart.js/Chart.js", "cristiandouce-Chart.js/index.js");
+
+require.alias("proposal-options/proposal-options.js", "proposal-options/index.js");
+
+require.alias("proposal-comments/proposal-comments.js", "proposal/deps/proposal-comments/proposal-comments.js");
+require.alias("proposal-comments/proposal-comments.js", "proposal/deps/proposal-comments/index.js");
+require.alias("component-domify/index.js", "proposal-comments/deps/domify/index.js");
+
+require.alias("proposal-comments/proposal-comments.js", "proposal-comments/index.js");
+
+require.alias("proposal/proposal.js", "proposal/index.js");
 
 require.alias("boot/boot.js", "boot/index.js");
 
