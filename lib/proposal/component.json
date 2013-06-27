@@ -3,9 +3,16 @@
   "description": "proposal pages",
   "dependencies": {
     "visionmedia/superagent": "*",
-    "component/domify": "*"
+    "visionmedia/page.js": "*"
   },
-  "scripts": ["proposal.js"],
+  "local": [
+    "citizen",
+    "proposal-list",
+    "proposal-article",
+    "proposal-options",
+    "proposal-comments"
+  ],
+  "scripts": [ "proposal.js" ],
   "styles": [ ],
   "main": "proposal.js"
 }
