@@ -2,8 +2,6 @@
   "name": "homepage",
   "description": "Homepage page",
   "dependencies": {
-    "component/domify": "*",
-    "component/dom": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*"
   },
