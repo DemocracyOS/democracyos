@@ -36,11 +36,11 @@ html(lang='en')
     link(rel="icon", type="image/x-icon", href="/favicon.ico")
 
     script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
-    script(type='text/javascript')
+    script.
       try{Typekit.load();}catch(e){}
 
 
-    script
+    script.
       // Get rid of the Facebook residue hash in the URI
       // Must be done in JS cuz hash only exists client-side
       // IE and Chrome version of the hack
@@ -82,6 +82,6 @@ html(lang='en')
       script(src='/app.js')
 
       //- Boot application
-      script
+      script.
         require('boot');
     // End of `Javascripts`
