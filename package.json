@@ -41,11 +41,10 @@
     "passport-local-mongoose": "~0.2.4",
     "passport-facebook": "~0.1.5",
     "passport-twitter": "~0.1.5",
-    "marked": "*",
-    "ghm": "*",
     "http-auth": "*",
     "nodemailer": "*",
-    "imap": "*"
+    "imap": "*",
+    "marked": "~0.2.9"
   },
   "devDependencies": {},
   "main": "pdr",
