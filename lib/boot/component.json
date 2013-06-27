@@ -8,7 +8,7 @@
     "visionmedia/jade": "*",
     "cristiandouce/timeago": "*"
   },
-  "local": [ "homepage" ],
+  "local": [ "homepage", "proposal" ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
   "images": [ ],
