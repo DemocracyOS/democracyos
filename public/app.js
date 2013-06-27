@@ -63,7 +63,6 @@ require.aliases = {};
 
 require.resolve = function(path) {
   if (path.charAt(0) === '/') path = path.slice(1);
-  var index = path + '/index.js';
 
   var paths = [
     path,
@@ -76,10 +75,7 @@ require.resolve = function(path) {
   for (var i = 0; i < paths.length; i++) {
     var path = paths[i];
     if (require.modules.hasOwnProperty(path)) return path;
-  }
-
-  if (require.aliases.hasOwnProperty(index)) {
-    return require.aliases[index];
+    if (require.aliases.hasOwnProperty(path)) return require.aliases[path];
   }
 };
 
@@ -5193,8 +5189,7 @@ ProposalList.prototype.render = function() {
 require.register("proposal-list/list.js", function(exports, require, module){
 module.exports = function anonymous(locals) {
 var buf = [];
-with (locals || {}) {
-buf.push("<nav class=\"sidebar-nav\"><ul class=\"nav navlist\">");
+var locals_ = (locals || {}),proposals = locals_.proposals,proposal = locals_.proposal;buf.push("<nav class=\"sidebar-nav\"><ul class=\"nav navlist\">");
 // iterate proposals
 ;(function(){
   var $$obj = proposals;
@@ -5204,26 +5199,22 @@ buf.push("<nav class=\"sidebar-nav\"><ul class=\"nav navlist\">");
       var p = $$obj[$index];
 
 var active = p._id === proposal._id ? 'active' : '';
-buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
+buf.push("<li" + (jade.attrs({ "class": [(active)] }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": [('ago')] }, {"data-time":true})) + "></span></span></a></li>");
     }
 
   } else {
     var $$l = 0;
     for (var $index in $$obj) {
-      $$l++;      if ($$obj.hasOwnProperty($index)){      var p = $$obj[$index];
+      $$l++;      var p = $$obj[$index];
 
 var active = p._id === proposal._id ? 'active' : '';
-buf.push("<li" + (jade.attrs({ "class": (active) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></span></span></a></li>");
-      }
-
+buf.push("<li" + (jade.attrs({ "class": [(active)] }, {"class":true})) + "><a" + (jade.attrs({ 'href':("/proposal/"+p._id) }, {"href":true})) + "><span class=\"title\">" + (jade.escape(null == (jade.interp = p.title) ? "" : jade.interp)) + "</span><span class=\"created-by\">Creador por " + (jade.escape((jade.interp = p.author.fullName) == null ? '' : jade.interp)) + " <span" + (jade.attrs({ 'data-time':(p.createdAt.toString()), "class": [('ago')] }, {"data-time":true})) + "></span></span></a></li>");
     }
 
   }
 }).call(this);
 
-buf.push("</ul></nav>");
-}
-return buf.join("");
+buf.push("</ul></nav>");;return buf.join("");
 }
 });
 require.register("proposal-article/proposal-article.js", function(exports, require, module){
@@ -5272,8 +5263,7 @@ ProposalArticle.prototype.render = function() {
 require.register("proposal-article/article.js", function(exports, require, module){
 module.exports = function anonymous(locals) {
 var buf = [];
-with (locals || {}) {
-buf.push("<article class=\"proposal\"><h2>" + (jade.escape(null == (jade.interp = proposal.title) ? "" : jade.interp)) + "</h2><div class=\"meta-data\"><a href=\"#\" class=\"meta-item meta-time\">10 days left</a><a href=\"#\" class=\"meta-item meta-location\">Buenos Aires, Argentina</a>");
+var locals_ = (locals || {}),proposal = locals_.proposal,citizen = locals_.citizen;buf.push("<article class=\"proposal\"><h2>" + (jade.escape(null == (jade.interp = proposal.title) ? "" : jade.interp)) + "</h2><div class=\"meta-data\"><a href=\"#\" class=\"meta-item meta-time\">10 days left</a><a href=\"#\" class=\"meta-item meta-location\">Buenos Aires, Argentina</a>");
 if (locals.citizen)
 {
 buf.push("<a href=\"\" class=\"meta-item meta-delegation\">Delegated on " + (jade.escape((jade.interp = citizen.fullName) == null ? '' : jade.interp)) + "</a>");
@@ -5301,14 +5291,12 @@ buf.push("<p>" + (jade.escape(null == (jade.interp = line.trim()) ? "" : jade.in
   } else {
     var $$l = 0;
     for (var $index in $$obj) {
-      $$l++;      if ($$obj.hasOwnProperty($index)){      var line = $$obj[$index];
+      $$l++;      var line = $$obj[$index];
 
 if (line.trim())
 {
 buf.push("<p>" + (jade.escape(null == (jade.interp = line.trim()) ? "" : jade.interp)) + "</p>");
 }
-      }
-
     }
 
   }
@@ -5331,25 +5319,21 @@ buf.push("<span>" + (jade.escape((jade.interp = proposal.participants.length) ==
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var participant = $$obj[$index];
 
-buf.push("<a href=\"javascript:void();\" class=\"participant-profile\"><img" + (jade.attrs({ 'src':(participant.avatar), "class": ('avatar') }, {"src":true})) + "/></a>");
+buf.push("<a href=\"javascript:void();\" class=\"participant-profile\"><img" + (jade.attrs({ 'src':(participant.avatar), "class": [('avatar')] }, {"src":true})) + "/></a>");
     }
 
   } else {
     var $$l = 0;
     for (var $index in $$obj) {
-      $$l++;      if ($$obj.hasOwnProperty($index)){      var participant = $$obj[$index];
+      $$l++;      var participant = $$obj[$index];
 
-buf.push("<a href=\"javascript:void();\" class=\"participant-profile\"><img" + (jade.attrs({ 'src':(participant.avatar), "class": ('avatar') }, {"src":true})) + "/></a>");
-      }
-
+buf.push("<a href=\"javascript:void();\" class=\"participant-profile\"><img" + (jade.attrs({ 'src':(participant.avatar), "class": [('avatar')] }, {"src":true})) + "/></a>");
     }
 
   }
 }).call(this);
 
-buf.push("</div><p class=\"share-links\"><strong>Share: </strong><a href=\"\">Facebook </a><a href=\"\">Twitter </a><a href=\"\">Google Plus</a></p></article>");
-}
-return buf.join("");
+buf.push("</div><p class=\"share-links\"><strong>Share: </strong><a href=\"\">Facebook </a><a href=\"\">Twitter </a><a href=\"\">Google Plus</a></p></article>");;return buf.join("");
 }
 });
 require.register("component-event-manager/index.js", function(exports, require, module){
@@ -7516,8 +7500,7 @@ ProposalOptions.prototype.renderChart = function(arguments) {
 require.register("proposal-options/options.js", function(exports, require, module){
 module.exports = function anonymous(locals) {
 var buf = [];
-with (locals || {}) {
-buf.push("<div class=\"proposal-options\"><div class=\"vote-box\"><h5>Vote</h5>");
+var locals_ = (locals || {}),proposal = locals_.proposal,citizen = locals_.citizen;buf.push("<div class=\"proposal-options\"><div class=\"vote-box\"><h5>Vote</h5>");
 var hide = ''
 if(locals.citizen && ~proposal.vote.census.indexOf(citizen.id))
 {
@@ -7533,9 +7516,7 @@ buf.push("<p style=\"margin:0;\" class=\"alert alert-error\">Has votado en contr
 }
 buf.push("<a href=\"#\" class=\"meta-item change-vote\"><small>Deseo cambiar mi voto.</small></a></div>");
 }
-buf.push("<div" + (jade.attrs({ "class": ('vote-options') + ' ' + (hide) }, {"class":true})) + "><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-yes') }, {"href":true,"data-proposal":true})) + "><span>Yes</span></a><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": ('vote-option') + ' ' + ('vote-no') }, {"href":true,"data-proposal":true})) + "><span>No</span></a></div></div><div class=\"results-box\"><h5>Results</h5><canvas id=\"vote-chart\" width=\"200\" height=\"220\"></canvas></div></div>");
-}
-return buf.join("");
+buf.push("<div" + (jade.attrs({ "class": [('vote-options'),(hide)] }, {"class":true})) + "><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": [('vote-option'),('vote-yes')] }, {"href":true,"data-proposal":true})) + "><span>Yes</span></a><a" + (jade.attrs({ 'href':("#"), 'data-proposal':(proposal.id), "class": [('vote-option'),('vote-no')] }, {"href":true,"data-proposal":true})) + "><span>No</span></a></div></div><div class=\"results-box\"><h5>Results</h5><canvas id=\"vote-chart\" width=\"200\" height=\"220\"></canvas></div></div>");;return buf.join("");
 }
 });
 require.register("proposal-comments/proposal-comments.js", function(exports, require, module){
@@ -7587,8 +7568,7 @@ ProposalComments.prototype.render = function() {
 require.register("proposal-comments/comments.js", function(exports, require, module){
 module.exports = function anonymous(locals) {
 var buf = [];
-with (locals || {}) {
-buf.push("<div class=\"comments\"><form" + (jade.attrs({ 'method':('post'), 'action':('/api/proposal/' + proposal.id + '/comment'), "class": ('comment-form') }, {"method":true,"action":true})) + "><h5>Tu comentario </h5><p> <textarea name=\"comment[text]\"></textarea></p><input type=\"submit\" value=\"Submit Comment\" class=\"btn\"/></form><h4>Comments </h4><ul class=\"media-list comment-list\">");
+var locals_ = (locals || {}),proposal = locals_.proposal,comments = locals_.comments;buf.push("<div class=\"comments\"><form" + (jade.attrs({ 'method':('post'), 'action':('/api/proposal/' + proposal.id + '/comment'), "class": [('comment-form')] }, {"method":true,"action":true})) + "><h5>Tu comentario </h5><p> <textarea name=\"comment[text]\"></textarea></p><input type=\"submit\" value=\"Submit Comment\" class=\"btn\"/></form><h4>Comments </h4><ul class=\"media-list comment-list\">");
 // iterate comments
 ;(function(){
   var $$obj = comments;
@@ -7597,25 +7577,21 @@ buf.push("<div class=\"comments\"><form" + (jade.attrs({ 'method':('post'), 'act
     for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
       var comment = $$obj[$index];
 
-buf.push("<li class=\"media comment-item\"><a href=\"javascript:void();\" class=\"pull-left\"><img" + (jade.attrs({ 'src':(comment.author.avatar), "class": ('avatar') }, {"src":true})) + "/></a><div class=\"media-body\"><h5 class=\"media-heading\">" + (jade.escape((jade.interp = comment.author.fullName) == null ? '' : jade.interp)) + " <small" + (jade.attrs({ 'data-time':(comment.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></small><small>:</small></h5><p>" + (jade.escape(null == (jade.interp = comment.text) ? "" : jade.interp)) + "</p></div></li>");
+buf.push("<li class=\"media comment-item\"><a href=\"javascript:void();\" class=\"pull-left\"><img" + (jade.attrs({ 'src':(comment.author.avatar), "class": [('avatar')] }, {"src":true})) + "/></a><div class=\"media-body\"><h5 class=\"media-heading\">" + (jade.escape((jade.interp = comment.author.fullName) == null ? '' : jade.interp)) + " <small" + (jade.attrs({ 'data-time':(comment.createdAt.toString()), "class": [('ago')] }, {"data-time":true})) + "></small><small>:</small></h5><p>" + (jade.escape(null == (jade.interp = comment.text) ? "" : jade.interp)) + "</p></div></li>");
     }
 
   } else {
     var $$l = 0;
     for (var $index in $$obj) {
-      $$l++;      if ($$obj.hasOwnProperty($index)){      var comment = $$obj[$index];
+      $$l++;      var comment = $$obj[$index];
 
-buf.push("<li class=\"media comment-item\"><a href=\"javascript:void();\" class=\"pull-left\"><img" + (jade.attrs({ 'src':(comment.author.avatar), "class": ('avatar') }, {"src":true})) + "/></a><div class=\"media-body\"><h5 class=\"media-heading\">" + (jade.escape((jade.interp = comment.author.fullName) == null ? '' : jade.interp)) + " <small" + (jade.attrs({ 'data-time':(comment.createdAt.toString()), "class": ('ago') }, {"data-time":true})) + "></small><small>:</small></h5><p>" + (jade.escape(null == (jade.interp = comment.text) ? "" : jade.interp)) + "</p></div></li>");
-      }
-
+buf.push("<li class=\"media comment-item\"><a href=\"javascript:void();\" class=\"pull-left\"><img" + (jade.attrs({ 'src':(comment.author.avatar), "class": [('avatar')] }, {"src":true})) + "/></a><div class=\"media-body\"><h5 class=\"media-heading\">" + (jade.escape((jade.interp = comment.author.fullName) == null ? '' : jade.interp)) + " <small" + (jade.attrs({ 'data-time':(comment.createdAt.toString()), "class": [('ago')] }, {"data-time":true})) + "></small><small>:</small></h5><p>" + (jade.escape(null == (jade.interp = comment.text) ? "" : jade.interp)) + "</p></div></li>");
     }
 
   }
 }).call(this);
 
-buf.push("</ul></div>");
-}
-return buf.join("");
+buf.push("</ul></div>");;return buf.join("");
 }
 });
 require.register("homepage/homepage.js", function(exports, require, module){
@@ -7945,7 +7921,7 @@ page('*', function(ctx, next) {
  * Init page.js
  */
 
-page({click: true, dispatch: true, popstate: true});
+page();
 });
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/boot.js");
 require.alias("boot/boot.js", "democraciaenred.org/deps/boot/index.js");
