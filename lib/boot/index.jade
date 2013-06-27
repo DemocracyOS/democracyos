@@ -1,119 +1,15 @@
 extends layout
 
 block aside
+	//- proposals list
 	nav.sidebar-nav
-		ul.nav.navlist
-			- each p in proposals
-				- var active = p.id === proposal.id ? 'active' : '';
-				li(class=active)
-					a(href="/proposal/"+p.id)
-						span.title=p.title
-						span.created-by
-							| Creador por #{p.author.fullName} 
-							span.ago(data-time=p.createdAt.toString())
-		
-
-		
 
 block content
+	//- current proposal article
 	article.proposal
-		h2=proposal.title
 
-		.meta-data
-			a.meta-item.meta-time(href="#") 10 days left
-			a.meta-item.meta-location(href="#") Buenos Aires, Argentina
-
-			- if (locals.citizen)
-				a(href="").meta-item.meta-delegation Delegated on #{citizen.fullName}
-			- else
-				span.meta-item.meta-delegation Not delegated yet
-			a(href="").meta-item.meta-tag ##{proposal.tag.hash}
-
-		//- .voting-process
-			//- span.
-
-		//- Mejorar esto!
-		- var lines = proposal.essay.split('\n');
-		- each line in lines
-			- if (line.trim())
-				p=line.trim()
-
-		hr 
-
-		footer.footer-notes  
-			h5 Referencias
-			ol 
-				li Referencia 1: http://wikipedia.org
-				li Referencia 2: http://wikipedia.org
-				li Referencia 3: http://wikipedia.org
-				li Referencia 4: http://wikipedia.org
-				li Referencia 5: http://wikipedia.org
-				li Referencia 6: http://wikipedia.org
-
-		.participants
-			- if ( 1 === proposal.participants.length )
-				span 1 Participant 
-			- else
-				span #{proposal.participants.length} Participants 
-
-			- each participant in proposal.participants
-				a(href="javascript:void();").participant-profile
-					img(src=participant.avatar).avatar
-
-		p.share-links
-			strong Share: 
-			a(href="") Facebook 
-			a(href="") Twitter 
-			a(href="") Google Plus 
-
+	//- current proposal options
 	.proposal-options
-		.vote-box
-			h5 Vote
-			- var hide = ''
-			- if(locals.citizen && ~proposal.vote.census.indexOf(citizen.id))
-				- hide = 'hide';
-				.meta-data
-					- if(~proposal.vote.positive.indexOf(citizen.id))
-						p.alert.alert-success(style="margin:0;") Has votado a favor de esta propuesta.
-					- else
-						p.alert.alert-error(style="margin:0;") Has votado en contra de esta propuesta.
-					a.meta-item.change-vote(href="#")
-						small Deseo cambiar mi voto.
 
-			.vote-options(class=hide)
-				a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
-					span Yes
-				a.vote-option.vote-no(href="#", data-proposal=proposal.id)
-					span No
-
-		//- h5 Delegations
-
-		.results-box
-			h5 Results
-			canvas(id="vote-chart", width="200", height="220")
-
+	//- current proposal comments
 	.comments
-		form.comment-form(method='post', action='/api/proposal/' + proposal.id + '/comment')
-			h5 Tu comentario 
-			p 
-				textarea(name="comment[text]")
-			input(type="submit", value="Submit Comment").btn
-
-
-		h4 Comments 
-		ul.media-list.comment-list
-			- each comment in comments
-				li.media.comment-item
-					a(href="javascript:void();").pull-left
-						img(src=comment.author.avatar).avatar
-
-					.media-body
-						h5.media-heading
-							| #{comment.author.fullName} 
-							small.ago(data-time=comment.createdAt.toString())
-							small :
-						p=comment.text
-
-
-
-
