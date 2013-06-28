@@ -2,7 +2,7 @@
   "name": "proposal-article",
   "description": "proposal's article view",
   "dependencies": {
-    "component/domify": "*"
+    "component/domify": "1.0.0"
   },
   "local": [ ],
   "scripts": [ "proposal-article.js" ],
