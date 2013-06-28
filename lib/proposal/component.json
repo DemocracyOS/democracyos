@@ -2,6 +2,7 @@
   "name": "proposal",
   "description": "proposal pages",
   "dependencies": {
+    "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*"
   },
