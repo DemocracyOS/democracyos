@@ -2,6 +2,7 @@
   "name": "homepage",
   "description": "Homepage page",
   "dependencies": {
+    "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*"
   },
