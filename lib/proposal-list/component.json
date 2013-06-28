@@ -2,7 +2,7 @@
   "name": "proposal-list",
   "description": "proposal's list view",
   "dependencies": {
-    "component/domify": "*"
+    "component/domify": "1.0.0"
   },
   "local": [ ],
   "scripts": [ "proposal-list.js" ],
