@@ -414,19 +414,19 @@ var map = {
 
 function parse(html) {
   if ('string' != typeof html) throw new TypeError('String expected');
-  
+
   // tag name
   var m = /<([\w:]+)/.exec(html);
   if (!m) throw new Error('No elements were generated.');
   var tag = m[1];
-  
+
   // body support
   if (tag == 'body') {
     var el = document.createElement('html');
     el.innerHTML = html;
-    return [el.removeChild(el.lastChild)];
+    return el.removeChild(el.lastChild);
   }
-  
+
   // wrap map
   var wrap = map[tag] || map._default;
   var depth = wrap[0];
@@ -436,25 +436,17 @@ function parse(html) {
   el.innerHTML = prefix + html + suffix;
   while (depth--) el = el.lastChild;
 
-  return orphan(el.children);
-}
-
-/**
- * Orphan `els` and return an array.
- *
- * @param {NodeList} els
- * @return {Array}
- * @api private
- */
-
-function orphan(els) {
-  var ret = [];
-
-  while (els.length) {
-    ret.push(els[0].parentNode.removeChild(els[0]));
+  var els = el.children;
+  if (1 == els.length) {
+    return el.removeChild(els[0]);
   }
 
-  return ret;
+  var fragment = document.createDocumentFragment();
+  while (els.length) {
+    fragment.appendChild(el.removeChild(els[0]));
+  }
+
+  return fragment;
 }
 
 });
@@ -604,8 +596,9 @@ ClassList.prototype.toggle = function(name){
  */
 
 ClassList.prototype.array = function(){
-  var arr = this.el.className.split(re);
-  if ('' === arr[0]) arr.pop();
+  var str = this.el.className.replace(/^\s+|\s+$/g, '');
+  var arr = str.split(re);
+  if ('' === arr[0]) arr.shift();
   return arr;
 };
 
@@ -855,6 +848,7 @@ var attrs = [
   'rel',
   'cols',
   'rows',
+  'type',
   'name',
   'href',
   'title',
@@ -908,7 +902,7 @@ function dom(selector, context) {
 
   // html
   if ('<' == selector.charAt(0)) {
-    return new List([domify(selector)[0]], selector);
+    return new List([domify(selector)], selector);
   }
 
   // selector
@@ -1338,6 +1332,25 @@ List.prototype.filter = function(fn){
   for (var i = 0; i < this.els.length; ++i) {
     el = this.els[i];
     if (fn(new List([el], this.selector), i)) list.els.push(el);
+  }
+  return list;
+};
+
+/**
+ * Filter elements invoking `fn(list, i)`, returning
+ * a new `List` of elements when a falsey value is returned.
+ *
+ * @param {Function} fn
+ * @return {List}
+ * @api public
+ */
+
+List.prototype.reject = function(fn){
+  var el;
+  var list = new List([], this.selector);
+  for (var i = 0; i < this.els.length; ++i) {
+    el = this.els[i];
+    if (!fn(new List([el], this.selector), i)) list.els.push(el);
   }
   return list;
 };
@@ -2021,16 +2034,17 @@ function params(str){
  * @api private
  */
 
-function Response(xhr, options) {
+function Response(req, options) {
   options = options || {};
-  this.xhr = xhr;
-  this.text = xhr.responseText;
-  this.setStatusProperties(xhr.status);
-  this.header = this.headers = parseHeader(xhr.getAllResponseHeaders());
+  this.req = req;
+  this.xhr = this.req.xhr;
+  this.text = this.xhr.responseText;
+  this.setStatusProperties(this.xhr.status);
+  this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
   // getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
   // getResponseHeader still works. so we get content-type even if getting
   // other headers fails.
-  this.header['content-type'] = xhr.getResponseHeader('content-type');
+  this.header['content-type'] = this.xhr.getResponseHeader('content-type');
   this.setHeaderProperties(this.header);
   this.body = this.parseBody(this.text);
 }
@@ -2142,9 +2156,16 @@ Response.prototype.setStatusProperties = function(status){
  */
 
 Response.prototype.toError = function(){
-  var msg = 'got ' + this.status + ' response';
+  var req = this.req;
+  var method = req.method;
+  var path = req.path;
+
+  var msg = 'cannot ' + method + ' ' + path + ' (' + this.status + ')';
   var err = new Error(msg);
   err.status = this.status;
+  err.method = method;
+  err.path = path;
+
   return err;
 };
 
@@ -2170,9 +2191,8 @@ function Request(method, url) {
   this.url = url;
   this.header = {};
   this._header = {};
-  this.set('X-Requested-With', 'XMLHttpRequest');
   this.on('end', function(){
-    var res = new Response(self.xhr);
+    var res = new Response(self);
     if ('HEAD' == method) res.text = null;
     self.callback(null, res);
   });
@@ -5049,6 +5069,152 @@ function updateElement (el) {
   el.innerHTML = moment(el.getAttribute(this.attr)).fromNow();
 }
 });
+require.register("visionmedia-debug/index.js", function(exports, require, module){
+if ('undefined' == typeof window) {
+  module.exports = require('./lib/debug');
+} else {
+  module.exports = require('./debug');
+}
+
+});
+require.register("visionmedia-debug/debug.js", function(exports, require, module){
+
+/**
+ * Expose `debug()` as the module.
+ */
+
+module.exports = debug;
+
+/**
+ * Create a debugger with the given `name`.
+ *
+ * @param {String} name
+ * @return {Type}
+ * @api public
+ */
+
+function debug(name) {
+  if (!debug.enabled(name)) return function(){};
+
+  return function(fmt){
+    fmt = coerce(fmt);
+
+    var curr = new Date;
+    var ms = curr - (debug[name] || curr);
+    debug[name] = curr;
+
+    fmt = name
+      + ' '
+      + fmt
+      + ' +' + debug.humanize(ms);
+
+    // This hackery is required for IE8
+    // where `console.log` doesn't have 'apply'
+    window.console
+      && console.log
+      && Function.prototype.apply.call(console.log, console, arguments);
+  }
+}
+
+/**
+ * The currently active debug mode names.
+ */
+
+debug.names = [];
+debug.skips = [];
+
+/**
+ * Enables a debug mode by name. This can include modes
+ * separated by a colon and wildcards.
+ *
+ * @param {String} name
+ * @api public
+ */
+
+debug.enable = function(name) {
+  try {
+    localStorage.debug = name;
+  } catch(e){}
+
+  var split = (name || '').split(/[\s,]+/)
+    , len = split.length;
+
+  for (var i = 0; i < len; i++) {
+    name = split[i].replace('*', '.*?');
+    if (name[0] === '-') {
+      debug.skips.push(new RegExp('^' + name.substr(1) + '$'));
+    }
+    else {
+      debug.names.push(new RegExp('^' + name + '$'));
+    }
+  }
+};
+
+/**
+ * Disable debug output.
+ *
+ * @api public
+ */
+
+debug.disable = function(){
+  debug.enable('');
+};
+
+/**
+ * Humanize the given `ms`.
+ *
+ * @param {Number} m
+ * @return {String}
+ * @api private
+ */
+
+debug.humanize = function(ms) {
+  var sec = 1000
+    , min = 60 * 1000
+    , hour = 60 * min;
+
+  if (ms >= hour) return (ms / hour).toFixed(1) + 'h';
+  if (ms >= min) return (ms / min).toFixed(1) + 'm';
+  if (ms >= sec) return (ms / sec | 0) + 's';
+  return ms + 'ms';
+};
+
+/**
+ * Returns true if the given mode name is enabled, false otherwise.
+ *
+ * @param {String} name
+ * @return {Boolean}
+ * @api public
+ */
+
+debug.enabled = function(name) {
+  for (var i = 0, len = debug.skips.length; i < len; i++) {
+    if (debug.skips[i].test(name)) {
+      return false;
+    }
+  }
+  for (var i = 0, len = debug.names.length; i < len; i++) {
+    if (debug.names[i].test(name)) {
+      return true;
+    }
+  }
+  return false;
+};
+
+/**
+ * Coerce `val`.
+ */
+
+function coerce(val) {
+  if (val instanceof Error) return val.stack || val.message;
+  return val;
+}
+
+// persist
+
+if (window.localStorage) debug.enable(localStorage.debug);
+
+});
 require.register("citizen/citizen.js", function(exports, require, module){
 /**
  * Module dependencies.
@@ -5171,7 +5337,7 @@ function ProposalList (proposals, selected) {
   }
 
   this.proposals = proposals;
-  this.list = domify(list({ proposals: proposals, proposal: selected }))[0];
+  this.list = domify(list({ proposals: proposals, proposal: selected }));
 
 }
 
@@ -5245,7 +5411,7 @@ function ProposalArticle (proposal) {
   };
 
   this.proposal = proposal;
-  this.article = domify(article({ proposal: proposal }))[0];
+  this.article = domify(article({ proposal: proposal }));
 }
 
 /**
@@ -7383,7 +7549,7 @@ function ProposalOptions (proposal, citizen) {
 
   this.proposal = proposal;
   this.citizen = citizen;
-  this.options = domify(options({ proposal: proposal, citizen: citizen }))[0];
+  this.options = domify(options({ proposal: proposal, citizen: citizen }));
   this.events = delegates(this.options, this);
   this.events.bind('click a.change-vote small', 'showvote');
   this.events.bind('click .vote-box .vote-option span', 'vote');
@@ -7548,7 +7714,7 @@ function ProposalComments (proposal, replies) {
   };
 
   this.proposal = proposal;
-  this.comments = domify(comments({ proposal: proposal, comments: replies }))[0];
+  this.comments = domify(comments({ proposal: proposal, comments: replies }));
 
 }
 
@@ -7605,10 +7771,13 @@ var page = require('page')
   , Article = require('proposal-article')
   , List = require('proposal-list')
   , Options = require('proposal-options')
-  , Comments = require('proposal-comments');
+  , Comments = require('proposal-comments')
+  , log = require('debug')('homepage');
 
 // Routing.
 page('/', identify, load, getComments, function(ctx) {
+  log('/homepage match');
+
   // Build page's content
   var list = new List(ctx.proposals, ctx.proposal);
   var article = new Article(ctx.proposal); // !!MUST be aware of citizen's data too
@@ -7631,6 +7800,8 @@ page('/', identify, load, getComments, function(ctx) {
  */
 
 function identify (ctx, next) {
+  log('Identifying user');
+
   var citizen = new Citizen();
   ctx.citizen = citizen;
   citizen.load('me'); // What would happen on error?
@@ -7646,6 +7817,8 @@ function identify (ctx, next) {
  */
 
 function load (ctx, next) {
+  log('Loading proposals');
+
   request
   .get('/api/proposal/all')
   .set('Accept', 'application/json')
@@ -7669,6 +7842,8 @@ function load (ctx, next) {
  */
 
 function getComments (ctx, next) {
+  log('Loading comments');
+
   request
   .get('/api/proposal/:id/comments'.replace(':id', ctx.proposal.id))
   .set('Accept', 'application/json')
@@ -7751,10 +7926,13 @@ var page = require('page')
   , Article = require('proposal-article')
   , List = require('proposal-list')
   , Options = require('proposal-options')
-  , Comments = require('proposal-comments');
+  , Comments = require('proposal-comments')
+  , log = require('debug')('proposal');
 
 // Routing
 page('/proposal/:id', identify, load, getComments, function(ctx) {
+  log('/proposal/%s match', ctx.params.id);
+
   // Build page's content
   var list = new List(ctx.proposals, ctx.proposal);
   var article = new Article(ctx.proposal); // !!MUST be aware of citizen's data too
@@ -7777,6 +7955,8 @@ page('/proposal/:id', identify, load, getComments, function(ctx) {
  */
 
 function identify (ctx, next) {
+  log('Identifying user');
+
   var citizen = new Citizen();
   ctx.citizen = citizen;
   citizen.load('me'); // What would happen on error?
@@ -7792,6 +7972,8 @@ function identify (ctx, next) {
  */
 
 function load (ctx, next) {
+  log('Loading proposals');
+
   request
   .get('/api/proposal/all')
   .set('Accept', 'application/json')
@@ -7799,7 +7981,7 @@ function load (ctx, next) {
   .end(function(res) {
     if (!res.ok) return;
 
-    ctx.proposals = res.body || [proposalExample];
+    ctx.proposals = res.body;
 
     request
     .get('/api/proposal/' + ctx.params.id)
@@ -7807,7 +7989,7 @@ function load (ctx, next) {
     .on('error', _handleRequestError)
     .end(function(res) {
       if (!res.ok) return;
-      ctx.proposal = res.body || proposalExample;
+      ctx.proposal = res.body;
       next();
     });
   });
@@ -7822,6 +8004,8 @@ function load (ctx, next) {
  */
 
 function getComments (ctx, next) {
+  log('Loading comments');
+
   request
   .get('/api/proposal/:id/comments'.replace(':id', ctx.proposal.id))
   .set('Accept', 'application/json')
@@ -7829,7 +8013,7 @@ function getComments (ctx, next) {
   .end(function(res) {
     if (!res.ok) return;
 
-    ctx.comments = res.body || commentsExample;
+    ctx.comments = res.body;
 
     next();
   });
@@ -7982,6 +8166,9 @@ require.alias("cristiandouce-timeago/index.js", "cristiandouce-timeago/index.js"
 
 require.alias("homepage/homepage.js", "boot/deps/homepage/homepage.js");
 require.alias("homepage/homepage.js", "boot/deps/homepage/index.js");
+require.alias("visionmedia-debug/index.js", "homepage/deps/debug/index.js");
+require.alias("visionmedia-debug/debug.js", "homepage/deps/debug/debug.js");
+
 require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/lib/client.js");
 require.alias("visionmedia-superagent/lib/client.js", "homepage/deps/superagent/index.js");
 require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
@@ -8062,6 +8249,9 @@ require.alias("homepage/homepage.js", "homepage/index.js");
 
 require.alias("proposal/proposal.js", "boot/deps/proposal/proposal.js");
 require.alias("proposal/proposal.js", "boot/deps/proposal/index.js");
+require.alias("visionmedia-debug/index.js", "proposal/deps/debug/index.js");
+require.alias("visionmedia-debug/debug.js", "proposal/deps/debug/debug.js");
+
 require.alias("visionmedia-superagent/lib/client.js", "proposal/deps/superagent/lib/client.js");
 require.alias("visionmedia-superagent/lib/client.js", "proposal/deps/superagent/index.js");
 require.alias("component-emitter/index.js", "visionmedia-superagent/deps/emitter/index.js");
