@@ -2,7 +2,7 @@
   "name": "proposal-comments",
   "description": "proposal's options view",
   "dependencies": {
-    "component/domify": "*"
+    "component/domify": "1.0.0"
   },
   "local": [ ],
   "scripts": [ "proposal-comments.js" ],
