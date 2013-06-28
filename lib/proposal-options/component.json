@@ -2,7 +2,7 @@
   "name": "proposal-options",
   "description": "proposal's options view",
   "dependencies": {
-    "component/domify": "*",
+    "component/domify": "1.0.0",
     "component/delegates": "1.0.0",
     "component/classes": "*",
     "visionmedia/superagent": "*",
