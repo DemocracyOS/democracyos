@@ -7,12 +7,21 @@ DemocraciaEnRed is an online space for deliberation and voting on political prop
 ## Requirements
 * [MongoDB](http://www.mongodb.org/downloads)
 * [NodeJS & NPM](http://nodejs.org/download)
+* [Component](http://github.com/component/component/wiki) `npm install -g component`
 
 ## Install
+
+### For *NIX Users
 1. Fork and/or clone or even just download this repository.
-2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation inside the directory).
+2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation below).
+3. Run `make` or `make install && make run` in the root of this application.
+
+### For others
+1. Fork and/or clone or even just download this repository.
+2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation below).
 3. Run `npm install` in the root of this application.
-4. Run `make run` or `NODE_PATH=. node app.js`.
+4. Run `component install` in the root of this application. (Or `./node_module/component/bin/component install`)
+5. Run `make run` or `NODE_PATH=. node app.js`.
 
 ### Development Settings
 In order to install a development instance of this applications, you need to `cp config.sample.json config.dev.json` into this very directory. Then set the following configuration variables:
