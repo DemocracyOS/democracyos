@@ -11,7 +11,7 @@ packages:
 	@npm install
 	@echo "Done.\n"
 	@echo "Installing components..."
-	@component install
+	@./node_modules/component/bin/component install
 	@echo "Done.\n"
 
 clean:

@@ -34,6 +34,7 @@
     "connect-mongo": "*",
     "debug": "*",
     "nowww": "*",
+    "component": "~0.16.7",
     "component-builder": "~0.8.2",
     "string-to-js": "0.0.1",
     "passport": "~0.1.17",
