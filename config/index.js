@@ -104,7 +104,7 @@ function Config(app) {
      * Set `Basic HTTP-Auth` restriction middleware
      */
     // app.use(express.basicAuth('pepe', 'tortugasninja'));
-    app.use( utils.httpAuth(app) );
+    // app.use( utils.httpAuth(app) );
 
   });
 
