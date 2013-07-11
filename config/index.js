@@ -64,7 +64,7 @@ function Config(app) {
   app.configure('production', function() {
 
     // Log config settigs load
-    log( 'development settings' );
+    log( 'production settings' );
 
     /**
      * Set `nowww` middleware helper
