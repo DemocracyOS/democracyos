@@ -37,7 +37,7 @@ article.proposal
       span #{proposal.participants.length} Participant#{plural}
 
     - each participant in proposal.participants
-      a.participant-profile(href="javascript:void();")
+      a.participant-profile(href="javascript:void();", title=participant.fullName)
         img.avatar(src=participant.avatar)
 
   p.share-links

@@ -2,7 +2,10 @@
   "name": "proposal-article",
   "description": "proposal's article view",
   "dependencies": {
-    "component/domify": "1.0.0"
+    "component/domify": "1.0.0",
+    "component/tip": "*",
+    "component/aurora-tip": "*",
+    "cristiandouce/to-array": "*"
   },
   "local": [ ],
   "scripts": [ "proposal-article.js" ],
