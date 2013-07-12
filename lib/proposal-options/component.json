@@ -6,6 +6,7 @@
     "component/delegates": "1.0.0",
     "component/classes": "*",
     "visionmedia/superagent": "*",
+    "visionmedia/page.js": "*",
     "cristiandouce/Chart.js": "*"
   },
   "local": [ ],
