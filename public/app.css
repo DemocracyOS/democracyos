@@ -17,6 +17,112 @@
 
 
 
+.tip {
+  position: absolute;
+  padding: 5px;
+  z-index: 1000;
+  /* default offset for edge-cases: https://github.com/component/tip/pull/12 */
+  top: 0;
+  left: 0;
+}
+
+/* effects */
+
+.tip.fade {
+  transition: opacity 100ms;
+  -moz-transition: opacity 100ms;
+  -webkit-transition: opacity 100ms;
+}
+
+.tip-hide {
+  opacity: 0;
+}
+
+.tip {
+  font-size: 11px;
+}
+
+.tip-inner {
+  background-color: rgba(0,0,0,.75);
+  color: #fff;
+  padding: 8px 10px 7px 10px;
+  text-align: center;
+}
+
+.tip-inner {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.tip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 5px dashed rgba(0,0,0,.75);
+}
+
+.tip-arrow-north { border-bottom-color: rgba(0,0,0,.75) }
+.tip-arrow-south { border-top-color: rgba(0,0,0,.75) }
+.tip-arrow-east { border-left-color: rgba(0,0,0,.75) }
+.tip-arrow-west { border-right-color: rgba(0,0,0,.75) }
+
+.tip-north .tip-arrow,
+.tip-north-east .tip-arrow,
+.tip-north-west .tip-arrow {
+  top: 0px;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-style: solid;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent
+}
+
+.tip-south .tip-arrow,
+.tip-south-east .tip-arrow,
+.tip-south-west .tip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent
+}
+
+.tip-east .tip-arrow {
+  right: 0;
+  top: 50%;
+  margin-top: -5px;
+  border-left-style: solid;
+  border-right: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent
+}
+
+.tip-west .tip-arrow {
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+  border-right-style: solid;
+  border-left: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent
+}
+
+.tip-north-west .tip-arrow,
+.tip-south-west .tip-arrow {
+  left: 15px;
+}
+
+.tip-north-east .tip-arrow,
+.tip-south-east .tip-arrow {
+  left: 85%;
+}
+
+
 
 
 
