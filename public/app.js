@@ -1110,6 +1110,23 @@ List.prototype.appendTo = function(val){
 };
 
 /**
+ * Insert self's `els` after `val`
+ *
+ * @param {String|Element|List} val
+ * @return {List} self
+ * @api public
+ */
+
+List.prototype.insertAfter = function(val){
+  val = dom(val).els[0];
+  if (!val || !val.parentNode) return this;
+  this.els.forEach(function(el){
+    val.parentNode.insertBefore(el, val.nextSibling);
+  });
+  return this;
+};
+
+/**
  * Return a `List` containing the element at `i`.
  *
  * @param {Number} i
@@ -1744,7 +1761,6 @@ module.exports = function(arr, fn, initial){
 };
 });
 require.register("visionmedia-superagent/lib/client.js", function(exports, require, module){
-
 /**
  * Module dependencies.
  */
@@ -2199,11 +2215,10 @@ function Request(method, url) {
 }
 
 /**
- * Inherit from `Emitter.prototype`.
+ * Mixin `Emitter`.
  */
 
-Request.prototype = new Emitter;
-Request.prototype.constructor = Request;
+Emitter(Request.prototype);
 
 /**
  * Set timeout to `ms`.
@@ -2349,7 +2364,7 @@ Request.prototype.auth = function(user, pass){
 
 Request.prototype.query = function(val){
   if ('string' != typeof val) val = serialize(val);
-  this._query.push(val);
+  if (val) this._query.push(val);
   return this;
 };
 
@@ -3267,8 +3282,14 @@ exports.attrs = function attrs(obj, escaped){
       } else if (0 == key.indexOf('data') && 'string' != typeof val) {
         buf.push(key + "='" + JSON.stringify(val) + "'");
       } else if ('class' == key) {
-        if (val = exports.escape(joinClasses(val))) {
-          buf.push(key + '="' + val + '"');
+        if (escaped && escaped[key]){
+          if (val = exports.escape(joinClasses(val))) {
+            buf.push(key + '="' + val + '"');
+          }
+        } else {
+          if (val = joinClasses(val)) {
+            buf.push(key + '="' + val + '"');
+          }
         }
       } else if (escaped && escaped[key]) {
         buf.push(key + '="' + exports.escape(val) + '"');
@@ -3307,12 +3328,18 @@ exports.escape = function escape(html){
  * @api private
  */
 
-exports.rethrow = function rethrow(err, filename, lineno){
-  if (!filename) throw err;
-  if (typeof window != 'undefined') throw err;
-
+exports.rethrow = function rethrow(err, filename, lineno, str){
+  if (!(err instanceof Error)) throw err;
+  if ((typeof window != 'undefined' || !filename) && !str) {
+    err.message += ' on line ' + lineno;
+    throw err;
+  }
+  try {
+    str =  str || require('fs').readFileSync(filename, 'utf8')
+  } catch (ex) {
+    rethrow(err, null, lineno)
+  }
   var context = 3
-    , str = require('fs').readFileSync(filename, 'utf8')
     , lines = str.split('\n')
     , start = Math.max(lineno - context, 0)
     , end = Math.min(lines.length, lineno + context);
