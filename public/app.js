@@ -7547,7 +7547,8 @@ require.register("proposal-options/proposal-options.js", function(exports, requi
  * Module dependencies.
  */
 
-var domify = require('domify')
+var page = require('page')
+  , domify = require('domify')
   , delegates = require('delegates')
   , classes = require('classes')
   , request = require('superagent')
@@ -7636,7 +7637,7 @@ ProposalOptions.prototype.vote = function(ev) {
       };
     }
     // reload location.
-    window.location.reload();
+    page('/');
   });
 }
 
@@ -8260,6 +8261,8 @@ require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce
 
 require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
 
+require.alias("visionmedia-page.js/index.js", "proposal-options/deps/page/index.js");
+
 require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/Chart.js");
 require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/index.js");
 require.alias("cristiandouce-Chart.js/Chart.js", "cristiandouce-Chart.js/index.js");
@@ -8342,6 +8345,8 @@ require.alias("component-indexof/index.js", "component-emitter/deps/indexof/inde
 require.alias("RedVentures-reduce/index.js", "visionmedia-superagent/deps/reduce/index.js");
 
 require.alias("visionmedia-superagent/lib/client.js", "visionmedia-superagent/index.js");
+
+require.alias("visionmedia-page.js/index.js", "proposal-options/deps/page/index.js");
 
 require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/Chart.js");
 require.alias("cristiandouce-Chart.js/Chart.js", "proposal-options/deps/Chart.js/index.js");
