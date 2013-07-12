@@ -18124,6 +18124,13 @@ jade = require("jade");
 require('homepage');
 require('proposal');
 
+page('/auth/facebook', function(ctx, next) {
+  window.location.replace(ctx.path);
+});
+page('/logout', function(ctx, next) {
+  window.location.replace(ctx.path);
+});
+
 /**
  * Init `timeago` component with
  * locale as `es`
