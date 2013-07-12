@@ -6,10 +6,10 @@ article.proposal
     a.meta-item.meta-location(href="#") Buenos Aires, Argentina
 
     - if (locals.citizen)
-      a(href="").meta-item.meta-delegation Delegated on #{citizen.fullName}
+      a.meta-item.meta-delegation(href="") Delegated on #{citizen.fullName}
     - else
       span.meta-item.meta-delegation Not delegated yet
-    a(href="").meta-item.meta-tag ##{proposal.tag.hash}
+    a.meta-item.meta-tag(href="") ##{proposal.tag.hash}
 
   //- .voting-process
     //- span.
@@ -37,8 +37,8 @@ article.proposal
       span #{proposal.participants.length} Participant#{plural}
 
     - each participant in proposal.participants
-      a(href="javascript:void();").participant-profile
-        img(src=participant.avatar).avatar
+      a.participant-profile(href="javascript:void();")
+        img.avatar(src=participant.avatar)
 
   p.share-links
     strong Share: 
