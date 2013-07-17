@@ -8,7 +8,7 @@ var express = require('express')
   , log = require('debug')('app:config')
   , MongoStore = require('connect-mongo')(express)
   , path = require('path')
-  , heroku = require('./heroku')
+  , env = require('./env')
   , utils = require('lib/utils')
   , expressUrl = require('lib/express-url');
 
@@ -91,7 +91,7 @@ function Config(app) {
       log( 'loading config settings from heroku only' )
     }
 
-    app.set( 'config', utils.merge( heroku, confFile ) );
+    app.set( 'config', utils.merge( env, confFile ) );
     
     /**
      * Set `mongoUrl` setting from environment
