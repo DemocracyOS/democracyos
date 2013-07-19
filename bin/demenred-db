@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var program = require('commander');
+
+program
+  .option('-h, --host <name>', "MongoDB host.")
+  .option('-p, --port <port>', "MongoDB port.")
+  .option('-d, --database <name>', "MongoDB database name.")
+  .option('-u, --user <name>', "MongoDB username.")
+  .option('-p, --password <password>', "MongoDB password.")
+  .option('-U, --url <url>', "MongoDB URL. (mongodb://user:pass@host:8888/database)")
+  .parse(process.argv);

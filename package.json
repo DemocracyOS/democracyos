@@ -43,7 +43,8 @@
     "http-auth": "*",
     "nodemailer": "*",
     "imap": "*",
-    "marked": "~0.2.9"
+    "marked": "~0.2.9",
+    "commander": "~2.0.0"
   },
   "devDependencies": {},
   "main": "pdr",
