@@ -1,0 +1,10 @@
+{
+  "name": "regexps",
+  "description": "Collection of regular expressions",
+  "dependencies": {},
+  "development": {},
+  "scripts": [
+    "index.js"
+  ],
+  "main": "index.js"
+}
