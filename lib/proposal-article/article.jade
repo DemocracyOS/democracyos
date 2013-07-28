@@ -1,15 +1,13 @@
 article.proposal
+
+  small 10 days left
+
   h2=proposal.title
 
-  .meta-data
-    a.meta-item.meta-time(href="#") 10 days left
-    a.meta-item.meta-location(href="#") Buenos Aires, Argentina
+  a.meta-item.meta-location(href="#") Buenos Aires, Argentina
 
-    - if (locals.citizen)
-      a.meta-item.meta-delegation(href="") Delegated on #{citizen.fullName}
-    - else
-      span.meta-item.meta-delegation Not delegated yet
-    a.meta-item.meta-tag(href="") ##{proposal.tag.hash}
+  .meta-data
+    
 
   //- .voting-process
     //- span.
@@ -20,18 +18,6 @@ article.proposal
     - if (line.trim())
       p=line.trim()
 
-  hr 
-
-  footer.footer-notes  
-    h5 Referencias
-    ol 
-      li Referencia 1: http://wikipedia.org
-      li Referencia 2: http://wikipedia.org
-      li Referencia 3: http://wikipedia.org
-      li Referencia 4: http://wikipedia.org
-      li Referencia 5: http://wikipedia.org
-      li Referencia 6: http://wikipedia.org
-
   .participants
     - var plural = 1 === proposal.participants.length ? '' : 's'
       span #{proposal.participants.length} Participant#{plural}
@@ -40,8 +26,7 @@ article.proposal
       a.participant-profile(href="javascript:void();", title=participant.fullName)
         img.avatar(src=participant.avatar)
 
-  p.share-links
-    strong Share: 
-    a(href="") Facebook 
-    a(href="") Twitter 
-    a(href="") Google Plus
+  .share-links
+    a(href="").flaticon.social.facebook  
+    a(href="").flaticon.social.twitter  
+    a(href="").flaticon.social.google-plus 

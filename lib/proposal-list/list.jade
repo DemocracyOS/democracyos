@@ -1,9 +1,28 @@
 nav.sidebar-nav
+
+
+  .dropdown-deparment
+    .btn-group
+      button.btn.btn-default(type='button') Viendo todas las propuestas
+      button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+        span.caret
+      ul.dropdown-menu
+        li
+          a(href='#') Action
+        li
+          a(href='#') Another action
+        li
+          a(href='#') Something else here
+
+
+
   ul.nav.navlist
     - each p in proposals
       - var active = p._id === proposal._id ? 'active' : '';
       li(class=active)
         a(href="/proposal/"+p._id)
+          span.proposal-type.flaticon.solid.government-1       
+          span.proposal-type.proposal-type-2.flaticon.solid.clipboard-4     
           span.title=p.title
           span.created-by
             | Creador por #{p.author.fullName} 

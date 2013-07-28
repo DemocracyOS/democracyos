@@ -2,6 +2,7 @@
 -------------------------------------------------- */
 header_height = 60px;
 spacing = 30px;
+border_radius = 3px;
 nav_proposal_width = 280px;
 
 /* General
@@ -12,6 +13,7 @@ html
 
 h1,h2,h3,h4,h5,h6
 	font-family: "freight-sans-pro",sans-serif;
+	font-weight: bold;
 
 a 
 	color: black;
@@ -29,7 +31,7 @@ header.app-header
 	left: 0;
 	right: 0;
 	height: header_height;
-	background: #00b3eb;
+	background: #3498DB;
 	color: white;
 	padding-left: spacing;
 	font-weight: bold;
@@ -54,6 +56,8 @@ header.app-header
 				a 
 					margin-right: 30px;
 
+
+
 	ul.user-nav 
 		display: inline-block;
 		float: right;
@@ -66,6 +70,15 @@ header.app-header
 
 /* Proposal Aside Navigation
 -------------------------------------------------- */
+
+.dropdown-deparment
+	padding: 20px;
+	background-color: #BDC3C7;
+	display: block;
+	.btn-group
+		float: none;
+		button.btn.btn-default
+			background-color: #7F8C8D;
 aside.nav-proposal 
 	top: header_height;
 	left: 0;
@@ -73,26 +86,44 @@ aside.nav-proposal
 	width: nav_proposal_width;
 	border-right: 1px solid #999;
 	overflow-y: scroll;
-	li 
-		border-bottom: 1px solid #ccc;
-		a 
-			padding-left: spacing;
-			padding-top: 14px;
-			padding-bottom: 14px;
-			color: black;
-			span.title
-				font-size: 16px;
-				font-weight: bold;
-				display: block;
-				margin-bottom: 10px;
-
-			span.created-by
-				font-size: 11px;
-				opacity: .5;
-
-		&.active 
+	background: #ECF0F1;
+	.navlist
+		li 
+			border-bottom: 1px solid #ccc;
 			a 
-				background: #f9f9f9;
+				padding-left: spacing;
+				padding-top: 14px;
+				padding-bottom: 14px;
+				color: black;	
+				position: relative;
+				padding-left: 60px;
+
+				.proposal-type
+					position: absolute;
+					left: 14px;
+					top: 20px;
+					background: #F1C42E;
+					color: white;
+					border-radius: 100px;
+					padding: 10px;
+					line-height: 10px;
+
+					&.proposal-type-2
+						background-color: #E67E22;
+
+				span.title
+					font-size: 16px;
+					font-weight: bold;
+					display: block;
+					margin-bottom: 6px;
+
+				span.created-by
+					font-size: 11px;
+					opacity: .5;
+
+			&.active 
+				a 
+					background: #fff;
 
 section.app-content
 	left: nav_proposal_width + 1px;
@@ -143,36 +174,58 @@ article.proposal
 
 	.share-links
 		margin-bottom: 40px;
+		a 
+			background: #333;
+			padding: 10px;
+			margin-right: 10px;
+			border-radius: border_radius;
+			color: white;
+			display: inline-block
+			line-height: 10px;
+
+			&:hover 
+				text-decoration: none;
+
 
 .proposal-options
 	width: 220px;
 	position: absolute;
 	top: 80px;
 	right: spacing;
+	padding: 10px 20px;
 	.vote-options
-		margin-bottom: 50px;
 		.vote-option
-			width: 50%;
-			display: inline-block;	
+			display: block;	
 			color: white;
 			text-transform: uppercase;
 			font-weight: bold;
-			text-align: center;
+			border-radius: border_radius;
+			margin-bottom: 20px;
+			padding: 14px;
+			.flaticon
+				display: inline-block
+				margin-right: 14px;
 			span 
-				padding: 20px;
-				display: block;
+				display: inline-block;
 			&.vote-yes
 				background-color: #a4cb53;
 
 			&.vote-no
 				background-color: #d95e59;
+
+			&.vote-abstain
+				background-color: #666;
 				
 	.vote-box, .results-box
-		border-left: 4px solid #eee;
-		padding-left: 20px;
+		border: 1px solid #eee;
+		background: white;
+		padding: 20px;
 		h5 
 			text-transform: uppercase;
+			margin-top: 0;
 
+	.results-box
+		display: none
 /* Comments
 -------------------------------------------------- */
 .comments

@@ -14,9 +14,16 @@
 
     .vote-options(class=hide)
       a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
-        span Yes
+        .flaticon.solid.thumbs-up-1
+        span Positive
+      a.vote-option.vote-abstain(href="#", data-proposal=proposal.id)
+        .flaticon.solid.pause
+        span Abstain 
       a.vote-option.vote-no(href="#", data-proposal=proposal.id)
-        span No
+        .flaticon.solid.thumbs-down-1
+        span Negative
+
+      a(href="") Ver resultados
 
   //- h5 Delegations
 
