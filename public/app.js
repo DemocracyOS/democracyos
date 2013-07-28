@@ -17750,7 +17750,7 @@ function ProposalComments (proposal, replies) {
   if (!(this instanceof ProposalComments)) {
     return new ProposalComments(proposal);
   };
-
+  debugger;
   this.proposal = proposal;
   this.comments = domify(comments({ proposal: proposal, comments: replies }));
 
@@ -17882,6 +17882,11 @@ function load (ctx, next) {
 function getComments (ctx, next) {
   log('Loading comments');
 
+  if (!ctx.proposal.id) {
+    ctx.comments = commentsExample;
+    return next();
+  };
+  
   request
   .get('/api/proposal/:id/comments'.replace(':id', ctx.proposal.id))
   .set('Accept', 'application/json')
