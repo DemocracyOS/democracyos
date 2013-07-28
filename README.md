@@ -24,14 +24,29 @@ DemocraciaEnRed is an online space for deliberation and voting on political prop
 5. Run `make run` or `NODE_PATH=. node app.js`.
 
 ### Development Settings
-In order to install a development instance of this applications, you need to `cp config.sample.json config.dev.json` into this very directory. Then set the following configuration variables:
+In order to install a development instance of this applications, you need to 
+1. `cp config.sample.json config.dev.json` into this very directory
+2. Set `NODE_ENV` environment variable to `development`
+3. Then set the following configuration variables:
+
+#### Facebook Auth
+#### Twitter Auth
+
+### Testing Settings
+In order to install a testing instance of this applications, you need to 
+1. `cp config.sample.json config.testing.json` into this very directory. 
+2. Set `NODE_ENV` environment variable to `testing`
+3. Then set the following configuration variables:
 
 #### Facebook Auth
 #### Twitter Auth
 
 
 ### Production Settings
-In order to install a development instance of this applications, you need to `cp config.sample.json config.json` into this very directory. Then set the following configuration variables:
+In order to install a production instance of this applications, you need to 
+1. `cp config.sample.json config.json` into this very directory. 
+2. Set `NODE_ENV` environment variable to `production`
+3. Then set the following configuration variables:
 
 #### Facebook Auth
 #### Twitter Auth
