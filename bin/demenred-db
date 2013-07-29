@@ -7,10 +7,20 @@
 var program = require('commander');
 
 program
-  .option('-h, --host <name>', "MongoDB host.")
-  .option('-p, --port <port>', "MongoDB port.")
-  .option('-d, --database <name>', "MongoDB database name.")
   .option('-u, --user <name>', "MongoDB username.")
   .option('-p, --password <password>', "MongoDB password.")
-  .option('-U, --url <url>', "MongoDB URL. (mongodb://user:pass@host:8888/database)")
+  .option('-h, --host <name>', "MongoDB host. [localhost]", String, "localhost")
+  .option('-p, --port <port>', "MongoDB port. [27017]", Number, 27017)
+  .option('-d, --database <name>', "MongoDB database name.", String, "DemEnRed")
+  .option('-U, --url <url>', "MongoDB URL. (mongodb://user:pass@localhost:27017/DemEnRed)")
   .parse(process.argv);
+
+var mongoURL = program.url || "mongodb://"
+  + (program.user ? program.user + ":" + program.password + "@" : "")
+  + program.host
+  + ":"
+  + program.port
+  + "/"
+  + program.database;
+
+console.log(mongoURL);
