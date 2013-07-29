@@ -44,7 +44,8 @@
     "nodemailer": "*",
     "imap": "*",
     "marked": "~0.2.9",
-    "commander": "~2.0.0"
+    "commander": "~2.0.0",
+    "truncate" :"*"
   },
   "devDependencies": {},
   "main": "pdr",

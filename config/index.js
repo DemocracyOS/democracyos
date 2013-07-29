@@ -57,6 +57,39 @@ function Config(app) {
 
   });
 
+
+  /**
+   * Set `testing` only settings
+   */
+
+  app.configure('testing', function() {
+
+    // Log config settigs load
+    log( 'testing settings' );
+
+    /**
+     * Load custom `config` settings from
+     * file `config.json`
+     */
+
+    app.set( 'config', require('./config.testing.json') );
+
+    /**
+     * Set `mongoUrl` to `mongodb://localhost/pdr-testing`
+     * for MongoDB connection
+     */
+
+    app.set( 'mongoUrl', 'mongodb://localhost/pdr-testing' );
+
+    /**
+     * Build
+     */
+
+    app.use(require('lib/build'));
+
+  });
+
+
   /**
    * Set `production` only settings
    */
