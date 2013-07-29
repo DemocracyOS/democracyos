@@ -2,18 +2,14 @@ h1#logo
   a(href='/') Democracia en Red Beta
 
 
-ul.user-nav
+.user-nav
   - if (locals.citizen)
 
-    li
-      a.profile(href='#')
-        span(style="margin-right:5px;"): img(src=citizen.avatar, width="18")
-        | #{citizen.fullName}
-
-    li
-      a.logout(href=url('/logout')) Logout
+    a.profile(href='#')
+        img(src=citizen.avatar)
+        
+    a.logout(href=url('/logout')) Logout
   - else
-    li.login: nav
-      a.nav(href=url('/auth/facebook'), class="sb sb-small sb-facebook")
+      a(href=url('/auth/facebook'), class="sb sb-small sb-facebook")
         i
         | Log in

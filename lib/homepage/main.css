@@ -17,8 +17,19 @@ h6 {
 a {
   color: #000;
 }
+.btn {
+  background-color: #333;
+  color: #fff;
+}
 img.avatar {
   border-radius: 100%;
+}
+.btn-default {
+  border: 0;
+}
+.btn-group > .btn + .dropdown-toggle {
+  padding-left: 14px;
+  padding-right: 14px;
 }
 /* Header
 -------------------------------------------------- */
@@ -47,27 +58,18 @@ header.app-header h1 {
   display: inline-block;
   width: 300px;
   font-size: 12px;
+  margin-top: 22px;
 }
-header.app-header nav {
-  display: inline-block;
-  height: 60px;
-}
-header.app-header nav ul li {
-  display: inline-block;
-}
-header.app-header nav ul li a {
-  margin-right: 30px;
-}
-header.app-header ul.user-nav {
+header.app-header .user-nav {
   display: inline-block;
   float: right;
-  margin-top: 20px;
+  margin-top: 14px;
   list-style: none;
   margin-right: 30px;
 }
-header.app-header ul.user-nav li {
-  display: inline-block;
-  margin-left: 30px;
+header.app-header .user-nav .profile img {
+  width: 32px;
+  border-radius: 100px;
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */
@@ -81,6 +83,9 @@ header.app-header ul.user-nav li {
 }
 .dropdown-deparment .btn-group button.btn.btn-default {
   background-color: #7f8c8d;
+}
+.dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
+  background-color: #727f80;
 }
 aside.nav-proposal {
   top: 60px;
@@ -143,21 +148,12 @@ article.proposal {
   margin-left: 100px;
 }
 article.proposal h2 {
+  margin-top: 0;
   margin-bottom: 20px;
 }
-article.proposal .meta-data {
-  margin-bottom: 20px;
-  font-size: 12px;
-}
-article.proposal .meta-data a.meta-item {
-  margin-right: 30px;
-  color: #666;
-}
-article.proposal .meta-data a.meta-item.meta-tag,
-article.proposal .meta-data a.meta-item.meta-delegation {
+article.proposal .meta-information .meta-timeago {
   float: right;
-  margin-left: 20px;
-  margin-right: 0;
+  display: block;
 }
 article.proposal hr {
   border-top: 4px solid #eee;
