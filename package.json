@@ -33,7 +33,7 @@
     "debug": "*",
     "nowww": "*",
     "component": "~0.16.7",
-    "component-builder": "~0.8.2",
+    "component-builder": "~0.8.3",
     "string-to-js": "0.0.1",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
@@ -45,7 +45,7 @@
     "imap": "*",
     "marked": "~0.2.9",
     "commander": "~2.0.0",
-    "truncate" :"*"
+    "truncate": "*"
   },
   "devDependencies": {},
   "main": "pdr",
@@ -54,6 +54,7 @@
     "npm": "1.1.x"
   },
   "scripts": {
-    "test": ""
+    "test": "",
+    "install": "./node_modules/component/bin/component-install && ./bin/demenred-build"
   }
 }

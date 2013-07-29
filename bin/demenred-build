@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var Builder = require('component-builder');
+var templates = require('../lib/build/templates');
+var fs = require('fs');
+var write = fs.writeFileSync;
+
+var builder = new Builder('.');
+builder.addLookup('lib'); // TODO: shouldn't be necessary
+builder.copyAssetsTo('public');
+builder.use(templates);
+builder.build(function(err, res){
+  if (err) return console.log(err);
+  write('public/app.js', res.require + res.js);
+  write('public/app.css', res.css);
+});
