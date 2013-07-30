@@ -69,6 +69,15 @@ header.app-header
 			width: 32px;
 			border-radius: 100px;
 
+		.login
+			background: rgba(0,0,0,.4);
+			padding: 6px 12px;
+			display: inline-block
+			border-radius: border_radius;
+
+			&:hover 
+				text-decoration: none
+
 
 /* Proposal Aside Navigation
 -------------------------------------------------- */
@@ -130,6 +139,20 @@ aside.nav-proposal
 				a 
 					background: #fff;
 
+
+.proposal-type
+	position: absolute;
+	left: 14px;
+	top: 20px;
+	background: #F1C42E;
+	color: white;
+	border-radius: 100px;
+	padding: 10px;
+	line-height: 10px;
+
+	&.proposal-type-2
+		background-color: #E67E22;
+
 section.app-content
 	left: nav_proposal_width + 1px;
 	top: header_height;
@@ -145,6 +168,7 @@ article.proposal
 	width: 500px;
 	margin-top: 10px;
 	margin-left: 100px;
+	min-height: 300px;
 
 	h2 
 		margin-top: 0;
@@ -152,10 +176,14 @@ article.proposal
 
 	.meta-information
 		margin-bottom: 10px;
+		opacity: .6;
 		.meta-timeago
 			float: right
 			display: block;
 
+	.proposal-type
+		top: 66px;
+		left: 44px;
 	hr 
 		border-top: 4px solid #eee;
 		width: 50%;
@@ -172,11 +200,12 @@ article.proposal
 		border-bottom: 2px solid #f1f1f1;
 		.participant-profile img
 			width: 30px;
+			margin-left: 20px;
 
 	.share-links
 		margin-bottom: 40px;
 		a 
-			background: #333;
+			background: #ccc;
 			padding: 10px;
 			margin-right: 10px;
 			border-radius: border_radius;
@@ -187,13 +216,22 @@ article.proposal
 			&:hover 
 				text-decoration: none;
 
+			&.facebook:hover
+				background: #3b5998;
+
+			&.twitter:hover
+				background: #3498db;
+
+			&.google-plus:hover
+				background: #c0392b;
+
 
 .proposal-options
-	width: 220px;
+	width: 200px;
 	position: absolute;
-	top: 80px;
+	top: 30px;
 	right: spacing;
-	padding: 10px 20px;
+
 	.vote-options
 		.vote-option
 			display: block;	

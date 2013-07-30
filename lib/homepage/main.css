@@ -71,6 +71,15 @@ header.app-header .user-nav .profile img {
   width: 32px;
   border-radius: 100px;
 }
+header.app-header .user-nav .login {
+  background: rgba(0,0,0,0.4);
+  padding: 6px 12px;
+  display: inline-block;
+  border-radius: 3px;
+}
+header.app-header .user-nav .login:hover {
+  text-decoration: none;
+}
 /* Proposal Aside Navigation
 -------------------------------------------------- */
 .dropdown-deparment {
@@ -133,6 +142,19 @@ aside.nav-proposal .navlist li a span.created-by {
 aside.nav-proposal .navlist li.active a {
   background: #fff;
 }
+.proposal-type {
+  position: absolute;
+  left: 14px;
+  top: 20px;
+  background: #f1c42e;
+  color: #fff;
+  border-radius: 100px;
+  padding: 10px;
+  line-height: 10px;
+}
+.proposal-type.proposal-type-2 {
+  background-color: #e67e22;
+}
 section.app-content {
   left: 281px;
   top: 60px;
@@ -147,6 +169,7 @@ article.proposal {
   width: 500px;
   margin-top: 10px;
   margin-left: 100px;
+  min-height: 300px;
 }
 article.proposal h2 {
   margin-top: 0;
@@ -154,10 +177,15 @@ article.proposal h2 {
 }
 article.proposal .meta-information {
   margin-bottom: 10px;
+  opacity: 0.6;
 }
 article.proposal .meta-information .meta-timeago {
   float: right;
   display: block;
+}
+article.proposal .proposal-type {
+  top: 66px;
+  left: 44px;
 }
 article.proposal hr {
   border-top: 4px solid #eee;
@@ -176,12 +204,13 @@ article.proposal .participants {
 }
 article.proposal .participants .participant-profile img {
   width: 30px;
+  margin-left: 20px;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
 }
 article.proposal .share-links a {
-  background: #333;
+  background: #ccc;
   padding: 10px;
   margin-right: 10px;
   border-radius: 3px;
@@ -192,12 +221,20 @@ article.proposal .share-links a {
 article.proposal .share-links a:hover {
   text-decoration: none;
 }
+article.proposal .share-links a.facebook:hover {
+  background: #3b5998;
+}
+article.proposal .share-links a.twitter:hover {
+  background: #3498db;
+}
+article.proposal .share-links a.google-plus:hover {
+  background: #c0392b;
+}
 .proposal-options {
-  width: 220px;
+  width: 200px;
   position: absolute;
-  top: 80px;
+  top: 30px;
   right: 30px;
-  padding: 10px 20px;
 }
 .proposal-options .vote-options .vote-option {
   display: block;

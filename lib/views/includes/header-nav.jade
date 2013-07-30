@@ -9,7 +9,7 @@ h1#logo
         img(src=citizen.avatar)
         
     a.logout(href=url('/logout')) Logout
+  
   - else
-      a(href=url('/auth/facebook'), class="sb sb-small sb-facebook")
-        i
-        | Log in
+    
+    a(href=url('/auth/facebook')).login Login
