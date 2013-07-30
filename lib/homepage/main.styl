@@ -18,8 +18,19 @@ h1,h2,h3,h4,h5,h6
 a 
 	color: black;
 
+.btn 
+	background-color: #333;
+	color: white;
+
 img.avatar
 	border-radius: 100%;
+
+.btn-default
+	border: 0;
+
+.btn-group > .btn + .dropdown-toggle
+	padding-left: 14px;
+	padding-right: 14px;
 
 /* Header
 -------------------------------------------------- */
@@ -46,27 +57,18 @@ header.app-header
 		display: inline-block;
 		width: 300px;
 		font-size: 12px;
+		margin-top: 22px;
 
-	nav 
-		display: inline-block;
-		height: header_height;
-		ul 
-			li 
-				display: inline-block;
-				a 
-					margin-right: 30px;
-
-
-
-	ul.user-nav 
+	.user-nav 
 		display: inline-block;
 		float: right;
-		margin-top: 20px;
+		margin-top: 14px;
 		list-style: none;
 		margin-right: spacing;
-		li 
-			display: inline-block;
-			margin-left: 30px;
+		.profile img 
+			width: 32px;
+			border-radius: 100px;
+
 
 /* Proposal Aside Navigation
 -------------------------------------------------- */
@@ -79,17 +81,20 @@ header.app-header
 		float: none;
 		button.btn.btn-default
 			background-color: #7F8C8D;
+			&.dropdown-toggle
+				background-color: #727f80;
+
 aside.nav-proposal 
 	top: header_height;
 	left: 0;
 	bottom: 0;
 	width: nav_proposal_width;
-	border-right: 1px solid #999;
+	border-right: 1px solid #BDC3C7;
 	overflow-y: scroll;
 	background: #ECF0F1;
 	.navlist
 		li 
-			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid #BDC3C7;
 			a 
 				padding-left: spacing;
 				padding-top: 14px;
@@ -137,23 +142,19 @@ section.app-content
 /* Proposal View
 -------------------------------------------------- */
 article.proposal
-	width: 520px;
+	width: 500px;
+	margin-top: 10px;
 	margin-left: 100px;
 
 	h2 
+		margin-top: 0;
 		margin-bottom: 20px;
 
-	.meta-data
-		margin-bottom: 20px;
-		font-size: 12px;
-		a.meta-item
-			margin-right: 30px;
-			color: #666;
-
-			&.meta-tag, &.meta-delegation
-				float: right;
-				margin-left: 20px;
-				margin-right: 0;
+	.meta-information
+		margin-bottom: 10px;
+		.meta-timeago
+			float: right
+			display: block;
 
 	hr 
 		border-top: 4px solid #eee;
@@ -166,7 +167,7 @@ article.proposal
 	.participants
 		font-weight: bold;
 		padding: 10px 0;
-		margin-bottom: 30px;
+		margin: 30px 0;
 		border-top: 2px solid #f1f1f1;
 		border-bottom: 2px solid #f1f1f1;
 		.participant-profile img
