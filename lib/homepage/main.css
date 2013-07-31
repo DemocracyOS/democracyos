@@ -332,6 +332,7 @@ article.proposal .share-links a.google-plus:hover {
 }
 .comments .comment-list .comment-item {
   margin-bottom: 20px;
+  max-width: 580px;
 }
 .comments .comment-list .comment-item .pull-left {
   width: 46px;
