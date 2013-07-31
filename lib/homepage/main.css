@@ -202,9 +202,11 @@ article.proposal .participants {
   border-top: 2px solid #f1f1f1;
   border-bottom: 2px solid #f1f1f1;
 }
+article.proposal .participants .participant-profile {
+  margin-left: 20px;
+}
 article.proposal .participants .participant-profile img {
   width: 30px;
-  margin-left: 20px;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
@@ -301,11 +303,7 @@ article.proposal .share-links a.google-plus:hover {
   width: 50px;
   margin-right: 20px;
 }
-.comments .comment-list .comment-item .pull-left a.avatar {
-  width: 24px;
-  display: inline-block;
-}
-.comments .comment-list .comment-item .pull-left a.avatar img {
+.comments .comment-list .comment-item .pull-left .avatar {
   width: 100%;
   border-radius: 100px;
 }
