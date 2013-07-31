@@ -157,6 +157,7 @@ aside.nav-proposal .navlist li a {
   color: #000;
   position: relative;
   padding-left: 70px;
+  color: #666;
 }
 aside.nav-proposal .navlist li a .proposal-type {
   position: absolute;
@@ -192,6 +193,7 @@ aside.nav-proposal .navlist li.active a .proposal-type-2 {
 }
 aside.nav-proposal .navlist li.active.active a {
   background: #fff;
+  color: #000;
 }
 .proposal-type {
   position: absolute;
