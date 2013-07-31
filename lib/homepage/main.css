@@ -161,14 +161,11 @@ aside.nav-proposal .navlist li a .proposal-type {
   position: absolute;
   left: 14px;
   top: 20px;
-  background: #f1c42e;
+  background: #95a5a6;
   color: #fff;
   border-radius: 100px;
   padding: 10px;
   line-height: 10px;
-}
-aside.nav-proposal .navlist li a .proposal-type.proposal-type-2 {
-  background-color: #e67e22;
 }
 aside.nav-proposal .navlist li a span.title {
   font-size: 16px;
@@ -179,6 +176,12 @@ aside.nav-proposal .navlist li a span.title {
 aside.nav-proposal .navlist li a span.created-by {
   font-size: 11px;
   opacity: 0.5;
+}
+aside.nav-proposal .navlist li a:hover .proposal-type {
+  background-color: #f1c42e;
+}
+aside.nav-proposal .navlist li a:hover .proposal-type-2 {
+  background-color: #e67e22;
 }
 aside.nav-proposal .navlist li.active a {
   background: #fff;
