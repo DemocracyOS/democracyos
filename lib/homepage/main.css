@@ -260,6 +260,12 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .vote-options .vote-option.vote-no {
   background-color: #d95e59;
 }
+.proposal-options .vote-options .vote-option.vote-no i {
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+/* IE 9 */
+  -webkit-transform: rotate(180deg);
+}
 .proposal-options .vote-options .vote-option.vote-abstain {
   background-color: #666;
 }
@@ -295,12 +301,16 @@ article.proposal .share-links a.google-plus:hover {
 }
 .comments .comment-form {
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 .comments .comment-form textarea {
   width: 500px;
 }
+.comments .comment-list .comment-item {
+  margin-bottom: 20px;
+}
 .comments .comment-list .comment-item .pull-left {
-  width: 50px;
+  width: 46px;
   margin-right: 20px;
 }
 .comments .comment-list .comment-item .pull-left .avatar {

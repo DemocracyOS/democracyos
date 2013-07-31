@@ -253,6 +253,10 @@ article.proposal
 
 			&.vote-no
 				background-color: #d95e59;
+				i
+					transform:rotate(180deg);
+					-ms-transform:rotate(180deg); /* IE 9 */
+					-webkit-transform:rotate(180deg);
 
 			&.vote-abstain
 				background-color: #666;
@@ -285,14 +289,16 @@ article.proposal
 
 	.comment-form
 		margin-bottom: 50px;
+		margin-top: 50px;
 		textarea
 			width: 500px;
 		
 
 	.comment-list
 		.comment-item
+			margin-bottom: 20px;
 			.pull-left
-				width: 50px;
+				width: 46px;
 				margin-right: 20px;
 				.avatar 
 					width: 100%;
