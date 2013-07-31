@@ -5,6 +5,7 @@
     "component/domify": "1.0.0",
     "component/tip": "*",
     "component/aurora-tip": "*",
+    "visionmedia/jade": "*",
     "cristiandouce/to-array": "*"
   },
   "local": [ ],
