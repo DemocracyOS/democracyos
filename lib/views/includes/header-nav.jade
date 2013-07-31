@@ -2,14 +2,16 @@ h1#logo
   a(href='/') Democracia en Red Beta
 
 
-.user-nav
+.user-nav.btn-group
   - if (locals.citizen)
 
-    a.profile(href='#')
+    a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
         img(src=citizen.avatar)
-        
-    a.logout(href=url('/logout')) Logout
+        span.caret
+    ul.dropdown-menu
+        li
+            a.logout(href=url('/logout')) Logout
+  
   - else
-      a(href=url('/auth/facebook'), class="sb sb-small sb-facebook")
-        i
-        | Log in
+    
+    a(href=url('/auth/facebook')).login Login

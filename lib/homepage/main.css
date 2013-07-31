@@ -31,6 +31,10 @@ img.avatar {
   padding-left: 14px;
   padding-right: 14px;
 }
+.dropdown-menu {
+  border-radius: 0;
+  text-transform: none;
+}
 /* Header
 -------------------------------------------------- */
 header.app-header,
@@ -44,6 +48,7 @@ header.app-header {
   right: 0;
   height: 60px;
   background: #3498db;
+  border-bottom: 1px solid #2980b9;
   color: #fff;
   padding-left: 30px;
   font-weight: bold;
@@ -63,13 +68,58 @@ header.app-header h1 {
 header.app-header .user-nav {
   display: inline-block;
   float: right;
-  margin-top: 14px;
   list-style: none;
   margin-right: 30px;
+}
+header.app-header .user-nav .btn {
+  height: 60px;
+  border-radius: 0;
+  border-left: 1px solid #2980b9;
+  border-right: 1px solid #2980b9;
+  background: none;
+  padding: 0;
+  padding: 13px 12px;
+}
+header.app-header .user-nav .btn:focus {
+  outline: 0;
+}
+header.app-header .user-nav .btn .caret {
+  margin-left: 6px;
+}
+header.app-header .user-nav .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+header.app-header .user-nav .dropdown-menu a {
+  color: #000;
+  text-transform: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+}
+header.app-header .user-nav .dropdown-menu a:hover {
+  background: #2c3e50;
+  color: #fff;
+}
+header.app-header .user-nav.open .btn {
+  background: rgba(0,0,0,0.1);
+}
+header.app-header .user-nav.open .dropdown-toggle {
+  box-shadow: none;
 }
 header.app-header .user-nav .profile img {
   width: 32px;
   border-radius: 100px;
+}
+header.app-header .user-nav .login {
+  background: rgba(0,0,0,0.4);
+  padding: 6px 12px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+header.app-header .user-nav .login:hover {
+  text-decoration: none;
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */
@@ -111,14 +161,11 @@ aside.nav-proposal .navlist li a .proposal-type {
   position: absolute;
   left: 14px;
   top: 20px;
-  background: #f1c42e;
+  background: #95a5a6;
   color: #fff;
   border-radius: 100px;
   padding: 10px;
   line-height: 10px;
-}
-aside.nav-proposal .navlist li a .proposal-type.proposal-type-2 {
-  background-color: #e67e22;
 }
 aside.nav-proposal .navlist li a span.title {
   font-size: 16px;
@@ -130,8 +177,27 @@ aside.nav-proposal .navlist li a span.created-by {
   font-size: 11px;
   opacity: 0.5;
 }
+aside.nav-proposal .navlist li a:hover .proposal-type {
+  background-color: #f1c42e;
+}
+aside.nav-proposal .navlist li a:hover .proposal-type-2 {
+  background-color: #e67e22;
+}
 aside.nav-proposal .navlist li.active a {
   background: #fff;
+}
+.proposal-type {
+  position: absolute;
+  left: 14px;
+  top: 20px;
+  background: #f1c42e;
+  color: #fff;
+  border-radius: 100px;
+  padding: 10px;
+  line-height: 10px;
+}
+.proposal-type.proposal-type-2 {
+  background-color: #e67e22;
 }
 section.app-content {
   left: 281px;
@@ -147,6 +213,7 @@ article.proposal {
   width: 500px;
   margin-top: 10px;
   margin-left: 100px;
+  min-height: 300px;
 }
 article.proposal h2 {
   margin-top: 0;
@@ -154,10 +221,15 @@ article.proposal h2 {
 }
 article.proposal .meta-information {
   margin-bottom: 10px;
+  opacity: 0.6;
 }
 article.proposal .meta-information .meta-timeago {
   float: right;
   display: block;
+}
+article.proposal .proposal-type {
+  top: 66px;
+  left: 44px;
 }
 article.proposal hr {
   border-top: 4px solid #eee;
@@ -174,6 +246,9 @@ article.proposal .participants {
   border-top: 2px solid #f1f1f1;
   border-bottom: 2px solid #f1f1f1;
 }
+article.proposal .participants .participant-profile {
+  margin-left: 10px;
+}
 article.proposal .participants .participant-profile img {
   width: 30px;
 }
@@ -181,7 +256,7 @@ article.proposal .share-links {
   margin-bottom: 40px;
 }
 article.proposal .share-links a {
-  background: #333;
+  background: #ccc;
   padding: 10px;
   margin-right: 10px;
   border-radius: 3px;
@@ -192,12 +267,20 @@ article.proposal .share-links a {
 article.proposal .share-links a:hover {
   text-decoration: none;
 }
+article.proposal .share-links a.facebook:hover {
+  background: #3b5998;
+}
+article.proposal .share-links a.twitter:hover {
+  background: #3498db;
+}
+article.proposal .share-links a.google-plus:hover {
+  background: #c0392b;
+}
 .proposal-options {
-  width: 220px;
+  width: 200px;
   position: absolute;
-  top: 80px;
+  top: 30px;
   right: 30px;
-  padding: 10px 20px;
 }
 .proposal-options .vote-options .vote-option {
   display: block;
@@ -220,6 +303,12 @@ article.proposal .share-links a:hover {
 }
 .proposal-options .vote-options .vote-option.vote-no {
   background-color: #d95e59;
+}
+.proposal-options .vote-options .vote-option.vote-no i {
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+/* IE 9 */
+  -webkit-transform: rotate(180deg);
 }
 .proposal-options .vote-options .vote-option.vote-abstain {
   background-color: #666;
@@ -256,19 +345,20 @@ article.proposal .share-links a:hover {
 }
 .comments .comment-form {
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 .comments .comment-form textarea {
   width: 500px;
 }
+.comments .comment-list .comment-item {
+  margin-bottom: 20px;
+  max-width: 580px;
+}
 .comments .comment-list .comment-item .pull-left {
-  width: 50px;
+  width: 46px;
   margin-right: 20px;
 }
-.comments .comment-list .comment-item .pull-left a.avatar {
-  width: 24px;
-  display: inline-block;
-}
-.comments .comment-list .comment-item .pull-left a.avatar img {
+.comments .comment-list .comment-item .pull-left .avatar {
   width: 100%;
   border-radius: 100px;
 }

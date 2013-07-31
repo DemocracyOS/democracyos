@@ -1,10 +1,4 @@
 .comments
-  form.comment-form(method='post', action='/api/proposal/' + proposal.id + '/comment')
-    h5 Tu comentario 
-    p 
-      textarea(name="comment[text]")
-    input(type="submit", value="Submit Comment").btn
-
 
   h4 Comments 
   ul.media-list.comment-list
@@ -19,3 +13,10 @@
             small.ago(data-time=comment.createdAt.toString())
             small :
           p=comment.text
+
+
+  form.comment-form(method='post', action='/api/proposal/' + proposal.id + '/comment')
+    h5 Tu comentario 
+    p 
+      textarea(name="comment[text]")
+    input(type="submit", value="Comment").btn

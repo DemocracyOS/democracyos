@@ -32,6 +32,11 @@ img.avatar
 	padding-left: 14px;
 	padding-right: 14px;
 
+.dropdown-menu
+	border-radius: 0;
+	text-transform: none
+	// box-shadow: none;
+
 /* Header
 -------------------------------------------------- */
 header.app-header, section.app-content, aside.nav-proposal
@@ -43,6 +48,7 @@ header.app-header
 	right: 0;
 	height: header_height;
 	background: #3498DB;
+	border-bottom: 1px solid #2980b9
 	color: white;
 	padding-left: spacing;
 	font-weight: bold;
@@ -62,12 +68,54 @@ header.app-header
 	.user-nav 
 		display: inline-block;
 		float: right;
-		margin-top: 14px;
 		list-style: none;
 		margin-right: spacing;
+
+		.btn 
+			height: 60px;
+			border-radius: 0;
+			border-left: 1px solid #2980b9;
+			border-right: 1px solid #2980b9;
+			background: none;
+			padding: 0;
+			padding: 13px 12px;
+			&:focus
+				outline: 0;
+			.caret 
+				margin-left: 6px;
+
+		.dropdown-menu
+			left: auto;
+			right: 0;
+			a 
+				color: black;
+				text-transform: none
+				font-weight: bold;
+				padding: 10px 20px;
+				display: block;
+				&:hover 
+					background: #2c3e50;
+					color: white;
+
+		&.open
+			.btn 
+				background: rgba(0,0,0,.1);
+			.dropdown-toggle
+				box-shadow: none;
+
 		.profile img 
 			width: 32px;
 			border-radius: 100px;
+
+		.login
+			background: rgba(0,0,0,.4);
+			padding: 6px 12px;
+			display: inline-block
+			border-radius: border_radius;
+			margin-top: 15px;
+
+			&:hover 
+				text-decoration: none
 
 
 /* Proposal Aside Navigation
@@ -107,14 +155,11 @@ aside.nav-proposal
 					position: absolute;
 					left: 14px;
 					top: 20px;
-					background: #F1C42E;
+					background: #95a5a6;
 					color: white;
 					border-radius: 100px;
 					padding: 10px;
 					line-height: 10px;
-
-					&.proposal-type-2
-						background-color: #E67E22;
 
 				span.title
 					font-size: 16px;
@@ -126,9 +171,28 @@ aside.nav-proposal
 					font-size: 11px;
 					opacity: .5;
 
+				&:hover 
+					.proposal-type
+						background-color: #F1C42E;
+					.proposal-type-2
+						background-color: #E67E22;
+
 			&.active 
 				a 
 					background: #fff;
+
+
+.proposal-type
+	position: absolute;
+	left: 14px;
+	top: 20px;
+	background: #F1C42E;
+	color: white;
+	border-radius: 100px;
+	padding: 10px;
+	line-height: 10px;
+	&.proposal-type-2
+		background-color: #E67E22;
 
 section.app-content
 	left: nav_proposal_width + 1px;
@@ -145,6 +209,7 @@ article.proposal
 	width: 500px;
 	margin-top: 10px;
 	margin-left: 100px;
+	min-height: 300px;
 
 	h2 
 		margin-top: 0;
@@ -152,10 +217,14 @@ article.proposal
 
 	.meta-information
 		margin-bottom: 10px;
+		opacity: .6;
 		.meta-timeago
 			float: right
 			display: block;
 
+	.proposal-type
+		top: 66px;
+		left: 44px;
 	hr 
 		border-top: 4px solid #eee;
 		width: 50%;
@@ -170,13 +239,16 @@ article.proposal
 		margin: 30px 0;
 		border-top: 2px solid #f1f1f1;
 		border-bottom: 2px solid #f1f1f1;
-		.participant-profile img
-			width: 30px;
+		.participant-profile 
+			margin-left: 10px;
+			img
+				width: 30px;
+			
 
 	.share-links
 		margin-bottom: 40px;
 		a 
-			background: #333;
+			background: #ccc;
 			padding: 10px;
 			margin-right: 10px;
 			border-radius: border_radius;
@@ -187,13 +259,22 @@ article.proposal
 			&:hover 
 				text-decoration: none;
 
+			&.facebook:hover
+				background: #3b5998;
+
+			&.twitter:hover
+				background: #3498db;
+
+			&.google-plus:hover
+				background: #c0392b;
+
 
 .proposal-options
-	width: 220px;
+	width: 200px;
 	position: absolute;
-	top: 80px;
+	top: 30px;
 	right: spacing;
-	padding: 10px 20px;
+
 	.vote-options
 		.vote-option
 			display: block;	
@@ -213,6 +294,10 @@ article.proposal
 
 			&.vote-no
 				background-color: #d95e59;
+				i
+					transform:rotate(180deg);
+					-ms-transform:rotate(180deg); /* IE 9 */
+					-webkit-transform:rotate(180deg);
 
 			&.vote-abstain
 				background-color: #666;
@@ -227,6 +312,7 @@ article.proposal
 
 	.results-box
 		display: none
+
 /* Comments
 -------------------------------------------------- */
 .comments
@@ -245,19 +331,20 @@ article.proposal
 
 	.comment-form
 		margin-bottom: 50px;
+		margin-top: 50px;
 		textarea
 			width: 500px;
 		
 
 	.comment-list
 		.comment-item
+			margin-bottom: 20px;
+			max-width: 580px;
 			.pull-left
-				width: 50px;
+				width: 46px;
 				margin-right: 20px;
-				a.avatar 
-					width: 24px;
-					display: inline-block;
-					img 
-						width: 100%;
-						border-radius: 100px;
+				.avatar 
+					width: 100%;
+					border-radius: 100px;
+
 

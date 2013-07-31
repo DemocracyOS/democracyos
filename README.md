@@ -11,7 +11,7 @@ DemocraciaEnRed is an online space for deliberation and voting on political prop
 
 ## Install
 
-### For *NIX Users
+### For Unix Users
 1. Fork and/or clone or even just download this repository.
 2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation below).
 3. Run `make` or `make install && make run` in the root of this application.
