@@ -142,7 +142,7 @@ aside.nav-proposal {
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 280px;
+  width: 260px;
   border-right: 1px solid #bdc3c7;
   overflow-y: scroll;
   background: #ecf0f1;
@@ -207,7 +207,7 @@ aside.nav-proposal .navlist li.active.active a {
   background-color: #e67e22;
 }
 section.app-content {
-  left: 281px;
+  left: 261px;
   top: 60px;
   padding: 20px 0 0 0;
   overflow-y: scroll;
