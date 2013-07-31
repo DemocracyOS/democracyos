@@ -43,6 +43,7 @@ header.app-header
 	right: 0;
 	height: header_height;
 	background: #3498DB;
+	border-bottom: 1px solid #2980b9
 	color: white;
 	padding-left: spacing;
 	font-weight: bold;
@@ -62,9 +63,30 @@ header.app-header
 	.user-nav 
 		display: inline-block;
 		float: right;
-		margin-top: 14px;
 		list-style: none;
 		margin-right: spacing;
+
+		.btn 
+			height: 60px;
+			border-radius: 0;
+			border-left: 1px solid #2980b9;
+			border-right: 1px solid #2980b9;
+			background: none;
+			padding: 0;
+			padding: 13px 12px;
+			&:focus
+				outline: 0;
+			.caret 
+				margin-left: 6px;
+
+			.dropdown-toggle
+				a 
+					color: black;
+		&.open
+			.btn 
+				background: rgba(0,0,0,.1);
+			.dropdown-toggle
+				box-shadow: none;
 		.profile img 
 			width: 32px;
 			border-radius: 100px;

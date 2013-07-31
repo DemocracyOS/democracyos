@@ -44,6 +44,7 @@ header.app-header {
   right: 0;
   height: 60px;
   background: #3498db;
+  border-bottom: 1px solid #2980b9;
   color: #fff;
   padding-left: 30px;
   font-weight: bold;
@@ -63,9 +64,32 @@ header.app-header h1 {
 header.app-header .user-nav {
   display: inline-block;
   float: right;
-  margin-top: 14px;
   list-style: none;
   margin-right: 30px;
+}
+header.app-header .user-nav .btn {
+  height: 60px;
+  border-radius: 0;
+  border-left: 1px solid #2980b9;
+  border-right: 1px solid #2980b9;
+  background: none;
+  padding: 0;
+  padding: 13px 12px;
+}
+header.app-header .user-nav .btn:focus {
+  outline: 0;
+}
+header.app-header .user-nav .btn .caret {
+  margin-left: 6px;
+}
+header.app-header .user-nav .btn .dropdown-toggle a {
+  color: #000;
+}
+header.app-header .user-nav.open .btn {
+  background: rgba(0,0,0,0.1);
+}
+header.app-header .user-nav.open .dropdown-toggle {
+  box-shadow: none;
 }
 header.app-header .user-nav .profile img {
   width: 32px;
