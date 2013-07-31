@@ -142,7 +142,7 @@ aside.nav-proposal {
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 260px;
+  width: 280px;
   border-right: 1px solid #bdc3c7;
   overflow-y: scroll;
   background: #ecf0f1;
@@ -175,10 +175,10 @@ aside.nav-proposal .navlist li a:hover .proposal-type-2 {
   background-color: #e67e22;
 }
 aside.nav-proposal .navlist li a span.title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 0px;
 }
 aside.nav-proposal .navlist li a span.created-by {
   font-size: 11px;
@@ -207,7 +207,7 @@ aside.nav-proposal .navlist li.active.active a {
   background-color: #e67e22;
 }
 section.app-content {
-  left: 261px;
+  left: 281px;
   top: 60px;
   padding: 20px 0 0 0;
   overflow-y: scroll;
