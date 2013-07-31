@@ -31,6 +31,10 @@ img.avatar {
   padding-left: 14px;
   padding-right: 14px;
 }
+.dropdown-menu {
+  border-radius: 0;
+  text-transform: none;
+}
 /* Header
 -------------------------------------------------- */
 header.app-header,
@@ -82,8 +86,20 @@ header.app-header .user-nav .btn:focus {
 header.app-header .user-nav .btn .caret {
   margin-left: 6px;
 }
-header.app-header .user-nav .btn .dropdown-toggle a {
+header.app-header .user-nav .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+header.app-header .user-nav .dropdown-menu a {
   color: #000;
+  text-transform: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+}
+header.app-header .user-nav .dropdown-menu a:hover {
+  background: #2c3e50;
+  color: #fff;
 }
 header.app-header .user-nav.open .btn {
   background: rgba(0,0,0,0.1);
@@ -100,6 +116,7 @@ header.app-header .user-nav .login {
   padding: 6px 12px;
   display: inline-block;
   border-radius: 3px;
+  margin-top: 15px;
 }
 header.app-header .user-nav .login:hover {
   text-decoration: none;
@@ -227,7 +244,7 @@ article.proposal .participants {
   border-bottom: 2px solid #f1f1f1;
 }
 article.proposal .participants .participant-profile {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 article.proposal .participants .participant-profile img {
   width: 30px;

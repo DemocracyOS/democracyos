@@ -32,6 +32,11 @@ img.avatar
 	padding-left: 14px;
 	padding-right: 14px;
 
+.dropdown-menu
+	border-radius: 0;
+	text-transform: none
+	// box-shadow: none;
+
 /* Header
 -------------------------------------------------- */
 header.app-header, section.app-content, aside.nav-proposal
@@ -79,14 +84,25 @@ header.app-header
 			.caret 
 				margin-left: 6px;
 
-			.dropdown-toggle
-				a 
-					color: black;
+		.dropdown-menu
+			left: auto;
+			right: 0;
+			a 
+				color: black;
+				text-transform: none
+				font-weight: bold;
+				padding: 10px 20px;
+				display: block;
+				&:hover 
+					background: #2c3e50;
+					color: white;
+
 		&.open
 			.btn 
 				background: rgba(0,0,0,.1);
 			.dropdown-toggle
 				box-shadow: none;
+
 		.profile img 
 			width: 32px;
 			border-radius: 100px;
@@ -96,6 +112,7 @@ header.app-header
 			padding: 6px 12px;
 			display: inline-block
 			border-radius: border_radius;
+			margin-top: 15px;
 
 			&:hover 
 				text-decoration: none
@@ -171,7 +188,6 @@ aside.nav-proposal
 	border-radius: 100px;
 	padding: 10px;
 	line-height: 10px;
-
 	&.proposal-type-2
 		background-color: #E67E22;
 
@@ -221,7 +237,7 @@ article.proposal
 		border-top: 2px solid #f1f1f1;
 		border-bottom: 2px solid #f1f1f1;
 		.participant-profile 
-			margin-left: 20px;
+			margin-left: 10px;
 			img
 				width: 30px;
 			
@@ -293,6 +309,7 @@ article.proposal
 
 	.results-box
 		display: none
+
 /* Comments
 -------------------------------------------------- */
 .comments
