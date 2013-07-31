@@ -1,7 +1,7 @@
 /* Vars
 -------------------------------------------------- */
 header_height = 60px;
-spacing = 30px;
+spacing = 20px;
 border_radius = 3px;
 nav_proposal_width = 280px;
 
@@ -29,8 +29,8 @@ img.avatar
 	border: 0;
 
 .btn-group > .btn + .dropdown-toggle
-	padding-left: 14px;
-	padding-right: 14px;
+	padding-left: 13px;
+	padding-right: 13px;
 
 .dropdown-menu
 	border-radius: 0;
@@ -63,7 +63,7 @@ header.app-header
 		display: inline-block;
 		width: 300px;
 		font-size: 12px;
-		margin-top: 22px;
+		margin-top: 23px;
 
 	.user-nav 
 		display: inline-block;
@@ -122,13 +122,14 @@ header.app-header
 -------------------------------------------------- */
 
 .dropdown-deparment
-	padding: 20px;
+	padding: spacing;
 	background-color: #BDC3C7;
 	display: block;
 	.btn-group
 		float: none;
 		button.btn.btn-default
 			background-color: #7F8C8D;
+			font-size: 12px;
 			&.dropdown-toggle
 				background-color: #727f80;
 
@@ -149,17 +150,23 @@ aside.nav-proposal
 				padding-bottom: 14px;
 				color: black;	
 				position: relative;
-				padding-left: 60px;
+				padding-left: 80px;
 
 				.proposal-type
 					position: absolute;
-					left: 14px;
+					left: spacing;
 					top: 20px;
 					background: #95a5a6;
 					color: white;
 					border-radius: 100px;
 					padding: 10px;
 					line-height: 10px;
+
+				&:hover 
+					.proposal-type
+						background-color: #F1C42E;
+					.proposal-type-2
+						background-color: #E67E22;
 
 				span.title
 					font-size: 16px;
@@ -171,11 +178,13 @@ aside.nav-proposal
 					font-size: 11px;
 					opacity: .5;
 
-				&:hover 
-					.proposal-type
-						background-color: #F1C42E;
-					.proposal-type-2
-						background-color: #E67E22;
+	.navlist
+		li.active 
+			a			
+				.proposal-type
+					background-color: #F1C42E;
+				.proposal-type-2
+					background-color: #E67E22;
 
 			&.active 
 				a 
@@ -243,6 +252,7 @@ article.proposal
 			margin-left: 10px;
 			img
 				width: 30px;
+				height: 30px;
 			
 
 	.share-links
@@ -344,7 +354,8 @@ article.proposal
 				width: 46px;
 				margin-right: 20px;
 				.avatar 
-					width: 100%;
+					width: 46px;
+					height: 46px;
 					border-radius: 100px;
 
 

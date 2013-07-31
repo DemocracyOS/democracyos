@@ -28,8 +28,8 @@ img.avatar {
   border: 0;
 }
 .btn-group > .btn + .dropdown-toggle {
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 13px;
+  padding-right: 13px;
 }
 .dropdown-menu {
   border-radius: 0;
@@ -50,7 +50,7 @@ header.app-header {
   background: #3498db;
   border-bottom: 1px solid #2980b9;
   color: #fff;
-  padding-left: 30px;
+  padding-left: 20px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
@@ -63,13 +63,13 @@ header.app-header h1 {
   display: inline-block;
   width: 300px;
   font-size: 12px;
-  margin-top: 22px;
+  margin-top: 23px;
 }
 header.app-header .user-nav {
   display: inline-block;
   float: right;
   list-style: none;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 header.app-header .user-nav .btn {
   height: 60px;
@@ -133,6 +133,7 @@ header.app-header .user-nav .login:hover {
 }
 .dropdown-deparment .btn-group button.btn.btn-default {
   background-color: #7f8c8d;
+  font-size: 12px;
 }
 .dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
   background-color: #727f80;
@@ -150,22 +151,28 @@ aside.nav-proposal .navlist li {
   border-bottom: 1px solid #bdc3c7;
 }
 aside.nav-proposal .navlist li a {
-  padding-left: 30px;
+  padding-left: 20px;
   padding-top: 14px;
   padding-bottom: 14px;
   color: #000;
   position: relative;
-  padding-left: 60px;
+  padding-left: 80px;
 }
 aside.nav-proposal .navlist li a .proposal-type {
   position: absolute;
-  left: 14px;
+  left: 20px;
   top: 20px;
   background: #95a5a6;
   color: #fff;
   border-radius: 100px;
   padding: 10px;
   line-height: 10px;
+}
+aside.nav-proposal .navlist li a:hover .proposal-type {
+  background-color: #f1c42e;
+}
+aside.nav-proposal .navlist li a:hover .proposal-type-2 {
+  background-color: #e67e22;
 }
 aside.nav-proposal .navlist li a span.title {
   font-size: 16px;
@@ -177,13 +184,13 @@ aside.nav-proposal .navlist li a span.created-by {
   font-size: 11px;
   opacity: 0.5;
 }
-aside.nav-proposal .navlist li a:hover .proposal-type {
+aside.nav-proposal .navlist li.active a .proposal-type {
   background-color: #f1c42e;
 }
-aside.nav-proposal .navlist li a:hover .proposal-type-2 {
+aside.nav-proposal .navlist li.active a .proposal-type-2 {
   background-color: #e67e22;
 }
-aside.nav-proposal .navlist li.active a {
+aside.nav-proposal .navlist li.active.active a {
   background: #fff;
 }
 .proposal-type {
@@ -251,6 +258,7 @@ article.proposal .participants .participant-profile {
 }
 article.proposal .participants .participant-profile img {
   width: 30px;
+  height: 30px;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
@@ -280,7 +288,7 @@ article.proposal .share-links a.google-plus:hover {
   width: 200px;
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 20px;
 }
 .proposal-options .vote-options .vote-option {
   display: block;
@@ -359,6 +367,7 @@ article.proposal .share-links a.google-plus:hover {
   margin-right: 20px;
 }
 .comments .comment-list .comment-item .pull-left .avatar {
-  width: 100%;
+  width: 46px;
+  height: 46px;
   border-radius: 100px;
 }
