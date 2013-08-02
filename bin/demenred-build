@@ -11,6 +11,7 @@ var fs = require('fs');
 var write = fs.writeFileSync;
 
 var builder = new Builder('.');
+builder.copyFiles();
 builder.addLookup('lib'); // TODO: shouldn't be necessary
 builder.copyAssetsTo('public');
 builder.use(json);
