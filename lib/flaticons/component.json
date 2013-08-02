@@ -1,0 +1,18 @@
+{
+  "name": "flaticons",
+  "description": "Flaticons asset component",
+  "styles": [
+    "social.css",
+    "solid.css"
+  ],
+  "files": [
+    "flaticons-social.eot",
+    "flaticons-social.svg",
+    "flaticons-social.ttf",
+    "flaticons-social.woff",
+    "flaticons-solid.eot",
+    "flaticons-solid.svg",
+    "flaticons-solid.ttf",
+    "flaticons-solid.woff"
+  ]
+}
