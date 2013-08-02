@@ -2,13 +2,11 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": {
-    "component/dom": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
-    "visionmedia/jade": "*",
+    "cristiandouce/t": "chained-tokens",
     "cristiandouce/timeago": "*"
   },
-  "local": [ "homepage", "proposal" ],
+  "local": [ "homepage", "proposal", "translations" ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
   "images": [ ],
