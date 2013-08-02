@@ -3,6 +3,7 @@
   "description": "proposal's options view",
   "dependencies": {
     "component/domify": "1.0.0",
+    "cristiandouce/t": "chained-tokens",
     "visionmedia/jade": "*"
   },
   "local": [ ],
