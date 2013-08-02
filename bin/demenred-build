@@ -5,6 +5,7 @@
  */
 
 var Builder = require('component-builder');
+var json = require('../lib/build/json');
 var templates = require('../lib/build/templates');
 var fs = require('fs');
 var write = fs.writeFileSync;
@@ -12,6 +13,7 @@ var write = fs.writeFileSync;
 var builder = new Builder('.');
 builder.addLookup('lib'); // TODO: shouldn't be necessary
 builder.copyAssetsTo('public');
+builder.use(json);
 builder.use(templates);
 builder.build(function(err, res){
   if (err) return console.log(err);
