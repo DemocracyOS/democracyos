@@ -6,7 +6,12 @@
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/timeago": "*"
   },
-  "local": [ "homepage", "proposal", "translations" ],
+  "local": [
+    "homepage",
+    "proposal",
+    "translations",
+    "flaticons"
+  ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
   "images": [ ],
