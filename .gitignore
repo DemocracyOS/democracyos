@@ -15,7 +15,7 @@ npm-debug.log
 node_modules
 
 components
-public/app*
+public
 
 *.DS_Store
 config*.json
