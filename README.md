@@ -24,7 +24,8 @@ DemocracyOS is an online space for deliberation and voting on political proposal
 5. Run `make run` or `NODE_PATH=. node app.js`.
 
 ### Development Settings
-In order to install a development instance of this applications, you need to 
+In order to install a development instance of this applications, you need to:
+
 1. `cp config.sample.json config.dev.json` into this very directory
 2. Set `NODE_ENV` environment variable to `development`
 3. Then set the following configuration variables:
@@ -37,14 +38,16 @@ If you don't already have a Facebook application, you can create one free by goi
 Keep in mind that using separate Facebook applications for different environments (development, testing, production) is usually recommended.
 
 ### Testing Settings
-In order to install a testing instance of this applications, you need to 
+In order to install a testing instance of this applications, you need to:
+
 1. `cp config.sample.json config.testing.json` into this very directory. 
 2. Set `NODE_ENV` environment variable to `testing`
 3. Then set the following configuration variables:
 
 
 ### Production Settings
-In order to install a production instance of this applications, you need to 
+In order to install a production instance of this applications, you need to:
+
 1. `cp config.sample.json config.json` into this very directory. 
 2. Set `NODE_ENV` environment variable to `production`
 3. Then set the following configuration variables:
