@@ -1,8 +1,8 @@
-# Democracia En Red
-DemocraciaEnRed is an online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.
+# DemocracyOS
+DemocracyOS is an online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.
 
 ![][1]
-[1]: http://partidodelared.org/images/browser.png
+[1]: http://i.cloudup.com/ifjHIedkfv.png
 
 ## Requirements
 * [MongoDB](http://www.mongodb.org/downloads)
@@ -24,32 +24,33 @@ DemocraciaEnRed is an online space for deliberation and voting on political prop
 5. Run `make run` or `NODE_PATH=. node app.js`.
 
 ### Development Settings
-In order to install a development instance of this applications, you need to 
+In order to install a development instance of this applications, you need to:
+
 1. `cp config.sample.json config.dev.json` into this very directory
 2. Set `NODE_ENV` environment variable to `development`
 3. Then set the following configuration variables:
 
 #### Facebook Auth
-#### Twitter Auth
+You'll need a Facebook application in order to log in with a Facebook user; add your private values to `/config/config.dev.json`.
+
+If you don't already have a Facebook application, you can create one free by going to http://developers.facebook.com and following [these easy steps](https://cloudup.com/c41pFaKcMBu).
+
+Keep in mind that using separate Facebook applications for different environments (development, testing, production) is usually recommended.
 
 ### Testing Settings
-In order to install a testing instance of this applications, you need to 
+In order to install a testing instance of this applications, you need to:
+
 1. `cp config.sample.json config.testing.json` into this very directory. 
 2. Set `NODE_ENV` environment variable to `testing`
 3. Then set the following configuration variables:
 
-#### Facebook Auth
-#### Twitter Auth
-
 
 ### Production Settings
-In order to install a production instance of this applications, you need to 
+In order to install a production instance of this applications, you need to:
+
 1. `cp config.sample.json config.json` into this very directory. 
 2. Set `NODE_ENV` environment variable to `production`
 3. Then set the following configuration variables:
-
-#### Facebook Auth
-#### Twitter Auth
 
 
 ### Heroku Settings
