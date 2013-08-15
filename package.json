@@ -33,7 +33,7 @@
     "debug": "*",
     "nowww": "*",
     "component": "~0.16.7",
-    "component-builder": "~0.8.3",
+    "component-builder": "~0.9.0",
     "string-to-js": "0.0.1",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
