@@ -1,6 +1,6 @@
 .comments
 
-  h4=t('Comments')
+  h4= t('Comments')
   ul.media-list.comment-list
     - each comment in comments
       li.media.comment-item
@@ -16,7 +16,7 @@
 
 
   form.comment-form(method='post', action='/api/proposal/' + proposal.id + '/comment')
-    h5 Tu comentario 
+    h5= t('Your comment')
     p 
       textarea(name="comment[text]")
     input(type="submit", value="Comment").btn
