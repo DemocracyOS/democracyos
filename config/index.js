@@ -53,7 +53,7 @@ function Config(app) {
      * Build
      */
 
-    app.use(require('lib/build'));
+    app.use(require('lib/build').middleware);
 
   });
 
