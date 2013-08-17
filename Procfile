@@ -1,1 +1,1 @@
-web: node ./bin/demenred-build && node app.js
+web: node ./bin/dos-install && node ./bin/dos-build && node index.js
