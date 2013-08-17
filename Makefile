@@ -4,11 +4,11 @@
 
 run: packages
 	@echo "Starting application..."
-	@NODE_PATH=. node app.js
+	@NODE_PATH=. node index.js
 
 packages:
 	@echo "Installing dependencies..."
-	@npm install 2>&1 | grep -v "npm WARN"
+	@npm install
 	@echo "Done.\n"
 	@echo "Installing components..."
 	@./bin/dos-install
