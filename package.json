@@ -54,7 +54,6 @@
     "npm": "1.1.x"
   },
   "scripts": {
-    "test": "",
-    "install": "./node_modules/component/bin/component-install && ./bin/demenred-build"
+    "test": ""
   }
 }

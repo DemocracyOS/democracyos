@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var program = require('commander');
+var fs = require('fs');
+var exists = fs.existsSync;
+var exec = require('child_process').exec;
+var components = './node_modules/component/bin/component-install';
+
+program
+  .option('-C, --no-components', 'ignore components install')
+  .parse(process.argv);
+
+
+if (program.components && exists(components)) {
+  exec(components, function(err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    if (err != null) {
+      console.log(err);
+      proces.exit(1);
+    };
+  });
+};

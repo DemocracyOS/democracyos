@@ -9,11 +9,11 @@ run: packages
 packages:
 	@echo "Installing dependencies..."
 	@npm install 2>&1 | grep -v "npm WARN"
-#	@echo "Done.\n"
-#	@echo "Installing components..."
-#	@./node_modules/component/bin/component install
-#	@echo "Compiling components to ./public..."
-#	@./bin/demenred build
+	@echo "Done.\n"
+	@echo "Installing components..."
+	@./bin/dos-install
+	@echo "Compiling components to ./public..."
+	@./bin/dos-build
 	@echo "Done.\n"
 
 clean:

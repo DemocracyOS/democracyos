@@ -1,1 +1,1 @@
-web: node app.js
+web: node ./bin/demenred-build && node app.js
