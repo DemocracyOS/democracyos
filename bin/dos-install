@@ -18,8 +18,8 @@ program
 
 if (program.components && exists(components)) {
   exec(components, function(err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
+    if (stdout.length) console.log(stdout);
+    if (stderr.length) console.log(stderr);
     if (err != null) {
       console.log(err);
       proces.exit(1);
