@@ -47,7 +47,7 @@ function Config(app) {
      * for MongoDB connection
      */
 
-    app.set( 'mongoUrl', 'mongodb://localhost/pdr-app' );
+    app.set( 'mongoUrl', 'mongodb://localhost/DemocracyOS-dev' );
 
     /**
      * Build
@@ -79,7 +79,7 @@ function Config(app) {
      * for MongoDB connection
      */
 
-    app.set( 'mongoUrl', 'mongodb://localhost/pdr-testing' );
+    app.set( 'mongoUrl', 'mongodb://localhost/DemocracyOS-test' );
 
     /**
      * Build
