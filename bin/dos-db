@@ -42,7 +42,7 @@ program
       data.forEach(function(doc) {
 
         (new Model(doc)).save(function(err) {
-          if (err) return console.log("Error %s while saving %j", err, doc);
+          if (err) return error("Error %s while saving %j", err, doc);
           console.log("Saved %j", doc);
           if (0 === --c) disconnect(exit);
         });
@@ -55,12 +55,12 @@ program
   .description("Fully drop database.")
   .action(function() {
     confirm('This will delete all your data. Continue?\n')(function(err, ok) {
-      if (err) return console.log('Whoops, %s', err);
+      if (err) return error('Whoops, %s', err);
       if (!ok) return write('There you go! =)');
       
       connect(function() {
         mongoose.connection.db.dropDatabase(function (err) {
-          if (err) return console.log('Whoops, %s', err);
+          if (err) return error('Whoops, %s', err);
           console.log('Database dropped.');
           disconnect(exit);
         });
@@ -81,6 +81,19 @@ program.parse(process.argv);
 function write (msg) {
   process.stdout.write(msg);
   process.stdout.write('\n');
+}
+
+/**
+ * Write err `msg` to console
+ *
+ * @param {String} msg
+ * @requires process
+ * @api private
+ */
+
+function error () {
+  console.log.apply(console, arguments);
+  process.exit(1);
 }
 
 /**
