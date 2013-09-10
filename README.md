@@ -72,14 +72,14 @@ In order to install this application you shoud set the following config services
 ## Active Contributors
 * [Ricardo Rauch](http://twitter.com/gravityonmars)
 * [Cristian Douce Suarez](http://twitter.com/cristiandouce)
-* [Guido Vilarino](http://twitter.com/gvilarino)
+* [Guido Vilariño](http://twitter.com/gvilarino)
 
 ## Useful links
 
-* [PDR Site](http://partidodelared.org): The `Network Party` official site.
-* [PDR Wiki](http://wiki.partidodelared.org): The `Network Party` official wiki.
-* [PDR Facebook](http://facebook.com/partidodelared): The `Network Party` official Facebook page.
-* [PDR Twitter](http://twitter.com/partidodelared): The `Network Party` official Twitter account.
+* [PDR Site](http://partidodelared.org): The `Net Party` official site.
+* [PDR Wiki](http://wiki.partidodelared.org): The `Net Party` official wiki.
+* [PDR Facebook](http://facebook.com/partidodelared): The `Net Party` official Facebook page.
+* [PDR Twitter](http://twitter.com/partidodelared): The `Net Party` official Twitter account.
 
 ## License 
 
