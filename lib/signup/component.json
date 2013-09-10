@@ -1,3 +1,14 @@
 {
-  "name": "signup"
+  "name": "signup",
+  "description": "Signup page",
+  "dependencies": {
+    "component/domify": "*",
+    "visionmedia/page.js": "*",
+    "visionmedia/jade": "*",
+    "visionmedia/superagent": "*",
+    "yields/empty": "*"
+  },
+  "scripts": [ "signup.js" ],
+  "templates": ["form.jade"],
+  "main": "signup.js"
 }
