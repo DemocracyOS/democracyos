@@ -4,7 +4,8 @@
   "dependencies": {
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
-    "visionmedia/page.js": "*"
+    "visionmedia/page.js": "*",
+    "yields/empty": "*"
   },
   "local": [
     "citizen",
