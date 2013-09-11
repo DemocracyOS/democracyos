@@ -1,8 +1,0 @@
-extends layout
-
-block content
-  h1  Register!
-  form(action=url('/register'), method='post')
-    p: input(type='text', name='email')
-    p: input(type='password', name='password')
-    p: input(type='submit', value='register')

@@ -47,13 +47,13 @@ function Config(app) {
      * for MongoDB connection
      */
 
-    app.set( 'mongoUrl', 'mongodb://localhost/pdr-app' );
+    app.set( 'mongoUrl', 'mongodb://localhost/DemocracyOS-dev' );
 
     /**
      * Build
      */
 
-    app.use(require('lib/build'));
+    app.use(require('lib/build').middleware);
 
   });
 
@@ -79,7 +79,7 @@ function Config(app) {
      * for MongoDB connection
      */
 
-    app.set( 'mongoUrl', 'mongodb://localhost/pdr-testing' );
+    app.set( 'mongoUrl', 'mongodb://localhost/DemocracyOS-test' );
 
     /**
      * Build
@@ -157,18 +157,6 @@ function Config(app) {
     app.set( 'port', process.env.PORT || 3005 );
     
     /**
-     * Set view engine as jade
-     */
-
-    app.set( 'view engine', 'jade' );
-
-    /**
-     * Set `views` default path
-     */
-
-    app.set( 'views', path.join(__dirname, '..', 'lib', '/views') );
-
-    /**
      * Set `public-assets` default path
      */
 
@@ -184,7 +172,7 @@ function Config(app) {
      * Configure native `express` cookie parser
      */
 
-    app.use( express.cookieParser('pdr es la posta') );
+    app.use( express.cookieParser('democracyos-cookie') );
     
     /**
      * Configure native `express` session middleware
@@ -192,8 +180,8 @@ function Config(app) {
 
     app.use( express.session( {
         cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 },
-        secret: 'pdr-is-awesome',
-        key: "pdr",
+        secret: 'democracyos-secret',
+        key: "democracyos.org",
         store: new MongoStore( { url: app.get('mongoUrl') } )
       } )
     );

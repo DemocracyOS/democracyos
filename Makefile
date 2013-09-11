@@ -4,16 +4,16 @@
 
 run: packages
 	@echo "Starting application..."
-	@NODE_PATH=. node app.js
+	@NODE_PATH=. node index.js
 
 packages:
 	@echo "Installing dependencies..."
-	@npm install 2>&1 | grep -v "npm WARN"
-#	@echo "Done.\n"
-#	@echo "Installing components..."
-#	@./node_modules/component/bin/component install
-#	@echo "Compiling components to ./public..."
-#	@./bin/demenred build
+	@npm install
+	@echo "Done.\n"
+	@echo "Installing components..."
+	@node ./bin/dos-install
+	@echo "Compiling components to ./public..."
+	@node ./bin/dos-build
 	@echo "Done.\n"
 
 clean:

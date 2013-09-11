@@ -45,6 +45,7 @@
     "imap": "*",
     "marked": "~0.2.9",
     "commander": "~2.0.0",
+    "co-prompt": "*",
     "truncate": "*"
   },
   "devDependencies": {},
@@ -54,7 +55,6 @@
     "npm": "1.1.x"
   },
   "scripts": {
-    "test": "",
-    "install": "./node_modules/component/bin/component-install && ./bin/demenred-build"
+    "test": ""
   }
 }

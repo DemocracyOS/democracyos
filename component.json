@@ -6,6 +6,5 @@
   "local": [
     "boot"
   ],
-  "dependencies": {
-  }
+  "dependencies": { }
 }

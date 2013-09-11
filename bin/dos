@@ -9,6 +9,7 @@ var program = require('commander');
 
 program
   .version('0.0.1')
-  .command('build', "Builds client application and compile assets.")
+  .command('install', "Install client components.")
+  .command('build', "Builds client application and compiles assets.")
   .command('db', "Install a development database")
   .parse(process.argv)

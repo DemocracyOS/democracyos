@@ -1,1 +1,1 @@
-web: node app.js
+web: node ./bin/dos-install && node ./bin/dos-build && node index.js

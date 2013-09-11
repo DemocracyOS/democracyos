@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var build = require('../lib/build');
+var fs = require('fs');
+var write = fs.writeFileSync;
+
+var builder = build.createBuilder();
+builder.build(function(err, res) {
+  if (err) return console.log(err);
+  write('public/app.js', res.require + res.js);
+  write('public/app.css', res.css);
+});

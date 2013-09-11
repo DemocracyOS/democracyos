@@ -46,6 +46,12 @@ app.use('/api', require('lib/tag'));
 app.use('/api', require('lib/proposal'));
 
 /**
+ * Law API Service
+ */
+
+app.use('/api', require('lib/law'));
+
+/**
  * Comment API Service
  */
 
