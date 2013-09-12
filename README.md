@@ -20,7 +20,7 @@ DemocracyOS is an online space for deliberation and voting on political proposal
 1. Fork and/or clone or even just download this repository.
 2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation below).
 3. Run `npm install` in the root of this application.
-4. Run `component install` in the root of this application. (Or `./node_module/component/bin/component install`)
+4. Run `component install` in the root of this application. (Or `./node_modules/component/bin/component install`)
 5. Run `make run` or `NODE_PATH=. node app.js`.
 
 ### Development Settings
