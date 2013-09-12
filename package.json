@@ -40,7 +40,7 @@
     "passport-local-mongoose": "~0.2.4",
     "passport-facebook": "~0.1.5",
     "passport-twitter": "~0.1.5",
-    "http-auth": "*",
+    "http-auth": "~2.0.4",
     "nodemailer": "*",
     "imap": "*",
     "marked": "~0.2.9",
