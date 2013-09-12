@@ -33,6 +33,12 @@ require('lib/models')(app);
 
 require('lib/auth')(app);
 
+/*
+ * Local signup routes
+ */
+
+app.use('/signup', require('lib/signup'));
+
 /**
  * Tag API Service
  */
