@@ -34,6 +34,12 @@ require('lib/models')(app);
 require('lib/auth')(app);
 
 /*
+ * Local signin routes
+ */
+
+app.use('/signin', require('lib/signin'));
+
+/*
  * Local signup routes
  */
 
