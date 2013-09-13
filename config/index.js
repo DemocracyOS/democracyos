@@ -191,27 +191,13 @@ function Config(app) {
      */
 
     app.use(passport.initialize());
-    
+
     /**
      * Use `passport` sessions middleware
      */
 
     app.use(passport.session());
-    
-    /**
-     * Set template `custom` helpers
-     */
 
-    app.use(function(req, res, next) {
-
-      // Markdown template helper
-      res.locals.md = utils.md;
-
-      // Call next middleware
-      next();
-
-    });
-    
     /**
      * View `helper` for building up relative routes
      */
@@ -224,14 +210,8 @@ function Config(app) {
 
     app.use(function(req, res, next) {
 
-      // Set default page 'class'
-      if(!res.locals.page) res.locals.page = "default";
-
       // Set user as local var if authenticated
       if(req.isAuthenticated() && req.user) res.locals.citizen = req.user;
-
-      // Set categories as local var
-      res.locals.categories = app.get('categories');
 
       // Call next middleware
       next();
