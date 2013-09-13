@@ -2,7 +2,7 @@
 DemocracyOS is an online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.
 
 ![][1]
-[1]: https://dsz91cxz97a03.cloudfront.net/D3idav5d87-1200x1200.png
+[1]: https://i.cloudup.com/u7kxt1wOtL.png
 
 ## Requirements
 * [MongoDB](http://www.mongodb.org/downloads)
