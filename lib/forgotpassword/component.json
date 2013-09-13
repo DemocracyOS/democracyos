@@ -1,0 +1,20 @@
+{
+  "name": "forgotpassword",
+  "description": "Forgot Password page",
+  "dependencies": {
+    "component/domify": "*",
+    "component/events": "*",
+    "component/emitter": "*",
+    "component/t": "*",
+    "visionmedia/page.js": "*",
+    "visionmedia/jade": "*",
+    "visionmedia/superagent": "*",
+    "yields/empty": "*",
+    "yields/serialize": "*"
+  },
+  "local": [ "regexps" ],
+  "scripts": [ "forgotpassword.js", "form-view.js" ],
+  "styles": [ "forgotpassword.css" ],
+  "templates": [ "forgotpassword-form.jade" ],
+  "main": "signup.js"
+}
