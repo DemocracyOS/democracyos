@@ -9,6 +9,7 @@
   "local": [
     "homepage",
     "proposal",
+    "signin",
     "signup",
     "translations",
     "flaticons"
