@@ -20,7 +20,7 @@ program
   .option('-p, --password <password>', "MongoDB password.")
   .option('-h, --host <name>', "MongoDB host. [localhost]", String, "localhost")
   .option('-p, --port <port>', "MongoDB port. [27017]", Number, 27017)
-  .option('-d, --database <name>', "MongoDB database name.", String, "DemocracyOS")
+  .option('-d, --database <name>', "MongoDB database name.", String, "DemocracyOS-dev")
   .option('-U, --url <url>', "MongoDB URL. (mongodb://user:pass@localhost:27017/DemocracyOS)");
 
 program
