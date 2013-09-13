@@ -1,0 +1,20 @@
+{
+  "name": "signin",
+  "description": "signin component",
+  "dependencies": {
+    "component/domify": "*",
+    "component/events": "*",
+    "component/emitter": "*",
+    "component/t": "*",
+    "visionmedia/page.js": "*",
+    "visionmedia/jade": "*",
+    "visionmedia/superagent": "*",
+    "yields/empty": "*",
+    "yields/serialize": "*"
+  },
+  "local": [ "regexps" ],
+  "scripts": [ "signin.js", "view.js" ],
+  "styles": [ "signin.css" ],
+  "templates": [ "form.jade" ],
+  "main": "signin.js"
+}
