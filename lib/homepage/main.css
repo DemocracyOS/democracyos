@@ -287,13 +287,13 @@ article.proposal .share-links a.google-plus:hover {
   background: #c0392b;
 }
 .proposal-options {
-  width: 200px;
-  position: absolute;
   top: 30px;
   right: 20px;
 }
 .proposal-options .vote-options .vote-option {
-  display: block;
+  display: inline-block;
+  width: 200px;
+  margin-right: 20px;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -322,6 +322,9 @@ article.proposal .share-links a.google-plus:hover {
 }
 .proposal-options .vote-options .vote-option.vote-abstain {
   background-color: #666;
+}
+.proposal-options .vote-options .vote-option.delegate-vote {
+  background-color: #3498db;
 }
 .proposal-options .vote-box,
 .proposal-options .results-box {

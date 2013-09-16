@@ -22,11 +22,6 @@
       a.vote-option.vote-no(href="#", data-proposal=proposal.id)
         i.flaticon.solid.thumbs-up-1
         span Negative
-
-      a(href="") Ver resultados
-
-  //- h5 Delegations
-
-  .results-box
-    h5 Results
-    canvas(id="vote-chart", width="200", height="220")
+      a.vote-option.delegate-vote(href="#", data-proposal=proposal.id)
+        i.flaticon.solid.thumbs-up-1
+        span Delegate

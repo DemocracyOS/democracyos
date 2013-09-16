@@ -8,7 +8,8 @@
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
-    "cristiandouce/Chart.js": "*"
+    "cristiandouce/Chart.js": "*",
+    "discore/closest": "*"
   },
   "local": [ ],
   "scripts": [ "proposal-options.js" ],

@@ -282,14 +282,14 @@ article.proposal
 
 
 .proposal-options
-	width: 200px;
-	position: absolute;
 	top: 30px;
 	right: spacing;
 
 	.vote-options
 		.vote-option
-			display: block;	
+			display: inline-block;
+			width: 200px;
+			margin-right: 20px;	
 			color: white;
 			text-transform: uppercase;
 			font-weight: bold;
@@ -313,6 +313,8 @@ article.proposal
 
 			&.vote-abstain
 				background-color: #666;
+			&.delegate-vote
+				background-color: #3498db;
 				
 	.vote-box, .results-box
 		border: 1px solid #eee;
