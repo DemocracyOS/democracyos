@@ -16,5 +16,5 @@
   "scripts": [ "forgotpassword.js", "form-view.js" ],
   "styles": [ "forgotpassword.css" ],
   "templates": [ "forgotpassword-form.jade" ],
-  "main": "signup.js"
+  "main": "forgotpassword.js"
 }
