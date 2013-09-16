@@ -45,6 +45,12 @@ app.use('/signin', require('lib/signin'));
 
 app.use('/signup', require('lib/signup'));
 
+/*
+ * Forgot password routes
+ */
+
+app.use('/forgotpassword', require('lib/forgotpassword'));
+
 /**
  * Tag API Service
  */
