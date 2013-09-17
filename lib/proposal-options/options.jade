@@ -13,15 +13,17 @@
           small Deseo cambiar mi voto.
 
     .vote-options(class=hide)
-      a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
-        i.flaticon.solid.thumbs-up-1
-        span Positive
-      a.vote-option.vote-abstain(href="#", data-proposal=proposal.id)
-        i.flaticon.solid.pause
-        span Abstain 
-      a.vote-option.vote-no(href="#", data-proposal=proposal.id)
-        i.flaticon.solid.thumbs-up-1
-        span Negative
-      a.vote-option.delegate-vote(href="#", data-proposal=proposal.id)
-        i.flaticon.solid.thumbs-up-1
-        span Delegate
+      .direct-vote
+        a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
+          i.flaticon.solid.thumbs-up-1
+          span Positive
+        a.vote-option.vote-abstain(href="#", data-proposal=proposal.id)
+          i.flaticon.solid.pause
+          span Abstain 
+        a.vote-option.vote-no(href="#", data-proposal=proposal.id)
+          i.flaticon.solid.thumbs-up-1
+          span Negative
+      .proxy-vote
+        a.vote-option.delegate-vote(href="#", data-proposal=proposal.id)
+          i.flaticon.solid.thumbs-up-1
+          span Delegate

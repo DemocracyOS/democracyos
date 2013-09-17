@@ -5,6 +5,7 @@
     "component/domify": "1.0.0",
     "component/delegates": "1.0.0",
     "component/classes": "*",
+    "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",

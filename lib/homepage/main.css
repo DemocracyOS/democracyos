@@ -290,9 +290,13 @@ article.proposal .share-links a.google-plus:hover {
   top: 30px;
   right: 20px;
 }
+.proposal-options .vote-options .direct-vote,
+.proposal-options .vote-options .proxy-vote {
+  display: inline-block;
+}
 .proposal-options .vote-options .vote-option {
   display: inline-block;
-  width: 200px;
+  width: 150px;
   margin-right: 20px;
   color: #fff;
   text-transform: uppercase;
