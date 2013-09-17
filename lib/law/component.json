@@ -1,0 +1,20 @@
+{
+  "name": "law",
+  "description": "law pages",
+  "dependencies": {
+    "visionmedia/debug": "*",
+    "visionmedia/superagent": "*",
+    "visionmedia/page.js": "*",
+    "yields/empty": "*"
+  },
+  "local": [
+    "citizen",
+    "proposal-list",
+    "proposal-article",
+    "proposal-options",
+    "proposal-comments"
+  ],
+  "scripts": [ "law.js" ],
+  "styles": [ ],
+  "main": "law.js"
+}
