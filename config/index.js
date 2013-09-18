@@ -10,6 +10,7 @@ var express = require('express')
   , path = require('path')
   , env = require('./env')
   , utils = require('lib/utils')
+  , mandrillMailer = require('lib/mailer').mandrillMailer
   , expressUrl = require('lib/express-url');
 
 /**
@@ -148,6 +149,12 @@ function Config(app) {
   app.configure(function() {
     // Log config settigs load
     log( 'common settings' );
+
+    /**
+     * Config mandrill mailer
+     */
+
+    mandrillMailer(app);
 
     /**
      * Set application http server port from `env`
