@@ -5,11 +5,10 @@
 var express = require('express')
   , passport = require('passport')
   , nowww = require('nowww')
-  , log = require('debug')('app:config')
+  , log = require('debug')('root:config')
   , MongoStore = require('connect-mongo')(express)
   , path = require('path')
-  , env = require('./env')
-  , utils = require('lib/utils')
+  , config = require('lib/config')
   , expressUrl = require('lib/express-url');
 
 /**
@@ -36,20 +35,6 @@ function Config(app) {
     log( 'development settings' );
 
     /**
-     * Load custom `config` settings from
-     * file `config.json`
-     */
-
-    app.set( 'config', require('./config.dev.json') );
-
-    /**
-     * Set `mongoUrl` to `mongodb://localhost/pdr`
-     * for MongoDB connection
-     */
-
-    app.set( 'mongoUrl', 'mongodb://localhost/DemocracyOS-dev' );
-
-    /**
      * Build
      */
 
@@ -66,26 +51,6 @@ function Config(app) {
 
     // Log config settigs load
     log( 'testing settings' );
-
-    /**
-     * Load custom `config` settings from
-     * file `config.json`
-     */
-
-    app.set( 'config', require('./config.testing.json') );
-
-    /**
-     * Set `mongoUrl` to `mongodb://localhost/pdr-testing`
-     * for MongoDB connection
-     */
-
-    app.set( 'mongoUrl', 'mongodb://localhost/DemocracyOS-test' );
-
-    /**
-     * Build
-     */
-
-    app.use(require('lib/build'));
 
   });
 
@@ -111,34 +76,6 @@ function Config(app) {
 
     app.use( express.compress() );
     
-    /**
-     * Set custom `config` settings from
-     * file `config.json`
-     */
-    
-    var confFile = {};
-    
-    try {
-      confFile = require('./config.json');
-    } catch (e) {
-      log( 'loading config settings from heroku only' )
-    }
-
-    app.set( 'config', utils.merge( env, confFile ) );
-    
-    /**
-     * Set `mongoUrl` setting from environment
-     * for MongoDB connection
-     */
-
-    app.set( 'mongoUrl', app.get('config').mongoUrl );
-
-    /**
-     * Set `Basic HTTP-Auth` restriction middleware
-     */
-    // app.use(express.basicAuth('pepe', 'tortugasninja'));
-    // app.use( utils.httpAuth(app) );
-
   });
 
   /**
@@ -148,6 +85,18 @@ function Config(app) {
   app.configure(function() {
     // Log config settigs load
     log( 'common settings' );
+
+    /**
+     * Save config in app
+     */
+    
+    app.set('config', config);
+
+    /**
+     * Set `mongoUrl` from config settings
+     */
+
+    app.set( 'mongoUrl', config('mongoUrl') );
 
     /**
      * Set application http server port from `env`
