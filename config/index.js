@@ -8,8 +8,7 @@ var express = require('express')
   , log = require('debug')('root:config')
   , MongoStore = require('connect-mongo')(express)
   , path = require('path')
-  , config = require('lib/config')
-  , expressUrl = require('lib/express-url');
+  , config = require('lib/config');
 
 /**
  * Expose `Config`
@@ -146,12 +145,6 @@ function Config(app) {
      */
 
     app.use(passport.session());
-
-    /**
-     * View `helper` for building up relative routes
-     */
-  
-    app.use( expressUrl(app) );
 
     /**
      * Set template local variables
