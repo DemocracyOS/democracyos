@@ -69,10 +69,10 @@ In order to install this application you shoud set the following config services
 * TW_CONSUMER_SECRET: Twitter application `ConsumerSecret`.
 * TW_CALLBACK: Twitter application callback url. Eg: `http://yourdomain.org/auth/twitter/callback`
 
-#### Mandrill Configuration (Mandrill is used to send transactional emails, eg password forgot/recovery email)
-* MANDRILL_MAILER_KEY: Mandrill's API key
-* MANDRILL_MAILER_FROM_NAME: Name of the "from" of emails
-* MANDRILL_MAILER_FROM_EMAIL: Email of the "from" of emails
+#### Mandrill Configuration
+* MANDRILL_MAILER_KEY: Mandrill's API key. Eg: 'klomFRs7MWASlosCa2q6Y'
+* MANDRILL_MAILER_FROM_NAME: Name of the "from" of emails. Eg: 'DemocracyOS'
+* MANDRILL_MAILER_FROM_EMAIL: Email of the "from" of emails. Eg: 'info@democraciaenred.org'
 
 ## Active Contributors
 * [Ricardo Rauch](http://twitter.com/gravityonmars)
