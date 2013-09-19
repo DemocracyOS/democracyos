@@ -102,7 +102,7 @@ function Config(app) {
      * Defaults to 3005
      */
 
-    app.set( 'port', process.env.PORT || 3005 );
+    app.set( 'port', config('port') || 3005 );
     
     /**
      * Set `public-assets` default path
