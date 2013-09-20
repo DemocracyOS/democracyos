@@ -5,12 +5,15 @@
     "component/domify": "1.0.0",
     "component/delegates": "1.0.0",
     "component/classes": "*",
+    "component/enumerable": "*",
+    "component/to-function": "*",
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
     "cristiandouce/Chart.js": "*",
-    "discore/closest": "*"
+    "discore/closest": "*",
+    "matthewmueller/autocomplete": "*"
   },
   "local": [ ],
   "scripts": [ "proposal-options.js" ],

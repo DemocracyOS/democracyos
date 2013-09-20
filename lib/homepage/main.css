@@ -341,6 +341,10 @@ article.proposal .share-links a.google-plus:hover {
   text-transform: uppercase;
   margin-top: 0;
 }
+.proposal-options .vote-box .delegation-box,
+.proposal-options .results-box .delegation-box {
+  display: inline-block;
+}
 .proposal-options .results-box {
   display: none;
 }
