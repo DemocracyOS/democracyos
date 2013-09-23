@@ -42,6 +42,7 @@
     "passport-twitter": "~0.1.5",
     "http-auth": "~2.0.1",
     "nodemailer": "*",
+    "mandrill-api": "*",
     "imap": "*",
     "marked": "~0.2.9",
     "commander": "~2.0.0",

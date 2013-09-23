@@ -13,8 +13,8 @@
     "yields/serialize": "*"
   },
   "local": [ "regexps" ],
-  "scripts": [ "forgotpassword.js", "form-view.js" ],
+  "scripts": [ "forgotpassword.js", "form-view-step1.js", "form-view-step2.js" ],
   "styles": [ "forgotpassword.css" ],
-  "templates": [ "forgotpassword-form.jade" ],
+  "templates": [ "forgotpassword-step1-form.jade" , "forgotpassword-step2-form.jade" ],
   "main": "forgotpassword.js"
 }

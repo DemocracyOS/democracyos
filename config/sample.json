@@ -20,5 +20,12 @@
       "user": "example@gmail.com",
       "pass": "yourExamplePassword123"
     }
-  }
+  },
+  "mandrillMailer": {
+    "key": "api-key-provided-by-mandrill-something-like-klomFRs7MWASlosCa2q6Y",
+    "from" : {
+      "name": "DemocracyOS",
+      "email": "info@democraciaenred.org"
+    }
+  }  
 }

@@ -7,6 +7,7 @@ var express = require('express')
   , nowww = require('nowww')
   , log = require('debug')('root:config')
   , MongoStore = require('connect-mongo')(express)
+  , mandrillMailer = require('lib/mailer').mandrillMailer
   , path = require('path')
   , config = require('lib/config');
 
@@ -96,6 +97,12 @@ function Config(app) {
      */
 
     app.set( 'mongoUrl', config('mongoUrl') );
+
+    /**
+     * Config mandrill mailer
+     */
+
+    mandrillMailer(app);
 
     /**
      * Set application http server port from `env`
