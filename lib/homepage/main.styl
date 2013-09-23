@@ -282,14 +282,17 @@ article.proposal
 
 
 .proposal-options
-	width: 200px;
-	position: absolute;
 	top: 30px;
 	right: spacing;
 
 	.vote-options
+
+		.direct-vote, .proxy-vote
+			display: inline-block;
 		.vote-option
-			display: block;	
+			display: inline-block;
+			width: 150px;
+			margin-right: 20px;	
 			color: white;
 			text-transform: uppercase;
 			font-weight: bold;
@@ -313,6 +316,8 @@ article.proposal
 
 			&.vote-abstain
 				background-color: #666;
+			&.delegate-vote
+				background-color: #3498db;
 				
 	.vote-box, .results-box
 		border: 1px solid #eee;
@@ -322,8 +327,11 @@ article.proposal
 			text-transform: uppercase;
 			margin-top: 0;
 
+		.delegation-box
+			display: inline-block;
+
 	.results-box
-		display: none
+		display: none;
 
 /* Comments
 -------------------------------------------------- */
