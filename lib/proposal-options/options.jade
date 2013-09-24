@@ -20,9 +20,9 @@
         - if(~positives.indexOf(citizen.id))
           p.alert.alert-success(style="margin:0;") Has votado a favor.
         - else if (~negatives.indexOf(citizen.id))
-          p.alert.alert-error(style="margin:0;") Has votado en contra.
+          p.alert.alert-danger(style="margin:0;") Has votado en contra.
         - else if (~neutrals.indexOf(citizen.id))
-          p.alert.alert-error(style="margin:0;") Te has abstenido de votar.
+          p.alert.alert-info(style="margin:0;") Te has abstenido de votar.
         a.meta-item.change-vote(href="#")
           small Deseo cambiar mi voto.
 
