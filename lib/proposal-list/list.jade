@@ -17,7 +17,7 @@ nav.sidebar-nav
     - each p in proposals
       - var active = p._id === proposal._id ? 'active' : '';
       li(class=active)
-        a(href="/proposal/"+p._id)
+        a(href="/law/"+p._id)
           span.proposal-type.flaticon.solid.government-1       
           span.proposal-type.proposal-type-2.flaticon.solid.clipboard-4     
           span.title=p.title

@@ -2,7 +2,7 @@
 DemocracyOS is an online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.
 
 ![][1]
-[1]: https://dsz91cxz97a03.cloudfront.net/D3idav5d87-1200x1200.png
+[1]: https://i.cloudup.com/u7kxt1wOtL.png
 
 ## Requirements
 * [MongoDB](http://www.mongodb.org/downloads)
@@ -20,7 +20,7 @@ DemocracyOS is an online space for deliberation and voting on political proposal
 1. Fork and/or clone or even just download this repository.
 2. Set your configuration keys for twitter and facebook on `./config` (Check out documentation below).
 3. Run `npm install` in the root of this application.
-4. Run `component install` in the root of this application. (Or `./node_module/component/bin/component install`)
+4. Run `component install` in the root of this application. (Or `./node_modules/component/bin/component install`)
 5. Run `make run` or `NODE_PATH=. node app.js`.
 
 ### Development Settings
@@ -68,6 +68,11 @@ In order to install this application you shoud set the following config services
 * TW_CONSUMER_KEY: Twitter application `ConsumerKey`.
 * TW_CONSUMER_SECRET: Twitter application `ConsumerSecret`.
 * TW_CALLBACK: Twitter application callback url. Eg: `http://yourdomain.org/auth/twitter/callback`
+
+#### Mandrill Configuration
+* MANDRILL_MAILER_KEY: Mandrill's API key. Eg: `klomFRs7MWASlosCa2q6Y`
+* MANDRILL_MAILER_FROM_NAME: Name of the "from" of emails. Eg: `DemocracyOS`
+* MANDRILL_MAILER_FROM_EMAIL: Email of the "from" of emails. Eg: `info@democraciaenred.org`
 
 ## Active Contributors
 * [Ricardo Rauch](http://twitter.com/gravityonmars)

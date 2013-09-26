@@ -2,13 +2,27 @@
   .vote-box
     h5 Vote
     - var hide = ''
-    - if(locals.citizen && ~proposal.vote.census.indexOf(citizen.id))
+    - var census = ( proposal.votes
+    -   && proposal.votes.map(function(v) { return v.author }) )
+    -   || proposal.vote.census
+    - var positives = ( proposal.upvotes
+    -   && proposal.upvotes.map(function(v) { return v.author }) )
+    -   || proposal.vote.positive
+    - var negatives = ( proposal.downvotes
+    -   && proposal.downvotes.map(function(v) { return v.author }) )
+    -   || proposal.vote.negative
+    - var neutrals = ( proposal.abstentions
+    -   && proposal.abstentions.map(function(v) { return v.author }) )
+    -   || []
+    - if(locals.citizen && ~census.indexOf(citizen.id))
       - hide = 'hide';
       .meta-data
-        - if(~proposal.vote.positive.indexOf(citizen.id))
-          p.alert.alert-success(style="margin:0;") Has votado a favor de esta propuesta.
-        - else
-          p.alert.alert-error(style="margin:0;") Has votado en contra de esta propuesta.
+        - if(~positives.indexOf(citizen.id))
+          p.alert.alert-success(style="margin:0;") Has votado a favor.
+        - else if (~negatives.indexOf(citizen.id))
+          p.alert.alert-danger(style="margin:0;") Has votado en contra.
+        - else if (~neutrals.indexOf(citizen.id))
+          p.alert.alert-info(style="margin:0;") Te has abstenido de votar.
         a.meta-item.change-vote(href="#")
           small Deseo cambiar mi voto.
 

@@ -12,18 +12,21 @@ article.proposal
     //- span.
 
   //- Mejorar esto!
-  - var lines = proposal.essay.split('\n');
+  - var content = proposal.essay ? proposal.essay : proposal.content
+  - var lines = content.split('\n');
   - each line in lines
     - if (line.trim())
       p=line.trim()
 
   .participants
-    - var plural = 1 === proposal.participants.length ? '' : 's'
-      span #{proposal.participants.length} Participant#{plural}
+    - if(proposal.participants) {
+      - var plural = 1 === proposal.participants.length ? '' : 's'
+        span #{proposal.participants.length} Participant#{plural}
 
-    - each participant in proposal.participants
-      a.participant-profile(href="javascript:void();", title=participant.fullName)
-        img.avatar(src=participant.avatar)
+      - each participant in proposal.participants
+        a.participant-profile(href="javascript:void();", title=participant.fullName)
+          img.avatar(src=participant.avatar)
+    - }
 
   .share-links
     a(target="_blank", href="http://www.facebook.com/sharer.php?u=").flaticon.social.facebook  

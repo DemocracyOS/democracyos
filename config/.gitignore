@@ -1,1 +1,3 @@
-!config.sample.json
+!sample.json
+development.json
+production.json

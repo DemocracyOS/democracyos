@@ -1,0 +1,9 @@
+form(action="/auth/local", method="post")
+  ul.form-errors
+  .form-group
+    label Email
+    input(type='email', name='email', placeholder="example@abc.com")
+  .form-group
+    label Password
+    input(type='password', name='password', placeholder="Password")
+  .form-group: input(type='submit', value=t('Login'))

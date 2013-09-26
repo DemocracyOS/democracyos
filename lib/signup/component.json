@@ -3,12 +3,18 @@
   "description": "Signup page",
   "dependencies": {
     "component/domify": "*",
+    "component/events": "*",
+    "component/emitter": "*",
+    "component/t": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
     "visionmedia/superagent": "*",
-    "yields/empty": "*"
+    "yields/empty": "*",
+    "yields/serialize": "*"
   },
-  "scripts": [ "signup.js" ],
-  "templates": ["form.jade"],
+  "local": [ "regexps" ],
+  "scripts": [ "signup.js", "form-view.js" ],
+  "styles": [ "signup.css" ],
+  "templates": [ "signup-form.jade" ],
   "main": "signup.js"
 }

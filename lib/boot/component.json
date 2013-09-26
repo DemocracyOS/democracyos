@@ -9,7 +9,10 @@
   "local": [
     "homepage",
     "proposal",
+    "law",
+    "signin",
     "signup",
+    "forgotpassword",
     "translations",
     "flaticons"
   ],

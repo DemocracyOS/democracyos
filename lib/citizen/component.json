@@ -3,10 +3,12 @@
   "description": "citizen",
   "dependencies": {
     "component/emitter": "*",
-    "visionmedia/superagent": "*"
+    "visionmedia/page.js": "*",
+    "visionmedia/superagent": "*",
+    "visionmedia/debug": "*"
   },
   "local": [ ],
-  "scripts": [ "citizen.js" ],
+  "scripts": [ "citizen.js", "model.js" ],
   "templates": [ ],
   "styles": [ ],
   "images": [ ],
