@@ -6,6 +6,7 @@
 
 var program = require('commander');
 var fs = require('fs');
+var dir = fs.readdirSync;
 var read = fs.readFileSync;
 var exists = fs.existsSync;
 var path = require('path');
@@ -14,12 +15,9 @@ var parse = JSON.parse;
 var mongoose = require('mongoose');
 var prompt = require('co-prompt');
 var confirm = prompt.confirm;
-var mPath = resolve('./lib/models/comment.js');
-var Model = require(mPath);
-var mPath1 = resolve('./lib/models/delegation.js');
-var Model1 = require(mPath1);
-var mPath2 = resolve('./lib/models/tag.js');
-var Model2 = require(mPath2);
+
+// Little hack to include `NODE_PATH=.`
+module.paths.push(resolve('.'))
 
 program
   .option('-u, --user <name>', "MongoDB username.")
@@ -34,22 +32,20 @@ program
   .description("Loads model's collection from .json source path.")
   .action(function(model, source) {
     var mPath = resolve('./lib/models/' + model.toLowerCase() + '.js');
-    var aPath = resolve('./lib/db-api/' + model.toLowerCase() + '.js');
     var sPath = resolve(source);
 
-    if (!exists(aPath)) return write('Invalid api "' + model + '"');
+    if (!exists(mPath)) return write('Invalid api "' + model + '"');
     if (!exists(resolve(source))) return write('Invalid source "' + source + '"');
 
     var data = parse(read(sPath));
     if (!data.length) return write("No data in file.");
 
-    connect(function() {  
-      var Model = require(mPath);
-      var api = require(aPath);
+    connect(function() {
+      models();
+      var api = require('lib/db-api');
       var c = data.length;
       data.forEach(function(doc) {
-
-        api.create(doc, function(err, law) {
+        api[model.toLowerCase()].create(doc, function(err) {
           if (err) return error("Error %s while saving %j", err, doc);
           console.log("Saved %j", doc);
           if (0 === --c) disconnect(exit);
@@ -128,6 +124,24 @@ function connect (fn) {
   write("Connecting to " + mongoURL());
   fn = fn || function() {};
   mongoose.connect(mongoURL(), fn);
+}
+
+/**
+ * Registers al available models
+ *
+ * @param {Function} fn
+ * @requires path.
+ */
+function models(fn) {
+  write("Register mongoose models.");
+  var except = ['index.js'];
+  var files = dir(resolve('./lib/models/'));
+  files && files.forEach(function(f) {
+    if (~except.indexOf(f)) return;
+    console.log(f);
+    require(resolve('./lib/models/' + f ));
+  });
+  fn && fn();
 }
 
 /**
