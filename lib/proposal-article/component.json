@@ -6,7 +6,8 @@
     "component/tip": "*",
     "component/aurora-tip": "*",
     "visionmedia/jade": "*",
-    "cristiandouce/to-array": "*"
+    "cristiandouce/to-array": "*",
+    "cristiandouce/t": "chained-tokens"
   },
   "local": [ ],
   "scripts": [ "proposal-article.js" ],
