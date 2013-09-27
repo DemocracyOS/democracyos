@@ -9,7 +9,8 @@
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "yields/serialize": "*",
-    "cristiandouce/t": "chained-tokens"
+    "cristiandouce/t": "chained-tokens",
+    "cristiandouce/to-array": "*"
   },
   "scripts": [ "view.js" ],
   "templates": [ "comments-block.jade", "comment-item.jade" ],
