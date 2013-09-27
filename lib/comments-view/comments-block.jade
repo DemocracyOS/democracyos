@@ -1,0 +1,9 @@
+.comments
+  h4= t('Comments')
+  ul.media-list.comment-list
+
+  form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
+    h5= t('Your comment')
+    p 
+      textarea(name='text')
+    input.btn(type='submit', value=t('Send'))
