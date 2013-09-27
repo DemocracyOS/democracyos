@@ -1,4 +1,4 @@
-{
+[{
     "ambiente": {
         "name": "Ambiente"
       , "color": "#091A33"
@@ -178,4 +178,4 @@
         "name": "Software"
       , "color": "#09330a"
     }
-}
+}]
