@@ -16,8 +16,9 @@ article.proposal
   - var lines = content.split('\n');
   - each line in lines
     - if (line.trim())
-      p=line.trim()
-
+      p!=line.trim()
+  .links
+    p: a(target="_blank", href="https://s3.amazonaws.com/osky-1234/#{proposal.lawId.replace('/','-')}.doc")= t("View the original text")
   .participants
     - if(proposal.participants) {
       - var plural = 1 === proposal.participants.length ? '' : 's'
