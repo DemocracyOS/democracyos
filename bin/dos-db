@@ -138,7 +138,6 @@ function models(fn) {
   var files = dir(resolve('./lib/models/'));
   files && files.forEach(function(f) {
     if (~except.indexOf(f)) return;
-    console.log(f);
     require(resolve('./lib/models/' + f ));
   });
   fn && fn();
