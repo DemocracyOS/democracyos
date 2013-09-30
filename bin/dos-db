@@ -17,7 +17,7 @@ var prompt = require('co-prompt');
 var confirm = prompt.confirm;
 
 // Little hack to include `NODE_PATH=.`
-module.paths.push(resolve('.'))
+module.paths.unshift(resolve('.'))
 
 program
   .option('-u, --user <name>', "MongoDB username.")
