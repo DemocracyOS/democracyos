@@ -6,6 +6,7 @@
 
 var program = require('commander');
 var fs = require('fs');
+var dir = fs.readdirSync;
 var read = fs.readFileSync;
 var exists = fs.existsSync;
 var path = require('path');
@@ -14,6 +15,9 @@ var parse = JSON.parse;
 var mongoose = require('mongoose');
 var prompt = require('co-prompt');
 var confirm = prompt.confirm;
+
+// Little hack to include `NODE_PATH=.`
+module.paths.unshift(resolve('.'))
 
 program
   .option('-u, --user <name>', "MongoDB username.")
@@ -30,18 +34,18 @@ program
     var mPath = resolve('./lib/models/' + model.toLowerCase() + '.js');
     var sPath = resolve(source);
 
-    if (!exists(mPath)) return write('Invalid model "' + model + '"');
-    if (!exists(resolve(source))) return write('Invalid source "' + source + '"');
+    if (!exists(mPath)) return write('Invalid api "' + model + '"');
+    if (!exists(sPath)) return write('Invalid source "' + source + '"');
 
     var data = parse(read(sPath));
     if (!data.length) return write("No data in file.");
 
     connect(function() {
-      var Model = require(mPath);
+      models();
+      var api = require('lib/db-api');
       var c = data.length;
       data.forEach(function(doc) {
-
-        (new Model(doc)).save(function(err) {
+        api[model.toLowerCase()].create(doc, function(err) {
           if (err) return error("Error %s while saving %j", err, doc);
           console.log("Saved %j", doc);
           if (0 === --c) disconnect(exit);
@@ -120,6 +124,24 @@ function connect (fn) {
   write("Connecting to " + mongoURL());
   fn = fn || function() {};
   mongoose.connect(mongoURL(), fn);
+}
+
+/**
+ * Registers al available models
+ *
+ * @param {Function} fn
+ * @requires path.
+ */
+function models(fn) {
+  write("Register mongoose models.");
+  var except = ['index.js'];
+  var files = dir(resolve('./lib/models/'));
+  files && files.forEach(function(f) {
+    if (~except.indexOf(f)) return;
+    console.log(f);
+    require(resolve('./lib/models/' + f ));
+  });
+  fn && fn();
 }
 
 /**

@@ -1,0 +1,18 @@
+{
+  "name": "comments-view",
+  "description": "Generic comments view component",
+  "dependencies": {
+    "component/domify": "*",
+    "component/emitter": "*",
+    "component/events": "*",
+    "visionmedia/jade": "*",
+    "visionmedia/debug": "*",
+    "visionmedia/superagent": "*",
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens",
+    "cristiandouce/to-array": "*"
+  },
+  "scripts": [ "view.js" ],
+  "templates": [ "comments-block.jade", "comment-item.jade" ],
+  "main": "view.js"
+}

@@ -82,6 +82,12 @@ app.use('/api', require('lib/comment'));
 app.use('/api', require('lib/citizen'));
 
 /**
+ * Delegation API Service
+ */
+
+app.use('/api', require('lib/delegation'));
+
+/**
  * Mount BootUp
  */
 

@@ -1,0 +1,10 @@
+li.media.comment-item
+  a(href="#").pull-left
+    img(src=comment.author.avatar).avatar
+
+  .media-body
+    h5.media-heading
+      | #{comment.author.fullName} 
+      small.ago(data-time=comment.createdAt.toString())
+      small :
+    p=comment.text
