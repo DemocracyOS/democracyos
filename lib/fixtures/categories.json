@@ -89,6 +89,11 @@
       , "color": "#092833"
     }
 
+  , "proteccion-y-uso-del-espacio-publico": {
+        "name": "Protección y Uso del Espacio Público "
+      , "color": "#899893"
+    }
+
   , "relaciones-interjurisdiccionales": {
         "name": "Relaciones Interjurisdiccionales"
       , "color": "#092833"
@@ -119,6 +124,11 @@
       , "color": "#3d0b0b"
     }
 
+  , "fcambio-climatico": {
+        "name": "Cambio Climático"
+      , "color": "#7d9f8b"
+    }
+
   , "foro-de-la-tercera-edad": {
         "name": "Foro de la Tercera Edad"
       , "color": "#3d1f0b"
@@ -144,6 +154,11 @@
       , "color": "#2c380a"
     }
 
+  , "recuperacion-predio-club-san-lorenzo": {
+        "name": "Recuperación predio Club San Lorenzo"
+      , "color": "#9c989a"
+    } 
+
   , "reforma-tributaria": {
         "name": "Reforma Tributaria"
       , "color": "#09330a"
@@ -159,6 +174,11 @@
       , "color": "#092833"
     }
 
+  , "seguimientoy-promoción-de-actividades-normas-y-programas-culturales": {
+        "name": "Seguimiento y Promoción de Actividades, Normas y Programas Culturales"
+      , "color": "#012131"
+    }
+ 
   , "etica-acuerdos-y-organismos-de-control": {
         "name": "Ética, Acuerdos y Organismos de Control"
       , "color": "#092833"
