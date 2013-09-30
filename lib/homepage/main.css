@@ -41,6 +41,7 @@ header.app-header,
 section.app-content,
 aside.nav-proposal {
   position: fixed;
+  z-index: 100000;
 }
 header.app-header {
   top: 0;
