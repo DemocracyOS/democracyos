@@ -35,7 +35,7 @@ program
     var sPath = resolve(source);
 
     if (!exists(mPath)) return write('Invalid api "' + model + '"');
-    if (!exists(resolve(source))) return write('Invalid source "' + source + '"');
+    if (!exists(sPath)) return write('Invalid source "' + source + '"');
 
     var data = parse(read(sPath));
     if (!data.length) return write("No data in file.");
