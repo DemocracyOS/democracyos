@@ -38,6 +38,7 @@ img.avatar {
 /* Header
 -------------------------------------------------- */
 header.app-header,
+section.site-content,
 section.app-content,
 aside.nav-proposal {
   position: fixed;
@@ -121,6 +122,14 @@ header.app-header .user-nav .login {
 }
 header.app-header .user-nav .login:hover {
   text-decoration: none;
+}
+/* Site Content Container
+-------------------------------------------------- */
+section.site-content {
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */
