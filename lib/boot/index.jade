@@ -62,9 +62,10 @@ html(lang='en')
               span.caret
           ul.dropdown-menu
               li
-                a.logout(href='/logout') Logout
+                a(href="/logout").logout Logout
         - else
-          a(href='/auth/facebook').login Login
+          a(href='/signin').login Login
+          a(href='/signup').login Signup
 
     aside.nav-proposal
 
