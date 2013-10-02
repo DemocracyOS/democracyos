@@ -1,0 +1,8 @@
+li(data-id=item.id)
+  a(href="/#{listType}/"+item.id)
+    span.proposal-type.flaticon.solid.government-1       
+    span.proposal-type.proposal-type-2.flaticon.solid.clipboard-4     
+    span.title=item.title
+    span.created-by
+      //- | Creador por #{item.author.fullName} 
+      span.ago(data-time=item.createdAt.toString())

@@ -1,0 +1,19 @@
+{
+  "name": "sidebar-list",
+  "description": "Sidebar list of items",
+  "dependencies": {
+    "component/domify": "1.0.0",
+    "component/emitter": "1.0.1",
+    "component/classes": "*",
+    "visionmedia/superagent": "*",
+    "visionmedia/debug": "*",
+    "visionmedia/jade": "*",
+    "cristiandouce/t": "chained-tokens"
+  },
+  "local": [ ],
+  "scripts": [ "view.js", "sidebar.js" ],
+  "templates": [ "list-block.jade", "list-item.jade" ],
+  "styles": [ ],
+  "images": [ ],
+  "main": "sidebar.js"
+}
