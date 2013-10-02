@@ -104,6 +104,13 @@ function Config(app) {
 
     mandrillMailer(app);
 
+    /*
+     * Configure basic auth
+     */
+    if (config.auth.basic && config.auth.basic.username && config.auth.basic.password) {
+      app.use(express.basicAuth(config.auth.basic.username, config.auth.basic.password));
+    }
+
     /**
      * Set application http server port from `env`
      * Defaults to 3005
