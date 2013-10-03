@@ -3,16 +3,19 @@
   "description": "Sidebar list of items",
   "dependencies": {
     "component/domify": "1.0.0",
+    "component/dropdown": "*",
+    "component/events": "*",
     "component/emitter": "1.0.1",
     "component/classes": "*",
     "visionmedia/superagent": "*",
     "visionmedia/debug": "*",
     "visionmedia/jade": "*",
+    "yields/empty": "*",
     "cristiandouce/t": "chained-tokens"
   },
   "local": [ ],
   "scripts": [ "view.js", "sidebar.js" ],
-  "templates": [ "list-block.jade", "list-item.jade" ],
+  "templates": [ "list-block.jade", "list-item.jade", "filter-item.jade" ],
   "styles": [ ],
   "images": [ ],
   "main": "sidebar.js"
