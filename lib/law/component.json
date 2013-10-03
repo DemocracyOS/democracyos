@@ -10,9 +10,10 @@
   "local": [
     "citizen",
     "proposal-list",
+    "sidebar-list",
     "proposal-article",
     "proposal-options",
-    "proposal-comments"
+    "comments-view"
   ],
   "scripts": [ "law.js" ],
   "styles": [ ],

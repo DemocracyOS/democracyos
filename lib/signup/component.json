@@ -15,6 +15,6 @@
   "local": [ "regexps" ],
   "scripts": [ "signup.js", "form-view.js" ],
   "styles": [ "signup.css" ],
-  "templates": [ "signup-form.jade" ],
+  "templates": [ "signup-form.jade" , "signup-complete.jade"],
   "main": "signup.js"
 }

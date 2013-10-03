@@ -5,6 +5,7 @@ html(lang='en')
     //   Basic Page Needs                                   
     //   ================================================== 
     title= t('DemocracyOS')
+
     meta(charset='utf-8')
     meta(name='description', content='')
     meta(name='author', content='')
@@ -64,11 +65,10 @@ html(lang='en')
               li
                 a.logout(href='/logout')= t('Logout')
         - else
-          a(href='/auth/facebook').login= t('Login')
+          a(href='/signin').login= t('Login')
+          a(href='/signup').login= t('Signup')
 
-    aside.nav-proposal
-
-    section.app-content
+    section.site-content
 
     // End of `Page Content`  
     // ====================== 

@@ -7,3 +7,4 @@ form(action="/auth/local", method="post")
     label= t('Password')
     input(type='password', name='password', placeholder=t('Password'))
   .form-group: input(type='submit', value=t('Login'))
+  .form-group: a(href='/forgotpassword/step1') Forgot Passoword?

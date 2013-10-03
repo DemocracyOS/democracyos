@@ -9,8 +9,10 @@ var express = require('express')
   , MongoStore = require('connect-mongo')(express)
   , mandrillMailer = require('lib/mailer').mandrillMailer
   , path = require('path')
-  , translations = require('lib/translations')
-  , config = require('lib/config');
+  , config = require('lib/config')
+  , auth = require('http-auth')
+  , t = require('t-component');
+
 
 /**
  * Expose `Config`
@@ -106,6 +108,23 @@ function Config(app) {
     mandrillMailer(app);
 
     /**
+     * Basic HTTP-Auth restriction middleware
+     * for production access only.
+     */
+
+    if (config.auth.basic && config.auth.basic.username && config.auth.basic.password) {
+      var basic = auth({
+        authRealm: "Authentication required",
+        authList : [config.auth.basic.username+":"+config.auth.basic.password]
+      });
+      app.use(function(req, res, next) {
+        basic.apply(req, res, function(username) {
+          return next();
+        });
+      });
+    }
+
+    /**
      * Set application http server port from `env`
      * Defaults to 3005
      */
@@ -162,6 +181,8 @@ function Config(app) {
 
       // Set user as local var if authenticated
       if(req.isAuthenticated() && req.user) res.locals.citizen = req.user;
+
+      res.locals.t = t;
 
       // Call next middleware
       next();

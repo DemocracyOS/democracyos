@@ -5,7 +5,7 @@
     "component/domify": "*",
     "component/events": "*",
     "component/emitter": "*",
-    "component/t": "*",
+    "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
     "visionmedia/superagent": "*",

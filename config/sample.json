@@ -12,6 +12,10 @@
       "consumerKey" : "TwitterConsumerKey",
       "consumerSecret": "TwitterConsumerSecret",
       "callback": "http://127.0.0.1:3005/auth/twitter/callback"
+    },
+    "basic": {
+      "username" : "",
+      "password": ""
     }
   },
   "mailer": {

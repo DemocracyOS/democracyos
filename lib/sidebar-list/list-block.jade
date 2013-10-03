@@ -1,0 +1,12 @@
+aside.nav-proposal
+  nav.sidebar-nav
+    .dropdown-deparment
+      .btn-group
+        button.btn.btn-default.current-department(type='button')= t("Listing all {listType}s", { listType: type })
+        button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+          span.caret
+        ul.dropdown-menu
+          //- Rendered from client's view
+
+    ul.nav.navlist
+      //- Rendered from clients's view
