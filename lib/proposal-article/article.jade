@@ -21,7 +21,7 @@ article.proposal
   .participants
     - if(proposal.participants) {
       - var plural = 1 === proposal.participants.length ? '' : 's'
-        span #{proposal.participants.length} Participant#{plural}
+        span #{proposal.participants.length} #{t('Participant')}#{plural}
 
       - each participant in proposal.participants
         a.participant-profile(href="javascript:void();", title=participant.fullName)

@@ -9,6 +9,7 @@ var express = require('express')
   , MongoStore = require('connect-mongo')(express)
   , mandrillMailer = require('lib/mailer').mandrillMailer
   , path = require('path')
+  , translations = require('lib/translations')
   , config = require('lib/config');
 
 /**
@@ -180,6 +181,8 @@ function Config(app) {
      */
 
     app.use(express.errorHandler());
+
+
   });
 
 }
