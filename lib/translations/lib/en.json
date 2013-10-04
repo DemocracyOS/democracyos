@@ -2,6 +2,7 @@
   "DemocracyOS": "DemocracyOS",
   "DemocracyOS Beta": "DemocracyOS Beta",
   "Login": "Login",
+  "Signup": "Signup",
   "Logout": "Logout",
 
   "Comments": "Comments",
@@ -19,12 +20,11 @@
   "Password": "Password",
   "Repeat Password": "Repeat Password",
   "Reset Password!": "Reset Password!",
+  "Forgot Password?": "Forgot Passoword?",
 
   "Email": "Email",
   "Your name": "Your name",
   "First and last name": "First and last name",
-  "Pick a username": "Pick a username",
-  "Username": "Username",
   "Re-type password": "Re-type password",
   "Signup now!": "Signup now!",
 
@@ -39,5 +39,12 @@
   "Delegate": "Delegate",
   "Delegate to": "Delegate to",
 
-  "Participant": "Participant"
+  "Clause": "Clause",
+  "View the original text": "View the original text",
+  "Participant": "Participant",
+
+  "Listing all {listType}s": "Listing all {listType}s",
+  "Project": "Project",
+  "Bill": "Bill",
+  "Law": "Law"
 }

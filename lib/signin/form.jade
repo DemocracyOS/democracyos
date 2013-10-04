@@ -2,9 +2,9 @@ form(action="/auth/local", method="post")
   ul.form-errors
   .form-group
     label= t('Email')
-    input(type='email', name='email', placeholder=t('example@abc.com'))
+    input(type='email', name='email', placeholder=t('example@email.com'))
   .form-group
     label= t('Password')
     input(type='password', name='password', placeholder=t('Password'))
   .form-group: input(type='submit', value=t('Login'))
-  .form-group: a(href='/forgotpassword/step1') Forgot Passoword?
+  .form-group: a(href='/forgotpassword/step1') #{t('Forgot Password?')}
