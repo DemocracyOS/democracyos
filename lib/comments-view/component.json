@@ -12,6 +12,9 @@
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/to-array": "*"
   },
+  "local": [
+    "citizen"
+  ],  
   "scripts": [ "view.js" ],
   "templates": [ "comments-block.jade", "comment-item.jade" ],
   "main": "view.js"
