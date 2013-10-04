@@ -15,7 +15,7 @@
 -   || []
 
 - var voted = locals.citizen && ~census.indexOf(citizen.id)
-- var showOptions = citizen.id && !voted
+- var showOptions = !!citizen.id
 
 .proposal-options(class= showOptions ? '' : 'hide')
   .vote-box
