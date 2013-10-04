@@ -1,11 +1,12 @@
-[{
+[
+{
     "state" : "bill"
   , "status" : "open"  
   , "lawId": "0095/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Comercios con accesibilidad física para todos."
+  , "summary": "El proyecto de ley busca que se apruebe la colocación de un cartel en la entrada de los comercios que cumplan la Ley de Accesibilidad Física para Todos (Ley Nº 962). Objetivo: que los usuarios y consumidores sepan qué establecimientos se adecuan a dicha normativa."
   , "clauses": [
       {
           "clauseId": "1"
@@ -30,8 +31,8 @@
   , "lawId": "0151/13"
   , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Plan integral de ciclovías"
+  , "summary": "El proyecto de ley establece que sea la Legislatura la que defina y disponga la implementación, implantación, construcción o señalización de carriles exclusivos o ciclovías, bicisendas, calles o carriles preferenciales de bicicletas en el ámbito de la Ciudad de Buenos Aires. Objetivo: dotar de una visión integral al diseño de un sistema de transporte y tránsito de ciclovías."
   , "clauses": [
       {
           "clauseId": "1"
@@ -61,8 +62,8 @@
   , "lawId": "0203/12"
   , "tag" : "Cultura"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Declarar Ciudadano Ilustre al actor, director y maestro escénico, Osvaldo Bonet."
+  , "summary": "Osvaldo Bonet. incursionó tanto en el teatro, como en el cine y la televisión, cumpliendo roles y tareas diferentes, al igual que en la docencia y en la gestión cultural. Nació en Buenos Aires en 1918. Sus estudios secundarios los realizó en el Colegio Nacional Buenos Aires y egresó del Conservatorio Nacional de Música y Arte Escénico “Carlos López Buchardo”, completó su formación en diversas instituciones de París. Fue Jefe de estudios del elenco de la Comedia Nacional, Teatro Nacional Cervantes; Fundador y Presidente de la Asociación de Directores Teatrales,  Director del Teatro Nacional Cervantes; Director Artístico del Teatro  General San Martín; Secretario Cultural de la Asociación Argentina de Actores; Director Nacional de Teatro y Danza; Integrante del Consejo Asesor del Teatro General San Martín."
   , "clauses": [
       {
           "clauseId": "1"
@@ -82,8 +83,8 @@
   , "lawId": "0204/12"
   , "tag" : "Cultura"    
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Declarar Ciudadano Ilustre al Dr. Sergio Gabriel Torres"
+  , "summary": "El Dr. Sergio Gabriel Torres, ingresó en el año 1985 a la Justicia Nacional. Se desempeñó como Juez Federal de la Nación y a su cargo tramita  la causa más relevante que  investiga las violaciones a los derechos humanos (los delitos cometidos dentro ESMA), cuyo desempeño en ella pone de manifiesto su  compromiso con la Justicia, los Derechos Humanos y con los sectores mas vulnerables de la sociedad.  Integró la “Comisión Interdisciplinaria de Expertos en Adicciones” que por su accionar  se ha por avanzado en la compleja problemática del Paco y del consumo de drogas. Es miembro fundador del Centro Latinoamericano de Derechos Humanos."
   , "clauses": [
       {
           "clauseId": "1"
@@ -103,8 +104,8 @@
   , "lawId": "0205/12"
   , "tag" : "Cultura"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Declarar Ciudadana Ilustre a la Sra. Iris Scaccheri"
+  , "summary": "Iris Scaccheri nació en la ciudad de La Plata, provincia de Buenos Aires, en 1949. En 1964 egresó de la Escuela de Ballet del Teatro Argentino de La Plata, recibiendo los títulos de Profesora Superior de Danzas Clásicas y de Profesora Superior de Danzas Modernas. Su carrera artística ha tenido reconocimiento nacional e internacional. Bailarina y coreógrafa especializada en ballets y folclore de diversas nacionalidades. Su danza y su coreografía rompió con los modelos establecidos. Como bailarina y docente dedicó su carrera  a no limitar el movimiento a las formas clásicas y creó  un código expresivo producto de la investigación del movimiento y del aporte de otras culturas."
   , "clauses": [
       {
           "clauseId": "1"
@@ -124,8 +125,8 @@
   , "lawId": "0234/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Advertencias sobre alimentos procesados"
+  , "summary": "El proyecto de ley propone una Leyenda obligatoria en publicidades de alimentos procesados que se difundan en la vía pública que diga: 'ES ACONSEJABLE REDUCIR EL CONSUMO DE ALIMENTOS DE ELEVADO CONTENIDO EN SODIO, AZUCAR O GRASAS SATURADAS Y PRACTICAR ACTIVIDAD FISICA EN FORMA REGULAR'. El proyecto da una definición de alimento procesado y busca concientizar acerca del avance de la obesidad en la ciudadanía porteña."
   , "clauses": [
       {
           "clauseId": "1"
@@ -175,13 +176,13 @@
   , "lawId": "0419/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Tu tiempo de espera en locales comerciales"
+  , "summary": "Se propone la sanción de una Ley mediante la cual establezca la obligación de informar el tiempo de espera para ser atendido en los locales comerciales con gran afluencia de público ya sea en forma personalizada, telefónica o en las líneas de caja. Entre las empresas comprendidas figuran: entidades financieras y bancos, supermercados, prestadoras de servicios de luz, gas, agua, salud, telefonía fija, móvil e/o internet, televisión por cable y satelital. Objetivo: mejorar la atención a  los consumidores y usuarios de servicios mediante una información clara y precisa que garantice su derecho de opción, al poder decir de un modo inteligente si se mantiene o no en el local comercial a la espera de ser atendido."
   , "clauses": [
       {
           "clauseId": "1"
         , "order": 0
-        , "text": "Información de Tiempo de Espera. En  todos los locales y/o comercios  que comercialicen bienes o presten servicios a consumidores o usuarios,   ubicados en territorio de la Ciudad Autónoma de Buenos Aires y enumerados en el Art. 2º, será obligatoria la información previa del tiempo estimado de espera para ser atendido, ya sea en forma personalizada, telefónica o en las líneas de caja."
+        , "text": "Información de Tiempo de Espera. En  todos los locales y/o comercios  que comercialicen bienes o presten servicios a consumidores o usuarios,   ubicados en territorio de la Ciudad Autónoma de Buenos Aires y enumerados en el Art. 2º, será obligatoria la información previa del tiempo estimado de espera para ser atendido, ya sea en forma personalizada, telefónica o en las líneas de caja."
       },
       {
           "clauseId": "2"
@@ -216,8 +217,8 @@
   , "lawId": "0522/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Modificación ley publicidad Juegos de Azar"
+  , "summary": "La ley Nº 4182 establece la inclusión obligatoria de la leyenda “JUGAR COMPULSIVAMENTE ES PERJUDICIAL PARA LA SALUD” en publicidades de  juegos de azar difundidas en la vía pública de la Ciudad Autónoma de Buenos Aires. El proyecto de ley buscar modificar los artículos 1° y 2° de la ley para posibilitar su correcta aplicación ya que especifica que la frase debe figurar cualquiera sea el sistema utilizado para la transmisión del mensaje y las condiciones de colocación, conservación y retiro de elementos publicitarios. Objetivo: brindar mayor claridad y precisión a la ley."
   , "clauses": [
       {
           "clauseId": "1"
@@ -242,8 +243,8 @@
   , "lawId": "0589/12"
   , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Semáforos más inteligentes."
+  , "summary": "El proyecto modifica el Código de Tránsito y Transporte de la CABA. Se busca reprogramar el sistema de los semáforos para establecer nuevas pautas de conducta que contribuyan a disminuir el error inducido por el poco tiempo que el conductor tiene para decidir una maniobra. Los semáforos pasarían a tener 8 funciones lumínicas que indican distintas conductas en las intersecciones entre calles. Objetivo: reducir los factores causantes de accidentes viales."
   , "clauses": [
       {
           "clauseId": "1"
@@ -268,8 +269,8 @@
   , "lawId": "0648/12"
   , "tag" : "Protección y Uso del Espacio Público"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Concesiones de Bares/Kioscos en parques"
+  , "summary": "Se otorgarán concesiones a fin de establecer áreas de descanso, esparcimiento y servicios. Sólo se podrán concesionar los parques que ocupen al menos 1 manzana. En los parques que ocupen mas de 2 manzanas las conseciones podrán ocupar mas espacio. No se permitirán servicios que compitan con los comercios de la zona. El 25% de las concesiones serán para ONGs. Un mismo concesionario podrá tener mas de 1 conseción. La oposición y los comuneros reclaman que el control y cobro de las conseciones lo hagan las comunas."
   , "clauses": [
       {
           "clauseId": "1"
@@ -374,8 +375,8 @@
   , "lawId": "0720/12"
   , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Ahora le toca a las bicicletas con motor"
+  , "summary": "El proyecto de ley reglamenta el uso de las bicicletas con motor y bicicletas con pedaleo asistido. A través de una modificación en el Código de Tránsito y Transporte de la CABA se definen las características de las bicicletas mencionadas, se establecen límites de velocidad para todos los ciclorodados, se prohíbe la circulación en determinadas zonas, se crea un registro especial y se reglamentan los requisitos técnicos para poder circular. Objetivo: llenar el vacío legal que existe en esta materia."
   , "clauses": [
       {
           "clauseId": "1"
@@ -445,8 +446,8 @@
   , "lawId": "0786/12"
   , "tag" : "Cultura"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Clemente Onelli será calle "
+  , "summary": "El proyecto busca darle el nombre de Clemente Onelli a la calle sin nombre, entre las calles Uspallata y Pepiri. Clemente Onelli, es considerado uno de los más prestigiosos naturalistas extranjeros que actuaron en la Argentina de 1888. Tuvo una formación científica y literaria relacionada con las ciencias naturales, especialmente orientadas a la geología y paleontología. Se desempeñó además en cátedras de ciencias naturales y como periodista, escritor y conferencista. Promovió todo tipo de leyes en defensa de los animales, el día del animal y la celebración por primera vez del día del árbol, como muestras de su talento y preocupación por la conservación. Finalmente, Murió en Buenos Aires el 20 de octubre de 1924."
   , "clauses": [
       {
           "clauseId": "1"
@@ -466,8 +467,8 @@
   , "lawId": "0798/12"
   , "tag" : "Seguridad"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Nuevo plan de evacuación y simulacro en casos de explosión e incendio."
+  , "summary": "El proyecto de ley tiene por finalidad establecer un nuevo plan de evacuación y simulacro en casos de incendio, explosión o advertencia de explosión. El sistema vigente -ley 1346- presenta numerosas deficiencias ya que un alto porcentaje de los establecimientos alcanzados por dicha normativa, no les resulta posible dar cumplimiento a las pautas fijadas por el legislador, debido a que la cantidad de roles previstos en la norma supera sus posibilidades por el tipo de actividad desarrollada, la cantidad de personal empleado y/o su particular situación de vulnerabilidad. Objetivo: superar los inconvenientes del anterior sistema fijando objetivos que resulten acordes a los recursos humanos y la actividad de cada establecimiento, así como a los medios técnicos disponibles en cada uno de ellos."
   , "clauses": [
       {
           "clauseId": "1"
@@ -592,8 +593,8 @@
   , "lawId": "0807/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Una oficina de empresa de telefonía móvil por  comuna."
+  , "summary": "La Ley Nº 2221 establece la obligación de que las empresas prestatarias de servicios tengan una oficina de atención al público dentro de la ciudad. El proyecto, que modifica dicha ley, amplia los derechos de los usuarios ya que dispone que las empresas de telefonía móvil deberán tener una oficina de atención personalizada al público en cada una de las comunas de la CABA. El objetivo: que los usuarios de estos servicios no tengan que transitar grandes distancias para realizar los pertinentes trámites impuestos por las empresas, y/o efectuar reclamos y/o en su caso solicitar la baja del servicio."
   , "clauses": [
       {
           "clauseId": "1"
@@ -628,8 +629,8 @@
   , "lawId": "0216/13"
   , "tag" : "Justicia"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Cambios en la forma de designación de las cabezas Ministerio Público"
+  , "summary": "El proyecto de ley busca modificar la ley Orgánica del Ministerio Público para permitirles al Fiscal General, Defensor General y Asesor Tutelar General que nombren al Adjunto que lo reemplace en caso de vacancia, licencia, impedimento o ausencia. De esta manera se abandona el sistema vigente que utiliza como criterio la antigüedad en el cargo. Asimismo  hace una reglamentación específica respecto de los casos de recusación y de los funcionarios mencionados."
   , "clauses": [
       {
           "clauseId": "1"
@@ -678,8 +679,8 @@
   , "status" : "open"  
   , "lawId": "0163/13"
   , "tag" : "Planeamiento Urbano"  
-  , "officialTitle": ""
-  , "mediaTitle": ""
+  , "officialTitle": "Creación de un nuevo barrio en la ciudad."
+  , "mediaTitle": "Transferir al Instituto de la Vivienda tierras en Nueva Pompeya para construir viviendas sociales y la creación del 'Barrio Ribera Iguazú'."
   , "summary": ""
   , "clauses": [
       {
@@ -735,13 +736,13 @@
   , "lawId": "0268/13"
   , "tag" : "Protección y Uso del Espacio Público "  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "La defensa del peatón frente al TC en la CABA"
+  , "summary": "El proyecto de ley tiene su génesis en la celebración de  las carreras de automovilismo deportivo en la ciudad, lo que provoca el vallado (con estructuras de hormigón y alambre) de diferentes avenidas de la Ciudad de Bs. As. El proyecto busca garantizar el libre ascenso y descenso de pasajeros en las paradas de colectivo, la movilidad de personas con alguna disminución física o alguna clase de discapacidad y la actividad de servicios de emergencia como ser: policía, bomberos y/o ambulancias"
   , "clauses": [
       {
           "clauseId": "1"
         , "order": 0
-        , "text": "El Poder Ejecutivo garantizará el ascenso y descenso de pasajeros en forma segura en las paradas establecidas del transporte público automotor, ante la colocación de vallados paralelos a la misma que impidan la aproximación de vehículos, salvando las necesidades de los servicios de bomberos, ambulancias y policía que así lo requieran."
+        , "text": "El Poder Ejecutivo garantizará el ascenso y descenso de pasajeros en forma segura en las paradas establecidas del transporte público automotor, ante la colocación de vallados paralelos a la misma que impidan la aproximación de vehículos, salvando las necesidades de los servicios de bomberos, ambulancias y policía que así lo requieran."
       },
       {
           "clauseId": "2"
@@ -756,8 +757,8 @@
   , "lawId": "0340/12"
   , "tag" : "Presupuesto, Hacienda, Administración Financiera y Política Tributaria"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Vendemos el edificio de la calle Bartolomé Mitre 1247/49/51/55."
+  , "summary": "El proyecto busca desafectar del dominio privado de la Ciudad el inmueble sito en la calle Bartolomé Mitre 1247/49/51/55 y autorizar a la Auditoria General de la Ciudad de Buenos a venderlo y con la plata, comprar otro inmueble para ser destinado a la sede del organismo."
   , "clauses": [
       {
           "clauseId": "1"
@@ -792,8 +793,8 @@
   , "lawId": "0416/12"
   , "tag" : "Defensa de Consumidores y Usuarios"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Envíos gratis para embarazadas, jubilados y personas con necesidades especiales."
+  , "summary": "El proyecto de ley establece que los supermercados, supermercados totales o hipermercados y autoservicios de productos alimenticios que brinden un servicio de envío de compras a domicilio no podrán facturar cargo alguno por el mismo a jubilados/as, pensionados/as, personas con discapacidad, embarazadas, mujeres mayores de 60 años o varones mayores de 65 años."
   , "clauses": [
       {
           "clauseId": "1"
@@ -813,13 +814,13 @@
   , "lawId": "0906/12"
   , "tag" : "Defensa de Consumidores y Usuarios"  
   , "officialTitle": ""
-  , "mediaTitle": ""
-  , "summary": ""
+  , "mediaTitle": "Cajero automático honesto"
+  , "summary": "El proyecto de ley establece que los cajeros automáticos deberán informar en pantalla, en forma previa, el costo de la operación bancaria a realizarse, ya sea extracción, transferencia y/o depósito, en forma previa, con la opción a cancelar la operación sin costo alguno. Asimismo deberán consignar en el comprobante que se expida el costo de la operación realizada. Su incumplimiento por parte de la entidad bancaria prevé sanciones. Objetivo: garantizar la libertad del usuario de optar por concretar o no dicha operación."
   , "clauses": [
       {
           "clauseId": "1"
         , "order": 0
-        , "text": "Deber de información. Los cajeros automáticos deberán informar en pantalla el costo de la operación bancaria a realizarse, ya sea extracción, transferencia y/o depósito, en forma previa, con la opción a cancelar la operación sin costo alguno. <br/>    Asimismo deberán consignar en el comprobante que se expida el costo de la operación realizada."
+        , "text": "Deber de información. Los cajeros automáticos deberán informar en pantalla el costo de la operación bancaria a realizarse, ya sea extracción, transferencia y/o depósito, en forma previa, con la opción a cancelar la operación sin costo alguno. <br/>    Asimismo deberán consignar en el comprobante que se expida el costo de la operación realizada."
       },
       {
           "clauseId": "2"
@@ -837,4 +838,5 @@
         , "text": "Comuníquese, etc."
       }
     ]
-}]
+}
+]
