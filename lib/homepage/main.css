@@ -355,12 +355,11 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .results-box .delegation-box {
   display: inline-block;
 }
-.proposal-options .toggle-results {
-  margin-left: 100px;
-  text-align: center;
+.proposal-options .vote-box .meta-data {
+  margin-bottom: 20px;
 }
-.proposal-options .results-box {
-  display: none;
+.proposal-options .toggle-results span {
+  margin-right: 5px;
 }
 /* Comments
 -------------------------------------------------- */
