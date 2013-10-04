@@ -344,7 +344,7 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .results-box {
   border: 1px solid #eee;
   background: #fff;
-  padding: 20px;
+  padding: 20px 100px;
 }
 .proposal-options .vote-box h5,
 .proposal-options .results-box h5 {
@@ -354,6 +354,10 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .vote-box .delegation-box,
 .proposal-options .results-box .delegation-box {
   display: inline-block;
+}
+.proposal-options .toggle-results {
+  margin-left: 100px;
+  text-align: center;
 }
 .proposal-options .results-box {
   display: none;
