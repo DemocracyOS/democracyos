@@ -15,8 +15,9 @@
 -   || []
 
 - var voted = locals.citizen && ~census.indexOf(citizen.id)
+- var showOptions = citizen.id && !voted
 
-.proposal-options
+.proposal-options(class= showOptions ? '' : 'hide')
   .vote-box
     .meta-data
       - if(~positives.indexOf(citizen.id))
