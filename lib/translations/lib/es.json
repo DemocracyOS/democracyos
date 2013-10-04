@@ -1,4 +1,50 @@
 {
+  "DemocracyOS": "DemocraciaOS",
+  "DemocracyOS Beta": "DemocraciaOS Beta",
+  "Login": "Ingresar",
+  "Signup": "Registrarse",
+  "Logout": "Cerrar sesión",
+
   "Comments": "Comentarios",
-  "Your comment": "Tu comentario"
+  "Your comment": "Tu comentario",
+  "Send": "Enviar",
+
+  "Hi {name}": "Hola {name}",
+  "Please click <a href=\"{url}\">here</a> to reset your password": "Por favor cliquea <a href=\"{url}\">aquí</a> para reestablecer tu contraseña",
+  "The DemocracyOS team": "El equipo de DemocraciaOS",
+  "PS: if you haven't requested to reset your password, please ignore this email": "P.D.: si no solicitaste reestablecer tu contraseña, por favor ignora este correo",
+
+  "example@email.com": "ejemplo@email.com",
+  "New Password": "Nueva contraseña",
+  "Re-type new password": "Reingresa la nueva contraseña",
+  "Password": "Contraseña",
+  "Repeat Password": "Repetir contraseña",
+  "Reset Password!": "¡Reestablecer contraseña!",
+  "Forgot Password?": "¿Olvidste tu contraseña?",
+
+  "Email": "Correo electrónico",
+  "Your name": "Tu nombre",
+  "First and last name": "Nombres y apellidos",
+  "Re-type password": "Reingresa la contraseña",
+  "Signup now!": "¡Regístrarme ahora!",
+
+  "Vote": "Voto",
+  "You voted Yea": "Has votado a favor",
+  "You voted Nay": "Has votado en contra",
+  "You abstained from voting": "Has decidido abstenerte de votar",
+  "I want to change my vote": "Quiero cambiar mi voto",
+  "Yea": "Afirmativo",
+  "Nay": "Negativo",
+  "Abstain": "Abstención",
+  "Delegate": "Delegar",
+  "Delegate to": "Delegar a",
+
+  "Clause": "Artículo",
+  "View the original text": "Ver el texto original",
+  "Participant": "Participante",
+
+  "Listing all {listType}s": "Todo",
+  "Project": "Proyecto",
+  "Bill": "Despacho",
+  "Law": "Ley"
 }

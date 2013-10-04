@@ -4,7 +4,7 @@ form(action="/auth/local", method="post")
     label= t('Email')
     input(type='email', name='email', placeholder=t('example@email.com'))
   .form-group
-    label= t('Your name')
+    label #{t('Your name')}
     input(type='text', name='fullname', placeholder=t('First and last name'))
   .form-group
     label= t('Password')
