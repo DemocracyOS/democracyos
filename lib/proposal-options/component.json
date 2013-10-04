@@ -12,6 +12,7 @@
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
     "cristiandouce/Chart.js": "*",
+    "cristiandouce/t": "chained-tokens",
     "discore/closest": "*",
     "gvilarino/autocomplete": "*"
   },

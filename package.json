@@ -47,7 +47,8 @@
     "marked": "~0.2.9",
     "commander": "~2.0.0",
     "co-prompt": "*",
-    "truncate": "*"
+    "truncate": "*",
+    "t-component": "cristiandouce/t#chained-tokens"
   },
   "devDependencies": {},
   "main": "pdr",

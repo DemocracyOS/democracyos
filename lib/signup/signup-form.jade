@@ -1,15 +1,15 @@
 form(action="/auth/local", method="post")
   ul.form-errors
   .form-group
-    label Email
-    input(type='email', name='email', placeholder="example@abc.com")
+    label= t('Email')
+    input(type='email', name='email', placeholder=t('example@email.com'))
   .form-group
-    label Your name
-    input(type='text', name='fullname', placeholder="first and last name")
+    label= t('Your name')
+    input(type='text', name='fullname', placeholder=t('First and last name'))
   .form-group
-    label Password
-    input(type='password', name='password', placeholder="Password")
+    label= t('Password')
+    input(type='password', name='password', placeholder=t('Password'))
   .form-group
-    label Re-type password
-    input(type='password', name='re_password', placeholder="Repeat Password")
-  .form-group: input(type='submit', value='Signup now!')
+    label= t('Re-type password')
+    input(type='password', name='re_password', placeholder=t('Repeat Password'))
+  .form-group: input(type='submit', value=t('Signup now!'))

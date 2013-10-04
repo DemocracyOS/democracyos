@@ -1,6 +1,6 @@
 .proposal-options
   .vote-box
-    h5 Vote
+    h5= t('Vote')
     - var hide = ''
     - var census = ( proposal.votes
     -   && proposal.votes.map(function(v) { return v.author }) )
@@ -18,29 +18,29 @@
       - hide = 'hide';
       .meta-data
         - if(~positives.indexOf(citizen.id))
-          p.alert.alert-success(style="margin:0;") Has votado a favor.
+          p.alert.alert-success(style="margin:0;") #{t('You voted Yea')}.
         - else if (~negatives.indexOf(citizen.id))
-          p.alert.alert-danger(style="margin:0;") Has votado en contra.
+          p.alert.alert-danger(style="margin:0;") #{t('You voted Nay')}.
         - else if (~neutrals.indexOf(citizen.id))
-          p.alert.alert-info(style="margin:0;") Te has abstenido de votar.
+          p.alert.alert-info(style="margin:0;") #{t('You abstained from voting')}.
         a.meta-item.change-vote(href="#")
-          small Deseo cambiar mi voto.
+          small #{t('I want to change my vote')}.
 
     .vote-options(class=hide)
       .direct-vote
         a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
           i.flaticon.solid.thumbs-up-1
-          span Positive
+          span= t('Yea')
         a.vote-option.vote-abstain(href="#", data-proposal=proposal.id)
           i.flaticon.solid.pause
-          span Abstain 
+          span= t('Abstain')
         a.vote-option.vote-no(href="#", data-proposal=proposal.id)
           i.flaticon.solid.thumbs-up-1
-          span Negative
-      //- .proxy-vote
-      //-   a.vote-option.delegate-vote(href="#", data-proposal=proposal.id)
-      //-     i.flaticon.solid.thumbs-up-1
-      //-     span Delegate
-    .delegation-box.hide
-      label Delegate to
-      input.delegation-input(type="text", name="q")
+          span= t('Nay')
+    //-   .proxy-vote
+    //-     a.vote-option.delegate-vote(href="#", data-proposal=proposal.id)
+    //-       i.flaticon.solid.thumbs-up-1
+    //-       span= t('Delegate')
+    //- .delegation-box.hide
+    //-   label= t('Delegate to')
+    //-   input.delegation-input(type="text", name="q")

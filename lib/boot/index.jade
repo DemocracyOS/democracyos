@@ -4,7 +4,8 @@ html(lang='en')
     //                                                      
     //   Basic Page Needs                                   
     //   ================================================== 
-    title Partido de la Red
+    title= t('DemocracyOS')
+
     meta(charset='utf-8')
     meta(name='description', content='')
     meta(name='author', content='')
@@ -54,7 +55,7 @@ html(lang='en')
     // Start of `Page Content`
     header.app-header
       h1#logo
-        a(href='/') Partido de la Red Beta
+        a(href='/')= t('DemocracyOS Beta')
       .user-nav.btn-group
         - if (locals.citizen)
           a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
@@ -62,10 +63,10 @@ html(lang='en')
               span.caret
           ul.dropdown-menu
               li
-                a(href="/logout").logout Logout
+                a.logout(href='/logout')= t('Logout')
         - else
-          a(href='/signin').login Login
-          a(href='/signup').login Signup
+          a(href='/signin').login= t('Login')
+          a(href='/signup').login= t('Signup')
 
     section.site-content
 

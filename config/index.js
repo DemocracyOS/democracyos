@@ -10,7 +10,9 @@ var express = require('express')
   , mandrillMailer = require('lib/mailer').mandrillMailer
   , path = require('path')
   , config = require('lib/config')
-  , auth = require('http-auth');
+  , auth = require('http-auth')
+  , t = require('t-component');
+
 
 /**
  * Expose `Config`
@@ -180,6 +182,8 @@ function Config(app) {
       // Set user as local var if authenticated
       if(req.isAuthenticated() && req.user) res.locals.citizen = req.user;
 
+      res.locals.t = t;
+
       // Call next middleware
       next();
 
@@ -198,6 +202,8 @@ function Config(app) {
      */
 
     app.use(express.errorHandler());
+
+
   });
 
 }

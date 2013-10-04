@@ -1,4 +1,43 @@
 {
+  "DemocracyOS": "DemocracyOS",
+  "DemocracyOS Beta": "DemocracyOS Beta",
+  "Login": "Login",
+  "Logout": "Logout",
+
   "Comments": "Comments",
-  "Your comment": "Your comment"
+  "Your comment": "Your comment",
+  "Send": "Send",
+
+  "Hi {name}": "Hi {name}",
+  "Please click <a href=\"{url}\">here</a> to reset your password": "Please click <a href=\"{url}\">here</a> to reset your password",
+  "The DemocracyOS team": "The DemocracyOS team",
+  "PS: if you haven't requested to reset your password, please ignore this email": "PS: if you haven't requested to reset your password, please ignore this email",
+
+  "example@email.com": "example@email.com",
+  "New Password": "New Password",
+  "Re-type new password": "Re-type new password",
+  "Password": "Password",
+  "Repeat Password": "Repeat Password",
+  "Reset Password!": "Reset Password!",
+
+  "Email": "Email",
+  "Your name": "Your name",
+  "First and last name": "First and last name",
+  "Pick a username": "Pick a username",
+  "Username": "Username",
+  "Re-type password": "Re-type password",
+  "Signup now!": "Signup now!",
+
+  "Vote": "Vote",
+  "You voted Yea": "You voted Yea",
+  "You voted Nay": "You voted Nay",
+  "You abstained from voting": "You abstained from voting",
+  "I want to change my vote": "I want to change my vote",
+  "Yea": "Yea",
+  "Nay": "Nay",
+  "Abstain": "Abstain",
+  "Delegate": "Delegate",
+  "Delegate to": "Delegate to",
+
+  "Participant": "Participant"
 }
