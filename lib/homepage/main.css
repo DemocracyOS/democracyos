@@ -140,6 +140,7 @@ section.site-content {
 }
 .dropdown-deparment .btn-group {
   float: none;
+  width: 100%;
 }
 .dropdown-deparment .btn-group button.btn.btn-default {
   background-color: #7f8c8d;
@@ -147,6 +148,9 @@ section.site-content {
 }
 .dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
   background-color: #727f80;
+}
+.dropdown-deparment .btn-group button.btn.btn-default.current-department {
+  width: 190px;
 }
 aside.nav-proposal {
   top: 60px;
