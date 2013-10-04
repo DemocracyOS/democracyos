@@ -8,8 +8,10 @@ section.app-content
     span.proposal-type.flaticon.solid.government-1       
 
     h2=proposal.mediaTitle
-    h5=proposal.title
-    h5=proposal.summary
+    h4
+      span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
+      span.label.label-default= proposal.title
+    p.summary=proposal.summary
       
     //- .voting-process
       //- span.
