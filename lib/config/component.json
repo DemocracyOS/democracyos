@@ -1,0 +1,8 @@
+{
+  "name": "config",
+  "description": "Client config component generated dynamicaly by ./bin/dos-build",
+  "dependencies": {},
+  "local": [],
+  "scripts": [ "client.js" ],
+  "main": "client.js"
+}
