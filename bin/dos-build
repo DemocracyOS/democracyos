@@ -4,10 +4,24 @@
  * Module dependencies.
  */
 
-var build = require('../lib/build');
 var fs = require('fs');
 var write = fs.writeFileSync;
+var path = require('path');
+var resolve = path.resolve;
 
+// Little hack to include `NODE_PATH=.`
+module.paths.unshift(resolve('.'))
+
+// Compile client's config file
+var config = require('lib/config');
+var client = {};
+config.client.forEach(function(k) {
+  client[k] = config[k];
+});
+write(resolve('lib/config/client.js'), 'module.exports = ' + JSON.stringify(client));
+
+// Compile client application `./public/app.js` and `./public/app.css`
+var build = require('lib/build');
 var builder = build.createBuilder();
 builder.build(function(err, res) {
   if (err) return console.log(err);
