@@ -243,10 +243,14 @@ article.proposal h4 span.label {
 article.proposal .meta-information {
   margin-bottom: 10px;
   opacity: 0.6;
+  color: #000;
 }
 article.proposal .meta-information .meta-timeago {
   float: right;
   display: block;
+}
+article.proposal .meta-information .meta-item {
+  color: #000;
 }
 article.proposal .proposal-type {
   top: 66px;
@@ -273,6 +277,13 @@ article.proposal .participants .participant-profile {
 article.proposal .participants .participant-profile img {
   width: 30px;
   height: 30px;
+}
+article.proposal .links p span.glyphicon {
+  font-size: 10px;
+  margin-right: 5px;
+}
+article.proposal .links p a {
+  font-size: 14px;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
