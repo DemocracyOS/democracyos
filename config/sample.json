@@ -2,6 +2,7 @@
   "host": "http://localhost",
   "port": 3000,
   "mongoUrl": "mongodb://localhost/dbname",
+  "client": [ "host", "port" ],
   "auth": {
     "facebook": {
       "clientID" : "FBClientId",
@@ -31,5 +32,5 @@
       "name": "DemocracyOS",
       "email": "info@democraciaenred.org"
     }
-  }  
+  }
 }
