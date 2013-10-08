@@ -3,7 +3,7 @@ section.app-content
     // Facebook metatags
     meta(property='og:title', content='#{proposal.mediaTitle}')
     meta(property='og:type', content='website')
-    meta(property='og:url', content='http://democraciaos.partidodelared.org/law/#{proposal.id}')
+    meta(property='og:url', content='http://#{baseUrl}/law/#{proposal.id}')
     meta(property='og:image', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
     meta(property='og:site_name', content='Partido de la Red')
     meta(property='og:description', content='#{proposal.summary}')
@@ -52,6 +52,6 @@ section.app-content
       - }
 
     .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://democraciaos.partidodelared.org/law/#{proposal.id}").flaticon.social.facebook  
-      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=http://democraciaos.partidodelared.org/law/#{proposal.id}").flaticon.social.twitter  
-      a(target="_blank", href="https://plus.google.com/share?url=http://democraciaos.partidodelared.org/law/#{proposal.id}").flaticon.social.google-plus 
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
+      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  
+      a(target="_blank", href="https://plus.google.com/share?url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus 
