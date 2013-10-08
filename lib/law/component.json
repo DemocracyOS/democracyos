@@ -2,6 +2,8 @@
   "name": "law",
   "description": "law pages",
   "dependencies": {
+    "component/classes": "*",
+    "component/bus": "*",
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
