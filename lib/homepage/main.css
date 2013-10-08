@@ -14,13 +14,6 @@ h6 {
   font-family: "freight-sans-pro", sans-serif;
   font-weight: bold;
 }
-a {
-  color: #000;
-}
-.btn {
-  background-color: #333;
-  color: #fff;
-}
 img.avatar {
   border-radius: 100%;
 }
@@ -250,10 +243,14 @@ article.proposal h4 span.label {
 article.proposal .meta-information {
   margin-bottom: 10px;
   opacity: 0.6;
+  color: #000;
 }
 article.proposal .meta-information .meta-timeago {
   float: right;
   display: block;
+}
+article.proposal .meta-information .meta-item {
+  color: #000;
 }
 article.proposal .proposal-type {
   top: 66px;
@@ -280,6 +277,13 @@ article.proposal .participants .participant-profile {
 article.proposal .participants .participant-profile img {
   width: 30px;
   height: 30px;
+}
+article.proposal .links p span.glyphicon {
+  font-size: 10px;
+  margin-right: 5px;
+}
+article.proposal .links p a {
+  font-size: 14px;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
@@ -392,6 +396,10 @@ article.proposal .share-links a.google-plus:hover {
 }
 .comments .comment-form textarea {
   width: 500px;
+}
+.comments .comment-form .btn {
+  background-color: #333;
+  color: #fff;
 }
 .comments .comment-list .comment-item {
   margin-bottom: 20px;

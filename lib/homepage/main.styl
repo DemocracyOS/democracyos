@@ -15,13 +15,6 @@ h1,h2,h3,h4,h5,h6
 	font-family: "freight-sans-pro",sans-serif;
 	font-weight: bold;
 
-a 
-	color: black;
-
-.btn 
-	background-color: #333;
-	color: white;
-
 img.avatar
 	border-radius: 100%;
 
@@ -244,10 +237,12 @@ article.proposal
 	.meta-information
 		margin-bottom: 10px;
 		opacity: .6;
+		color: black
 		.meta-timeago
 			float: right
 			display: block;
-
+		.meta-item
+			color:black
 	.proposal-type
 		top: 66px;
 		left: 44px;
@@ -271,7 +266,13 @@ article.proposal
 				width: 30px;
 				height: 30px;
 			
-
+	.links
+		p
+			span.glyphicon
+				font-size: 10px
+				margin-right: 5px
+			a
+				font-size: 14px
 	.share-links
 		margin-bottom: 40px;
 		a 
@@ -372,7 +373,9 @@ article.proposal
 		margin-top: 50px;
 		textarea
 			width: 500px;
-		
+		.btn 
+			background-color: #333;
+			color: white;
 
 	.comment-list
 		.comment-item
