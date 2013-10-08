@@ -48,7 +48,8 @@
     "commander": "~2.0.0",
     "co-prompt": "*",
     "truncate": "*",
-    "t-component": "cristiandouce/t#chained-tokens"
+    "t-component": "cristiandouce/t#chained-tokens",
+    "type-component": "*"
   },
   "devDependencies": {},
   "main": "pdr",
