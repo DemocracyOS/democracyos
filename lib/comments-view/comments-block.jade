@@ -6,5 +6,5 @@
     form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
       h5= t('Your comment')
       p 
-        textarea(name='text')
+        textarea(name='text', rows='4')
       input.btn(type='submit', value=t('Send'))
