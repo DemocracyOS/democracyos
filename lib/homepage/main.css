@@ -118,11 +118,18 @@ header.app-header .user-nav .login:hover {
 }
 /* Site Content Container
 -------------------------------------------------- */
+body.browser-page > section#content {
+  display: none;
+}
 section.site-content {
   top: 60px;
   left: 0;
   right: 0;
   bottom: 0;
+}
+section.site-content#content {
+  z-index: 5;
+  background-color: #fff;
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */

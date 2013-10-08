@@ -113,11 +113,19 @@ header.app-header
 
 /* Site Content Container
 -------------------------------------------------- */
+body.browser-page
+	> section#content
+		display: none;
+
 section.site-content
 	top: header_height;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	&#content
+		z-index: 5;
+		background-color: #ffffff;
+
 
 /* Proposal Aside Navigation
 -------------------------------------------------- */
