@@ -106,6 +106,10 @@ header.app-header .user-nav .profile img {
   width: 32px;
   border-radius: 100px;
 }
+header.app-header .user-nav .profile span.name {
+  display: inline-block;
+  margin-right: 10px;
+}
 header.app-header .user-nav .login {
   background: rgba(0,0,0,0.4);
   padding: 6px 12px;
