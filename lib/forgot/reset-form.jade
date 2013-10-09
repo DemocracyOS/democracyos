@@ -1,6 +1,6 @@
 .forgot-container
   #forgot-form.reset
-    h1= t('Reset password')
+    h1= t('Reset Password!')
     form.form(action="/forgot/reset", method="post", role="form")
       ul.form-errors
       .form-group
@@ -9,4 +9,4 @@
       .form-group
         label= t('Re-type new password')
         input.form-control(type='password', name='re_password', tabindex=2, placeholder=t('Repeat Password'))
-      .form-group: input.btn.btn-primary(type='submit', tabindex=3, value=t('Reset Password!'))
+      .form-group: input.btn.btn-primary(type='submit', tabindex=3, value=t('Send'))
