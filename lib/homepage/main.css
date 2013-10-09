@@ -449,3 +449,8 @@ article.proposal .share-links a.google-plus:hover {
 .forgot-container form label.forgot {
   float: right;
 }
+/* Uservoice feedback button
+-------------------------------------------------- */
+.uv-icon.uv-bottom-right {
+  right: 25px !important;
+}
