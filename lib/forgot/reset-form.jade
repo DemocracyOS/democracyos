@@ -1,5 +1,6 @@
 .forgot-container
   #forgot-form.reset
+    h1= t('Reset password')
     form.form(action="/forgot/reset", method="post", role="form")
       ul.form-errors
       .form-group
