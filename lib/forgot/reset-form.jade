@@ -1,9 +1,11 @@
-form(action="/forgot/reset", method="post")
-  ul.form-errors
-  .form-group
-    label= t('New Password')
-    input(type='password', name='password', placeholder=t('Password'))
-  .form-group
-    label= t('Re-type new password')
-    input(type='password', name='re_password', placeholder=t('Repeat Password'))
-  .form-group: input(type='submit', value=t('Reset Password!'))
+.forgot-container
+  #forgot-form.reset
+    form.form(action="/forgot/reset", method="post", role="form")
+      ul.form-errors
+      .form-group
+        label= t('New Password')
+        input.form-control(type='password', name='password', tabindex=1, placeholder=t('Password'))
+      .form-group
+        label= t('Re-type new password')
+        input.form-control(type='password', name='re_password', tabindex=2, placeholder=t('Repeat Password'))
+      .form-group: input(type='submit', tabindex=3, value=t('Reset Password!'))
