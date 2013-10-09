@@ -1,18 +1,19 @@
 article.proposal
-  // Facebook metatags
-  meta(property='og:title', content='#{proposal.mediaTitle}')
-  meta(property='og:type', content='website')
-  meta(property='og:url', content='http://#{baseUrl}/law/#{proposal.id}')
-  meta(property='og:image', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
-  meta(property='og:site_name', content='Partido de la Red')
-  meta(property='og:description', content='#{proposal.summary}')
-  // Twitter metatags
-  meta(name='twitter:card', content='summary')
-  meta(name='twitter:site', content='@PartidodelaRed')
-  meta(name='twitter:title', content='#{proposal.mediaTitle}')
-  meta(name='twitter:description', content='#{proposal.summary}')
-  meta(name='twitter:image:src', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
-  meta(name='twitter:domain', content='partidodelared.org')
+  head
+    // Facebook metatags  
+    meta(property='og:title', content='#{proposal.mediaTitle}')
+    meta(property='og:type', content='website')
+    meta(property='og:url', content='http://#{baseUrl}/law/#{proposal.id}')
+    meta(property='og:image', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
+    meta(property='og:site_name', content='Partido de la Red')
+    meta(property='og:description', content='#{proposal.summary}')
+    // Twitter metatags
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content='@PartidodelaRed')
+    meta(name='twitter:title', content='#{proposal.mediaTitle}')
+    meta(name='twitter:description', content='#{proposal.summary}')
+    meta(name='twitter:image:src', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
+    meta(name='twitter:domain', content='partidodelared.org')
 
   .meta-information
     a.meta-item.meta-location(href="#") Buenos Aires, Argentina
