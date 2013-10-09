@@ -425,3 +425,29 @@ article.proposal .share-links a.google-plus:hover {
   height: 46px;
   border-radius: 100px;
 }
+/* Signin page
+-------------------------------------------------- */
+.signin-container,
+.signup-container,
+.forgot-container {
+  text-align: left;
+  max-width: 360px;
+  width: 100%;
+  margin: 60px auto 0;
+}
+.signin-container h1,
+.signup-container h1,
+.forgot-container h1 {
+  font-size: 20px;
+}
+.signin-container form label,
+.signup-container form label,
+.forgot-container form label {
+  display: inline-block;
+  float: left;
+}
+.signin-container form label.forgot,
+.signup-container form label.forgot,
+.forgot-container form label.forgot {
+  float: right;
+}
