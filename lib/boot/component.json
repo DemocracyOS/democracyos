@@ -7,6 +7,7 @@
     "cristiandouce/timeago": "*"
   },
   "local": [
+    "body-classes",
     "homepage",
     "proposal",
     "law",

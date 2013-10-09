@@ -1,57 +1,56 @@
-section.app-content
-  article.proposal
-    // Facebook metatags
-    meta(property='og:title', content='#{proposal.mediaTitle}')
-    meta(property='og:type', content='website')
-    meta(property='og:url', content='http://#{baseUrl}/law/#{proposal.id}')
-    meta(property='og:image', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
-    meta(property='og:site_name', content='Partido de la Red')
-    meta(property='og:description', content='#{proposal.summary}')
-    // Twitter metatags
-    meta(name='twitter:card', content='summary')
-    meta(name='twitter:site', content='@PartidodelaRed')
-    meta(name='twitter:title', content='#{proposal.mediaTitle}')
-    meta(name='twitter:description', content='#{proposal.summary}')
-    meta(name='twitter:image:src', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
-    meta(name='twitter:domain', content='partidodelared.org')
+article.proposal
+  // Facebook metatags
+  meta(property='og:title', content='#{proposal.mediaTitle}')
+  meta(property='og:type', content='website')
+  meta(property='og:url', content='http://#{baseUrl}/law/#{proposal.id}')
+  meta(property='og:image', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
+  meta(property='og:site_name', content='Partido de la Red')
+  meta(property='og:description', content='#{proposal.summary}')
+  // Twitter metatags
+  meta(name='twitter:card', content='summary')
+  meta(name='twitter:site', content='@PartidodelaRed')
+  meta(name='twitter:title', content='#{proposal.mediaTitle}')
+  meta(name='twitter:description', content='#{proposal.summary}')
+  meta(name='twitter:image:src', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
+  meta(name='twitter:domain', content='partidodelared.org')
 
-    .meta-information
-      a.meta-item.meta-location(href="#") Buenos Aires, Argentina
-      //- small.meta-item.meta-timeago 10 days left
+  .meta-information
+    a.meta-item.meta-location(href="#") Buenos Aires, Argentina
+    //- small.meta-item.meta-timeago 10 days left
 
-    span.proposal-type.flaticon.solid.government-1       
+  span.proposal-type.flaticon.solid.government-1       
 
-    h2=proposal.mediaTitle
-    h4
-      span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
-      span.label.label-default= proposal.title
-    p.summary=proposal.summary
-      
-    //- .voting-process
-      //- span.
-
-    //- TODO: improve this!
-    - var content = proposal.essay ? proposal.essay : proposal.content
-    - var lines = content.split('\n');
-    - each line in lines
-      - if (line.trim())
-        p!= line.trim()
-    .links
-      p
-        span.glyphicon.glyphicon-link
-        a(target="_blank", href="https://s3.amazonaws.com/osky-1234/#{proposal.lawId.replace('/','-')}.doc")
-         | #{t('View the original text')}
+  h2=proposal.mediaTitle
+  h4
+    span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
+    span.label.label-default= proposal.title
+  p.summary=proposal.summary
     
-    .participants
-      - if(proposal.participants) {
-        - var plural = 1 === proposal.participants.length ? '' : 's'
-        span #{proposal.participants.length} #{t('Participant')}#{plural}
-        - each participant in proposal.participants
-          a.participant-profile(href="javascript:void();", title=participant.fullName)
-            img.avatar(src=participant.avatar)
-      - }
+  //- .voting-process
+    //- span.
 
-    .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
-      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  
-      a(target="_blank", href="https://plus.google.com/share?url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus 
+  //- TODO: improve this!
+  - var content = proposal.essay ? proposal.essay : proposal.content
+  - var lines = content.split('\n');
+  - each line in lines
+    - if (line.trim())
+      p!= line.trim()
+  .links
+    p
+      span.glyphicon.glyphicon-link
+      a(target="_blank", href="https://s3.amazonaws.com/osky-1234/#{proposal.lawId.replace('/','-')}.doc")
+       | #{t('View the original text')}
+  
+  .participants
+    - if(proposal.participants) {
+      - var plural = 1 === proposal.participants.length ? '' : 's'
+      span #{proposal.participants.length} #{t('Participant')}#{plural}
+      - each participant in proposal.participants
+        a.participant-profile(href="javascript:void();", title=participant.fullName)
+          img.avatar(src=participant.avatar)
+    - }
+
+  .share-links
+    a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
+    a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  
+    a(target="_blank", href="https://plus.google.com/share?url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus 
