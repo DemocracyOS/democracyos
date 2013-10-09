@@ -12,7 +12,7 @@
     "proposal-list",
     "proposal-article",
     "proposal-options",
-    "proposal-comments"
+    "comments-view"
   ],
   "scripts": [ "proposal.js" ],
   "styles": [ ],
