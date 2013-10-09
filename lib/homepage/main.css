@@ -111,10 +111,8 @@ header.app-header .user-nav .profile span.name {
   margin-right: 10px;
 }
 header.app-header .user-nav .login {
-  background: rgba(0,0,0,0.4);
   padding: 6px 12px;
   display: inline-block;
-  border-radius: 3px;
   margin-top: 15px;
 }
 header.app-header .user-nav .login:hover {
