@@ -1,4 +1,5 @@
 {
+  "protocol": "http",
   "host": "localhost",
   "port": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
