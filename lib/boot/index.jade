@@ -20,7 +20,7 @@ html(lang='en')
     //   ================================================== 
 
     // Boostrap Complete
-    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
 
     // Application Styles
     link(rel='stylesheet', href='/app.css')
@@ -59,6 +59,7 @@ html(lang='en')
       .user-nav.btn-group
         - if (locals.citizen)
           a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
+              span.name=citizen.firstName
               img(src=citizen.avatar)
               span.caret
           ul.dropdown-menu
@@ -68,7 +69,10 @@ html(lang='en')
           a(href='/signin').login= t('Login')
           a(href='/signup').login= t('Signup')
 
-    section.site-content
+    section#content.site-content
+    section#browser.site-content
+      aside.nav-proposal
+      section.app-content
 
     // End of `Page Content`  
     // ====================== 
@@ -77,7 +81,7 @@ html(lang='en')
     //- Core 3rd parties libs
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js')
-
+    include includes/uservoice
     //- General Site javascript
     script(src='/app.js')
 

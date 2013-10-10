@@ -2,6 +2,8 @@
   "name": "homepage",
   "description": "Homepage page",
   "dependencies": {
+    "component/classes": "*",
+    "component/bus": "*",
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",

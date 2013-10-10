@@ -49,7 +49,7 @@ app.use('/signup', require('lib/signup'));
  * Forgot password routes
  */
 
-app.use('/forgotpassword', require('lib/forgotpassword'));
+app.use('/forgot', require('lib/forgot'));
 
 /**
  * Tag API Service

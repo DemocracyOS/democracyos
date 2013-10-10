@@ -5,6 +5,7 @@
     "component/domify": "*",
     "component/events": "*",
     "component/emitter": "*",
+    "component/classes": "*",
     "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
@@ -12,7 +13,7 @@
     "yields/empty": "*",
     "yields/serialize": "*"
   },
-  "local": [ "regexps" ],
+  "local": [ "regexps", "citizen" ],
   "scripts": [ "signup.js", "form-view.js" ],
   "styles": [ "signup.css" ],
   "templates": [ "signup-form.jade" , "signup-complete.jade"],

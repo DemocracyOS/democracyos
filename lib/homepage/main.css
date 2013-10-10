@@ -14,13 +14,6 @@ h6 {
   font-family: "freight-sans-pro", sans-serif;
   font-weight: bold;
 }
-a {
-  color: #000;
-}
-.btn {
-  background-color: #333;
-  color: #fff;
-}
 img.avatar {
   border-radius: 100%;
 }
@@ -113,11 +106,13 @@ header.app-header .user-nav .profile img {
   width: 32px;
   border-radius: 100px;
 }
+header.app-header .user-nav .profile span.name {
+  display: inline-block;
+  margin-right: 10px;
+}
 header.app-header .user-nav .login {
-  background: rgba(0,0,0,0.4);
   padding: 6px 12px;
   display: inline-block;
-  border-radius: 3px;
   margin-top: 15px;
 }
 header.app-header .user-nav .login:hover {
@@ -125,11 +120,18 @@ header.app-header .user-nav .login:hover {
 }
 /* Site Content Container
 -------------------------------------------------- */
+body.browser-page > section#content {
+  display: none;
+}
 section.site-content {
   top: 60px;
   left: 0;
   right: 0;
   bottom: 0;
+}
+section.site-content#content {
+  z-index: 5;
+  background-color: #fff;
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */
@@ -140,6 +142,7 @@ section.site-content {
 }
 .dropdown-deparment .btn-group {
   float: none;
+  width: 100%;
 }
 .dropdown-deparment .btn-group button.btn.btn-default {
   background-color: #7f8c8d;
@@ -147,6 +150,9 @@ section.site-content {
 }
 .dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
   background-color: #727f80;
+}
+.dropdown-deparment .btn-group button.btn.btn-default.current-department {
+  width: 190px;
 }
 aside.nav-proposal {
   top: 60px;
@@ -238,13 +244,22 @@ article.proposal h2 {
   margin-top: 0;
   margin-bottom: 20px;
 }
+article.proposal h4 span.label {
+  margin-right: 10px;
+  display: inline-block;
+  border-radius: 0;
+}
 article.proposal .meta-information {
   margin-bottom: 10px;
   opacity: 0.6;
+  color: #000;
 }
 article.proposal .meta-information .meta-timeago {
   float: right;
   display: block;
+}
+article.proposal .meta-information .meta-item {
+  color: #000;
 }
 article.proposal .proposal-type {
   top: 66px;
@@ -271,6 +286,13 @@ article.proposal .participants .participant-profile {
 article.proposal .participants .participant-profile img {
   width: 30px;
   height: 30px;
+}
+article.proposal .links p span.glyphicon {
+  font-size: 10px;
+  margin-right: 5px;
+}
+article.proposal .links p a {
+  font-size: 14px;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
@@ -344,7 +366,7 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .results-box {
   border: 1px solid #eee;
   background: #fff;
-  padding: 20px;
+  padding: 20px 100px;
 }
 .proposal-options .vote-box h5,
 .proposal-options .results-box h5 {
@@ -355,8 +377,11 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .results-box .delegation-box {
   display: inline-block;
 }
-.proposal-options .results-box {
-  display: none;
+.proposal-options .vote-box .meta-data {
+  margin-bottom: 20px;
+}
+.proposal-options .toggle-results span {
+  margin-right: 5px;
 }
 /* Comments
 -------------------------------------------------- */
@@ -381,6 +406,10 @@ article.proposal .share-links a.google-plus:hover {
 .comments .comment-form textarea {
   width: 500px;
 }
+.comments .comment-form .btn {
+  background-color: #333;
+  color: #fff;
+}
 .comments .comment-list .comment-item {
   margin-bottom: 20px;
   max-width: 580px;
@@ -393,4 +422,35 @@ article.proposal .share-links a.google-plus:hover {
   width: 46px;
   height: 46px;
   border-radius: 100px;
+}
+/* Signin page
+-------------------------------------------------- */
+.signin-container,
+.signup-container,
+.forgot-container {
+  text-align: left;
+  max-width: 360px;
+  width: 100%;
+  margin: 60px auto 0;
+}
+.signin-container h1,
+.signup-container h1,
+.forgot-container h1 {
+  font-size: 20px;
+}
+.signin-container form label,
+.signup-container form label,
+.forgot-container form label {
+  display: inline-block;
+  float: left;
+}
+.signin-container form label.forgot,
+.signup-container form label.forgot,
+.forgot-container form label.forgot {
+  float: right;
+}
+/* Uservoice feedback button
+-------------------------------------------------- */
+.uv-icon.uv-bottom-right {
+  right: 25px !important;
 }

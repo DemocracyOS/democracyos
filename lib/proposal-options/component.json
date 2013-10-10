@@ -16,7 +16,7 @@
     "discore/closest": "*",
     "gvilarino/autocomplete": "*"
   },
-  "local": [ ],
+  "local": [ "citizen" ],
   "scripts": [ "proposal-options.js" ],
   "templates": [ "options.jade" ],
   "styles": [ ],

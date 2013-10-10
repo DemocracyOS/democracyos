@@ -1,32 +1,36 @@
-.proposal-options
-  .vote-box
-    h5= t('Vote')
-    - var hide = ''
-    - var census = ( proposal.votes
-    -   && proposal.votes.map(function(v) { return v.author }) )
-    -   || proposal.vote.census
-    - var positives = ( proposal.upvotes
-    -   && proposal.upvotes.map(function(v) { return v.author }) )
-    -   || proposal.vote.positive
-    - var negatives = ( proposal.downvotes
-    -   && proposal.downvotes.map(function(v) { return v.author }) )
-    -   || proposal.vote.negative
-    - var neutrals = ( proposal.abstentions
-    -   && proposal.abstentions.map(function(v) { return v.author }) )
-    -   || []
-    - if(locals.citizen && ~census.indexOf(citizen.id))
-      - hide = 'hide';
-      .meta-data
-        - if(~positives.indexOf(citizen.id))
-          p.alert.alert-success(style="margin:0;") #{t('You voted Yea')}.
-        - else if (~negatives.indexOf(citizen.id))
-          p.alert.alert-danger(style="margin:0;") #{t('You voted Nay')}.
-        - else if (~neutrals.indexOf(citizen.id))
-          p.alert.alert-info(style="margin:0;") #{t('You abstained from voting')}.
-        a.meta-item.change-vote(href="#")
-          small #{t('I want to change my vote')}.
+- var census = ( proposal.votes
+-   && proposal.votes.map(function(v) { return v.author }) )
+-   || proposal.vote.census
 
-    .vote-options(class=hide)
+- var positives = ( proposal.upvotes
+-   && proposal.upvotes.map(function(v) { return v.author }) )
+-   || proposal.vote.positive
+
+- var negatives = ( proposal.downvotes
+-   && proposal.downvotes.map(function(v) { return v.author }) )
+-   || proposal.vote.negative
+
+- var neutrals = ( proposal.abstentions
+-   && proposal.abstentions.map(function(v) { return v.author }) )
+-   || []
+
+- var voted = locals.citizen && ~census.indexOf(citizen.id)
+- var showOptions = !!citizen.id
+
+.proposal-options(class= showOptions ? '' : 'hide')
+  .vote-box
+    .meta-data
+      - if(~positives.indexOf(citizen.id))
+        p.alert.alert-success(style="margin:0;") #{t('You voted Yea')}.
+      - else if (~negatives.indexOf(citizen.id))
+        p.alert.alert-danger(style="margin:0;") #{t('You voted Nay')}.
+      - else if (~neutrals.indexOf(citizen.id))
+        p.alert.alert-info(style="margin:0;") #{t('You abstained from voting')}.
+      a.meta-item.change-vote(href="#", class= voted ? '' : 'hide')
+        small #{t('I want to change my vote')}.
+
+    .vote-options(class= voted ? 'hide' : '')
+      h5= t('Vote')
       .direct-vote
         a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
           i.flaticon.solid.thumbs-up-1
@@ -44,3 +48,30 @@
     //- .delegation-box.hide
     //-   label= t('Delegate to')
     //-   input.delegation-input(type="text", name="q")
+
+  a.toggle-results.btn.btn-default.btn-block.btn-success(class= voted ? '' : 'hide')
+    span.glyphicon.glyphicon-stats
+    | #{t('Partial results')}
+
+  .results-box(class='hide')
+    h5= t('Yea')
+    - var width = census.length ? (positives.length/census.length)*100 : 0;
+    .progress
+      .progress-bar.progress-bar-success(role="progress-bar", aria-valuenow=positives.length, aria-valuemin="0", aria-valuemax=census.length, style="width: #{width}%;")
+        span.sr-only
+          | #{positives.length} 
+          | #{t('votes')}
+    h5= t('Nay')
+    - var width = census.length ? (negatives.length/census.length)*100 : 0;
+    .progress
+      .progress-bar.progress-bar-danger(role="progress-bar", aria-valuenow=negatives.length, aria-valuemin="0", aria-valuemax=census.length, style="width: #{width}%;")
+        span.sr-only
+          | #{negatives.length} 
+          | #{t('votes')}
+    h5= t('Abstain')
+    - var width = census.length ? (neutrals.length/census.length)*100 : 0;
+    .progress
+      .progress-bar.progress-bar-info(role="progress-bar", aria-valuenow=neutrals.length, aria-valuemin="0", aria-valuemax=census.length, style="width: #{width}%;")
+        span.sr-only
+          | #{neutrals.length} 
+          | #{t('votes')}
