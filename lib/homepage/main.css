@@ -111,10 +111,8 @@ header.app-header .user-nav .profile span.name {
   margin-right: 10px;
 }
 header.app-header .user-nav .login {
-  background: rgba(0,0,0,0.4);
   padding: 6px 12px;
   display: inline-block;
-  border-radius: 3px;
   margin-top: 15px;
 }
 header.app-header .user-nav .login:hover {
@@ -424,4 +422,35 @@ article.proposal .share-links a.google-plus:hover {
   width: 46px;
   height: 46px;
   border-radius: 100px;
+}
+/* Signin page
+-------------------------------------------------- */
+.signin-container,
+.signup-container,
+.forgot-container {
+  text-align: left;
+  max-width: 360px;
+  width: 100%;
+  margin: 60px auto 0;
+}
+.signin-container h1,
+.signup-container h1,
+.forgot-container h1 {
+  font-size: 20px;
+}
+.signin-container form label,
+.signup-container form label,
+.forgot-container form label {
+  display: inline-block;
+  float: left;
+}
+.signin-container form label.forgot,
+.signup-container form label.forgot,
+.forgot-container form label.forgot {
+  float: right;
+}
+/* Uservoice feedback button
+-------------------------------------------------- */
+.uv-icon.uv-bottom-right {
+  right: 25px !important;
 }

@@ -1,10 +1,13 @@
-form(action="/auth/local", method="post")
-  ul.form-errors
-  .form-group
-    label= t('Email')
-    input(type='email', name='email', placeholder=t('example@email.com'))
-  .form-group
-    label= t('Password')
-    input(type='password', name='password', placeholder=t('Password'))
-  .form-group: input(type='submit', value=t('Login'))
-  .form-group: a(href='/forgot') #{t('Forgot Password?')}
+.signin-container
+  #signin-form
+    h1 #{t('Login to') + " " + t('DemocracyOS')}
+    form.form(action="/signin", method="post", role="form")
+      ul.form-errors
+      .form-group
+        label= t('Email')
+        input.form-control(type='email', name='email', tabindex=1, placeholder=t('example@email.com'))
+      .form-group
+        label= t('Password')
+        label.forgot: a(href='/forgot', tabindex=4) #{t('Forgot Password?')}
+        input.form-control(type='password', name='password', tabindex=2, placeholder=t('Password'))
+      .form-group: input.btn.btn-primary(type='submit', tabindex=3, value=t('Login'))

@@ -1,6 +1,18 @@
-h3 Valid up to 18/10/2013
-h4 You were signed up and now you are logged in. Please, go to our 
-	a(href="/") homepage
-h3 Valid from 18/10/2013 
-h4 Your sign up data was received. Now you should validate your identity. To do so, please follow the instructions 
-	a(href="http://www.partidodelared.org") here
+.signup-container
+  #signup-message
+    - if (Date.now() < +new Date(2013,10-1,18)) {
+      //- Valid up to 18/10/2013
+      h1= t("Welcome {name}!", { name: citizen.firstName || t("Guest")})
+      p.lead.text-muted= t("You signed up and now you are logged in.")
+      p.lead.text-muted= t("You can now comment and vote laws!")
+      p.lead.text-muted #{t("Go back to")} 
+        a(href="/")= t("browse")
+    - } else {
+      //- Valid from 18/10/2013
+      //- This message should be rendered after login or at a PAGE ALERT
+      //- not here for sure... and it should check if you are validated or not!
+      h1= t("Hey!")
+      p.lead.text-muted= t("Your sign up data was received.")
+      p.lead.text-muted #{t("Now you should validate your identity. To do so, please check the following instructions")} 
+        a(href="#")= t("here")
+    - }
