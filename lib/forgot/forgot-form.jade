@@ -1,7 +1,7 @@
 .forgot-container
   #forgot-form
     h1= t('Forgot Password?')
-    p.text-muted= t('We will send an email with a link to reset your password.')
+    p.text-muted #{t('We will send an email with a link to reset your password')}.
     form(action="/forgot", method="post")
       ul.form-errors
       .form-group
