@@ -244,11 +244,6 @@ article.proposal h2 {
   margin-top: 0;
   margin-bottom: 20px;
 }
-article.proposal h4 span.label {
-  margin-right: 10px;
-  display: inline-block;
-  border-radius: 0;
-}
 article.proposal .meta-information {
   margin-bottom: 10px;
   opacity: 0.6;
@@ -258,8 +253,17 @@ article.proposal .meta-information .meta-timeago {
   float: right;
   display: block;
 }
+article.proposal .meta-information .meta-timeago {
+  float: right;
+  display: block;
+}
 article.proposal .meta-information .meta-item {
   color: #000;
+}
+article.proposal .meta-information .label {
+  margin-right: 10px;
+  display: inline-block;
+  border-radius: 0;
 }
 article.proposal .proposal-type {
   top: 66px;
