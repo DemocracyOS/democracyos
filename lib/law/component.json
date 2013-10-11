@@ -15,8 +15,7 @@
     "sidebar-list",
     "proposal-article",
     "proposal-options",
-    "comments-view",
-    "snapper"
+    "comments-view"
   ],
   "scripts": [ "law.js" ],
   "styles": [ ],
