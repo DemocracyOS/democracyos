@@ -7,7 +7,8 @@
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
-    "yields/empty": "*"
+    "yields/empty": "*",
+    "jakiestfu/Snap.js": "*"
   },
   "local": [
     "citizen",

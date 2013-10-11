@@ -70,11 +70,11 @@ header.app-header {
   font-size: 12px;
 }
 header.app-header #toggleButton {
-  width: 50px;
+  width: 44px;
   height: 50px;
   position: absolute;
   left: 10px;
-  padding: 18px 10px;
+  padding: 20px 10px;
 }
 header.app-header #toggleButton .bar-icon {
   height: 4px;
@@ -574,30 +574,44 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
+  header.app-header .user-nav .btn {
+    border: 0;
+  }
   header.app-header .user-nav .profile span.name {
     display: none;
+  }
+  aside.nav-proposal {
+    top: 0;
   }
   section.site-content {
     left: 0;
   }
+  .proposal-options .vote-options .vote-option {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
   article.proposal .entry-tag {
     position: static;
     width: auto;
-    height: 80px;
+    min-height: 80px;
     margin-bottom: 20px;
     text-align: left;
+    border-bottom: 4px solid #ccc;
   }
   article.proposal .entry-tag svg.hexagon {
     left: 0;
     position: absolute;
+    display: none;
   }
   article.proposal .entry-tag img {
     z-index: 100;
     left: 20px;
+    display: none;
   }
   article.proposal .entry-tag span {
-    font-size: 20px;
-    margin-left: 100px;
+    font-size: 14px;
+    margin-left: 0;
     padding-top: 10px;
     display: inline-block;
   }

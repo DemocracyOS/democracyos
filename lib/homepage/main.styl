@@ -70,11 +70,11 @@ header.app-header
 	font-size: 12px;
 
 	#toggleButton
-		width: 50px;
+		width: 44px;
 		height: 50px;
 		position: absolute;
 		left: 10px;
-		padding: 18px 10px;
+		padding: 20px 10px;
 		.bar-icon
 			height: 4px;
 			background: white;
@@ -535,28 +535,42 @@ article.proposal
 			margin: auto;
 		.logo-link 
 			display: none
-		.user-nav .profile span.name
-			display: none
+		.user-nav 
+			.btn 
+				border: 0;
+			.profile span.name
+				display: none
+	
+	aside.nav-proposal
+		top: 0;
+
 	section.site-content
 		left: 0;
 
+	.proposal-options .vote-options .vote-option
+		width: 100%;
+		margin-right: 0;
+		text-align: center
 	article.proposal 
 		.entry-tag
 			position: static;
 			width: auto;
-			height: 80px;
+			min-height: 80px;
 			margin-bottom: 20px;
 			text-align: left;
+			border-bottom: 4px solid #ccc;
 			svg.hexagon
 				left: 0;
 				position: absolute;
+				display: none
 			img 
 				z-index: 100;
 				left: 20px;
+				display: none
 
 			span 
-				font-size: 20px;
-				margin-left: 100px;
+				font-size: 14px;
+				margin-left: 0;
 				padding-top: 10px;
 				display: inline-block;
 	/* Snap.js
