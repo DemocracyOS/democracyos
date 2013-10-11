@@ -190,15 +190,30 @@ aside.nav-proposal .navlist li a {
   padding-left: 70px;
   color: #666;
 }
-aside.nav-proposal .navlist li a .proposal-type {
+aside.nav-proposal .navlist li a .item-tag {
   position: absolute;
   left: 20px;
   top: 20px;
-  background: #95a5a6;
   color: #fff;
-  border-radius: 100px;
-  padding: 10px;
-  line-height: 10px;
+}
+aside.nav-proposal .navlist li a .item-tag svg.hexagon {
+  width: 40px;
+  height: 40px;
+  left: 0;
+  top: -4px;
+  position: absolute;
+}
+aside.nav-proposal .navlist li a .item-tag svg.hexagon polygon {
+  fill: #bdc3c7;
+}
+aside.nav-proposal .navlist li a .item-tag img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 100;
+  width: 30px;
+  left: 5px;
+  top: 6px;
 }
 aside.nav-proposal .navlist li a:hover {
   background: #fff;

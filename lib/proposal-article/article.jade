@@ -13,7 +13,7 @@ article.proposal
       g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', sketch:type='MSPage')
         polygon#Polygon-1(d='M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0', fill='#{proposal.tag.color}', sketch:type='MSShapeGroup', points='63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 ')
 
-    span= proposal.tag.name
+    span(style="color: #{proposal.tag.color}")= proposal.tag.name
 
   .meta-information
     - if (proposal.closingAt)

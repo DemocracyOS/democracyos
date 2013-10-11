@@ -3,19 +3,19 @@
 	<foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1">
 		</foreignObject>
 	<g i:extraneous="self">
-		<polygon fill="#ffffff" stroke="#160E25" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="99,38     51.148,2.8 1.25,38   "/>
+		<polygon fill="#ffffff" points="99,38     51.148,2.8 1.25,38   "/>
 		
-			<rect x="76" y="39" fill="#ffffff" stroke="#160E25" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="9" height="49"/>
+			<rect x="76" y="39" fill="#ffffff" width="9" height="49"/>
 		
-			<rect x="9" y="88" fill="#ffffff" stroke="#160E25" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="80" height="3"/>
+			<rect x="9" y="88" fill="#ffffff" width="80" height="3"/>
 		
-			<rect x="3" y="91" fill="#ffffff" stroke="#160E25" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="92" height="6"/>
+			<rect x="3" y="91" fill="#ffffff"  width="92" height="6"/>
 		
-			<rect x="13" y="39" fill="#ffffff" stroke="#160E25" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="9" height="49"/>
+			<rect x="13" y="39" fill="#ffffff" width="9" height="49"/>
 		
-			<rect x="33" y="39" fill="#ffffff" stroke="#160E25" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="9" height="49"/>
+			<rect x="33" y="39" fill="#ffffff" width="9" height="49"/>
 		
-			<rect x="56" y="39" fill="#ffffff" stroke="#160E25" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" width="9" height="49"/>
+			<rect x="56" y="39" fill="#ffffff" width="9" height="49"/>
 	</g>
 </switch>
 </svg>

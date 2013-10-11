@@ -185,15 +185,27 @@ aside.nav-proposal
 				padding-left: 70px;
 				color: #666;
 
-				.proposal-type
+				.item-tag
 					position: absolute;
 					left: spacing;
 					top: spacing;
-					background: #95a5a6;
 					color: white;
-					border-radius: 100px;
-					padding: 10px;
-					line-height: 10px;
+					svg.hexagon 
+						width: 40px;
+						height: 40px;
+						left: 0;
+						top: -4px;
+						position: absolute;
+						polygon
+							fill: #BDC3C7;
+					img 
+						width: 20px;
+						height: 20px;
+						position: absolute;
+						z-index: 100;
+						width: 30px;
+						left: 5px;
+						top: 6px;
 
 				&:hover 
 					background: #fff;
