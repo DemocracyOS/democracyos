@@ -46,8 +46,10 @@ img.avatar
 header.app-header, aside.nav-proposal, .site-content
 	position: fixed;
 
+header.app-header
+	z-index: 100000;
 .site-content
-	z-index: 10;
+	z-index: 1;
 	overflow-y: scroll;
 	background: white;
 
@@ -510,7 +512,6 @@ article.proposal
 
 	/* Snap.js
 	----------------------------------------------- */
-
 	.snap-content {
 		position: absolute;
 		background: white;
