@@ -5,6 +5,7 @@
     "component/domify": "*",
     "component/emitter": "*",
     "component/events": "*",
+    "component/classes": "*",
     "visionmedia/jade": "*",
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
@@ -16,6 +17,7 @@
     "citizen"
   ],  
   "scripts": [ "view.js" ],
+  "styles" : [ "comments.css" ],
   "templates": [ "comments-block.jade", "comment-item.jade" ],
   "main": "view.js"
 }

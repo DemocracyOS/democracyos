@@ -101,11 +101,18 @@ header.app-header
 			width: 32px;
 			border-radius: 100px;
 
+		.profile span.name
+			display: inline-block;
+			margin-right: 10px;
+			font-family: "freight-sans-pro", sans-serif;
+			font-weight: bold;
+			font-size: 12px;
+
 		.login
-			background: rgba(0,0,0,.4);
+			// background: rgba(0,0,0,.4);
 			padding: 6px 12px;
 			display: inline-block
-			border-radius: border_radius;
+			// border-radius: border_radius;
 			margin-top: 15px;
 
 			&:hover 
@@ -237,22 +244,20 @@ article.proposal
 	h2 
 		margin-top: 0;
 		margin-bottom: 20px;
-	h4
-		span.label
-			margin-right:10px;
-			display:inline-block;
-			border-radius:0;
 	.meta-information
 		margin-bottom: 10px;
 		opacity: .6;
 		color: black
-		.meta-timeago
-			float: right
-			display: block;
+		.meta-timeago, .meta-timeago-label
+			display: inline-block;
 		.meta-item
 			color:black
+		.label
+			margin-right:10px;
+			display:inline-block;
+			border-radius:0;
 	.proposal-type
-		top: 66px;
+		top: 96px;
 		left: 44px;
 	hr 
 		border-top: 4px solid #eee;
@@ -397,4 +402,24 @@ article.proposal
 					height: 46px;
 					border-radius: 100px;
 
+/* Signin page
+-------------------------------------------------- */
+.signin-container, .signup-container, .forgot-container
+	text-align: left;
+	max-width: 360px;
+	width: 100%;
+	margin: 60px auto 0;
 
+	h1
+		font-size: 20px
+	form
+		label
+			display:inline-block;
+			float:left;
+			&.forgot
+				float:right;
+
+/* Uservoice feedback button
+-------------------------------------------------- */
+.uv-icon.uv-bottom-right
+	right: 25px !important;

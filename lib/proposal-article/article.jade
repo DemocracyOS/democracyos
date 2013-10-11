@@ -14,34 +14,34 @@ article.proposal
     meta(name='twitter:description', content='#{proposal.summary}')
     meta(name='twitter:image:src', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
     meta(name='twitter:domain', content='partidodelared.org')
-
   .meta-information
-    a.meta-item.meta-location(href="#") Buenos Aires, Argentina
-    //- small.meta-item.meta-timeago 10 days left
-
-  span.proposal-type.flaticon.solid.government-1       
-
-  h2=proposal.mediaTitle
-  h4
-    span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
+    - if (proposal.closingAt)
+      p
+        small.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
+        small.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
     span.label.label-default= proposal.title
-  p.summary=proposal.summary
-    
-  //- .voting-process
-    //- span.
+    span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
+  
+  span.proposal-type.flaticon.solid.government-1       
+  h2=proposal.mediaTitle
 
-  //- TODO: improve this!
+  p.summary=proposal.summary
+
+  //- Article essay
   - var content = proposal.essay ? proposal.essay : proposal.content
   - var lines = content.split('\n');
   - each line in lines
     - if (line.trim())
       p!= line.trim()
+
+  //- Article external links
   .links
     p
       span.glyphicon.glyphicon-link
-      a(target="_blank", href="https://s3.amazonaws.com/osky-1234/#{proposal.lawId.replace('/','-')}.doc")
+      a(target="_blank", href="https://s3.amazonaws.com/pdr-app/#{proposal.lawId.replace('/','-')}.doc")
        | #{t('View the original text')}
-  
+
+  //- Article participants
   .participants
     - if(proposal.participants) {
       - var plural = 1 === proposal.participants.length ? '' : 's'
@@ -51,6 +51,7 @@ article.proposal
           img.avatar(src=participant.avatar)
     - }
 
+  //- Article share links
   .share-links
     a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
     a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  

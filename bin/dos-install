@@ -22,7 +22,7 @@ if (program.components && exists(components)) {
     if (stderr.length) console.log(stderr);
     if (err != null) {
       console.log(err);
-      proces.exit(1);
+      process.exit(1);
     };
   });
 };
