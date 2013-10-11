@@ -282,7 +282,6 @@ aside.nav-proposal .navlist li.active.active a {
 /* Proposal View
 -------------------------------------------------- */
 article.proposal {
-  max-width: 580px;
   margin: 40px auto;
   min-height: 300px;
   font-size: 18px;
@@ -532,9 +531,17 @@ article.proposal .share-links a.google-plus:hover {
 .uv-icon.uv-bottom-right {
   right: 25px !important;
 }
+.inner-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 580px;
+}
 /* Responsive
 -------------------------------------------------- */
 @media screen and (max-width: 700px) {
+  section.site-content {
+    left: 0;
+  }
   .snap-content {
     position: absolute;
     background: #fff;

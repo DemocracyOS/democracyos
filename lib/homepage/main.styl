@@ -276,7 +276,6 @@ aside.nav-proposal
 /* Proposal View
 -------------------------------------------------- */
 article.proposal
-	max-width: content_width;
 	margin: 40px auto;  
 	min-height: 300px;
 	font-size: 18px;
@@ -494,9 +493,19 @@ article.proposal
 .uv-icon.uv-bottom-right
 	right: 25px !important;
 
+
+
+.inner-container
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: content_width;
+
 /* Responsive
 -------------------------------------------------- */
 @media screen and (max-width: 700px)
+	
+	section.site-content
+		left: 0;
 
 	/* Snap.js
 	----------------------------------------------- */
