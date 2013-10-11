@@ -37,6 +37,9 @@ img.avatar {
   border-radius: 0;
   text-transform: none;
 }
+.system-alert {
+  margin-top: 20px;
+}
 /* Header
 -------------------------------------------------- */
 header.app-header,
