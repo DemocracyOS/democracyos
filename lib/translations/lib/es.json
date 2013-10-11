@@ -46,6 +46,7 @@
   "Closed": "Cerrado",
   "Unknown closing date": "Fecha de cierre desconocida",
   "Vote": "Voto",
+  "vote": "voto",
   "You voted Yea": "Has votado a favor",
   "You voted Nay": "Has votado en contra",
   "You abstained from voting": "Has decidido abstenerte de votar",
@@ -57,6 +58,9 @@
   "Delegate": "Delegar",
   "Delegate to": "Delegar a",
   "{num} votes cast": "{num} votos contados",
+  "No votes cast": "Sin votos contados",
+  "Summary": "Resumen",
+  "Chart": "Gráfico",
 
   "Clause": "Artículo",
   "View the original text": "Ver el texto original",

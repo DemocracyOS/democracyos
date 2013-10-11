@@ -46,6 +46,7 @@
   "Closed": "Closed",
   "Unknown closing date": "Unknown closing date",
   "Vote": "Vote",
+  "vote": "vote",
   "You voted Yea": "You voted Yea",
   "You voted Nay": "You voted Nay",
   "You abstained from voting": "You abstained from voting",
@@ -57,6 +58,9 @@
   "Delegate": "Delegate",
   "Delegate to": "Delegate to",
   "{num} votes cast": "{num} votes cast",
+  "No votes cast": "No votes cast",
+  "Summary": "Summary",
+  "Chart": "Chart",
   
   "Clause": "Clause",
   "View the original text": "View the original text",
