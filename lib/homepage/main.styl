@@ -3,7 +3,8 @@
 header_height = 60px;
 spacing = 20px;
 border_radius = 3px;
-nav_proposal_width = 280px;
+nav_proposal_width = 266px;
+content_width = 580px;
 
 /* General
 -------------------------------------------------- */
@@ -11,12 +12,20 @@ nav_proposal_width = 280px;
 html
 	-webkit-font-smoothing: antialiased; 
 
+body 
+	color: #4d4d4d;
+
 h1,h2,h3,h4,h5,h6
-	font-family: "freight-sans-pro",sans-serif;
 	font-weight: bold;
+	color: black;
 
 img.avatar
 	border-radius: 100%;
+
+.btn 
+	text-transform: uppercase
+	font-weight: bold;
+	letter-spacing: 1px;
 
 .btn-default
 	border: 0;
@@ -29,6 +38,9 @@ img.avatar
 	border-radius: 0;
 	text-transform: none
 	// box-shadow: none;
+
+.site-content
+	max-width: content_width;
 
 /* Header
 -------------------------------------------------- */
@@ -48,7 +60,6 @@ header.app-header
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 12px;
-	font-family: "freight-sans-pro",sans-serif;
 
 	a 
 		color: white;
@@ -97,16 +108,18 @@ header.app-header
 			.dropdown-toggle
 				box-shadow: none;
 
-		.profile img 
-			width: 32px;
-			border-radius: 100px;
-
-		.profile span.name
-			display: inline-block;
-			margin-right: 10px;
-			font-family: "freight-sans-pro", sans-serif;
-			font-weight: bold;
-			font-size: 12px;
+		.profile 
+			img 
+				width: 32px;
+				border-radius: 100px;
+			span.name
+				display: inline-block;
+				margin-left: 10px;
+				font-weight: bold;
+				font-size: 12px;
+				line-height: 20px;
+				display: inline-block
+				padding-top: 4px;
 
 		.login
 			// background: rgba(0,0,0,.4);
@@ -162,7 +175,7 @@ aside.nav-proposal
 	background: #ECF0F1;
 	.navlist
 		li 
-			border-bottom: 1px solid #BDC3C7;
+			border-bottom: 1px solid lighten(#BDC3C7, 40%);
 			a 
 				padding-left: spacing;
 				padding-top: 14px;
@@ -183,10 +196,7 @@ aside.nav-proposal
 					line-height: 10px;
 
 				&:hover 
-					.proposal-type
-						background-color: #F1C42E;
-					.proposal-type-2
-						background-color: #E67E22;
+					background: #fff;
 
 				span.title
 					font-size: 15px;
@@ -236,14 +246,40 @@ section.app-content
 /* Proposal View
 -------------------------------------------------- */
 article.proposal
-	width: 500px;
-	margin-top: 10px;
-	margin-left: 100px;
+	max-width: content_width;
+	margin: 40px auto;  
 	min-height: 300px;
+	font-size: 18px;
+	line-height: 1.5;
+	position: relative;
 
-	h2 
+	.entry-tag
+		font-weight: bold
+		font-size: 11px;
+		text-transform: uppercase
+		text-align: center 
+		position: absolute; 
+		left: -140px;
+		width: 100px;
+		height: 80px;
+		top: 44px;
+		img 
+			width: 40px;
+			height: 40px;
+			left: 30px;
+			top: 20px;
+			position: absolute;
+
+		.hexagon 
+			width: 80px;
+
+
+	.summary
+		font-size: 20px;
+		color: #333;
+	h1
 		margin-top: 0;
-		margin-bottom: 20px;
+		margin-bottom: 30px;
 	.meta-information
 		margin-bottom: 10px;
 		opacity: .6;
@@ -311,8 +347,8 @@ article.proposal
 
 
 .proposal-options
-	top: 30px;
-	right: spacing;
+
+	border: 1px solid #eee;
 	.vote-options
 		.direct-vote, .proxy-vote
 			display: inline-block;
@@ -347,9 +383,10 @@ article.proposal
 				background-color: #3498db;
 				
 	.vote-box, .results-box
-		border: 1px solid #eee;
 		background: white;
-		padding: 20px 100px;
+		padding: 20px 0;
+		max-width: content_width;
+		margin: auto;
 		h5 
 			text-transform: uppercase;
 			margin-top: 0;
@@ -370,11 +407,12 @@ article.proposal
 .comments
 	background: #f9f9f9;
 	border-top: 1px solid #f1f1f1;
-	padding-left: 100px;
-	padding-right: 100px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 
+	.comments-inner 
+		margin: auto;
+		width: content_width;
 	h4 
 		margin-bottom: 30px;
 

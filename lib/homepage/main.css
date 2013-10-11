@@ -5,17 +5,25 @@
 html {
   -webkit-font-smoothing: antialiased;
 }
+body {
+  color: #4d4d4d;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "freight-sans-pro", sans-serif;
   font-weight: bold;
+  color: #000;
 }
 img.avatar {
   border-radius: 100%;
+}
+.btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 .btn-default {
   border: 0;
@@ -27,6 +35,9 @@ img.avatar {
 .dropdown-menu {
   border-radius: 0;
   text-transform: none;
+}
+.site-content {
+  max-width: 580px;
 }
 /* Header
 -------------------------------------------------- */
@@ -49,7 +60,6 @@ header.app-header {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: "freight-sans-pro", sans-serif;
 }
 header.app-header a {
   color: #fff;
@@ -108,10 +118,12 @@ header.app-header .user-nav .profile img {
 }
 header.app-header .user-nav .profile span.name {
   display: inline-block;
-  margin-right: 10px;
-  font-family: "freight-sans-pro", sans-serif;
+  margin-left: 10px;
   font-weight: bold;
   font-size: 12px;
+  line-height: 20px;
+  display: inline-block;
+  padding-top: 4px;
 }
 header.app-header .user-nav .login {
   padding: 6px 12px;
@@ -161,13 +173,13 @@ aside.nav-proposal {
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 280px;
+  width: 266px;
   border-right: 1px solid #bdc3c7;
   overflow-y: scroll;
   background: #ecf0f1;
 }
 aside.nav-proposal .navlist li {
-  border-bottom: 1px solid #bdc3c7;
+  border-bottom: 1px solid #d7dbdd;
 }
 aside.nav-proposal .navlist li a {
   padding-left: 20px;
@@ -188,11 +200,8 @@ aside.nav-proposal .navlist li a .proposal-type {
   padding: 10px;
   line-height: 10px;
 }
-aside.nav-proposal .navlist li a:hover .proposal-type {
-  background-color: #f1c42e;
-}
-aside.nav-proposal .navlist li a:hover .proposal-type-2 {
-  background-color: #e67e22;
+aside.nav-proposal .navlist li a:hover {
+  background: #fff;
 }
 aside.nav-proposal .navlist li a span.title {
   font-size: 15px;
@@ -228,7 +237,7 @@ aside.nav-proposal .navlist li.active.active a {
   background-color: #e67e22;
 }
 section.app-content {
-  left: 281px;
+  left: 267px;
   top: 60px;
   padding: 20px 0 0 0;
   overflow-y: scroll;
@@ -238,14 +247,41 @@ section.app-content {
 /* Proposal View
 -------------------------------------------------- */
 article.proposal {
-  width: 500px;
-  margin-top: 10px;
-  margin-left: 100px;
+  max-width: 580px;
+  margin: 40px auto;
   min-height: 300px;
+  font-size: 18px;
+  line-height: 1.5;
+  position: relative;
 }
-article.proposal h2 {
+article.proposal .entry-tag {
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  left: -140px;
+  width: 100px;
+  height: 80px;
+  top: 44px;
+}
+article.proposal .entry-tag img {
+  width: 40px;
+  height: 40px;
+  left: 30px;
+  top: 20px;
+  position: absolute;
+}
+article.proposal .entry-tag .hexagon {
+  width: 80px;
+}
+article.proposal .summary {
+  font-size: 20px;
+  color: #333;
+}
+article.proposal h1 {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 article.proposal .meta-information {
   margin-bottom: 10px;
@@ -322,8 +358,7 @@ article.proposal .share-links a.google-plus:hover {
   background: #c0392b;
 }
 .proposal-options {
-  top: 30px;
-  right: 20px;
+  border: 1px solid #eee;
 }
 .proposal-options .vote-options .direct-vote,
 .proposal-options .vote-options .proxy-vote {
@@ -367,9 +402,10 @@ article.proposal .share-links a.google-plus:hover {
 }
 .proposal-options .vote-box,
 .proposal-options .results-box {
-  border: 1px solid #eee;
   background: #fff;
-  padding: 20px 100px;
+  padding: 20px 0;
+  max-width: 580px;
+  margin: auto;
 }
 .proposal-options .vote-box h5,
 .proposal-options .results-box h5 {
@@ -391,10 +427,12 @@ article.proposal .share-links a.google-plus:hover {
 .comments {
   background: #f9f9f9;
   border-top: 1px solid #f1f1f1;
-  padding-left: 100px;
-  padding-right: 100px;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+.comments .comments-inner {
+  margin: auto;
+  width: 580px;
 }
 .comments h4 {
   margin-bottom: 30px;

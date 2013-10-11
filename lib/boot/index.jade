@@ -59,8 +59,8 @@ html(lang='en')
       .user-nav.btn-group
         - if (locals.citizen)
           a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
-              span.name=citizen.firstName
               img(src=citizen.avatar)
+              span.name=citizen.firstName
               span.caret
           ul.dropdown-menu
               li

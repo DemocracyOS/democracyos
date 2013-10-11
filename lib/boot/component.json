@@ -19,6 +19,17 @@
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
-  "images": [ ],
+  "images": [
+    "images/tags/seguridad.svg", 
+    "images/tags/seguridad.svg", 
+    "images/tags/transito-y-transporte.svg",
+    "images/tags/defensa-de-los-consumidores-y-usuarios.svg",
+    "images/tags/defensa-de-consumidores-y-usuarios.svg",
+    "images/tags/presupuesto-hacienda-administracion-financiera-y-politica-tributaria.svg",
+    "images/tags/cultura.svg",
+    "images/tags/justicia.svg",
+    "images/tags/proteccion-y-uso-del-espacio-publico.svg",
+    "images/tags/planeamiento-urbano.svg"
+  ],
   "main": "boot.js"
 }
