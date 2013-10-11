@@ -2,13 +2,16 @@
   "DemocracyOS": "DemocracyOS",
   "DemocracyOS Beta": "DemocracyOS Beta",
   "Login": "Login",
+  "Login to": "Login to",
   "Signup": "Signup",
   "Logout": "Logout",
 
   "Comments": "Comments",
+  "Deleted comments": "Deleted comments",
   "Your comment": "Your comment",
   "Send": "Send",
 
+  "DemocracyOS - Password reset requested": "DemocracyOS - Password reset requested",
   "Hi {name}": "Hi {name}",
   "Please click <a href=\"{url}\">here</a> to reset your password": "Please click <a href=\"{url}\">here</a> to reset your password",
   "The DemocracyOS team": "The DemocracyOS team",
@@ -21,6 +24,7 @@
   "Repeat Password": "Repeat Password",
   "Reset Password!": "Reset Password!",
   "Forgot Password?": "Forgot Passoword?",
+  "We will send an email with a link to reset your password": "We will send an email with a link to reset your password",
 
   "Email": "Email",
   "Your name": "Your name",
