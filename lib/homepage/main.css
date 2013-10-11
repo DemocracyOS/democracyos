@@ -69,6 +69,12 @@ header.app-header {
   text-transform: uppercase;
   font-size: 12px;
 }
+header.app-header .logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
 header.app-header a {
   color: #fff;
 }
@@ -76,7 +82,7 @@ header.app-header h1 {
   display: inline-block;
   width: 300px;
   font-size: 12px;
-  margin-top: 23px;
+  margin-top: 10px;
 }
 header.app-header .user-nav {
   display: inline-block;
