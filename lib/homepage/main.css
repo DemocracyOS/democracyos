@@ -37,10 +37,6 @@ img.avatar {
   border-radius: 0;
   text-transform: none;
 }
-.app-content {
-  margin-left: 266px;
-  margin-top: 60px;
-}
 /* Header
 -------------------------------------------------- */
 header.app-header,
@@ -51,6 +47,7 @@ aside.nav-proposal,
 .site-content {
   z-index: 10;
   overflow-y: scroll;
+  background: #fff;
 }
 header.app-header {
   z-index: 10;
@@ -143,18 +140,18 @@ header.app-header .user-nav .login:hover {
 }
 /* Site Content Container
 -------------------------------------------------- */
-body.browser-page > section#content {
+body.browser-page section#content {
   display: none;
 }
 section.site-content {
   top: 60px;
-  left: 0;
+  left: 266px;
   right: 0;
   bottom: 0;
 }
 section.site-content#content {
-  z-index: 5;
-  background-color: #fff;
+  z-index: 12;
+  left: 0;
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */
@@ -207,7 +204,7 @@ aside.nav-proposal {
   border-right: 1px solid #bdc3c7;
   overflow-y: scroll;
   background: #ecf0f1;
-  z-index: 10000;
+  z-index: 10;
 }
 aside.nav-proposal .navlist li {
   border-bottom: 1px solid #d7dbdd;

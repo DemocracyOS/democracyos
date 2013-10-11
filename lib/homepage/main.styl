@@ -40,13 +40,6 @@ img.avatar
 	text-transform: none
 	// box-shadow: none;
 
-.site-content
-	// max-width: content_width;
-	// position: fixed;
-
-.app-content
-	margin-left: nav_proposal_width;
-	margin-top: header_height;
 
 /* Header
 -------------------------------------------------- */
@@ -56,6 +49,7 @@ header.app-header, aside.nav-proposal, .site-content
 .site-content
 	z-index: 10;
 	overflow-y: scroll;
+	background: white;
 
 header.app-header
 	z-index: 10;
@@ -145,17 +139,17 @@ header.app-header
 /* Site Content Container
 -------------------------------------------------- */
 body.browser-page
-	> section#content
+	section#content
 		display: none;
 
 section.site-content
 	top: header_height;
-	left: 0;
+	left: nav_proposal_width;
 	right: 0;
 	bottom: 0;
 	&#content
-		z-index: 5;
-		background-color: #ffffff;
+		z-index: 12;
+		left: 0;
 
 
 /* Proposal Aside Navigation
@@ -202,7 +196,7 @@ aside.nav-proposal
 	border-right: 1px solid #BDC3C7;
 	overflow-y: scroll;
 	background: #ECF0F1;
-	z-index: 10000;
+	z-index: 10;
 	.navlist
 		li 
 			border-bottom: 1px solid lighten(#BDC3C7, 40%);
