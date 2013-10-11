@@ -55,7 +55,7 @@
       em.text-muted= t('{num} votes cast', { num: census.length || "0" })
 
   - if (closed)
-    .results-box(class='hide')
+    .results-box
       h5= t('Yea')
       - var width = census.length ? (positives.length/census.length)*100 : 0;
       .progress
