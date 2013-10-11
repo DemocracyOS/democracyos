@@ -7,8 +7,7 @@
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
-    "yields/empty": "*",
-    "jakiestfu/Snap.js": "*"
+    "yields/empty": "*"
   },
   "local": [
     "citizen",
@@ -16,7 +15,8 @@
     "sidebar-list",
     "proposal-article",
     "proposal-options",
-    "comments-view"
+    "comments-view",
+    "snapper"
   ],
   "scripts": [ "law.js" ],
   "styles": [ ],
