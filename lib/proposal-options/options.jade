@@ -58,7 +58,7 @@
     .results-box(style="height:#{census.length ? '300px' : 'auto'}; display:block;")
       p.alert.alert-info(class=census.length ? 'hide' : ''): label= t('No votes cast')
       .results-chart(style="width:50%; display:block; height:250px; float:left;", class= census.length ? '' : 'hide')
-        h4= t('Pie chart')
+        h4= t('Chart')
         canvas#results-chart(width="200", height="200")
       .results-summary(style="width:50%; display:block; height:250px; float:left;", class= census.length ? '' : 'hide')
         h4= t('Summary')
