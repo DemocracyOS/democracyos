@@ -160,10 +160,29 @@ section.site-content
 		button.btn.btn-default
 			background-color: #7F8C8D;
 			font-size: 12px;
+			color: white;
+			text-align: left;
 			&.dropdown-toggle
 				background-color: #727f80;
 			&.current-department
 				width: 190px;
+		.dropdown-menu
+			width: 224px;
+			border-radius: border_radius;
+			li 
+				display: block
+				width: 100%;
+			a 
+				display: block
+				white-space: normal;
+				font-weight: bold
+				text-transform: uppercase
+				font-size: 12px;
+				padding: 6px 14px;
+				&:hover 
+					background: #f1f1f1;
+					color: #333;
+
 
 aside.nav-proposal 
 	top: header_height;
@@ -359,8 +378,8 @@ article.proposal
 
 
 .proposal-options
-
-	border: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
 	.vote-options
 		.direct-vote, .proxy-vote
 			display: inline-block;

@@ -162,12 +162,34 @@ section.site-content#content {
 .dropdown-deparment .btn-group button.btn.btn-default {
   background-color: #7f8c8d;
   font-size: 12px;
+  color: #fff;
+  text-align: left;
 }
 .dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
   background-color: #727f80;
 }
 .dropdown-deparment .btn-group button.btn.btn-default.current-department {
   width: 190px;
+}
+.dropdown-deparment .btn-group .dropdown-menu {
+  width: 224px;
+  border-radius: 3px;
+}
+.dropdown-deparment .btn-group .dropdown-menu li {
+  display: block;
+  width: 100%;
+}
+.dropdown-deparment .btn-group .dropdown-menu a {
+  display: block;
+  white-space: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 6px 14px;
+}
+.dropdown-deparment .btn-group .dropdown-menu a:hover {
+  background: #f1f1f1;
+  color: #333;
 }
 aside.nav-proposal {
   top: 60px;
@@ -373,7 +395,8 @@ article.proposal .share-links a.google-plus:hover {
   background: #c0392b;
 }
 .proposal-options {
-  border: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
 }
 .proposal-options .vote-options .direct-vote,
 .proposal-options .vote-options .proxy-vote {
