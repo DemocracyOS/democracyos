@@ -5,6 +5,8 @@ article.proposal
   .meta-information
     span.label.label-default= proposal.title
     span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
+    - if (proposal.closingAt)
+      small.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
 
   span.proposal-type.flaticon.solid.government-1       
   h2=proposal.mediaTitle
