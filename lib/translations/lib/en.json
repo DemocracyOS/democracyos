@@ -54,7 +54,8 @@
   "Abstain": "Abstain",
   "Delegate": "Delegate",
   "Delegate to": "Delegate to",
-
+  "{num} votes cast": "{num} votes cast",
+  
   "Clause": "Clause",
   "View the original text": "View the original text",
   "Participant": "Participant",
