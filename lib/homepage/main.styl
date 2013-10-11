@@ -526,6 +526,32 @@ article.proposal
 
 /* Responsive
 -------------------------------------------------- */
+@media screen and (max-width: 1100px)
+
+	article.proposal 
+		.entry-tag
+			position: static;
+			width: auto;
+			padding-bottom: 10px;
+			margin-bottom: 20px;
+			text-align: left;
+			border-bottom: 4px solid #333;
+			svg.hexagon
+				left: 0;
+				position: absolute;
+				display: none
+			img 
+				z-index: 100;
+				left: 20px;
+				display: none
+
+			span 
+				font-size: 14px;
+				margin-left: 0;
+				padding-top: 10px;
+				display: inline-block;
+
+
 @media screen and (max-width: 700px)
 	
 	header.app-header
@@ -559,30 +585,10 @@ article.proposal
 	article.proposal 
 		h1 
 			font-size: 30px;
-
+		
 		.entry-content
 			font-size: 100%;
-		.entry-tag
-			position: static;
-			width: auto;
-			padding-bottom: 20px;
-			margin-bottom: 20px;
-			text-align: left;
-			border-bottom: 4px solid #ccc;
-			svg.hexagon
-				left: 0;
-				position: absolute;
-				display: none
-			img 
-				z-index: 100;
-				left: 20px;
-				display: none
 
-			span 
-				font-size: 14px;
-				margin-left: 0;
-				padding-top: 10px;
-				display: inline-block;
 	/* Snap.js
 	----------------------------------------------- */
 	.snap-content {
