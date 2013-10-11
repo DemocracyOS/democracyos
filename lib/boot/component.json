@@ -2,6 +2,7 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": {
+    "component/bus": "*",
     "visionmedia/page.js": "*",
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/timeago": "*"
