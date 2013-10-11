@@ -1,0 +1,9 @@
+{
+  "name": "snapper",
+  "description": "DemocracyOS sidebar snapper",
+  "dependencies": {
+    "jakiestfu/Snap.js": "*"
+  },
+  "scripts": [ "snapper.js" ],
+  "main": "snapper.js"
+}
