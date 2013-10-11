@@ -43,7 +43,7 @@ img.avatar
 
 .system-alert
 	margin-top: 20px;
-	
+
 /* Header
 -------------------------------------------------- */
 header.app-header, aside.nav-proposal, .site-content
@@ -84,8 +84,8 @@ header.app-header
 		list-style: none;
 		margin-right: spacing;
 		position:absolute; 
-		right:20px; 
-		top:0px;
+		right: 0; 
+		top: 0px;
 		.btn 
 			height: 60px;
 			border-radius: 0;
@@ -295,7 +295,6 @@ article.proposal
 		position: absolute; 
 		left: -140px;
 		width: 100px;
-		height: 80px;
 		top: 44px;
 		img 
 			width: 40px;
@@ -306,6 +305,7 @@ article.proposal
 
 		.hexagon 
 			width: 80px;
+			height: 80px;
 
 
 	.summary
@@ -314,7 +314,6 @@ article.proposal
 	h1
 		margin-top: 0;
 		margin-bottom: 30px;
-		font-size: 2.4em;
 
 	.meta-information
 		margin-bottom: 10px;
@@ -459,7 +458,9 @@ article.proposal
 		margin-bottom: 50px;
 		margin-top: 50px;
 		textarea
-			width: 500px;
+			max-width: 500px;
+			width: 96%;
+			padding: 2%
 		.btn 
 			background-color: #333;
 			color: white;
@@ -510,9 +511,30 @@ article.proposal
 -------------------------------------------------- */
 @media screen and (max-width: 700px)
 	
+	header.app-header .user-nav .profile span.name
+		display: none
 	section.site-content
 		left: 0;
 
+	article.proposal 
+		.entry-tag
+			position: static;
+			width: auto;
+			height: 80px;
+			margin-bottom: 20px;
+			text-align: left;
+			svg.hexagon
+				left: 0;
+				position: absolute;
+			img 
+				z-index: 100;
+				left: 20px;
+
+			span 
+				font-size: 20px;
+				margin-left: 100px;
+				padding-top: 10px;
+				display: inline-block;
 	/* Snap.js
 	----------------------------------------------- */
 	.snap-content {

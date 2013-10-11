@@ -84,7 +84,7 @@ header.app-header .user-nav {
   list-style: none;
   margin-right: 20px;
   position: absolute;
-  right: 20px;
+  right: 0;
   top: 0px;
 }
 header.app-header .user-nav .btn {
@@ -302,7 +302,6 @@ article.proposal .entry-tag {
   position: absolute;
   left: -140px;
   width: 100px;
-  height: 80px;
   top: 44px;
 }
 article.proposal .entry-tag img {
@@ -314,6 +313,7 @@ article.proposal .entry-tag img {
 }
 article.proposal .entry-tag .hexagon {
   width: 80px;
+  height: 80px;
 }
 article.proposal .summary {
   font-size: 20px;
@@ -322,7 +322,6 @@ article.proposal .summary {
 article.proposal h1 {
   margin-top: 0;
   margin-bottom: 30px;
-  font-size: 2.4em;
 }
 article.proposal .meta-information {
   margin-bottom: 10px;
@@ -487,7 +486,9 @@ article.proposal .share-links a.google-plus:hover {
   margin-top: 50px;
 }
 .comments .comment-form textarea {
-  width: 500px;
+  max-width: 500px;
+  width: 96%;
+  padding: 2%;
 }
 .comments .comment-form .btn {
   background-color: #333;
@@ -546,8 +547,32 @@ article.proposal .share-links a.google-plus:hover {
 /* Responsive
 -------------------------------------------------- */
 @media screen and (max-width: 700px) {
+  header.app-header .user-nav .profile span.name {
+    display: none;
+  }
   section.site-content {
     left: 0;
+  }
+  article.proposal .entry-tag {
+    position: static;
+    width: auto;
+    height: 80px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  article.proposal .entry-tag svg.hexagon {
+    left: 0;
+    position: absolute;
+  }
+  article.proposal .entry-tag img {
+    z-index: 100;
+    left: 20px;
+  }
+  article.proposal .entry-tag span {
+    font-size: 20px;
+    margin-left: 100px;
+    padding-top: 10px;
+    display: inline-block;
   }
   .snap-content {
     position: absolute;
