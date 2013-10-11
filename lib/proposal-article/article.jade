@@ -15,10 +15,12 @@ article.proposal
     meta(name='twitter:image:src', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
     meta(name='twitter:domain', content='partidodelared.org')
   .meta-information
-    - if (proposal.closingAt)
-      p
+    p
+      - if (proposal.closingAt)
         small.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
         small.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
+      - else
+        small.meta-item.meta-timeago= t('Unknown closing date')
     span.label.label-default= proposal.title
     span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
   
