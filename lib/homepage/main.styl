@@ -14,6 +14,7 @@ html
 
 body 
 	color: #4d4d4d;
+	overflow: hidden;
 
 h1,h2,h3,h4,h5,h6
 	font-weight: bold;
@@ -40,15 +41,24 @@ img.avatar
 	// box-shadow: none;
 
 .site-content
-	max-width: content_width;
+	// max-width: content_width;
+	// position: fixed;
+
+.app-content
+	margin-left: nav_proposal_width;
+	margin-top: header_height;
 
 /* Header
 -------------------------------------------------- */
-header.app-header, section.site-content, section.app-content, aside.nav-proposal
+header.app-header, aside.nav-proposal, .site-content
 	position: fixed;
 
+.site-content
+	z-index: 10;
+	overflow-y: scroll;
+
 header.app-header
-	z-index: 100000;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -60,7 +70,6 @@ header.app-header
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 12px;
-
 	a 
 		color: white;
 
@@ -75,7 +84,9 @@ header.app-header
 		float: right;
 		list-style: none;
 		margin-right: spacing;
-
+		position:absolute; 
+		right:20px; 
+		top:0px;
 		.btn 
 			height: 60px;
 			border-radius: 0;
@@ -149,7 +160,6 @@ section.site-content
 
 /* Proposal Aside Navigation
 -------------------------------------------------- */
-
 .dropdown-deparment
 	padding: spacing;
 	background-color: #BDC3C7;
@@ -192,6 +202,7 @@ aside.nav-proposal
 	border-right: 1px solid #BDC3C7;
 	overflow-y: scroll;
 	background: #ECF0F1;
+	z-index: 10000;
 	.navlist
 		li 
 			border-bottom: 1px solid lighten(#BDC3C7, 40%);
@@ -265,13 +276,7 @@ aside.nav-proposal
 	&.proposal-type-2
 		background-color: #E67E22;
 
-section.app-content
-	left: nav_proposal_width + 1px;
-	top: header_height;
-	padding: 20px 0 0 0;
-	overflow-y: scroll;
-	right: 0;
-	bottom: 0;
+
 
 
 /* Proposal View
@@ -445,7 +450,7 @@ article.proposal
 
 	.comments-inner 
 		margin: auto;
-		width: content_width;
+		max-width: content_width;
 	h4 
 		margin-bottom: 30px;
 
@@ -494,3 +499,77 @@ article.proposal
 -------------------------------------------------- */
 .uv-icon.uv-bottom-right
 	right: 25px !important;
+
+/* Responsive
+-------------------------------------------------- */
+@media screen and (max-width: 700px)
+
+	/* Snap.js
+	----------------------------------------------- */
+
+	.snap-content {
+		position: absolute;
+		background: white;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: auto;
+		height: auto;
+		z-index: 200000;
+		-webkit-overflow-scrolling: touch;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		-o-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	.snap-drawers {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  width: auto;
+	  height: auto;
+	}
+
+	.snap-drawer {
+	  position: absolute;
+	  top: 0;
+	  right: auto;
+	  bottom: 0;
+	  left: auto;
+	  width: 265px;
+	  height: auto;
+	  overflow: auto;
+	  -webkit-overflow-scrolling: touch;
+	  -webkit-transition: width 0.3s ease;
+	     -moz-transition: width 0.3s ease;
+	      -ms-transition: width 0.3s ease;
+	       -o-transition: width 0.3s ease;
+	          transition: width 0.3s ease;
+	}
+
+	.snap-drawer-left {
+	  left: 0;
+	  z-index: 1;
+	}
+
+	.snap-drawer-right {
+	  right: 0;
+	  z-index: 1;
+	}
+
+	.snapjs-left .snap-drawer-right,
+	.snapjs-right .snap-drawer-left {
+	  display: none;
+	}
+
+	.snapjs-expand-left .snap-drawer-left,
+	.snapjs-expand-right .snap-drawer-right {
+	  width: 100%;
+	}
+
+

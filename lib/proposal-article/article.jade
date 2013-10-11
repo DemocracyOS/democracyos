@@ -20,13 +20,11 @@ article.proposal
       - if (proposal.closingAt)
         small.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
         small.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
-  span= proposal.title
- 
   p
-    small.meta-item.meta-timeago= t('Unknown closing date')
+    span.meta-item.meta-timeago= t('Unknown closing date')
 
   h1=proposal.mediaTitle
-
+  h3=proposal.title 
   .entry-content
     p.summary=proposal.summary
 
