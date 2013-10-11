@@ -19,10 +19,10 @@
     .meta-information
       p
         - if (proposal.closingAt)
-          small.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
-          small.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
-    p
-      span.meta-item.meta-timeago= t('Unknown closing date')
+          span.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
+          span.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
+        - else
+          span.meta-item.meta-timeago= t('Unknown closing date')
 
     h1=proposal.mediaTitle
     h3=proposal.title 

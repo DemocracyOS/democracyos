@@ -534,6 +534,7 @@ article.proposal .share-links a.google-plus:hover {
 .inner-container {
   padding-left: 20px;
   padding-right: 20px;
+  margin: auto;
   max-width: 580px;
 }
 /* Responsive
