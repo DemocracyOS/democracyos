@@ -55,8 +55,9 @@
       em.text-muted= t('{num} votes cast', { num: census.length || "0" })
 
   - if (closed)
-    .results-box(style="height:300px; display:block;")
-      .results-chart(style="width:50%; display:block; height:250px; float:left;")
+    .results-box(style="height:#{census.length ? '300px' : 'auto'}; display:block;")
+      p.alert.alert-info(class=census.length ? 'hide' : ''): label= t('No votes cast')
+      .results-chart(style="width:50%; display:block; height:250px; float:left;", class= census.length ? '' : 'hide')
         h4= t('Pie chart')
         canvas#results-chart(width="200", height="200")
       .results-summary(style="width:50%; display:block; height:250px; float:left;", class= census.length ? '' : 'hide')
