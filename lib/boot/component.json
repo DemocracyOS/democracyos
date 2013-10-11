@@ -21,6 +21,7 @@
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
   "images": [
+    "images/logo.svg", 
     "images/tags/seguridad.svg", 
     "images/tags/seguridad.svg", 
     "images/tags/transito-y-transporte.svg",
