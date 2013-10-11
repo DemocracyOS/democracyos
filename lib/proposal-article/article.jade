@@ -3,10 +3,12 @@ article.proposal
   //-   a.meta-item.meta-location(href="#") Buenos Aires, Argentina
   //-   small.meta-item.meta-timeago 10 days left
   .meta-information
-    - if (proposal.closingAt)
-      p
+    p
+      - if (proposal.closingAt)
         small.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
         small.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
+      - else
+        small.meta-item.meta-timeago= t('Unknown closing date')
     span.label.label-default= proposal.title
     span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
   
