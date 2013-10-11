@@ -54,11 +54,6 @@
     .votes-cast
       em.text-muted= t('{num} votes cast', { num: census.length || "0" })
 
-
-  a.toggle-results.btn.btn-default.btn-block.btn-success(class= closed ? '' : 'hide')
-    span.glyphicon.glyphicon-stats
-    | #{t('Partial results')}
-
   - if (closed)
     .results-box(class='hide')
       h5= t('Yea')
