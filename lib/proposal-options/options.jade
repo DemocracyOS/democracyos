@@ -52,7 +52,7 @@
     //-   input.delegation-input(type="text", name="q")
 
     .votes-cast
-      em.text-muted= t('{num} votes cast', { num: census.length })
+      em.text-muted= t('{num} votes cast', { num: census.length || "0" })
 
 
   a.toggle-results.btn.btn-default.btn-block.btn-success(class= closed ? '' : 'hide')
