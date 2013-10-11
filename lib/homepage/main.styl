@@ -40,7 +40,6 @@ img.avatar
 	text-transform: none
 	// box-shadow: none;
 
-
 .system-alert
 	margin-top: 20px;
 
@@ -69,6 +68,20 @@ header.app-header
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 12px;
+
+	#toggleButton
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		left: 10px;
+		padding: 18px 10px;
+		.bar-icon
+			height: 4px;
+			background: white;
+			margin-bottom: 4px; 
+			display: block
+
+
 	.logo
 		width: 40px;
 		height: 40px;
@@ -514,8 +527,16 @@ article.proposal
 -------------------------------------------------- */
 @media screen and (max-width: 700px)
 	
-	header.app-header .user-nav .profile span.name
-		display: none
+	header.app-header 
+		h1#logo
+			text-align: center
+			width: 100%;
+		img.logo
+			margin: auto;
+		.logo-link 
+			display: none
+		.user-nav .profile span.name
+			display: none
 	section.site-content
 		left: 0;
 

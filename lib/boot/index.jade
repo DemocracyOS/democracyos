@@ -56,14 +56,14 @@ html(lang='en')
     #snap-content.snap-content
       // Start of `Page Content`
       header.app-header
-        a(href="", id="toggleButton")
+        a(href="#", id="toggleButton")
           span.bar-icon
           span.bar-icon
           span.bar-icon
 
-        h1#logo(style="position:absolute")
+        h1#logo
           img(src="/boot/images/logo.svg").logo
-          a(href='/')= t('DemocracyOS Beta')
+          a(href='/', class="logo-link")= t('DemocracyOS Beta')
         
         .user-nav.btn-group
           - if (locals.citizen)
