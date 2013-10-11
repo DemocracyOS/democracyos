@@ -604,10 +604,10 @@ article.proposal .share-links a.google-plus:hover {
   article.proposal .entry-tag {
     position: static;
     width: auto;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
     text-align: left;
-    border-bottom: 4px solid #ccc;
+    border-bottom: 4px solid #333;
   }
   article.proposal .entry-tag svg.hexagon {
     left: 0;
