@@ -75,6 +75,7 @@ header.app-header #toggleButton {
   position: absolute;
   left: 10px;
   padding: 20px 10px;
+  display: none;
 }
 header.app-header #toggleButton .bar-icon {
   height: 4px;
@@ -335,7 +336,7 @@ article.proposal .entry-tag .hexagon {
   height: 80px;
 }
 article.proposal .summary {
-  font-size: 20px;
+  font-size: 110%;
   color: #333;
 }
 article.proposal h1 {
@@ -564,6 +565,9 @@ article.proposal .share-links a.google-plus:hover {
 /* Responsive
 -------------------------------------------------- */
 @media screen and (max-width: 700px) {
+  header.app-header #toggleButton {
+    display: block;
+  }
   header.app-header h1#logo {
     text-align: center;
     width: 100%;
@@ -591,10 +595,16 @@ article.proposal .share-links a.google-plus:hover {
     margin-right: 0;
     text-align: center;
   }
+  article.proposal h1 {
+    font-size: 30px;
+  }
+  article.proposal .entry-content {
+    font-size: 100%;
+  }
   article.proposal .entry-tag {
     position: static;
     width: auto;
-    min-height: 80px;
+    padding-bottom: 20px;
     margin-bottom: 20px;
     text-align: left;
     border-bottom: 4px solid #ccc;

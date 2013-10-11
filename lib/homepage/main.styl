@@ -75,6 +75,7 @@ header.app-header
 		position: absolute;
 		left: 10px;
 		padding: 20px 10px;
+		display: none
 		.bar-icon
 			height: 4px;
 			background: white;
@@ -327,7 +328,7 @@ article.proposal
 
 
 	.summary
-		font-size: 20px;
+		font-size: 110%;
 		color: #333;
 	h1
 		margin-top: 0;
@@ -527,7 +528,9 @@ article.proposal
 -------------------------------------------------- */
 @media screen and (max-width: 700px)
 	
-	header.app-header 
+	header.app-header
+		#toggleButton
+			display: block
 		h1#logo
 			text-align: center
 			width: 100%;
@@ -551,11 +554,18 @@ article.proposal
 		width: 100%;
 		margin-right: 0;
 		text-align: center
+	
+
 	article.proposal 
+		h1 
+			font-size: 30px;
+
+		.entry-content
+			font-size: 100%;
 		.entry-tag
 			position: static;
 			width: auto;
-			min-height: 80px;
+			padding-bottom: 20px;
 			margin-bottom: 20px;
 			text-align: left;
 			border-bottom: 4px solid #ccc;
