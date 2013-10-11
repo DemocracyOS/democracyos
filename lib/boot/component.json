@@ -4,7 +4,8 @@
   "dependencies": {
     "visionmedia/page.js": "*",
     "cristiandouce/t": "chained-tokens",
-    "cristiandouce/timeago": "*"
+    "cristiandouce/timeago": "*",
+    "jakiestfu/Snap.js": "*"
   },
   "local": [
     "body-classes",
