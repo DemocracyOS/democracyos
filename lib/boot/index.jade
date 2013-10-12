@@ -67,9 +67,9 @@ html(lang='en')
           span.bar-icon
 
         h1#logo
-          a(href='/', class="logo-link")
+          a(href='/')
             img(src="/boot/images/logo.png").logo
-            span= t('DemocracyOS Beta')
+            span.logo-link= t('DemocracyOS Beta')
         
         .user-nav.btn-group
           - if (locals.citizen)
