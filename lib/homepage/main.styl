@@ -405,12 +405,12 @@ article.proposal
 	// border-top: 1px solid #eee;
 	margin-bottom: 100px;
 	.vote-options
-		.direct-vote, .proxy-vote
+		.proxy-vote
 			display: inline-block;
 		.vote-option
 			display: inline-block;
-			width: 150px;
-			margin-right: 20px;	
+			width: 30%;
+			margin-right: 5%;	
 			color: white;
 			text-transform: uppercase;
 			font-weight: bold;
@@ -427,6 +427,7 @@ article.proposal
 
 			&.vote-no
 				background-color: #d95e59;
+				margin-right: 0;
 				i
 					transform:rotate(180deg);
 					-ms-transform:rotate(180deg); /* IE 9 */
@@ -579,12 +580,18 @@ article.proposal
 	section.site-content
 		left: 0;
 
-	.proposal-options .vote-options .vote-option
-		width: 100%;
-		margin-right: 0;
-		text-align: center
-	
+	.inner-container
+		max-width: 100%;
 
+	.proposal-options .vote-options 
+		.direct-vote
+			display: block
+
+		.vote-option
+			width: 100%;
+			margin-right: 0;
+			text-align: center
+		
 	article.proposal 
 		h1 
 			font-size: 30px;

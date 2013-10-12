@@ -415,14 +415,13 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options {
   margin-bottom: 100px;
 }
-.proposal-options .vote-options .direct-vote,
 .proposal-options .vote-options .proxy-vote {
   display: inline-block;
 }
 .proposal-options .vote-options .vote-option {
   display: inline-block;
-  width: 150px;
-  margin-right: 20px;
+  width: 30%;
+  margin-right: 5%;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -442,6 +441,7 @@ article.proposal .share-links a.google-plus:hover {
 }
 .proposal-options .vote-options .vote-option.vote-no {
   background-color: #d95e59;
+  margin-right: 0;
 }
 .proposal-options .vote-options .vote-option.vote-no i {
   transform: rotate(180deg);
@@ -613,6 +613,12 @@ article.proposal .share-links a.google-plus:hover {
   }
   section.site-content {
     left: 0;
+  }
+  .inner-container {
+    max-width: 100%;
+  }
+  .proposal-options .vote-options .direct-vote {
+    display: block;
   }
   .proposal-options .vote-options .vote-option {
     width: 100%;
