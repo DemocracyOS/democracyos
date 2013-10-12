@@ -70,16 +70,16 @@ header.app-header
 	font-size: 12px;
 
 	#toggleButton
-		width: 44px;
-		height: 50px;
+		width: 30px;
+		height: 44px;
 		position: absolute;
-		left: 10px;
-		padding: 20px 10px;
+		left: spacing;
+		padding: 20px 0;
 		display: none
 		.bar-icon
-			height: 4px;
+			height: 3px;
 			background: white;
-			margin-bottom: 4px; 
+			margin-bottom: 5px; 
 			display: block
 	a 
 		color: white;
@@ -555,16 +555,19 @@ article.proposal
 @media screen and (max-width: 700px)
 	
 	header.app-header
+		padding-left: 0;
 		#toggleButton
 			display: block
 		h1#logo
 			text-align: center
-			width: 100%;
+			width: auto;
+			display: block
 		img.logo
 			margin: auto;
 		.logo-link 
 			display: none
 		.user-nav 
+			position: 
 			.btn 
 				border: 0;
 			.profile span.name

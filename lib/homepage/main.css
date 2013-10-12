@@ -70,17 +70,17 @@ header.app-header {
   font-size: 12px;
 }
 header.app-header #toggleButton {
-  width: 44px;
-  height: 50px;
+  width: 30px;
+  height: 44px;
   position: absolute;
-  left: 10px;
-  padding: 20px 10px;
+  left: 20px;
+  padding: 20px 0;
   display: none;
 }
 header.app-header #toggleButton .bar-icon {
-  height: 4px;
+  height: 3px;
   background: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   display: block;
 }
 header.app-header a {
@@ -585,12 +585,16 @@ article.proposal .share-links a.google-plus:hover {
   }
 }
 @media screen and (max-width: 700px) {
+  header.app-header {
+    padding-left: 0;
+  }
   header.app-header #toggleButton {
     display: block;
   }
   header.app-header h1#logo {
     text-align: center;
-    width: 100%;
+    width: auto;
+    display: block;
   }
   header.app-header img.logo {
     margin: auto;
@@ -598,7 +602,7 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
-  header.app-header .user-nav .btn {
+  header.app-header .user-nav position:.btn {
     border: 0;
   }
   header.app-header .user-nav .profile span.name {
