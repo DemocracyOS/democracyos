@@ -62,7 +62,6 @@ header.app-header {
   right: 0;
   height: 60px;
   background: #3498db;
-  border-bottom: 1px solid #2980b9;
   color: #fff;
   padding-left: 20px;
   font-weight: bold;
@@ -70,7 +69,7 @@ header.app-header {
   font-size: 12px;
 }
 header.app-header #toggleButton {
-  width: 30px;
+  width: 26px;
   height: 44px;
   position: absolute;
   left: 20px;
@@ -184,7 +183,7 @@ section.site-content#content {
 /* Proposal Aside Navigation
 -------------------------------------------------- */
 .dropdown-deparment {
-  padding: 20px;
+  padding: 15.5px 20px;
   background-color: #bdc3c7;
   display: block;
 }
