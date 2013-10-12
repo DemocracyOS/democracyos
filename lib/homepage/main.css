@@ -83,13 +83,10 @@ header.app-header #toggleButton .bar-icon {
   margin-bottom: 4px;
   display: block;
 }
-header.app-header .logo {
-  height: 40px;
-  margin-top: -10px;
-  display: inline-block;
-  margin-right: 10px;
-}
 header.app-header a {
+  color: #fff;
+}
+header.app-header a:hover {
   color: #fff;
 }
 header.app-header h1 {
@@ -97,6 +94,11 @@ header.app-header h1 {
   width: 300px;
   font-size: 12px;
   margin-top: 10px;
+}
+header.app-header h1 .logo {
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
 }
 header.app-header .user-nav {
   display: inline-block;
@@ -256,9 +258,7 @@ aside.nav-proposal .navlist li a .item-tag svg.hexagon {
   left: 0;
   top: -4px;
   position: absolute;
-}
-aside.nav-proposal .navlist li a .item-tag svg.hexagon polygon {
-  fill: #bdc3c7;
+  opacity: 0.2;
 }
 aside.nav-proposal .navlist li a .item-tag img {
   width: 20px;
@@ -282,11 +282,8 @@ aside.nav-proposal .navlist li a span.created-by {
   font-size: 11px;
   opacity: 0.5;
 }
-aside.nav-proposal .navlist li.active a .proposal-type {
-  background-color: #f1c42e;
-}
-aside.nav-proposal .navlist li.active a .proposal-type-2 {
-  background-color: #e67e22;
+aside.nav-proposal .navlist li.active a .item-tag svg.hexagon {
+  opacity: 1;
 }
 aside.nav-proposal .navlist li.active.active a {
   background: #fff;
@@ -337,7 +334,7 @@ article.proposal .entry-tag .hexagon {
 }
 article.proposal .summary {
   font-size: 110%;
-  color: #333;
+  margin: 40px 0;
 }
 article.proposal h1 {
   margin-top: 0;
@@ -359,10 +356,6 @@ article.proposal .meta-information .label {
   margin-right: 10px;
   display: inline-block;
   border-radius: 0;
-}
-article.proposal .proposal-type {
-  top: 96px;
-  left: 44px;
 }
 article.proposal hr {
   border-top: 4px solid #eee;
@@ -387,11 +380,13 @@ article.proposal .participants .participant-profile img {
   height: 30px;
 }
 article.proposal .links p span.glyphicon {
-  font-size: 10px;
+  font-size: 12px;
   margin-right: 5px;
 }
 article.proposal .links p a {
-  font-size: 14px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
@@ -418,8 +413,7 @@ article.proposal .share-links a.google-plus:hover {
   background: #c0392b;
 }
 .proposal-options {
-  border-bottom: 1px solid #eee;
-  border-top: 1px solid #eee;
+  margin-bottom: 100px;
 }
 .proposal-options .vote-options .direct-vote,
 .proposal-options .vote-options .proxy-vote {

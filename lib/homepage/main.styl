@@ -81,21 +81,21 @@ header.app-header
 			background: white;
 			margin-bottom: 4px; 
 			display: block
-
-
-	.logo
-		height: 40px;
-		margin-top: -10px;
-		display: inline-block
-		margin-right: 10px;
 	a 
 		color: white;
+		&:hover 
+			color: white;
 
 	h1 
 		display: inline-block;
 		width: 300px;
 		font-size: 12px;
 		margin-top: 10px;
+		.logo
+			height: 40px;
+			display: inline-block
+			margin-right: 10px;
+
 
 	.user-nav 
 		display: inline-block;
@@ -244,8 +244,9 @@ aside.nav-proposal
 						left: 0;
 						top: -4px;
 						position: absolute;
-						polygon
-							fill: #BDC3C7;
+						opacity: .2;
+						// polygon
+						// 	fill: #BDC3C7;
 					img 
 						width: 20px;
 						height: 20px;
@@ -271,11 +272,9 @@ aside.nav-proposal
 	.navlist
 		li.active 
 			a			
-				.proposal-type
-					background-color: #F1C42E;
-				.proposal-type-2
-					background-color: #E67E22;
-
+				.item-tag
+					svg.hexagon 
+						opacity: 1;		
 			&.active 
 				a 
 					background: #fff;
@@ -329,7 +328,7 @@ article.proposal
 
 	.summary
 		font-size: 110%;
-		color: #333;
+		margin: 40px 0;
 	h1
 		margin-top: 0;
 		margin-bottom: 30px;
@@ -346,9 +345,7 @@ article.proposal
 			margin-right:10px;
 			display:inline-block;
 			border-radius:0;
-	.proposal-type
-		top: 96px;
-		left: 44px;
+	
 	hr 
 		border-top: 4px solid #eee;
 		width: 50%;
@@ -372,10 +369,13 @@ article.proposal
 	.links
 		p
 			span.glyphicon
-				font-size: 10px
+				font-size: 12px
 				margin-right: 5px
 			a
-				font-size: 14px
+				font-size: 16px
+				color: #333;
+				font-weight: bold
+
 	.share-links
 		margin-bottom: 40px;
 		a 
@@ -401,8 +401,9 @@ article.proposal
 
 
 .proposal-options
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
+	// border-bottom: 1px solid #eee;
+	// border-top: 1px solid #eee;
+	margin-bottom: 100px;
 	.vote-options
 		.direct-vote, .proxy-vote
 			display: inline-block;
@@ -449,7 +450,6 @@ article.proposal
 		.meta-data
 			margin-bottom: 20px
 	.toggle-results
-		// margin-left: 100px
 		span
 			margin-right: 5px
 
