@@ -4,11 +4,19 @@
 
 var express = require('express');
 var http = require('http');
+var balance = require('lib/balance');
 
 /*
  * Create and expose app
  */
+
 var app = exports.app = express();
+
+/**
+ * Create and expose server
+ */
+
+var server = exports.server = http.createServer(app);
 
 /**
  * Set `app` configure settings
@@ -97,6 +105,10 @@ app.use(require('lib/boot'));
  * Start Web server
  */
 
-exports.server = http.createServer(app).listen(app.get('port'), function() {
-  console.log('Application started on port %d', app.get('port'));
-});
+if (module === require.main) {
+  balance(function() {
+    server.listen(app.get('port'), function() {
+      console.log('Application started on port %d', app.get('port'));
+    });
+  });
+}
