@@ -3,15 +3,18 @@
   "description": "proposal's article view",
   "dependencies": {
     "component/domify": "1.0.0",
+    "component/events": "*",
     "component/tip": "*",
     "component/aurora-tip": "*",
+    "component/truncate": "*",
     "visionmedia/jade": "*",
+    "yields/empty": "*",
     "cristiandouce/to-array": "*",
     "cristiandouce/t": "chained-tokens"
   },
   "local": [ ],
   "scripts": [ "proposal-article.js" ],
-  "templates": [ "article.jade" ],
+  "templates": [ "article.jade", "clause.jade" ],
   "styles": [ ],
   "images": [ ],
   "main": "proposal-article.js"
