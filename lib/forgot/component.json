@@ -4,6 +4,7 @@
   "dependencies": {
     "component/domify": "*",
     "component/events": "*",
+    "component/classes": "*",
     "component/emitter": "*",
     "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
