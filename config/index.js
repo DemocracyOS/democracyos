@@ -188,6 +188,12 @@ function Config(app) {
       next();
 
     });
+
+    /**
+     * Use `twitter-card` middleware
+     */
+
+    app.use(require('lib/twitter-card').middleware);
         
     /**
      * Set native `express` router middleware
