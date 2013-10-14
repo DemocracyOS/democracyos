@@ -14,7 +14,7 @@
   },
   "local": [ "regexps", "citizen" ],
   "scripts": [ "forgot.js", "forgot-view.js", "reset-view.js" ],
-  "styles": [ "forgot.css" ],
+  "styles": [ ],
   "templates": [ "forgot-form.jade" , "reset-form.jade" ],
   "main": "forgot.js"
 }
