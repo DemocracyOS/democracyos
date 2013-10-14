@@ -11,6 +11,8 @@ DemocracyOS is an online space for deliberation and voting on political proposal
 * [Ricardo Rauch](http://twitter.com/gravityonmars)
 * [Cristian Douce Suarez](http://twitter.com/cristiandouce)
 * [Guido Vilariño](http://twitter.com/gvilarino)
+* [Oscar Guindzberg](https://github.com/oscarguindzberg)
+* [Sacha Lifszyc](https://twitter.com/slifszyc)
 
 ## Useful links
 
