@@ -2,8 +2,8 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , http = require('http');
+var express = require('express');
+var http = require('http');
 
 /*
  * Create and expose app
