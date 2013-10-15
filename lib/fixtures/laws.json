@@ -1,12 +1,13 @@
 [
 {
-    "state" : "bill"
-  , "status" : "open"  
+    "state" : "project"
+  , "status" : "open"
   , "lawId": "02513-J-13"
   , "tag" : "Planeamiento Urbano"
   , "officialTitle": ""
   , "mediaTitle": "Nuevo shopping en Caballito"
   , "source": "https://s3.amazonaws.com/pdr-app/02513-J-13.pdf"
+  , "closingAt": "2013-10-04T19:17:09.133Z"
   , "summary": "El desarrollo se emplazaría sobre la calle Avellaneda, al lado de Ferro. Serían unos 70.000 m2 cubiertos, con una altura de 38 metros (unos 12 pisos). La contraprestación del desarrollador inmobiliario para la Ciudad sería la construcción de un centro de salud. Quienes están a favor, hablan de la necesidad de urbanizar lo que hoy es un \"vacío\" urbano, oscuro y lleno de containers. Además, refuerzan la importancia de la creación de puestos de trabajo y el aumento de la actividad comercial en la Ciudad. Quienes están en contra, remarcan la falta del obligatorio Informe de Impacto Ambiental y hablan de un cambio radical en el aspecto de la zona y en las costumbres de los vecinos: mayor afluencia de gente, incremento en el tráfico. Además, se preocupan por el comercio minorista del barrio, que se vería afectado por el centro comercial."
   , "clauses": [
       {
@@ -42,7 +43,7 @@
       {
           "clauseId": "Anexo I"
         , "order": 6
-        , "text": "<img href=\"https://s3.amazonaws.com/pdr-app/images/02513-J-13.png\"/>"
+        , "text": "<img src=\"https://s3.amazonaws.com/pdr-app/images/02513-J-13.png\"/>"
       }
     ]
 }
