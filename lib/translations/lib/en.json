@@ -71,5 +71,8 @@
   "Listing all {listType}s": "Listing all {listType}s",
   "Project": "Project",
   "Bill": "Bill",
-  "Law": "Law"
+  "Law": "Law",
+
+  "All data will expire on December 10, 2013": "All data will expire on December 10, 2013",
+  "Why?": "Why?"
 }

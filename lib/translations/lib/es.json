@@ -71,5 +71,8 @@
   "Listing all {listType}s": "Todo",
   "Project": "Proyecto",
   "Bill": "Despacho",
-  "Law": "Ley"
+  "Law": "Ley",
+
+  "All data will expire on December 10, 2013": "Todos los datos serán inválidos a partir del 10/12/2013",
+  "Why?": "¿Por qué?"
 }
