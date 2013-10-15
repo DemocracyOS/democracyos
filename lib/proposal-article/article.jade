@@ -47,7 +47,7 @@
     .links
       p
         span.glyphicon.glyphicon-link
-        a(target="_blank", href="https://s3.amazonaws.com/pdr-app/#{proposal.lawId.replace('/','-')}.doc")
+        a(target="_blank", href="#{proposal.source}")
          | #{t('View the original text')}
 
     //- Article participants
