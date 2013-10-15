@@ -1,11 +1,12 @@
 .comments
-  h4= t('Comments')
-  ul.media-list.comment-list.main-list
-  a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('Deleted comments')
-  ul.media-list.comment-list.deleted-list(class='hide')
-  - if (citizen.id)
-    form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
-      h5= t('Your comment')
-      p 
-        textarea(name='text', rows='4')
-      input.btn(type='submit', value=t('Send'))
+  .inner-container
+    h4= t('Comments')
+    ul.media-list.comment-list.main-list
+    a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('Deleted comments')
+    ul.media-list.comment-list.deleted-list(class='hide')
+    - if (citizen.id)
+      form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
+        h5= t('Your comment')
+        p 
+          textarea(name='text', rows='4')
+        input.btn(type='submit', value=t('Send'))

@@ -25,6 +25,7 @@
   "Reset Password!": "Reset Password!",
   "Forgot Password?": "Forgot Passoword?",
   "We will send an email with a link to reset your password": "We will send an email with a link to reset your password",
+  "We just sent a message to your email with instructions to create a new password": "We just sent a message to your email with instructions to create a new password",
 
   "Signup with email": "Signup with email",
   "Email": "Email",
@@ -46,6 +47,7 @@
   "Closed": "Closed",
   "Unknown closing date": "Unknown closing date",
   "Vote": "Vote",
+  "vote": "vote",
   "You voted Yea": "You voted Yea",
   "You voted Nay": "You voted Nay",
   "You abstained from voting": "You abstained from voting",
@@ -57,8 +59,12 @@
   "Delegate": "Delegate",
   "Delegate to": "Delegate to",
   "{num} votes cast": "{num} votes cast",
+  "No votes cast": "No votes cast",
+  "Summary": "Summary",
+  "Chart": "Chart",
   
   "Clause": "Clause",
+  "read more": "read more",
   "View the original text": "View the original text",
   "Participant": "Participant",
 

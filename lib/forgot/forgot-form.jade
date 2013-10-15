@@ -2,6 +2,7 @@
   #forgot-form
     h1= t('Forgot Password?')
     p.text-muted #{t('We will send an email with a link to reset your password')}.
+    p.success-message.text-info.hide #{t('We just sent a message to your email with instructions to create a new password')}.
     form(action="/forgot", method="post")
       ul.form-errors
       .form-group

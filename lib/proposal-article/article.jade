@@ -1,4 +1,4 @@
-article.proposal
+.inner-container
   head
     // Facebook metatags  
     meta(property='og:title', content='#{proposal.mediaTitle}')
@@ -14,46 +14,68 @@ article.proposal
     meta(name='twitter:description', content='#{proposal.summary}')
     meta(name='twitter:image:src', content='http://s3.amazonaws.com/pdr-mediawiki/images/8/84/Pdr_200x200.png')
     meta(name='twitter:domain', content='partidodelared.org')
-  .meta-information
-    p
-      - if (proposal.closingAt)
-        small.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
-        small.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
-      - else
-        small.meta-item.meta-timeago= t('Unknown closing date')
-    span.label.label-default= proposal.title
-    span.label.label-default(style="background:#{proposal.tag.color}")= proposal.tag.name
+
+  div.alert.alert-warning.alert-dismissable.system-alert
+    button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
+    label Todos los datos ser&aacute;n borrados el 10/12/2003.&nbsp;
+    a.alert-link(href="http://wiki.partidodelared.org/index.php/Borrado_datos_10/12/2013", target="_blank") Leer m&aacute;s
   
-  span.proposal-type.flaticon.solid.government-1       
-  h2=proposal.mediaTitle
 
-  p.summary=proposal.summary
+  article.proposal
+    //- .meta-information
+    //-   a.meta-item.meta-location(href="#") Buenos Aires, Argentina
+    //-   small.meta-item.meta-timeago 10 days left
 
-  //- Article essay
-  - var content = proposal.essay ? proposal.essay : proposal.content
-  - var lines = content.split('\n');
-  - each line in lines
-    - if (line.trim())
-      p!= line.trim()
+    .entry-tag(style="border-color: #{proposal.tag.color}")
 
-  //- Article external links
-  .links
-    p
-      span.glyphicon.glyphicon-link
-      a(target="_blank", href="https://s3.amazonaws.com/pdr-app/#{proposal.lawId.replace('/','-')}.doc")
-       | #{t('View the original text')}
+      img(src="/boot/images/tags/#{proposal.tag.hash}.svg", style="fill: white;")
 
-  //- Article participants
-  .participants
-    - if(proposal.participants) {
-      - var plural = 1 === proposal.participants.length ? '' : 's'
-      span #{proposal.participants.length} #{t('Participant')}#{plural}
-      - each participant in proposal.participants
-        a.participant-profile(href="javascript:void();", title=participant.fullName)
-          img.avatar(src=participant.avatar)
-    - }
+      svg(viewbox='0 0 126 144', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns').hexagon
+        title Hexagon
+        description Created with Sketch (http://www.bohemiancoding.com/sketch)
+        g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', sketch:type='MSPage')
+          polygon#Polygon-1(d='M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0', fill='#{proposal.tag.color}', sketch:type='MSShapeGroup', points='63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 ')
 
-  //- Article share links
+      span(style="color: #{proposal.tag.color}")= proposal.tag.name
+
+    .meta-information
+      p
+        - if (proposal.closingAt)
+          span.time-ago-label= (+proposal.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
+          span.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
+        - else
+          span.meta-item.meta-timeago= t('Unknown closing date')
+
+    h1=proposal.mediaTitle
+    h3=proposal.title 
+    .entry-content
+      p.summary=proposal.summary
+
+      .clauses
+        - var lines = clauses ? clauses : (proposal.essay || proposal.conent || '').split('\n')
+        - if (lines.length)
+          p.clause=truncate(lines[0], 230, '... ')
+            - if (lines[0].length > 230)
+              a.read-more(href="#")= t('read more')
+
+    //- Article external links
+    .links
+      p
+        span.glyphicon.glyphicon-link
+        a(target="_blank", href="https://s3.amazonaws.com/pdr-app/#{proposal.lawId.replace('/','-')}.doc")
+         | #{t('View the original text')}
+
+    //- Article participants
+    .participants
+      - if(proposal.participants) {
+        - var plural = 1 === proposal.participants.length ? '' : 's'
+        span #{proposal.participants.length} #{t('Participant')}#{plural}
+        - each participant in proposal.participants
+          a.participant-profile(href="javascript:void();", title=participant.fullName)
+            img.avatar(src=participant.avatar)
+      - }
+
+    //- Article share links
   .share-links
     a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
     a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  

@@ -30,6 +30,11 @@ html(lang='en')
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
 
     // fav and touch icons
+    link(rel='apple-touch-icon', href='/boot/images/touch-icon-iphone.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/boot/images/touch-icon-ipad.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/boot/images/touch-icon-iphone-retina.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/boot/images/touch-icon-ipad-retina.png')
+
     link(rel="icon", type="image/x-icon", href="/favicon.ico")
 
     script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
@@ -52,32 +57,40 @@ html(lang='en')
       }
 
   body
-    // Start of `Page Content`
-    header.app-header
-      h1#logo(style="position:absolute")
-        a(href='/')= t('DemocracyOS Beta')
-      div.alert.alert-warning.alert-dismissable(style="width:auto; max-width:500px; display:block; margin:8px auto 0px auto; padding: 10px 30px 10px 20px; line-height: 16px; font-size: 14px")
-        button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
-          &times;
-        label Todos los datos ser&aacute;n borrados el 10/12/2003.&nbsp;
-        a.alert-link(href="http://wiki.partidodelared.org/index.php/Borrado_datos_10/12/2013") Leer m&aacute;s
-      .user-nav.btn-group(style="position:absolute; right:20px; top:0px")
-        - if (locals.citizen)
-          a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
-              span.name=citizen.firstName
-              img(src=citizen.avatar)
-              span.caret
-          ul.dropdown-menu
-              li
-                a.logout(href='/logout')= t('Logout')
-        - else
-          a(href='/signin').login= t('Login')
-          a(href='/signup').login= t('Signup')
 
-    section#content.site-content
-    section#browser.site-content
+    #snap-content.snap-content
+      // Start of `Page Content`
+      header.app-header
+        a(href="#", id="toggleButton")
+          span.bar-icon
+          span.bar-icon
+          span.bar-icon
+
+        h1#logo
+          a(href='/')
+            img(src="/boot/images/logo.png").logo
+            span.logo-link= t('DemocracyOS Beta')
+        
+        .user-nav.btn-group
+          - if (locals.citizen)
+            a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
+                img(src=citizen.avatar)
+                span.name=citizen.firstName
+                span.caret
+            ul.dropdown-menu
+                li
+                  a.logout(href='/logout')= t('Logout')
+          - else
+            a(href='/signin').login= t('Login')
+            a(href='/signup').login= t('Signup')
+
+      section#content.site-content
+      section#browser.site-content
+        section.app-content
+
+    .snap-drawers
       aside.nav-proposal
-      section.app-content
+
 
     // End of `Page Content`  
     // ====================== 

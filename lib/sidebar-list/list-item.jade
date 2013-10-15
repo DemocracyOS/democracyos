@@ -1,7 +1,12 @@
 li(data-id=item.id)
   a(href="/#{listType}/"+item.id)
-    span.proposal-type.flaticon.solid.government-1       
-    span.proposal-type.proposal-type-2.flaticon.solid.clipboard-4     
+    .item-tag
+      img(src="/boot/images/tags/#{item.tag.hash}.svg")
+      svg(viewbox='0 0 126 144', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns').hexagon
+        title Hexagon
+        g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', sketch:type='MSPage')
+          polygon#Polygon-1(fill="#{item.tag.color}", d='M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0', sketch:type='MSShapeGroup', points='63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 ')
+
     span.title=item.mediaTitle
     span.created-by
       //- | Creador por #{item.author.fullName} 
