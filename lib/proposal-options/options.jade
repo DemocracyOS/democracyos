@@ -55,6 +55,14 @@
 
       .votes-cast
         em.text-muted= t('{num} votes cast', { num: census.length || "0" })
+    
+    - if (!citizen.id)
+      p.text-mute= t('You must be signed in to vote on this law')
+        | . 
+        a(href="/signin")= t('Login')
+        |  or 
+        a(href="/signup")= t('Signup')
+        | .
 
     - if (closed)
       .results-box(style="height:#{census.length ? '300px' : 'auto'}; display:block;")
