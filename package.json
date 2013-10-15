@@ -49,7 +49,8 @@
     "co-prompt": "*",
     "truncate": "*",
     "t-component": "cristiandouce/t#chained-tokens",
-    "type-component": "*"
+    "type-component": "*",
+    "merge-util": "0.0.1"
   },
   "devDependencies": {},
   "main": "pdr",

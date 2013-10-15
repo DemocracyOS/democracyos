@@ -17,8 +17,8 @@
 
   div.alert.alert-warning.alert-dismissable.system-alert
     button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
-    label Todos los datos ser&aacute;n borrados el 10/12/2003.&nbsp;
-    a.alert-link(href="http://wiki.partidodelared.org/index.php/Borrado_datos_10/12/2013", target="_blank") Leer m&aacute;s
+    label #{t('All data will expire on December 10, 2013')}&nbsp;
+    a.alert-link(href="http://wiki.partidodelared.org/index.php/Borrado_datos_10/12/2013", target="_blank") #{t('Why?')}
   
 
   article.proposal
@@ -54,7 +54,7 @@
       .clauses
         - var lines = clauses ? clauses : (proposal.essay || proposal.conent || '').split('\n')
         - if (lines.length)
-          p.clause=truncate(lines[0], 230, '... ')
+          p.clause!=truncate(lines[0], 230, '... ')
             - if (lines[0].length > 230)
               a.read-more(href="#")= t('read more')
 
@@ -62,7 +62,7 @@
     .links
       p
         span.glyphicon.glyphicon-link
-        a(target="_blank", href="https://s3.amazonaws.com/pdr-app/#{proposal.lawId.replace('/','-')}.doc")
+        a(target="_blank", href="#{proposal.source}")
          | #{t('View the original text')}
 
     //- Article participants

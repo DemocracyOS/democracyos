@@ -335,6 +335,9 @@ article.proposal .summary {
   font-size: 110%;
   margin: 40px 0;
 }
+article.proposal .clauses p.clause img {
+  width: 100%;
+}
 article.proposal h1 {
   margin-top: 0;
   margin-bottom: 30px;
