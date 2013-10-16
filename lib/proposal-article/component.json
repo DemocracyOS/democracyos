@@ -4,6 +4,7 @@
   "dependencies": {
     "component/domify": "1.0.0",
     "component/events": "*",
+    "component/classes": "*",
     "component/tip": "*",
     "component/aurora-tip": "*",
     "component/truncate": "*",
