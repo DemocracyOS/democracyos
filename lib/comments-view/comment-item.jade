@@ -1,4 +1,8 @@
-li.media.comment-item
+- var likes = ~comment.upvotes.map(function(v) { return v.author; }).indexOf(citizen.id)
+- var dislikes = ~comment.downvotes.map(function(v) { return v.author; }).indexOf(citizen.id)
+- var flags = ~comment.flags.map(function(v) { return v.author; }).indexOf(citizen.id)
+
+li.media.comment-item(data-id=comment.id, class= comment.flags.length > comment.upvotes.length || flags ? 'spam' : '')
   span.pull-left
     img(src=comment.author.avatar).avatar
 
@@ -7,4 +11,15 @@ li.media.comment-item
       | #{comment.author.fullName} 
       small.ago(data-time=comment.createdAt.toString())
       small :
-    p=comment.text
+    p.comment-text=comment.text
+    p.spam-message=t('This comment has been flagged as spam')
+      | .
+      span.show-spam: a(href="#")= t('show')
+    .comment-actions
+      a.like.btn.btn-default.btn-xs(href="#", alt=t('Like'), class= likes ? 'selected' : '')
+        span.glyphicon.glyphicon-plus
+      a.dislike.btn.btn-default.btn-xs(href="#", alt=t('Dislike'), class= dislikes ? 'selected' : '')
+        span.glyphicon.glyphicon-minus
+      a.flag.btn.btn-default.btn-xs(href="#", alt=t('Spam'), class= flags ? 'selected' : '')
+        span.glyphicon.glyphicon-flag
+
