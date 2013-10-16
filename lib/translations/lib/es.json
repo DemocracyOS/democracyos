@@ -7,6 +7,7 @@
   "Logout": "Cerrar sesión",
 
   "Comments": "Comentarios",
+  "You must be signed in to comment here": "Debes estar registrado para poder comentar aquí",
   "Deleted comments": "Comentarios borrados",
   "Your comment": "Tu comentario",
   "Send": "Enviar",
@@ -67,9 +68,13 @@
   "read more": "leer más",
   "View the original text": "Ver el texto original",
   "Participant": "Participante",
+  "You must be signed in to vote on this law": "Debes estar registrado para poder votar esta ley",
 
   "Listing all {listType}s": "Todo",
   "Project": "Proyecto",
   "Bill": "Despacho",
-  "Law": "Ley"
+  "Law": "Ley",
+
+  "All data will expire on December 10, 2013": "Todos los datos serán inválidos a partir del 10/12/2013",
+  "Why?": "¿Por qué?"
 }
