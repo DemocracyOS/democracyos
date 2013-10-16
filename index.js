@@ -42,6 +42,13 @@ require('lib/models')(app);
 require('lib/auth')(app);
 
 /*
+ * Twitter card and Facebook card routes
+ */
+
+app.use('/twitter-card', require('lib/twitter-card'));
+app.use('/facebook-card', require('lib/facebook-card'));
+
+/*
  * Local signin routes
  */
 

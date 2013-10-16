@@ -1,5 +1,4 @@
 .inner-container
-
   div.alert.alert-warning.alert-dismissable.system-alert
     button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
     label #{t('All data will expire on December 10, 2013')}&nbsp;
@@ -61,7 +60,7 @@
       - }
 
     //- Article share links
-    //- .share-links
-    //-   a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://democraciaos.partidodelared.org/law/#{proposal.id}").flaticon.social.facebook  
-    //-   a(target="_blank", href="http://twitter.com/share?text=DefaultTextWeWillShowInTwitter&url=http://democraciaos.partidodelared.org/law/#{proposal.id}").flaticon.social.twitter  
-    //-   a(target="_blank", href="https://plus.google.com/share?url=http://democraciaos.partidodelared.org/law/#{proposal.id}").flaticon.social.google-plus 
+    .share-links
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
+      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  
+      a(target="_blank", href="https://plus.google.com/share?url=http://#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus 

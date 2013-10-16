@@ -280,7 +280,7 @@
   , "officialTitle": ""
   , "mediaTitle": "Concesiones de Bares/Kioscos en parques"
   , "source": "https://s3.amazonaws.com/pdr-app/0648-12.doc"
-  , "summary": "Se otorgarán concesiones a fin de establecer áreas de descanso, esparcimiento y servicios. Sólo se podrán concesionar los parques que ocupen al menos 1 manzana. En los parques que ocupen mas de 2 manzanas las conseciones podrán ocupar mas espacio. No se permitirán servicios que compitan con los comercios de la zona. El 25% de las concesiones serán para ONGs. Un mismo concesionario podrá tener mas de 1 conseción. La oposición y los comuneros reclaman que el control y cobro de las conseciones lo hagan las comunas."
+  , "summary": "Se otorgarán concesiones a fin de establecer áreas de descanso, esparcimiento y servicios. Sólo se podrán concesionar los parques que ocupen al menos 1 manzana. En los parques que ocupen más de 2 manzanas las concesiones podrán ocupar más espacio. No se permitirán servicios que compitan con los comercios de la zona. El 25% de las concesiones serán para ONGs. Un mismo concesionario podrá tener más de 1 concesión. La oposición y los comuneros reclaman que el control y cobro de las concesiones lo hagan las comunas."  
   , "clauses": [
       {
           "clauseId": "1"

@@ -188,6 +188,13 @@ function Config(app) {
       next();
 
     });
+
+    /**
+     * Use `twitter-card` and 'facebook-card' middlewares
+     */
+
+    app.use(require('lib/twitter-card/middleware'));
+    app.use(require('lib/facebook-card/middleware'));
         
     /**
      * Set native `express` router middleware
