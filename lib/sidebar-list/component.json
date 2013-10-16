@@ -11,6 +11,7 @@
     "visionmedia/debug": "*",
     "visionmedia/jade": "*",
     "yields/empty": "*",
+    "discore/closest": "*",
     "cristiandouce/t": "chained-tokens"
   },
   "local": [ ],
