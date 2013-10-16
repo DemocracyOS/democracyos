@@ -129,7 +129,7 @@ function Config(app) {
      * Defaults to 3005
      */
 
-    app.set( 'port', config('port') || 3005 );
+    app.set( 'port', config('privatePort') || 3005 );
     
     /**
      * Set `public-assets` default path

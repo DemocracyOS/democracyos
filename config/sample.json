@@ -1,9 +1,10 @@
 {
   "protocol": "http",
   "host": "localhost",
-  "port": 3000,
+  "privatePort": 3000,
+  "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
-  "client": [ "protocol", "host", "port", "env" ],
+  "client": [ "protocol", "host", "publicPort", "env" ],
   "auth": {
     "facebook": {
       "clientID" : "FBClientId",
