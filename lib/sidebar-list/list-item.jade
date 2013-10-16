@@ -10,4 +10,9 @@ li(data-id=item.id)
     span.title=item.mediaTitle
     span.created-by
       //- | Creador por #{item.author.fullName} 
-      span.ago(data-time=item.createdAt.toString())
+      - if (item.participants.length > 0)
+        - var plural = 1 === item.participants.length ? '' : 's'
+        div= item.participants.length + ' ' + t('Participant') + plural
+      - if (item.closingAt)
+        span.time-ago-label= (+item.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
+        span.meta-item.meta-timeago.ago(data-time=item.closingAt.toString())
