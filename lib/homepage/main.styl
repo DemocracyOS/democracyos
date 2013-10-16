@@ -498,6 +498,23 @@ article.proposal
 					width: 46px;
 					height: 46px;
 					border-radius: 100px;
+			.comment-actions
+				.btn
+					padding:0px 5px 0px 0px;
+					&:active, &:hover, &:visited, &:link
+						background:none;
+						box-shadow:none;
+					&.like
+						&.selected
+							span
+								color: green;
+					&.dislike
+						&.selected
+							span
+								color: red;
+					span
+						margin-right:3px;
+						top:3px;
 
 /* Signin page
 -------------------------------------------------- */
