@@ -1,4 +1,7 @@
-li.media.comment-item
+- var likes = ~comment.upvotes.map(function(v) { return v.author; }).indexOf(citizen.id)
+- var dislikes = ~comment.downvotes.map(function(v) { return v.author; }).indexOf(citizen.id)
+
+li.media.comment-item(data-id=comment.id)
   span.pull-left
     img(src=comment.author.avatar).avatar
 
@@ -8,3 +11,8 @@ li.media.comment-item
       small.ago(data-time=comment.createdAt.toString())
       small :
     p=comment.text
+    .comment-actions
+      a.like.btn.btn-default.btn-xs(href="#", alt=t('Like'), class= likes ? 'selected' : '')
+        span.glyphicon.glyphicon-thumbs-up
+      a.dislike.btn.btn-default.btn-xs(href="#", alt=t('Dislike'), class= dislikes ? 'selected' : '')
+        span.glyphicon.glyphicon-thumbs-down

@@ -10,6 +10,7 @@
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "yields/serialize": "*",
+    "discore/closest": "*",
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/to-array": "*"
   },
