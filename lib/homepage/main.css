@@ -537,9 +537,26 @@ article.proposal .share-links a.google-plus:hover {
 .comments .comment-list .comment-item .comment-actions .btn.dislike.selected span {
   color: #f00;
 }
+.comments .comment-list .comment-item .comment-actions .btn.flag.selected span {
+  color: #ffa500;
+}
 .comments .comment-list .comment-item .comment-actions .btn span {
   margin-right: 3px;
   top: 3px;
+}
+.comments .comment-list .comment-item .spam-message {
+  display: none;
+}
+.comments .comment-list .comment-item .spam-message .show-spam {
+  margin: 0px 3px;
+  font-size: 0.85em;
+}
+.comments .comment-list .comment-item.spam .comment-text,
+.comments .comment-list .comment-item.spam .comment-actions {
+  display: none;
+}
+.comments .comment-list .comment-item.spam .spam-message {
+  display: block;
 }
 /* Signin page
 -------------------------------------------------- */
