@@ -6,6 +6,17 @@
   "Signup": "Registrarse",
   "Logout": "Cerrar sesión",
 
+  "Incorrect password": "Concraseña incorrecta",
+  "Incorrect username": "Nombre de usuario incorrecto",
+  "Field %s is not set": "El campo %s no está asignado",
+  "Password argument not set!": "¡La contraseña no está asignada!",
+  "User already exists with name %s": "Ya existe un usuario con el nombre %s",
+
+  "Password is not good enough": "La contraseña no es suficientemente buena",
+  "Passwords do not match": "Las contraseñas no coinciden",
+  "Email is not valid": "Correo electrónico no válido",
+  "A real name is required": "Se requiere un nombre real",
+
   "Comments": "Comentarios",
   "You must be signed in to comment here": "Debes estar registrado para poder comentar aquí",
   "Deleted comments": "Comentarios borrados",
@@ -75,6 +86,9 @@
   "Project": "Proyecto",
   "Bill": "Despacho",
   "Law": "Ley",
+
+  "This comment has been flagged as spam": "Este comentario fue reportado como abuso",
+  "show": "mostrar",
 
   "All data will expire on December 10, 2013": "Todos los datos serán inválidos a partir del 10/12/2013",
   "Why?": "¿Por qué?"
