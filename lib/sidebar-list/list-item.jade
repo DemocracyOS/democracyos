@@ -14,5 +14,6 @@ li(data-id=item.id)
         - var plural = 1 === item.participants.length ? '' : 's'
         div= item.participants.length + ' ' + t('Participant') + plural
       - if (item.closingAt)
-        span.time-ago-label= (+item.closingAt < Date.now() ? t('Closed') : t('Close')) + " "
+        - var closed = item.closingAt && +new Date(item.closingAt) < Date.now()
+        span.time-ago-label= (closed ? t('Closed') : t('Close')) + " "
         span.meta-item.meta-timeago.ago(data-time=item.closingAt.toString())

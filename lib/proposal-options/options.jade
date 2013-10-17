@@ -16,7 +16,7 @@
 
 - var participants = proposal.participants
 
-- var closed = proposal.closingAt && +proposal.closingAt < Date.now()
+- var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
 - var voted = locals.citizen && ~census.indexOf(citizen.id)
 
 .inner-container
