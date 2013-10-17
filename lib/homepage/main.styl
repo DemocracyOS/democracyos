@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5,h6
 	color: black;
 
 a 
+	font-weight: bold
 	&:hover 
 		text-decoration: none
 
@@ -33,6 +34,9 @@ img.avatar
 	text-transform: uppercase
 	font-weight: bold;
 	letter-spacing: 1px;
+	border: 0;
+	&.btn-success
+		background-color: #27ae60
 
 .btn-default
 	border: 0;
@@ -60,6 +64,42 @@ img.avatar
 
 .system-alert
 	margin-top: 20px;
+
+
+.inner-container
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: auto;
+	max-width: content_width;
+
+.small-container
+	max-width: 300px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: auto;
+
+.title-page 
+	text-align: center
+	margin-bottom: 30px;
+	margin-top: 30px;
+	.circle 
+		background: #bdc3c7;
+		color: white;
+		width: 80px;
+		height: 80px;
+		overflow: hidden
+		display: inline-block
+		border-radius: 100px;
+
+	i 
+		font-size: 30px;
+		line-height: 80px;
+		color: #7f8c8d
+
+	h1 
+		font-size: 12px;
+		letter-spacing: 1px;
+		text-transform: uppercase
 
 /* Header
 -------------------------------------------------- */
@@ -108,11 +148,12 @@ header.app-header
 		display: inline-block;
 		width: 300px;
 		font-size: 12px;
-		margin-top: 10px;
+		margin-top: 12px;
 		.logo
 			height: 40px;
 			display: inline-block
 			margin-right: 10px;
+			margin-top: -2px;
 
 
 
@@ -175,7 +216,9 @@ header.app-header
 			display: inline-block
 			// border-radius: border_radius;
 			margin-top: 15px;
-
+			i 
+				display: none
+				font-size: 20px;
 			&:hover 
 				text-decoration: none
 
@@ -445,6 +488,8 @@ article.proposal
 			border-radius: border_radius;
 			margin-bottom: 20px;
 			padding: 14px;
+			-webkit-transition: all 0.3s ease;
+
 			.flaticon
 				display: inline-block
 				margin-right: 14px;
@@ -452,10 +497,13 @@ article.proposal
 				display: inline-block;
 			&.vote-yes
 				background-color: #a4cb53;
-
+				&:hover 
+					background-color: darken(#a4cb53, 40%);
 			&.vote-no
 				background-color: #d95e59;
 				margin-right: 0;
+				&:hover 
+					background-color: darken(#d95e59, 40%);
 				i
 					transform:rotate(180deg);
 					-ms-transform:rotate(180deg); /* IE 9 */
@@ -463,6 +511,9 @@ article.proposal
 
 			&.vote-abstain
 				background-color: #666;
+				&:hover 
+					background-color: darken(#666666, 40%);
+
 			&.delegate-vote
 				background-color: #3498db;
 
@@ -573,13 +624,7 @@ article.proposal
 /* Signin page
 -------------------------------------------------- */
 .signin-container, .signup-container, .forgot-container
-	text-align: left;
-	max-width: 360px;
-	width: 100%;
-	margin: 60px auto 0;
 
-	h1
-		font-size: 20px
 	form
 		label
 			display:inline-block;
@@ -594,11 +639,7 @@ article.proposal
 
 
 
-.inner-container
-	padding-left: 20px;
-	padding-right: 20px;
-	margin: auto;
-	max-width: content_width;
+
 
 /* Responsive
 -------------------------------------------------- */
@@ -648,7 +689,12 @@ article.proposal
 				border: 0;
 			.profile span.name
 				display: none
-	
+			.login 
+				margin-left: 10px;
+				span 
+					display: none
+				i 
+					display: inline-block
 	aside.nav-proposal
 		top: 0;
 

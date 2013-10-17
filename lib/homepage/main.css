@@ -18,6 +18,9 @@ h6 {
   font-weight: bold;
   color: #000;
 }
+a {
+  font-weight: bold;
+}
 a:hover {
   text-decoration: none;
 }
@@ -28,6 +31,10 @@ img.avatar {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
+  border: 0;
+}
+.btn.btn-success {
+  background-color: #27ae60;
 }
 .btn-default {
   border: 0;
@@ -57,6 +64,42 @@ img.avatar {
 }
 .system-alert {
   margin-top: 20px;
+}
+.inner-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+  max-width: 580px;
+}
+.small-container {
+  max-width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+}
+.title-page {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.title-page .circle {
+  background: #bdc3c7;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 100px;
+}
+.title-page i {
+  font-size: 30px;
+  line-height: 80px;
+  color: #7f8c8d;
+}
+.title-page h1 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 /* Header
 -------------------------------------------------- */
@@ -110,12 +153,13 @@ header.app-header h1 {
   display: inline-block;
   width: 300px;
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 header.app-header h1 .logo {
   height: 40px;
   display: inline-block;
   margin-right: 10px;
+  margin-top: -2px;
 }
 header.app-header .user-nav {
   display: inline-block;
@@ -179,6 +223,10 @@ header.app-header .user-nav .login {
   padding: 6px 12px;
   display: inline-block;
   margin-top: 15px;
+}
+header.app-header .user-nav .login i {
+  display: none;
+  font-size: 20px;
 }
 header.app-header .user-nav .login:hover {
   text-decoration: none;
@@ -455,6 +503,7 @@ article.proposal .share-links a.google-plus:hover {
   border-radius: 3px;
   margin-bottom: 20px;
   padding: 14px;
+  -webkit-transition: all 0.3s ease;
 }
 .proposal-options .vote-options .vote-option .flaticon {
   display: inline-block;
@@ -466,9 +515,15 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .vote-options .vote-option.vote-yes {
   background-color: #a4cb53;
 }
+.proposal-options .vote-options .vote-option.vote-yes:hover {
+  background-color: #668428;
+}
 .proposal-options .vote-options .vote-option.vote-no {
   background-color: #d95e59;
   margin-right: 0;
+}
+.proposal-options .vote-options .vote-option.vote-no:hover {
+  background-color: #952722;
 }
 .proposal-options .vote-options .vote-option.vote-no i {
   transform: rotate(180deg);
@@ -478,6 +533,9 @@ article.proposal .share-links a.google-plus:hover {
 }
 .proposal-options .vote-options .vote-option.vote-abstain {
   background-color: #666;
+}
+.proposal-options .vote-options .vote-option.vote-abstain:hover {
+  background-color: #3d3d3d;
 }
 .proposal-options .vote-options .vote-option.delegate-vote {
   background-color: #3498db;
@@ -600,19 +658,6 @@ article.proposal .share-links a.google-plus:hover {
 }
 /* Signin page
 -------------------------------------------------- */
-.signin-container,
-.signup-container,
-.forgot-container {
-  text-align: left;
-  max-width: 360px;
-  width: 100%;
-  margin: 60px auto 0;
-}
-.signin-container h1,
-.signup-container h1,
-.forgot-container h1 {
-  font-size: 20px;
-}
 .signin-container form label,
 .signup-container form label,
 .forgot-container form label {
@@ -628,12 +673,6 @@ article.proposal .share-links a.google-plus:hover {
 -------------------------------------------------- */
 .uv-icon.uv-bottom-right {
   right: 25px !important;
-}
-.inner-container {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: auto;
-  max-width: 580px;
 }
 /* Responsive
 -------------------------------------------------- */
@@ -686,6 +725,15 @@ article.proposal .share-links a.google-plus:hover {
   }
   header.app-header .user-nav .profile span.name {
     display: none;
+  }
+  header.app-header .user-nav .login {
+    margin-left: 10px;
+  }
+  header.app-header .user-nav .login span {
+    display: none;
+  }
+  header.app-header .user-nav .login i {
+    display: inline-block;
   }
   aside.nav-proposal {
     top: 0;

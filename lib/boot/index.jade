@@ -82,8 +82,12 @@ html(lang='en')
                 li
                   a.logout(href='/logout')= t('Logout')
           - else
-            a(href='/signin').login= t('Login')
-            a(href='/signup').login= t('Signup')
+            a(href='/signin').login
+              i.icon-signin
+              span= t('Login')
+            a(href='/signup').login
+              i.icon-user
+              span= t('Signup')
 
       section#content.site-content
       section#browser.site-content

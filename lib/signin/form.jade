@@ -1,6 +1,10 @@
-.signin-container.inner-container
+.signin-container.inner-container.small-container
   #signin-form
-    h1 #{t('Login to') + " " + t('DemocracyOS')}
+    .title-page 
+      .circle
+        i.icon-signin
+      h1 #{t('Login to') + " " + t('DemocracyOS')}
+
     form.form(action="/signin", method="post", role="form")
       ul.form-errors
       .form-group
@@ -10,4 +14,4 @@
         label= t('Password')
         label.forgot: a(href='/forgot', tabindex=4) #{t('Forgot Password?')}
         input.form-control(type='password', name='password', tabindex=2, placeholder=t('Password'))
-      .form-group: input.btn.btn-primary(type='submit', tabindex=3, value=t('Login'))
+      .form-group: input.btn.btn-block.btn-primary.btn-lg(type='submit', tabindex=3, value=t('Login'))
