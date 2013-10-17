@@ -612,16 +612,22 @@ article.proposal
 
 			.comment-text
 				color: #333;
+
+			.comment-action
+				&.like
+					&.selected, &:hover
+						color: green;
+				&.dislike
+					&.selected, &:hover
+						color: red;
+				&.flag
+					&.selected, &:hover
+						color: orange;
 			&.spam
 				.comment-text, .comment-actions, .link-report.flag
 					display:none;
 				.spam-message
 					display:block;
-
-
-			&:hover 
-				.comment-action
-					opacity: 1;
 
 /* Signin page
 -------------------------------------------------- */

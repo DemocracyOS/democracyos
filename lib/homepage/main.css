@@ -645,6 +645,18 @@ article.proposal .share-links a.google-plus:hover {
 .comments .comment-list .comment-item .comment-text {
   color: #333;
 }
+.comments .comment-list .comment-item .comment-action.like.selected,
+.comments .comment-list .comment-item .comment-action.like:hover {
+  color: #008000;
+}
+.comments .comment-list .comment-item .comment-action.dislike.selected,
+.comments .comment-list .comment-item .comment-action.dislike:hover {
+  color: #f00;
+}
+.comments .comment-list .comment-item .comment-action.flag.selected,
+.comments .comment-list .comment-item .comment-action.flag:hover {
+  color: #ffa500;
+}
 .comments .comment-list .comment-item.spam .comment-text,
 .comments .comment-list .comment-item.spam .comment-actions,
 .comments .comment-list .comment-item.spam .link-report.flag {
@@ -652,9 +664,6 @@ article.proposal .share-links a.google-plus:hover {
 }
 .comments .comment-list .comment-item.spam .spam-message {
   display: block;
-}
-.comments .comment-list .comment-item:hover .comment-action {
-  opacity: 1;
 }
 /* Signin page
 -------------------------------------------------- */
@@ -720,7 +729,7 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
-  header.app-header .user-nav .btn {
+  header.app-header .user-nav position:.btn {
     border: 0;
   }
   header.app-header .user-nav .profile span.name {
