@@ -727,6 +727,9 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .user-nav .profile span.name {
     display: none;
   }
+  header.app-header .user-nav .login {
+    margin-left: 10px;
+  }
   header.app-header .user-nav .login span {
     display: none;
   }
