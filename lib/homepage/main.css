@@ -310,6 +310,7 @@ aside.nav-proposal .navlist li a {
   position: relative;
   padding-left: 70px;
   color: #666;
+  min-height: 60px;
 }
 aside.nav-proposal .navlist li a .item-tag {
   position: absolute;
@@ -730,7 +731,7 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
-  header.app-header .user-nav position:.btn {
+  header.app-header .user-nav .btn {
     border: 0;
   }
   header.app-header .user-nav .profile span.name {
