@@ -716,6 +716,7 @@ article.proposal .share-links a.google-plus:hover {
   }
   header.app-header img.logo {
     margin: auto;
+    margin-top: -2px;
   }
   header.app-header .logo-link {
     display: none;
