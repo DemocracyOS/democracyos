@@ -224,6 +224,10 @@ header.app-header .user-nav .login {
   display: inline-block;
   margin-top: 15px;
 }
+header.app-header .user-nav .login i {
+  display: none;
+  font-size: 20px;
+}
 header.app-header .user-nav .login:hover {
   text-decoration: none;
 }
@@ -722,6 +726,12 @@ article.proposal .share-links a.google-plus:hover {
   }
   header.app-header .user-nav .profile span.name {
     display: none;
+  }
+  header.app-header .user-nav .login span {
+    display: none;
+  }
+  header.app-header .user-nav .login i {
+    display: inline-block;
   }
   aside.nav-proposal {
     top: 0;
