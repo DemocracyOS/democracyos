@@ -12,6 +12,11 @@
   "Password argument not set!": "Password argument not set!",
   "User already exists with name %s": "User already exists with name %s",
 
+  "Password is not good enough": "Password is not good enough",
+  "Passwords do not match": "Passwords do not match",
+  "Email is not valid": "Email is not valid",
+  "A real name is required": "A real name is required",
+
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",
   "Deleted comments": "Deleted comments",
