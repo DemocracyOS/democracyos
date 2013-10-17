@@ -635,6 +635,15 @@ article.proposal .share-links a.google-plus:hover {
 .comments .comment-list .comment-item .comment-action.link-report i {
   margin-right: 5px;
 }
+.comments .comment-list .comment-item .comment-counter {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  vertical-align: top;
+  min-width: 20px;
+  display: inline-block;
+}
 .comments .comment-list .comment-item .spam-message {
   display: none;
 }
