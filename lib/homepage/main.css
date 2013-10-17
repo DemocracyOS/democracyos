@@ -378,6 +378,12 @@ article.proposal hr {
   border-top: 4px solid #eee;
   width: 50%;
 }
+article.proposal .read-more {
+  display: block;
+  text-transform: capitalize;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 article.proposal .footer-notes {
   color: #666;
   margin-bottom: 20px;
