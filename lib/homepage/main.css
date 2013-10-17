@@ -490,6 +490,14 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .vote-box .meta-data {
   margin-bottom: 20px;
 }
+.proposal-options .vote-box .change-vote {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+.proposal-options .vote-box .change-vote i {
+  margin-right: 10px;
+}
 .proposal-options .toggle-results span {
   margin-right: 5px;
 }
