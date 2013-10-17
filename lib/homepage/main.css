@@ -33,6 +33,9 @@ img.avatar {
   letter-spacing: 1px;
   border: 0;
 }
+.btn.btn-success {
+  background-color: #27ae60;
+}
 .btn-default {
   border: 0;
 }
@@ -150,12 +153,13 @@ header.app-header h1 {
   display: inline-block;
   width: 300px;
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 header.app-header h1 .logo {
   height: 40px;
   display: inline-block;
   margin-right: 10px;
+  margin-top: -2px;
 }
 header.app-header .user-nav {
   display: inline-block;
@@ -495,6 +499,7 @@ article.proposal .share-links a.google-plus:hover {
   border-radius: 3px;
   margin-bottom: 20px;
   padding: 14px;
+  -webkit-transition: all 0.3s ease;
 }
 .proposal-options .vote-options .vote-option .flaticon {
   display: inline-block;
@@ -506,9 +511,15 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .vote-options .vote-option.vote-yes {
   background-color: #a4cb53;
 }
+.proposal-options .vote-options .vote-option.vote-yes:hover {
+  background-color: #668428;
+}
 .proposal-options .vote-options .vote-option.vote-no {
   background-color: #d95e59;
   margin-right: 0;
+}
+.proposal-options .vote-options .vote-option.vote-no:hover {
+  background-color: #952722;
 }
 .proposal-options .vote-options .vote-option.vote-no i {
   transform: rotate(180deg);
@@ -518,6 +529,9 @@ article.proposal .share-links a.google-plus:hover {
 }
 .proposal-options .vote-options .vote-option.vote-abstain {
   background-color: #666;
+}
+.proposal-options .vote-options .vote-option.vote-abstain:hover {
+  background-color: #3d3d3d;
 }
 .proposal-options .vote-options .vote-option.delegate-vote {
   background-color: #3498db;
