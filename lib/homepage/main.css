@@ -18,6 +18,9 @@ h6 {
   font-weight: bold;
   color: #000;
 }
+a {
+  font-weight: bold;
+}
 a:hover {
   text-decoration: none;
 }
@@ -28,6 +31,7 @@ img.avatar {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
+  border: 0;
 }
 .btn-default {
   border: 0;
@@ -57,6 +61,42 @@ img.avatar {
 }
 .system-alert {
   margin-top: 20px;
+}
+.inner-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+  max-width: 580px;
+}
+.small-container {
+  max-width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+}
+.title-page {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.title-page .circle {
+  background: #bdc3c7;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 100px;
+}
+.title-page i {
+  font-size: 30px;
+  line-height: 80px;
+  color: #7f8c8d;
+}
+.title-page h1 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 /* Header
 -------------------------------------------------- */
@@ -601,19 +641,6 @@ article.proposal .share-links a.google-plus:hover {
 }
 /* Signin page
 -------------------------------------------------- */
-.signin-container,
-.signup-container,
-.forgot-container {
-  text-align: left;
-  max-width: 360px;
-  width: 100%;
-  margin: 60px auto 0;
-}
-.signin-container h1,
-.signup-container h1,
-.forgot-container h1 {
-  font-size: 20px;
-}
 .signin-container form label,
 .signup-container form label,
 .forgot-container form label {
@@ -629,12 +656,6 @@ article.proposal .share-links a.google-plus:hover {
 -------------------------------------------------- */
 .uv-icon.uv-bottom-right {
   right: 25px !important;
-}
-.inner-container {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: auto;
-  max-width: 580px;
 }
 /* Responsive
 -------------------------------------------------- */

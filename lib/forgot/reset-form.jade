@@ -1,6 +1,9 @@
-.forgot-container
+.forgot-container.small-container
   #forgot-form.reset
-    h1= t('Reset Password!')
+    .title-page 
+      .circle
+        i.icon-signin
+      h1= t('Reset Password!')
     form.form(action="/forgot/reset", method="post", role="form")
       ul.form-errors
       .form-group

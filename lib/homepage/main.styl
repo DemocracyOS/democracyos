@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5,h6
 	color: black;
 
 a 
+	font-weight: bold
 	&:hover 
 		text-decoration: none
 
@@ -33,6 +34,7 @@ img.avatar
 	text-transform: uppercase
 	font-weight: bold;
 	letter-spacing: 1px;
+	border: 0;
 
 .btn-default
 	border: 0;
@@ -60,6 +62,42 @@ img.avatar
 
 .system-alert
 	margin-top: 20px;
+
+
+.inner-container
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: auto;
+	max-width: content_width;
+
+.small-container
+	max-width: 300px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: auto;
+
+.title-page 
+	text-align: center
+	margin-bottom: 30px;
+	margin-top: 30px;
+	.circle 
+		background: #bdc3c7;
+		color: white;
+		width: 80px;
+		height: 80px;
+		overflow: hidden
+		display: inline-block
+		border-radius: 100px;
+
+	i 
+		font-size: 30px;
+		line-height: 80px;
+		color: #7f8c8d
+
+	h1 
+		font-size: 12px;
+		letter-spacing: 1px;
+		text-transform: uppercase
 
 /* Header
 -------------------------------------------------- */
@@ -575,13 +613,7 @@ article.proposal
 /* Signin page
 -------------------------------------------------- */
 .signin-container, .signup-container, .forgot-container
-	text-align: left;
-	max-width: 360px;
-	width: 100%;
-	margin: 60px auto 0;
 
-	h1
-		font-size: 20px
 	form
 		label
 			display:inline-block;
@@ -596,11 +628,7 @@ article.proposal
 
 
 
-.inner-container
-	padding-left: 20px;
-	padding-right: 20px;
-	margin: auto;
-	max-width: content_width;
+
 
 /* Responsive
 -------------------------------------------------- */

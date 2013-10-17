@@ -1,6 +1,9 @@
-.signup-container.inner-container
+.signup-container.inner-container.small-container
   #signup-form
-    h1= t('Signup with email')
+    .title-page 
+      .circle
+        i.icon-user
+      h1= t('Signup with email')
     form.form(action="/signup", method="post", role="form")
       ul.form-errors
       .form-group
@@ -15,4 +18,4 @@
       .form-group
         label= t('Re-type password')
         input.form-control(type='password', name='re_password', tabindex=4, placeholder=t('Repeat Password'))
-      .form-group: input.btn.btn-success(type='submit', tabindex=5, value=t('Signup now!'))
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=5, value=t('Signup now!'))
