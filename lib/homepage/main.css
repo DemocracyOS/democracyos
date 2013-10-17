@@ -216,7 +216,7 @@ section.site-content#content {
   background-color: #727f80;
 }
 .dropdown-deparment .btn-group button.btn.btn-default.current-department {
-  width: 190px;
+  width: 176px;
 }
 .dropdown-deparment .btn-group .dropdown-menu {
   width: 224px;
@@ -437,7 +437,7 @@ article.proposal .share-links a.google-plus:hover {
   background: #c0392b;
 }
 .proposal-options {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .proposal-options .vote-options .proxy-vote {
   display: inline-block;
@@ -503,6 +503,9 @@ article.proposal .share-links a.google-plus:hover {
 }
 .proposal-options .vote-box .change-vote i {
   margin-right: 10px;
+}
+.proposal-options .vote-box .change-vote:hover {
+  text-decoration: none;
 }
 .proposal-options .toggle-results span {
   margin-right: 5px;
