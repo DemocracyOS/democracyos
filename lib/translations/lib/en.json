@@ -6,6 +6,12 @@
   "Signup": "Signup",
   "Logout": "Logout",
 
+  "Incorrect password": "Incorrect password",
+  "Incorrect username": "Incorrect username",
+  "Field %s is not set": "Field %s is not set",
+  "Password argument not set!": "Password argument not set!",
+  "User already exists with name %s": "User already exists with name %s",
+
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",
   "Deleted comments": "Deleted comments",
@@ -75,6 +81,9 @@
   "Project": "Project",
   "Bill": "Bill",
   "Law": "Law",
+
+  "This comment has been flagged as spam": "This comment has been flagged as spam",
+  "show": "show",
 
   "All data will expire on December 10, 2013": "All data will expire on December 10, 2013",
   "Why?": "Why?"
