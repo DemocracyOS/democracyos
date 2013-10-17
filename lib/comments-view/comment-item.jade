@@ -20,6 +20,7 @@ li.media.comment-item(data-id=comment.id, class= comment.flags.length > comment.
       | .
       span.show-spam: a(href="#")= t('show')
     .comment-actions
+      span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
       a.comment-action.vote-comment.like(href="#", alt=t('Like'), class= likes ? 'selected' : '')
         i.icon-angle-up
       a.comment-action.vote-comment.dislike(href="#", alt=t('Dislike'), class= dislikes ? 'selected' : '')
