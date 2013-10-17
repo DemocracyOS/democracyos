@@ -8,6 +8,10 @@ li.media.comment-item(data-id=comment.id, class= comment.flags.length > comment.
 
   .media-body
     h5.media-heading
+
+      a.comment-action.link-report.flag(href="#", alt=t('Spam'), class= flags ? 'selected' : '')
+        i.glyphicon.glyphicon-flag 
+
       | #{comment.author.fullName} 
       small.ago(data-time=comment.createdAt.toString())
       small :
@@ -16,10 +20,8 @@ li.media.comment-item(data-id=comment.id, class= comment.flags.length > comment.
       | .
       span.show-spam: a(href="#")= t('show')
     .comment-actions
-      a.like.btn.btn-default.btn-xs(href="#", alt=t('Like'), class= likes ? 'selected' : '')
-        span.glyphicon.glyphicon-plus
-      a.dislike.btn.btn-default.btn-xs(href="#", alt=t('Dislike'), class= dislikes ? 'selected' : '')
-        span.glyphicon.glyphicon-minus
-      a.flag.btn.btn-default.btn-xs(href="#", alt=t('Spam'), class= flags ? 'selected' : '')
-        span.glyphicon.glyphicon-flag
+      a.comment-action.vote-comment.like(href="#", alt=t('Like'), class= likes ? 'selected' : '')
+        i.icon-angle-up
+      a.comment-action.vote-comment.dislike(href="#", alt=t('Dislike'), class= dislikes ? 'selected' : '')
+        i.icon-angle-down
 

@@ -37,6 +37,21 @@ img.avatar {
   border-radius: 0;
   text-transform: none;
 }
+.alert {
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  border-radius: 3px;
+}
+.alert.alert-info {
+  background-color: #3498db;
+}
+.alert.alert-success {
+  background-color: #27ae60;
+}
+.alert.alert-warning {
+  background-color: #f1c40f;
+}
 .system-alert {
   margin-top: 20px;
 }
@@ -401,6 +416,7 @@ article.proposal .share-links a {
   color: #fff;
   display: inline-block;
   line-height: 10px;
+  -webkit-transition: all 0.3s ease;
 }
 article.proposal .share-links a:hover {
   text-decoration: none;
@@ -481,7 +497,6 @@ article.proposal .share-links a.google-plus:hover {
 -------------------------------------------------- */
 .comments {
   background: #f9f9f9;
-  border-top: 1px solid #f1f1f1;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -509,7 +524,7 @@ article.proposal .share-links a.google-plus:hover {
   color: #fff;
 }
 .comments .comment-list .comment-item {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   max-width: 580px;
 }
 .comments .comment-list .comment-item .pull-left {
@@ -521,28 +536,28 @@ article.proposal .share-links a.google-plus:hover {
   height: 46px;
   border-radius: 100px;
 }
-.comments .comment-list .comment-item .comment-actions .btn {
-  padding: 0px 5px 0px 0px;
+.comments .comment-list .comment-item .comment-action {
+  color: #333;
+  font-size: 11px;
+  font-weight: bold;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  color: #333;
 }
-.comments .comment-list .comment-item .comment-actions .btn:active,
-.comments .comment-list .comment-item .comment-actions .btn:hover,
-.comments .comment-list .comment-item .comment-actions .btn:visited,
-.comments .comment-list .comment-item .comment-actions .btn:link {
-  background: none;
-  box-shadow: none;
+.comments .comment-list .comment-item .comment-action.vote-comment i {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 10px;
 }
-.comments .comment-list .comment-item .comment-actions .btn.like.selected span {
-  color: #008000;
+.comments .comment-list .comment-item .comment-action:hover {
+  text-decoration: none;
 }
-.comments .comment-list .comment-item .comment-actions .btn.dislike.selected span {
-  color: #f00;
+.comments .comment-list .comment-item .comment-action.link-report {
+  float: right;
+  color: #333;
 }
-.comments .comment-list .comment-item .comment-actions .btn.flag.selected span {
-  color: #ffa500;
-}
-.comments .comment-list .comment-item .comment-actions .btn span {
-  margin-right: 3px;
-  top: 3px;
+.comments .comment-list .comment-item .comment-action.link-report i {
+  margin-right: 5px;
 }
 .comments .comment-list .comment-item .spam-message {
   display: none;
@@ -551,12 +566,18 @@ article.proposal .share-links a.google-plus:hover {
   margin: 0px 3px;
   font-size: 0.85em;
 }
+.comments .comment-list .comment-item .comment-text {
+  color: #333;
+}
 .comments .comment-list .comment-item.spam .comment-text,
 .comments .comment-list .comment-item.spam .comment-actions {
   display: none;
 }
 .comments .comment-list .comment-item.spam .spam-message {
   display: block;
+}
+.comments .comment-list .comment-item:hover .comment-action {
+  opacity: 1;
 }
 /* Signin page
 -------------------------------------------------- */

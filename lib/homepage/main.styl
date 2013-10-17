@@ -23,6 +23,8 @@ h1,h2,h3,h4,h5,h6
 img.avatar
 	border-radius: 100%;
 
+
+
 .btn 
 	text-transform: uppercase
 	font-weight: bold;
@@ -39,6 +41,18 @@ img.avatar
 	border-radius: 0;
 	text-transform: none
 	// box-shadow: none;
+
+.alert
+	color: white;
+	font-weight: bold
+	border: 0;
+	border-radius: border_radius;
+	&.alert-info
+		background-color: #3498db;
+	&.alert-success
+		background-color: #27ae60;
+	&.alert-warning
+		background-color: #f1c40f;
 
 .system-alert
 	margin-top: 20px;
@@ -329,6 +343,7 @@ article.proposal
 	.summary
 		font-size: 110%;
 		margin: 40px 0;
+	
 	.clauses
 		p.clause
 			img
@@ -390,6 +405,7 @@ article.proposal
 			color: white;
 			display: inline-block
 			line-height: 10px;
+			-webkit-transition: all 0.3s ease;
 
 			&:hover 
 				text-decoration: none;
@@ -463,7 +479,6 @@ article.proposal
 -------------------------------------------------- */
 .comments
 	background: #f9f9f9;
-	border-top: 1px solid #f1f1f1;
 	padding-top: 50px;
 	padding-bottom: 50px;
 
@@ -489,7 +504,7 @@ article.proposal
 
 	.comment-list
 		.comment-item
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 			max-width: 580px;
 			.pull-left
 				width: 46px;
@@ -498,37 +513,46 @@ article.proposal
 					width: 46px;
 					height: 46px;
 					border-radius: 100px;
-			.comment-actions
-				.btn
-					padding:0px 5px 0px 0px;
-					&:active, &:hover, &:visited, &:link
-						background:none;
-						box-shadow:none;
-					&.like
-						&.selected
-							span
-								color: green;
-					&.dislike
-						&.selected
-							span
-								color: red;
-					&.flag
-						&.selected
-							span
-								color: orange;
-					span
-						margin-right:3px;
-						top:3px;
+
+			.comment-action
+				color: #333;
+				font-size: 11px;
+				font-weight: bold
+				opacity: 0;
+				-webkit-transition: all 0.3s ease;
+				&.vote-comment
+					i
+						font-weight: bold
+						font-size: 20px;
+						margin-right: 10px;
+				color: #333;
+				&:hover 
+					text-decoration: none
+				&.link-report
+					float: right;
+					color: #333;
+					i 
+						margin-right: 5px;
+
+
 			.spam-message
 				display:none;
 				.show-spam
 					margin: 0px 3px;
 					font-size: 0.85em;
+
+			.comment-text
+				color: #333;
 			&.spam
 				.comment-text, .comment-actions
 					display:none;
 				.spam-message
 					display:block;
+
+
+			&:hover 
+				.comment-action
+					opacity: 1;
 
 /* Signin page
 -------------------------------------------------- */
