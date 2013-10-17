@@ -116,11 +116,6 @@ header.app-header h1 .logo {
   height: 40px;
   display: inline-block;
   margin-right: 10px;
-  float: left;
-}
-header.app-header h1 .logo-link {
-  margin-top: 14px;
-  display: inline-block;
 }
 header.app-header .user-nav {
   display: inline-block;
