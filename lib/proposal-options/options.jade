@@ -22,8 +22,8 @@
 .inner-container
     
   .proposal-options
-    .vote-box(class= !!citizen.id ? '' : 'hide')
-      .meta-data
+    .vote-box
+      .meta-data(class= !!citizen.id ? '' : 'hide')
         - if(~positives.indexOf(citizen.id))
           .alert.alert-success #{t('You voted Yea')}.
         - else if (~negatives.indexOf(citizen.id))
@@ -59,7 +59,7 @@
         em.text-muted= t('{num} votes cast', { num: census.length || "0" })
     
     - if (!citizen.id)
-      p.text-mute= t('You must be signed in to vote on this law')
+      p.text-mute.hide= t('You must be signed in to vote on this law')
         | . 
         a(href="/signin")= t('Login')
         |  or 
