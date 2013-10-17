@@ -588,7 +588,8 @@ article.proposal .share-links a.google-plus:hover {
   color: #333;
 }
 .comments .comment-list .comment-item.spam .comment-text,
-.comments .comment-list .comment-item.spam .comment-actions {
+.comments .comment-list .comment-item.spam .comment-actions,
+.comments .comment-list .comment-item.spam .link-report.flag {
   display: none;
 }
 .comments .comment-list .comment-item.spam .spam-message {
