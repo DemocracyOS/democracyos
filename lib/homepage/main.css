@@ -720,7 +720,7 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
-  header.app-header .user-nav position:.btn {
+  header.app-header .user-nav .btn {
     border: 0;
   }
   header.app-header .user-nav .profile span.name {
