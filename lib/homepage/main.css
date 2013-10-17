@@ -767,6 +767,9 @@ article.proposal .share-links a.google-plus:hover {
   article.proposal .entry-content {
     font-size: 100%;
   }
+  .uv-icon {
+    display: none !important;
+  }
   .snap-content {
     position: absolute;
     background: #fff;
