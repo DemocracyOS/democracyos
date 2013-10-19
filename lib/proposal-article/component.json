@@ -13,7 +13,7 @@
     "cristiandouce/to-array": "*",
     "cristiandouce/t": "chained-tokens"
   },
-  "local": [ "config" ],
+  "local": [ "config", "render" ],
   "scripts": [ "proposal-article.js" ],
   "templates": [ "article.jade", "clause.jade" ],
   "styles": [ ],
