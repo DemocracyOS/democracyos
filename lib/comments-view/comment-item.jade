@@ -2,14 +2,16 @@
 - var dislikes = ~comment.downvotes.map(function(v) { return v.author; }).indexOf(citizen.id)
 - var flags = ~comment.flags.map(function(v) { return v.author; }).indexOf(citizen.id)
 
-li.media.comment-item(data-id=comment.id, class= comment.flags.length > comment.upvotes.length || flags ? 'spam' : '')
+li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > comment.upvotes.length) || flags) ? 'spam' : '')
   span.pull-left
     img(src=comment.author.avatar).avatar
 
   .media-body
     h5.media-heading
-
-      a.comment-action.link-report.flag(href="#", alt=t('Spam'), class= flags ? 'selected' : '')
+      - var classes = []
+      - flags && classes.push('selected')
+      - !citizen.id && classes.push('hide')
+      a.comment-action.link-report.flag(href="#", alt=t('Spam'), class=classes)
         i.glyphicon.glyphicon-flag 
 
       | #{comment.author.fullName} 
@@ -21,8 +23,14 @@ li.media.comment-item(data-id=comment.id, class= comment.flags.length > comment.
       span.show-spam: a(href="#")= t('show')
     .comment-actions
       span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
-      a.comment-action.vote-comment.like(href="#", alt=t('Like'), class= likes ? 'selected' : '')
+      - var classes = []
+      - likes && classes.push('selected')
+      - !citizen.id && classes.push('hide')
+      a.comment-action.vote-comment.like(href="#", alt=t('Like'), class=classes)
         i.icon-angle-up
-      a.comment-action.vote-comment.dislike(href="#", alt=t('Dislike'), class= dislikes ? 'selected' : '')
+      - var classes = []
+      - dislikes && classes.push('selected')
+      - !citizen.id && classes.push('hide')
+      a.comment-action.vote-comment.dislike(href="#", alt=t('Dislike'), class=classes)
         i.icon-angle-down
 
