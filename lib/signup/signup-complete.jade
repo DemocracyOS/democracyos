@@ -1,6 +1,6 @@
 .signup-container.inner-container
   #signup-message
-    - if (Date.now() < +new Date(2013,10-1,23)) {
+    - if (Date.now() < +new Date(2015,10-1,18)) {
       //- Valid up to 18/10/2013
       h1= t("Welcome, {name}!", { name: citizen.firstName || t("Guest")})
       p.lead.text-muted #{t("You signed up and now you are logged in")}.
