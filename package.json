@@ -50,7 +50,8 @@
     "truncate": "*",
     "t-component": "cristiandouce/t#chained-tokens",
     "type-component": "*",
-    "merge-util": "0.0.1"
+    "merge-util": "0.0.1",
+    "node-path": "0.0.3"
   },
   "devDependencies": {},
   "main": "pdr",
