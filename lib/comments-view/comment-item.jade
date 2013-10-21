@@ -11,7 +11,8 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
       - var classes = []
       - flags && classes.push('selected')
       - !citizen.id && classes.push('hide')
-      a.comment-action.link-report.flag(href="#", alt=t('Spam'), class=classes)
+      - var spamTitle = flags ?  t('Not spam') : t('Spam')
+      a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
         i.glyphicon.glyphicon-flag 
 
       | #{comment.author.fullName} 
@@ -26,11 +27,12 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
       - var classes = []
       - likes && classes.push('selected')
       - !citizen.id && classes.push('hide')
-      a.comment-action.vote-comment.like(href="#", alt=t('Like'), class=classes)
+      a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
         i.icon-angle-up
+        //span.label Aports
       - var classes = []
       - dislikes && classes.push('selected')
       - !citizen.id && classes.push('hide')
-      a.comment-action.vote-comment.dislike(href="#", alt=t('Dislike'), class=classes)
+      a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
         i.icon-angle-down
 
