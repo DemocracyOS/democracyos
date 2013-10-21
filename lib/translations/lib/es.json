@@ -5,6 +5,7 @@
   "Login to": "Ingresar a",
   "Signup": "Registrarse",
   "Logout": "Cerrar sesión",
+  "Suggestions": "Sugerencias",
 
   "Incorrect password": "Contraseña incorrecta",
   "Incorrect username": "Nombre de usuario incorrecto",
@@ -92,5 +93,11 @@
   "show": "mostrar",
 
   "All data will expire on December 10, 2013": "Esta es una versión de prueba hasta las elecciones del 27/10/2013",
-  "Why?": "¡Cortá boleta!"
+  "Why?": "¡Cortá boleta!",
+
+  "Spam" : "Reportar abuso",
+  "Not spam" : "Esto no es abuso",
+  "Upvote" : "Aporta al debate",
+  "Downvote" : "No aporta al debate"
+
 }

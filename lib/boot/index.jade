@@ -71,10 +71,10 @@ html(lang='en')
           a(href='/')
             img(src="/boot/images/logo.png").logo
             span.logo-link= t('DemocracyOS Beta')
-        
+
         .user-nav.btn-group
           - if (locals.citizen)
-            a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
+            a.btn.profile.pull-right(href='#', data-toggle="dropdown").dropdown-toggle
                 img(src=citizen.avatar)
                 span.name=citizen.firstName
                 span.caret
@@ -82,12 +82,14 @@ html(lang='en')
                 li
                   a.logout(href='/logout')= t('Logout')
           - else
-            a(href='/signin').login
+            a(href='/signin').login.pull-right
               i.icon-signin
               span= t('Login')
-            a(href='/signup').login
+            a(href='/signup').login.pull-right
               i.icon-user
               span= t('Signup')
+          a.login.pull-left(href="#", onclick="uservoice();")
+            span= t('Suggestions')
 
       section#content.site-content
       section#browser.site-content
