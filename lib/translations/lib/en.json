@@ -95,10 +95,10 @@
 
   "All data will expire on December 10, 2013": "This is a demo version valid thru October 27th, 2013",
   "Why?": "Cut your ballot!",
-
   "Spam" : "Report as spam",
   "Not spam" : "Not Spam",
   "Upvote" : "Upvote",
-  "Downvote" : "Downvote"
-
+  "Downvote" : "Downvote",
+  "Comment is limited to 2048 characters": "Comment is limited to 2048 characters",
+  "Comment cannot be empty": "Comment cannot be empty"
 }

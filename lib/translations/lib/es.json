@@ -95,10 +95,10 @@
 
   "All data will expire on December 10, 2013": "Esta es una versión de prueba hasta las elecciones del 27/10/2013",
   "Why?": "¡Cortá boleta!",
-
   "Spam" : "Reportar abuso",
   "Not spam" : "Esto no es abuso",
   "Upvote" : "Aporta al debate",
-  "Downvote" : "No aporta al debate"
-
+  "Downvote" : "No aporta al debate",
+  "Comment is limited to 2048 characters": "El comentario no puede exceder los 2048 caracteres",
+  "Comment cannot be empty": "El comentario no puede estar vacío"
 }

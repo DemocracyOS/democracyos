@@ -1,3 +1,18 @@
 .deleted-list {
 	margin-top: 10px;
 }
+
+.form-submit
+{
+	float: left;
+}
+
+.form-errors
+{
+	color: red;
+	display: none;
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	margin-left: 6px;
+}

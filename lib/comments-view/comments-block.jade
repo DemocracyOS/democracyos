@@ -9,7 +9,8 @@
         h5= t('Your comment')
         p 
           textarea(name='text', rows='4')
-        input.btn(type='submit', value=t('Send'))
+        input.btn.form-submit(type='submit', value=t('Send'))
+        div.form-errors
     - else
       .box
         p.text-mute= t('You must be signed in to comment here')
