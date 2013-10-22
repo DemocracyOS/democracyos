@@ -15,7 +15,8 @@
     "sidebar-list",
     "proposal-article",
     "proposal-options",
-    "comments-view"
+    "comments-view",
+    "browser-lock"
   ],
   "scripts": [ "law.js" ],
   "styles": [ ],
