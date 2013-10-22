@@ -52,16 +52,7 @@
 
     //- Article participants
     .participants
-      - if(proposal.participants) {
-        - var plural = 1 === proposal.participants.length ? '' : 's'
-        span #{proposal.participants.length} #{t('Participant')}#{plural}
-        - var participantsLimit = 10
-        - each participant, index in proposal.participants
-          a.participant-profile(href="javascript:void();", title=participant.fullName, class= index < participantsLimit ? '' : 'hide')
-              img.avatar(src=participant.avatar)
-        - if (proposal.participants.length > participantsLimit)
-            a.view-more(href="#", style="padding-left: 6px;")= t('view more')
-      - }
+      //- Render on participants fetch
 
     //- Article share links
     .share-links
