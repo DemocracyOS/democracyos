@@ -2,8 +2,8 @@
 .inner-container
   div.alert.alert-warning.alert-dismissable.system-alert
     button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
-    span #{t('All data will expire on December 10, 2013')}&nbsp;
-    a.alert-link(href="http://www.partidodelared.org", target="_blank") #{t('Why?')}
+    span #{t('All data will expire on December 10, 2013')}&nbsp;&nbsp;
+    a.alert-link(href="http://wiki.partidodelared.org/index.php/Versi%C3%B3n_de_prueba_de_Democracia_OS", target="_blank") #{t('Why?')}
   
 
   article.proposal
@@ -18,13 +18,14 @@
       svg(viewbox='0 0 126 144', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns').hexagon
         title Hexagon
         description Created with Sketch (http://www.bohemiancoding.com/sketch)
-        g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', sketch:type='MSPage')
+        g#Page-1(fill='none', fill-rule='evenodd', sketch:type='MSPage')
           polygon#Polygon-1(d='M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0', fill='#{proposal.tag.color}', sketch:type='MSShapeGroup', points='63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 ')
 
       span(style="color: #{proposal.tag.color}")= proposal.tag.name
 
     .meta-information
       p
+        i.icon-time
         - if (proposal.closingAt)
           span.time-ago-label= (closed ? t('Closed') : t('Close')) + " "
           span.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
@@ -52,16 +53,7 @@
 
     //- Article participants
     .participants
-      - if(proposal.participants) {
-        - var plural = 1 === proposal.participants.length ? '' : 's'
-        span #{proposal.participants.length} #{t('Participant')}#{plural}
-        - var participantsLimit = 10
-        - each participant, index in proposal.participants
-          a.participant-profile(href="javascript:void();", title=participant.fullName, class= index < participantsLimit ? '' : 'hide')
-              img.avatar(src=participant.avatar)
-        - if (proposal.participants.length > participantsLimit)
-            a.view-more(href="#", style="padding-left: 6px;")= t('view more')
-      - }
+      //- Render on participants fetch
 
     //- Article share links
     .share-links

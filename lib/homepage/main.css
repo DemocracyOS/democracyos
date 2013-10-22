@@ -323,7 +323,7 @@ aside.nav-proposal .navlist li a .item-tag svg.hexagon {
   width: 40px;
   height: 40px;
   left: 0;
-  top: -4px;
+  top: -7px;
   position: absolute;
   opacity: 0.2;
 }
@@ -334,13 +334,14 @@ aside.nav-proposal .navlist li a .item-tag img {
   z-index: 100;
   width: 30px;
   left: 5px;
-  top: 6px;
+  top: 3px;
 }
 aside.nav-proposal .navlist li a:hover {
   background: #fff;
 }
 aside.nav-proposal .navlist li a span.title {
   font-size: 15px;
+  line-height: 19px;
   font-weight: bold;
   display: block;
   margin-bottom: 0px;
@@ -414,6 +415,10 @@ article.proposal .meta-information {
   margin-bottom: 10px;
   opacity: 0.6;
   color: #000;
+}
+article.proposal .meta-information .icon-time {
+  margin-right: 6px;
+  color: #666;
 }
 article.proposal .meta-information .meta-timeago,
 article.proposal .meta-information .meta-timeago-label {
@@ -684,10 +689,21 @@ article.proposal .share-links a.google-plus:hover {
   display: inline-block;
   float: left;
 }
-.signin-container form label.forgot,
-.signup-container form label.forgot,
-.forgot-container form label.forgot {
+.signin-container form .forgot,
+.signup-container form .forgot,
+.forgot-container form .forgot {
   float: right;
+}
+.signin-container form .forgot a,
+.signup-container form .forgot a,
+.forgot-container form .forgot a {
+  color: #666;
+  font-size: 12px;
+}
+.signin-container form .forgot a:hover,
+.signup-container form .forgot a:hover,
+.forgot-container form .forgot a:hover {
+  color: #2980b9;
 }
 /* Uservoice feedback button
 -------------------------------------------------- */
@@ -741,7 +757,7 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
-  header.app-header .user-nav position:.btn {
+  header.app-header .user-nav .btn {
     border: 0;
   }
   header.app-header .user-nav .profile span.name {

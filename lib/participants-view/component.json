@@ -1,0 +1,21 @@
+{
+  "name": "participants-view",
+  "description": "participants view",
+  "dependencies": {
+    "component/events": "*",
+    "component/emitter": "*",
+    "component/classes": "*",
+    "component/tip": "*",
+    "component/aurora-tip": "*",
+    "visionmedia/superagent": "*",
+    "visionmedia/debug": "*",
+    "visionmedia/jade": "*",
+    "cristiandouce/query": "*"
+  },
+  "local": [ "config", "render" ],
+  "scripts": [ "view.js"],
+  "templates": [ "box.jade", "participant.jade" ],
+  "styles": [ ],
+  "images": [ ],
+  "main": "view.js"
+}
