@@ -323,7 +323,7 @@ aside.nav-proposal .navlist li a .item-tag svg.hexagon {
   width: 40px;
   height: 40px;
   left: 0;
-  top: -4px;
+  top: -7px;
   position: absolute;
   opacity: 0.2;
 }
@@ -334,7 +334,7 @@ aside.nav-proposal .navlist li a .item-tag img {
   z-index: 100;
   width: 30px;
   left: 5px;
-  top: 6px;
+  top: 3px;
 }
 aside.nav-proposal .navlist li a:hover {
   background: #fff;
@@ -414,6 +414,10 @@ article.proposal .meta-information {
   margin-bottom: 10px;
   opacity: 0.6;
   color: #000;
+}
+article.proposal .meta-information .icon-time {
+  margin-right: 6px;
+  color: #666;
 }
 article.proposal .meta-information .meta-timeago,
 article.proposal .meta-information .meta-timeago-label {
