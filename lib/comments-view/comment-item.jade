@@ -23,7 +23,7 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
       | .
       span.show-spam: a(href="#")= t('show')
     .comment-actions
-      span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
+      span.comment-counter(class= !citizen.id ? 'hide' : '')=(comment.upvotes.length - comment.downvotes.length)
       - var classes = []
       - likes && classes.push('selected')
       - !citizen.id && classes.push('hide')
