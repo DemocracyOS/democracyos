@@ -323,7 +323,7 @@ aside.nav-proposal .navlist li a .item-tag svg.hexagon {
   width: 40px;
   height: 40px;
   left: 0;
-  top: -7px;
+  top: -8px;
   position: absolute;
   opacity: 0.2;
 }
@@ -334,7 +334,7 @@ aside.nav-proposal .navlist li a .item-tag img {
   z-index: 100;
   width: 30px;
   left: 5px;
-  top: 3px;
+  top: 2px;
 }
 aside.nav-proposal .navlist li a:hover {
   background: #fff;
@@ -459,6 +459,14 @@ article.proposal .participants .participant-profile {
 article.proposal .participants .participant-profile img {
   width: 30px;
   height: 30px;
+}
+article.proposal .participants .view-more {
+  background: #f1f1f1;
+  padding: 2px 10px;
+  color: #333;
+  margin-left: 6px;
+  margin-top: 2px;
+  display: inline-block;
 }
 article.proposal .links p span.glyphicon {
   font-size: 12px;
