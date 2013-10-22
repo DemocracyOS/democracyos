@@ -467,6 +467,7 @@ article.proposal .participants .view-more {
   margin-left: 6px;
   margin-top: 2px;
   display: inline-block;
+  border-radius: 3px;
 }
 article.proposal .links p span.glyphicon {
   font-size: 12px;
@@ -585,6 +586,12 @@ article.proposal .share-links a.google-plus:hover {
 }
 .proposal-options .toggle-results span {
   margin-right: 5px;
+}
+.proposal-options .results-box .progress-bar {
+  font-weight: bold;
+}
+.proposal-options .results-box .progress-bar-success {
+  background-color: #a4cb53;
 }
 /* Comments
 -------------------------------------------------- */

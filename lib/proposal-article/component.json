@@ -11,9 +11,10 @@
     "visionmedia/jade": "*",
     "yields/empty": "*",
     "cristiandouce/to-array": "*",
+    "cristiandouce/query": "*",
     "cristiandouce/t": "chained-tokens"
   },
-  "local": [ "config", "render" ],
+  "local": [ "config", "render", "participants-view" ],
   "scripts": [ "proposal-article.js" ],
   "templates": [ "article.jade", "clause.jade" ],
   "styles": [ ],
