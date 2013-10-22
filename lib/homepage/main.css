@@ -105,7 +105,8 @@ img.avatar {
 -------------------------------------------------- */
 header.app-header,
 aside.nav-proposal,
-.site-content {
+.site-content,
+.site-content.loading-lock {
   position: fixed;
 }
 header.app-header {
