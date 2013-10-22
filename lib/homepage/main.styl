@@ -7,6 +7,7 @@ spacing = 20px;
 border_radius = 3px;
 nav_proposal_width = 266px;
 content_width = 580px;
+link_blue = #2980b9;
 
 /* General
 -------------------------------------------------- */
@@ -307,7 +308,7 @@ aside.nav-proposal
 						width: 40px;
 						height: 40px;
 						left: 0;
-						top: -4px;
+						top: -7px;
 						position: absolute;
 						opacity: .2;
 						// polygon
@@ -319,13 +320,14 @@ aside.nav-proposal
 						z-index: 100;
 						width: 30px;
 						left: 5px;
-						top: 6px;
+						top: 3px;
 
 				&:hover 
 					background: #fff;
 
 				span.title
 					font-size: 15px;
+					line-height: 19px;
 					font-weight: bold;
 					display: block;
 					margin-bottom: 0px;
@@ -407,6 +409,9 @@ article.proposal
 		margin-bottom: 10px;
 		opacity: .6;
 		color: black
+		.icon-time
+			margin-right: 6px;
+			color: #666;
 		.meta-timeago, .meta-timeago-label
 			display: inline-block;
 		.meta-item
@@ -644,8 +649,13 @@ article.proposal
 		label
 			display:inline-block;
 			float:left;
-			&.forgot
-				float:right;
+		.forgot
+			float:right;
+			a
+				color: #666;
+				font-size: 12px;
+				&:hover 
+					color: link_blue;
 
 /* Uservoice feedback button
 -------------------------------------------------- */
