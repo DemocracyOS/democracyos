@@ -2,12 +2,13 @@
   "name": "participants-view",
   "description": "participants view",
   "dependencies": {
-    "component/domify": "*",
     "component/events": "*",
     "component/emitter": "*",
+    "component/classes": "*",
     "component/tip": "*",
     "component/aurora-tip": "*",
     "visionmedia/superagent": "*",
+    "visionmedia/debug": "*",
     "visionmedia/jade": "*",
     "cristiandouce/query": "*"
   },
