@@ -684,10 +684,21 @@ article.proposal .share-links a.google-plus:hover {
   display: inline-block;
   float: left;
 }
-.signin-container form label.forgot,
-.signup-container form label.forgot,
-.forgot-container form label.forgot {
+.signin-container form .forgot,
+.signup-container form .forgot,
+.forgot-container form .forgot {
   float: right;
+}
+.signin-container form .forgot a,
+.signup-container form .forgot a,
+.forgot-container form .forgot a {
+  color: #666;
+  font-size: 12px;
+}
+.signin-container form .forgot a:hover,
+.signup-container form .forgot a:hover,
+.forgot-container form .forgot a:hover {
+  color: #2980b9;
 }
 /* Uservoice feedback button
 -------------------------------------------------- */
@@ -741,7 +752,7 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
-  header.app-header .user-nav position:.btn {
+  header.app-header .user-nav .btn {
     border: 0;
   }
   header.app-header .user-nav .profile span.name {

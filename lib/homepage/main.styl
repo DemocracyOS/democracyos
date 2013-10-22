@@ -7,6 +7,7 @@ spacing = 20px;
 border_radius = 3px;
 nav_proposal_width = 266px;
 content_width = 580px;
+link_blue = #2980b9;
 
 /* General
 -------------------------------------------------- */
@@ -644,8 +645,13 @@ article.proposal
 		label
 			display:inline-block;
 			float:left;
-			&.forgot
-				float:right;
+		.forgot
+			float:right;
+			a
+				color: #666;
+				font-size: 12px;
+				&:hover 
+					color: link_blue;
 
 /* Uservoice feedback button
 -------------------------------------------------- */
