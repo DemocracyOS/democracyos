@@ -5,9 +5,11 @@
     "component/bus": "*",
     "visionmedia/page.js": "*",
     "cristiandouce/t": "chained-tokens",
-    "cristiandouce/timeago": "*"
+    "cristiandouce/timeago": "*",
+    "code42day/ga": "*"
   },
   "local": [
+    "config",
     "body-classes",
     "homepage",
     "proposal",
