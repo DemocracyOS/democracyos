@@ -4,7 +4,7 @@ html(lang='en')
     //                                                      
     //   Basic Page Needs                                   
     //   ================================================== 
-    title= t('DemocracyOS')
+    title= config('organization name')
 
     meta(charset='utf-8')
     meta(name='description', content='')
@@ -36,7 +36,7 @@ html(lang='en')
     link(rel='apple-touch-icon', sizes='120x120', href='/boot/images/touch-icon-iphone-retina.png')
     link(rel='apple-touch-icon', sizes='152x152', href='/boot/images/touch-icon-ipad-retina.png')
 
-    link(rel="icon", type="image/x-icon", href="/favicon.ico")
+    link(rel="icon", type="image/x-icon", href=config('favicon'))
 
     script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
     script.
@@ -69,7 +69,7 @@ html(lang='en')
 
         h1#logo
           a(href='/')
-            img(src="/boot/images/logo.png").logo
+            img(src=config('logo')).logo
             span.logo-link= t('DemocracyOS Beta')
 
         .user-nav.btn-group
@@ -88,9 +88,10 @@ html(lang='en')
             a(href='/signup').login.pull-right
               i.icon-user
               span= t('Signup')
-          a.login.pull-left(href="#", onclick="uservoice();")
-            span= t('Suggestions')
-
+          a.login.pull-left(href=config("organization url"))
+            span= config('organization name')
+          a.login.pull-left(href="#", id="feedback")
+            span= t('Feedback')
       section#content.site-content
       section#browser.site-content
         section.app-content

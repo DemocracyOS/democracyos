@@ -6,7 +6,7 @@
     "cristiandouce/merge-util": "*",
     "cristiandouce/t": "chained-tokens"
   },
-  "local": [ "citizen" ],
+  "local": [ "citizen", "config" ],
   "scripts": [ "render.js" ],
   "main": "render.js"
 }

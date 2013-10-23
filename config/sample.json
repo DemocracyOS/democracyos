@@ -4,7 +4,7 @@
   "privatePort": 3000,
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
-  "client": [ "protocol", "host", "publicPort", "env" ],
+  "client": [ "protocol", "host", "publicPort", "env", "logo", "favicon", "organization name", "organization url" ],
   "auth": {
     "facebook": {
       "clientID" : "FBClientId",
@@ -43,5 +43,9 @@
     "twitter" : {
       "username" : "@democracyos"
     }
-  }
+  },
+  "logo" : "http://democraciaenred.org/boot/images/logo.png",
+  "favicon" : "http://democraciaenred.org/favicon.ico",
+  "organization name" : "DemocracyOS on GitHub",
+  "organization url" : "https://github.com/DemocracyOS/app"  
 }
