@@ -6,13 +6,15 @@
     "component/emitter": "*",
     "component/events": "*",
     "component/classes": "*",
+    "component/truncate": "*",
     "visionmedia/jade": "*",
     "visionmedia/debug": "*",
     "visionmedia/superagent": "*",
     "yields/serialize": "*",
     "discore/closest": "*",
     "cristiandouce/t": "chained-tokens",
-    "cristiandouce/to-array": "*"
+    "cristiandouce/to-array": "*",
+    "cristiandouce/query": "*"
   },
   "local": [
     "citizen"
