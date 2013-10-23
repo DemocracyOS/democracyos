@@ -1,23 +1,12 @@
-- var census = ( proposal.votes
--   && proposal.votes.map(function(v) { return v.author }) )
--   || proposal.vote.census
+- var positives = proposal.upvotes || []
+- var negatives = proposal.downvotes || []
+- var neutrals = proposal.abstentions || []
+- var census = neutrals.concat(negatives).concat(positives) || []
 
-- var positives = ( proposal.upvotes
--   && proposal.upvotes.map(function(v) { return v.author }) )
--   || proposal.vote.positive
-
-- var negatives = ( proposal.downvotes
--   && proposal.downvotes.map(function(v) { return v.author }) )
--   || proposal.vote.negative
-
-- var neutrals = ( proposal.abstentions
--   && proposal.abstentions.map(function(v) { return v.author }) )
--   || []
-
-- var participants = proposal.participants
+- var participants = proposal.participants || []
 
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
-- var voted = locals.citizen && ~census.indexOf(citizen.id)
+- var voted = citizen && ~census.indexOf(citizen.id)
 
 .inner-container
     
