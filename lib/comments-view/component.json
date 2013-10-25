@@ -9,7 +9,6 @@
     "component/truncate": "*",
     "visionmedia/jade": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "yields/serialize": "*",
     "discore/closest": "*",
     "cristiandouce/t": "chained-tokens",
@@ -17,7 +16,8 @@
     "cristiandouce/query": "*"
   },
   "local": [
-    "citizen"
+    "citizen",
+    "request"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments.css" ],
