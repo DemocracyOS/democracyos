@@ -8,7 +8,6 @@
     "component/enumerable": "*",
     "component/to-function": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
     "cristiandouce/Chart.js": "*",
@@ -17,7 +16,7 @@
     "discore/closest": "*",
     "gvilarino/autocomplete": "*"
   },
-  "local": [ "citizen" ],
+  "local": [ "citizen", "request" ],
   "scripts": [ "proposal-options.js" ],
   "templates": [ "options.jade" ],
   "styles": [ ],
