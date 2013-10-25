@@ -6,7 +6,8 @@
     "visionmedia/page.js": "*",
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/timeago": "*",
-    "code42day/ga": "*"
+    "code42day/ga": "*",
+    "slifszyc/user-agent": "*"
   },
   "local": [
     "config",
