@@ -7,12 +7,11 @@
     "component/classes": "*",
     "component/tip": "*",
     "component/aurora-tip": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/debug": "*",
     "visionmedia/jade": "*",
     "cristiandouce/query": "*"
   },
-  "local": [ "config", "render" ],
+  "local": [ "config", "render", "request" ],
   "scripts": [ "view.js"],
   "templates": [ "box.jade", "participant.jade" ],
   "styles": [ ],
