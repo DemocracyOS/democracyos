@@ -3,17 +3,17 @@
   "description": "Signup page",
   "dependencies": {
     "component/domify": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/emitter": "*",
     "component/classes": "*",
-    "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
-    "visionmedia/superagent": "*",
     "yields/empty": "*",
-    "yields/serialize": "*"
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens",
+    "cristiandouce/query": "*"
   },
-  "local": [ "regexps", "citizen" ],
+  "local": [ "regexps", "citizen", "request" ],
   "scripts": [ "signup.js", "form-view.js" ],
   "styles": [ "signup.css" ],
   "templates": [ "signup-form.jade" , "signup-complete.jade"],

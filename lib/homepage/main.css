@@ -249,36 +249,36 @@ section.site-content#content {
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */
-.dropdown-deparment {
+.dropdown-department {
   padding: 15.5px 20px;
   background-color: #bdc3c7;
   display: block;
 }
-.dropdown-deparment .btn-group {
+.dropdown-department .btn-group {
   float: none;
   width: 100%;
 }
-.dropdown-deparment .btn-group button.btn.btn-default {
+.dropdown-department .btn-group button.btn.btn-default {
   background-color: #7f8c8d;
   font-size: 12px;
   color: #fff;
   text-align: left;
 }
-.dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
+.dropdown-department .btn-group button.btn.btn-default.dropdown-toggle {
   background-color: #727f80;
 }
-.dropdown-deparment .btn-group button.btn.btn-default.current-department {
+.dropdown-department .btn-group button.btn.btn-default.current-department {
   width: 174px;
 }
-.dropdown-deparment .btn-group .dropdown-menu {
+.dropdown-department .btn-group .dropdown-menu {
   width: 210px;
   border-radius: 3px;
 }
-.dropdown-deparment .btn-group .dropdown-menu li {
+.dropdown-department .btn-group .dropdown-menu li {
   display: block;
   width: 100%;
 }
-.dropdown-deparment .btn-group .dropdown-menu a {
+.dropdown-department .btn-group .dropdown-menu a {
   display: block;
   white-space: normal;
   font-weight: bold;
@@ -286,7 +286,7 @@ section.site-content#content {
   font-size: 12px;
   padding: 6px 14px;
 }
-.dropdown-deparment .btn-group .dropdown-menu a:hover {
+.dropdown-department .btn-group .dropdown-menu a:hover {
   background: #f1f1f1;
   color: #333;
 }

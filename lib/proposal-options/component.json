@@ -3,12 +3,11 @@
   "description": "proposal's options view",
   "dependencies": {
     "component/domify": "1.0.0",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/classes": "*",
     "component/enumerable": "*",
     "component/to-function": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
     "cristiandouce/Chart.js": "*",
@@ -17,7 +16,7 @@
     "discore/closest": "*",
     "gvilarino/autocomplete": "*"
   },
-  "local": [ "citizen" ],
+  "local": [ "citizen", "request" ],
   "scripts": [ "proposal-options.js" ],
   "templates": [ "options.jade" ],
   "styles": [ ],
