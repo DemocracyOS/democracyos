@@ -4,7 +4,7 @@
   "dependencies": {
     "component/domify": "*",
     "component/emitter": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/classes": "*",
     "component/truncate": "*",
     "visionmedia/jade": "*",

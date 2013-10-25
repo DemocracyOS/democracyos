@@ -3,7 +3,7 @@
   "description": "proposal's options view",
   "dependencies": {
     "component/domify": "1.0.0",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/classes": "*",
     "component/enumerable": "*",
     "component/to-function": "*",

@@ -3,7 +3,7 @@
   "description": "Signup page",
   "dependencies": {
     "component/domify": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/emitter": "*",
     "component/classes": "*",
     "visionmedia/page.js": "*",

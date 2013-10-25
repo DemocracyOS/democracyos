@@ -3,7 +3,7 @@
   "description": "Forgot Password page",
   "dependencies": {
     "component/domify": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/classes": "*",
     "component/emitter": "*",
     "visionmedia/page.js": "*",

@@ -4,7 +4,7 @@
   "dependencies": {
     "component/domify": "1.0.0",
     "component/dropdown": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/emitter": "1.0.1",
     "component/classes": "*",
     "visionmedia/debug": "*",

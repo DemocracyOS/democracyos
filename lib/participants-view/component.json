@@ -2,7 +2,7 @@
   "name": "participants-view",
   "description": "participants view",
   "dependencies": {
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/emitter": "*",
     "component/classes": "*",
     "component/tip": "*",
