@@ -9,11 +9,10 @@
     "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
-    "visionmedia/superagent": "*",
     "yields/empty": "*",
     "yields/serialize": "*"
   },
-  "local": [ "regexps", "citizen" ],
+  "local": [ "regexps", "citizen", "request" ],
   "scripts": [ "signup.js", "form-view.js" ],
   "styles": [ "signup.css" ],
   "templates": [ "signup-form.jade" , "signup-complete.jade"],
