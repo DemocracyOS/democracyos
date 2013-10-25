@@ -6,11 +6,12 @@
     "component/events": "*",
     "component/emitter": "*",
     "component/classes": "*",
-    "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
     "yields/empty": "*",
-    "yields/serialize": "*"
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens",
+    "cristiandouce/query": "*"
   },
   "local": [ "regexps", "request" ],
   "scripts": [ "signin.js", "view.js" ],
