@@ -5,13 +5,13 @@
     "component/classes": "*",
     "component/bus": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "yields/empty": "*"
   },
   "development": {},
   "local": [
     "citizen",
+    "request",
     "proposal-list",
     "sidebar-list",
     "proposal-article",
