@@ -587,11 +587,29 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .toggle-results span {
   margin-right: 5px;
 }
-.proposal-options .results-box .progress-bar {
+.proposal-options .results-box h5 {
+  margin-bottom: 0;
+}
+.proposal-options .results-box .percent {
+  font-size: 30px;
+}
+.proposal-options .results-box .votes-results {
+  margin-bottom: 20px;
+}
+.proposal-options .results-box .results-summary {
   font-weight: bold;
 }
-.proposal-options .results-box .progress-bar-success {
-  background-color: #a4cb53;
+.proposal-options .results-box .votes-afirmative,
+.proposal-options .results-box .votes-afirmative h5 {
+  color: #a4cb53;
+}
+.proposal-options .results-box .votes-negative,
+.proposal-options .results-box .votes-negative h5 {
+  color: #d95e59;
+}
+.proposal-options .results-box .votes-neutral,
+.proposal-options .results-box .votes-neutral h5 {
+  color: #666;
 }
 /* Comments
 -------------------------------------------------- */
