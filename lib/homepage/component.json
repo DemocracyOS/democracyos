@@ -2,23 +2,13 @@
   "name": "homepage",
   "description": "Homepage page",
   "dependencies": {
-    "component/classes": "*",
-    "component/bus": "*",
     "visionmedia/debug": "*",
-    "visionmedia/page.js": "*",
-    "yields/empty": "*",
-    "cristiandouce/query": "*"
+    "visionmedia/page.js": "*"
   },
   "development": {},
   "local": [
     "citizen",
-    "request",
-    "proposal-list",
-    "sidebar-list",
-    "proposal-article",
-    "proposal-options",
-    "comments-view",
-    "browser-lock"
+    "sidebar-list"
   ],
   "scripts": [
     "homepage.js"
