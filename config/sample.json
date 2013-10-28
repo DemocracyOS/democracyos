@@ -6,16 +6,6 @@
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "client": [ "protocol", "host", "publicPort", "env", "logo", "favicon", "organization name", "organization url", "google analytics tracking id" ],
   "auth": {
-    "facebook": {
-      "clientID" : "FBClientId",
-      "clientSecret": "FBClientSecret",
-      "callback": "http://localhost:3005/auth/facebook/callback"
-    },
-    "twitter": {
-      "consumerKey" : "TwitterConsumerKey",
-      "consumerSecret": "TwitterConsumerSecret",
-      "callback": "http://127.0.0.1:3005/auth/twitter/callback"
-    },
     "basic": {
       "username" : "",
       "password": ""
