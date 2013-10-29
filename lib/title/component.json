@@ -1,0 +1,12 @@
+{
+  "name": "title",
+  "description": "Update page's title by html head",
+  "dependencies": {
+    "cristiandouce/query": "*",
+  },
+  "local": [
+    "config"
+  ],
+  "scripts": [ "title.js" ],
+  "main": "title.js"
+}
