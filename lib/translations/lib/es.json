@@ -100,6 +100,6 @@
   "Not spam" : "Esto no es abuso",
   "Upvote" : "Aporta al debate",
   "Downvote" : "No aporta al debate",
-  "Comment is limited to 2048 characters": "El comentario no puede exceder los 2048 caracteres",
+  "Comment is limited to 4096 characters": "El comentario no puede exceder los 4096 caracteres",
   "Comment cannot be empty": "El comentario no puede estar vacío"
 }

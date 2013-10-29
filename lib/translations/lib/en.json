@@ -100,6 +100,6 @@
   "Not spam" : "Not Spam",
   "Upvote" : "Upvote",
   "Downvote" : "Downvote",
-  "Comment is limited to 2048 characters": "Comment is limited to 2048 characters",
+  "Comment is limited to 4096 characters": "Comment is limited to 4096 characters",
   "Comment cannot be empty": "Comment cannot be empty"
 }
