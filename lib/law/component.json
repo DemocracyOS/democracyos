@@ -10,6 +10,7 @@
   },
   "local": [
     "citizen",
+    "config",
     "request",
     "proposal-list",
     "sidebar-list",
