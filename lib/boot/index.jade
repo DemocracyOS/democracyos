@@ -87,7 +87,7 @@ html(lang='en')
             a(href='/signup').login.pull-right
               i.icon-user
               span= t('Signup')
-          a.login.pull-left(href=config("organization url"))
+          a.login.pull-left(href=config("organization url"), target="_blank")
             span= config('organization name')
           a.login.pull-left(href="#", id="feedback")
             span= t('Feedback')
