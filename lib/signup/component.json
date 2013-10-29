@@ -13,9 +13,9 @@
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/query": "*"
   },
-  "local": [ "regexps", "citizen", "request", "title" ],
-  "scripts": [ "signup.js", "form-view.js" ],
+  "local": [ "regexps", "citizen", "request", "title", "render" ],
+  "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js" ],
   "styles": [ "signup.css" ],
-  "templates": [ "signup-form.jade" , "signup-complete.jade"],
+  "templates": [ "signup-form.jade" , "email-validation-complete.jade"],
   "main": "signup.js"
 }
