@@ -2,22 +2,13 @@
   "name": "homepage",
   "description": "Homepage page",
   "dependencies": {
-    "component/classes": "*",
-    "component/bus": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
-    "visionmedia/page.js": "*",
-    "yields/empty": "*"
+    "visionmedia/page.js": "*"
   },
   "development": {},
   "local": [
     "citizen",
-    "proposal-list",
-    "sidebar-list",
-    "proposal-article",
-    "proposal-options",
-    "comments-view",
-    "browser-lock"
+    "sidebar-list"
   ],
   "scripts": [
     "homepage.js"

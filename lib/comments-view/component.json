@@ -4,18 +4,20 @@
   "dependencies": {
     "component/domify": "*",
     "component/emitter": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/classes": "*",
+    "component/truncate": "*",
     "visionmedia/jade": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "yields/serialize": "*",
     "discore/closest": "*",
     "cristiandouce/t": "chained-tokens",
-    "cristiandouce/to-array": "*"
+    "cristiandouce/to-array": "*",
+    "cristiandouce/query": "*"
   },
   "local": [
-    "citizen"
+    "citizen",
+    "request"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments.css" ],

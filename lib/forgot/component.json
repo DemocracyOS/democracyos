@@ -3,17 +3,16 @@
   "description": "Forgot Password page",
   "dependencies": {
     "component/domify": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/classes": "*",
     "component/emitter": "*",
-    "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
-    "visionmedia/superagent": "*",
     "yields/empty": "*",
-    "yields/serialize": "*"
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens"
   },
-  "local": [ "regexps", "citizen" ],
+  "local": [ "regexps", "citizen", "request", "title" ],
   "scripts": [ "forgot.js", "forgot-view.js", "reset-view.js" ],
   "styles": [ ],
   "templates": [ "forgot-form.jade" , "reset-form.jade" ],

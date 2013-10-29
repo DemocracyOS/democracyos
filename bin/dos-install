@@ -3,21 +3,50 @@
 /**
  * Module dependencies.
  */
-
-var program = require('commander');
 var fs = require('fs');
 var exists = fs.existsSync;
-var exec = require('child_process').exec;
+var read = fs.readFileSync;
+var write = fs.writeFileSync;
+var parse = JSON.parse;
+var stringify = JSON.stringify;
 var path = require('path');
-var components = path.resolve('./node_modules/.bin/component-install');
+var resolve = path.resolve;
+var merge = require('merge-util');
+var exec = require('child_process').exec;
+var program = require('commander');
+var installc = resolve('./node_modules/.bin/component-install');
+var env = process.env.NODE_ENV || 'development';
 
 program
+  .option('-c, --config', 'copy and/or merge configuration file')
   .option('-C, --no-components', 'ignore components install')
   .parse(process.argv);
 
 
-if (program.components && exists(components)) {
-  exec(components, function(err, stdout, stderr) {
+/**
+ * Make sure there is a config file
+ */
+
+if (program.config) {
+  var dest = resolve('./config/' + env + '.json');
+  var orig = resolve('./config/sample.json');
+  if (!exists(dest)) {
+    // non-simple copying
+    write(dest, read(orig));
+  } else {
+    var conf = parse(read(dest));
+    var sample = parse(read(orig));
+
+    // Merge current config into original sample
+    merge(sample, conf);
+
+    // save config file
+    write(dest, stringify(sample, null, 2));
+  }
+};
+
+if (program.components && exists(installc)) {
+  exec(installc, function(err, stdout, stderr) {
     if (stdout.length) console.log(stdout);
     if (stderr.length) console.log(stderr);
     if (err != null) {

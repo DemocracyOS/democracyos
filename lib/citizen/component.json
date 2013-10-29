@@ -4,10 +4,9 @@
   "dependencies": {
     "component/emitter": "*",
     "visionmedia/page.js": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/debug": "*"
   },
-  "local": [ ],
+  "local": [ "request" ],
   "scripts": [ "citizen.js", "model.js" ],
   "templates": [ ],
   "styles": [ ],

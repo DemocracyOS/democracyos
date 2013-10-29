@@ -11,7 +11,7 @@ packages:
 	@npm install
 	@echo "Done.\n"
 	@echo "Installing components..."
-	@node ./bin/dos-install
+	@node ./bin/dos-install -c
 	@echo "Compiling components to ./public..."
 	@node ./bin/dos-build
 	@echo "Done.\n"

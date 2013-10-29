@@ -18,12 +18,14 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
       | #{comment.author.fullName} 
       small.ago(data-time=comment.createdAt.toString())
       small :
-    p.comment-text=comment.text
+    p.comment-text!=truncate(comment.text, 230, '... ')
+      - if (comment.text.length > 230)
+        a.read-more(href="#")= t('read more')
     p.spam-message=t('This comment has been flagged as spam')
       | .
       span.show-spam: a(href="#")= t('show')
     .comment-actions
-      span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
+      span.comment-counter(class= !citizen.id ? 'hide' : '')=(comment.upvotes.length - comment.downvotes.length)
       - var classes = []
       - likes && classes.push('selected')
       - !citizen.id && classes.push('hide')

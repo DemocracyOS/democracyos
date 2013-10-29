@@ -1,23 +1,12 @@
-- var census = ( proposal.votes
--   && proposal.votes.map(function(v) { return v.author }) )
--   || proposal.vote.census
+- var positives = proposal.upvotes || []
+- var negatives = proposal.downvotes || []
+- var neutrals = proposal.abstentions || []
+- var census = neutrals.concat(negatives).concat(positives) || []
 
-- var positives = ( proposal.upvotes
--   && proposal.upvotes.map(function(v) { return v.author }) )
--   || proposal.vote.positive
-
-- var negatives = ( proposal.downvotes
--   && proposal.downvotes.map(function(v) { return v.author }) )
--   || proposal.vote.negative
-
-- var neutrals = ( proposal.abstentions
--   && proposal.abstentions.map(function(v) { return v.author }) )
--   || []
-
-- var participants = proposal.participants
+- var participants = proposal.participants || []
 
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
-- var voted = locals.citizen && ~census.indexOf(citizen.id)
+- var voted = citizen && ~census.indexOf(citizen.id)
 
 .inner-container
     
@@ -67,37 +56,34 @@
         | .
 
     - if (closed)
-      .results-box(style="height:#{census.length ? '300px' : 'auto'}; display:block;")
+      .results-box.row.clearfix
         p.alert.alert-info(class=census.length ? 'hide' : ''): label= t('No votes cast')
-        .results-chart(style="width:50%; display:block; height:250px; float:left;", class= census.length ? '' : 'hide')
-          h4= t('Chart')
-          canvas#results-chart(width="200", height="200")
-        .results-summary(style="width:50%; display:block; height:250px; float:left;", class= census.length ? '' : 'hide')
-          h4= t('Summary')
+        .results-chart(class= census.length ? '' : 'hide').col-sm-6
+          canvas#results-chart(width="220", height="220")
+        .results-summary(class= census.length ? '' : 'hide').col-sm-6
           - if (positives.length)
-            h5= t('Yea')
-            - var width = census.length ? (positives.length/census.length)*100 : 0;
-            - var s = 1 === positives.length ? '' : 's'
-            .progress
-              .progress-bar.progress-bar-success(role="progress-bar", aria-valuenow=positives.length, aria-valuemin="0", aria-valuemax=census.length, style="width: #{width}%;")
-                span
-                  | #{positives.length} 
-                  | #{t('vote') + s}
+            .votes-afirmative.votes-results
+              h5= t('Yea')
+              - var width = census.length ? (positives.length/census.length)*100 : 0;
+              - var width = Math.round(width*100)/100
+              - var s = 1 === positives.length ? '' : 's'
+              span.percent #{width} % 
+              span.votes #{positives.length} #{t('vote') + s}
+
           - if (negatives.length)
-            h5= t('Nay')
-            - var width = census.length ? (negatives.length/census.length)*100 : 0;
-            - var s = 1 === negatives.length ? '' : 's'
-            .progress
-              .progress-bar.progress-bar-danger(role="progress-bar", aria-valuenow=negatives.length, aria-valuemin="0", aria-valuemax=census.length, style="width: #{width}%;")
-                span
-                  | #{negatives.length} 
-                  | #{t('vote') + s}
+            .votes-negative.votes-results
+              h5= t('Nay')
+              - var width = census.length ? (negatives.length/census.length)*100 : 0;
+              - var width = Math.round(width*100)/100
+              - var s = 1 === negatives.length ? '' : 's'
+                span.percent #{width} % 
+                span.votes #{negatives.length} #{t('vote') + s}
+
           - if (neutrals.length)
-            h5= t('Abstain')
-            - var width = census.length ? (neutrals.length/census.length)*100 : 0;
-            - var s = 1 === neutrals.length ? '' : 's'
-            .progress
-              .progress-bar(role="progress-bar", aria-valuenow=neutrals.length, aria-valuemin="0", aria-valuemax=census.length, style="width: #{width}%; background-color: #666;")
-                span
-                  | #{neutrals.length} 
-                  | #{t('vote') + s}
+            .votes-neutral.votes-results
+              h5= t('Abstain')
+              - var width = census.length ? (neutrals.length/census.length)*100 : 0;
+              - var width = Math.round(width*100)/100
+              - var s = 1 === neutrals.length ? '' : 's'
+                span.percent #{width} % 
+                span.votes #{neutrals.length} #{t('vote') + s}

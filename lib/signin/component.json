@@ -3,17 +3,17 @@
   "description": "signin component",
   "dependencies": {
     "component/domify": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/emitter": "*",
     "component/classes": "*",
-    "cristiandouce/t": "chained-tokens",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
-    "visionmedia/superagent": "*",
     "yields/empty": "*",
-    "yields/serialize": "*"
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens",
+    "cristiandouce/query": "*"
   },
-  "local": [ "regexps" ],
+  "local": [ "regexps", "request", "title" ],
   "scripts": [ "signin.js", "view.js" ],
   "styles": [ "signin.css" ],
   "templates": [ "form.jade" ],

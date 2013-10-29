@@ -13,7 +13,9 @@ script.
     UserVoice.push(['set', {
       accent_color: '#3498db',
       trigger_color: 'white',
-      trigger_background_color: '#3498db'
+      trigger_background_color: '#3498db',
+      target: '#feedback',
+      menu_enabled: true
     }]);
 
     // Identify the user and pass traits
@@ -35,7 +37,7 @@ script.
     }]);
 
     // Add default trigger to the bottom-right corner of the window:
-    UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+    UserVoice.push(['addTrigger', '#feedback']);
 
     // Or, use your own custom trigger:
     //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
@@ -45,8 +47,3 @@ script.
   } catch (err) {
     console.log('Uservoice error: %s', err);
   }
-  
-  function uservoice()
-  {
-    document.querySelector('.uv-bottom-right').click();
-  }    
