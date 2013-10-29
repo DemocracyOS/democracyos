@@ -13,7 +13,7 @@
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/query": "*"
   },
-  "local": [ "regexps", "request" ],
+  "local": [ "regexps", "request", "title" ],
   "scripts": [ "signin.js", "view.js" ],
   "styles": [ "signin.css" ],
   "templates": [ "form.jade" ],
