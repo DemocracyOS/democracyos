@@ -12,7 +12,7 @@
     "yields/serialize": "*",
     "cristiandouce/t": "chained-tokens"
   },
-  "local": [ "regexps", "citizen", "request" ],
+  "local": [ "regexps", "citizen", "request", "title" ],
   "scripts": [ "forgot.js", "forgot-view.js", "reset-view.js" ],
   "styles": [ ],
   "templates": [ "forgot-form.jade" , "reset-form.jade" ],
