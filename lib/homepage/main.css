@@ -455,6 +455,7 @@ article.proposal .participants {
 }
 article.proposal .participants .participant-profile {
   margin-left: 10px;
+  display: inline-block;
 }
 article.proposal .participants .participant-profile img {
   width: 30px;
@@ -702,6 +703,9 @@ article.proposal .share-links a.google-plus:hover {
 .comments .comment-list .comment-item .comment-action.dislike:hover {
   color: #f00;
 }
+.comments .comment-list .comment-item .comment-action.flag {
+  display: inline-block;
+}
 .comments .comment-list .comment-item .comment-action.flag.selected,
 .comments .comment-list .comment-item .comment-action.flag:hover {
   color: #ffa500;
@@ -790,7 +794,7 @@ article.proposal .share-links a.google-plus:hover {
   header.app-header .logo-link {
     display: none;
   }
-  header.app-header .user-nav .btn {
+  header.app-header .user-nav position:.btn {
     border: 0;
   }
   header.app-header .user-nav .profile span.name {
