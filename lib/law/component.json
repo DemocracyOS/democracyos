@@ -6,7 +6,8 @@
     "component/bus": "*",
     "visionmedia/debug": "*",
     "visionmedia/page.js": "*",
-    "yields/empty": "*"
+    "yields/empty": "*",
+    "cristiandouce/query": "*"
   },
   "local": [
     "citizen",
