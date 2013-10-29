@@ -14,7 +14,7 @@
   "local": [ "config", "render", "request" ],
   "scripts": [ "view.js"],
   "templates": [ "box.jade", "participant.jade" ],
-  "styles": [ ],
+  "styles": [ "participant.css" ],
   "images": [ ],
   "main": "view.js"
 }
