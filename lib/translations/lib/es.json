@@ -75,6 +75,7 @@
   "Delegate to": "Delegar a",
   "{num} votes cast": "{num} votos contados",
   "No votes cast": "Sin votos contados",
+  "Results will be shown when this law is closed": "Los resultados se mostrarán cuando se cierre la ley",
   "Summary": "Resumen",
   "Chart": "Gráfico",
 
@@ -101,5 +102,8 @@
   "Upvote" : "Aporta al debate",
   "Downvote" : "No aporta al debate",
   "Comment is limited to 4096 characters": "El comentario no puede exceder los 4096 caracteres",
-  "Comment cannot be empty": "El comentario no puede estar vacío"
+  "Comment cannot be empty": "El comentario no puede estar vacío",
+
+  "Not take part on the citizen's decision": "Para no influenciar la decisión del ciudadano",
+  "Respect parlament methodology": "Para respetar la metodología de la legislatura"
 }
