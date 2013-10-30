@@ -442,6 +442,7 @@ article.proposal
 		border-bottom: 2px solid #f1f1f1;
 		.participant-profile 
 			margin-left: 10px;
+			display: inline-block;
 			img
 				width: 30px;
 				height: 30px;
@@ -555,6 +556,11 @@ article.proposal
 				margin-right: 10px;
 			&:hover 
 				text-decoration: none
+		.secret-results
+			margin-right: 6px;
+		.secret-results:before
+			content: " - ";
+
 
 	.toggle-results
 		span
@@ -658,6 +664,7 @@ article.proposal
 					&.selected, &:hover
 						color: red;
 				&.flag
+					display: inline-block;
 					&.selected, &:hover
 						color: orange;
 			&.spam

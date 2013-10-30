@@ -455,6 +455,7 @@ article.proposal .participants {
 }
 article.proposal .participants .participant-profile {
   margin-left: 10px;
+  display: inline-block;
 }
 article.proposal .participants .participant-profile img {
   width: 30px;
@@ -584,6 +585,12 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .vote-box .change-vote:hover {
   text-decoration: none;
 }
+.proposal-options .vote-box .secret-results {
+  margin-right: 6px;
+}
+.proposal-options .vote-box .secret-results:before {
+  content: " - ";
+}
 .proposal-options .toggle-results span {
   margin-right: 5px;
 }
@@ -701,6 +708,9 @@ article.proposal .share-links a.google-plus:hover {
 .comments .comment-list .comment-item .comment-action.dislike.selected,
 .comments .comment-list .comment-item .comment-action.dislike:hover {
   color: #f00;
+}
+.comments .comment-list .comment-item .comment-action.flag {
+  display: inline-block;
 }
 .comments .comment-list .comment-item .comment-action.flag.selected,
 .comments .comment-list .comment-item .comment-action.flag:hover {

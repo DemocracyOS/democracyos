@@ -85,6 +85,7 @@
   "Delegate to": "Delegate to",
   "{num} votes cast": "{num} votes cast",
   "No votes cast": "No votes cast",
+  "Results will be shown when this law is closed": "Results will be shown when this law is closed",
   "Summary": "Summary",
   "Chart": "Chart",
   
@@ -109,6 +110,10 @@
   "Spam" : "Report as spam",
   "Not spam" : "Not Spam",
   "Upvote" : "Upvote",
-  "Downvote" : "Downvote"
+  "Downvote" : "Downvote",
+  "Comment is limited to 4096 characters": "Comment is limited to 4096 characters",
+  "Comment cannot be empty": "Comment cannot be empty",
 
+  "To not take part on the citizen's decision": "To not take part on the citizen's decision",
+  "To respect parlament methodology": "To respect parlament methodology"
 }
