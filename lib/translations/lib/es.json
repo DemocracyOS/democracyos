@@ -104,6 +104,6 @@
   "Comment is limited to 4096 characters": "El comentario no puede exceder los 4096 caracteres",
   "Comment cannot be empty": "El comentario no puede estar vacío",
 
-  "Not take part on the citizen's decision": "Para no influenciar la decisión del ciudadano",
-  "Respect parlament methodology": "Para respetar la metodología de la legislatura"
+  "To not take part on the citizen's decision": "Para no influenciar la decisión del ciudadano",
+  "To respect parlament methodology": "Para respetar la metodología de la legislatura"
 }
