@@ -14,8 +14,8 @@
     "cristiandouce/query": "*"
   },
   "local": [ "regexps", "citizen", "request", "title", "render" ],
-  "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js" ],
+  "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js", "resend-validation-email-form-view.js" ],
   "styles": [ "signup.css" ],
-  "templates": [ "signup-form.jade" , "email-validation-complete.jade"],
+  "templates": [ "signup-form.jade" , "email-validation-complete.jade", "resend-validation-email-form.jade"],
   "main": "signup.js"
 }

@@ -63,6 +63,11 @@
   "Your sign up data was received": "Tus datos de registro fueron recibidos",
   "Now you should validate your identity. To do so, please check the instructions": "Now you should validate your identity. To do so, please check the instructions",
   "here": "here",
+  "Resend validation email": "Reenviar correo electrónico de validación",
+  "Resend validation email complete": "Reenviar correo electrónico de validación completado",
+  "Resend email": "Reenviar",
+  "Email sent" : "Correo electrónico enviado",
+  "The validation email was resent.": "El correo electrónico de validación ha sido reenviado.",
 
   "Close": "Cierra",
   "Closed": "Cerrado",

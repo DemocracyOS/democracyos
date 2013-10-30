@@ -62,6 +62,11 @@
   "Your sign up data was received": "Your sign up data was received",
   "Now you should validate your identity. To do so, please check the instructions": "Now you should validate your identity. To do so, please check the instructions",
   "here": "here",
+  "Resend validation email": "Resend validation email",
+  "Resend validation email complete": "Resend validation email complete",
+  "Resend email": "Resend email",
+  "Email sent" : "Email sent",
+  "The validation email was resent.": "The validation email was resent.",
 
   "Close": "Close",
   "Closed": "Closed",
