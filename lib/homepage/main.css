@@ -585,6 +585,12 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .vote-box .change-vote:hover {
   text-decoration: none;
 }
+.proposal-options .vote-box .secret-results {
+  margin-right: 6px;
+}
+.proposal-options .vote-box .secret-results:before {
+  content: " - ";
+}
 .proposal-options .toggle-results span {
   margin-right: 5px;
 }
