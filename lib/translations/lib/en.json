@@ -67,6 +67,7 @@
   "Resend email": "Resend email",
   "Email sent" : "Email sent",
   "The validation email was resent.": "The validation email was resent.",
+  "Email not validated" : "The email address for this citizen is not validated. We send citizens a welcome email when they sign up. Please check your email (remember to check your spam folder too) and click on the link supplied on the email. Click <a href='/signup/resend-validation-email'>here</a> if you need the welcome email to be resent",
 
   "Close": "Close",
   "Closed": "Closed",
