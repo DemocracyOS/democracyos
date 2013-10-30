@@ -13,5 +13,6 @@
       .form-group
         label= t('Password')
         .forgot: a(href='/forgot', tabindex=4) #{t('Forgot Password?')}
+        
         input.form-control(type='password', name='password', tabindex=2, placeholder=t('Password'))
       .form-group: input.btn.btn-block.btn-primary.btn-lg(type='submit', tabindex=3, value=t('Login'))
