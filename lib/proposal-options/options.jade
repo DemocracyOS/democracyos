@@ -46,6 +46,9 @@
 
       .votes-cast
         em.text-muted= t('{num} votes cast', { num: census.length || "0" })
+        - if (!closed)
+          em.text-muted.secret-results= t('Results will be shown when this law is closed')
+          a.alert-link(id="why", href="#", style="display: inline-block")= t('Why?')
     
     - if (!citizen.id)
       p.text-mute.hide= t('You must be signed in to vote on this law')

@@ -30,7 +30,9 @@
   "Please click <a href=\"{url}\">here</a> to reset your password": "Please click <a href=\"{url}\">here</a> to reset your password",
   "The DemocracyOS team": "The DemocracyOS team",
   "PS: if you haven't requested to reset your password, please ignore this email": "PS: if you haven't requested to reset your password, please ignore this email",
-
+  "DemocracyOS - Welcome!": "DemocracyOS - Welcome!",
+  "Please click <a href=\"{url}\">here</a> to validate your email address": "Please click <a href=\"{url}\">here</a> to validate your email address",
+  "PS: if you haven't signed up, please ignore this email": "PS: if you haven't signed up, please ignore this email",
   "example@email.com": "example@email.com",
   "No citizen for email" : "No citizen for email",
   "New Password": "New Password",
@@ -42,6 +44,7 @@
   "We will send an email with a link to reset your password": "We will send an email with a link to reset your password",
   "We just sent a message to your email with instructions to create a new password": "We just sent a message to your email with instructions to create a new password",
 
+  "Signup complete" : "Signup complete",
   "Signup with email": "Signup with email",
   "Email": "Email",
   "Your name": "Your name",
@@ -50,13 +53,22 @@
   "Signup now!": "Signup now!",
   "Welcome, {name}!": "Welcome, {name}!",
   "Guest": "Guest",
-  "You signed up and now you are logged in": "You signed up and now you are logged in",
+  "Your sign up data was received. We sent you an email so you can validate your email address.": "Your sign up data was received. We sent you an email so you can validate your email address.",
+  "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.",
+  "Your email has been validated and now you are logged in" : "Your email has been validated and now you are logged in", 
   "You can now comment and vote on bills!": "You can now comment and vote on bills!",
-  "Go back to": "Go back to",
+  "Go to": "Go to",
   "browsing": "browsing",
   "Your sign up data was received": "Your sign up data was received",
   "Now you should validate your identity. To do so, please check the instructions": "Now you should validate your identity. To do so, please check the instructions",
   "here": "here",
+  "Resend validation email": "Resend validation email",
+  "Resend validation email complete": "Resend validation email complete",
+  "Resend email": "Resend email",
+  "Email sent" : "Email sent",
+  "The validation email was resent.": "The validation email was resent.",
+  "Email not validated" : "The email address for this citizen is not validated. We send citizens a welcome email when they sign up. Please check your email (remember to check your spam folder too) and click on the link supplied on the email. Click <a href='/signup/resend-validation-email'>here</a> if you need the welcome email to be resent",
+  "No citizen found with that email address": "No citizen found with that email address",
 
   "Close": "Close",
   "Closed": "Closed",
@@ -75,6 +87,7 @@
   "Delegate to": "Delegate to",
   "{num} votes cast": "{num} votes cast",
   "No votes cast": "No votes cast",
+  "Results will be shown when this law is closed": "Results will be shown when this law is closed",
   "Summary": "Summary",
   "Chart": "Chart",
   
@@ -101,5 +114,8 @@
   "Upvote" : "Upvote",
   "Downvote" : "Downvote",
   "Comment is limited to 4096 characters": "Comment is limited to 4096 characters",
-  "Comment cannot be empty": "Comment cannot be empty"
+  "Comment cannot be empty": "Comment cannot be empty",
+
+  "To not take part on the citizen's decision": "To not take part on the citizen's decision",
+  "To respect parlament methodology": "To respect parlament methodology"
 }
