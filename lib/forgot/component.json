@@ -2,7 +2,6 @@
   "name": "forgot",
   "description": "Forgot Password page",
   "dependencies": {
-    "component/domify": "*",
     "cristiandouce/events": "*",
     "component/classes": "*",
     "component/emitter": "*",
@@ -13,7 +12,7 @@
     "cristiandouce/query": "*",
     "cristiandouce/t": "chained-tokens"
   },
-  "local": [ "regexps", "citizen", "request", "title" ],
+  "local": [ "regexps", "citizen", "request", "title", "render" ],
   "scripts": [ "forgot.js", "forgot-view.js", "reset-view.js" ],
   "styles": [ ],
   "templates": [ "forgot-form.jade" , "reset-form.jade" ],
