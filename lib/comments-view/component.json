@@ -14,7 +14,8 @@
     "discore/closest": "*",
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/to-array": "*",
-    "cristiandouce/query": "*"
+    "cristiandouce/query": "*",
+    "slifszyc/paragraphs": "*"
   },
   "local": [
     "citizen",
