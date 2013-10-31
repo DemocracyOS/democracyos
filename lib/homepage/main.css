@@ -62,6 +62,10 @@ img.avatar {
 .alert.alert-warning {
   background-color: #f1c40f;
 }
+.alert.alert-block {
+  background-color: #bebec5;
+  color: #fff;
+}
 .system-alert {
   margin-top: 20px;
 }
