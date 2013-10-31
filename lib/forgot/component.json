@@ -10,6 +10,7 @@
     "visionmedia/jade": "*",
     "yields/empty": "*",
     "yields/serialize": "*",
+    "cristiandouce/query": "*",
     "cristiandouce/t": "chained-tokens"
   },
   "local": [ "regexps", "citizen", "request", "title" ],
