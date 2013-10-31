@@ -7,7 +7,6 @@
     "component/classes": "*",
     "component/enumerable": "*",
     "component/to-function": "*",
-    "component/tip": "*",
     "visionmedia/debug": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
@@ -20,7 +19,7 @@
   "local": [ "citizen", "request" ],
   "scripts": [ "proposal-options.js" ],
   "templates": [ "options.jade" ],
-  "styles": [ ],
+  "styles": [ "proposal-options.css" ],
   "images": [ ],
   "main": "proposal-options.js"
 }
