@@ -5,6 +5,7 @@
   "Login to": "Ingresar a",
   "Signup": "Registrarse",
   "Logout": "Cerrar sesión",
+  "My account": "Mi cuenta",
   "Feedback": "Sugerencias",
 
   "Incorrect password": "Contraseña incorrecta",
@@ -33,7 +34,6 @@
   "DemocracyOS - Welcome!": "DemocraciaOS - Bienvenid@!",
   "Please click <a href=\"{url}\">here</a> to validate your email address": "Por favor cliquea <a href=\"{url}\">aquí</a> para validar tu dirección de correo electrónico",
   "PS: if you haven't signed up, please ignore this email": "P.D.: si no creaste una cuenta en DemocraciaOS, por favor ignora este correo",
-
   "example@email.com": "ejemplo@email.com",
   "No citizen for email" : "No tenemos registrado el correo electrónico",
   "New Password": "Nueva contraseña",
@@ -70,6 +70,12 @@
   "The validation email was resent.": "El correo electrónico de validación ha sido reenviado.",
   "Email not validated" : "La dirección de correo electrónico no ha sido validada. A cada ciudadano se le envía un correo electrónico de bienvenida al momento de registrarse. El siguiente paso es abrir el correo electrónico que te hemos enviado (no te olvides de la carpeta 'Correo no deseado') y hacer clic en el enlace provisto. Cliquea <a href='/signup/resend-validation-email'>aquí</a> si necesitás que te reenviemos el correo electrónico de bienvenida",
   "No citizen found with that email address": "No tenemos registrado ningún ciudadano con esa dirección de correo electrónico",
+
+  "Account data": "Datos de la cuenta",
+  "Account updated": "Cuenta actualizada",
+  "Your account has been updated.": "Tu cuenta ha sido actualizada.",
+  "First name": "Nombre",
+  "Last name": "Apellido",
 
   "Close": "Cierra",
   "Closed": "Cerrado",

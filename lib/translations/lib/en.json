@@ -5,6 +5,7 @@
   "Login to": "Login to",
   "Signup": "Signup",
   "Logout": "Logout",
+  "My account": "My account",
   "Feedback": "Feedback",
 
   "Incorrect password": "Incorrect password",
@@ -69,6 +70,12 @@
   "The validation email was resent.": "The validation email was resent.",
   "Email not validated" : "The email address for this citizen is not validated. We send citizens a welcome email when they sign up. Please check your email (remember to check your spam folder too) and click on the link supplied on the email. Click <a href='/signup/resend-validation-email'>here</a> if you need the welcome email to be resent",
   "No citizen found with that email address": "No citizen found with that email address",
+
+  "Account data": "Account data",
+  "Account updated": "Account updated",
+  "Your account has been updated.": "Your account has been updated.",
+  "First name": "First name",
+  "Last name": "Last name",
 
   "Close": "Close",
   "Closed": "Closed",

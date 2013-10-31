@@ -1,0 +1,20 @@
+{
+  "name": "account",
+  "description": "Account page",
+  "dependencies": {
+    "component/domify": "*",
+    "cristiandouce/events": "*",
+    "component/emitter": "*",
+    "component/classes": "*",
+    "visionmedia/page.js": "*",
+    "visionmedia/jade": "*",
+    "yields/empty": "*",
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens",
+    "cristiandouce/query": "*"
+  },
+  "local": [ "regexps", "citizen", "request", "title", "render" ],
+  "scripts": [ "account.js", "account-form-view.js"],
+  "templates": [ "account-form.jade"],
+  "main": "account.js"
+}
