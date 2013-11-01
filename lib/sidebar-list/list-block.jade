@@ -1,7 +1,7 @@
 nav.sidebar-nav
   .dropdown-department
     .btn-group
-      button.btn.btn-default.current-department(type='button')= t("Listing all {listType}s", { listType: type })
+      button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t("Listing all {listType}s", { listType: type })
       button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
         span.caret
       ul.dropdown-menu
