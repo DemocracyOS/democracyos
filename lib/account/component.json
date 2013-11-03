@@ -2,7 +2,6 @@
   "name": "account",
   "description": "Account page",
   "dependencies": {
-    "component/domify": "*",
     "cristiandouce/events": "*",
     "component/emitter": "*",
     "component/classes": "*",
