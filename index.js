@@ -61,6 +61,12 @@ app.use('/signin', require('lib/signin'));
 app.use('/signup', require('lib/signup'));
 
 /*
+ * Account routes
+ */
+
+app.use('/account', require('lib/account'));
+
+/*
  * Forgot password routes
  */
 

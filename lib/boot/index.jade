@@ -79,6 +79,8 @@ html(lang='en')
                 span.caret
             ul.dropdown-menu
                 li
+                  a.logout(href='/account')= t('My account')
+                li
                   a.logout(href='/logout')= t('Logout')
           - else
             a(href='/signin').login.pull-right
