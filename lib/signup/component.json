@@ -2,6 +2,7 @@
   "name": "signup",
   "description": "Signup page",
   "dependencies": {
+    "component/bus": "*",
     "component/domify": "*",
     "cristiandouce/events": "*",
     "component/emitter": "*",
