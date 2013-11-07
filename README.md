@@ -16,6 +16,7 @@ DemocracyOS is an online space for deliberation and voting on political proposal
 
 ## Useful links
 
+* [DemocrayOS maling list](http://groups.google.com/group/democracyos-app): For questions about DemocracyOS (not bug reports!).
 * [PDR Site](http://partidodelared.org): The `Net Party` official site.
 * [PDR Wiki](http://wiki.partidodelared.org): The `Net Party` official wiki.
 * [PDR Facebook](http://facebook.com/partidodelared): The `Net Party` official Facebook page.
