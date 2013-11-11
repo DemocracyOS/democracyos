@@ -2,6 +2,7 @@
   "name": "signin",
   "description": "signin component",
   "dependencies": {
+    "component/bus": "*",
     "component/domify": "*",
     "cristiandouce/events": "*",
     "component/emitter": "*",
