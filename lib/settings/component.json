@@ -1,5 +1,5 @@
 {
-  "name": "account",
+  "name": "settings",
   "description": "Account page",
   "dependencies": {
     "cristiandouce/events": "*",
@@ -13,7 +13,7 @@
     "cristiandouce/query": "*"
   },
   "local": [ "regexps", "citizen", "request", "title", "render" ],
-  "scripts": [ "account.js", "account-form-view.js"],
-  "templates": [ "account-form.jade"],
-  "main": "account.js"
+  "scripts": [ "settings.js", "view.js"],
+  "templates": [ "form.jade"],
+  "main": "settings.js"
 }
