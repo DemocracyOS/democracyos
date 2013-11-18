@@ -141,8 +141,13 @@ function Config(app) {
      * Configure native `express` body parser
      */
 
-    app.use( express.bodyParser() );
-    
+    // `express.bodyParsers()` uses `connect.multipart()`
+    // check https://github.com/senchalabs/connect/wiki/Connect-3.0
+    // for more details on the temporal fix.
+    // app.use( express.bodyParser() );
+    app.use(express.urlencoded());
+    app.use(express.json());
+
     /**
      * Configure native `express` cookie parser
      */
