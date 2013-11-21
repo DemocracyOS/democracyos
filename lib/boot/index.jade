@@ -4,7 +4,7 @@ html(lang='en')
     //                                                      
     //   Basic Page Needs                                   
     //   ================================================== 
-    title= t('DemocracyOS')
+    title= config('organization name')
 
     meta(charset='utf-8')
     meta(name='description', content='')
@@ -21,6 +21,7 @@ html(lang='en')
 
     // Boostrap Complete
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
 
     // Application Styles
     link(rel='stylesheet', href='/app.css')
@@ -30,7 +31,12 @@ html(lang='en')
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
 
     // fav and touch icons
-    link(rel="icon", type="image/x-icon", href="/favicon.ico")
+    link(rel='apple-touch-icon', href='/boot/images/touch-icon-iphone.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/boot/images/touch-icon-ipad.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/boot/images/touch-icon-iphone-retina.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/boot/images/touch-icon-ipad-retina.png')
+
+    link(rel="icon", type="image/x-icon", href=config('favicon'))
 
     script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
     script.
@@ -50,25 +56,50 @@ html(lang='en')
         location.hash = "";
         location.href=location.href.substring(0,location.href.length-3);
       }
-
   body
-    // Start of `Page Content`
-    header.app-header
-      h1#logo
-        a(href='/')= t('DemocracyOS Beta')
-      .user-nav.btn-group
-        - if (locals.citizen)
-          a.btn.profile(href='#', data-toggle="dropdown").dropdown-toggle
-              img(src=citizen.avatar)
-              span.caret
-          ul.dropdown-menu
-              li
-                a.logout(href='/logout')= t('Logout')
-        - else
-          a(href='/signin').login= t('Login')
-          a(href='/signup').login= t('Signup')
 
-    section.site-content
+    #snap-content.snap-content
+      // Start of `Page Content`
+      header.app-header
+        a(href="#", id="toggleButton")
+          span.bar-icon
+          span.bar-icon
+          span.bar-icon
+
+        h1#logo
+          a(href='/')
+            img(src=config('logo')).logo
+            span.logo-link= t('DemocracyOS Beta')
+
+        .user-nav.btn-group
+          - if (locals.citizen)
+            a.btn.profile.pull-right(href='#', data-toggle="dropdown").dropdown-toggle
+                img(src=citizen.avatar)
+                span.name=citizen.firstName
+                span.caret
+            ul.dropdown-menu
+                li
+                  a.logout(href='/account')= t('My account')
+                li
+                  a.logout(href='/logout')= t('Logout')
+          - else
+            a(href='/signin').login.pull-right
+              i.icon-signin
+              span= t('Login')
+            a(href='/signup').login.pull-right
+              i.icon-user
+              span= t('Signup')
+          a.login.pull-left(href=config("organization url"), target="_blank")
+            span= config('organization name')
+          a.login.pull-left(href="#", id="feedback")
+            span= t('Feedback')
+      section#content.site-content
+      section#browser.site-content
+        section.app-content
+
+    .snap-drawers
+      aside.nav-proposal
+
 
     // End of `Page Content`  
     // ====================== 
@@ -77,7 +108,8 @@ html(lang='en')
     //- Core 3rd parties libs
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js')
-
+    include includes/uservoice
+    include includes/placeholders
     //- General Site javascript
     script(src='/app.js')
 

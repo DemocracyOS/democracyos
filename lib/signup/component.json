@@ -3,18 +3,19 @@
   "description": "Signup page",
   "dependencies": {
     "component/domify": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "component/emitter": "*",
-    "cristiandouce/t": "chained-tokens",
+    "component/classes": "*",
     "visionmedia/page.js": "*",
     "visionmedia/jade": "*",
-    "visionmedia/superagent": "*",
     "yields/empty": "*",
-    "yields/serialize": "*"
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens",
+    "cristiandouce/query": "*"
   },
-  "local": [ "regexps" ],
-  "scripts": [ "signup.js", "form-view.js" ],
+  "local": [ "regexps", "citizen", "request", "title", "render" ],
+  "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js", "resend-validation-email-form-view.js" ],
   "styles": [ "signup.css" ],
-  "templates": [ "signup-form.jade" , "signup-complete.jade"],
+  "templates": [ "signup-form.jade" , "email-validation-complete.jade", "resend-validation-email-form.jade"],
   "main": "signup.js"
 }

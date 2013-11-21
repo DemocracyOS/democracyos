@@ -1,10 +1,21 @@
 .comments
-  h4= t('Comments')
-  ul.media-list.comment-list
-
-  - if (citizen.id)
-    form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
-      h5= t('Your comment')
-      p 
-        textarea(name='text')
-      input.btn(type='submit', value=t('Send'))
+  .inner-container
+    h4= t('Comments')
+    ul.media-list.comment-list.main-list
+    a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('Deleted comments')
+    ul.media-list.comment-list.deleted-list(class='hide')
+    - if (citizen.id)
+      form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
+        h5= t('Your comment')
+        p 
+          textarea(name='text', rows='4')
+        input.btn.form-submit(type='submit', value=t('Send'))
+        span.help-text.form-errors
+    - else
+      .box
+        p.text-mute= t('You must be signed in to comment here')
+          | . 
+          a(href="/signin")= t('Login')
+          |  or 
+          a(href="/signup")= t('Signup')
+          | .

@@ -1,0 +1,12 @@
+{
+  "name": "request",
+  "description": "Wrapper of visionmedia/superagent DemocracyOS",
+  "version": "0.0.1",
+  "dependencies": {
+    "component/bus": "*",
+    "visionmedia/debug": "*",
+    "visionmedia/superagent": "*"
+  },
+  "scripts": [ "request.js" ],
+  "main": "request.js"
+}

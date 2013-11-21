@@ -2,13 +2,21 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , http = require('http');
+var express = require('express');
+var http = require('http');
+var balance = require('lib/balance');
 
 /*
  * Create and expose app
  */
+
 var app = exports.app = express();
+
+/**
+ * Create and expose server
+ */
+
+var server = exports.server = http.createServer(app);
 
 /**
  * Set `app` configure settings
@@ -34,6 +42,13 @@ require('lib/models')(app);
 require('lib/auth')(app);
 
 /*
+ * Twitter card and Facebook card routes
+ */
+
+app.use('/twitter-card', require('lib/twitter-card'));
+app.use('/facebook-card', require('lib/facebook-card'));
+
+/*
  * Local signin routes
  */
 
@@ -46,10 +61,16 @@ app.use('/signin', require('lib/signin'));
 app.use('/signup', require('lib/signup'));
 
 /*
+ * Account routes
+ */
+
+app.use('/account', require('lib/account'));
+
+/*
  * Forgot password routes
  */
 
-app.use('/forgotpassword', require('lib/forgotpassword'));
+app.use('/forgot', require('lib/forgot'));
 
 /**
  * Tag API Service
@@ -97,6 +118,10 @@ app.use(require('lib/boot'));
  * Start Web server
  */
 
-exports.server = http.createServer(app).listen(app.get('port'), function() {
-  console.log('Application started on port %d', app.get('port'));
-});
+if (module === require.main) {
+  balance(function() {
+    server.listen(app.get('port'), function() {
+      console.log('Application started on port %d', app.get('port'));
+    });
+  });
+}

@@ -2,18 +2,22 @@
   "name": "law",
   "description": "law pages",
   "dependencies": {
+    "component/classes": "*",
+    "component/bus": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
-    "yields/empty": "*"
+    "yields/empty": "*",
+    "cristiandouce/query": "*"
   },
   "local": [
     "citizen",
-    "proposal-list",
+    "title",
+    "request",
     "sidebar-list",
     "proposal-article",
     "proposal-options",
-    "comments-view"
+    "comments-view",
+    "browser-lock"
   ],
   "scripts": [ "law.js" ],
   "styles": [ ],

@@ -1,19 +1,11 @@
 {
-  "host": "http://localhost",
-  "port": 3000,
-  "mongoUrl": "mongodb://localhost/dbname",
-  "client": [ "host", "port" ],
+  "protocol": "http",
+  "host": "localhost",
+  "privatePort": 3000,
+  "publicPort": 3000,
+  "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
+  "client": [ "protocol", "host", "publicPort", "env", "logo", "favicon", "organization name", "organization url", "google analytics tracking id" ],
   "auth": {
-    "facebook": {
-      "clientID" : "FBClientId",
-      "clientSecret": "FBClientSecret",
-      "callback": "http://localhost:3005/auth/facebook/callback"
-    },
-    "twitter": {
-      "consumerKey" : "TwitterConsumerKey",
-      "consumerSecret": "TwitterConsumerSecret",
-      "callback": "http://127.0.0.1:3005/auth/twitter/callback"
-    },
     "basic": {
       "username" : "",
       "password": ""
@@ -32,5 +24,19 @@
       "name": "DemocracyOS",
       "email": "info@democraciaenred.org"
     }
-  }
+  },
+  "socialshare" : {
+    "siteName" : "DemocracyOS",
+    "siteDescription" : "DemocracyOS voting system",
+    "image" : "https://2.gravatar.com/avatar/a8b9176bd0d042db078bf38500727671?d=https%3A%2F%2Fidenticons.github.com%2F14bae9f2564556f8eb23cc263a779f59.png&s=400",
+    "domain" : "democracyos.org",
+    "twitter" : {
+      "username" : "@democracyos"
+    }
+  },
+  "logo" : "http://democraciaenred.org/boot/images/logo.png",
+  "favicon" : "http://democraciaenred.org/favicon.ico",
+  "organization name" : "DemocracyOS on GitHub",
+  "organization url" : "https://github.com/DemocracyOS/app",
+  "google analytics tracking id" : ""
 }

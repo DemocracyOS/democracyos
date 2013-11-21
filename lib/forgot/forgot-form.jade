@@ -1,0 +1,14 @@
+.forgot-container.small-container
+  #forgot-form
+    .title-page 
+      .circle
+        i.icon-signin
+      h1= t('Forgot Password?')
+    p #{t('We will send an email with a link to reset your password')}.
+    p.success-message.text-info.hide #{t('We just sent a message to your email with instructions to create a new password')}.
+    form(action="/forgot", method="post")
+      ul.form-errors
+      .form-group
+        label= t('Email')
+        input.form-control(type='email', name='email', tabindex=1, placeholder=t('example@email.com'))
+      .form-group: input.btn.btn-primary.btn-block(type='submit', tabindex=2, value=t('Reset Password!'))

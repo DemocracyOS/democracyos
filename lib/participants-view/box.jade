@@ -1,0 +1,5 @@
+- var plural = 1 === participants.length ? '' : 's'
+- var more = participants.length > 5;
+.participants-box
+  span #{participants.length} #{t('Participant')}#{plural}
+  a.view-more.hellip(href="#", class= more ? '' : 'hide') &hellip;  

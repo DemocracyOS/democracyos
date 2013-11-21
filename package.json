@@ -1,6 +1,6 @@
 {
-  "name": "PartidoDeLaRed",
-  "version": "0.0.1",
+  "name": "DemocracyOS",
+  "version": "0.1.0",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "homepage": "http://democraciaenred.herokuapp.com/",
   "keywords": [
@@ -38,8 +38,6 @@
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
     "passport-local-mongoose": "~0.2.4",
-    "passport-facebook": "~0.1.5",
-    "passport-twitter": "~0.1.5",
     "http-auth": "1.3.0",
     "nodemailer": "*",
     "mandrill-api": "*",
@@ -48,13 +46,16 @@
     "commander": "~2.0.0",
     "co-prompt": "*",
     "truncate": "*",
-    "t-component": "cristiandouce/t#chained-tokens"
+    "t-component": "cristiandouce/t#chained-tokens",
+    "type-component": "*",
+    "merge-util": "0.0.1",
+    "node-path": "0.0.3"
   },
   "devDependencies": {},
   "main": "pdr",
   "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
+    "node": "0.10.x",
+    "npm": "1.3.x"
   },
   "scripts": {
     "test": ""

@@ -1,0 +1,15 @@
+.forgot-container.small-container
+  #forgot-form.reset
+    .title-page 
+      .circle
+        i.icon-signin
+      h1= t('Reset Password!')
+    form.form(action="/forgot/reset", method="post", role="form")
+      ul.form-errors
+      .form-group
+        label= t('New Password')
+        input.form-control(type='password', name='password', tabindex=1, placeholder=t('Password'))
+      .form-group
+        label= t('Re-type new password')
+        input.form-control(type='password', name='re_password', tabindex=2, placeholder=t('Repeat Password'))
+      .form-group: input.btn.btn-primary(type='submit', tabindex=3, value=t('Send'))

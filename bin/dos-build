@@ -10,7 +10,7 @@ var path = require('path');
 var resolve = path.resolve;
 
 // Little hack to include `NODE_PATH=.`
-module.paths.unshift(resolve('.'))
+require('node-path')(module, [resolve('.')]);
 
 // Compile client's config file
 var config = require('lib/config');

@@ -129,7 +129,7 @@ function Config(app) {
      * Defaults to 3005
      */
 
-    app.set( 'port', config('port') || 3005 );
+    app.set( 'port', config('privatePort') || 3005 );
     
     /**
      * Set `public-assets` default path
@@ -141,8 +141,13 @@ function Config(app) {
      * Configure native `express` body parser
      */
 
-    app.use( express.bodyParser() );
-    
+    // `express.bodyParsers()` uses `connect.multipart()`
+    // check https://github.com/senchalabs/connect/wiki/Connect-3.0
+    // for more details on the temporal fix.
+    // app.use( express.bodyParser() );
+    app.use(express.urlencoded());
+    app.use(express.json());
+
     /**
      * Configure native `express` cookie parser
      */
@@ -188,6 +193,13 @@ function Config(app) {
       next();
 
     });
+
+    /**
+     * Use `twitter-card` and 'facebook-card' middlewares
+     */
+
+    app.use(require('lib/twitter-card/middleware'));
+    app.use(require('lib/facebook-card/middleware'));
         
     /**
      * Set native `express` router middleware

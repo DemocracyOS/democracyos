@@ -4,18 +4,25 @@
   "dependencies": {
     "component/domify": "*",
     "component/emitter": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
+    "component/classes": "*",
+    "component/truncate": "*",
+    "component/tip": "*",
     "visionmedia/jade": "*",
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "yields/serialize": "*",
+    "discore/closest": "*",
     "cristiandouce/t": "chained-tokens",
-    "cristiandouce/to-array": "*"
+    "cristiandouce/to-array": "*",
+    "cristiandouce/query": "*",
+    "slifszyc/paragraphs": "*"
   },
   "local": [
-    "citizen"
+    "citizen",
+    "request"
   ],  
   "scripts": [ "view.js" ],
+  "styles" : [ "comments.css" ],
   "templates": [ "comments-block.jade", "comment-item.jade" ],
   "main": "view.js"
 }

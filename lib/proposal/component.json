@@ -3,16 +3,16 @@
   "description": "proposal pages",
   "dependencies": {
     "visionmedia/debug": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
     "yields/empty": "*"
   },
   "local": [
     "citizen",
-    "proposal-list",
+    "request",
+    "sidebar-list",
     "proposal-article",
     "proposal-options",
-    "proposal-comments"
+    "comments-view"
   ],
   "scripts": [ "proposal.js" ],
   "styles": [ ],
