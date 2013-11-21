@@ -46,12 +46,6 @@
 
       .votes-cast
         em.text-muted= t('{num} votes cast', { num: census.length || "0" })
-        - if (!closed)
-          em.text-muted.secret-results= t('Results will be shown when this law is closed')
-          a.alert-link(href="#", class="why-results")= t('Why?')
-          div.alert.alert-block.hide.reasons
-            p=t("To not take part on the citizen's decision")
-            p=t("To respect parlament methodology")
     
     - if (!citizen.id)
       p.text-mute.hide= t('You must be signed in to vote on this law')
