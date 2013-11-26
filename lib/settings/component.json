@@ -12,8 +12,9 @@
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/query": "*"
   },
-  "local": [ "regexps", "citizen", "request", "title", "render" ],
-  "scripts": [ "settings.js", "view.js"],
-  "templates": [ "form.jade"],
+  "local": [ "regexps", "citizen", "request", "title", "render", "settings-profile" ],
+  "scripts": [ "settings.js" ],
+  "styles": [ "settings.css" ],
+  "templates": [ "settings-container.jade"],
   "main": "settings.js"
 }
