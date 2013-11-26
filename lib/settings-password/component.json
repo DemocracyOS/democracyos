@@ -1,0 +1,24 @@
+{
+  "name": "settings-password",
+  "description": "Settings password view",
+  "dependencies": {
+    "component/classes": "*",
+    "component/emitter": "*",
+    "component/events": "*",
+    "visionmedia/jade": "*",
+    "yields/serialize": "*",
+    "cristiandouce/t": "chained-tokens"
+  },
+  "local": [
+    "render",
+    "request",
+    "regexps"
+  ],
+  "templates": [
+    "password-template.jade"
+  ],
+  "scripts": [
+    "view.js"
+  ],
+  "main": "view.js"
+}
