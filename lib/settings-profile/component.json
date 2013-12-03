@@ -13,6 +13,7 @@
     "cristiandouce/t": "chained-tokens"
   },
   "local": [
+    "citizen",
     "render",
     "request",
     "regexps"
