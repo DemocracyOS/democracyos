@@ -1,5 +1,12 @@
+#settings-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 #settings {
   max-width: 650px;
+  min-height: 100%;
   margin: 0px auto;
   top: -10px;
   padding-top: 10px;
