@@ -4,15 +4,17 @@
   "dependencies": {
     "component/classes": "*",
     "component/emitter": "*",
-    "component/events": "*",
+    "cristiandouce/events": "*",
     "visionmedia/jade": "*",
+    "visionmedia/debug": "*",
     "yields/serialize": "*",
+    "yields/empty": "*",
+    "cristiandouce/query": "*",
     "cristiandouce/t": "chained-tokens"
   },
   "local": [
     "render",
-    "request",
-    "regexps"
+    "request"
   ],
   "templates": [
     "password-template.jade"
