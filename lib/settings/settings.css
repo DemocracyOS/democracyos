@@ -76,10 +76,13 @@
         display: none;
     }
 
-    #settings .settings-content > .hidden {
-        border-bottom: 1px solid #dcdcdc;
-        display: block;
+    #settings .settings-content > .hide {
+        display: block !important;
         padding-bottom: 10px;
         margin-bottom: 30px;
+    }
+
+    #settings .settings-content > div {
+      border-bottom: 1px solid #dcdcdc;
     }
 }

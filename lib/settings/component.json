@@ -12,7 +12,15 @@
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/query": "*"
   },
-  "local": [ "regexps", "citizen", "request", "title", "render", "settings-profile" ],
+  "local": [
+    "regexps",
+    "citizen",
+    "request",
+    "title",
+    "render",
+    "settings-profile",
+    "settings-password"
+  ],
   "scripts": [ "settings.js" ],
   "styles": [ "settings.css" ],
   "templates": [ "settings-container.jade"],
