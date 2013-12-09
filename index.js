@@ -22,7 +22,7 @@ var server = exports.server = http.createServer(app);
  * Set `app` configure settings
  */
 
-require('./config')(app)
+require('lib/setup')(app);
 
 /*
  * Register Models and Launch Mongoose
