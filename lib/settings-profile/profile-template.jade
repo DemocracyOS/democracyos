@@ -1,0 +1,18 @@
+#profile-wrapper.hide
+  .profile-settings
+    .title-page 
+      .circle
+        i.icon-user
+      h1= t('Profile')
+    form.form(action="/settings/profile", method="post", role="form")
+      ul.form-messages
+      .form-group
+        label #{t('First name')}
+        input.form-control(type='text', id="firstName", name='firstName', tabindex=1, placeholder=t('First name'), value='#{citizen.firstName}')
+      .form-group
+        label #{t('Last name')}
+        input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('Last name'), value='#{citizen.lastName}')
+      .form-group
+        label= t('Email')
+        input.form-control(type='email', name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}')
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=4, value=t('Save'))

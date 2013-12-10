@@ -1,0 +1,95 @@
+#settings-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#settings {
+  max-width: 650px;
+  min-height: 100%;
+  margin: 0px auto;
+  top: -10px;
+  padding-top: 10px;
+  border: 1px solid #CDCDCD;
+  position: relative;
+}
+
+#settings .sidebar-container {
+  width: 160px;
+  height: 100%;
+  position: absolute;
+  padding-bottom: 10px;
+}
+
+#settings .sidebar-container ul.settings-menu {
+  height: 100%;
+  background-color: #F8F8F8;
+  border-right: 1px solid #E0E2E1;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+#settings .sidebar-container ul li.heading {
+  padding: 42px 0 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #C4C4C4; 
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #E0E2E1;
+  background-color: #ECF0F1;
+}
+
+#settings .sidebar-container ul li {
+  list-style: none;
+}
+
+#settings .sidebar-container ul li a {
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  color: #25A1C3;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-shadow: 0 1px 0 #FFF;
+}
+
+#settings .settings-content {
+  margin-left: 160px;
+  padding: 20px 75px;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    #content.settings-page {
+        width: 100%;
+    }
+
+    #settings-container,#settings,#settings-content {
+        height: auto;
+    }
+
+    #settings {
+        border-width: 0;
+    }
+
+    #settings .settings-content {
+        margin-left: 0;
+        padding: 20px 30px;
+    }
+
+    #settings .sidebar-container {
+        display: none;
+    }
+
+    #settings .settings-content > .hide {
+        display: block !important;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+
+    #settings .settings-content > div {
+      border-bottom: 1px solid #dcdcdc;
+    }
+}

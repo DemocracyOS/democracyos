@@ -61,10 +61,10 @@ app.use('/signin', require('lib/signin'));
 app.use('/signup', require('lib/signup'));
 
 /*
- * Account routes
+ * Account settings routes
  */
 
-app.use('/account', require('lib/account'));
+app.use('/settings', require('lib/settings'));
 
 /*
  * Forgot password routes
