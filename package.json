@@ -25,7 +25,7 @@
     "url": ""
   },
   "dependencies": {
-    "express": "*",
+    "express": "~3.4.6",
     "jade": "*",
     "mongoose": "*",
     "mongoose-voting": "0.1.1",
