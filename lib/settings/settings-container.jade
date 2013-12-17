@@ -5,6 +5,6 @@
         li.heading= t('Settings')
         li: a(href="/settings/profile")= t('Edit profile')
         li: a(href="/settings/password")= t('Password')
-        li: a(href="/settings/sessions")= t('Sessions')
-        li: a(href="/settings/notifications")= t('Notifications')
+        li: a(href="/settings/sessions", style="display: none;")= t('Sessions')
+        li: a(href="/settings/notifications", style="display: none;")= t('Notifications')
     .settings-content
