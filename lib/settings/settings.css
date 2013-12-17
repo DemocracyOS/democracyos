@@ -23,21 +23,20 @@
 
 #settings .sidebar-container ul.settings-menu {
   height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #F8F8F8;
   border-right: 1px solid #E0E2E1;
   text-transform: uppercase;
-  margin: 0;
-  padding: 0;
 }
 
 #settings .sidebar-container ul li.heading {
-  padding: 42px 0 10px 20px;
+  padding: 40px 0 10px 20px;
+  background-color: #ECF0F1;
+  border-bottom: 1px solid #E0E2E1;
+  color: #C4C4C4;
   font-size: 14px;
   font-weight: bold;
-  color: #C4C4C4; 
-  letter-spacing: 0.1em;
-  border-bottom: 1px solid #E0E2E1;
-  background-color: #ECF0F1;
 }
 
 #settings .sidebar-container ul li {
@@ -57,39 +56,35 @@
 
 #settings .settings-content {
   margin-left: 160px;
-  padding: 20px 75px;
+  padding: 40px 75px;
   height: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-    #content.settings-page {
-        width: 100%;
-    }
+#settings .settings-content .heading {
+  position: relative;
+  margin: 0px;
+  margin-bottom: 30px;
+}
 
-    #settings-container,#settings,#settings-content {
-        height: auto;
-    }
+#settings .heading .circle {
+  position: absolute;
+  display: none;
+  left: -26px;
+  top: -4px;
+  overflow: hidden;
+  color: #FFF;
+  width: 20px;
+  text-align: center;
+  font-size: 20px;
+}
 
-    #settings {
-        border-width: 0;
-    }
+#settings .heading .circle i {
+  color: #7F8C8D;
+}
 
-    #settings .settings-content {
-        margin-left: 0;
-        padding: 20px 30px;
-    }
-
-    #settings .sidebar-container {
-        display: none;
-    }
-
-    #settings .settings-content > .hide {
-        display: block !important;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-    }
-
-    #settings .settings-content > div {
-      border-bottom: 1px solid #dcdcdc;
-    }
+#settings .heading h1 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
 }
