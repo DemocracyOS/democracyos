@@ -32,8 +32,6 @@
 
 #settings .sidebar-container ul li.heading {
   padding: 40px 0 10px 20px;
-  background-color: #ECF0F1;
-  border-bottom: 1px solid #E0E2E1;
   color: #C4C4C4;
   font-size: 14px;
   font-weight: bold;
@@ -52,6 +50,11 @@
   font-weight: bold;
   padding: 10px 20px;
   text-shadow: 0 1px 0 #FFF;
+}
+
+#settings .sidebar-container ul li a.active {
+  background: #ECF0F1;
+  box-shadow: 0 1px 0 #fff, inset 0 1px 0 #e1e1e1;
 }
 
 #settings .settings-content {
