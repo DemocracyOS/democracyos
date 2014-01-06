@@ -4,7 +4,7 @@
 
 li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > comment.upvotes.length) || flags) ? 'spam' : '')
   span.pull-left
-    img(src=comment.author.avatar).avatar
+    img(src=comment.author.gravatar).avatar
 
   .media-body
     h5.media-heading
