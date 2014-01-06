@@ -24,10 +24,13 @@
   "Sessions": "Sessions",
   "Notifications": "Notifications",
   "Change your profile picture at gravatar.com": "Change your profile picture at gravatar.com",
+  "Your profile was successfuly updated": "Your profile was successfuly updated",
   "Change password": "Change password",
   "Current password": "Current password",
   "New password": "New password",
   "Confirm new password": "Confirm new password",
+  "Your password was successfuly updated": "Your password was successfuly updated",
+  "Current password is invalid": "Current password is invalid",
 
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",

@@ -9,7 +9,6 @@
     "visionmedia/jade": "*",
     "yields/empty": "*",
     "yields/serialize": "*",
-    "cristiandouce/t": "chained-tokens",
     "cristiandouce/query": "*"
   },
   "local": [
