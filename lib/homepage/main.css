@@ -118,6 +118,9 @@ aside.nav-proposal,
   overflow-y: scroll;
   background: #fff;
 }
+#content.site-content {
+  overflow-y: auto;
+}
 header.app-header {
   z-index: 20;
   top: 0;

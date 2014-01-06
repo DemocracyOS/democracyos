@@ -1,0 +1,31 @@
+{
+  "name": "settings-profile",
+  "description": "Settings profile view",
+  "dependencies": {
+    "component/classes": "*",
+    "component/emitter": "*",
+    "cristiandouce/events": "*",
+    "visionmedia/debug": "*",
+    "visionmedia/jade": "*",
+    "yields/serialize": "*",
+    "yields/empty": "*",
+    "cristiandouce/query": "*",
+    "cristiandouce/t": "chained-tokens"
+  },
+  "local": [
+    "citizen",
+    "render",
+    "request",
+    "regexps"
+  ],
+  "templates": [
+    "profile-template.jade"
+  ],
+  "styles": [
+    "profile.css"
+  ],
+  "scripts": [
+    "view.js"
+  ],
+  "main": "view.js"
+}

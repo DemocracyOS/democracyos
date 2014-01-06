@@ -5,7 +5,7 @@
   "Login to": "Login to",
   "Signup": "Signup",
   "Logout": "Logout",
-  "My account": "My account",
+  "Settings": "Settings",
   "Feedback": "Feedback",
 
   "Incorrect password": "Incorrect password",
@@ -19,6 +19,15 @@
   "Passwords do not match": "Passwords do not match",
   "Email is not valid": "Email is not valid",
   "A real name is required": "A real name is required",
+
+  "Profile": "Profile",
+  "Sessions": "Sessions",
+  "Notifications": "Notifications",
+  "Change your profile picture at gravatar.com": "Change your profile picture at gravatar.com",
+  "Change password": "Change password",
+  "Current password": "Current password",
+  "New password": "New password",
+  "Confirm new password": "Confirm new password",
 
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",

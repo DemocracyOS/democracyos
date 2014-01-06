@@ -1,5 +1,5 @@
 {
-  "name": "account",
+  "name": "settings",
   "description": "Account page",
   "dependencies": {
     "cristiandouce/events": "*",
@@ -12,8 +12,17 @@
     "cristiandouce/t": "chained-tokens",
     "cristiandouce/query": "*"
   },
-  "local": [ "regexps", "citizen", "request", "title", "render" ],
-  "scripts": [ "account.js", "account-form-view.js"],
-  "templates": [ "account-form.jade"],
-  "main": "account.js"
+  "local": [
+    "regexps",
+    "citizen",
+    "request",
+    "title",
+    "render",
+    "settings-profile",
+    "settings-password"
+  ],
+  "scripts": [ "settings.js" ],
+  "styles": [ "settings.css", "settings-responsive.css" ],
+  "templates": [ "settings-container.jade"],
+  "main": "settings.js"
 }
