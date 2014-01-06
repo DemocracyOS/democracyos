@@ -5,7 +5,7 @@
   "Login to": "Ingresar a",
   "Signup": "Registrarse",
   "Logout": "Cerrar sesión",
-  "My account": "Mi cuenta",
+  "Settings": "Configuración",
   "Feedback": "Sugerencias",
 
   "Incorrect password": "Contraseña incorrecta",
@@ -19,6 +19,15 @@
   "Passwords do not match": "Las contraseñas no coinciden",
   "Email is not valid": "Correo electrónico no válido",
   "A real name is required": "Se requiere un nombre real",
+
+  "Profile": "Perfil",
+  "Sessions": "Sesiones",
+  "Notifications": "Notificaciones",
+  "Change your profile picture at gravatar.com": "Cambiá tu foto de perfil en gravatar.com",
+  "Change password": "Cambiar contraseña",
+  "Current password": "Contraseña actual",
+  "New password": "Contraseña nueva",
+  "Confirm new password": "Confirmar contraseña nueva",
 
   "Comments": "Comentarios",
   "You must be signed in to comment here": "Debes estar registrado para poder comentar aquí",

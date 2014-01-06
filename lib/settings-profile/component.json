@@ -21,6 +21,9 @@
   "templates": [
     "profile-template.jade"
   ],
+  "styles": [
+    "profile.css"
+  ],
   "scripts": [
     "view.js"
   ],

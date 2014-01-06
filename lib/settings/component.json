@@ -22,7 +22,7 @@
     "settings-password"
   ],
   "scripts": [ "settings.js" ],
-  "styles": [ "settings.css" ],
+  "styles": [ "settings.css", "settings-responsive.css" ],
   "templates": [ "settings-container.jade"],
   "main": "settings.js"
 }

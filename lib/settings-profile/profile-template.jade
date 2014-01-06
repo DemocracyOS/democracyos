@@ -1,10 +1,10 @@
 #profile-wrapper.hide
   .profile-settings
-    .title-page 
+    .heading
       .circle
         i.icon-user
       h1= t('Profile')
-    form.form(action="/settings/profile", method="post", role="form")
+    form.form(action="/settings/profile", method="post", role="form", autocomplete="off")
       ul.form-messages
       .form-group
         label #{t('First name')}
@@ -15,4 +15,8 @@
       .form-group
         label= t('Email')
         input.form-control(type='email', name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}')
+      .form-group
+        a(href="https://gravatar.com", target="_blank")
+          img(src=citizen.avatar, width="30")
+          strong= t('Change your profile picture at gravatar.com')
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=4, value=t('Save'))
