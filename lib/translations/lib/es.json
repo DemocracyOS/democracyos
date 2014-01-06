@@ -24,10 +24,13 @@
   "Sessions": "Sesiones",
   "Notifications": "Notificaciones",
   "Change your profile picture at gravatar.com": "Cambiá tu foto de perfil en gravatar.com",
+  "Your profile was successfuly updated": "Tu perfil se actualizó exitosamente",
   "Change password": "Cambiar contraseña",
   "Current password": "Contraseña actual",
   "New password": "Contraseña nueva",
   "Confirm new password": "Confirmar contraseña nueva",
+  "Your password was successfuly updated": "Tu contraseña fue actualizada exitosamente",
+  "Current password is invalid": "La contraseña actual no es correcta",
 
   "Comments": "Comentarios",
   "You must be signed in to comment here": "Debes estar registrado para poder comentar aquí",
