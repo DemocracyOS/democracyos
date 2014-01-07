@@ -17,6 +17,6 @@
         input.form-control(type='email', disabled='disabled' name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}')
       .form-group
         a(href="https://gravatar.com", target="_blank")
-          img(src=citizen.avatar, width="30")
+          img(src=citizen.gravatar, width="30")
           strong= t('Change your profile picture at gravatar.com')
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=4, value=t('Save'))
