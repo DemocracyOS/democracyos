@@ -74,7 +74,7 @@ html(lang='en')
         .user-nav.btn-group
           - if (locals.citizen)
             a.btn.profile.pull-right(href='#', data-toggle="dropdown").dropdown-toggle
-                img(src=citizen.gravatar())
+                img(src=citizen.gravatar({default: 'mm'}))
                 span.name=citizen.firstName
                 span.caret
             ul.dropdown-menu
