@@ -14,7 +14,7 @@
         input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('Last name'), value='#{citizen.lastName}')
       .form-group
         label= t('Email')
-        input.form-control(type='email', name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}')
+        input.form-control(type='email', disabled='disabled' name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}')
       .form-group
         a(href="https://gravatar.com", target="_blank")
           img(src=citizen.avatar, width="30")
