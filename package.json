@@ -29,7 +29,7 @@
     "jade": "~0.35.0",
     "mongoose": "~3.8.3",
     "mongoose-voting": "0.1.1",
-    "mongoose-gravatar": "~0.2.0",
+    "mongoose-gravatar": "~0.2.1",
     "connect-mongo": "~0.4.0",
     "debug": "~0.7.4",
     "nowww": "~1.1.2",
