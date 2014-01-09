@@ -1,5 +1,9 @@
 nav.sidebar-nav
   .dropdown-department
+    .btn-group.btn-group-justified
+      a.btn.btn-default Open
+      a.btn.btn-default Closed
+    p 
     .btn-group
       button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t("Listing all {listType}s", { listType: type })
       button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
