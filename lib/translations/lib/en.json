@@ -36,6 +36,10 @@
   "Your password was successfuly updated": "Your password was successfuly updated",
   "Current password is invalid": "Current password is invalid",
 
+  "Open": "Open",
+  "Finished": "Finished",
+  "Hide already voted": "Hide already voted",
+
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",
   "Deleted comments": "Deleted comments",
