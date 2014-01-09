@@ -1,11 +1,11 @@
 nav.sidebar-nav
   .dropdown-department
     .btn-group.btn-group-justified
-      a.btn.btn-default= t('Open')
-      a.btn.btn-default= t('Finished')
+      a.btn.btn-default= t('sidebar-list.open')
+      a.btn.btn-default= t('sidebar-list.closed')
     p 
     .btn-group
-      button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t('Listing all {listType}s', { listType: type })
+      button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t('sidebar-list.listing{listType}', { listType: type })
       button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
         span.caret
       ul.dropdown-menu
@@ -13,7 +13,7 @@ nav.sidebar-nav
 
     .hide-voted-box
       input(type='checkbox', name='hide-voted')
-      label= t('Hide already voted')
+      label= t('sidebar-list.hide-voted')
 
   ul.nav.navlist
     //- Rendered from clients's view

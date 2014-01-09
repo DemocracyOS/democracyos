@@ -36,9 +36,9 @@
   "Your password was successfuly updated": "Your password was successfuly updated",
   "Current password is invalid": "Current password is invalid",
 
-  "Open": "Open",
-  "Finished": "Finished",
-  "Hide already voted": "Hide already voted",
+  "sidebar-list.open": "Open",
+  "sidebar-list.closed": "Closed",
+  "sidebar-list.hide-voted": "Hide already voted",
 
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",
@@ -126,7 +126,7 @@
   "Participant": "Participant",
   "You must be signed in to vote on this law": "You must be signed in to vote on this law",
 
-  "Listing all {listType}s": "Listing all {listType}s",
+  "sidebar-list.listing{listType}": "Showing all",
   "Project": "Project",
   "Bill": "Bill",
   "Law": "Law",
