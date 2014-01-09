@@ -1,0 +1,16 @@
+{
+  "name": "laws",
+  "description": "Collection of laws",
+  "dependencies": {
+    "component/emitter": "*",
+    "visionmedia/debug": "*"
+  },
+  "local": [
+    "request",
+    "render"
+  ],
+  "scripts": [
+    "laws.js"
+  ],
+  "main": "laws.js"
+}
