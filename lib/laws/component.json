@@ -10,7 +10,8 @@
     "render"
   ],
   "scripts": [
-    "laws.js"
+    "laws.js",
+    "proto.js"
   ],
   "main": "laws.js"
 }

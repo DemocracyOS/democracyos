@@ -13,7 +13,7 @@
     "discore/closest": "*",
     "cristiandouce/t": "chained-tokens"
   },
-  "local": [ "request" ],
+  "local": [ "laws" ],
   "scripts": [ "view.js", "sidebar.js" ],
   "templates": [ "list-block.jade", "list-item.jade", "filter-item.jade" ],
   "styles": [ "sidebar.css" ],
