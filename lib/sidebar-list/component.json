@@ -16,7 +16,7 @@
   "local": [ "request" ],
   "scripts": [ "view.js", "sidebar.js" ],
   "templates": [ "list-block.jade", "list-item.jade", "filter-item.jade" ],
-  "styles": [ ],
+  "styles": [ "sidebar.css" ],
   "images": [ ],
   "main": "sidebar.js"
 }
