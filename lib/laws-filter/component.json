@@ -1,0 +1,11 @@
+{
+  "name": "laws-filter",
+  "description": "Filter for laws. Saves state in session or localStorage if availble",
+  "dependencies": {},
+  "local": [
+    "store",
+    "laws"
+  ],
+  "scripts": [ "laws-filter.js" ],
+  "main": "laws-filter.js"
+}
