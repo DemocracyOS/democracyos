@@ -1,0 +1,15 @@
+#laws-filer
+  #status-filter.btn-group.btn-group-justified
+    a.btn.btn-default= t('sidebar-list.open')
+    a.btn.btn-default= t('sidebar-list.closed')
+
+  .btn-group.btn-group-justified
+    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t('sidebar-list.listing{listType}', { listType: type })
+    button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
+      span.caret
+    ul.dropdown-menu
+      //- Rendered from client's view
+
+  .hide-voted-box
+    input(type='checkbox', name='hide-voted')
+    label= t('sidebar-list.hide-voted')
