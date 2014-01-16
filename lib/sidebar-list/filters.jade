@@ -1,7 +1,7 @@
 #laws-filer
   #status-filter.btn-group.btn-group-justified
-    a.btn.btn-default= t('sidebar-list.open')
-    a.btn.btn-default= t('sidebar-list.closed')
+    a.btn.btn-default(data-status='open')= t('sidebar-list.open')
+    a.btn.btn-default(data-status='closed')= t('sidebar-list.closed')
 
   .btn-group.btn-group-justified
     button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t('sidebar-list.listing{listType}', { listType: type })
