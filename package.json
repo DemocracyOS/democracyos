@@ -47,7 +47,7 @@
     "commander": "~2.0.0",
     "co-prompt": "~1.0.0",
     "truncate": "~1.0.2",
-    "t-component": "component/t#9cb72",
+    "t-component": "1.0.0",
     "type-component": "0.0.1",
     "merge-util": "0.0.1",
     "node-path": "0.0.3"
