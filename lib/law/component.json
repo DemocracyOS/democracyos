@@ -2,12 +2,12 @@
   "name": "law",
   "description": "law pages",
   "dependencies": {
-    "component/classes": "*",
-    "component/bus": "*",
-    "visionmedia/debug": "*",
-    "visionmedia/page.js": "*",
-    "yields/empty": "*",
-    "cristiandouce/query": "*"
+    "component/classes": "1.2.0",
+    "component/bus": "0.0.2",
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/page.js": "1.3.7",
+    "yields/empty": "0.0.1",
+    "cristiandouce/query": "0.0.1"
   },
   "local": [
     "citizen",

@@ -2,9 +2,9 @@
   "name": "proposal",
   "description": "proposal pages",
   "dependencies": {
-    "visionmedia/debug": "*",
-    "visionmedia/page.js": "*",
-    "yields/empty": "*"
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/page.js": "1.3.7",
+    "yields/empty": "0.0.1"
   },
   "local": [
     "citizen",

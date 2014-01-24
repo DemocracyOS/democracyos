@@ -2,8 +2,8 @@
   "name": "homepage",
   "description": "Homepage page",
   "dependencies": {
-    "visionmedia/debug": "*",
-    "visionmedia/page.js": "*"
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/page.js": "1.3.7"
   },
   "development": {},
   "local": [

@@ -2,7 +2,7 @@
   "name": "title",
   "description": "Update page's title by html head",
   "dependencies": {
-    "cristiandouce/query": "*"
+    "cristiandouce/query": "0.0.1"
   },
   "local": [
     "config"
