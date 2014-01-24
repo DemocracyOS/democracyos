@@ -1,6 +1,6 @@
 {
   "name": "DemocracyOS",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "homepage": "http://democraciaenred.herokuapp.com/",
   "keywords": [
@@ -33,8 +33,8 @@
     "connect-mongo": "~0.4.0",
     "debug": "~0.7.4",
     "nowww": "~1.1.2",
-    "component": "~0.18.0",
-    "component-builder": "~0.10.0",
+    "component": "~0.19.5",
+    "component-builder": "~0.10.1",
     "string-to-js": "0.0.1",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
@@ -47,7 +47,7 @@
     "commander": "~2.0.0",
     "co-prompt": "~1.0.0",
     "truncate": "~1.0.2",
-    "t-component": "cristiandouce/t#chained-tokens",
+    "t-component": "1.0.0",
     "type-component": "0.0.1",
     "merge-util": "0.0.1",
     "node-path": "0.0.3"

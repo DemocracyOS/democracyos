@@ -176,12 +176,10 @@ header.app-header .user-nav {
   top: 0px;
 }
 header.app-header .user-nav .btn {
+  color: #fff;
   height: 60px;
   border-radius: 0;
-  border-left: 1px solid #2980b9;
-  border-right: 1px solid #2980b9;
   background: none;
-  padding: 0;
   padding: 13px 12px;
 }
 header.app-header .user-nav .btn:focus {
