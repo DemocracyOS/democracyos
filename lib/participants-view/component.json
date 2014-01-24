@@ -2,7 +2,7 @@
   "name": "participants-view",
   "description": "participants view",
   "dependencies": {
-    "component/events": "f425b",
+    "component/events": "f445d",
     "component/emitter": "1.1.1",
     "component/classes": "1.2.0",
     "component/tip": "1.0.0",

@@ -3,7 +3,7 @@
   "description": "proposal's options view",
   "dependencies": {
     "component/domify": "1.2.0",
-    "component/events": "f425b",
+    "component/events": "f445d",
     "component/classes": "1.2.0",
     "component/enumerable": "56cbe",
     "component/to-function": "edeb3",

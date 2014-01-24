@@ -4,7 +4,7 @@
   "dependencies": {
     "component/domify": "1.2.0",
     "component/emitter": "1.1.1",
-    "component/events": "f425b",
+    "component/events": "f445d",
     "component/classes": "1.2.0",
     "component/truncate": "72b55",
     "component/tip": "1.0.0",
