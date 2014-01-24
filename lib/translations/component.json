@@ -3,6 +3,6 @@
   "description": "Translations dictionary for DemocracyOS",
   "dependencies": {},
   "scripts": [ "index.js" ],
-  "files": [ "lib/en.json", "lib/es.json" ],
+  "json": [ "lib/en.json", "lib/es.json" ],
   "main": "index.js"
 }
