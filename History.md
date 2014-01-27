@@ -1,4 +1,20 @@
 
+0.2.1 / 2014-01-27
+==================
+
+ * Update `utils.restrict` function middleware
+ * Remove `/citizen/all` API endpoint. Closes #236
+ * Add reject no `application/json` requests from `delegation`, `comment`, `tag`, `proposal`, `law`, `citizen` API endpoints. Closes #237
+ * Add `accepts` new module
+ * Remove path '/auth/facebook' from page's routes at `boot`
+ * Fix error on vote click while unlogged
+ * Update to component/events@f445d
+ * Pin all component dependencies. Closes #231
+ * Bump `component-builder` and `component`
+ * Update `config` logs and avoid exposing configuration settings to output
+ * Update Makefile
+ * Update dependency 't-component' to 1.0.0
+
 0.2.0 / 2014-01-10
 ==================
 
