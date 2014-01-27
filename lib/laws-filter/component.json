@@ -13,6 +13,6 @@
     "store",
     "laws"
   ],
-  "scripts": [ "laws-filter.js" ],
+  "scripts": [ "laws-filter.js", "sorts.js" ],
   "main": "laws-filter.js"
 }
