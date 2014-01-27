@@ -1,13 +1,20 @@
-#laws-filer
+#laws-filter
   #status-filter.btn-group.btn-group-justified
     a.btn.btn-default(data-status='open')= t('sidebar-list.open')
     a.btn.btn-default(data-status='closed')= t('sidebar-list.closed')
 
   .btn-group.btn-group-justified
-    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t('sidebar-list.listing{listType}', { listType: type })
+    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t(filter.sort.label)
     button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
       span.caret
     ul.dropdown-menu
+      - each sort, key in filter.sorts
+        - var active = false;
+        - if (sort == filter.sort)
+          - active = true;
+        li(data-sort=key, class= active ? 'active' : '')
+          a(href='#')= t(sort.label)
+
       //- Rendered from client's view
 
   .hide-voted-box
