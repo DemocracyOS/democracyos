@@ -2,7 +2,7 @@
   "name": "browser-lock",
   "description": "Locks #browser from user interaction",
   "dependencies": {
-    "component/bus": "*",
+    "component/bus": "0.0.2",
     "cristiandouce/query": "0.0.1",
     "cristiandouce/loading-lock": "0.0.2"
   },

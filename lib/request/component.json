@@ -3,9 +3,9 @@
   "description": "Wrapper of visionmedia/superagent DemocracyOS",
   "version": "0.0.1",
   "dependencies": {
-    "component/bus": "*",
-    "visionmedia/debug": "*",
-    "visionmedia/superagent": "*"
+    "component/bus": "0.0.2",
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/superagent": "0.16.0"
   },
   "scripts": [ "request.js" ],
   "main": "request.js"

@@ -2,9 +2,9 @@
   "name": "render",
   "description": "Component render utility for DemocracyOS app",
   "dependencies": {
-    "component/domify": "*",
-    "cristiandouce/merge-util": "*",
-    "cristiandouce/t": "chained-tokens"
+    "component/domify": "1.2.0",
+    "cristiandouce/merge-util": "0.0.1",
+    "component/t": "1.0.0"
   },
   "local": [ "citizen", "config" ],
   "scripts": [ "render.js" ],

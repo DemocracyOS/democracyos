@@ -2,7 +2,7 @@
   "name": "snapper",
   "description": "DemocracyOS sidebar snapper",
   "dependencies": {
-    "jakiestfu/Snap.js": "*"
+    "jakiestfu/Snap.js": "85380"
   },
   "scripts": [ "snapper.js" ],
   "main": "snapper.js"

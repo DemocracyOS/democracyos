@@ -2,12 +2,12 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": {
-    "component/bus": "*",
-    "visionmedia/page.js": "*",
-    "cristiandouce/t": "chained-tokens",
-    "cristiandouce/timeago": "*",
-    "code42day/ga": "*",
-    "slifszyc/user-agent": "*"
+    "component/bus": "0.0.2",
+    "visionmedia/page.js": "1.3.7",
+    "component/t": "1.0.0",
+    "cristiandouce/timeago": "0.0.1",
+    "code42day/ga": "1.1.0",
+    "slifszyc/user-agent": "0.0.9"
   },
   "local": [
     "config",

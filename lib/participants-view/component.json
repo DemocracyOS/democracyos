@@ -2,14 +2,14 @@
   "name": "participants-view",
   "description": "participants view",
   "dependencies": {
-    "cristiandouce/events": "*",
-    "component/emitter": "*",
-    "component/classes": "*",
-    "component/tip": "*",
-    "component/aurora-tip": "*",
-    "visionmedia/debug": "*",
-    "visionmedia/jade": "*",
-    "cristiandouce/query": "*"
+    "component/events": "f445d",
+    "component/emitter": "1.1.1",
+    "component/classes": "1.2.0",
+    "component/tip": "1.0.0",
+    "component/aurora-tip": "1.0.0",
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/jade": "1.1.5",
+    "cristiandouce/query": "0.0.1"
   },
   "local": [ "config", "render", "request" ],
   "scripts": [ "view.js"],

@@ -2,9 +2,9 @@
   "name": "body-classes",
   "description": "Attach and detach classes to body",
   "dependencies": {
-    "component/bus": "*",
-    "component/classes": "*",
-    "visionmedia/page.js": "*"
+    "component/bus": "0.0.2",
+    "component/classes": "1.2.0",
+    "visionmedia/page.js": "1.3.7"
   },
   "local": [ "config" ],
   "scripts": [ "body.js" ],
