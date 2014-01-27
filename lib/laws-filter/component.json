@@ -5,6 +5,7 @@
   	"component/emitter": "1.0.1",
   	"visionmedia/debug": "*",
   	"cristiandouce/merge-util": "*",
+    "component/t": "*",
   	"component/type": "*",
   	"component/to-function": "*"
   	},
