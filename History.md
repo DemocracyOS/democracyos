@@ -1,4 +1,12 @@
 
+0.2.4 / 2014-01-28
+==================
+
+ * Apply exposure function to filter content delivered to client by API endpoints
+ * Fix random bug on responses without body for `comments-view`
+ * Rename `utils.map` to `utils.expose`
+ * Deprecate `utils.merge` in favor of `merge-util`
+
 0.2.3 / 2014-01-28
 ==================
 
