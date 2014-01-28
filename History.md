@@ -1,4 +1,9 @@
 
+0.2.3 / 2014-01-28
+==================
+
+ * Fix dependency override of `component/delegate` by `component/tip`. Closes #233
+
 0.2.2 / 2014-01-27
 ==================
 
