@@ -3,7 +3,7 @@
   "description": "proposal's article view",
   "dependencies": {
     "component/domify": "1.2.0",
-    "component/events": "f445d",
+    "component/events": "1.0.5",
     "component/classes": "1.2.0",
     "component/tip": "1.0.0",
     "component/aurora-tip": "1.0.0",
