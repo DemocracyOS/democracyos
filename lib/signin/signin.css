@@ -1,4 +1,11 @@
-.form-group
-{
+body.signin-page header.app-header .user-nav a[href="/signin"] {
+  display: none;
+}
+
+body.signin-page header.app-header .user-nav a[href="/signup"] {
+  display: inline-block;
+}
+
+.form-group {
 	overflow: hidden;
 }
