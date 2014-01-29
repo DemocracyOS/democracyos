@@ -1,3 +1,7 @@
+body header.app-header .user-nav a[href="/signup"] {
+  display: none;
+}
+
 form .form-group label {
   display:block;
 }

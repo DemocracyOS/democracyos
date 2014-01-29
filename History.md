@@ -1,4 +1,43 @@
 
+0.2.5 / 2014-01-28
+==================
+
+ * Restore participants ids on law article view
+
+0.2.4 / 2014-01-28
+==================
+
+ * Apply exposure function to filter content delivered to client by API endpoints
+ * Fix random bug on responses without body for `comments-view`
+ * Rename `utils.map` to `utils.expose`
+ * Deprecate `utils.merge` in favor of `merge-util`
+
+0.2.3 / 2014-01-28
+==================
+
+ * Fix dependency override of `component/delegate` by `component/tip`. Closes #233
+
+0.2.2 / 2014-01-27
+==================
+
+ * Bump `component/events` to 1.0.5
+
+0.2.1 / 2014-01-27
+==================
+
+ * Update `utils.restrict` function middleware
+ * Remove `/citizen/all` API endpoint. Closes #236
+ * Add reject no `application/json` requests from `delegation`, `comment`, `tag`, `proposal`, `law`, `citizen` API endpoints. Closes #237
+ * Add `accepts` new module
+ * Remove path '/auth/facebook' from page's routes at `boot`
+ * Fix error on vote click while unlogged
+ * Update to component/events@f445d
+ * Pin all component dependencies. Closes #231
+ * Bump `component-builder` and `component`
+ * Update `config` logs and avoid exposing configuration settings to output
+ * Update Makefile
+ * Update dependency 't-component' to 1.0.0
+
 0.2.0 / 2014-01-10
 ==================
 
