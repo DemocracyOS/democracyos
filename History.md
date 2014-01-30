@@ -1,4 +1,13 @@
 
+0.2.6 / 2014-01-30
+==================
+
+ * Improve `build` logging
+ * Remove deprecated `json.js` builder plugin
+ * Improve `jade` build script
+ * Add toggle/hide signin/signup links on header. Closes #136
+ * Add logs using `utils.pluck` helper method.
+
 0.2.5 / 2014-01-28
 ==================
 
