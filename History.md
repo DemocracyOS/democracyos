@@ -1,4 +1,9 @@
 
+0.2.9 / 2014-01-30
+==================
+
+ * Add support for inheritance locals merge at render
+
 0.2.8 / 2014-01-30
 ==================
 
