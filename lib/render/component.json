@@ -3,7 +3,7 @@
   "description": "Component render utility for DemocracyOS app",
   "dependencies": {
     "component/domify": "1.2.0",
-    "cristiandouce/merge-util": "0.0.1",
+    "cristiandouce/merge-util": "0.1.0",
     "component/t": "1.0.0"
   },
   "local": [ "citizen", "config" ],

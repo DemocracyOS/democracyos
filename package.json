@@ -48,7 +48,7 @@
     "truncate": "~1.0.2",
     "t-component": "1.0.0",
     "type-component": "0.0.1",
-    "merge-util": "0.0.1",
+    "merge-util": "0.1.0",
     "node-path": "0.0.3"
   },
   "devDependencies": {},
