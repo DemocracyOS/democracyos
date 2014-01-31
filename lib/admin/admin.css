@@ -1,0 +1,57 @@
+#admin-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#admin {
+  max-width: 650px;
+  min-height: 100%;
+  margin: 0px auto;
+  top: -10px;
+  padding-top: 10px;
+  border: 1px solid #CDCDCD;
+  position: relative;
+}
+
+#admin .sidebar-container {
+  width: 160px;
+  height: 100%;
+  position: absolute;
+  padding-bottom: 10px;
+}
+
+#admin .admin-content {
+  margin-left: 160px;
+  padding: 40px 75px;
+  height: 100%;
+}
+
+#admin .admin-content .heading {
+  position: relative;
+  margin: 0px;
+  margin-bottom: 30px;
+}
+
+#admin .heading .circle {
+  position: absolute;
+  display: none;
+  left: -26px;
+  top: -4px;
+  overflow: hidden;
+  color: #FFF;
+  width: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#admin .heading .circle i {
+  color: #7F8C8D;
+}
+
+#admin .heading h1 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
