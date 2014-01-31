@@ -1,0 +1,22 @@
+{
+  "name": "admin-sidebar",
+  "description": "Admin sidebar",
+  "dependencies": {
+    "component/classes": "1.2.0",
+    "visionmedia/jade": "1.1.5",
+    "cristiandouce/query": "0.0.1"
+  },
+  "local": [
+    "render"
+  ],
+  "templates": [
+    "sidebar-template.jade"
+  ],
+  "styles": [
+    "admin-sidebar.css"
+  ],
+  "scripts": [
+    "view.js"
+  ],
+  "main": "view.js"
+}
