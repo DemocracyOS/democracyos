@@ -1,4 +1,28 @@
 
+0.2.9 / 2014-01-30
+==================
+
+ * Add support for inheritance locals merge at render
+
+0.2.8 / 2014-01-30
+==================
+
+ * Bump merge-util version
+
+0.2.7 / 2014-01-30
+==================
+
+ * Remove json build script forgotten require
+
+0.2.6 / 2014-01-30
+==================
+
+ * Improve `build` logging
+ * Remove deprecated `json.js` builder plugin
+ * Improve `jade` build script
+ * Add toggle/hide signin/signup links on header. Closes #136
+ * Add logs using `utils.pluck` helper method.
+
 0.2.5 / 2014-01-28
 ==================
 
