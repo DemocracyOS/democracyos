@@ -1,4 +1,6 @@
 ul.admin-menu
-  li.heading= t('Dashboard')
-  li: a(href="/admin/laws")= t('Laws')
-  li: a(href="/admin/citizens", style="display: none;")= t('Citizens')
+  li.heading= t('Laws')
+  li: a(href="/admin/laws")= t('List')
+  li: a(href="/admin/laws/create")= t('Create')
+  li.heading( style="display: none;")= t('Citizens')
+  li: a(href="/admin/citizens", style="display: none;")= t('List')
