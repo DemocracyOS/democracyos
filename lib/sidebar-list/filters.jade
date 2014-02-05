@@ -3,8 +3,8 @@
     a.btn.btn-default(class="open" === filter.get('status') ? "active" : "", data-status='open')= t('sidebar-list.open')
     a.btn.btn-default(class="closed" === filter.get('status') ? "active" : "", data-status='closed')= t('sidebar-list.closed')
 
-  .btn-group.btn-group-justified
-    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t(filter.sort.label)
+  #sort-filter.btn-group.btn-group-justified
+    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t(filter.sorts[filter.get('sort')].label)
     button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
       span.caret
     ul.dropdown-menu
@@ -17,7 +17,7 @@
 
       //- Rendered from client's view
 
-  .hide-voted-box
+  #hide-voted-filter.hide-voted-box
     input(type='checkbox',
       name='hide-voted',
       checked= filter.get('hide-voted')
