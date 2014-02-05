@@ -10,8 +10,9 @@
   	"component/to-function": "*"
   	},
   "local": [
-    "store",
-    "laws"
+    "citizen",
+    "laws",
+    "store"
   ],
   "scripts": [ "laws-filter.js", "sorts.js" ],
   "main": "laws-filter.js"

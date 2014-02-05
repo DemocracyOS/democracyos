@@ -18,5 +18,8 @@
       //- Rendered from client's view
 
   .hide-voted-box
-    input(type='checkbox', name='hide-voted')
+    input(type='checkbox',
+      name='hide-voted',
+      checked= filter.get('hide-voted')
+      )
     label= t('sidebar-list.hide-voted')
