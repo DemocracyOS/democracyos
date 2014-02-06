@@ -260,14 +260,17 @@ section.site-content#content {
   float: none;
   width: 100%;
 }
+.dropdown-department .btn-group.open > .dropdown-toggle {
+  box-shadow: none;
+}
 .dropdown-department .btn-group button.btn.btn-default {
-  background-color: #7f8c8d;
+  background-color: #909fa0;
   font-size: 12px;
   color: #fff;
   text-align: left;
 }
 .dropdown-department .btn-group button.btn.btn-default.dropdown-toggle {
-  background-color: #727f80;
+  background-color: #909fa0;
 }
 .dropdown-department .btn-group button.btn.btn-default.current-department {
   width: 174px;
