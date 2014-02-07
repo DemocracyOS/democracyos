@@ -247,18 +247,23 @@ section.site-content
 -------------------------------------------------- */
 .dropdown-department
 	padding:  15.5px spacing;
-	background-color: #BDC3C7;
+	background-color: #Bdc3c7;
 	display: block;
 	.btn-group
 		float: none;
 		width: 100%;
+		&.open > button.btn.btn-default
+		&.open > button.btn.btn-default.dropdown-toggle
+			background-color: #727f80;
+			box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px 0px inset;
+			box-shadow: none;
 		button.btn.btn-default
-			background-color: #7F8C8D;
+			background-color: #909FA0;
 			font-size: 12px;
 			color: white;
 			text-align: left;
 			&.dropdown-toggle
-				background-color: #727f80;
+				background-color: #909FA0;
 			&.current-department
 				width: 174px;
 		.dropdown-menu

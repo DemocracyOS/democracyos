@@ -38,6 +38,10 @@
   "Your password was successfuly updated": "Tu contraseña fue actualizada exitosamente",
   "Current password is invalid": "La contraseña actual no es correcta",
 
+  "sidebar.open": "Abiertos",
+  "sidebar.closed": "Cerrados",
+  "sidebar.hide-voted": "Ocultar ya votados",
+
   "Comments": "Comentarios",
   "You must be signed in to comment here": "Debes estar registrado para poder comentar aquí",
   "Deleted comments": "Comentarios borrados",
@@ -127,7 +131,7 @@
   "Participant": "Participante",
   "You must be signed in to vote on this law": "Debes estar registrado para poder votar esta ley",
 
-  "Listing all {listType}s": "Todo",
+  "sidebar.listing{listType}": "Todo",
   "Project": "Proyecto",
   "Bill": "Despacho",
   "Law": "Ley",
