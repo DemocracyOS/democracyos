@@ -42,6 +42,11 @@
   "sidebar.closed": "Cerrados",
   "sidebar.hide-voted": "Ocultar ya votados",
 
+  "sorts.closing-soon": "Próximos a cerrar",
+  "sorts.newest-first": "Más nuevos primero",
+  "sorts.oldest-first": "Más viejos primero",
+  "sorts.recently-updated": "Con actividad reciente",
+
   "Comments": "Comentarios",
   "You must be signed in to comment here": "Debes estar registrado para poder comentar aquí",
   "Deleted comments": "Comentarios borrados",

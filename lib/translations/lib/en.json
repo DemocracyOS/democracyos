@@ -42,6 +42,11 @@
   "sidebar.closed": "Closed",
   "sidebar.hide-voted": "Hide already voted",
 
+  "sorts.closing-soon": "Closing soon",
+  "sorts.newest-first": "Newest first",
+  "sorts.oldest-first": "Oldest first",
+  "sorts.recently-updated": "Recently updated",
+
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",
   "Deleted comments": "Deleted comments",
