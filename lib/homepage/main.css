@@ -249,7 +249,7 @@ section.site-content#content {
   z-index: 12;
   left: 0;
 }
-/* Proposal Aside Navigation
+/* Sidebar
 -------------------------------------------------- */
 .dropdown-department {
   padding: 15.5px 20px;
@@ -277,6 +277,7 @@ section.site-content#content {
 }
 .dropdown-department .btn-group button.btn.btn-default.current-department {
   width: 174px;
+  -webkit-font-smoothing: antialiased !important;
 }
 .dropdown-department .btn-group .dropdown-menu {
   width: 210px;
@@ -378,7 +379,7 @@ aside.nav-proposal .navlist li.active.active a {
 .proposal-type.proposal-type-2 {
   background-color: #e67e22;
 }
-/* Proposal View
+/* Law view
 -------------------------------------------------- */
 article.proposal {
   margin: 40px auto;

@@ -8,6 +8,8 @@
 }
 
 #status-filter a {
+	font-size: 12px;
+	font-weight: bold;
 	color: #ffffff;
 	background-color: #909FA0;
 }
