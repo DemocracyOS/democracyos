@@ -9,7 +9,7 @@
   "development": {},
   "local": [
     "citizen",
-    "sidebar-list"
+    "sidebar"
   ],
   "scripts": [
     "homepage.js"

@@ -260,7 +260,10 @@ section.site-content#content {
   float: none;
   width: 100%;
 }
-.dropdown-department .btn-group.open > .dropdown-toggle {
+.dropdown-department .btn-group.open > button.btn.btn-default,
+.dropdown-department .btn-group.open > button.btn.btn-default.dropdown-toggle {
+  background-color: #727f80;
+  box-shadow: rgba(0,0,0,0.15) 0px 3px 5px 0px inset;
   box-shadow: none;
 }
 .dropdown-department .btn-group button.btn.btn-default {

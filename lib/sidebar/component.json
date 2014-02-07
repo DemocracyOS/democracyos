@@ -1,5 +1,5 @@
 {
-  "name": "sidebar-list",
+  "name": "sidebar",
   "description": "Sidebar list of items",
   "dependencies": {
     "component/domify": "1.2.0",
@@ -16,9 +16,9 @@
     "cristiandouce/query": "0.0.1"
   },
   "local": [ "laws", "laws-filter", "render" ],
-  "scripts": [ "view.js", "sidebar.js", "filter.js", "list.js" ],
+  "scripts": [ "main.js", "sidebar.js", "filter.js", "list.js" ],
   "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filters.jade", "list-container.jade" ],
   "styles": [ "sidebar.css" ],
   "images": [ ],
-  "main": "sidebar.js"
+  "main": "main.js"
 }

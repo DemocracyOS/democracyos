@@ -9,7 +9,7 @@
   "local": [
     "citizen",
     "request",
-    "sidebar-list",
+    "sidebar",
     "proposal-article",
     "proposal-options",
     "comments-view"

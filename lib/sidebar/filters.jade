@@ -1,7 +1,7 @@
 #laws-filter
   #status-filter.btn-group.btn-group-justified
-    a.btn.btn-default(class="open" === filter.get('status') ? "active" : "", data-status='open')= t('sidebar-list.open')
-    a.btn.btn-default(class="closed" === filter.get('status') ? "active" : "", data-status='closed')= t('sidebar-list.closed')
+    a.btn.btn-default(class="open" === filter.get('status') ? "active" : "", data-status='open')= t('sidebar.open')
+    a.btn.btn-default(class="closed" === filter.get('status') ? "active" : "", data-status='closed')= t('sidebar.closed')
 
   #sort-filter.btn-group.btn-group-justified
     button.btn.btn-default.current-department(type='button', data-toggle='dropdown')= t(filter.sorts[filter.get('sort')].label)
@@ -22,4 +22,4 @@
       name='hide-voted',
       checked= filter.get('hide-voted')
       )
-    label= t('sidebar-list.hide-voted')
+    label= t('sidebar.hide-voted')
