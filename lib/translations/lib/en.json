@@ -40,7 +40,7 @@
 
   "sidebar.open": "Open",
   "sidebar.closed": "Closed",
-  "sidebar.hide-voted": "Hide already voted",
+  "sidebar.hide-voted": "Hide voted by me",
 
   "sorts.closing-soon": "Closing soon",
   "sorts.newest-first": "Newest first",
