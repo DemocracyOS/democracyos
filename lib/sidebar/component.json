@@ -17,7 +17,7 @@
   },
   "local": [ "laws", "laws-filter", "render" ],
   "scripts": [ "main.js", "sidebar.js", "filter.js", "list.js" ],
-  "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filters.jade", "list-container.jade" ],
+  "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade" ],
   "styles": [ "sidebar.css" ],
   "images": [ ],
   "main": "main.js"
