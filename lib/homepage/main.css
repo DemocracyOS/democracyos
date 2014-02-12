@@ -349,6 +349,20 @@ aside.nav-proposal .navlist li a .item-tag img {
   left: 5px;
   top: 2px;
 }
+aside.nav-proposal .navlist li a .item-badges {
+  position: absolute;
+  left: 27px;
+  top: 54px;
+  color: #fff;
+}
+aside.nav-proposal .navlist li a .item-badges img {
+  width: 16px;
+  height: 12px;
+  position: absolute;
+  z-index: 100;
+  left: 5px;
+  top: 2px;
+}
 aside.nav-proposal .navlist li a:hover {
   background: #fff;
 }
