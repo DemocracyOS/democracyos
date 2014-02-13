@@ -10,22 +10,20 @@
         label= t('Email')
         input.form-control(type='email', name='email', tabindex=1, placeholder=t('example@email.com'))
       .form-group
-        label #{t('Your name')}
-        input.form-control(type='text', id="fullname", name='fullname', tabindex=2, placeholder=t('First and last name'))
+        label #{t('Your firstname')}
+        input.form-control(type='text', id="firstName", name='firstName', tabindex=2, placeholder=t('Firstname'))
+      .form-group
+        label #{t('Your lastname')}
+        input.form-control(type='text', id="lastName", name='lastName', tabindex=3, placeholder=t('Lastname'))
       .form-group
         label= t('Password')
-        input.form-control(type='password', name='password', tabindex=3, placeholder=t('Password'))
+        input.form-control(type='password', name='password', tabindex=4, placeholder=t('Password'))
       .form-group
         label= t('Re-type password')
-        input.form-control(type='password', name='re_password', tabindex=4, placeholder=t('Repeat Password'))
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=5, value=t('Signup now!'))
+        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'))
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=6, value=t('Signup now!'))
   #signup-message.hide
     h1 Welcome
     p.lead.text-muted #{t("Your sign up data was received. We sent you an email so you can validate your email address.")}.
     p.lead.text-muted= t("Please check your email (remember to check your spam folder too) and click on the link supplied on the email.")
     a(href='/signup/resend-validation-email')= t('Resend validation email')
-    //- Switch to this when NetId is implemented
-    //- h1= t("Hey!")
-    //- p.lead.text-muted #{t("Your sign up data was received")}.
-    //- p.lead.text-muted #{t("Now you should validate your identity. To do so, please check the instructions")} 
-    //-   a(href="#")= t("here")

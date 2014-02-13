@@ -1,0 +1,15 @@
+{
+  "name": "store",
+  "description": "Basic data saving on localStorage with fallback to server session",
+  "dependencies": {
+    "yields/unserialize": "0.0.1"
+  },
+  "local": [
+    "request"
+  ],
+  "scripts": [
+    "store.js",
+    "local.js"
+  ],
+  "main": "store.js"
+}

@@ -1,4 +1,38 @@
 
+0.3.0 / 2014-02-13
+==================
+
+ * Refactor `laws-filter` for `sidebar` #219
+ * Add check to voted laws in sidebar list. Closes #226
+ * Fix some typos reported by users
+ * Fix i18n for 'or' in 'login required' messages
+ * Add count numbers to status filters. Closes #238
+ * Update 'Hide voted' translation
+ * Add i18n for release #255
+ * Fix styles for release #255
+ * Rename `sidebar-list` to `sidebar` and inner component files
+ * Add styles for #220 and #218
+ * Add hide-voted checkbox functionality to filter view. Closes #220
+ * Add warning for no IE 9- support
+ * Finish open/closed filter for #220
+ * Fix typo on a translation message
+ * Fix input fields tabindex attribute
+ * Add translations to link to signup from /signin page. Closes #248
+ * Add link to signup #248
+ * Add `firstName` and `lastName` translations and remove the ones for `fullName`
+ * Refactor `fullname` into two separate fields (`firstName` and `lastName`)
+ * Refactor `sidebar-view` into subviews `list-container` and `filter-container`
+ * Rename `list-block.jade` to `sidebar.jade`
+ * Add store server support routes to `boot`
+ * Add new local storage component `store`
+ * Add styles file for #218 and #220
+ * Fix translation key
+ * Add use of new `laws` local component for `siderbar-list`
+ * Add new `laws` collection component
+ * Fix translations for #218 and #220
+ * Add basic UI (no styles) for #218 and #220
+ * Add toggle button group for #218 and #220
+
 0.2.9 / 2014-01-30
 ==================
 

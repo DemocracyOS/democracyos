@@ -6,6 +6,17 @@ body.signin-page header.app-header .user-nav a[href="/signup"] {
   display: inline-block;
 }
 
-.form-group {
+#signin-form .form-group {
 	overflow: hidden;
+}
+
+#signin-form .form-group .signup {
+	float: right;
+	color: #666;
+	font-size: 12px;
+}
+
+#signin-form .form-group .signup span {
+	margin-right: 5px;
+	font-weight: bold;
 }

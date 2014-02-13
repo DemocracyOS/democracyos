@@ -1,9 +1,12 @@
 {
+  "common.or": "or",
+
   "DemocracyOS": "DemocracyOS",
   "DemocracyOS Beta": "DemocracyOS Beta",
   "Login": "Login",
   "Login to": "Login to",
   "Signup": "Signup",
+  "Signup now": "Signup now",
   "Logout": "Logout",
   "Settings": "Settings",
   "Feedback": "Feedback",
@@ -18,7 +21,8 @@
   "Password is not good enough": "Password is not good enough",
   "Passwords do not match": "Passwords do not match",
   "Email is not valid": "Email is not valid",
-  "A real name is required": "A real name is required",
+  "A firstname is required": "A firstname is required",
+  "A lastname is required": "A lastname is required",
 
   "Profile": "Profile",
   "Sessions": "Sessions",
@@ -35,6 +39,15 @@
   "Confirm new password": "Confirm new password",
   "Your password was successfuly updated": "Your password was successfuly updated",
   "Current password is invalid": "Current password is invalid",
+
+  "sidebar.open": "Open",
+  "sidebar.closed": "Closed",
+  "sidebar.hide-voted": "Hide voted by me",
+
+  "sorts.closing-soon": "Closing soon",
+  "sorts.newest-first": "Newest first",
+  "sorts.oldest-first": "Oldest first",
+  "sorts.recently-updated": "Recently updated",
 
   "Comments": "Comments",
   "You must be signed in to comment here": "You must be signed in to comment here",
@@ -58,14 +71,17 @@
   "Repeat Password": "Repeat Password",
   "Reset Password!": "Reset Password!",
   "Forgot Password?": "Forgot Passoword?",
+  "Don't have an account?": "Don't have an account?",
   "We will send an email with a link to reset your password": "We will send an email with a link to reset your password",
   "We just sent a message to your email with instructions to create a new password": "We just sent a message to your email with instructions to create a new password",
 
   "Signup complete" : "Signup complete",
   "Signup with email": "Signup with email",
   "Email": "Email",
-  "Your name": "Your name",
-  "First and last name": "First and last name",
+  "Your firstname": "Your firstname",
+  "Your lastname": "Your lastname",
+  "Firstname": "Firstname",
+  "Lastname": "Lastname",
   "Re-type password": "Re-type password",
   "Signup now!": "Signup now!",
   "Welcome, {name}!": "Welcome, {name}!",
@@ -122,7 +138,7 @@
   "Participant": "Participant",
   "You must be signed in to vote on this law": "You must be signed in to vote on this law",
 
-  "Listing all {listType}s": "Listing all {listType}s",
+  "sidebar.listing{listType}": "Showing all",
   "Project": "Project",
   "Bill": "Bill",
   "Law": "Law",
