@@ -3,6 +3,6 @@
   #email-validation-message
     h1= t("Welcome, {name}!", { name: ((citizen && citizen.firstName) ? citizen.firstName : t("Guest"))})
     p.lead.text-muted #{t("Your email has been validated and now you are logged in")}.
-    p.lead.text-muted= t("You can now comment and vote on bills!")
+    p.lead.text-muted= t("You can now argue and vote on bills!")
     p.lead.text-muted #{t("Go to")} 
       a(href="/")= t("browsing")

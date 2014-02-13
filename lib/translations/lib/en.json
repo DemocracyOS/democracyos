@@ -49,10 +49,10 @@
   "sorts.oldest-first": "Oldest first",
   "sorts.recently-updated": "Recently updated",
 
-  "Comments": "Comments",
-  "You must be signed in to comment here": "You must be signed in to comment here",
-  "Deleted comments": "Deleted comments",
-  "Your comment": "Your comment",
+  "comments.arguments": "Arguments",
+  "comments.sign-in-required": "You must be signed in to argue here",
+  "comments.deleted-arguments": "Deleted arguments",
+  "comments.your-argument": "Your argument",
   "Send": "Send",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Password reset requested",
@@ -89,7 +89,7 @@
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Your sign up data was received. We sent you an email so you can validate your email address.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.",
   "Your email has been validated and now you are logged in" : "Your email has been validated and now you are logged in", 
-  "You can now comment and vote on bills!": "You can now comment and vote on bills!",
+  "You can now argue and vote on bills!": "You can now argue and vote on bills!",
   "Go to": "Go to",
   "browsing": "browsing",
   "Your sign up data was received": "Your sign up data was received",
@@ -143,7 +143,7 @@
   "Bill": "Bill",
   "Law": "Law",
 
-  "This comment has been flagged as spam": "This comment has been flagged as spam",
+  "This argument has been flagged as spam": "This argument has been flagged as spam",
   "show": "show",
 
   "All data will expire on December 10, 2013": "This is a demo version valid thru December 10th, 2013",
@@ -153,8 +153,8 @@
   "Not spam" : "Not Spam",
   "Upvote" : "Upvote",
   "Downvote" : "Downvote",
-  "Comment is limited to 4096 characters": "Comment is limited to 4096 characters",
-  "Comment cannot be empty": "Comment cannot be empty",
+  "Argument is limited to 4096 characters": "Argument is limited to 4096 characters",
+  "Argument cannot be empty": "Argument cannot be empty",
 
   "To not take part on the citizen's decision": "To not take part on the citizen's decision",
   "To respect parlament methodology": "To respect parlament methodology"
