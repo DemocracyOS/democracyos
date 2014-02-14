@@ -1,0 +1,17 @@
+{
+  "name": "tags",
+  "description": "Collection of tags",
+  "dependencies": {
+    "component/emitter": "*",
+    "visionmedia/debug": "*"
+  },
+  "local": [
+    "request",
+    "render"
+  ],
+  "scripts": [
+    "tags.js",
+    "proto.js"
+  ],
+  "main": "tags.js"
+}
