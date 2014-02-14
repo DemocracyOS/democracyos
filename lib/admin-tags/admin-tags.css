@@ -1,0 +1,76 @@
+#tags-wrapper .tags-admin ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#tags-wrapper .tags-admin > ul li {
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    position: relative;
+    margin: 2px 0;
+    padding: 0 0 0 10px;
+    border-bottom: 1px solid #eee;
+    -ms-transition: background-color 100ms ease-in;
+    -moz-transition: background-color 100ms ease-in;
+    -webkit-transition: background-color 100ms ease-in;
+    transition: background-color 100ms ease-in;
+}
+
+#tags-wrapper .tags-admin ul li:last-child {
+    border-bottom-width: 0;
+}
+
+#tags-wrapper .tags-admin ul li:hover > ul.tag-actions {
+    display: block;
+}
+
+#tags-wrapper .tags-admin ul li:hover {
+    color: #333;
+}
+
+#tags-wrapper .tags-admin ul.tag-actions {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /*float: right;*/
+    /*vertical-align: top;*/
+}
+
+#tags-wrapper .tags-admin ul.tag-actions li:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #aff;
+    cursor: pointer;
+}
+
+#tags-wrapper .tags-admin ul.tag-actions li:hover::before {
+    color: white;
+}
+
+#tags-wrapper .tags-admin ul.tag-actions li a {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    z-index: 10;
+    height: 30px;
+    width: 30px;
+    text-shadow: none;
+}
+
+#tags-wrapper .tags-admin ul.tag-actions li.remove:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+#tags-wrapper .tags-admin ul.tag-actions li {
+    position: relative;
+    margin: 3px;
+    padding: 0;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    width: 30px;
+}
