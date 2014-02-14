@@ -20,14 +20,16 @@
     "regexps"
   ],
   "templates": [
-    "list-template.jade"
+    "list-template.jade",
+    "form-template.jade"
   ],
   "styles": [
     "admin-tags.css"
   ],
   "scripts": [
     "admin-tags.js",
-    "list-view.js"
+    "list-view.js",
+    "form-view.js"
   ],
   "main": "admin-tags.js"
 }
