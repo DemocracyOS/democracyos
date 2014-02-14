@@ -21,7 +21,8 @@
     "settings",
     "translations",
     "snapper",
-    "flaticons"
+    "flaticons",
+    "admin"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
