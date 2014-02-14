@@ -1,0 +1,25 @@
+#law-wrapper
+  .law-admin
+    .heading
+      .circle
+        i.icon-user
+      h1= t(form.title)
+    form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate)
+      ul.form-messages
+      .form-group
+        label #{t('Official Id')}
+        input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('Official Id'), value=law.lawId)
+      .form-group
+        label #{t('Media title')}
+        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('Media title'), value=law.mediaTitle)
+      .form-group
+        label= t('Source')
+        input.form-control(type='url', name='source', tabindex=4, placeholder=t('http://laws-source.org/official-url/'), value=law.source)
+      .form-group
+        label= t('Tag')
+        select.form-control(name='tag', tabindex=5)
+          - each tag in tags
+           option(selected= tag.hash === law.tag, value=tag.hash)= tag.name
+      - if (law.clauses && law.clauses.length)
+        p= law.clauses[0].text
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=4, value=t('Save'))

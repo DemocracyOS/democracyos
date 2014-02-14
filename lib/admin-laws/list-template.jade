@@ -1,0 +1,12 @@
+#laws-wrapper
+  .laws-admin
+    .heading
+      .circle
+        i.icon-paper
+      h1= t('System laws')
+    ul
+      - each law in laws
+        li(data-id=law.id)
+          span.law-title=law.mediaTitle
+          ul.law-actions
+            li: a(href="/admin/laws/" + law.id)= t('Edit')
