@@ -1,0 +1,33 @@
+#header-container
+  a(href='#', id='toggleButton')
+    span.bar-icon
+    span.bar-icon
+    span.bar-icon
+
+  h1#logo
+    a(href='/')
+      img(src=config['logo']).logo
+      span.logo-link= t('DemocracyOS Beta')
+
+  .user-nav.btn-group
+    - if (citizen.id)
+      a.btn.profile.pull-right(href='#', data-toggle='dropdown').dropdown-toggle
+          img(src=citizen.gravatar())
+          span.name=citizen.firstName
+          span.caret
+      ul.dropdown-menu
+          li
+            a.logout(href='/settings')= t('Settings')
+          li
+            a.logout(href='/logout')= t('Logout')
+    - else
+      a(href='/signin').login.pull-right
+        i.icon-signin
+        span= t('Login')
+      a(href='/signup').login.pull-right
+        i.icon-user
+        span= t('Signup')
+    a.login.pull-left(href=config['organization url'], target='_blank')
+      span= config['organization name']
+    a.login.pull-left(href='#', id='feedback')
+      span= t('Feedback')
