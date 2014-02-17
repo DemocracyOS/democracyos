@@ -3,7 +3,7 @@
   "description": "Filter for laws. Saves state in session or localStorage if availble",
   "dependencies": {
   	"component/emitter": "1.0.1",
-  	"visionmedia/debug": "*",
+  	"visionmedia/debug": "0.7.4",
   	"cristiandouce/merge-util": "*",
     "component/t": "*",
   	"component/type": "*",
