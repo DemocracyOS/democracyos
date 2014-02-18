@@ -18,6 +18,53 @@ Share as much information as possible. Include operating system and version, bro
 
 ### Pull requests
 
+To contribute code, start by forking our repo on github. You'll get something like this:
+```
+https://github.com/user/app
+```
+
+Then clone your fork:
+```
+git clone git@github.com:user/app && cd app/
+```
+
+Add the official repo as a remote, to track changes:
+```
+git remote add upstream git@github.com:DemocracyOS/app.git
+```
+
+Create a new branch for the changes you are going to contribute, with a relevant name. Some examples:
+```
+git checkout -b feature/some-new-stuff
+git checkout -b fix/some-bug 
+git checkout -b remove/some-file
+```
+
+Hack your changes: (you don't need to actually run this)
+```
+vim somefile.txt
+git add somefile.txt
+git commit -a -m"adding somefile.txt"
+```
+
+When you think your code is ready, prepare for pushing the code by first getting the changes from the main repo:
+```
+git pull --rebase upstream development
+```
+(You may need to solve any conflicts from the rebase at this point)
+
+After that you can push the changes to your fork, by doing:
+```
+git push origin feature/some-new-stuff
+git push origin fix/some-bug
+```
+
+Finally go to `https://github.com/DemocracyOS/app` in the browser and issue a new pull request. Github normally recognizes you have pending changes in a new branch and will suggest creating the pull request.
+
+Main contributors will review your code and possibly ask for changes before your code is pulled in to the main repository. We appreciate your time and efforts!
+
+#### General guidelines
+
 * Do not make a pull request withouth having run the app on your own. This means, you have to manually test (at least) that everything works.
 * Try not to pollute your pull request with unintended changes. Keep them simple and small.
 * Pull requests should always be against the `development` branch, never against `master`.
