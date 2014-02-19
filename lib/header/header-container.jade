@@ -12,7 +12,7 @@
   .user-nav.btn-group
     - if (citizen.id)
       a.btn.profile.pull-right(href='#', data-toggle='dropdown').dropdown-toggle
-          img(src=citizen.gravatar())
+          img(src=citizen.gravatar)
           span.name=citizen.firstName
           span.caret
       ul.dropdown-menu

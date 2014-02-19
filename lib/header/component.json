@@ -6,7 +6,7 @@
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5"
     },
-  "local": [ "render" ],
+  "local": [ "render", "citizen" ],
   "scripts": [ "main.js", "header.js" ],
   "styles": [ "header.css" ],
   "templates": [ "header-container.jade" ],
