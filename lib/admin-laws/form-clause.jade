@@ -1,0 +1,13 @@
+- clause = clause || {}
+
+.law-clause
+  .clause-row
+    .clause-group
+      label=t('Order')
+      input(type='text', name='clauses[#{clause.id}][order]', value=clause.order)
+    .clause-group
+      label=t('Clause Id')
+      input(type='text', name='clauses[#{clause.id}][clauseId]', value=clause.clauseId)
+  .clause-row
+    label=t('Text')
+    textarea(name='clauses[#{clause.id}][text]')= clause.text

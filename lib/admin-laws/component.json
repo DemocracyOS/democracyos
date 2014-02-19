@@ -22,7 +22,8 @@
   ],
   "templates": [
     "list-template.jade",
-    "form-template.jade"
+    "form-template.jade",
+    "form-clause.jade"
   ],
   "styles": [
     "admin-laws.css"

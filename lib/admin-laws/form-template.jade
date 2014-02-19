@@ -5,6 +5,7 @@
         i.icon-user
       h1= t(form.title)
     form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate)
+      input(type='hidden', name='_law_id_', value=law.id)
       ul.form-messages
       .form-group
         label #{t('Official Id')}
@@ -20,6 +21,11 @@
         select.form-control(name='tag', tabindex=5)
           - each tag in tags
            option(selected= tag.hash === law.tag, value=tag.hash)= tag.name
-      - if (law.clauses && law.clauses.length)
-        p= law.clauses[0].text
+      .form-group
+        a.add-clause.btn.btn-info.btn-xs(href='#' )= t('Add clause')
+        span.add-clause-forbidden.hide=t('Law must be saved to start adding clauses')
+        .law-clauses
+        - if (law.clauses && law.clauses.length)
+          - each clause in law.clauses
+            include form-clause
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=4, value=t('Save'))
