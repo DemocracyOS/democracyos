@@ -17,9 +17,9 @@
           span.caret
       ul.dropdown-menu
           li
-            a.logout(href='/settings')= t('Settings')
+            a(href='/settings')= t('Settings')
           li
-            a.logout(href='/logout')= t('Logout')
+            a(href='/logout')= t('Logout')
     - else
       a(href='/signin').login.pull-right
         i.icon-signin

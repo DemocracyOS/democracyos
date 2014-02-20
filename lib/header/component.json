@@ -2,9 +2,9 @@
   "name": "header",
   "description": "header component",
   "dependencies": {
-    "cristiandouce/query": "0.0.1",
     "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5"
+    "visionmedia/jade": "1.1.5",
+    "cristiandouce/query": "0.0.1"
     },
   "local": [ "render", "citizen" ],
   "scripts": [ "main.js", "header.js" ],
