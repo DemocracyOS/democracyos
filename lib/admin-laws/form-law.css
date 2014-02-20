@@ -1,0 +1,57 @@
+#law-wrapper .law-admin form span.add-clause-forbidden {
+  margin-left: 10px;
+}
+
+#law-wrapper .law-admin .law-clauses h4 {
+  margin-top: 10px;
+}
+
+#law-wrapper .law-admin .law-clause {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+  padding: 0px 0px 10px 0px;
+}
+
+#law-wrapper .law-admin .law-clause .remove-clause {
+  float: right;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 0px;
+  padding: 10px 0px;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row textarea {
+  min-height: 180px;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group {
+  display: block;
+  position: relative;
+  float: left;
+  width: 50%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group:first {
+  background: red;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group label,
+#law-wrapper .law-admin .law-clause .clause-row .clause-group input {
+  width: 95%;
+  float: left;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group.clause-order label,
+#law-wrapper .law-admin .law-clause .clause-row .clause-group.clause-order input {
+  margin-left: 5%;
+}

@@ -1,13 +1,15 @@
 - clause = clause || {}
 
-.law-clause
+.law-clause(data-clause=clause.id)
+  h4= t('Clause') + ' ' + clause.clauseId
   .clause-row
-    .clause-group
-      label=t('Order')
-      input(type='text', name='clauses[#{clause.id}][order]', value=clause.order)
-    .clause-group
+    .clause-group.clause-id
       label=t('Clause Id')
-      input(type='text', name='clauses[#{clause.id}][clauseId]', value=clause.clauseId)
+      input.form-control(type='text', name='clauses[#{clause.id}][clauseId]', value=clause.clauseId)
+    .clause-group.clause-order
+      label=t('Order')
+      input.form-control(type='text', name='clauses[#{clause.id}][order]', value=clause.order)
   .clause-row
     label=t('Text')
-    textarea(name='clauses[#{clause.id}][text]')= clause.text
+    textarea.form-control(name='clauses[#{clause.id}][text]')= clause.text
+  a.remove-clause.btn.btn-danger.btn-xs(href='#')= t('Delete')

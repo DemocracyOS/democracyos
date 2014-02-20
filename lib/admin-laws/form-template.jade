@@ -22,10 +22,10 @@
           - each tag in tags
            option(selected= tag.hash === law.tag, value=tag.hash)= tag.name
       .form-group
-        a.add-clause.btn.btn-info.btn-xs(href='#' )= t('Add clause')
+        a.add-clause.btn.btn-info.btn-xs(href='#')= t('Add clause')
         span.add-clause-forbidden.hide=t('Law must be saved to start adding clauses')
         .law-clauses
         - if (law.clauses && law.clauses.length)
-          - each clause in law.clauses
+          - each clause, idx in law.clauses
             include form-clause
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=4, value=t('Save'))
