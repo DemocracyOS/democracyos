@@ -908,3 +908,83 @@ article.proposal .share-links a.google-plus:hover {
     width: 100%;
   }
 }
+body #dialog {
+  position: fixed;
+  display: block;
+  max-width: 500px;
+  min-width: 250px;
+  left: 50%;
+  top: 150px;
+  right: initial;
+  bottom: initial;
+  background: #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  border: 0px;
+  overflow: initial;
+  z-index: 9999999;
+}
+body #dialog p {
+  font-size: 1.1em;
+}
+body #dialog .content {
+  padding: 0px 20px 10px 20px;
+  margin-top: 30px;
+}
+body #dialog .content .title {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  min-height: 20px;
+  padding: 5px 20px;
+  background: #d95e59;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+body #dialog .content .body {
+  padding: 20px 0px;
+}
+body #dialog .content .close {
+  line-height: 10px;
+  top: 10px;
+  right: 10px;
+  font-weight: 600;
+  color: #000;
+  opacity: 0.5;
+}
+body #dialog .confirmation-actions {
+  padding: 5px 10px;
+}
+body #dialog .confirmation-actions button {
+  border: none;
+  color: #fff;
+  background: #aaa;
+  padding: 5px 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  outline: none;
+  margin-left: 5px;
+}
+body #dialog .confirmation-actions button.cancel {
+  outline: none;
+}
+body #dialog .confirmation-actions button.cancel:focus,
+body #dialog .confirmation-actions button.cancel:hover {
+  background: #777;
+}
+body #dialog .confirmation-actions button.main,
+body #dialog .confirmation-actions button.ok {
+  background: #d95e59;
+}
+body #dialog .confirmation-actions button.main:focus,
+body #dialog .confirmation-actions button.ok:focus,
+body #dialog .confirmation-actions button.main:hover,
+body #dialog .confirmation-actions button.ok:hover {
+  background: #952722;
+}
+body .overlay {
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
+  z-index: 9999998;
+}
