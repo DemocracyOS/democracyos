@@ -7,6 +7,5 @@
     ul
       - each tag in tags
         li(data-id=tag.id)
-          span.tag-title=tag.name
-          ul.tag-actions
-            li: a(href="/admin/tags/" + tag.id)= t('Edit')
+          a(href="/admin/tags/" + tag.id)
+            span.tag-title=tag.name
