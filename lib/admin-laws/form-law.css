@@ -1,9 +1,17 @@
-#law-wrapper .law-admin form span.add-clause-forbidden {
-  margin-left: 10px;
+#law-wrapper .law-admin form a.add-clause{
+  width: 100%;
+  margin: 15px 0px;
 }
 
-#law-wrapper .law-admin .law-clauses h4 {
-  margin-top: 10px;
+#law-wrapper .law-admin form span.add-clause-forbidden {
+  display: block;
+  width: 100%;
+  color: #F00;
+  text-align: center;
+}
+
+#law-wrapper .law-admin .law-clause h4 {
+  margin-top: 0px;
 }
 
 #law-wrapper .law-admin .law-clause {
@@ -11,8 +19,9 @@
   position: relative;
   float: left;
   width: 100%;
-  margin: 10px 0px 0px 0px;
-  padding: 0px 0px 10px 0px;
+  margin: 20px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
+  border-top: 1px solid #eee;
 }
 
 #law-wrapper .law-admin .law-clause .remove-clause {
