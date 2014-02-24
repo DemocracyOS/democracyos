@@ -23,18 +23,13 @@
     "regexps"
   ],
   "templates": [
-    "list-template.jade",
-    "form-template.jade",
-    "form-clause.jade"
+    "list-template.jade"
   ],
   "styles": [
-    "admin-laws.css",
-    "form-law.css"
+    "admin-laws.css"
   ],
   "scripts": [
-    "admin-laws.js",
-    "list-view.js",
-    "form-view.js"
+    "list-view.js"
   ],
-  "main": "admin-laws.js"
+  "main": "list-view.js"
 }

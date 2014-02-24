@@ -15,6 +15,7 @@
   "local": [
     "admin-sidebar",
     "admin-laws",
+    "admin-laws-form",
     "admin-tags",
     "regexps",
     "citizen",
