@@ -1,0 +1,35 @@
+{
+  "name": "admin-tags",
+  "description": "Admin tags view",
+  "dependencies": {
+    "component/classes": "1.2.0",
+    "component/emitter": "1.1.1",
+    "component/events": "1.0.5",
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/jade": "1.1.5",
+    "yields/serialize": "0.2.0",
+    "yields/empty": "0.0.1",
+    "cristiandouce/query": "0.0.1",
+    "component/t": "1.0.0"
+  },
+  "local": [
+    "tags",
+    "citizen",
+    "render",
+    "request",
+    "regexps"
+  ],
+  "templates": [
+    "list-template.jade",
+    "form-template.jade"
+  ],
+  "styles": [
+    "admin-tags.css"
+  ],
+  "scripts": [
+    "admin-tags.js",
+    "list-view.js",
+    "form-view.js"
+  ],
+  "main": "admin-tags.js"
+}

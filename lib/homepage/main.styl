@@ -864,3 +864,69 @@ article.proposal
 	.snapjs-expand-left .snap-drawer-left,
 	.snapjs-expand-right .snap-drawer-right
 		width: 100%;
+
+body
+	#dialog
+		position: fixed;
+		display: block;
+		max-width: 500px;
+		min-width: 250px;
+		left: 50%;
+		top: 150px;
+		right: initial;
+		bottom: initial;
+		background: #FFF;
+		box-shadow: 2px 2px 5px rgba(0,0,0,.4);
+		border: 0px;
+		overflow: initial;
+		z-index: 9999999;
+		p
+			font-size: 1.1em;
+		.content
+			padding: 0px 20px 10px 20px
+			margin-top: 30px
+			.title
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				top: 0px;
+				min-height: 20px;
+				padding: 5px 20px;
+				background: #D95E59;
+				color: #FFF;
+				text-transform: uppercase;
+				font-weight: 600;
+			.body
+				padding: 20px 0px;
+				// margin-top: 30px;
+			.close
+				line-height: 10px;
+				top: 10px;
+				right: 10px;
+				font-weight: 600;
+				color: #000;
+				opacity: .5;
+		.confirmation-actions
+			padding: 5px 10px;
+			button
+				border: none;
+				color: #FFF;
+				background: #aaa;
+				padding: 5px 10px;
+				letter-spacing: 0.09em;
+				text-transform: uppercase;
+				font-size: 0.7em;
+				outline: none;
+				margin-left: 5px;
+				&.cancel
+					outline: none;
+					&:focus, &:hover
+						background: #777;
+				&.main, &.ok
+					background: #D95E59;
+					&:focus, &:hover
+						background: #952722;
+
+	.overlay
+		background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
+		z-index: 9999998;

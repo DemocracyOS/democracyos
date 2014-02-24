@@ -1,0 +1,13 @@
+#laws-wrapper
+  .laws-admin
+    .heading
+      .circle
+        i.icon-paper
+      h1= t('System laws')
+    ul
+      - each law in laws
+        li(data-id=law.id)
+          a(href="/admin/laws/" + law.id)
+            span.law-id=law.lawId
+            | #{' - '}
+            span.law-title=law.mediaTitle

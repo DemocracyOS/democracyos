@@ -1,0 +1,11 @@
+#tags-wrapper
+  .tags-admin
+    .heading
+      .circle
+        i.icon-paper
+      h1= t('System tags')
+    ul
+      - each tag in tags
+        li(data-id=tag.id)
+          a(href="/admin/tags/" + tag.id)
+            span.tag-title=tag.name
