@@ -1,0 +1,34 @@
+{
+  "name": "admin-laws-form",
+  "description": "Admin laws Form view",
+  "dependencies": {
+    "component/t": "1.0.0",
+    "component/classes": "1.2.0",
+    "component/emitter": "1.1.1",
+    "component/events": "1.0.5",
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/jade": "1.1.5",
+    "yields/serialize": "0.2.0",
+    "yields/empty": "0.0.1",
+    "discore/closest": "0.1.2",
+    "cristiandouce/confirmation": "d0861",
+    "cristiandouce/query": "0.0.1"
+  },
+  "local": [
+    "tags",
+    "render",
+    "request",
+    "regexps"
+  ],
+  "templates": [
+    "form-template.jade",
+    "form-clause.jade"
+  ],
+  "styles": [
+    "form-law.css"
+  ],
+  "scripts": [
+    "form-view.js"
+  ],
+  "main": "form-view.js"
+}
