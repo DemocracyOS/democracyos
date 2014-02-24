@@ -157,5 +157,53 @@
   "Argument cannot be empty": "Argument cannot be empty",
 
   "To not take part on the citizen's decision": "To not take part on the citizen's decision",
-  "To respect parlament methodology": "To respect parlament methodology"
+  "To respect parlament methodology": "To respect parlament methodology",
+
+  "admin-sidebar.laws.title": "Laws",
+  "admin-sidebar.laws.list": "List",
+  "admin-sidebar.laws.create": "Create",
+  "admin-sidebar.tags.title": "Tags",
+  "admin-sidebar.tags.list": "List",
+  "admin-sidebar.tags.create": "Create",
+
+  "admin-laws.list.title": "System laws",
+
+  "admin-laws-form.title.create": "Create law",
+  "admin-laws-form.title.edit": "Edit law",
+  "admin-laws-form.label.lawId": "Official Id",
+  "admin-laws-form.label.mediaTitle": "Media title",
+  "admin-laws-form.label.source": "Source",
+  "admin-laws-form.placeholder.source": "http://laws-source.org/official-url/",
+  "admin-laws-form.label.tag": "Tag",
+  "admin-laws-form.label.summary": "Summary",
+  "admin-laws-form.button.add-clause": "Add clause",
+  "admin-laws-form.message.add-clause-forbidden": "Law must be saved to start adding clauses",
+  "admin-laws-form.button.submit": "Save",
+
+  "admin-laws-form.clause.heading": "Clause",
+  "admin-laws-form.clause.label.clauseId": "Clause Id",
+  "admin-laws-form.clause.label.order": "Order",
+  "admin-laws-form.clause.label.text": "Text",
+  "admin-laws-form.clause.button.delete": "Delete",
+  "admin-laws-form.clause.confirmation.title": "Clause removal",
+  "admin-laws-form.clause.confirmation.body": "This action will erease data permanently. Would you like to procced?",
+  "admin-laws-form.clause.confirmation.cancel": "Cancel",
+  "admin-laws-form.clause.confirmation.ok": "Delete",
+
+  "admin-laws-form.message.onsuccess": "Law successfuly saved",
+  "admin-laws-form.message.validation.lawId-required": "Official Id required",
+  "admin-laws-form.message.validation.mediaTitle-required": "Media title required",
+  "admin-laws-form.message.validation.source-required": "Source required",
+  "admin-laws-form.message.validation.source-invalid": "Source must be a valid URL",
+
+  "admin-tags.list.title": "System tags",
+
+  "admin-tags-form.title.create": "Create tag",
+  "admin-tags-form.title.edit": "Edit tag",
+  "admin-tags-form.label.name": "Name",
+  "admin-tags-form.placeholder.name": "Tag name",
+  "admin-tags-form.button.submit": "Save",
+
+  "admin-tags-form.message.onsuccess": "Tag successfuly saved",
+  "admin-tags-form.message.validation.name-required": "Name required"
 }

@@ -157,5 +157,54 @@
   "Argument cannot be empty": "El argumento no puede estar vacío",
 
   "To not take part on the citizen's decision": "Para no influenciar la decisión del ciudadano",
-  "To respect parlament methodology": "Para respetar la metodología de la legislatura"
+  "To respect parlament methodology": "Para respetar la metodología de la legislatura",
+
+  "admin-sidebar.laws.title": "Leyes",
+  "admin-sidebar.laws.list": "Listado",
+  "admin-sidebar.laws.create": "Crear",
+  "admin-sidebar.tags.title": "Etiquetas",
+  "admin-sidebar.tags.list": "Listado",
+  "admin-sidebar.tags.create": "Crear",
+
+  "admin-laws.list.title": "Leyes del sistema",
+
+  "admin-laws-form.title.create": "Nueva ley",
+  "admin-laws-form.title.edit": "Edición de ley",
+  "admin-laws-form.label.lawId": "Identificación oficial",
+  "admin-laws-form.label.mediaTitle": "Título mediático",
+  "admin-laws-form.label.source": "Fuente",
+  "admin-laws-form.placeholder.source": "http://fuente-de-leyes.org/url-oficial/",
+  "admin-laws-form.label.tag": "Comisión",
+  "admin-laws-form.label.summary": "Resumen",
+  "admin-laws-form.button.add-clause": "Nuevo artículo",
+  "admin-laws-form.message.add-clause-forbidden": "La ley debe guardarse antes de agregar artículos",
+  "admin-laws-form.button.submit": "Guardar",
+
+  "admin-laws-form.clause.heading": "Artículo",
+  "admin-laws-form.clause.label.clauseId": "Numero de artículo",
+  "admin-laws-form.clause.label.order": "Posición/Orden",
+  "admin-laws-form.clause.label.text": "Contenido",
+  "admin-laws-form.clause.button.delete": "Eliminar",
+  "admin-laws-form.clause.confirmation.title": "Eliminar artículo",
+  "admin-laws-form.clause.confirmation.body": "Esta acción eliminara la información de manera permanente. ¿Desea continuar?",
+  "admin-laws-form.clause.confirmation.cancel": "Cancelar",
+  "admin-laws-form.clause.confirmation.ok": "Eliminar",
+
+  "admin-laws-form.message.onsuccess": "Ley guardada exitosamente",
+  "admin-laws-form.message.validation.lawId-required": "Identificación oficial requerida",
+  "admin-laws-form.message.validation.mediaTitle-required": "Título mediático requerido",
+  "admin-laws-form.message.validation.source-required": "Fuente requerida",
+  "admin-laws-form.message.validation.source-invalid": "Fuente debe ser una URL válida",
+
+  "admin-tags.list.title": "Etiquetas del sistema",
+
+  "admin-tags-form.title.create": "Nueva etiqueta",
+  "admin-tags-form.title.edit": "Edición de etiqueta",
+  "admin-tags-form.label.name": "Nombre",
+  "admin-tags-form.placeholder.name": "Nombre de etiqueta",
+  "admin-tags-form.button.submit": "Guardar",
+
+  "admin-tags-form.message.onsuccess": "Etiqueta guardada exitosamente",
+  "admin-tags-form.message.validation.name-required": "Nombre requerido"
+
 }
