@@ -51,7 +51,6 @@ img.avatar
 .dropdown-menu
 	border-radius: 0;
 	text-transform: none
-	// box-shadow: none;
 
 .alert
 	color: white;
@@ -243,11 +242,11 @@ section.site-content
 		left: 0;
 
 
-/* Proposal Aside Navigation
+/* Sidebar
 -------------------------------------------------- */
 .dropdown-department
 	padding:  15.5px spacing;
-	background-color: #Bdc3c7;
+	background-color: #bdc3c7;
 	display: block;
 	.btn-group
 		float: none;
@@ -263,23 +262,28 @@ section.site-content
 			color: white;
 			text-align: left;
 			&.dropdown-toggle
+				float: right;
+				padding-right: 0;
+				padding-left: 0;
+				width: 10%;
 				background-color: #909FA0;
 			&.current-department
-				width: 174px;
+				width: 90%;
+				-webkit-font-smoothing: antialiased !important;
 		.dropdown-menu
-			width: 210px;
+			width: 100%;
 			border-radius: border_radius;
-			li 
-				display: block
+			li
+				display: block;
 				width: 100%;
-			a 
-				display: block
+			a
+				display: block;
 				white-space: normal;
-				font-weight: bold
-				text-transform: uppercase
+				font-weight: bold;
+				text-transform: uppercase;
 				font-size: 12px;
 				padding: 6px 14px;
-				&:hover 
+				&:hover
 					background: #f1f1f1;
 					color: #333;
 
@@ -329,6 +333,20 @@ aside.nav-proposal
 						left: 5px;
 						top: 2px;
 
+				.item-badges
+					position: absolute;
+					left: spacing + 7;
+					top: spacing + 34;
+					color: white;
+
+					img 
+						width: 16px;
+						height: 12px;
+						position: absolute;
+						z-index: 100;
+						left: 5px;
+						top: 2px;
+
 				&:hover 
 					background: #fff;
 
@@ -370,7 +388,7 @@ aside.nav-proposal
 
 
 
-/* Proposal View
+/* Law view
 -------------------------------------------------- */
 article.proposal
 	margin: 40px auto;  

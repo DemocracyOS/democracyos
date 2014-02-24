@@ -8,11 +8,21 @@ DemocracyOS is an online space for deliberation and voting on political proposal
 [Read the instructions](https://github.com/DemocracyOS/app/wiki/Installation)
 
 ## Active Contributors
-* [Ricardo Rauch](http://twitter.com/gravityonmars)
+
+#### Development
+
 * [Cristian Douce Suarez](http://twitter.com/cristiandouce)
 * [Guido Vilariño](http://twitter.com/gvilarino)
 * [Oscar Guindzberg](https://github.com/oscarguindzberg)
 * [Sacha Lifszyc](https://twitter.com/slifszyc)
+
+#### UX Design
+
+* [Ricardo Rauch](http://twitter.com/gravityonmars)
+
+#### QA
+
+* [Sebastián Ghelerman] (https://twitter.com/bastianhell)
 
 ## Useful links
 

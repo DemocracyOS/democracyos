@@ -35,7 +35,7 @@
     h1=proposal.mediaTitle
     h3=proposal.title 
     .entry-content
-      p.summary=proposal.summary
+      p.summary!=proposal.summary
 
       .clauses
         - var lines = clauses ? clauses : (proposal.essay || proposal.content || '').split('\n')

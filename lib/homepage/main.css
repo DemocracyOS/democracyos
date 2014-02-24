@@ -249,7 +249,7 @@ section.site-content#content {
   z-index: 12;
   left: 0;
 }
-/* Proposal Aside Navigation
+/* Sidebar
 -------------------------------------------------- */
 .dropdown-department {
   padding: 15.5px 20px;
@@ -273,13 +273,18 @@ section.site-content#content {
   text-align: left;
 }
 .dropdown-department .btn-group button.btn.btn-default.dropdown-toggle {
+  float: right;
+  padding-right: 0;
+  padding-left: 0;
+  width: 10%;
   background-color: #909fa0;
 }
 .dropdown-department .btn-group button.btn.btn-default.current-department {
-  width: 174px;
+  width: 90%;
+  -webkit-font-smoothing: antialiased !important;
 }
 .dropdown-department .btn-group .dropdown-menu {
-  width: 210px;
+  width: 100%;
   border-radius: 3px;
 }
 .dropdown-department .btn-group .dropdown-menu li {
@@ -344,6 +349,20 @@ aside.nav-proposal .navlist li a .item-tag img {
   left: 5px;
   top: 2px;
 }
+aside.nav-proposal .navlist li a .item-badges {
+  position: absolute;
+  left: 27px;
+  top: 54px;
+  color: #fff;
+}
+aside.nav-proposal .navlist li a .item-badges img {
+  width: 16px;
+  height: 12px;
+  position: absolute;
+  z-index: 100;
+  left: 5px;
+  top: 2px;
+}
 aside.nav-proposal .navlist li a:hover {
   background: #fff;
 }
@@ -378,7 +397,7 @@ aside.nav-proposal .navlist li.active.active a {
 .proposal-type.proposal-type-2 {
   background-color: #e67e22;
 }
-/* Proposal View
+/* Law view
 -------------------------------------------------- */
 article.proposal {
   margin: 40px auto;

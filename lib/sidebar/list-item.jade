@@ -6,6 +6,10 @@ li(data-id=item.id)
         title Hexagon
         g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', sketch:type='MSPage')
           polygon#Polygon-1(fill="#{item.tag.color}", d='M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0', sketch:type='MSShapeGroup', points='63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 ')
+    
+    .item-badges
+      - if(!!item.voted)
+        img(src="/boot/images/check.png")
 
     span.title=item.mediaTitle
     span.created-by
@@ -15,5 +19,5 @@ li(data-id=item.id)
         div= item.participants.length + ' ' + t('Participant') + plural
       - if (item.closingAt)
         - var closed = item.closingAt && +new Date(item.closingAt) < Date.now()
-        span.time-ago-label= (closed ? t('Closed') : t('Close')) + " "
+        span.time-ago-label= (closed ? t('Closed') : t('Close')) + ' '
         span.meta-item.meta-timeago.ago(data-time=item.closingAt.toString())

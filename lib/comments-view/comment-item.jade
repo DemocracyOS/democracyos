@@ -21,7 +21,7 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
     div.comment-text!=paragraphs.split(comment.text)
       - if (comment.text.length > 230)
         a.read-more(href="#")= t('read more')
-    p.spam-message=t('This comment has been flagged as spam')
+    p.spam-message=t('This argument has been flagged as spam')
       | .
       span.show-spam: a(href="#")= t('show')
     .comment-actions

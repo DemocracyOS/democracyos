@@ -26,6 +26,7 @@
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
   "images": [
+    "images/check.png",
     "images/touch-icon-iphone.png",
     "images/touch-icon-ipad.png",
     "images/touch-icon-iphone-retina.png",
