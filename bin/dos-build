@@ -24,7 +24,7 @@ write(resolve('lib/config/client.js'), 'module.exports = ' + JSON.stringify(clie
 var build = require('lib/build');
 var builder = build.createBuilder();
 builder.build(function(err, res) {
-  if (err) return console.log(err);
+  if (err) return console.log(err), process.exit(1);
   write('public/app.js', res.require + res.js);
   write('public/app.css', res.css);
 });
