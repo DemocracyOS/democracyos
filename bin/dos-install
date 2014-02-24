@@ -48,10 +48,7 @@ if (program.config) {
 if (program.components && exists(installc)) {
   exec(installc, function(err, stdout, stderr) {
     if (stdout.length) console.log(stdout);
-    if (stderr.length) console.log(stderr);
-    if (err != null) {
-      console.log(err);
-      process.exit(1);
-    };
+    if (stderr.length) return console.log(stderr), process.exit(1);
+    if (err != null) return console.log(err), process.exit(1);
   });
 };
