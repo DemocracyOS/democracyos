@@ -7,6 +7,6 @@
     form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate)
       ul.form-messages
       .form-group
-        label #{t('Name')}
-        input.form-control(type='text', id="name", name='name', tabindex=1, placeholder=t('Name'), value=tag.name)
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=2, value=t('Save'))
+        label= t('admin-tags-form.label.name')
+        input.form-control(type='text', id="name", name='name', tabindex=1, placeholder=t('admin-tags-form.placeholder.name'), value=tag.name)
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=2, value=t('admin-tags-form.button.submit'))
