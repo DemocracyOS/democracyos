@@ -8,27 +8,27 @@
       input(type='hidden', name='_law_id_', value=law.id)
       ul.form-messages
       .form-group
-        label #{t('Official Id')}
-        input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('Official Id'), value=law.lawId)
+        label= t('admin-laws-form.label.lawId')
+        input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId)
       .form-group
-        label #{t('Media title')}
-        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('Media title'), value=law.mediaTitle)
+        label= t('admin-laws-form.label.mediaTitle')
+        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle)
       .form-group
-        label= t('Source')
-        input.form-control(type='url', name='source', tabindex=4, placeholder=t('http://laws-source.org/official-url/'), value=law.source)
+        label= t('admin-laws-form.label.source')
+        input.form-control(type='url', name='source', tabindex=4, placeholder=t('admin-laws-form.placeholder.source'), value=law.source)
       .form-group
-        label= t('Tag')
+        label= t('admin-laws-form.label.tag')
         select.form-control(name='tag', tabindex=5)
           - each tag in tags
             option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
       .form-group
-        label= t('Summary')
+        label= t('admin-laws-form.label.summary')
         textarea.form-control(name='summary', tabindex=6)= law.summary
       .form-group
         .law-clauses
           - if (law.clauses && law.clauses.length)
             - each clause, idx in law.clauses
               include form-clause
-        a.add-clause.btn.btn-info.btn-xs(href='#')= t('Add clause')
-        span.add-clause-forbidden.hide=t('Law must be saved to start adding clauses')
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=7, value=t('Save'))
+        a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-laws-form.button.add-clause')
+        span.add-clause-forbidden.hide=t('admin-laws-form.message.add-clause-forbidden')
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=7, value=t('admin-laws-form.button.submit'))
