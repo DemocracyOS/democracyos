@@ -1,4 +1,10 @@
 
+0.3.4 / 2014-02-24
+==================
+
+ * Fix component build process - exit on error
+ * Fix use `package.json` version for bin/dos
+
 0.3.3 / 2014-02-24
 ==================
 
