@@ -20,7 +20,10 @@
         label= t('Tag')
         select.form-control(name='tag', tabindex=5)
           - each tag in tags
-           option(selected= tag.hash === law.tag, value=tag.hash)= tag.name
+            option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
+      .form-group
+        label= t('Summary')
+        textarea.form-control(name='summary', tabindex=6)= law.summary
       .form-group
         .law-clauses
           - if (law.clauses && law.clauses.length)
@@ -28,4 +31,4 @@
               include form-clause
         a.add-clause.btn.btn-info.btn-xs(href='#')= t('Add clause')
         span.add-clause-forbidden.hide=t('Law must be saved to start adding clauses')
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=4, value=t('Save'))
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=7, value=t('Save'))

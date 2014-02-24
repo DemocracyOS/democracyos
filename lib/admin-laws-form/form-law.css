@@ -1,3 +1,7 @@
+#law-wrapper .law-admin form textarea {
+  min-height: 180px;
+}
+
 #law-wrapper .law-admin form a.add-clause{
   width: 100%;
   margin: 15px 0px;
@@ -35,10 +39,6 @@
   width: 100%;
   margin: 0px;
   padding: 10px 0px;
-}
-
-#law-wrapper .law-admin .law-clause .clause-row textarea {
-  min-height: 180px;
 }
 
 #law-wrapper .law-admin .law-clause .clause-row .clause-group {
