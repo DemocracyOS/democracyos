@@ -1,0 +1,19 @@
+{
+  "name": "tag-images",
+  "description": "DemocracyOS Tag images collection",
+  "images": [
+    "images/cultura.svg",
+    "images/justicia.svg",
+    "images/seguridad.svg",
+    "images/planeamiento-urbano.svg",
+    "images/transito-y-transporte.svg",
+    "images/defensa-de-consumidores-y-usuarios.svg",
+    "images/proteccion-y-uso-del-espacio-publico.svg",
+    "images/defensa-de-los-consumidores-y-usuarios.svg",
+    "images/presupuesto-hacienda-administracion-financiera-y-politica-tributaria.svg"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "main": "index.js"
+}
