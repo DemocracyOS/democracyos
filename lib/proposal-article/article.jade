@@ -13,7 +13,7 @@
 
     .entry-tag(style="border-color: #{proposal.tag.color}")
 
-      img(src="/boot/images/tags/#{proposal.tag.hash}.svg", style="fill: white;")
+      img(src=tagImages[proposal.tag.image].url, style="fill: white;")
 
       svg(viewbox='0 0 126 144', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns').hexagon
         title Hexagon
