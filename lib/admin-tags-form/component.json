@@ -14,6 +14,7 @@
   },
   "local": [
     "tags",
+    "tag-images",
     "citizen",
     "render",
     "request",
@@ -22,7 +23,9 @@
   "templates": [
     "form-template.jade"
   ],
-  "styles": [ ],
+  "styles": [
+    "admin-tags-form.css"
+  ],
   "scripts": [
     "form-view.js"
   ],
