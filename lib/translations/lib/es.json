@@ -202,6 +202,7 @@
   "admin-tags-form.title.edit": "Edición de etiqueta",
   "admin-tags-form.label.name": "Nombre",
   "admin-tags-form.placeholder.name": "Nombre de etiqueta",
+  "admin-tags-form.label.image": "Imagen",
   "admin-tags-form.button.submit": "Guardar",
 
   "admin-tags-form.message.onsuccess": "Etiqueta guardada exitosamente",
