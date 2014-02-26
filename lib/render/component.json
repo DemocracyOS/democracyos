@@ -6,7 +6,7 @@
     "cristiandouce/merge-util": "0.1.0",
     "component/t": "1.0.0"
   },
-  "local": [ "citizen", "config" ],
+  "local": [ "citizen", "config", "tag-images" ],
   "scripts": [ "render.js" ],
   "main": "render.js"
 }
