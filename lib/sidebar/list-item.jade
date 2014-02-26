@@ -1,7 +1,7 @@
 li(data-id=item.id)
   a(href="/#{listType}/"+item.id)
     .item-tag
-      img(src="/boot/images/tags/#{item.tag.hash}.svg")
+      img(src=tagImages[item.tag.image].url)
       svg(viewbox='0 0 126 144', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns').hexagon
         title Hexagon
         g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', sketch:type='MSPage')
