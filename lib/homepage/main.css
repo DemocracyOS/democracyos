@@ -69,6 +69,9 @@ img.avatar {
 .system-alert {
   margin-top: 20px;
 }
+.caret {
+  color: #000;
+}
 .inner-container {
   padding-left: 20px;
   padding-right: 20px;
