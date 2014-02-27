@@ -1,3 +1,24 @@
+#law-wrapper .publish-status p {
+  padding: 10px;
+  text-align: center;
+}
+
+#law-wrapper .publish-status p span {
+  margin-right: 5px;
+  letter-spacing: 0.04em;
+}
+
+#law-wrapper a.delete-law {
+  float: right;
+  line-height: 14px;
+}
+
+#law-wrapper .publish-status p a {
+  font-size: 12px;
+  text-decoration: underline;
+  letter-spacing: 0.04em;
+}
+
 #law-wrapper .law-admin form textarea {
   min-height: 180px;
 }

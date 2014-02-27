@@ -4,6 +4,14 @@
       .circle
         i.icon-user
       h1= t(form.title)
+    .publish-status.public-status(class=law.public && law.id ? '' : 'hide')
+      p.bg-success
+        span= t('This law is published')
+        a.make-private(href="#")= t('Unpublish')
+    .publish-status.private-status(class=law.draft && law.id ? '' : 'hide')
+      p.bg-warning
+        span= t('This law is a draft')
+        a.make-public(href="#")= t('Publish')
     form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate)
       input(type='hidden', name='_law_id_', value=law.id)
       ul.form-messages
@@ -32,3 +40,4 @@
         a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-laws-form.button.add-clause')
         span.add-clause-forbidden.hide=t('admin-laws-form.message.add-clause-forbidden')
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=7, value=t('admin-laws-form.button.submit'))
+    a.delete-law.text-danger(href='#')= t('admin-laws-form.button.delete')
