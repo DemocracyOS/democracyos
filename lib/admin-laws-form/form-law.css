@@ -11,6 +11,7 @@
 #law-wrapper a.delete-law {
   float: right;
   line-height: 14px;
+  text-decoration: underline;
 }
 
 #law-wrapper .publish-status p a {
