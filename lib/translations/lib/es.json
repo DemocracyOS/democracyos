@@ -180,13 +180,18 @@
   "admin-laws-form.message.add-clause-forbidden": "La ley debe guardarse antes de agregar artículos",
   "admin-laws-form.button.submit": "Guardar",
 
+  "admin-laws-form.message.public-status": "Esta ley está abierta al público",
+  "admin-laws-form.button.make-private": "Despublicar",
+  "admin-laws-form.message.private-status": "Esta ley es un borrador",
+  "admin-laws-form.button.make-public": "Publicar",
+
   "admin-laws-form.clause.heading": "Artículo",
   "admin-laws-form.clause.label.clauseId": "Numero de artículo",
   "admin-laws-form.clause.label.order": "Posición/Orden",
   "admin-laws-form.clause.label.text": "Contenido",
   "admin-laws-form.clause.button.delete": "Eliminar",
   "admin-laws-form.clause.confirmation.title": "Eliminar artículo",
-  "admin-laws-form.clause.confirmation.body": "Esta acción eliminara la información de manera permanente. ¿Desea continuar?",
+  "admin-laws-form.clause.confirmation.body": "Esta acción eliminará la información de manera permanente. ¿Desea continuar?",
   "admin-laws-form.clause.confirmation.cancel": "Cancelar",
   "admin-laws-form.clause.confirmation.ok": "Eliminar",
 
@@ -195,6 +200,12 @@
   "admin-laws-form.message.validation.mediaTitle-required": "Título mediático requerido",
   "admin-laws-form.message.validation.source-required": "Fuente requerida",
   "admin-laws-form.message.validation.source-invalid": "Fuente debe ser una URL válida",
+
+  "admin-laws-form.delete-law.button.delete": "Borrar",
+  "admin-laws-form.delete-law.confirmation.title": "Eliminar ley",
+  "admin-laws-form.delete-law.confirmation.body": "Esta acción eliminará la información de manera permanente. ¿Desea continuar?",
+  "admin-laws-form.delete-law.confirmation.cancel": "Cancelar",
+  "admin-laws-form.delete-law.confirmation.ok": "Eliminar",
 
   "admin-tags.list.title": "Etiquetas del sistema",
 

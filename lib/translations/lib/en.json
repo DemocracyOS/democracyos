@@ -180,6 +180,11 @@
   "admin-laws-form.message.add-clause-forbidden": "Law must be saved to start adding clauses",
   "admin-laws-form.button.submit": "Save",
 
+  "admin-laws-form.message.public-status": "This law is published to public",
+  "admin-laws-form.button.make-private": "Unpublish",
+  "admin-laws-form.message.private-status": "This law is a draft",
+  "admin-laws-form.button.make-public": "Publish",
+
   "admin-laws-form.clause.heading": "Clause",
   "admin-laws-form.clause.label.clauseId": "Clause Id",
   "admin-laws-form.clause.label.order": "Order",
@@ -195,6 +200,12 @@
   "admin-laws-form.message.validation.mediaTitle-required": "Media title required",
   "admin-laws-form.message.validation.source-required": "Source required",
   "admin-laws-form.message.validation.source-invalid": "Source must be a valid URL",
+
+  "admin-laws-form.delete-law.button.delete": "Delete",
+  "admin-laws-form.delete-law.confirmation.title": "Delete law",
+  "admin-laws-form.delete-law.confirmation.body": "This action will erease data permanently. Woudl you like to procced?",
+  "admin-laws-form.delete-law.confirmation.cancel": "Cancel",
+  "admin-laws-form.delete-law.confirmation.ok": "Delete",
 
   "admin-tags.list.title": "System tags",
 
