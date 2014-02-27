@@ -5,9 +5,10 @@
  */
 
 var program = require('commander');
+var pkg = require('../package');
 
 program
-  .version('0.0.1')
+  .version(pkg.version)
   .command('install', "Install client components.")
   .command('build', "Builds client application and compiles assets.")
   .command('db', "Install a development database")

@@ -22,7 +22,9 @@
     "translations",
     "snapper",
     "flaticons",
-    "admin"
+    "admin",
+    "header",
+    "logout"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
