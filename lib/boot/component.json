@@ -22,7 +22,9 @@
     "translations",
     "snapper",
     "flaticons",
-    "admin"
+    "admin",
+    "header",
+    "logout"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
@@ -32,9 +34,8 @@
     "images/touch-icon-ipad.png",
     "images/touch-icon-iphone-retina.png",
     "images/touch-icon-ipad-retina.png",
-    "images/logo.png", 
-    "images/tags/seguridad.svg", 
-    "images/tags/seguridad.svg", 
+    "images/logo.png",
+    "images/tags/seguridad.svg",
     "images/tags/transito-y-transporte.svg",
     "images/tags/defensa-de-los-consumidores-y-usuarios.svg",
     "images/tags/defensa-de-consumidores-y-usuarios.svg",

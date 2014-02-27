@@ -1,0 +1,15 @@
+{
+  "name": "header",
+  "description": "header component",
+  "dependencies": {
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/jade": "1.1.5",
+    "cristiandouce/query": "0.0.1"
+    },
+  "local": [ "render", "citizen" ],
+  "scripts": [ "main.js", "header.js" ],
+  "styles": [ "header.css" ],
+  "templates": [ "header-container.jade" ],
+  "images": [ ],
+  "main": "main.js"
+}
