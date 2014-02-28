@@ -1,4 +1,81 @@
 
+0.4.0 / 2014-02-28
+==================
+
+ * Fix to re-fetch laws after login
+ * Fix  sort in `sorts` to use `publishedAt` field instead of `createdAt`. Closes #287
+ * Change state to loading while fetching tags
+ * Refetch laws after save/delete law from `admin` pages
+ * Change state to loading while fetching laws
+ * Re-fetch laws after save/remove from `admin` pages
+ * Updated staff client middleware. Closes #286
+ * Add public/private status update and delete law with confirmation. Closes #242 #280
+ * Add `publish`, `unpublish` and `delete` API endpoints. #242
+ * Update queries to only display undeleted laws
+ * Bump bootstrap to 3.1.1
+ * Fix site reload on login. Closes #283
+ * Update endpoint to serve only public laws unless user is staff
+ * Add `publishedAt` and `deletedAt` fields. Remove unused `deleted` field
+ * Update images to global international naming
+ * Update tag image url source from `tag-images` collection
+ * Add `tagImages` as a global var for templates
+ * Remove moved tag images from component.json
+ * Update form to allow image selection for tags. Closes #278
+ * Update force tags section as part of `List` at sidebar
+ * Add image key of tag for laws all population
+ * Provide image key from tag API endpoint #278
+ * Add image key to model tag #278
+ * Refactor collection of `tag` images as a module
+ * Fix sidebar not being sensitive to citizen logout. Closes #274
+ * Add translations for admin sections. Closes #281 #279 #277 #276 #275
+ * Add force list section on sidebar for law edit view
+ * Add summary field to form and fix tabindex and options selected query
+ * Add common styles for admin sections
+ * Update `README.md` with team categories
+ * Add confirmation dialog styles
+ * Update pre-delete clause modal message and dont focus on cancel
+ * Add basic confirmation alert before deleting a clause
+ * Update styles for list view for admin lists
+ * Refactor logout to use a middleware. Closes #273
+ * Add redirect to `/signin` after logout #273
+ * Refactor logout to use new `logout` component #273
+ * Add `logout` component #273
+ * Update list view. Add remove clause method and mechanics.
+ * Add remove clause endpoint
+ * Update method .update to properly update 1 by 1 law clauses with new content
+ * Parse clauses input names before sending on POST request
+ * Refactor header into independent component. Closes #265
+ * Add simple clauses creation mechanics
+ * Add clause API endpoint method to create/update law clauses
+ * Update `CONTRIBUTING.md` with contribution workflow. Thanks @maraoz!
+ * Add unescaped summary to display law with line breaks. Closes #196
+ * Add form disabling when posting signin data. Closes #199
+ * Remove normalize module dependencies from tag model. Closes #264
+ * Add tag hash normalization when creating a new tag. For existing tags, hash should not be changed as it is used to fetch their image #264
+ * Add normalize function to utils and rename old normalize function to sanitaze #264
+ * Remove deprecated functions #264
+ * Add utils to tag model #264
+ * Add create and edit tag server side endpoints #264
+ * Add tag create and edit client endpoints
+ * Add form-view and template to edit/create a tag #264
+ * Add tags admin to list existing tags #264
+ * Add tags list rendering inside content #264
+ * Add tag list and create options #264
+ * Add new method `.update(id, data, fn)` to `db-api` for `law`
+ * Add restrict and staff middlewares for /law/:id POST endpoint
+ * Add /law/create and /law/:id POST endpoints for admin law edition
+ * Add /tag/all endpoint
+ * Add self binding for middleware usage
+ * Update middleware build check
+ * Update sections with placeholder for new sections format. #240
+ * Update client routing to match chained sections of admin pages. #240
+ * Add `staff` config key from environment. Closes #241
+ * Add staff middleware check for `/law/create`. #241
+ * Add `isStaff` middleware check #241
+ * Add `staff` virtual property to model `citizen` #241
+ * Add `staff` prop to sample.json. #241
+ * Add administration module
+
 0.3.4 / 2014-02-24
 ==================
 
