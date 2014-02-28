@@ -142,7 +142,7 @@ header.app-header #toggleButton {
   height: 44px;
   position: absolute;
   left: 20px;
-  padding: 20px 0;
+  padding: 10px 0;
   display: none;
 }
 header.app-header #toggleButton .bar-icon {

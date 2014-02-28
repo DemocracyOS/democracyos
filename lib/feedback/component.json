@@ -1,0 +1,8 @@
+{
+  "name": "feedback",
+  "description": "feedback component",
+  "dependencies": { },
+  "local": [ "citizen" ],
+  "scripts": [ "feedback.js", "uservoice.js" ],
+  "main": "feedback.js"
+}

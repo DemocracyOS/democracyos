@@ -6,7 +6,7 @@
     "visionmedia/jade": "1.1.5",
     "cristiandouce/query": "0.0.1"
     },
-  "local": [ "render", "citizen" ],
+  "local": [ "render", "citizen", "feedback", "snapper" ],
   "scripts": [ "main.js", "header.js" ],
   "styles": [ "header.css" ],
   "templates": [ "header-container.jade" ],
