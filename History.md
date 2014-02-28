@@ -1,4 +1,12 @@
 
+0.4.1 / 2014-02-28
+==================
+
+ * Fix feedback initialization with new header. Fixes #290
+ * Update citizen middlewares for client. Improve login/logout
+ * Fix unexpected bug on filtering voted laws
+ * Fix snapper with new header
+
 0.4.0 / 2014-02-28
 ==================
 
