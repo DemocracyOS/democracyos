@@ -1,0 +1,28 @@
+#settings .settings-content .heading {
+  position: relative;
+  margin: 0px;
+  margin-bottom: 30px;
+}
+
+#settings .heading .circle {
+  position: absolute;
+  display: none;
+  left: -26px;
+  top: -4px;
+  overflow: hidden;
+  color: #FFF;
+  width: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#settings .heading .circle i {
+  color: #7F8C8D;
+}
+
+#settings .heading h1 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+}

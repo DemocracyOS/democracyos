@@ -21,7 +21,7 @@
     "settings-password"
   ],
   "scripts": [ "settings.js" ],
-  "styles": [ "settings.css", "settings-responsive.css" ],
+  "styles": [ "settings.css", "settings-sidebar.css", "settings-heading.css", "settings-responsive.css" ],
   "templates": [ "settings-container.jade"],
   "main": "settings.js"
 }

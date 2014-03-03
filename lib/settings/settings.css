@@ -1,93 +1,55 @@
 #settings-container {
-  height: 100%;
-  width: 100%;
   position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
-#settings {
+#settings-container #settings {
+  position: relative;
   max-width: 650px;
   min-height: 100%;
   margin: 0px auto;
-  top: -10px;
-  padding-top: 10px;
-  border: 1px solid #CDCDCD;
-  position: relative;
 }
 
-#settings .sidebar-container {
-  width: 160px;
-  height: 100%;
+#settings-container #settings .sidebar-container {
   position: absolute;
-  padding-bottom: 10px;
-}
-
-#settings .sidebar-container ul.settings-menu {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #F8F8F8;
-  border-right: 1px solid #E0E2E1;
-  text-transform: uppercase;
-}
-
-#settings .sidebar-container ul li.heading {
-  padding: 40px 0 10px 20px;
-  color: #C4C4C4;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-#settings .sidebar-container ul li {
-  list-style: none;
-}
-
-#settings .sidebar-container ul li a {
-  width: 100%;
-  display: inline-block;
-  text-decoration: none;
-  color: #25A1C3;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 10px 20px;
-  text-shadow: 0 1px 0 #FFF;
-}
-
-#settings .sidebar-container ul li a.active {
-  background: #ECF0F1;
-  box-shadow: 0 1px 0 #fff, inset 0 1px 0 #e1e1e1;
-}
-
-#settings .settings-content {
-  margin-left: 160px;
-  padding: 40px 75px;
+  width: 180px;
   height: 100%;
 }
 
-#settings .settings-content .heading {
-  position: relative;
-  margin: 0px;
-  margin-bottom: 30px;
+#settings-container #settings .settings-content {
+  height: 100%;
+  max-width: 500px;
+  min-width: 350px;
+  margin-left: 180px;
+  margin-right: auto;
+  padding: 40px 25px;
 }
 
-#settings .heading .circle {
-  position: absolute;
-  display: none;
-  left: -26px;
-  top: -4px;
-  overflow: hidden;
-  color: #FFF;
-  width: 20px;
-  text-align: center;
-  font-size: 20px;
+#settings-container #settings .btn {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
 }
 
-#settings .heading .circle i {
-  color: #7F8C8D;
+#settings-container #settings .btn,
+#settings-container #settings input,
+#settings-container #settings textarea,
+#settings-container #settings select,
+#settings-container #settings #button {
+  border-radius: 2px;
 }
 
-#settings .heading h1 {
-  margin: 0;
-  font-size: 14px;
-  line-height: 14px;
-  text-transform: uppercase;
+#settings-container #settings input[type="submit"].btn {
+  font-weight: normal;
+}
+
+#settings-container #settings label {
+  margin-bottom: 10px;
+}
+
+#settings-container #settings form {
+  max-width: 350px;
 }

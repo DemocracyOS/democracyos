@@ -1,3 +1,8 @@
+#profile-wrapper form .form-group a {
+  display: inline-block;
+  text-decoration: underline;
+}
+
 #profile-wrapper form .form-group a:hover {
   text-decoration: underline;
 }
