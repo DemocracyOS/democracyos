@@ -1,4 +1,12 @@
 
+0.4.2 / 2014-03-03
+==================
+
+ * Refactor `settings` and `admin` sections
+ * Add `publishedAt` to several `law`s in `lib/fixtures`. Closes #289
+ * Add missing keys to `ca.json` locale translation file. Requires translation
+ * Added Catalonian translation file
+
 0.4.1 / 2014-02-28
 ==================
 
