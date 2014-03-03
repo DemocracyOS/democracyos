@@ -45,3 +45,7 @@
 #admin-container #admin input[type="submit"].btn {
   font-weight: normal;
 }
+
+#admin-container #admin label {
+  margin-bottom: 10px;
+}
