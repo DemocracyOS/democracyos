@@ -15,30 +15,33 @@
 
 #admin-container #admin .sidebar-container {
   position: absolute;
-  width: 20px;
+  width: 180px;
   height: 100%;
 }
 
 #admin-container #admin .admin-content {
-  margin-left: 200px;
-  padding: 40px 0px;
   height: 100%;
+  max-width: 500px;
+  min-width: 350px;
+  margin-left: 180px;
+  margin-right: auto;
+  padding: 40px 25px;
 }
 
 #admin-container #admin .btn {
   font-weight: 600;
   letter-spacing: 0.04em;
-  border-radius: 0px;
   padding: 5px 10px;
+}
+
+#admin-container #admin .btn,
+#admin-container #admin input,
+#admin-container #admin textarea,
+#admin-container #admin select,
+#admin-container #admin #button {
+  border-radius: 2px;
 }
 
 #admin-container #admin input[type="submit"].btn {
   font-weight: normal;
-}
-
-#admin-container #admin form {
-  width: 80%;
-  max-width: 450px;
-  min-width: 350px;
-  margin-right: auto;
 }

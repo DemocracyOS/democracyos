@@ -7,12 +7,12 @@
 
 #laws-wrapper .laws-admin > ul li,
 #tags-wrapper .tags-admin > ul li {
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 35px;
   overflow: hidden;
   position: relative;
-  margin: 5px 0px;
-  padding: 0 0 0 5px;
+  margin: 10px 0px;
+  padding: 0 0 0px 5px;
   border-bottom: 1px solid #eee;
 }
 
