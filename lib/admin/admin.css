@@ -6,32 +6,39 @@
   bottom: 0px;
 }
 
-#admin {
+#admin-container #admin {
   position: relative;
   max-width: 780px;
   min-height: 100%;
   margin: 0px auto;
 }
 
-#admin .sidebar-container {
+#admin-container #admin .sidebar-container {
   position: absolute;
   width: 20px;
   height: 100%;
 }
 
-#admin .admin-content {
+#admin-container #admin .admin-content {
   margin-left: 200px;
   padding: 40px 0px;
   height: 100%;
 }
 
-#admin .btn {
+#admin-container #admin .btn {
   font-weight: 600;
   letter-spacing: 0.04em;
   border-radius: 0px;
   padding: 5px 10px;
 }
 
-#admin input[type="submit"].btn {
+#admin-container #admin input[type="submit"].btn {
   font-weight: normal;
+}
+
+#admin-container #admin form {
+  width: 80%;
+  max-width: 450px;
+  min-width: 350px;
+  margin-right: auto;
 }
