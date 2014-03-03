@@ -13,9 +13,9 @@
         input.form-control(type='text', id="name", name='name', tabindex=tabindex++, placeholder=t('admin-tags-form.placeholder.name'), value=tag.name)
       .form-group
         label= t('admin-tags-form.label.image')
-        .tag-images
+        ul.tag-images
           - each image in images
-            .tag-image
+            li.tag-image
               input.form-control(type='radio', name='image', tabindex=tabindex++, value=image.name, checked= tag.image === image.name)
               .tag-image-fill
                 img(src=image.url)

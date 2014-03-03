@@ -3,27 +3,30 @@
     height: auto;
   }
 
-  #settings {
+  #settings-container #settings {
     border-width: 0;
   }
 
-  #settings .sidebar-container {
+  #settings-container #settings .sidebar-container {
     display: none;
   }
 
-  #settings .settings-content {
-    margin-left: 0;
+  #settings-container #settings .settings-content {
+    margin: 0px auto;
     padding: 20px 30px;
   }
 
-  #settings .settings-content > div {
+  #settings-container #settings .settings-content > div {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #dcdcdc;
   }
 
-  #settings .settings-content > .hide {
+  #settings-container #settings .settings-content > .hide {
     display: block !important;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
   }
 
+  #settings-container #settings .settings-content form {
+    max-width: 100%;
+  }
 }

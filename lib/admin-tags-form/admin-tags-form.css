@@ -1,22 +1,26 @@
-#tag-wrapper form .form-group {
-  float: left;
-  width: 100%;
-}
-
 #tag-wrapper form .tag-images {
   display: block;
-  float: left;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /*display: flex;*/
+  /*flex-flow: row wrap;*/
+  /*justify-content: space-between;*/
+  /*align-content: stretch;*/
 }
 
 #tag-wrapper form .tag-image {
   position: relative;
-  float: left;
-  display: block;
+  display: inline-block;
   width: 50px;
   height: 50px;
-  margin-right: 5px;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 4px;
+}
+
+#tag-wrapper form .tag-image:last-child {
+  margin-right: 0px;
 }
 
 
