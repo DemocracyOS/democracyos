@@ -2,9 +2,8 @@ ul.admin-menu {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #F8F8F8;
-  border-right: 1px solid #E0E2E1;
   text-transform: uppercase;
+  list-style: none;
 }
 
 ul.admin-menu li.heading {
@@ -14,15 +13,11 @@ ul.admin-menu li.heading {
   font-weight: bold;
 }
 
-ul.admin-menu li {
-  list-style: none;
-}
-
 ul.admin-menu li a {
   width: 100%;
   display: inline-block;
   text-decoration: none;
-  color: #25A1C3;
+  color: #428BCA;
   font-size: 12px;
   font-weight: bold;
   padding: 10px 20px;
@@ -30,6 +25,5 @@ ul.admin-menu li a {
 }
 
 ul.admin-menu li a.active {
-  background: #ECF0F1;
-  box-shadow: 0 1px 0 #fff, inset 0 1px 0 #e1e1e1;
+  box-shadow: inset 5px 0px 0 #BDC3C7;
 }
