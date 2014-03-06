@@ -1,4 +1,12 @@
 
+0.4.3 / 2014-03-06
+==================
+
+ * Move `homepage` centrilized styles to each component and `boot`
+ * Deprecate `main.css`
+ * Fix missing `var(spacing)`
+ * Add `styl` compiler at `build` and normalize `main.styl` at `homepage` to match `styl` instead of `stylus`
+
 0.4.2 / 2014-03-03
 ==================
 
