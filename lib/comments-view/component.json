@@ -23,7 +23,7 @@
     "request"
   ],  
   "scripts": [ "view.js" ],
-  "styles" : [ "comments.css" ],
+  "styles" : [ "comments-view.styl", "comments.css" ],
   "templates": [ "comments-block.jade", "comment-item.jade" ],
   "main": "view.js"
 }

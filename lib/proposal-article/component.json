@@ -17,7 +17,7 @@
   "local": [ "config", "render", "participants-view" ],
   "scripts": [ "proposal-article.js" ],
   "templates": [ "article.jade", "clause.jade" ],
-  "styles": [ ],
+  "styles": [ "proposal-article.styl" ],
   "images": [ ],
   "main": "proposal-article.js"
 }

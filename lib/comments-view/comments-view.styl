@@ -1,0 +1,99 @@
+/* Vars
+-------------------------------------------------- */
+:root
+  var-header_height: 60px
+  var-spacing: 20px
+  var-border_radius: 3px
+  var-nav_proposal_width: 266px
+  var-content_width: 580px
+  var-link_blue: #2980b9
+
+/* Comments
+-------------------------------------------------- */
+.comments
+  background: #f9f9f9
+  padding-top: 50px
+  padding-bottom: 50px
+
+  .comments-inner
+    margin: auto
+    max-width: var(content_width)
+  h4
+    margin-bottom: 30px
+
+  span
+    margin-right: 20px
+
+  .comment-form
+    margin-bottom: 50px
+    margin-top: 50px
+    textarea
+      max-width: 500px
+      width: 96%
+      padding: 2%
+    .btn
+      background-color: #333
+      color: white
+
+  .comment-list
+    .comment-item
+      margin-bottom: 30px
+      max-width: 580px
+      .pull-left
+        width: 46px
+        margin-right: 20px
+        .avatar
+          width: 46px
+          height: 46px
+          border-radius: 100px
+
+      .comment-action
+        color: #333
+        font-size: 11px
+        font-weight: bold
+        color: #333
+        &.vote-comment
+          i
+            font-weight: bold
+            font-size: 20px
+            margin-right: 10px
+        &:hover
+          text-decoration: none
+        &.link-report
+          float: right
+          color: #333
+          i
+            margin-right: 5px
+      .comment-counter
+        margin: 0px
+        font-weight: bold
+        font-size: 14px
+        color: #333
+        vertical-align: top
+        min-width: 20px
+        display: inline-block
+      .spam-message
+        display:none
+        .show-spam
+          margin: 0px 3px
+          font-size: 0.85em
+
+      .comment-text
+        color: #333
+
+      .comment-action
+        &.like
+          &.selected, &:hover
+            color: green
+        &.dislike
+          &.selected, &:hover
+            color: red
+        &.flag
+          display: inline-block
+          &.selected, &:hover
+            color: orange
+      &.spam
+        .comment-text, .comment-actions, .link-report.flag
+          display:none
+        .spam-message
+          display:block
