@@ -8,7 +8,7 @@
     },
   "local": [ "render", "citizen", "feedback", "snapper" ],
   "scripts": [ "main.js", "header.js" ],
-  "styles": [ "header.css" ],
+  "styles": [ "header.styl" ],
   "templates": [ "header-container.jade" ],
   "images": [ ],
   "main": "main.js"

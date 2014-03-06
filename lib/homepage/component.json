@@ -14,8 +14,6 @@
   "scripts": [
     "homepage.js"
   ],
-  "styles": [
-    "main.css"
-  ],
+  "styles": [ ],
   "main": "homepage.js"
 }

@@ -19,7 +19,7 @@
   "local": [ "citizen", "request" ],
   "scripts": [ "proposal-options.js" ],
   "templates": [ "options.jade" ],
-  "styles": [ "proposal-options.css" ],
+  "styles": [ "proposal-options.styl" ],
   "images": [ ],
   "main": "proposal-options.js"
 }

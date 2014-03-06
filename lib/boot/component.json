@@ -26,7 +26,7 @@
     "logout"
   ],
   "scripts": [ "boot.js" ],
-  "styles": [ "boot.css" ],
+  "styles": [ "boot.styl", "boot-responsive.styl" ],
   "images": [
     "images/check.png",
     "images/touch-icon-iphone.png",
