@@ -1,4 +1,9 @@
 
+0.4.4 / 2014-03-10
+==================
+
+ * Fix firefox bug on function scopes at `laws-filter`
+
 0.4.3 / 2014-03-06
 ==================
 
