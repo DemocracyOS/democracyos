@@ -20,6 +20,9 @@ packages:
 	@echo "Done.\n"
 	@echo "Installing components..."
 	@node ./bin/dos-install --config
+	@echo "Updating config settings..."
+	@node ./bin/dos-config
+	@echo "Done.\n"
 	@echo "Compiling components to ./public..."
 	@node ./bin/dos-build
 	@echo "Done.\n"

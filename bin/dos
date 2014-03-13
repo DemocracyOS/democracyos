@@ -11,5 +11,6 @@ program
   .version(pkg.version)
   .command('install', "Install client components.")
   .command('build', "Builds client application and compiles assets.")
+  .command('config', "Builds client side configs after merge.")
   .command('db', "Install a development database")
   .parse(process.argv)
