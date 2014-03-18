@@ -1,4 +1,9 @@
 
+0.4.6 / 2014-03-18 
+==================
+
+ * Fix comments at law view rendering bumping slifszyc/paragraphs to 0.2.0 version
+
 0.4.5 / 2014-03-13
 ==================
 
