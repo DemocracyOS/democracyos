@@ -20,6 +20,11 @@
   letter-spacing: 0.04em;
 }
 
+#law-wrapper .law-admin form .form-control[readonly][name='closingAt'] {
+  background-color: #fff;
+  cursor: default;
+}
+
 #law-wrapper .law-admin form textarea {
   min-height: 180px;
 }
@@ -85,4 +90,9 @@
 #law-wrapper .law-admin .law-clause .clause-row .clause-group.clause-order label,
 #law-wrapper .law-admin .law-clause .clause-row .clause-group.clause-order input {
   margin-left: 5%;
+}
+
+.popover {
+  display: block !important;
+  cursor: default;
 }
