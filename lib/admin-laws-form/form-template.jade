@@ -33,11 +33,21 @@
         label= t('admin-laws-form.label.summary')
         textarea.form-control(name='summary', tabindex=6)= law.summary
       .form-group
+        label= t('admin-laws-form.label.closingAt')
+        .input-group
+          - var closingAt = ''
+          - if (law.closingAt)
+            closingAt = new Date(law.closingAt)
+            closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
+          input.form-control(name='closingAt', tabindex=7, readonly=true, value=closingAt)
+          span.input-group-addon.clear-closingAt
+            i.glyphicon.glyphicon-remove
+      .form-group
         .law-clauses
           - if (law.clauses && law.clauses.length)
             - each clause, idx in law.clauses
               include form-clause
         a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-laws-form.button.add-clause')
         span.add-clause-forbidden.hide=t('admin-laws-form.message.add-clause-forbidden')
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=7, value=t('admin-laws-form.button.submit'))
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=8, value=t('admin-laws-form.button.submit'))
     a.delete-law.text-danger(href='#', class= law.id ? '' : 'hide')= t('admin-laws-form.delete-law.button.delete')
