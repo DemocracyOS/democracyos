@@ -7,6 +7,7 @@
     "component/emitter": "1.1.1",
     "component/events": "1.0.5",
     "component/datepicker": "*",
+    "slifszyc/timepicker": "*",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
     "visionmedia/page.js": "1.3.7",
