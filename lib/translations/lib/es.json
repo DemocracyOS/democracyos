@@ -176,6 +176,7 @@
   "admin-laws-form.placeholder.source": "http://fuente-de-leyes.org/url-oficial/",
   "admin-laws-form.label.tag": "Comisión",
   "admin-laws-form.label.summary": "Resumen",
+  "admin-laws-form.label.closingAt": "Fecha de cierre",
   "admin-laws-form.button.add-clause": "Nuevo artículo",
   "admin-laws-form.message.add-clause-forbidden": "La ley debe guardarse antes de agregar artículos",
   "admin-laws-form.button.submit": "Guardar",
