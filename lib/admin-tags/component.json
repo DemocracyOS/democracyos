@@ -10,7 +10,8 @@
     "yields/serialize": "0.2.0",
     "yields/empty": "0.0.1",
     "cristiandouce/query": "0.0.1",
-    "component/t": "1.0.0"
+    "component/t": "1.0.0",
+    "andrewrk/diacritics": "1.1.0"
   },
   "local": [
     "tags",
