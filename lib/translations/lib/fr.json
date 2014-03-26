@@ -143,14 +143,14 @@
   "Bill": "Bureau",
   "Law": "Loi",
 
-  "This argument has been flagged as spam": "Cet argument a été reporté comme agressif",
-  "show": "mostrar",
+  "This argument has been flagged as spam": "Cet argument a été reporté comme contenu indésirable",
+  "show": "montrer",
 
   "All data will expire on December 10, 2013": "Toute l' information va expirer le 10 Décembre 2013",
   "Why?": "Pourquoi?",
 
-  "Spam" : "Reporter un abus",
-  "Not spam" : "Ceci n' est pas un abus",
+  "Spam" : "Reporter du contenu indésirable",
+  "Not spam" : "Ceci n' est pas du contenu indésirable",
   "Upvote" : "Contribue au débat",
   "Downvote" : "Ne contribue pas au débat",
   "Argument is limited to 4096 characters": "L' argument ne peut pas excéder les 4096 caractères",
@@ -173,7 +173,7 @@
   "admin-laws-form.label.lawId": "Identification officielle",
   "admin-laws-form.label.mediaTitle": "Titre médiatique",
   "admin-laws-form.label.source": "Source",
-  "admin-laws-form.placeholder.source": "http://source-des-loies.org/url-officiel/",
+  "admin-laws-form.placeholder.source": "http://source-des-loies.org/url-officiel.pdf",
   "admin-laws-form.label.tag": "Comission",
   "admin-laws-form.label.summary": "Résumé",
   "admin-laws-form.label.closingAt": "Date de fermeture",
