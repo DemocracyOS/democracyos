@@ -2,49 +2,134 @@
 {
     "state" : "bill"
   , "status" : "open"
-  , "lawId": "2513-13"
-  , "tag" : "Planeamiento Urbano"
+  , "lawId": "EMI Nº 00086"
+  , "tag" : "Science, Technology, Innovation, Communication and Informatics"
   , "officialTitle": ""
-  , "mediaTitle": "Nuevo shopping en Caballito"
-  , "source": "https://s3.amazonaws.com/pdr-app/2513-13.pdf"
-  , "closingAt": "2013-12-05T15:00:00.001Z"
-  , "publishedAt": "2014-01-05T15:00:00.001Z"
-  , "summary": "El desarrollo se emplazaría sobre la calle Avellaneda, al lado de Ferro. Serían unos 70.000 m2 cubiertos, con una altura de 38 metros (unos 12 pisos). La contraprestación del desarrollador inmobiliario para la Ciudad sería la construcción de un centro de salud. Quienes están a favor, hablan de la necesidad de urbanizar lo que hoy es un \"vacío\" urbano, oscuro y lleno de containers. Además, refuerzan la importancia de la creación de puestos de trabajo y el aumento de la actividad comercial en la Ciudad. Quienes están en contra, remarcan la falta del obligatorio Informe de Impacto Ambiental y hablan de un cambio radical en el aspecto de la zona y en las costumbres de los vecinos: mayor afluencia de gente, incremento en el tráfico. Además, se preocupan por el comercio minorista del barrio, que se vería afectado por el centro comercial."
+  , "mediaTitle": "Internet civil framework"
+  , "source": "http://direitorio.fgv.br/sites/direitorio.fgv.br/files/Marco%20Civil%20-%20English%20Version%20sept2011.pdf"
+  , "closingAt": "2014-08-01T15:00:00.001Z"
+  , "publishedAt": "2011-04-25T15:00:00.001Z"
+  , "summary": "Establishes principles, guarantees, rights and obligations related to the use of the Internet in Brazil.<br><br>THE NATIONAL CONGRESS decrees:<br><br><br>CHAPTER I<br>PRELIMINAR PROVISIONS"
   , "clauses": [
       {
           "clauseId": "1"
         , "order": 0
-        , "text": "Desaféctase del Distrito de Zonificación R2aII al inmueble delimitado por el Polígono A-B-H-E-F-G-A correspondiente a la Fracción J de la Manzana 39B, de la Circunscripción 5, Sección 57. (Plano de \"Mensura Particular con Fraccionamiento M-7-80\")."
+        , "text": "This law establishes principles, guarantees, rights and obligations concerning the use of the Internet in Brazil, and provides guidelines about this subject for the jurisdictions of the Federal Union, States, Cities and the Federal District of Brasilia."
       },
       {
           "clauseId": "2"
         , "order": 1
-        , "text": "Aféctase el polígono delimitado en el Artículo 1° a las siguientes Normas Urbanísticas Especiales:<br/><br/>1) CARÁCTER: Zona destinada a la localización de un Centro Comercial Minorista, de Servicios Terciarios y de Equipamiento a escala urbana y barrial.<br/><br/>2) DELIMITACIÓN: Se halla delimitado por el polígono A-B-H-E-F-G-A correspondiente a la Fracción J, de la Manzana 39B, de la Circunscripción 5, Sección 57 según Plano de \"Mensura Particular con Fraccionamento M-7-80\".<br/><br/>3) MORFOLOGÍA EDILICIA: Se admiten basamentos, edificios entre medianeras, de perímetro libre, semi-libre y sus combinaciones tipológicas.<br/><br/>a) Ocupación del suelo<br/>FOS = 80%<br/>No serán de aplicación la Línea de Frente interno ni la Línea Interna de Basamento. Del 20% del predio que debe quedar libre, un mínimo del 10% deberá dejarse sobre la Avenida Avellaneda, conformando un área de retiro a continuación de la acera. En la misma sólo podrán instalarse: mobiliario urbano, marquesinas, dársenas de ascenso y descenso de pasajeros y accesos al estacionamiento.<br/><br/>b) Superficie máxima edificable:<br/>F.O.T = 3<br/>El Centro Comercial no podrá superar un FOT de 2,5<br/><br/>c) Altura máxima: 38 metros Por encima de dicha altura, las construcciones deberán retirarse 6 metros de la Línea Divisora de Predios (LDP).<br/>Plano límite: 40 metros.<br/>Por encima de dicha altura sólo podrán sobresalir escaleras, instalaciones complementarias, antenas, pararrayos, balizamientos e instalaciones especiales.<br/><br/>4) USOS<br/><br/>a.- Usos permitidos: Para éste polígono será de aplicación la Referencia P (Permitido) dei Cuadro da Usos N° 5.2.1 a) (AD 610.21) dei Código de Planeamiento Urbano, los usos: Centro de Compras, paseo de compras, Cines, Grandes Tiendas, Supermercado, Supermercado Total, Feria Infantil, Juegos Mecánicos Infanliles, Museo clase I, Garage Comercial y Juegos Psicomotrices Infantiles. Asimismo. se consideran P (Permitido) los usos admilidos en el Cuadro de Usos N° 5.2.1 a) (AD 610.21) del Código de Planeamiento Urbano para el distrito de zonificación Equipamiento Local E3, con excepción de locales de productos especiales, molestos o peligrosos, materiales de construcción clase I, establecimientos de sanidad y educativos.<br/><br/>b.- Usos requeridos:<br/><br/>b.1. Estacionamiento: Para el Centro Comercial Minorista, de Servicios Terciarios y de Equipamiento y sus usos permitidos se dispondrá como mínimo de una superficie de 50.000 m2 para estacionamiento. Dicho espacio, abastecerá indistintamente, a lodos los usos localizados dentro del edlﬁcio.<br/><br/>b.2. Espacio destinado a Carga y Descarga: Deberá cumplir con la referencia IIIb de las \"Referencias Espacios para Carga y Descarga\" AD. 610.21, del Cuadro de Usos N° 5.2.1 del Código de Planeamiento Urbano.<br/><br/>5) CARACTERÍSTICAS PARTICULARES:<br/><br/>El Centro Comercial deberá reunir las siguientes características:<br/><br/>a.- Contar con un número igual o mayor a 40 locales minoristas, de comercio, de prestación da servicios y de equipamiento, organizados en torno a las circulaciones generales.<br/><br/>b.- Proveer obligatoriamente los siguiontes servicios:<br/><br/>1. Playa de estacionamiento o garaje comercial, sean a título gratuito y/o de explotación comercial.<br/>2. Espacio destinado a Carga y Descarga.<br/>3. Detección de incendio obligatorio.<br/>4. Circuito cerrado de Televisión y grabación.<br/>5. Servicios de Sanidad con personal médico o paramédico permanente en el horario de atención al público.<br/><br/>c.- Contar con servicios sanitarios generales para satisfacer las demandas del público y del personal.<br/>Aquellos locales que según el Código de Edificación, requieran sanitarios propios, podrán cumplimentar este requerimiento, con los servicios sanitarios generales del Centro de Compras, siempre que la siempre que la superficie de dichos locales haya sido contemplada en la base de cálculo para determinar la cantidad de concurrentes y su correspondiente cantidad de sanitarios y artefactos.<br/>Deberán poseer servicios sanitarios propios:<br/>1. Los cines.<br/>2. Los locales gastronómicos que estén abiertos fuera del horario de cierre/apertura del Centro de Compras.<br/>3. Los locales gastronómicos con acceso a la vía pública.<br/><br/>d.- Podrán destinarse espacios de expansión de locales gastronómicos y localizarse quioscos, stands y publicidad. Los mismos, no podrán obstruir los medios de salida, escaleras o circulaciones, establecidos por cálculo en base ai coeﬁciente de ocupación y medios de egreso.<br/><br/>e.- El volumen arquitectónico deberá ser proyectado con un lenguaje armónico en todas sus fachadas, evitando composiciones de frente y fondo y garantizando similares calidades y cualidades formales en todo su desarrollo con el ﬁn de una mejor integración con el entorno, en el momento en que las obras del Corredor Verde del Oeste se efectivicen."
+        , "text": "Internet regulation in Brazil shall be grounded on:<br>I< – the recognition of the international nature of the Internet<br>II – human rights and the exercise of citizenship in the digital environment<br>III – the values of plurality and diversity<br>IV – openness and collaboration<br>V – free enterprise, free competition, and consumer protection<br>"
       },
       {
           "clauseId": "3"
         , "order": 2
-        , "text": "Incorpórase al Código de Planeamiento Urbano, en el parágrafo 5.5.2.16, Plancheta de Zoniﬁcacién 16, artículo 5.5.2 Zonificación del Capítulo 5.5 Normas Especiales de la Sección 5 Zonificación en Distritos, las presentes normas y su Anexo I, para el inmueble delimitado por el Polígono A-B-H-E-F-G-A correspondiente a la Fracción J de la Manzana 39B, de la Circunscripción 5, Sección 57."
+        , "text": "Internet regulation in Brazil shall have the following principles:<br>I – safeguarding freedom of speech, communication, and manifestation of thought, in the terms of the Constitution;<br>II – the protection of privacy;<br>III – the protection of personal data, in accordance to the law;<br>IV – the preservation and safeguarding of net neutrality, in compliance with further regulation;<br>V – preservation of the stability, security and functionality of the network, by means of technical practices compatible with international standards, as well as the incentive for the use of best practices;<br>VI – liability of agents in correspondence to their activities, in accordance to the law; and<br>VII – the preservation of the participatory nature of the Internet.<br><br>Sole Paragraph. The principles defined by this law do not exclude others set forth by the national legal system related to the matter, or by the international treaties signed by the Federative Republic of Brazil."
       },
       {
           "clauseId": "4"
         , "order": 3
-        , "text": "Apruébase el Plano de Zoniﬁcación que como Anexo I forms parte integrante de la presente Ley, para el inmueble delimitado por el Polígono A-B-H-E-F-G-A correspondiente a la Fracción J de la Manzana 39B, de la Circunscripción 5, Sección 57."
+        , "text": "Internet regulation in Brazil shall have the following objectives:<br>I – to promote of the right of accessing the Internet to all citizens;<br>II – to promote access to information, knowledge and participation in cultural activities and public affairs;<br>III – to promote innovation and encourage the dissemination of new technologies and models of use and access; and<br>IV – to promote compliance with the open technological standards that allow communication, accessibility and interoperability between applications and databases."
       },
       {
           "clauseId": "5"
         , "order": 4
-        , "text": "Encomiéndase al Poder Ejecutivo la adecuación de la Plancheta de Zoniﬁcación N° 16 do acuerdo a la desafectación y afectación de los artículos precedentes."
+        , "text": "For the purposes of this law, the following definitions apply:<br>I - Internet: the system constituted by logical protocols, globally scaled for public and unrestricted use, allowing the communication of data between terminals through different networks;<br>II - terminal: a computer or any device that connects to the Internet;<br>III - autonomous system administrator: the individual or the legal entity that administrates Internet Protocols address blocks – specific IPs and their autonomous system routing, duly registered in the Regional Internet Registry responsible for the registries and distributions of IP addresses geographically related to the Country;<br>IV – IP address: the code assigned to a network terminal with the objective of allowing its identification, defined according to international standards;<br>V – Internet connection: the authorization for a terminal to send and receive data packages over the Internet, through the attribution and authentication of an IP address;<br>VI – connection logs: the information referring to the date and the time of the beginning and end of an Internet connection, its duration and the IP address used by the terminal for sending and receiving data packages;<br>VII – Internet applications: the group of functionalities that can be accessed by a terminal connected to the Internet; and<br>VIII – Internet application access logs: the information regarding the date and time of use, from a determined IP address, of a specific Internet."
       },
       {
           "clauseId": "6"
         , "order": 5
-        , "text": "Comuníquese, etc."
+        , "text": "This law shall be construed taking into account not only the principles, objectives and directives established herein, but also the nature of the Internet, its particular uses and customs, and its role in the promotion of human, economic, social, and cultural development.<br><br><br>CHAPTER II<br>ON THE RIGHTS AND GUARANTEES OF USERS<br>"
       },
       {
-          "clauseId": "Anexo I"
+          "clauseId": "7"
         , "order": 6
-        , "text": "<img src=\"https://s3.amazonaws.com/pdr-app/images/02513-J-13.png\"/>"
+        , "text": "Access to the Internet is essential for the exercise of citizenship, and the following rights are secured to its users:<br>I – the non-violation and secrecy of communications on the Internet, except under judicial order, in the hypotheses and form established by law, for criminal investigations or the gathering of evidence for criminal procedures;<br>II – the non suspension of Internet connections, except for debts directly related to their use;<br>III – the maintenance of the contracted quality of Internet connections, with observance of article 9;<br>IV – clarity and thoroughness of information in contracts for Internet services, with explicit mention of the applicable regimes for data protection, connection logs and Internet application access logs, as well as to network management practices that can affect the quality of the offered services; and<br>V – the non-disclosure, to third parties, of connection logs and Internet application access logs, except if the user’s consent is obtained, or in the circumstances determined by law."
+      },
+      {
+          "clauseId": "8"
+        , "order": 7
+        , "text": "The preservation of the right to privacy and freedom of expression in communications is a condition for the full exercise of the right to Internet access.<br><br><br>CHAPTER III<br>ON THE PROVISION OF INTERNET CONNECTION AND APPLICATIONS<br><br>SECTION I<br>On data traffic"
+      },
+      {
+          "clauseId": "9"
+        , "order": 8
+        , "text": "The party responsible for the transmission, switching or routing of data has the obligation of granting equal treatment to every data package, with no distinction by content, origin and destination, service, terminal or application; any traffic discrimination or degradation that does not arise out of the technical requirements necessary to the adequate provision of services is prohibited, in accordance to further regulation.<br><br>Sole Paragraph. In the provision of Internet connection services, it is prohibited to monitor, filter, analyze or supervise the content of data packages, except in the circumstances allowed by the law.<br><br>SECTION II<br>On data records<br>"
+      },
+      {
+          "clauseId": "10"
+        , "order": 9
+        , "text": "The storage and disclosure of the connection logs and Internet application access logs regulated by this law must preserve intimacy, private life, the reputation and image of the parties directly or indirectly involved.<br>§1º The Internet service provider responsible for the storage of logs will only be constrained to disclose the information that allows the identification of the user under a judicial order, in the terms set by Section IV of this Chapter.<br>§2º Procedures for security and secrecy must be clearly informed by the Internet service provider responsible for the connection services, and must comply with standards defined in further regulation.<br>§3º The obligation of secrecy established by article 10 subjects violators to the civil, criminal, and administrative sanctions established by the law.<br><br>Subsection I<br>On the storage of connection logs "
+      },
+      {
+          "clauseId": "11"
+        , "order": 10
+        , "text": "In the provision of Internet connection services, the administrator of the corresponding autonomous system has the obligation to maintain the connection logs confidentially, in a secured and controlled environment, for a period of one year, in the terms of further regulation.<br>§1º The responsibility for the storage of connection registries must not be transferred to third parties.<br>§2º The police and administrative authorities may require, ad cautelam, the storage of connection logs for a longer period than the one established in this law.<br>§3º In the hypothesis of §2º, the requesting authority will have the period of sixty days, counted from the requirement, to request for judicial order to access the logs mentioned in article 11.<br>§4º The Internet service provider responsible for the storage of the logs must keep secrecy of §2º requests, which will lose their efficacy in case the judicial order is not granted, or if their access was not petitioned within the period of time established by §3º.<br><br>Subsection II<br>On the storage of Internet application access logs"
+      },
+      {
+          "clauseId": "12"
+        , "order": 11
+        , "text": "In the provision of Internet connections, gratuitous or paid, it is prohibited to store Internet application access logs."
+      },
+      {
+          "clauseId": "13"
+        , "order": 12
+        , "text": "In the provision of Internet application services, it is permitted to store the user access logs, as long as article 7 is respected.<br>§1º The decision not to store Internet application access logs does not ensue liability for harm arising from the use of these services by third parties.<br>§2º A judicial order can determine, during a given period, the storage of Internet application access logs, as long they relate to specific facts within a determined time frame; the disclosure of the these logs shall follow the conditions set by Section IV of this Chapter.<br>§3º In observance of §2º, police or administrative authorities may require, ad cautelam, the storage of Internet application access logs, following the procedure and terms of §3º and §4º of Article 11.<br><br><br>Section III<br>On the liability for damage caused by content generated by third parties"
+      },
+      {
+          "clauseId": "14"
+        , "order": 13
+        , "text": "Internet connection providers shall not be responsible for damage arising from content generated by third parties."
+      },
+      {
+          "clauseId": "15"
+        , "order": 14
+        , "text": "Except otherwise established by law, Internet application providers can only be responsible for the damages caused by content generated by third parties if, after receiving a specific judicial order, they do not take action to, in the context of their services and under the established time frame, make unavailable the infringing content.<br><br>Sole Paragraph. The judicial order must contain a clear and specific identification of the infringing content, allowing for the correct localization of the material, under penalty of losing validity.<br><br>SECTION V<br>On the judicial request for logs"
+      },
+      {
+          "clauseId": "17"
+        , "order": 15
+        , "text": "Interested parties may, for the purpose of gathering evidence in civil and criminal proceedings, of either accidental or autonomous nature, request a judge to order the party responsible for storing Internet service access logs, or connection logs, to disclose these logs.<br><br>Sole Paragraph. Without prejudice of other legal requirements, the application shall contain, under penalty of not being admissible:<br>I –solid evidence of the occurrence of an illegal act;<br>II – a motivated justification for the utility of accessing the requested logs, for the purposes of investigation or the gathering of evidence;<br>III - the period that the logs refer to."
+      },
+      {
+          "clauseId": "18"
+        , "order": 16
+        , "text": "It is the obligation of judges to take the measures necessary to guarantee the secrecy of the information received, and the preservation of the intimacy, private life, honor and image of Internet users. Judges are capable, for that purpose, to constitute the information as secret, including with respect to requests for the storage of logs.<br><br><br>CHAPTER IV<br>ON THE ROLE OF PUBLIC AUTHORITIES"
+      },
+      {
+          "clauseId": "19"
+        , "order": 17
+        , "text": "The Federal Union, States, Cities and Federal District of Brasilia shall be guided by the following directives in the development of the Internet in Brazil:<br>I – the establishment of transparent, collaborative, and democratic mechanisms of governance, with the participation of the various sectors of society;<br>II – the promotion of interoperable technology for e-government services in the different levels of the Federation, in order to allow the exchange of information and streamlining of procedures;<br>III – the promotion of interoperability between different systems and terminals, especially among different levels of the Federation and several sectors of society;<br>IV – the preferential adoption of open and free technologies, standards and formats;<br>V – the disclosure and dissemination of public data and information in an open and structured manner;<br>VI – the optimization of network infrastructure, the promotion of technical quality, innovation, and the dissemination of Internet applications, without impairing the open, neutral and participatory nature of the Internet;<br>VII – the development of initiatives and education programs concerning the use of the Internet;<br>VIII – the promotion of culture and citizenship; and<br>IX – the provision of public services for citizens in integrated, efficient and simplified fashion, through multiple communication channels."
+      },
+      {
+          "clauseId": "20"
+        , "order": 18
+        , "text": "Government Internet sites and portals shall strive for:<br>I – the compatibility of e-government services with the various terminals, operating systems and applications used to access them;<br>II – accessibility for all interested parties, regardless of their physical, motor, cognitive, cultural, and social skills, provided that confidentiality issues and legal and administrative regulations are respected;<br>III – compatibility with both human reading and automated processing of information;<br>IV – ease of use of electronic government services; and<br>V – the strengthening of social participation in public policy."
+      },
+      {
+          "clauseId": "21"
+        , "order": 19
+        , "text": "The fulfillment of the constitutional obligation of the State in providing education, at all levels of teaching, includes capacity building, integrated to other educational practices, for the safe, conscious and responsible use of the Internet as a tool for the exercise of citizenship, the promotion of culture, and technological development."
+      },
+      {
+          "clauseId": "22"
+        , "order": 20
+        , "text": "Public initiatives to promote digital literacy and the use of Internet as a social tool must:<br>I – promote the digital inclusion;<br>II – seek to reduce inequality in the access to information and communication technologies and their use, especially between different regions of the Country; and<br>III – foster the production and circulation of national content."
+      },
+      {
+          "clauseId": "23"
+        , "order": 21
+        , "text": "The State must periodically formulate and promote research, as well as set objectives, strategies, plans and schedules regarding the use and development of the Internet in the country.<br><br><br>CHAPTER V<br>FINAL PROVISIONS"
+      },
+      {
+          "clauseId": "24"
+        , "order": 22
+        , "text": "The protection of interests and rights established at this law may be exercised in court, individually and collectively, in the terms of the law."
+      },
+      {
+          "clauseId": "25"
+        , "order": 23
+        , "text": "This Law shall enter into force sixty days after its publication."
       }
     ]
 }
