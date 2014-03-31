@@ -41,7 +41,8 @@ html(lang='en')
     script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
     script.
       try{Typekit.load();}catch(e){}
-
+    script.
+      var csrfToken = '#{csrfToken}';
 
     include includes/remove-hash
   body
