@@ -146,8 +146,8 @@
   "This argument has been flagged as spam": "Este argumento fue reportado como abuso",
   "show": "mostrar",
 
-  "All data will expire on December 10, 2013": "Esta es una versión de prueba de DemocraciaOS",
-  "Why?": "¿Por qué?",
+  "proposal-article.article.alert.text": "Ésta es una versión demo de DemocracyOS.",
+  "proposal-article.article.alert.learn-more": "Más información",
 
   "Spam" : "Reportar abuso",
   "Not spam" : "Esto no es abuso",

@@ -146,8 +146,8 @@
   "This argument has been flagged as spam": "Cet argument a été reporté comme contenu indésirable",
   "show": "montrer",
 
-  "All data will expire on December 10, 2013": "Toute l' information va expirer le 10 Décembre 2013",
-  "Why?": "Pourquoi?",
+  "proposal-article.article.alert.text": "Celle-ci est la version de preuve de DemocracyOS.",
+  "proposal-article.article.alert.learn-more": "En savoir plus",
 
   "Spam" : "Reporter du contenu indésirable",
   "Not spam" : "Ceci n' est pas du contenu indésirable",

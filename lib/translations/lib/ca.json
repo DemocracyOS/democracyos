@@ -146,8 +146,8 @@
   "This argument has been flagged as spam": "Aquest argument ha estat reportat com abús",
   "show": "mostrar",
 
-  "All data will expire on December 10, 2013": "Això és una versió de prova de DemocraciaOS",
-  "Why?": "¿Per què?",
+  "proposal-article.article.alert.text": "Això és la versió de prova de DemocracyOS.",
+  "proposal-article.article.alert.learn-more": "Més informació",
 
   "Spam" : "Reportar abús",
   "Not spam" : "Això no és cap abús",
