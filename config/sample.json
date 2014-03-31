@@ -39,5 +39,6 @@
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",
   "staff": [],
-  "google analytics tracking id" : ""
+  "google analytics tracking id" : "",
+  "rss enabled" : true
 }
