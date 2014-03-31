@@ -18,4 +18,8 @@ rss(version='2.0',
         link= permalink
         pubDate= new Date(law.publishedAt).toUTCString()
         guid(isPermaLink='true')= permalink
-        description= law.mediaTitle
+        description
+          | <![CDATA[
+          | #{law.summary}
+          p: a(href='#{permalink}', rel='nofollow')!= 'Read more &raquo;'
+          | ]]>
