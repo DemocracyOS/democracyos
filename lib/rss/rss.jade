@@ -5,6 +5,10 @@ rss(version='2.0',
     xmlns:dc='http://purl.org/dc/elements/1.1/'
     xmlns:atom='http://www.w3.org/2005/Atom')
   channel
+    image
+      url= baseUrl + '/' + config['favicon']
+      title= config['organization name']
+      link= baseUrl + '/' + config['favicon']
     title= config['organization name']
     atom:link(href= baseUrl + '/rss', rel='self', type='application/rss+xml')
     link= baseUrl
