@@ -2,14 +2,20 @@
   "name": "DemocracyOS",
   "version": "0.4.8",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
-  "homepage": "http://democraciaenred.herokuapp.com/",
+  "homepage": "http://www.democracyos.org/",
   "keywords": [
     "democracy",
+    "democracyos",
     "liquid democracy",
     "partido de la red",
-    "democracia en red"
+    "democracia en red",
+    "net democracy",
+    "net party",
+    "online democracy",
+    "web democracy",
+    "change the tool"
   ],
-  "author": "Partido De La Red <cristian@partidodelared.org>",
+  "author": "Democracia en Red <speak@democracyos.org>",
   "contributors": [
     {
       "name": "Cristian Douce",
@@ -18,6 +24,14 @@
     {
       "name": "Ricardo Rauch",
       "email": "ricardo@gravityonmars.com"
+    },
+    {
+      "name": "Guido Vilariño",
+      "email": "gvilarino@gmail.com"
+    },
+    {
+      "name": "Sacha Lifszyc",
+      "email": "sacha.lifszyc@gmail.com"
     }
   ],
   "repository": {

@@ -7,7 +7,7 @@
   h1#logo
     a(href='/')
       img(src=config['logo']).logo
-      span.logo-link= t('DemocracyOS Beta')
+      span.logo-link= t('header.logo')
 
   .user-nav.btn-group
     - if (citizen.id)
@@ -17,17 +17,17 @@
           span.caret
       ul.dropdown-menu
           li
-            a(href='/settings')= t('Settings')
+            a(href='/settings')= t('header.settings')
           li
-            a(href='/logout')= t('Logout')
+            a(href='/logout')= t('header.logout')
     - else
       a(href='/signin').login.pull-right
         i.icon-signin
-        span= t('Login')
+        span= t('header.signin')
       a(href='/signup').login.pull-right
         i.icon-user
-        span= t('Signup')
+        span= t('header.signup')
     a.login.pull-left(href=config['organization url'], target='_blank')
       span= config['organization name']
-    a.login.pull-left(href='#', id='feedback')
-      span= t('Feedback')
+    //- a.login.pull-left(href='#', id='feedback')
+    //-   span= t('header.feedback')

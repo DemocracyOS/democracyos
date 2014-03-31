@@ -2,14 +2,14 @@
   "common.or": "or",
 
   "DemocracyOS": "DemocracyOS",
-  "DemocracyOS Beta": "DemocracyOS Beta",
-  "Login": "Login",
+  "header.logo": "DemocracyOS Demo",
+  "header.signin": "Login",
   "Login to": "Login to",
-  "Signup": "Signup",
+  "header.signup": "Signup",
   "Signup now": "Signup now",
-  "Logout": "Logout",
-  "Settings": "Settings",
-  "Feedback": "Feedback",
+  "header.logout": "Logout",
+  "header.settings": "Settings",
+  "header.feedback": "Feedback",
 
   "Incorrect password": "Incorrect password",
   "Incorrect username": "Incorrect username",
@@ -146,8 +146,8 @@
   "This argument has been flagged as spam": "This argument has been flagged as spam",
   "show": "show",
 
-  "All data will expire on December 10, 2013": "This is a demo version valid thru December 10th, 2013",
-  "Why?": "Why?",
+  "proposal-article.article.alert.text": "This is DemocracyOS's public demo.",
+  "proposal-article.article.alert.learn-more": "Learn more",
 
   "Spam" : "Report as spam",
   "Not spam" : "Not Spam",
