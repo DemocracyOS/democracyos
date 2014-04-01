@@ -1,4 +1,40 @@
 
+0.4.9 / 2014-03-31
+==================
+
+ * Remove requirement of feedback. Closes #303
+ * Update translations
+ * Update `README.md` with current deployments.
+ * Remove references to Partido de la Red.
+ * Update article template and config so alert is optional.
+ * Update default fixtures
+ * Change default locale to 'en'
+ * Update header background color
+ * Add list alphabetically sorting. Closes #299
+ * Merge pull request #302 from Magui1984/development
+ * Create fr.json
+ * Add timepicker for closingAt law attribute. Closes #300
+ * Add styles to override bootstrap default css that was making datepicker popover invisible #300
+ * Add datepicker control and clear button
+ * Add field for closingAt date #300
+ * Add component/datepicker dependency
+ * Add translations for  #300
+ * Bump slifszyc/paragraphs to 0.2.0 version
+ * Update application configuration by adding `dos-config` command. #234
+ * Merge pull request #297 from rodowi/storage-quota-fix
+ * Overcomes local storage quota
+ * Fix update for #293
+ * Fix suscribe ListView to LawsFilter items `reload` event instead of `change`
+ * Remove refetch on citizen loaded. Fixes #293
+ * Fix overflowed selected filter in Firefox. Closes #270
+ * Fix law min-height for voted badge. Closes #294
+ * Update `sample.json`
+
+0.4.8 / 2014-03-31 
+==================
+
+ * Add published laws RSS feed
+
 0.4.7 / 2014-03-20 
 ==================
 

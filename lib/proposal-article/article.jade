@@ -1,9 +1,11 @@
-- var closed = proposal.closed//proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
+- var closed = proposal.closed
 .inner-container
-  div.alert.alert-warning.alert-dismissable.system-alert
-    button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
-    span #{t('All data will expire on December 10, 2013')}&nbsp;&nbsp;
-    a.alert-link(href="http://wiki.partidodelared.org/index.php/Versi%C3%B3n_de_prueba_de_Democracia_OS", target="_blank") #{t('Why?')}
+  - var learnMore = config['learn more url']
+  - if (learnMore)
+    div.alert.alert-warning.alert-dismissable.system-alert
+      button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
+      span #{t('proposal-article.article.alert.text')}&nbsp;&nbsp;
+      a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
   
 
   article.proposal
