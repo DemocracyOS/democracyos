@@ -11,7 +11,7 @@ li(data-id=item.id)
     
     .item-badges
       - if(voted)
-        img(src='/boot/images/check.png')
+        include ./check
 
     span.title= item.mediaTitle
     span.created-by

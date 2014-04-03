@@ -5,6 +5,7 @@
     "component/domify": "1.2.0",
     "component/dropdown": "7207a",
     "component/events": "1.0.5",
+    "component/bus": "0.0.2",
     "component/emitter": "1.1.1",
     "component/classes": "1.2.0",
     "visionmedia/debug": "0.7.4",
@@ -17,7 +18,7 @@
   },
   "local": [ "laws", "laws-filter", "render" ],
   "scripts": [ "main.js", "sidebar.js", "filter.js", "list.js" ],
-  "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade" ],
+  "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade", "check.jade" ],
   "styles": [ "sidebar.css" ],
   "images": [ ],
   "main": "main.js"
