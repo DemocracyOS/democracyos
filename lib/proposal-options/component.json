@@ -4,6 +4,7 @@
   "dependencies": {
     "component/domify": "1.2.0",
     "component/events": "1.0.5",
+    "component/bus": "0.0.2",
     "component/classes": "1.2.0",
     "component/enumerable": "56cbe",
     "component/to-function": "edeb3",
