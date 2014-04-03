@@ -1,4 +1,11 @@
 
+0.4.10 / 2014-04-03 
+==================
+
+ * Refresh sidebar after casting vote
+ * Fix not showing form errors on FF
+ * CSRF protection
+
 0.4.9 / 2014-03-31
 ==================
 
