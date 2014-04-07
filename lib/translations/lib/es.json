@@ -123,6 +123,7 @@
   "Yea": "Afirmativo",
   "Nay": "Negativo",
   "Abstain": "Abstención",
+  "Cancel": "Cancelar",
   "Delegate": "Delegar",
   "Delegate to": "Delegar a",
   "{num} votes cast": "{num} votos contados",
@@ -145,10 +146,13 @@
 
   "This argument has been flagged as spam": "Este argumento fue reportado como abuso",
   "show": "mostrar",
+  "Do you want to remove this argument?": "¿Deseas borrar este argumento?",
+  "That argument is not yours!": "¡Ese argumento no es tuyo!",
 
   "proposal-article.article.alert.text": "Ésta es una versión demo de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Más información",
 
+  "Remove argument" : "Borrar argumento",
   "Spam" : "Reportar abuso",
   "Not spam" : "Esto no es abuso",
   "Upvote" : "Aporta al debate",

@@ -123,6 +123,7 @@
   "Yea": "Afirmatiu",
   "Nay": "Negatiu",
   "Abstain": "Abstenció",
+  "Cancel": "Cancel",
   "Delegate": "Delegar",
   "Delegate to": "Delegar a",
   "{num} votes cast": "{num} vots comptabilitzats",
@@ -145,10 +146,13 @@
 
   "This argument has been flagged as spam": "Aquest argument ha estat reportat com abús",
   "show": "mostrar",
+  "Do you want to remove this argument?": "Vols eliminar aquest argument?",
+  "That argument is not yours!": "Aquest argument no és seva!",
 
   "proposal-article.article.alert.text": "Això és la versió de prova de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Més informació",
 
+  "Remove argument" : "Traieu argument",
   "Spam" : "Reportar abús",
   "Not spam" : "Això no és cap abús",
   "Upvote" : "Aporta al debat",
