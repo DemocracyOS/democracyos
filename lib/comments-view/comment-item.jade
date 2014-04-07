@@ -8,12 +8,13 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
 
   .media-body
     h5.media-heading
-      - var classes = []
-      - flags && classes.push('selected')
-      - !citizen.id && classes.push('hide')
-      - var spamTitle = flags ?  t('Not spam') : t('Spam')
-      a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
-        i.glyphicon.glyphicon-flag 
+      - if (comment.author.id != citizen.id)
+        - var classes = []
+        - flags && classes.push('selected')
+        - !citizen.id && classes.push('hide')
+        - var spamTitle = flags ?  t('Not spam') : t('Spam')
+        a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
+          i.glyphicon.glyphicon-flag
 
       | #{comment.author.fullName} 
       small.ago(data-time=comment.createdAt.toString())
@@ -37,4 +38,3 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
       - !citizen.id && classes.push('hide')
       a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
         i.icon-angle-down
-
