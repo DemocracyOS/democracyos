@@ -39,6 +39,15 @@
     .comment-item
       margin-bottom: 30px
       max-width: 580px
+      padding: 12px 10px
+      &.remove
+        .btn-remove
+          display: none
+        .comment-text
+          color: #bdc3c7
+        .remove-comment
+          display: block
+
       .pull-left
         width: 46px
         margin-right: 20px
@@ -46,6 +55,10 @@
           width: 46px
           height: 46px
           border-radius: 100px
+
+      .media-body
+        position: relative
+        min-height: 56px
 
       .comment-action
         color: #333
@@ -59,7 +72,8 @@
             margin-right: 10px
         &:hover
           text-decoration: none
-        &.link-report
+        &.link-report,
+        &.link-remove
           float: right
           color: #333
           i
@@ -81,6 +95,25 @@
       .comment-text
         color: #333
 
+      .oncomment
+        background-color: rgba(249, 249, 249, 0.5)
+        display: none
+        font-weight: bold
+        height: 100%
+        left: 0
+        padding-top: 20px
+        position: absolute
+        text-align: center
+        top: 0
+        width: 100%
+
+        a
+          display: inline-block
+          margin-right: 12px
+        
+        &.message
+          cursor: default
+
       .comment-action
         &.like
           &.selected, &:hover
@@ -92,6 +125,10 @@
           display: inline-block
           &.selected, &:hover
             color: orange
+        &.btn-remove
+          display: inline-block
+          &:hover
+            color: red
       &.spam
         .comment-text, .comment-actions, .link-report.flag
           display:none
