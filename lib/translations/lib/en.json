@@ -53,6 +53,7 @@
   "comments.sign-in-required": "You must be signed in to argue here",
   "comments.deleted-arguments": "Deleted arguments",
   "comments.your-argument": "Your argument",
+  "comments.edit.argument": "Edit argument",
   "Send": "Send",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Password reset requested",
@@ -124,6 +125,7 @@
   "Nay": "Nay",
   "Abstain": "Abstain",
   "Cancel": "Cancel",
+  "Edit": "Edit",
   "Delegate": "Delegate",
   "Delegate to": "Delegate to",
   "{num} votes cast": "{num} votes cast",

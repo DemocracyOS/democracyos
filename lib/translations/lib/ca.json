@@ -53,6 +53,7 @@
   "comments.sign-in-required": "Has d'estar registrat per poder afegir un argument",
   "comments.deleted-arguments": "Arguments borrats",
   "comments.your-argument": "El teu argument",
+  "comments.edit.argument": "Edita argument",
   "Send": "Enviar",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Generar una nova contrasenya",
@@ -124,6 +125,7 @@
   "Nay": "Negatiu",
   "Abstain": "Abstenció",
   "Cancel": "Cancel",
+  "Edit": "Editer",
   "Delegate": "Delegar",
   "Delegate to": "Delegar a",
   "{num} votes cast": "{num} vots comptabilitzats",

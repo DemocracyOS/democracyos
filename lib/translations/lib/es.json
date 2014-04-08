@@ -53,6 +53,7 @@
   "comments.sign-in-required": "Debés estar registrado para poder argumentar aquí",
   "comments.deleted-arguments": "Argumentos eliminados",
   "comments.your-argument": "Tu argumento",
+  "comments.edit.argument": "Editar argumento",
   "Send": "Enviar",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Reestablecer contraseña",
@@ -124,6 +125,7 @@
   "Nay": "Negativo",
   "Abstain": "Abstención",
   "Cancel": "Cancelar",
+  "Edit": "Editar",
   "Delegate": "Delegar",
   "Delegate to": "Delegar a",
   "{num} votes cast": "{num} votos contados",
