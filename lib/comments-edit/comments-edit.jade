@@ -1,4 +1,4 @@
-form.comment-edit-form(method='put', action='/api/#{context}/#{reference}/comment')
+form.comment-edit-form(method='put', action='/api/comment/#{comment.id}')
   p 
     textarea(name='text', rows='4')= comment.text
   input.btn.form-submit(type='submit', value=t('Edit'))
