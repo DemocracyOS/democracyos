@@ -60,6 +60,15 @@
         position: relative
         min-height: 56px
 
+        .comment-edit-form
+          display: none
+
+        &.edit
+          .comment-body
+            display: none
+          .comment-edit-form
+            display: block
+
       .comment-action
         color: #333
         font-size: 11px
@@ -73,7 +82,8 @@
         &:hover
           text-decoration: none
         &.link-report,
-        &.link-remove
+        &.link-remove,
+        &.link-edit
           float: right
           color: #333
           i
@@ -128,7 +138,11 @@
         &.btn-remove
           display: inline-block
           &:hover
-            color: red
+            color: #c0392b
+        &.btn-edit
+          display: inline-block
+          &:hover
+            color: #f39c12
       &.spam
         .comment-text, .comment-actions, .link-report.flag
           display:none

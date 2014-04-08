@@ -20,7 +20,8 @@
   },
   "local": [
     "citizen",
-    "request"
+    "request",
+    "comments-edit"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments-view.styl", "comments.css" ],

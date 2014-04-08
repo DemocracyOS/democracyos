@@ -19,32 +19,35 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
       - else
         a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'))
           i.glyphicon.glyphicon-remove
+        a.comment-action.link-edit.btn-edit(href="#", title=t('Edit argument'))
+          i.glyphicon.glyphicon-pencil
 
       | #{comment.author.fullName} 
       small.ago(data-time=comment.createdAt.toString())
       small :
-    div.comment-text=paragraphs.split(comment.text)
-      - if (comment.text.length > 230)
-        a.read-more(href="#")= t('read more')
-    - if (own)
-      div.oncomment.remove-comment= t('Do you want to remove this argument?')
-        div.remove-confirm-actions
-          a.confirm-remove(href='#')= t('Yea')
-          a.cancel-remove(href='#')= t('Cancel')
-    div.oncomment.message
-    p.spam-message=t('This argument has been flagged as spam')
-      | .
-      span.show-spam: a(href="#")= t('show')
-    .comment-actions
-      span.comment-counter(class= !citizen.id ? 'hide' : '')=(comment.upvotes.length - comment.downvotes.length)
-      - var classes = []
-      - likes && classes.push('selected')
-      - !citizen.id && classes.push('hide')
-      a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
-        i.icon-angle-up
-        //span.label Aports
-      - var classes = []
-      - dislikes && classes.push('selected')
-      - !citizen.id && classes.push('hide')
-      a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
-        i.icon-angle-down
+    .comment-body
+      div.comment-text=paragraphs.split(comment.text)
+        - if (comment.text.length > 230)
+          a.read-more(href="#")= t('read more')
+      - if (own)
+        div.oncomment.remove-comment= t('Do you want to remove this argument?')
+          div.remove-confirm-actions
+            a.confirm-remove(href='#')= t('Yea')
+            a.cancel-remove(href='#')= t('Cancel')
+      div.oncomment.message
+      p.spam-message=t('This argument has been flagged as spam')
+        | .
+        span.show-spam: a(href="#")= t('show')
+      .comment-actions
+        span.comment-counter(class= !citizen.id ? 'hide' : '')=(comment.upvotes.length - comment.downvotes.length)
+        - var classes = []
+        - likes && classes.push('selected')
+        - !citizen.id && classes.push('hide')
+        a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
+          i.icon-angle-up
+          //span.label Aports
+        - var classes = []
+        - dislikes && classes.push('selected')
+        - !citizen.id && classes.push('hide')
+        a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
+          i.icon-angle-down
