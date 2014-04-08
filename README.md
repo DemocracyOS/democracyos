@@ -4,6 +4,9 @@ DemocracyOS is an online space for deliberation and voting on political proposal
 ![][1]
 [1]: https://i.cloudup.com/F7G3UjbWBx.gif
 
+## See it working
+Check out our [live demo](http://demo.democracyos.org)!
+
 ## Install
 [Read the instructions](https://github.com/DemocracyOS/app/wiki/Installation)
 
