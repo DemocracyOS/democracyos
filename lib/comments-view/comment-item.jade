@@ -18,9 +18,9 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
           i.glyphicon.glyphicon-flag
       - else
         a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'))
-          i.glyphicon.glyphicon-remove
+          i.icon-remove
         a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
-          i.glyphicon.glyphicon-pencil
+          i.icon-pencil
 
       | #{comment.author.fullName} 
       - if (comment.editedAt)
