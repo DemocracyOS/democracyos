@@ -53,6 +53,8 @@
   "comments.sign-in-required": "Has d'estar registrat per poder afegir un argument",
   "comments.deleted-arguments": "Arguments borrats",
   "comments.your-argument": "El teu argument",
+  "comments.edit.argument": "Edita argument",
+  "comments.edited": "editat",
   "Send": "Enviar",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Generar una nova contrasenya",
@@ -123,6 +125,9 @@
   "Yea": "Afirmatiu",
   "Nay": "Negatiu",
   "Abstain": "Abstenció",
+  "Yes": "Si",
+  "Cancel": "Cancel",
+  "Edit": "Editer",
   "Delegate": "Delegar",
   "Delegate to": "Delegar a",
   "{num} votes cast": "{num} vots comptabilitzats",
@@ -145,10 +150,13 @@
 
   "This argument has been flagged as spam": "Aquest argument ha estat reportat com abús",
   "show": "mostrar",
+  "Do you want to remove this argument?": "Vols eliminar aquest argument?",
+  "That argument is not yours!": "Aquest argument no és seva!",
 
   "proposal-article.article.alert.text": "Això és la versió de prova de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Més informació",
 
+  "Remove argument" : "Traieu argument",
   "Spam" : "Reportar abús",
   "Not spam" : "Això no és cap abús",
   "Upvote" : "Aporta al debat",
