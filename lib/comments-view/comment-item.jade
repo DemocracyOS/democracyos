@@ -29,7 +29,7 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
       small.ago(data-time=time.toString())
       small :
     .comment-body
-      div.comment-text=paragraphs.split(comment.text)
+      div.comment-text!=markdown(comment.text)
         - if (comment.text.length > 230)
           a.read-more(href="#")= t('read more')
       - if (own)
