@@ -21,7 +21,8 @@
   "local": [
     "citizen",
     "request",
-    "comments-edit"
+    "comments-edit",
+    "markdown"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments-view.styl", "comments.css" ],
