@@ -1,0 +1,12 @@
+{
+  "name": "markdown",
+  "description": "DemocracyOS markdown parser",
+  "dependencies": {
+    "chjj/marked": "v0.3.2"
+  },
+  "local": [],
+  "scripts": [ "index.js" ],
+  "styles": [ ],
+  "templates": [ ],
+  "main": "index.js"
+}
