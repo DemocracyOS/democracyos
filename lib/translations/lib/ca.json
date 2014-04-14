@@ -247,5 +247,6 @@
   "markdown.linebreaks.example.4": "I aquest tindrà només 2 salts de línia",
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Donar-li una oportunitat per a tu!",
-  "markdown.playground.result": "Resultat:"
+  "markdown.playground.result": "Resultat:",
+  "markdown.comments.link": "Els comentaris són analitzats utilitzant DemocracyOS <a href='/markdown'>gust Markdown</a>"
 }

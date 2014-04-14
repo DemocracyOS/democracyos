@@ -248,6 +248,6 @@
   "markdown.linebreaks.example.4": "Y esta estará sólo a dos espacios de la anterior.",
   "markdown.playground.title": "A jugar",
   "markdown.playground.text": "¡Pruébalo tú mismo!",
-  "markdown.playground.result": "Resultado:"
-
+  "markdown.playground.result": "Resultado:",
+  "markdown.comments.link": "Los comentarios son parseados utilizando el <a href='/markdown'>Markdown especial de DemocracyOS</a>"
 }

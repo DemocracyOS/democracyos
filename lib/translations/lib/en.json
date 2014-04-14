@@ -248,5 +248,6 @@
   "markdown.linebreaks.example.4": "And this one will have only 2 linebreaks.",
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Give it a try for yourself!",
-  "markdown.playground.result": "Result:"
+  "markdown.playground.result": "Result:",
+  "markdown.comments.link": "Comments are parsed using <a href='/markdown'>DemocracyOS flavored Markdown</a>"
 }
