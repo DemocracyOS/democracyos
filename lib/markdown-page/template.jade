@@ -1,0 +1,47 @@
+.inner-container
+  .markdown-cheatsheet
+    h1= t('markdown.cheatsheet.title')
+    h3= t('democracyos.markdown.flavored')
+    p= t('markdown.text.1')
+    section
+      h4= t('markdown.title.emphasis')
+      - var example = t('markdown.emphasis.example.1') + '\n\n'
+      - example += t('markdown.emphasis.example.2') + '\n\n'
+      - example += t('markdown.emphasis.example.3')
+      - var emphasisExample = '```\n' + example + '\n```'
+      .example-code!= marked(emphasisExample)
+      .example
+        p
+          strong= t('markdown.will.become')
+        != marked(t('markdown.emphasis.example.1'))
+        != marked(t('markdown.emphasis.example.2'))
+        != marked(t('markdown.emphasis.example.3'))
+    section
+      h4= t('markdown.url-autolinking.title')
+      p= t('markdown.url-autolinking.text')
+      - example = t('markdown.url-autolinking.example')
+      - var urlAutolinkingExample = '```\n' + example + '```\n'
+      .example-code!= marked(urlAutolinkingExample)
+      .example
+        p
+          strong= t('markdown.will.become')
+        != dosMarkdown(example)
+    section
+      h4= t('markdown.linebreaks.title')
+      p= t('markdown.linebreaks.text')
+      - example = t('markdown.linebreaks.example.1')
+      - example += t('markdown.linebreaks.example.2')
+      - example += t('markdown.linebreaks.example.3')
+      - example += t('markdown.linebreaks.example.4')
+      - var linbreaksExample = '```\n' + example + '```\n'
+      .example-code!= marked(linbreaksExample)
+      .example
+        p
+          strong= t('markdown.will.become')
+        != dosMarkdown(example)
+    section
+      h4= t('markdown.playground.title')
+      textarea.playground(id='playground', placeholder=t('markdown.playground.text'))
+      p
+        strong= t('markdown.playground.result')
+      .result= t('markdown.playground.text')
