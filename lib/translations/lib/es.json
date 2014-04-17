@@ -162,8 +162,12 @@
   "Not spam" : "Esto no es abuso",
   "Upvote" : "Aporta al debate",
   "Downvote" : "No aporta al debate",
+  "Reply": "Respuesta",
+  "Replies": "Respuestas",
+  "No replies": "Sin respuestas",
   "Argument is limited to 4096 characters": "El argumento no puede exceder los 4096 caracteres",
   "Argument cannot be empty": "El argumento no puede estar vacío",
+  "Reply cannot be empty": "La respuesta no puede estar vacía",
 
   "To not take part on the citizen's decision": "Para no influenciar la decisión del ciudadano",
   "To respect parlament methodology": "Para respetar la metodología de la legislatura",
