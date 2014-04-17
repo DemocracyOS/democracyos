@@ -52,3 +52,12 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         - !citizen.id && classes.push('hide')
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
           i.icon-angle-down
+        - var length = comment.replies.length
+        - if (length)
+          a.comment-action.replies-counter.pull-right(href='#')
+            i.icon-comments-alt
+            = length + ' ' + (length > 1 ? t('Replies') : t('Reply'))
+        - else
+          span.replies-counter.pull-right
+            i.icon-comments-alt
+            = t('No replies')
