@@ -12,8 +12,9 @@
   "local": [
     "render",
     "request"
-  ],  
+  ],
+  "styles": [ "comments-replies.styl" ],
   "scripts": [ "view.js" ],
-  "templates": [ "template.jade", "comments-replies.jade" ],
+  "templates": [ "comments-replies.jade", "comments-reply.jade" ],
   "main": "view.js"
 }
