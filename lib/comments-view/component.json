@@ -22,7 +22,8 @@
     "citizen",
     "request",
     "comments-edit",
-    "markdown"
+    "markdown",
+    "comments-replies"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments-view.styl", "comments.css" ],
