@@ -52,4 +52,8 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         - !citizen.id && classes.push('hide')
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
           i.icon-angle-down
-      .comment-replies
+        - var length = comment.replies.length
+        a.comment-action.comment-reply.pull-right(href='#')
+          i.icon-reply
+          = length
+    .replies
