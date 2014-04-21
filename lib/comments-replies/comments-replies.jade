@@ -2,7 +2,7 @@
   .comment-replies
   form.form.reply-form(method='post', action='#')
     h5= t('Reply to this argument')
-    textarea(name='text', rows=4)
+    textarea(name='text', rows=4, tabindex=0)
     a.btn.btn-link.btn-cancel.pull-right(href='#')=t('Cancel')
     input.btn.form-submit.pull-right(type='submit', value=t('Send'))
     span.form-errors
