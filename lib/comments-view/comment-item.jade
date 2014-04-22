@@ -55,5 +55,5 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         - var length = comment.replies.length
         a.comment-action.comment-reply.pull-right(href='#')
           i.icon-reply
-          = length > 0 ? length : ''
-    .replies
+          span.reply-counter= length > 0 ? length : ''
+  .replies-container
