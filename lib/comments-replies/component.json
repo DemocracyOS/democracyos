@@ -13,7 +13,8 @@
   },
   "local": [
     "render",
-    "request"
+    "request",
+    "markdown"
   ],
   "styles": [ "comments-replies.styl" ],
   "scripts": [ "view.js" ],

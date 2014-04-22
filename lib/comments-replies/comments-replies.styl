@@ -1,7 +1,45 @@
-.reply-form
-  textarea
-    width: 100%
-    resize: none
+#comment-replies
+  position: relative
+  padding: 12px 6px 20px 6px
+  background-color: #eff2f3
 
-.form-errors
-  color: red
+  .arrow-up
+    position: absolute
+    left: 12px
+    top: -4px
+    width: 0
+    height: 0
+    border-left: 5px solid transparent
+    border-right: 5px solid transparent
+    border-bottom: 5px solid #eff2f3
+
+  .replies
+    padding-left: 0
+
+    li.reply-item
+      max-width: 580px
+      border-bottom: 1px solid #bdc3c7
+      &:last-child
+        border-bottom: 0px
+
+      .pull-left
+        margin-right: 12px
+
+        img
+          width: 42px
+          height: 42px
+
+      .reply-text
+        padding-bottom: 6px
+
+  .reply-form
+    min-height: 166px
+
+    textarea
+      width: 98%
+      resize: none
+      margin: 1%
+      padding: 2%
+
+  .form-errors
+    color: red

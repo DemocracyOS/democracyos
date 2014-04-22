@@ -1,1 +1,11 @@
-p=reply.text
+li.media.reply-item(data-id=reply.id)
+  span.pull-left
+    img(src=reply.author.gravatar).avatar
+
+  .media-body
+    h5.media-heading
+      | #{reply.author.fullName}
+      small.ago(data-time=reply.createdAt.toString())
+      small :
+    .reply-body
+      div.reply-text!=markdown(reply.text)
