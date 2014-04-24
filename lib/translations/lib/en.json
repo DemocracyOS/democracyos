@@ -201,7 +201,7 @@
   "admin-laws-form.clause.label.text": "Text",
   "admin-laws-form.clause.button.delete": "Delete",
   "admin-laws-form.clause.confirmation.title": "Clause removal",
-  "admin-laws-form.clause.confirmation.body": "This action will erease data permanently. Would you like to procced?",
+  "admin-laws-form.clause.confirmation.body": "This action will erase data permanently. Would you like to procced?",
   "admin-laws-form.clause.confirmation.cancel": "Cancel",
   "admin-laws-form.clause.confirmation.ok": "Delete",
 
@@ -213,7 +213,7 @@
 
   "admin-laws-form.delete-law.button.delete": "Delete",
   "admin-laws-form.delete-law.confirmation.title": "Delete law",
-  "admin-laws-form.delete-law.confirmation.body": "This action will erease data permanently. Woudl you like to procced?",
+  "admin-laws-form.delete-law.confirmation.body": "This action will erase data permanently. Woudl you like to procced?",
   "admin-laws-form.delete-law.confirmation.cancel": "Cancel",
   "admin-laws-form.delete-law.confirmation.ok": "Delete",
 
@@ -226,7 +226,7 @@
   "admin-tags-form.label.image": "Image",
   "admin-tags-form.button.submit": "Save",
 
-  "admin-tags-form.message.onsuccess": "Tag successfuly saved",
+  "admin-tags-form.message.onsuccess": "Tag successfully saved",
   "admin-tags-form.message.validation.name-required": "Name required",
 
   "markdown.cheatsheet.title": "Markdown Cheatsheet",
