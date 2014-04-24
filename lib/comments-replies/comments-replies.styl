@@ -19,11 +19,36 @@
     li.reply-item
       max-width: 580px
       border-bottom: 1px solid #bdc3c7
+      &.remove
+        .btn-remove
+          display: none
+        .comment-text
+          color: #bdc3c7
+        .remove-comment
+          display: block
+        .comment-actions
+          display: none
       &:last-child
         border-bottom: 0px
 
       .pull-left
         margin-right: 12px
+
+      .media-body
+        position: relative
+        min-height: 76px
+
+        .reply-edit-form
+          display: none
+
+        &.edit
+          .reply-body
+            display: none
+          .reply-edit-form
+            display: block
+
+        .comment-edit-form
+          display: none
 
         img
           width: 42px

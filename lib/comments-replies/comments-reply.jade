@@ -1,9 +1,14 @@
-li.media.reply-item(data-id=reply.id)
+- var own = comment.author.id == citizen.id
+
+li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
   span.pull-left
     img(src=reply.author.gravatar).avatar
 
   .media-body
     h5.media-heading
+      - if (own)
+        a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
+          i.icon-pencil
       | #{reply.author.fullName} 
       small.ago(data-time=reply.createdAt.toString())
       small :
