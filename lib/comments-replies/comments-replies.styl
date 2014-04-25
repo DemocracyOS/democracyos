@@ -1,24 +1,17 @@
 #comment-replies
   position: relative
   padding: 12px 6px 0px 6px
-  background-color: #eff2f3
-
-  .arrow-up
-    position: absolute
-    left: 12px
-    top: -4px
-    width: 0
-    height: 0
-    border-left: 5px solid transparent
-    border-right: 5px solid transparent
-    border-bottom: 5px solid #eff2f3
 
   .replies
     padding-left: 0
 
     li.reply-item
-      max-width: 580px
-      border-bottom: 1px solid #bdc3c7
+      max-width: 500px
+      border-left: 1px solid rgba(189,195,199, 0.2)
+      margin-left: 10px
+      padding-top: 6px
+      &:hover
+        background-color: rgba(189,195,199, 0.2)
       &.remove
         .btn-remove
           display: none
@@ -28,11 +21,37 @@
           display: block
         .comment-actions
           display: none
+      &:first-child
+        border-top: 1px solid rgba(189, 195, 199, 0.2)
+        .arrow-up, .inner
+          display: block
+        &:hover > .inner
+          border-bottom: 10px solid #ecedee
       &:last-child
         border-bottom: 0px
 
+      .arrow-up
+        position: absolute
+        right: 15px
+        top: 2px
+        width: 0
+        height: 0
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        border-bottom: 10px solid rgba(189, 195, 199, 0.2)
+        display: none
+        &.inner
+          top: 4px
+          border-bottom: 10px solid #f9f9f9
+
       .pull-left
-        margin-right: 12px
+        margin-right: 0
+        margin-left: 6px
+        width: 36px
+
+        img
+          width: 30px
+          height: 30px
 
       .media-body
         position: relative
@@ -56,6 +75,7 @@
 
       .reply-text
         padding-bottom: 6px
+        max-width: 390px
 
   .reply-form
     min-height: 180px
