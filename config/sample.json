@@ -45,6 +45,7 @@
       "username" : "@democracyos"
     }
   },
+  "locale" : "en",
   "logo" : "http://democraciaenred.org/boot/images/logo.png",
   "favicon" : "http://democraciaenred.org/favicon.ico",
   "organization name" : "DemocracyOS on GitHub",
