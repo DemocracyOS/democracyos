@@ -1,4 +1,9 @@
 
+0.4.12 / 2014-04-25
+==================
+
+ * Fix build failure based on remotes and outdated component version
+
 0.4.11 / 2014-04-14
 ==================
 
