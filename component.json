@@ -8,5 +8,10 @@
   "local": [
     "boot"
   ],
-  "dependencies": { }
+  "dependencies": { },
+  "remotes": [
+    "https://raw.githubusercontent.com",
+    "https://cdn.rawgit.com",
+    "https://rawgit.com"
+  ]
 }

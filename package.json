@@ -47,7 +47,7 @@
     "connect-mongo": "~0.4.0",
     "debug": "~0.7.4",
     "nowww": "~1.1.2",
-    "component": "~0.19.5",
+    "component": "~0.19.8",
     "component-builder": "~0.10.1",
     "component-styl-plugin": "^1.1.1",
     "rework-vars": "^2.0.3",
