@@ -9,8 +9,9 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
   .media-body
     h5.media-heading
       - if (own)
-        a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
-          i.icon-pencil
+        .actions
+          a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
+            i.icon-pencil
       | #{reply.author.fullName} 
       - if (reply.editedAt)
         small.edited #{t('comments.edited')}
