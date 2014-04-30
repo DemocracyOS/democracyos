@@ -12,6 +12,8 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
         .actions
           a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
             i.icon-pencil
+          a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'))
+            i.icon-remove
       | #{reply.author.fullName} 
       - if (reply.editedAt)
         small.edited #{t('comments.edited')}
