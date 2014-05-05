@@ -55,6 +55,8 @@
   "comments.your-argument": "El teu argument",
   "comments.edit.argument": "Edita argument",
   "comments.edited": "editat",
+  "That comment is not yours!": "Aquest comentari no és teu!",
+  "Comment has replies, cannot be removed!": "Comentari Ha respostes, no pot ser eliminat!",
   "Send": "Enviar",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Generar una nova contrasenya",

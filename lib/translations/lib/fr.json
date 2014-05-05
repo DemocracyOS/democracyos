@@ -55,6 +55,8 @@
   "comments.your-argument": "Votre argument",
   "comments.edit.argument": "Éditer l'argument",
   "comments.edited": "édité",
+  "That comment is not yours!": "Ce commentaire n'est pas le vôtre!",
+  "Comment has replies, cannot be removed!": "Commentaire n'a réponses, ne peut pas être supprimé!",
   "Send": "Envoyer",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Rétablir mot de passe",
