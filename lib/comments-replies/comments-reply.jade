@@ -23,8 +23,8 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
     .reply-body
       div.reply-text!=markdown(reply.text)
       - if (own)
-        div.oncomment.remove-comment= t('Do you want to remove this argument?')
+        div.onreply.remove-reply= t('Do you want to remove this argument?')
           div.remove-confirm-actions
             a.confirm-reply-remove(href='#')= t('Yes')
             a.cancel-reply-remove(href='#')= t('Cancel')
-      div.oncomment.message
+      div.onreply.message
