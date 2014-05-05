@@ -47,6 +47,8 @@
     .comment-item
       max-width: 580px
       padding: 12px 10px 0px 10px
+      &:hover .media-heading .comment-action
+        display: inline-block !important
       &.remove
         .btn-remove
           display: none
@@ -91,7 +93,6 @@
         color: #333
         font-size: 11px
         font-weight: bold
-        color: #333
         &.vote-comment
           i
             font-weight: bold
@@ -154,11 +155,9 @@
           &.selected, &:hover
             color: orange
         &.btn-remove, &.btn-reply-remove
-          display: inline-block
           &:hover
             color: #c0392b
         &.btn-edit, &.btn-reply-edit
-          display: inline-block
           &:hover
             color: #f39c12
       &.spam

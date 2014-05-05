@@ -17,9 +17,9 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
           i.glyphicon.glyphicon-flag
       - else
-        a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'))
+        a.comment-action.hide.link-remove.btn-remove(href="#", title=t('Remove argument'))
           i.icon-remove
-        a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
+        a.comment-action.hide.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
           i.icon-pencil
 
       | #{comment.author.fullName} 
