@@ -53,7 +53,8 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
           i.icon-angle-down
         - var length = comment.replies.length
-        a.comment-action.comment-reply.pull-right(href='#')
-          i.icon-reply
-          span.reply-counter= length > 0 ? length : ''
+        - if (length || citizen.id)
+          a.comment-action.comment-reply.pull-right(href='#')
+            i.icon-reply
+            span.reply-counter= length > 0 ? length : ''
   .replies-container
