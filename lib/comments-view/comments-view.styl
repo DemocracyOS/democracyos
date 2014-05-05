@@ -48,8 +48,8 @@
       max-width: 580px
       padding: 12px 10px 0px 10px
       &:hover
-        .comment-action.btn-remove,
-        .comment-action.btn-edit
+        .media-heading .comment-action,
+        .comment-reply
           display: inline-block !important
       &.remove
         .btn-remove
@@ -71,6 +71,9 @@
           width: 46px
           height: 46px
           border-radius: 100px
+
+      .media-heading .comment-action
+        margin-top: 3px
 
       .media-body
         position: relative
@@ -119,6 +122,8 @@
           margin: 0px 3px
           font-size: 0.85em
       .comment-reply
+        display: none
+        margin-top: 4px
         font-size: 12px
         .icon-reply
           margin-right: 4px
@@ -153,7 +158,7 @@
           &.selected, &:hover
             color: red
         &.flag
-          display: inline-block
+          display: none
           &.selected, &:hover
             color: orange
         &.btn-remove, &.btn-reply-remove
