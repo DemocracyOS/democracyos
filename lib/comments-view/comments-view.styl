@@ -47,8 +47,10 @@
     .comment-item
       max-width: 580px
       padding: 12px 10px 0px 10px
-      &:hover .media-heading .comment-action
-        display: inline-block !important
+      &:hover
+        .comment-action.btn-remove,
+        .comment-action.btn-edit
+          display: inline-block !important
       &.remove
         .btn-remove
           display: none
