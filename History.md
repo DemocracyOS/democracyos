@@ -1,4 +1,16 @@
 
+0.6.0 / 2014-05-07
+==================
+ * Add 'fi' locale (Finnish)
+ * Add deleting and editing own arguments
+ * Add replying to an argument
+ * Add markdown'd arguments
+ * Add markdown explanation page
+ * Add locale config parameter
+ * Fix component issue
+ * Fix some UI issues
+ * Fix npm packages dependencies, changing ^ for ~
+
 0.4.12 / 2014-04-25
 ==================
 
