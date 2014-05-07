@@ -7,13 +7,11 @@
     - if (citizen.id)
       form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
         h5= t('comments.your-argument')
+          small.pull-right!=t('markdown.comments.link')
         p 
           textarea(name='text', rows='4')
         input.btn.form-submit.pull-right(type='submit', value=t('Send'))
         span.help-text.form-errors
-      .col-lg-12.col-xs-9.markdown
-        small
-          strong!=t('markdown.comments.link')
     - else
       .box
         p.text-mute= t('comments.sign-in-required')
