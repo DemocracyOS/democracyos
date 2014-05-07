@@ -1,0 +1,23 @@
+{
+  "name": "comments-replies-edit",
+  "description": "Comment reply editing component",
+  "dependencies": {
+    "component/classes": "1.2.0",
+    "component/domify": "1.2.0",
+    "component/emitter": "1.1.1",
+    "component/events": "1.0.5",
+    "component/t": "1.0.0",
+    "cristiandouce/query": "0.0.1",
+    "visionmedia/jade": "1.1.5",
+    "visionmedia/debug": "0.7.4",
+    "yields/serialize": "0.2.0"
+  },
+  "local": [
+    "render",
+    "request"
+  ],  
+  "scripts": [ "view.js" ],
+  "styles" : [ "comments-replies-edit.styl" ],
+  "templates": [ "comments-replies-edit.jade" ],
+  "main": "view.js"
+}

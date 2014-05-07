@@ -27,9 +27,6 @@
   h4
     margin-bottom: 30px
 
-  span
-    margin-right: 20px
-
   .comment-form
     margin-bottom: 50px
     margin-top: 50px
@@ -50,6 +47,10 @@
     .comment-item
       max-width: 580px
       padding: 12px 10px 0px 10px
+      &:hover
+        .media-heading .comment-action,
+        .comment-reply
+          display: inline-block
       &.remove
         .btn-remove
           display: none
@@ -71,6 +72,10 @@
           height: 46px
           border-radius: 100px
 
+      .media-heading .comment-action
+        margin-top: 3px
+        display: none
+
       .media-body
         position: relative
         min-height: 76px
@@ -84,11 +89,18 @@
           .comment-edit-form
             display: block
 
+      .comment-actions
+        font-weight: bold
+        font-size: 14px
+        color: #333
+        vertical-align: top
+
       .comment-action
         color: #333
         font-size: 11px
         font-weight: bold
-        color: #333
+        &.no-hide
+          display: inline-block !important
         &.vote-comment
           i
             font-weight: bold
@@ -105,10 +117,6 @@
             margin-right: 5px
       .comment-counter
         margin: 0px
-        font-weight: bold
-        font-size: 14px
-        color: #333
-        vertical-align: top
         min-width: 20px
         display: inline-block
       .spam-message
@@ -116,11 +124,18 @@
         .show-spam
           margin: 0px 3px
           font-size: 0.85em
+      .comment-reply
+        display: none
+        margin-top: 4px
+        font-size: 12px
+        .icon-reply
+          margin-right: 4px
 
       .comment-text
         color: #333
 
-      .oncomment
+      .oncomment,
+      .onreply
         background-color: rgba(249, 249, 249, 0.5)
         display: none
         font-weight: bold
@@ -147,15 +162,13 @@
           &.selected, &:hover
             color: red
         &.flag
-          display: inline-block
+          display: none
           &.selected, &:hover
             color: orange
-        &.btn-remove
-          display: inline-block
+        &.btn-remove, &.btn-reply-remove
           &:hover
             color: #c0392b
-        &.btn-edit
-          display: inline-block
+        &.btn-edit, &.btn-reply-edit
           &:hover
             color: #f39c12
       &.spam
@@ -163,3 +176,12 @@
           display:none
         .spam-message
           display:block
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 700px),
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
+  .comments
+    .comment-list
+      .comment-item
+        .media-heading .comment-action,
+        .comment-reply
+            display: inline-block

@@ -2,6 +2,7 @@
 - var dislikes = ~comment.downvotes.map(function(v) { return v.author; }).indexOf(citizen.id)
 - var flags = ~comment.flags.map(function(v) { return v.author; }).indexOf(citizen.id)
 - var own = comment.author.id == citizen.id
+- var length = comment.replies.length
 
 li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > comment.upvotes.length) || flags) ? 'spam' : '')
   span.pull-left
@@ -17,7 +18,7 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
           i.glyphicon.glyphicon-flag
       - else
-        a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'))
+        a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=(length ? 'hide' : ''))
           i.icon-remove
         a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
           i.icon-pencil
@@ -52,3 +53,8 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         - !citizen.id && classes.push('hide')
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
           i.icon-angle-down
+        - if (length || citizen.id)
+          a.comment-action.comment-reply.pull-right(href='#')
+            i.icon-reply
+            span.reply-counter= length > 0 ? length : ''
+  .replies-container

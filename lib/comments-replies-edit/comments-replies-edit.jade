@@ -1,0 +1,6 @@
+form.reply-edit-form(method='put', action='/api/comment/#{comment.id}/reply/#{reply.id}')
+  p 
+    textarea(name='text', rows='4')= reply.text
+  input.btn.form-submit(type='submit', value=t('Edit'))
+  input.btn.btn-cancel(type='button', value=t('Cancel'))
+  span.help-text.form-errors

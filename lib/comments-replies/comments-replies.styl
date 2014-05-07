@@ -1,0 +1,104 @@
+#comment-replies
+  position: relative
+  padding: 12px 6px 0px 6px
+
+  .replies
+    padding-left: 0
+
+    li.reply-item
+      max-width: 500px
+      border-left: 1px solid rgba(189,195,199, 0.5)
+      margin-left: 10px
+      padding-top: 6px
+      &:hover .actions
+        display: block !important
+      &.remove
+        background-color: #f9f9f9
+        .btn-reply-remove
+          display: none
+        .comment-text
+          color: #bdc3c7
+        .remove-reply
+          display: block
+          padding-top: 30px
+          top: -15px
+        .comment-actions
+          display: none
+      &:first-child
+        border-top: 1px solid rgba(189, 195, 199, 0.5)
+        .arrow-up, .inner
+          display: block
+      &:last-child
+        border-bottom: 0px
+
+      .arrow-up
+        position: absolute
+        right: 10px
+        top: 2px
+        width: 0
+        height: 0
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        border-bottom: 10px solid rgba(189, 195, 199, 0.5)
+        display: none
+        &.inner
+          top: 4px
+          border-bottom: 10px solid #f9f9f9
+
+      .pull-left
+        margin-right: 0
+        margin-left: 6px
+        width: 36px
+
+        img
+          width: 30px
+          height: 30px
+
+      .actions
+        display: none
+
+      .media-body
+        position: relative
+        min-height: 76px
+
+        .reply-edit-form
+          display: none
+
+        &.edit
+          .reply-body
+            display: none
+          .reply-edit-form
+            display: block
+
+        .comment-edit-form
+          display: none
+
+        img
+          width: 42px
+          height: 42px
+
+      .reply-text
+        padding-bottom: 6px
+        max-width: 390px
+
+  .reply-form
+    min-height: 180px
+
+    textarea
+      width: 98%
+      resize: none
+      margin: 1%
+      padding: 2%
+
+    .form-actions 
+      a, input
+        font-size: 12px
+
+  .form-errors
+    color: red
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 700px),
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
+  #comment-replies .replies li.reply-item
+    .actions, .comment-action
+      display: block !important

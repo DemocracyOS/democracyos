@@ -16,13 +16,15 @@
     "cristiandouce/to-array": "0.0.1",
     "cristiandouce/query": "0.0.1",
     "slifszyc/paragraphs": "0.2.0",
+    "yields/empty": "0.0.1",
     "slifszyc/trunkata": "0.2.4"
   },
   "local": [
     "citizen",
     "request",
     "comments-edit",
-    "markdown"
+    "markdown",
+    "comments-replies"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments-view.styl", "comments.css" ],

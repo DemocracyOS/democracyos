@@ -55,6 +55,8 @@
   "comments.your-argument": "El teu argument",
   "comments.edit.argument": "Edita argument",
   "comments.edited": "editat",
+  "That comment is not yours!": "Aquest comentari no és teu!",
+  "Comment has replies, cannot be removed!": "Comentari Ha respostes, no pot ser eliminat!",
   "Send": "Enviar",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Generar una nova contrasenya",
@@ -162,8 +164,12 @@
   "Not spam" : "Això no és cap abús",
   "Upvote" : "Aporta al debat",
   "Downvote" : "No aporta al debat",
+  "Reply": "Respondre",
+  "Replies": "Respostes",
+  "No replies": "No hi ha respostes",
   "Argument is limited to 4096 characters": "El argument no pot excedir els 4096 caràcters",
   "Argument cannot be empty": "El argument no pot estar buit",
+  "Reply cannot be empty": "Resposta no pot estar buida",
 
   "To not take part on the citizen's decision": "Per no influenciar la decissió del ciutadà ",
   "To respect parlament methodology": "Per respectar la metodològia del parlament",

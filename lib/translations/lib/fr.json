@@ -55,6 +55,8 @@
   "comments.your-argument": "Votre argument",
   "comments.edit.argument": "Éditer l'argument",
   "comments.edited": "édité",
+  "That comment is not yours!": "Ce commentaire n'est pas le vôtre!",
+  "Comment has replies, cannot be removed!": "Commentaire n'a réponses, ne peut pas être supprimé!",
   "Send": "Envoyer",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Rétablir mot de passe",
@@ -162,8 +164,12 @@
   "Not spam" : "Ceci n' est pas du contenu indésirable",
   "Upvote" : "Contribue au débat",
   "Downvote" : "Ne contribue pas au débat",
+  "Reply": "Répondre",
+  "Replies": "Réponses",
+  "No replies": "Pas de réponses",
   "Argument is limited to 4096 characters": "L' argument ne peut pas excéder les 4096 caractères",
   "Argument cannot be empty": "L' argument ne peut pas être vide",
+  "Reply cannot be empty": "Répondre peut pas être vide",
 
   "To not take part on the citizen's decision": "Pour ne pas influencer la décision du citoyen",
   "To respect parlament methodology": "Pour réspecter la méthodologie de la législature",

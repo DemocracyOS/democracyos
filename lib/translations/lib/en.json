@@ -55,6 +55,8 @@
   "comments.your-argument": "Your argument",
   "comments.edit.argument": "Edit argument",
   "comments.edited": "edited",
+  "That comment is not yours!": "That comment is not yours!",
+  "Comment has replies, cannot be removed!": "Comment has replies, cannot be removed!",
   "Send": "Send",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Password reset requested",
@@ -162,8 +164,12 @@
   "Not spam" : "Not Spam",
   "Upvote" : "Upvote",
   "Downvote" : "Downvote",
+  "Reply": "Reply",
+  "Replies": "Replies",
+  "No replies": "No replies",
   "Argument is limited to 4096 characters": "Argument is limited to 4096 characters",
   "Argument cannot be empty": "Argument cannot be empty",
+  "Reply cannot be empty": "Reply cannot be empty",
 
   "To not take part on the citizen's decision": "To not take part on the citizen's decision",
   "To respect parlament methodology": "To respect parlament methodology",
