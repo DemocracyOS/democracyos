@@ -14,7 +14,8 @@
     "organization name",
     "organization url",
     "learn more url",
-    "google analytics tracking id"
+    "google analytics tracking id",
+    "comments per page"
   ],
   "auth": {
     "basic": {
@@ -53,5 +54,6 @@
   "learn more url": "http://www.democracyos.org",
   "staff": [],
   "google analytics tracking id" : "",
-  "rss enabled" : true
+  "rss enabled" : true,
+  "comments per page": 10
 }

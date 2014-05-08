@@ -4,6 +4,8 @@
     ul.media-list.comment-list.main-list
     a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('comments.deleted-arguments')
     ul.media-list.comment-list.deleted-list(class='hide')
+    btn.btn.btn-primary.btn-block.load-arguments
+      =t('comments.load-more')
     - if (citizen.id)
       form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
         h5= t('comments.your-argument')
