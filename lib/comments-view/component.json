@@ -6,8 +6,6 @@
     "component/emitter": "1.1.1",
     "component/events": "1.0.5",
     "component/classes": "1.2.0",
-    "cristiandouce/tip": "ae4ab",
-    "component/aurora-tip": "1.0.0",
     "visionmedia/jade": "1.1.5",
     "visionmedia/debug": "0.7.4",
     "yields/serialize": "0.2.0",
