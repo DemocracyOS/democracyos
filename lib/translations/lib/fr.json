@@ -1,5 +1,7 @@
 {
   "common.or": "ou",
+  "common.ok": "OK",
+  "common.cancel": "Annuler",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS Demo",
@@ -55,6 +57,8 @@
   "comments.your-argument": "Votre argument",
   "comments.edit.argument": "Éditer l'argument",
   "comments.edited": "édité",
+  "comments.arguments.confirm-remove": "Voulez-vous supprimer cet argument?",
+  "comments.arguments.reply": "Répondre à cet argument",
   "That comment is not yours!": "Ce commentaire n'est pas le vôtre!",
   "Comment has replies, cannot be removed!": "Commentaire n'a réponses, ne peut pas être supprimé!",
   "Send": "Envoyer",
@@ -153,7 +157,7 @@
 
   "This argument has been flagged as spam": "Cet argument a été reporté comme contenu indésirable",
   "show": "montrer",
-  "Do you want to remove this argument?": "Voulez-vous supprimer cet argument?",
+  "comments.replies.confirm-remove": "Voulez-vous supprimer cette réponse?",
   "That argument is not yours!": "Cet argument n'est pas le vôtre!",
 
   "proposal-article.article.alert.text": "Celle-ci est la version de preuve de DemocracyOS.",
@@ -235,7 +239,7 @@
   "admin-tags-form.message.onsuccess": "Étiquette sauvegardée avec succès",
   "admin-tags-form.message.validation.name-required": "Nom requis",
 
-  "markdown.cheatsheet.title": "Markdown TermWiki",
+  "markdown.cheatsheet.title": "Formatage aide",
   "démarque DemocracyOS aromatisé": "Democracyos.markdown.flavored",
   "markdown.will.become": "Deviendra: ",
   "markdown.text.1": "DemocracyOS utiliser les règles de démarque pour la argumenting la suite sur les lois",
@@ -255,5 +259,5 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Faites un essai pour vous-même!",
   "markdown.playground.result": "Résultat",
-  "markdown.comments.link": "Les commentaires sont analysés à l'aide DemocracyOS <a href='/markdown'>aromatisé Markdown</a>"
+  "markdown.comments.formatting-help": "Formatage aide"
 }

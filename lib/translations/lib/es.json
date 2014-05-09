@@ -1,5 +1,7 @@
 {
   "common.or": "o",
+  "common.ok": "Aceptar",
+  "common.cancel": "Cancelar",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS Demo",
@@ -55,6 +57,8 @@
   "comments.your-argument": "Tu argumento",
   "comments.edit.argument": "Editar argumento",
   "comments.edited": "editado",
+  "comments.arguments.confirm-remove": "¿Deseas eliminar este argumento?",
+  "comments.arguments.reply": "Responder a este argumento",
   "comments.load-more": "Leer más argumentos",
   "That comment is not yours!": "¡Ese argumento no es tuyo!",
   "Comment has replies, cannot be removed!": "¡El argumento tiene respuestas, no puede ser borrado!",
@@ -154,7 +158,7 @@
 
   "This argument has been flagged as spam": "Este argumento fue reportado como abuso",
   "show": "mostrar",
-  "Do you want to remove this argument?": "¿Deseas borrar este argumento?",
+  "comments.replies.confirm-remove": "¿Deseas eliminar esta respuesta?",
   "That argument is not yours!": "¡Ese argumento no es tuyo!",
 
   "proposal-article.article.alert.text": "Ésta es una versión demo de DemocracyOS.",
@@ -236,20 +240,20 @@
   "admin-tags-form.message.onsuccess": "Etiqueta guardada exitosamente",
   "admin-tags-form.message.validation.name-required": "Nombre requerido",
 
-  "markdown.cheatsheet.title": "Guía de markdown",
-  "democracyos.markdown.flavored": "Markdown utilizado en DemocracyOS",
+  "markdown.cheatsheet.title": "Ayuda de edición",
+  "democracyos.markdown.flavored": "Formato de texto",
   "markdown.will.become": "Resultará:",
   "markdown.text.1": "DemocracyOS usa las siguientes reglas de markdown para argumentar las leyes",
   "markdown.title.emphasis": "Énfasis de texto",
-  "markdown.emphasis.example.1": "Énfasis, conocido como itálica, puede escribirse con *asteriscos* o _guíones bajos_.",
-  "markdown.emphasis.example.2": "El énfasis fuerte, conocido como negrita; con doble **asteriscos** o __guíones bajos__.",
-  "markdown.emphasis.example.3": "El énfasis combinado se logra con **asteriscos y _guíones bajos_**.",
+  "markdown.emphasis.example.1": "Énfasis, conocido como itálica, puede escribirse con *asteriscos* o _guiones bajos_.",
+  "markdown.emphasis.example.2": "El énfasis fuerte, conocido como negrita; con doble **asteriscos** o __guiones bajos__.",
+  "markdown.emphasis.example.3": "El énfasis combinado se logra con **asteriscos y _guiones bajos_**.",
   "markdown.url-autolinking.title": "Links",
   "markdown.url-autolinking.text": "DemocracyOS pondrá un link automáticamente a las URLs standard, así que si quieres linkear a una URL, simplemente puedes ingresar la URL y el link se agregará automáticamente",
   "markdown.url-autolinking.text.2": "Además, puedes crear un link poniendo el texto entre corchetes ( [ ] ), y luego la URL entre paréntesis ( ( ) ).",
-  "markdown.url-autolinking.text.3": "Por ejemplo, para crear un link a http://www.example.com, con un texto que diga \"Ingresa a Example.com!\" escribirías lo siguiente:",
+  "markdown.url-autolinking.text.3": "Por ejemplo, para crear un link a http://www.ejemplo.com, con un texto que diga \"Ingresa a Ejemplo.com!\" escribirías lo siguiente:",
   "markdown.url-autolinking.example": "Ingresa a http://ejemplo.com",
-  "markdown.url-autolinking.example2": "[Ingresa a Example.com!](http://www.example.com)",
+  "markdown.url-autolinking.example2": "[Ingresa a Ejemplo.com!](http://www.ejemplo.com)",
   "markdown.linebreaks.title": "Saltos de línea",
   "markdown.linebreaks.text": "Más de 2 saltos de línea serán comprimidos. Por ejemplo:",
   "markdown.linebreaks.example.1": "Aquí tenemos una primera línea para empezar.\n",
@@ -259,5 +263,5 @@
   "markdown.playground.title": "A jugar",
   "markdown.playground.text": "¡Pruébalo tú mismo!",
   "markdown.playground.result": "Resultado:",
-  "markdown.comments.link": "<a href='/markdown'>Markdown de DemocracyOS</a>"
+  "markdown.comments.formatting-help": "Ayuda de edición"
 }
