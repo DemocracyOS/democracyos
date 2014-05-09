@@ -1,5 +1,7 @@
 {
   "common.or": "tai",
+  "common.ok": "OK",
+  "common.cancel": "Peruuta",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS Demo",
@@ -55,6 +57,8 @@
   "comments.your-argument": "Sinun argumenttisi",
   "comments.edit.argument": "Editoi argumenttiä",
   "comments.edited": "editoitu",
+  "comments.arguments.confirm-remove": "Haluatko poistaa argumentin?",
+  "comments.arguments.reply": "Vastaa tähän väitteeseen",
   "Send": "Lähetä",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Vaaditaan salasanan päivitys",
@@ -151,7 +155,7 @@
 
   "This argument has been flagged as spam": "Tämä argumentti on merkitty roskapostiksi",
   "show": "näytä",
-  "Do you want to remove this argument?": "Haluatko poistaa argumentin?",
+  "comments.replies.confirm-remove": "Haluatko poistaa vastaus?",
   "That argument is not yours!": "Tuo argumentti ei ole sinun!",
 
   "proposal-article.article.alert.text": "Tämä on DemocracyOS’n julkinen demoversio.",
@@ -229,7 +233,7 @@
   "admin-tags-form.message.onsuccess": "Tägi tallennettu",
   "admin-tags-form.message.validation.name-required": "Nimi pakollinen",
 
-  "markdown.cheatsheet.title": "Markdown-ohjeet",
+  "markdown.cheatsheet.title": "Muokkausohjeet",
   "democracyos.markdown.flavored": "DemocracyOS flavored markdown",
   "markdown.will.become": "Tulee:",
   "markdown.text.1": "DemocracyOS uses the following markdown rules for argumenting on laws",
@@ -249,5 +253,5 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Give it a try for yourself!",
   "markdown.playground.result": "Result:",
-  "markdown.comments.link": "Comments are parsed using <a href='/markdown'>DemocracyOS flavored Markdown</a>"
+  "markdown.comments.formatting-help": "Muokkausohjeet"
 }

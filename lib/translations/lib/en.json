@@ -1,5 +1,7 @@
 {
   "common.or": "or",
+  "common.ok": "OK",
+  "common.cancel": "Cancel",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS Demo",
@@ -55,6 +57,8 @@
   "comments.your-argument": "Your argument",
   "comments.edit.argument": "Edit argument",
   "comments.edited": "edited",
+  "comments.arguments.confirm-remove": "Do you want to remove this reply?",
+  "comments.arguments.reply": "Reply to this argument",
   "comments.load-more": "Load more arguments",
   "That comment is not yours!": "That comment is not yours!",
   "Comment has replies, cannot be removed!": "Comment has replies, cannot be removed!",
@@ -154,7 +158,7 @@
 
   "This argument has been flagged as spam": "This argument has been flagged as spam",
   "show": "show",
-  "Do you want to remove this argument?": "Do you want to remove this argument?",
+  "comments.replies.confirm-remove": "Do you want to remove this reply?",
   "That argument is not yours!": "That argument is not yours!",
 
   "proposal-article.article.alert.text": "This is DemocracyOS's public demo.",
@@ -236,7 +240,7 @@
   "admin-tags-form.message.onsuccess": "Tag successfully saved",
   "admin-tags-form.message.validation.name-required": "Name required",
 
-  "markdown.cheatsheet.title": "Markdown Cheatsheet",
+  "markdown.cheatsheet.title": "Formatting help",
   "democracyos.markdown.flavored": "DemocracyOS flavored markdown",
   "markdown.will.become": "Will become:",
   "markdown.text.1": "DemocracyOS uses the following markdown rules for argumenting on laws",
@@ -259,5 +263,5 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Give it a try for yourself!",
   "markdown.playground.result": "Result:",
-  "markdown.comments.link": "Comments are parsed using <a href='/markdown'>DemocracyOS flavored Markdown</a>"
+  "markdown.comments.formatting-help": "Formatting help"
 }

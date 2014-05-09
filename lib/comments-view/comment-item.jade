@@ -32,10 +32,10 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
     .comment-body
       div.comment-text!=markdown(comment.text)
       - if (own)
-        div.oncomment.remove-comment= t('Do you want to remove this argument?')
+        div.oncomment.remove-comment= t('comments.arguments.confirm-remove')
           div.remove-confirm-actions
-            a.confirm-remove(href='#')= t('Yes')
-            a.cancel-remove(href='#')= t('Cancel')
+            a.confirm-remove(href='#')= t('common.ok')
+            a.cancel-remove(href='#')= t('common.cancel')
       div.oncomment.message
       p.spam-message=t('This argument has been flagged as spam')
         | .

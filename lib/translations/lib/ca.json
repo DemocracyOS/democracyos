@@ -1,5 +1,7 @@
 {
-  "common.or": "",
+  "common.or": "o",
+  "common.ok": "OK",
+  "common.cancel": "Cancel",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS Demo",
@@ -55,6 +57,8 @@
   "comments.your-argument": "El teu argument",
   "comments.edit.argument": "Edita argument",
   "comments.edited": "editat",
+  "comments.arguments.confirm-remove": "Vols eliminar aquest argument?",
+  "comments.arguments.reply": "Respondre a aquest argument",
   "That comment is not yours!": "Aquest comentari no és teu!",
   "Comment has replies, cannot be removed!": "Comentari Ha respostes, no pot ser eliminat!",
   "Send": "Enviar",
@@ -153,7 +157,7 @@
 
   "This argument has been flagged as spam": "Aquest argument ha estat reportat com abús",
   "show": "mostrar",
-  "Do you want to remove this argument?": "Vols eliminar aquest argument?",
+  "comments.replies.confirm-remove": "Vols eliminar aquesta responsa?",
   "That argument is not yours!": "Aquest argument no és seva!",
 
   "proposal-article.article.alert.text": "Això és la versió de prova de DemocracyOS.",
@@ -234,7 +238,7 @@
   "admin-tags-form.message.onsuccess": "Tag guardat correctament",
   "admin-tags-form.message.validation.name-required": "Nom obligatori",
 
-  "markdown.cheatsheet.title": "Markdown trucs",
+  "markdown.cheatsheet.title": "Ajuda de format",
   "democracyos.markdown.flavored": "Markdown DemocracyOS amb gust",
   "markdown.will.become": "Es convertirà en:",
   "markdown.text.1": "DemocracyOS utilitza les regles de rebaixes per argumenting les lleis",
@@ -254,5 +258,5 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Donar-li una oportunitat per a tu!",
   "markdown.playground.result": "Resultat:",
-  "markdown.comments.link": "Els comentaris són analitzats utilitzant DemocracyOS <a href='/markdown'>gust Markdown</a>"
+  "markdown.comments.formatting-help": "Ajuda de format"
 }

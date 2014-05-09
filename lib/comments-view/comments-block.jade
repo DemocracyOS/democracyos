@@ -9,7 +9,7 @@
     - if (citizen.id)
       form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
         h5= t('comments.your-argument')
-          small.pull-right!=t('markdown.comments.link')
+          a.pull-right(href='/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p 
           textarea(name='text', rows='4')
         input.btn.form-submit.pull-right(type='submit', value=t('Send'))
