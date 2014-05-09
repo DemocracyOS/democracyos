@@ -1,14 +1,6 @@
 .comments
   .inner-container
     h4= t('comments.arguments')
-      .dropdown.pull-right
-        button.btn.btn-default(type='button', data-toggle='dropdown')='Más votados'
-          span.caret
-        ul.dropdown-menu
-          li
-            a(href='#')='Más votados'
-          li
-            a(href='#')='Más nuevos'
     ul.media-list.comment-list.main-list
     a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('comments.deleted-arguments')
     ul.media-list.comment-list.deleted-list(class='hide')
