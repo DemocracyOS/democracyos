@@ -1,4 +1,9 @@
 
+0.6.1 / 2014-05-09
+==================
+
+ * Fix several translation errors
+
 0.6.0 / 2014-05-07
 ==================
  * Add 'fi' locale (Finnish)
