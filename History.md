@@ -7,6 +7,7 @@
  * Add markdown'd arguments
  * Add markdown explanation page
  * Add locale config parameter
+ * Add comments paging
  * Fix component issue
  * Fix some UI issues
  * Fix npm packages dependencies, changing ^ for ~
