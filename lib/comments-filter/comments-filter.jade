@@ -1,5 +1,6 @@
-.dropdown.pull-right
+.dropdown.pull-right.comments-filter
   button.btn.btn-default(type='button', data-toggle='dropdown')= t(filter.get().label)
+  button.btn.btn-default.btn-caret(type='button', data-toggle='dropdown')
     span.caret
   ul.dropdown-menu
     - each sort, key in sorts
