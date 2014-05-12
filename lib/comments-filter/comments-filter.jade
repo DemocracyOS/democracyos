@@ -1,11 +1,7 @@
 .dropdown.pull-right
-  button.btn.btn-default(type='button',
-      data-toggle='dropdown')= t(filter.sorts[filter.get('sort')].label)
+  button.btn.btn-default(type='button', data-toggle='dropdown')= t(filter.get().label)
     span.caret
   ul.dropdown-menu
-    - each sort, key in filter.sorts
-      - var active = false;
-      - if (sort == filter.sort)
-        - active = true;
-      li(data-sort=key, class= active ? 'active' : '')
+    - each sort, key in sorts
+      li(data-sort=key)
         a(href='#')= t(sort.label)
