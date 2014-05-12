@@ -1,6 +1,6 @@
 {
   "name": "DemocracyOS",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "paths": [
     "lib"
@@ -10,8 +10,8 @@
   ],
   "dependencies": { },
   "remotes": [
-    "https://raw.githubusercontent.com",
     "https://cdn.rawgit.com",
-    "https://rawgit.com"
+    "https://rawgit.com",
+    "https://raw.githubusercontent.com"
   ]
 }

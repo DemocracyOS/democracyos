@@ -1,4 +1,9 @@
 
+0.6.3 / 2014-05-12 
+==================
+
+ * Fix build failure based on remotes. Change remotes order.
+
 0.6.2 / 2014-05-09 
 ==================
 
