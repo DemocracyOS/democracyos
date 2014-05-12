@@ -12,9 +12,8 @@
     "citizen",
     "render",
     "store"
-  ],  
-  "scripts": [ "view.js" ],
-  "styles" : [ "comments-filter.styl" ],
+  ],
   "templates": [ "comments-filter.jade" ],
+  "scripts": [ "view.js", "sorts.js" ],
   "main": "view.js"
 }

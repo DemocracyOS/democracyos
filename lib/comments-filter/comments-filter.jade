@@ -3,9 +3,9 @@
       data-toggle='dropdown')= t(filter.sorts[filter.get('sort')].label)
     span.caret
   ul.dropdown-menu
-  - each sort, key in filter.sorts
-    - var active = false;
-    - if (sort == filter.sort)
-      - active = true;
-    li(data-sort=key, class= active ? 'active' : '')
-      a(href='#')= t(sort.label)
+    - each sort, key in filter.sorts
+      - var active = false;
+      - if (sort == filter.sort)
+        - active = true;
+      li(data-sort=key, class= active ? 'active' : '')
+        a(href='#')= t(sort.label)
