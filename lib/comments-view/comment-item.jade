@@ -53,7 +53,9 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
           i.icon-angle-down
         - if (length || citizen.id)
-          a.comment-action.comment-reply.pull-right(href='#')
-            i.icon-reply
+          - var title = length + ' ' + (length > 1 ? t('comments.replies') : t('comments.reply'))
+          a.comment-action.comment-reply.pull-right(href='#', title=title.toLowerCase())
             span.reply-counter= length > 0 ? length : ''
+          a.comment-action.comment-reply.pull-right(href='#', title=t('comments.reply-to-argument'))
+            i.icon-reply
   .replies-container
