@@ -24,11 +24,10 @@ li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > commen
           i.icon-pencil
 
       | #{comment.author.fullName} 
+      small.ago(data-time=comment.createdAt.toString())
       - if (comment.editedAt)
-        small.edited #{t('comments.edited')}
-      - var time = comment.editedAt ? comment.editedAt : comment.createdAt
-      small.ago(data-time=time.toString())
-      small :
+        small.edited · #{t('comments.edited')}
+      small=':'
     .comment-body
       div.comment-text!=markdown(comment.text)
       - if (own)
