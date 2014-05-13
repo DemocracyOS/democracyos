@@ -1,37 +1,42 @@
 .comments-filter
   .btn
-    background-color: #909FA0
-    color: white;
+    background-color: #f9f9f9
+    color: #428bca
     font-size: 12px
-    width: 174px
+    font-weight: normal
     text-align: center
-    padding-left: 10px
+    text-transform: none
+    padding: 0 20px 0 10px
     outline: 0
 
   .btn-caret
     position: absolute
-    top: 0
+    top: 2px
     right: 0
     width: 10px
     padding-left: 0
     padding-right: 14px
+    
+    .caret
+      color: #428bca
   
   ul.dropdown-menu
+    background-color: #f9f9f9
     border-radius: 3px
     width: 100%
     margin-top: 2px
 
     li
-      background-color: white
+      background-color: #f9f9f9
+      text-align: right
 
       a
-        color: #333
+        color: #428bca
         font-size: 12px
-        font-weight: bold
         white-space: normal
-        text-transform: uppercase
         padding: 6px 14px
 
-.comments-filter.open
-  .btn
-    background-color: #727f80
+@media only screen and (max-device-width : 700px),
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
+  .comments-filter .btn:not(.btn-caret) :not(strong)
+    display: none
