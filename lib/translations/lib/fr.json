@@ -52,6 +52,9 @@
   "sorts.recently-updated": "Récemment modifiés",
 
   "comments.arguments": "Arguments",
+  "comments.replies": "Réponses",
+  "comments.reply": "Répondre",
+  "comments.reply-to-argument": "Répondre à cet argument",
   "comments.sign-in-required": "Il faut être régistré pour argumenter ici",
   "comments.deleted-arguments": "Arguments éliminés",
   "comments.your-argument": "Votre argument",

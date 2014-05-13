@@ -52,6 +52,9 @@
   "sorts.recently-updated": "Con actividad reciente",
 
   "comments.arguments": "Argumentos",
+  "comments.replies": "Respuestas",
+  "comments.reply": "Respuesta",
+  "comments.reply-to-argument": "Responde a este argumento",
   "comments.sign-in-required": "Debés estar registrado para poder argumentar aquí",
   "comments.deleted-arguments": "Argumentos eliminados",
   "comments.your-argument": "Tu argumento",

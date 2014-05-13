@@ -52,6 +52,9 @@
   "sorts.recently-updated": "Recently updated",
 
   "comments.arguments": "Arguments",
+  "comments.replies": "Respostes",
+  "comments.reply": "Respondre",
+  "comments.reply-to-argument": "Respondre a aquest argument",
   "comments.sign-in-required": "Has d'estar registrat per poder afegir un argument",
   "comments.deleted-arguments": "Arguments borrats",
   "comments.your-argument": "El teu argument",
