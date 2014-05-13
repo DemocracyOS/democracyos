@@ -10,8 +10,6 @@
   ],
   "dependencies": { },
   "remotes": [
-    "https://cdn.rawgit.com",
-    "https://rawgit.com",
     "https://raw.githubusercontent.com"
   ]
 }
