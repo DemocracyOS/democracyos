@@ -60,7 +60,7 @@
   "comments.arguments.confirm-remove": "¿Deseas eliminar este argumento?",
   "comments.arguments.reply": "Responder a este argumento",
   "comments.load-more": "Leer más argumentos",
-  "comments.sorts.score": "Puntaje",
+  "comments.sorts.score": "Relevancia",
   "comments.sorts.newest-first": "Más nuevos primero",
   "comments.sorts.oldest-first": "Más viejos primero",
   "comments.ordered-by": "Ordenados por",
