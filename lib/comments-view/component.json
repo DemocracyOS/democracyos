@@ -23,7 +23,8 @@
     "comments-edit",
     "markdown",
     "comments-replies",
-    "config"
+    "config",
+    "comments-filter"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments-view.styl", "comments.css" ],
