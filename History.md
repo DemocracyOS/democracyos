@@ -1,4 +1,9 @@
 
+0.6.5 / 2014-05-13 
+==================
+
+ * Fix embedded image in proposal size to match the proposal's width
+
 0.6.4 / 2014-05-13
 ==================
 
