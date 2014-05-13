@@ -1,4 +1,9 @@
 
+0.6.4 / 2014-05-13
+==================
+
+ * Remove unneeded remotes from root `component.json`
+
 0.6.3 / 2014-05-12 
 ==================
 
