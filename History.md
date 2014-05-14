@@ -1,5 +1,10 @@
 
-0.6.5 / 2014-05-13 
+0.6.6 / 2014-05-14
+==================
+
+ * Fix cannot set 'transport' image to a tag. Closes #347
+
+0.6.5 / 2014-05-13
 ==================
 
  * Fix embedded image in proposal size to match the proposal's width
