@@ -3,8 +3,12 @@
 - var flags = ~comment.flags.map(function(v) { return v.author; }).indexOf(citizen.id)
 - var own = comment.author.id == citizen.id
 - var length = comment.replies.length
+- if (config['spam limit'])
+  - var spam = comment.flags.length > config['spam limit']
+- else
+  - var spam = comment.flags.length > (comment.upvotes.length - comment.downvotes.length)
 
-li.media.comment-item(data-id=comment.id, class= ((comment.flags.length > comment.upvotes.length) || flags) ? 'spam' : '')
+li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
   span.pull-left
     img(src=comment.author.gravatar).avatar
 

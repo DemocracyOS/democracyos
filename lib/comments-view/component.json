@@ -2,7 +2,6 @@
   "name": "comments-view",
   "description": "Generic comments view component",
   "dependencies": {
-    "component/domify": "1.2.0",
     "component/emitter": "1.1.1",
     "component/events": "1.0.5",
     "component/classes": "1.2.0",
@@ -23,7 +22,8 @@
     "comments-edit",
     "markdown",
     "comments-replies",
-    "config"
+    "config",
+    "render"
   ],  
   "scripts": [ "view.js" ],
   "styles" : [ "comments-view.styl", "comments.css" ],
