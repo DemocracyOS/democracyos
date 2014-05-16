@@ -55,5 +55,6 @@
   "staff": [],
   "google analytics tracking id" : "",
   "rss enabled" : true,
-  "comments per page": 0
+  "comments per page": 0,
+  "spam limit": 5
 }
