@@ -1,4 +1,9 @@
 
+0.6.7 / 2014-05-16 
+==================
+
+ * Comments are marked as spam when they exceed a config parameter or, if not set, when they have more spam reports than score (upvotes minus downvotes)
+
 0.6.6 / 2014-05-14
 ==================
 
