@@ -21,8 +21,7 @@ li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
         - var spamTitle = flags ?  t('Not spam') : t('Spam')
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
           i.glyphicon.glyphicon-flag
-          - if (comment.flags.length)
-            =comment.flags.length
+          span.count=comment.flags.length ? comment.flags.length : ''
       - else
         a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=(length ? 'hide' : ''))
           i.icon-remove
