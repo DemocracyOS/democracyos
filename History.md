@@ -1,5 +1,5 @@
 
-0.6.8 / 2014-05-19
+0.7.0 / 2014-05-19
 ==================
 
  * Add sorting comments
@@ -8,7 +8,7 @@
  * Add not being able to vote your own comments
  * Update proposal-article to auto-scale iframes (i.e.: youtube embedded videos)
  * Fix transportation tag image issue
- * See migrating to 0.6.x
+ * See migrating to 0.7.x
 
 0.6.7 / 2014-05-16 
 ==================
