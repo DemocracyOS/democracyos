@@ -1,4 +1,15 @@
 
+0.6.8 / 2014-05-19
+==================
+
+ * Add sorting comments
+ * Add an 'edited' label next to a comment when it was edited
+ * Add spinner for loading comments
+ * Add not being able to vote your own comments
+ * Update proposal-article to auto-scale iframes (i.e.: youtube embedded videos)
+ * Fix transportation tag image issue
+ * See migrating to 0.6.x
+
 0.6.7 / 2014-05-16 
 ==================
 
