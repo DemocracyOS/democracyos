@@ -24,7 +24,7 @@
     "markdown",
     "comments-replies",
     "config",
-    "comments-filter"
+    "comments-filter",
     "render"
   ],  
   "scripts": [ "view.js" ],
