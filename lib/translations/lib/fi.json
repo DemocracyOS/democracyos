@@ -67,6 +67,7 @@
   "comments.ordered-by": "Tilaaja",
   "comments.arguments.confirm-remove": "Haluatko poistaa argumentin?",
   "comments.arguments.reply": "Vastaa tähän väitteeseen",
+  "You're not allowed to vote your own argument": "Et saa äänestää oman argumentti",
   "Send": "Lähetä",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Vaaditaan salasanan päivitys",

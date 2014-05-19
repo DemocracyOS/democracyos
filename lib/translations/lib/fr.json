@@ -69,6 +69,7 @@
   "comments.arguments.reply": "Répondre à cet argument",
   "That comment is not yours!": "Ce commentaire n'est pas le vôtre!",
   "Comment has replies, cannot be removed!": "Commentaire n'a réponses, ne peut pas être supprimé!",
+  "You're not allowed to vote your own argument": "Vous n'êtes pas autorisé à voter votre propre argument",
   "Send": "Envoyer",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Rétablir mot de passe",
