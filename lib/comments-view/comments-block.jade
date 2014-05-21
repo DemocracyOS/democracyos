@@ -1,6 +1,14 @@
 .comments
   .inner-container
-    h4= t('comments.arguments')
+    - if (citizen.id)
+      .my-argument
+        h4.my-argument-title=t('comments.my.arguments')
+        .avatar-container
+          img(src=citizen.gravatar).avatar
+        form.my-argument-form
+          textarea(name='text', rows='4')
+          input.btn.form-submit.pull-right(type='submit', value=t('Send'))
+    h4.arguments= t('comments.arguments')
     ul.media-list.comment-list.main-list
     a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('comments.deleted-arguments')
     ul.media-list.comment-list.deleted-list(class='hide')
