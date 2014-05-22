@@ -2,6 +2,7 @@
   "name": "comments-filter",
   "description": "Generic comments filter component",
   "dependencies": {
+    "component/bus": "0.0.2",
     "component/emitter": "1.1.1",
     "component/events": "1.0.5",
     "component/t": "1.0.0",
