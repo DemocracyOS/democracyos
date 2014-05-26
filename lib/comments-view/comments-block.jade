@@ -1,14 +1,17 @@
 .comments
   .inner-container
     - if (citizen.id)
-      .my-argument
-        h4.my-argument-title=t('comments.my.arguments')
-        .avatar-container
-          img(src=citizen.gravatar).avatar
-        form.my-argument-form
+      h4.your-arguments=t('comments.your.arguments')
+        //- small
+        //-   a.new-argument.pull-right(href='#')=t('comments.new.argument')
+      form.comment-form.upper(method='post', action='/api/#{context}/#{reference}/comment')
+        h5= t('comments.your-argument')
+          a.pull-right(href='/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
+        p
           textarea(name='text', rows='4')
-          input.btn.form-submit.pull-right(type='submit', value=t('Send'))
-        .my-arguments-list
+        input.btn.form-submit.pull-right(type='submit', value=t('Send'))
+        span.help-text.form-errors
+      ul.my-arguments-list
     h4.arguments= t('comments.arguments')
     ul.media-list.comment-list.main-list
     a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('comments.deleted-arguments')
@@ -16,8 +19,8 @@
     btn.btn.btn-primary.btn-block.load-arguments.hide
       =t('comments.load-more')
     - if (citizen.id)
-      form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
-        h5= t('comments.your-argument')
+      form.comment-form.lower(method='post', action='/api/#{context}/#{reference}/comment')
+        h5= t('comments.new.argument')
           a.pull-right(href='/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p 
           textarea(name='text', rows='4')
