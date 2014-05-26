@@ -53,6 +53,8 @@
 
   "comments.arguments": "Argumentos",
   "comments.my.arguments": "¿Cuál es tu argumento?",
+  "comments.your.arguments": "Tus argumentos",
+  "comments.new.argument": "Nuevo argumento",
   "comments.replies": "Respuestas",
   "comments.reply": "Respuesta",
   "comments.reply-to-argument": "Responde a este argumento",
@@ -68,6 +70,9 @@
   "comments.sorts.newest-first": "Más nuevos primero",
   "comments.sorts.oldest-first": "Más viejos primero",
   "comments.ordered-by": "Ordenados por",
+  "comments.no-citizen-comments": "No hay argumentos de otros ciudadanos todavía",
+  "comments.no-comments": "Ningún ciudadano ha argumentado todavía",
+  "Your argument was removed": "Tu argumento fue eliminado",
   "That comment is not yours!": "¡Ese argumento no es tuyo!",
   "Comment has replies, cannot be removed!": "¡El argumento tiene respuestas, no puede ser borrado!",
   "You're not allowed to vote your own argument": "No puedes votar tu propio argumento",
