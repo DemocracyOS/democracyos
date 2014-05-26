@@ -2,31 +2,23 @@
   .inner-container
     - if (citizen.id)
       h4.your-arguments=t('comments.your.arguments')
-        //- small
-        //-   a.new-argument.pull-right(href='#')=t('comments.new.argument')
-      form.comment-form.upper(method='post', action='/api/#{context}/#{reference}/comment')
+      ul.my-arguments-list
+      form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
         h5= t('comments.your-argument')
           a.pull-right(href='/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p
           textarea(name='text', rows='4')
+        button.btn-link.cancel-new-argument.pull-right=t('Cancel')
         input.btn.form-submit.pull-right(type='submit', value=t('Send'))
         span.help-text.form-errors
-      ul.my-arguments-list
+      button.btn.btn-block.new-argument.hide= t('comments.new.argument')
     h4.arguments= t('comments.arguments')
     ul.media-list.comment-list.main-list
     a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('comments.deleted-arguments')
     ul.media-list.comment-list.deleted-list(class='hide')
     btn.btn.btn-primary.btn-block.load-arguments.hide
       =t('comments.load-more')
-    - if (citizen.id)
-      form.comment-form.lower(method='post', action='/api/#{context}/#{reference}/comment')
-        h5= t('comments.new.argument')
-          a.pull-right(href='/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
-        p 
-          textarea(name='text', rows='4')
-        input.btn.form-submit.pull-right(type='submit', value=t('Send'))
-        span.help-text.form-errors
-    - else
+    - if (!citizen.id)
       .box
         p.text-mute= t('comments.sign-in-required')
           | . 
