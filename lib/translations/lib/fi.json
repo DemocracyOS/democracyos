@@ -52,6 +52,7 @@
   "sorts.recently-updated": "Äskettäin päivitetty",
 
   "comments.arguments": "Argumentit",
+  "comments.my.arguments": "Mikä on argumentti?",
   "comments.replies": "Vastaukset",
   "comments.reply": "Vastaus",
   "comments.reply-to-argument": "Vastauksena tähän väitteeseen",
@@ -67,6 +68,9 @@
   "comments.ordered-by": "Tilaaja",
   "comments.arguments.confirm-remove": "Haluatko poistaa argumentin?",
   "comments.arguments.reply": "Vastaa tähän väitteeseen",
+  "comments.no-citizen-comments": "Mikään muu kansalainen on perusteltujen tämän lain vielä",
+  "comments.no-comments": "Ei kansalainen on perusteltujen tämän lain vielä",
+  "Your argument was removed": "Perustelunne poistettiin",
   "You're not allowed to vote your own argument": "Et saa äänestää oman argumentti",
   "Send": "Lähetä",
 

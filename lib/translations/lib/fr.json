@@ -52,6 +52,7 @@
   "sorts.recently-updated": "Récemment modifiés",
 
   "comments.arguments": "Arguments",
+  "comments.my.arguments": "Quel est votre argument?",
   "comments.replies": "Réponses",
   "comments.reply": "Répondre",
   "comments.reply-to-argument": "Répondre à cet argument",
@@ -67,6 +68,9 @@
   "comments.ordered-by": "Commandé par",
   "comments.arguments.confirm-remove": "Voulez-vous supprimer cet argument?",
   "comments.arguments.reply": "Répondre à cet argument",
+  "comments.no-citizen-comments": "Aucun autre citoyen a encore argumenté sur cette loi",
+  "comments.no-comments": "Aucun citoyen n'a encore argumenté sur cette loi",
+  "Your argument was removed": "Votre argument a été retiré",
   "That comment is not yours!": "Ce commentaire n'est pas le vôtre!",
   "Comment has replies, cannot be removed!": "Commentaire n'a réponses, ne peut pas être supprimé!",
   "You're not allowed to vote your own argument": "Vous n'êtes pas autorisé à voter votre propre argument",
