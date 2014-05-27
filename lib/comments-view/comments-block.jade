@@ -11,7 +11,9 @@
         button.btn-link.cancel-new-argument.pull-right=t('Cancel')
         input.btn.form-submit.pull-right(type='submit', value=t('Send'))
         span.help-text.form-errors
-      button.btn.btn-block.new-argument.hide= t('comments.new.argument')
+      button.btn.btn-block.new-argument.hide
+        i.icon-plus
+        =t('comments.new.argument')
     h4.arguments= t('comments.arguments')
     ul.media-list.comment-list.main-list
     a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('comments.deleted-arguments')
