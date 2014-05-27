@@ -24,7 +24,8 @@
     "flaticons",
     "admin",
     "header",
-    "logout"
+    "logout",
+    "help"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.styl", "boot-responsive.styl" ],
