@@ -18,7 +18,7 @@
     "help-markdown"
   ],
   "scripts": [ "help.js" ],
-  "styles": [ "help.styl" ],
+  "styles": [ "help.styl", "help-responsive.styl" ],
   "templates": [ "help-container.jade"],
   "main": "help.js"
 }
