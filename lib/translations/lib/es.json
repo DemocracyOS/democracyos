@@ -277,5 +277,11 @@
   "markdown.playground.title": "A jugar",
   "markdown.playground.text": "¡Pruébalo tú mismo!",
   "markdown.playground.result": "Resultado:",
-  "markdown.comments.formatting-help": "Ayuda de edición"
+  "markdown.comments.formatting-help": "Ayuda de edición",
+
+  "help.title": "Ayuda",
+  "help.faq.title": "Preguntas frecuentes",
+  "help.tos.title": "Términos del Servicio",
+  "help.pp.title": "Política de Privacidad",
+  "help.markdown.title": "Ayuda de edición"
 }

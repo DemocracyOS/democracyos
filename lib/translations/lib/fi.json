@@ -266,5 +266,11 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Give it a try for yourself!",
   "markdown.playground.result": "Result:",
-  "markdown.comments.formatting-help": "Muokkausohjeet"
+  "markdown.comments.formatting-help": "Muokkausohjeet",
+
+  "help.title": "Apu",
+  "help.faq.title": "Usein kysytyt kysymykset",
+  "help.tos.title": "Terms of Service",
+  "help.pp.title": "Privacy Policy",
+  "help.markdown.title": "muotoileminen help"
 }

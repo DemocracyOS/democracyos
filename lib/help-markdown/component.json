@@ -1,5 +1,5 @@
 {
-  "name": "markdown-page",
+  "name": "help-markdown",
   "description": "DemocracyOS markdown guide page",
   "dependencies": {
     "chjj/marked": "v0.3.2",
@@ -21,7 +21,7 @@
     "title"
   ],
   "styles": [ "markdown-cheatsheet.styl" ],
-  "scripts": [ "markdown-page.js", "view.js" ],
+  "scripts": [ "view.js" ],
   "templates": [ "template.jade" ],
-  "main": "markdown-page.js"
+  "main": "view.js"
 }

@@ -273,5 +273,11 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Donar-li una oportunitat per a tu!",
   "markdown.playground.result": "Resultat:",
-  "markdown.comments.formatting-help": "Ajuda de format"
+  "markdown.comments.formatting-help": "Ajuda de format",
+
+  "help.title": "Ajut",
+  "help.faq.title": "Preguntes més freqüents",
+  "help.tos.title": "Termes de Servei",
+  "help.pp.title": "Política de Privacitat",
+  "help.markdown.title": "Formateig ajuda"
 }

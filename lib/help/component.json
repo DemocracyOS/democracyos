@@ -10,7 +10,11 @@
   },
   "local": [
     "title",
-    "render"
+    "render",
+    "help-faq",
+    "help-tos",
+    "help-pp",
+    "help-markdown"
   ],
   "scripts": [ "help.js" ],
   "styles": [ "help.styl" ],
