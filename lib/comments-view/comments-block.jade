@@ -5,7 +5,7 @@
       ul.my-arguments-list
       form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
         h5= t('comments.your-argument')
-          a.pull-right(href='/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
+          a.pull-right(href='/help/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p
           textarea(name='text', rows='4')
         button.btn-link.cancel-new-argument.pull-right=t('Cancel')
