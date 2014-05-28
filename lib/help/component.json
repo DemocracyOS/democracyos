@@ -9,6 +9,7 @@
     "yields/empty": "0.0.1"
   },
   "local": [
+    "config",
     "title",
     "render",
     "help-faq",
