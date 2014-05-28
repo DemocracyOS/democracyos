@@ -1,0 +1,24 @@
+{
+  "name": "help",
+  "description": "Help for the citizen",
+  "dependencies": {
+    "component/classes": "1.2.0",
+    "cristiandouce/query": "0.0.1",
+    "visionmedia/page.js": "1.3.7",
+    "visionmedia/jade": "1.1.5",
+    "yields/empty": "0.0.1"
+  },
+  "local": [
+    "config",
+    "title",
+    "render",
+    "help-faq",
+    "help-tos",
+    "help-pp",
+    "help-markdown"
+  ],
+  "scripts": [ "help.js" ],
+  "styles": [ "help.styl", "help-responsive.styl" ],
+  "templates": [ "help-container.jade"],
+  "main": "help.js"
+}

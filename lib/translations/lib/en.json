@@ -277,5 +277,11 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Give it a try for yourself!",
   "markdown.playground.result": "Result:",
-  "markdown.comments.formatting-help": "Formatting help"
+  "markdown.comments.formatting-help": "Formatting help",
+
+  "help.title": "Help",
+  "help.faq.title": "FAQ",
+  "help.tos.title": "Terms of Service",
+  "help.pp.title": "Privacy Policy",
+  "help.markdown.title": "Formatting help"
 }

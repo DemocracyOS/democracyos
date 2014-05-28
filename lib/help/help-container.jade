@@ -1,0 +1,13 @@
+#help-container
+  #help
+    .sidebar-container
+      ul.help-menu
+        li.heading= t('help.title')
+        - if (config['faq enabled'])
+          li: a(href="/help/faq")= t('help.faq.title')
+        - if (config['tos enabled'])
+          li: a(href="/help/terms-of-service")= t('help.tos.title')
+        - if (config['pp enabled'])
+          li: a(href="/help/privacy-policy")= t('help.pp.title')
+        li: a(href="/help/markdown")= t('help.markdown.title')
+    .help-content
