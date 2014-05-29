@@ -283,5 +283,9 @@
   "help.faq.title": "FAQ",
   "help.tos.title": "Terms of Service",
   "help.pp.title": "Privacy Policy",
-  "help.markdown.title": "Formatting help"
+  "help.markdown.title": "Formatting help",
+
+  "This page does not exist": "This page does not exist",
+  "go back to": "go back to",
+  "Go back to DemocracyOS": "Go back to DemocracyOS"
 }

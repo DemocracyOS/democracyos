@@ -279,5 +279,9 @@
   "help.faq.title": "Preguntes més freqüents",
   "help.tos.title": "Termes de Servei",
   "help.pp.title": "Política de Privacitat",
-  "help.markdown.title": "Formateig ajuda"
+  "help.markdown.title": "Formateig ajuda",
+
+  "This page does not exist": "Aquesta pàgina no existeix",
+  "go back to": "Torna a",
+  "Go back to DemocracyOS": "Torna a DemocracyOS"
 }

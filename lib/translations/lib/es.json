@@ -283,5 +283,9 @@
   "help.faq.title": "Preguntas frecuentes",
   "help.tos.title": "Términos del Servicio",
   "help.pp.title": "Política de Privacidad",
-  "help.markdown.title": "Ayuda de edición"
+  "help.markdown.title": "Ayuda de edición",
+
+  "This page does not exist": "Esta página no existe",
+  "go back to": "vuelve a",
+  "Go back to DemocracyOS": "vuelve a DemocracyOS"
 }

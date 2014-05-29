@@ -272,5 +272,9 @@
   "help.faq.title": "Usein kysytyt kysymykset",
   "help.tos.title": "Terms of Service",
   "help.pp.title": "Privacy Policy",
-  "help.markdown.title": "muotoileminen help"
+  "help.markdown.title": "muotoileminen help",
+
+  "This page does not exist": "Sivua ei ole olemassa",
+  "go back to": "Mene takaisin",
+  "Go back to DemocracyOS": "Mene takaisin DemocracyOS"
 }
