@@ -15,7 +15,6 @@
     "homepage",
     "proposal",
     "law",
-    "markdown-page",
     "signin",
     "signup",
     "forgot",
@@ -24,7 +23,9 @@
     "flaticons",
     "admin",
     "header",
-    "logout"
+    "logout",
+    "help",
+    "404"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.styl", "boot-responsive.styl" ],

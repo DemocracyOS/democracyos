@@ -1,0 +1,21 @@
+{
+  "name": "help-pp",
+  "description": "Help Privacy Policy view",
+  "dependencies": {
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/jade": "1.1.5",
+    "cristiandouce/query": "0.0.1",
+    "chjj/marked": "v0.3.2"
+  },
+  "local": [
+    "render"
+  ],
+  "templates": [
+    "pp-template.jade",
+    "pp.md"
+  ],
+  "scripts": [
+    "view.js"
+  ],
+  "main": "view.js"
+}

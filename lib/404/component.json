@@ -1,0 +1,19 @@
+{
+  "name": "404",
+  "description": "404 layout",
+  "dependencies": {
+    "component/classes": "1.2.0",
+    "visionmedia/page.js": "1.3.7",
+    "visionmedia/jade": "1.1.5",
+    "visionmedia/debug": "0.7.4",
+    "yields/empty": "0.0.1",
+    "cristiandouce/query": "0.0.1"
+  },
+  "local": [
+    "render"
+  ],
+  "styles": [ "styles.styl" ],
+  "scripts": [ "404.js" ],
+  "templates": [ "template.jade" ],
+  "main": "404.js"
+}

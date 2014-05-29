@@ -31,12 +31,54 @@
       canvas
         top: 40px !important
 
+    .your-arguments
+      margin-bottom: 10px
+
+    .new-argument
+      background-color: #f9f9f9
+      border: 1px dashed #ddd
+      font-weight: normal
+      color: #999
+      &:hover
+        color: #777
+        border-color: #ccc
+      .icon-plus
+        margin-right: 6px
+
+    .my-argument
+      margin-top: -14px
+      width: 100%
+      overflow: hidden
+      padding: 12px 10px 0px 10px
+
+      .avatar-container
+        float: left
+        width: 46px
+        margin-right: 20px
+        img
+          width: 100%
+
+      .my-argument-form
+        position: relative
+        overflow: hidden
+        textarea
+          width: 100%
+          resize: none
+        .btn
+          background-color: #333
+          color: white
+        .form-errors
+          color: red
+          display: block
+  
   h4
     margin-bottom: 30px
+    &.arguments
+      margin-top: 20px
 
   .comment-form
     margin-bottom: 50px
-    margin-top: 50px
+    margin-top: 30px
     h5
       width: 100%
       small
@@ -50,7 +92,12 @@
       background-color: #333
       color: white
 
-  .comment-list
+  .my-arguments-list
+    padding: 0 !important
+    margin-bottom: 30px
+
+  .comment-list,
+  .my-arguments-list
     .comment-item
       max-width: 580px
       padding: 12px 10px 0px 10px

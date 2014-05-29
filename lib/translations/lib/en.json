@@ -52,6 +52,9 @@
   "sorts.recently-updated": "Recently updated",
 
   "comments.arguments": "Arguments",
+  "comments.my.arguments": "What's your argument?",
+  "comments.your.arguments": "Your arguments",
+  "comments.new.argument": "New argument",
   "comments.replies": "Replies",
   "comments.reply": "Reply",
   "comments.reply-to-argument": "Reply to this argument",
@@ -67,6 +70,9 @@
   "comments.sorts.newest-first": "Newest first",
   "comments.sorts.oldest-first": "Oldest first",
   "comments.ordered-by": "Ordered by",
+  "comments.no-citizen-comments": "No other citizen has argumented on this law yet",
+  "comments.no-comments": "No citizen has argumented on this law yet",
+  "Your argument was removed": "Your argument was removed",
   "That comment is not yours!": "That comment is not yours!",
   "Comment has replies, cannot be removed!": "Comment has replies, cannot be removed!",
   "You're not allowed to vote your own argument": "You're not allowed to vote your own argument",
@@ -271,5 +277,15 @@
   "markdown.playground.title": "Playground",
   "markdown.playground.text": "Give it a try for yourself!",
   "markdown.playground.result": "Result:",
-  "markdown.comments.formatting-help": "Formatting help"
+  "markdown.comments.formatting-help": "Formatting help",
+
+  "help.title": "Help",
+  "help.faq.title": "FAQ",
+  "help.tos.title": "Terms of Service",
+  "help.pp.title": "Privacy Policy",
+  "help.markdown.title": "Formatting help",
+
+  "This page does not exist": "This page does not exist",
+  "go back to": "go back to",
+  "Go back to DemocracyOS": "Go back to DemocracyOS"
 }

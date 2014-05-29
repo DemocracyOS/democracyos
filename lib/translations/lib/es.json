@@ -52,6 +52,9 @@
   "sorts.recently-updated": "Con actividad reciente",
 
   "comments.arguments": "Argumentos",
+  "comments.my.arguments": "¿Cuál es tu argumento?",
+  "comments.your.arguments": "Tus argumentos",
+  "comments.new.argument": "Agregar argumento",
   "comments.replies": "Respuestas",
   "comments.reply": "Respuesta",
   "comments.reply-to-argument": "Responde a este argumento",
@@ -67,6 +70,9 @@
   "comments.sorts.newest-first": "Más nuevos primero",
   "comments.sorts.oldest-first": "Más viejos primero",
   "comments.ordered-by": "Ordenados por",
+  "comments.no-citizen-comments": "No hay argumentos de otros ciudadanos todavía",
+  "comments.no-comments": "Ningún ciudadano ha argumentado todavía",
+  "Your argument was removed": "Tu argumento fue eliminado",
   "That comment is not yours!": "¡Ese argumento no es tuyo!",
   "Comment has replies, cannot be removed!": "¡El argumento tiene respuestas, no puede ser borrado!",
   "You're not allowed to vote your own argument": "No puedes votar tu propio argumento",
@@ -271,5 +277,15 @@
   "markdown.playground.title": "A jugar",
   "markdown.playground.text": "¡Pruébalo tú mismo!",
   "markdown.playground.result": "Resultado:",
-  "markdown.comments.formatting-help": "Ayuda de edición"
+  "markdown.comments.formatting-help": "Ayuda de edición",
+
+  "help.title": "Ayuda",
+  "help.faq.title": "Preguntas frecuentes",
+  "help.tos.title": "Términos del Servicio",
+  "help.pp.title": "Política de Privacidad",
+  "help.markdown.title": "Ayuda de edición",
+
+  "This page does not exist": "Esta página no existe",
+  "go back to": "vuelve a",
+  "Go back to DemocracyOS": "vuelve a DemocracyOS"
 }
