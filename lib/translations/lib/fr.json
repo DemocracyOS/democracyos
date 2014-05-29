@@ -278,5 +278,9 @@
   "help.faq.title": "Foire aux questions",
   "help.tos.title": "Conditions d'Utilisation",
   "help.pp.title": "Politique de confidentialité",
-  "help.markdown.title": "Formatage aide"
+  "help.markdown.title": "Formatage aide",
+
+  "This page does not exist": "Cette page n'existe pas",
+  "go back to": "Retour à",
+  "Go back to DemocracyOS": "Retour à DemocracyOS"
 }
