@@ -24,7 +24,8 @@
     "admin",
     "header",
     "logout",
-    "help"
+    "help",
+    "404"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.styl", "boot-responsive.styl" ],
