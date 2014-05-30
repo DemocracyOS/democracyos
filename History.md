@@ -1,4 +1,22 @@
 
+0.7.0 / 2014-05-29 
+==================
+
+ * Add 404 not found page
+ * Add support for FAQ, Terms of Service and Privacy Policy pages
+ * Add 'My argument' section
+ * Add disable up/downvoting own comments
+ * Add sorting comments
+ * Add an 'edited' label next to a comment when it was edited
+ * Add spinner for loading comments
+ * Update proposal-article to auto-scale iframes (i.e.: youtube embedded videos)
+ * Fix timepicker in the law admin
+ * Fix logout bug
+ * Fix sidebar voted laws bug #336
+ * Fix proposal-article image size on mobile
+ * Fix transportation tag image issue
+ * See migrating to 0.7.x
+
 0.6.7 / 2014-05-16 
 ==================
 
