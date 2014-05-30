@@ -9,7 +9,7 @@
     "visionmedia/jade": "1.1.5",
     "visionmedia/debug": "0.7.4",
     "yields/serialize": "0.2.0",
-    "discore/closest": "0.1.2",
+    "component/closest": "0.1.3",
     "component/t": "1.0.0",
     "cristiandouce/to-array": "0.0.1",
     "cristiandouce/query": "0.0.1",

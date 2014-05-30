@@ -6,7 +6,7 @@
     "component/emitter": "1.1.1",
     "component/events": "1.0.5",
     "component/t": "1.0.0",
-    "discore/closest": "0.1.2",
+    "component/closest": "0.1.3",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
     "cristiandouce/merge-util": "*",
