@@ -14,11 +14,11 @@
     .vote-box
       .meta-data(class= !!citizen.id ? '' : 'hide')
         - if(~positives.indexOf(citizen.id))
-          .alert.alert-success #{t('You voted Yea')}.
+          include vote-positive
         - else if (~negatives.indexOf(citizen.id))
-          .alert.alert-danger #{t('You voted Nay')}.
+          include vote-negative
         - else if (~neutrals.indexOf(citizen.id))
-          .alert.alert-info #{t('You abstained from voting')}.
+          include vote-neutral
 
         a.meta-item.change-vote(href="#", class= voted && !closed ? '' : 'hide')
           i.icon-refresh

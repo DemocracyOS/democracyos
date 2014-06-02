@@ -3,6 +3,7 @@
   "description": "proposal's options view",
   "dependencies": {
     "component/domify": "1.2.0",
+    "component/emitter": "1.1.1",
     "component/events": "1.0.5",
     "component/bus": "0.0.2",
     "component/classes": "1.2.0",
@@ -17,9 +18,14 @@
     "component/closest": "0.1.3",
     "gvilarino/autocomplete": "fb4ee"
   },
-  "local": [ "citizen", "request" ],
+  "local": [ "citizen", "request", "render" ],
   "scripts": [ "proposal-options.js" ],
-  "templates": [ "options.jade" ],
+  "templates": [
+    "options.jade",
+    "vote-positive.jade",
+    "vote-negative.jade",
+    "vote-neutral.jade"
+  ],
   "styles": [ "proposal-options.styl" ],
   "images": [ ],
   "main": "proposal-options.js"
