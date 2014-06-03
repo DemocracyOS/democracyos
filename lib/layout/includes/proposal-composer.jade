@@ -1,0 +1,28 @@
+#proposal-composer.modal.hide.fade(role="dialog")
+  form(action="/api/proposal/create", method="post", autocomplete="off")
+    .modal-header
+      button.close(type="button", data-dismiss="modal", aria-hidden="true") ×
+      h3 Create a new proposal
+    .modal-body
+      p
+        input.title-input(name="proposal[title]", type="text", placeholder="Proposal's title.")
+      p
+        input.tag-input(name="proposal[tag]", type="text", data-provide="typeahead", placeholder="#tag")
+      p
+        textarea(name="proposal[essay]", placeholder="Start typing your proposal.")
+
+    .modal-footer
+      a.btn(href="#", data-dismiss="modal") Close
+      button.btn.btn-primary(href="#") Submit
+style.
+  #proposa-composer p {
+    position:relative;
+  }
+  #proposal-composer input.title-input {
+    width: 510px;
+  }
+  #proposal-composer textarea {
+    width: 510px;
+    min-height: 200px;
+    max-height: 400px;
+  }
