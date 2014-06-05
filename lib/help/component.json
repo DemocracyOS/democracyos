@@ -15,6 +15,7 @@
     "help-faq",
     "help-tos",
     "help-pp",
+    "help-glossary",
     "help-markdown"
   ],
   "scripts": [ "help.js" ],
