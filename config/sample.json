@@ -59,5 +59,6 @@
   "spam limit": 5,
   "faq enabled": false,
   "tos enabled": false,
-  "pp enabled": false
+  "pp enabled": false,
+  "glossary enabled": false
 }
