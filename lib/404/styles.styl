@@ -1,17 +1,13 @@
-body.not-found
+#content-404
+  position: absolute
   background-color: #51394a
-  
-  #content
-    background-color: #51394a
+  width: 100%
+  min-height: 100%
 
-  .app-header,
-  .snap-drawers
-    display: none
-
-  #content-404
+  .container-404
     width: 430px
     margin: 0 auto
-    padding-top: 100px
+    padding-top: 160px
     overflow: hidden
 
     img
@@ -34,17 +30,13 @@ body.not-found
       margin-top: 20px
       color: #bdc3c7
 
-@media only screen and (max-width: 700px)
-  body.not-found
-    
-    .app-header,
-    .snap-drawers
+body.not-found-page
+  .app-header
+    .profile
       display: none
 
-    #content
-      background-color: #51394a
-      margin-top: -60px
-
-      #content-404
-        width: 90% !important
-        padding-top: 15% !important
+@media only screen and (max-width: 700px)
+  #content-404 
+    .container-404
+      width: 90% !important
+      padding-top: 15% !important
