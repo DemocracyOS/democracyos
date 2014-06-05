@@ -10,7 +10,9 @@ Check out our [live demo](http://demo.democracyos.org)!
 ## Install
 [Read the instructions](https://github.com/DemocracyOS/app/wiki/Installation)
 
-## Active Contributors
+## Contributors
+
+### Active Contributors
 
 #### Development
 
@@ -26,12 +28,19 @@ Check out our [live demo](http://demo.democracyos.org)!
 
 * [Sebastián Ghelerman](https://twitter.com/bastianhell)
 
-## Past contributors
+### Past contributors
 
 #### Development
 
 * [Oscar Guindzberg](https://github.com/oscarguindzberg)
 * [Pablo Moyano](https://github.com/ultraklon)
+
+### Internationalization
+
+* Catalan: [Emanuel Calvo](https://github.com/3manuek)
+* Italian: [Felipe Muñoz](https://twitter.com/felipemuni)
+* Finnish: [Anni Rautio](https://twitter.com/annirautio) and [Christian Martínez](www.hyvatilmat.com)
+* French: [Magui García Solla](https://twitter.com/magui_1984)
 
 ## Useful links
 
@@ -47,7 +56,7 @@ Check out our [live demo](http://demo.democracyos.org)!
 
 ## Disclaimer
 
-We do not yet support Internet Explorer verisions prior to 10. Sorry!
+We do not (yet?) support Internet Explorer verisions prior to 10. Sorry!
 
 ## License 
 
