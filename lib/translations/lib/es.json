@@ -2,6 +2,7 @@
   "common.or": "o",
   "common.ok": "Aceptar",
   "common.cancel": "Cancelar",
+  "common.back": "Volver",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS Demo",
@@ -283,6 +284,7 @@
   "help.faq.title": "Preguntas frecuentes",
   "help.tos.title": "Términos del Servicio",
   "help.pp.title": "Política de Privacidad",
+  "help.glossary.title": "Glosario",
   "help.markdown.title": "Ayuda de edición",
 
   "This page does not exist": "Esta página no existe",
