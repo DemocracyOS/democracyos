@@ -12,11 +12,9 @@
       data-status='closed'
       )= closed + t('sidebar.closed')
 
-  #sort-filter.btn-group.btn-group-justified
-    button.btn.btn-default.current-department(type='button',
-      data-toggle='dropdown')= t(filter.sorts[filter.get('sort')].label)
-    button.btn.btn-default.dropdown-toggle(type='button',
-      data-toggle='dropdown')
+  #sort-filter.btn-group
+    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')
+      span.pull-left= t(filter.sorts[filter.get('sort')].label)
       span.caret
     ul.dropdown-menu
       - each sort, key in filter.sorts
