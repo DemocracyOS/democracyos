@@ -222,7 +222,7 @@
   "admin-laws-form.button.make-public": "Publicar",
 
   "admin-laws-form.clause.heading": "clàusula",
-  "admin-laws-form.clause.label.clauseId": "clàusula Id",
+  "admin-laws-form.clause.label.clauseName": "clàusula nom",
   "admin-laws-form.clause.label.order": "Ordre",
   "admin-laws-form.clause.label.text": "Text",
   "admin-laws-form.clause.button.delete": "Esborrar",

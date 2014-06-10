@@ -222,7 +222,7 @@
   "admin-laws-form.button.make-public": "Pubblicare",
 
   "admin-laws-form.clause.heading": "Articolo",
-  "admin-laws-form.clause.label.clauseId": "Numero di articolo",
+  "admin-laws-form.clause.label.clauseName": "Nome di articolo",
   "admin-laws-form.clause.label.order": "Posizione/Ordine",
   "admin-laws-form.clause.label.text": "Contenuto",
   "admin-laws-form.clause.button.delete": "Eliminare",
