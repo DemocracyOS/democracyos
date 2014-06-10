@@ -171,6 +171,7 @@
   "show": "näytä",
   "Do you want to remove this argument?": "Haluatko poistaa argumentin?",
   "That argument is not yours!": "Tuo argumentti ei ole sinun!",
+  "There are no laws to display": "Ei ole lakeja näytettäviä",
 
   "proposal-article.article.alert.text": "Tämä on DemocracyOS’n julkinen demoversio.",
   "proposal-article.article.alert.learn-more": "Lue lisää",
