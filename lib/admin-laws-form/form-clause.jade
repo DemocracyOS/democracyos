@@ -1,11 +1,11 @@
 - clause = clause || {}
 
 .law-clause(data-clause=clause.id)
-  h4= t('admin-laws-form.clause.heading') + ' ' + clause.clauseId
+  h4= t('admin-laws-form.clause.heading') + ' ' + clause.clauseName
   .clause-row
     .clause-group.clause-id
-      label=t('admin-laws-form.clause.label.clauseId')
-      input.form-control(type='text', name='clauses[#{clause.id}][clauseId]', value=clause.clauseId)
+      label=t('admin-laws-form.clause.label.clauseName')
+      input.form-control(type='text', name='clauses[#{clause.id}][clauseName]', value=clause.clauseName)
     .clause-group.clause-order
       label=t('admin-laws-form.clause.label.order')
       input.form-control(type='text', name='clauses[#{clause.id}][order]', value=clause.order)

@@ -223,7 +223,7 @@
   "admin-laws-form.button.make-public": "Publish",
 
   "admin-laws-form.clause.heading": "Clause",
-  "admin-laws-form.clause.label.clauseId": "Clause Id",
+  "admin-laws-form.clause.label.clauseName": "Clause name",
   "admin-laws-form.clause.label.order": "Order",
   "admin-laws-form.clause.label.text": "Text",
   "admin-laws-form.clause.button.delete": "Delete",

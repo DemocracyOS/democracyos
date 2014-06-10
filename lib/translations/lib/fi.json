@@ -215,7 +215,7 @@
   "admin-laws-form.button.make-public": "Julkaise",
 
   "admin-laws-form.clause.heading": "Ehto",
-  "admin-laws-form.clause.label.clauseId": "Ehdon Id",
+  "admin-laws-form.clause.label.clauseName": "Ehdon Etunimi",
   "admin-laws-form.clause.label.order": "Sääntö",
   "admin-laws-form.clause.label.text": "Teksti",
   "admin-laws-form.clause.button.delete": "Poista",
