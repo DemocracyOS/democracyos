@@ -40,9 +40,10 @@
       p.summary!=proposal.summary
 
       .clauses
-        - var lines = clauses ? clauses : (proposal.essay || proposal.content || '').split('\n')
+        - var lines = clausesContent ? clausesContent : (proposal.essay || proposal.content || '').split('\n')
         - if (lines.length)
-          p.clause!=truncate(lines[0], 230, '... ')
+          - var classes = clauses[0].centered ? 'text-center' : ''
+          p.clause(class=classes)!=truncate(lines[0], 230, '... ')
             - if (lines[0].length > 230 || lines.length > 1)
               a.read-more(href="#")= t('read more')
 

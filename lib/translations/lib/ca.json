@@ -230,6 +230,7 @@
   "admin-laws-form.clause.confirmation.body": "Aquesta acció esborrarà les dades permanentment. Voleu continuar?",
   "admin-laws-form.clause.confirmation.cancel": "Cancel",
   "admin-laws-form.clause.confirmation.ok": "Delete",
+  "admin-laws-form.clause.text-centered": "Text centrat",
 
   "admin-laws-form.message.onsuccess": "Law successfuly saved",
   "admin-laws-form.message.validation.lawId-required": "Official Id required",

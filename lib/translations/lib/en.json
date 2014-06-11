@@ -231,6 +231,7 @@
   "admin-laws-form.clause.confirmation.body": "This action will erase data permanently. Would you like to procced?",
   "admin-laws-form.clause.confirmation.cancel": "Cancel",
   "admin-laws-form.clause.confirmation.ok": "Delete",
+  "admin-laws-form.clause.text-centered": "Text centered",
 
   "admin-laws-form.message.onsuccess": "Law successfuly saved",
   "admin-laws-form.message.validation.lawId-required": "Official Id required",
