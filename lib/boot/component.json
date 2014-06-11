@@ -12,6 +12,7 @@
   "local": [
     "config",
     "body-classes",
+    "content-lock",
     "homepage",
     "proposal",
     "law",
