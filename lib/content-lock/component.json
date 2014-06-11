@@ -1,0 +1,11 @@
+{
+  "name": "content-lock",
+  "description": "Locks #content from user interaction",
+  "dependencies": {
+    "component/bus": "0.0.2",
+    "cristiandouce/query": "0.0.1",
+    "cristiandouce/loading-lock": "0.0.2"
+  },
+  "scripts": [ "locker.js" ],
+  "main": "locker.js"
+}
