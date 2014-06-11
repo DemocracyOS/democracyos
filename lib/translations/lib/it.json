@@ -230,6 +230,7 @@
   "admin-laws-form.clause.confirmation.body": "Questa azione eliminerà le informazioni in modo permanente. Volete andare avanti?",
   "admin-laws-form.clause.confirmation.cancel": "Cancellare",
   "admin-laws-form.clause.confirmation.ok": "Eliminare",
+  "admin-laws-form.clause.text-centered": "Testo centrato",
 
   "admin-laws-form.message.onsuccess": "Legge salvato con successo",
   "admin-laws-form.message.validation.lawId-required": "Identificazione ufficiale richiesta",
