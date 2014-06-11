@@ -78,6 +78,10 @@
   padding: 10px 0px;
 }
 
+#law-wrapper .law-admin .law-clause .clause-row .checkbox {
+  margin: 0;
+}
+
 #law-wrapper .law-admin .law-clause .clause-row .clause-group {
   display: block;
   position: relative;
