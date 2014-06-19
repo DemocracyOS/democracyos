@@ -47,8 +47,8 @@
     }
   },
   "locale" : "en",
-  "logo" : "http://democraciaenred.org/boot/images/logo.png",
-  "favicon" : "http://democraciaenred.org/favicon.ico",
+  "logo" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
+  "favicon" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",
   "learn more url": "http://www.democracyos.org",
