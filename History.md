@@ -1,4 +1,35 @@
 
+0.7.2 / 2014-06-23 
+==================
+
+ * Add 'for' attribute on 'hide-voted' label
+ * Add app stats for admin users #377
+ * Add `#content` lock until page is rendered #183
+ * Add setting `emailValidated` to true when signup in 'development' environment. Closes #374
+ * Add optional text-centered law clauses from the admin #197
+ * Add disclaimer when sidebar has no law to select #355
+ * Add strip package. Closes #334
+ * Add README.md stub
+ * Add glossary #371
+ * Add layout as a separate module #86
+ * Update default logo and favicon URL in config
+ * Update `clauseId` to be non-required `clauseName` #304
+ * Update `sidebar` to hide 'closing-soon' filter when seeing only closed laws #368
+ * Update  with link for Christian Martínez
+ * Update voting to prevent reloading the page. Closes #367
+ * Update 'discore/closest' to 'component/closest'
+ * Fix counter label when there are +99 open/closed laws
+ * Fix anchor colors to be consistent all the way across the app. #375
+ * Fix typo on snapper destroy
+ * Fix participants to be ordered by voted date #339
+ * Fix `read more` links on comments #361
+ * Fix law articles bold color links #354
+ * Fix zoom on mobile (make it un-zoomable) #364
+ * Fix dropdown on all browsers
+ * Fix header race condition #325
+ * Fix facebook and twitter cards, escaping HTML characters
+ * Fix open and closed count as they were counting drafts if you were signed in as admin. Closes #342
+
 0.7.1 / 2014-05-30 
 ==================
 
