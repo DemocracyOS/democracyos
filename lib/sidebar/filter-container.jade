@@ -28,8 +28,8 @@
 
   -if (citizen.logged())
     #hide-voted-filter.hide-voted-box
-      input(type='checkbox',
+      input#hide-voted(type='checkbox',
         name='hide-voted',
         checked= filter.get('hide-voted')
         )
-      label= t('sidebar.hide-voted')
+      label(for='hide-voted')= t('sidebar.hide-voted')
