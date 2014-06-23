@@ -51,7 +51,9 @@ Check out our [live demo](http://demo.democracyos.org)!
 
 ## Current deployments
 * [DemocracyOS - PDR](http://dos.partidodelared.org): The Net Party's official deployment of DemocracyOS.
-* [Datos Abiertos México](http://datos.gob.mx): Mexican government's official deployment Open Data Policy.
+* [Datos Abiertos México](http://politica.datos.gob.mx): Mexican government's official deployment Open Data Policy.
+* [Nuestra ley Telecom](http://nuestraleytelecom.mx/): Mexican initiative for a crowdsourced telecomunications bill.
+* [VaiMudarNaCopa](http://vaimudar.org/democracia/): Brazilian NGO for discussing social and economic impact of the FIFA World Cup.
 * [Vot-it](http://vot-it.org/): Tunisian official constitution debate and voting.
 
 ## Browser support
