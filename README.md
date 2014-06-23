@@ -54,9 +54,9 @@ Check out our [live demo](http://demo.democracyos.org)!
 * [Datos Abiertos México](http://datos.gob.mx): Mexican government's official deployment Open Data Policy.
 * [Vot-it](http://vot-it.org/): Tunisian official constitution debate and voting.
 
-## Disclaimer
+## Browser support
 
-We do not (yet?) support Internet Explorer verisions prior to 10. Sorry!
+We support real browsers and IE10+
 
 ## License 
 
