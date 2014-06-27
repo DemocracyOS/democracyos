@@ -27,6 +27,5 @@
 
 * Catalan: [Emanuel Calvo](https://github.com/3manuek)
 * Italian: [Felipe Muñoz](https://twitter.com/felipemuni)
-* Finnish: [Anni Rautio](https://twitter.com/annirautio) and
-[Christian Martínez](www.hyvatilmat.com)
+* Finnish: [Anni Rautio](https://twitter.com/annirautio) and [Christian Martínez](www.hyvatilmat.com)
 * French: [Magui García Solla](https://twitter.com/magui_1984)
