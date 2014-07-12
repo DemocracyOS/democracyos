@@ -79,11 +79,11 @@
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Rétablir mot de passe",
   "Hi {name}": "Salut {name}",
-  "Please click <a href=\"{url}\">here</a> to reset your password": "Cliquez s' il vous plaît sur <a href=\"{url}\">aquí</a> pour rétablir ton mot de passe",
+  "Please click <a href=\"{url}\">here</a> to reset your password": "Cliquez s' il vous plaît sur <a href=\"{url}\">ici</a> pour rétablir ton mot de passe",
   "The DemocracyOS team": "L' équipe de DemocracyOS",
   "PS: if you haven't requested to reset your password, please ignore this email": "P.S.: Si vous n' avez pas demandé le rétablissement de votre mot de passe, ignorez s' il vous plaît ce courriel",
   "DemocracyOS - Welcome!": "DemocracyOS - Bienvenue!",
-  "Please click <a href=\"{url}\">here</a> to validate your email address": "Cliquez s' il vous plaît sur <a href=\"{url}\">aquí</a> pour valider votre adresse de courriel",
+  "Please click <a href=\"{url}\">here</a> to validate your email address": "Cliquez s' il vous plaît sur <a href=\"{url}\">ici</a> pour valider votre adresse de courriel",
   "PS: if you haven't signed up, please ignore this email": "P.S.: Si vous n' avez pas creé un compte sur DemocracyOS, ignorez s' il vous plaît ce courriel",
   "example@email.com": "exemple@email.com",
   "No citizen for email": "Cette adresse de courriel n' est pas registrée",

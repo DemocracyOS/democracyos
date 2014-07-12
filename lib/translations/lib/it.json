@@ -79,8 +79,8 @@
   "Send": "Inviare",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Reimpostare la password",
-  "Hi {name}": "Ciao {nome}",
-  "Please click <a href=\"{url}\">here</a> to reset your password": "Per favore clicca <a href=\"{url}\">aquí</a> per reimpostare la password",
+  "Hi {name}": "Ciao {name}",
+  "Please click <a href=\"{url}\">here</a> to reset your password": "Per favore clicca <a href=\"{url}\">qui</a> per reimpostare la password",
   "The DemocracyOS team": "La squadra di DemocracyOS",
   "PS: if you haven't requested to reset your password, please ignore this email": "P.S.: se non hai richiesto di reimpostare la password, ignorare questa email",
   "DemocracyOS - Welcome!": "DemocracyOS - Benvenuto!",
