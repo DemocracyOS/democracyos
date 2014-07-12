@@ -1,4 +1,9 @@
 
+0.7.3 / 2014-07-12 
+==================
+
+ * Fix not showing page content once page changes having no laws. Closes #385
+
 0.7.2 / 2014-06-23 
 ==================
 
