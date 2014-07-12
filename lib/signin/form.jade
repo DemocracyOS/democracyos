@@ -1,6 +1,6 @@
 .signin-container.inner-container.small-container
   #signin-form
-    .title-page 
+    .title-page
       .circle
         i.icon-signin
       h1 #{t('Login to') + " " + t('DemocracyOS')}
@@ -13,7 +13,7 @@
       .form-group
         label= t('Password')
         .forgot: a(href='/forgot', tabindex=4) #{t('Forgot Password?')}
-        
+
         input.form-control(type='password', name='password', tabindex=2, placeholder=t('Password'))
       .form-group: .signup
         span=t('Don\'t have an account?')
