@@ -16,7 +16,7 @@
     "component/t": "1.0.0",
     "cristiandouce/query": "0.0.1"
   },
-  "local": [ "laws", "laws-filter", "render" ],
+  "local": [ "laws", "laws-filter", "render", "stateful" ],
   "scripts": [ "main.js", "sidebar.js", "filter.js", "list.js" ],
   "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade", "check.jade" ],
   "styles": [ "sidebar.css" ],

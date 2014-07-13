@@ -6,6 +6,6 @@
     "component/emitter": "1.1.3",
     "component/inherit": "0.0.3"
   },
-  "scripts": ["index.js", "dev.js"],
-  "main": "index.js"
+  "scripts": ["stateful.js"],
+  "main": "stateful.js"
 }
