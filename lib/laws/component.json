@@ -8,7 +8,8 @@
   "local": [
     "citizen",
     "request",
-    "render"
+    "render",
+    "stateful"
   ],
   "scripts": [
     "laws.js",

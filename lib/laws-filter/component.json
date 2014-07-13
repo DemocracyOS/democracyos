@@ -12,7 +12,8 @@
   "local": [
     "citizen",
     "laws",
-    "store"
+    "store",
+    "stateful"
   ],
   "scripts": [ "laws-filter.js", "sorts.js" ],
   "main": "laws-filter.js"
