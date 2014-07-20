@@ -19,3 +19,4 @@ public
 
 *.DS_Store
 config*.json
+.vagrant
