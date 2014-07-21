@@ -1,0 +1,23 @@
+#header-container
+  a(href='#', id='toggleButton')
+    span.bar-icon
+    span.bar-icon
+    span.bar-icon
+
+  h1#logo
+    a(href='/')
+      img(src=config['logo']).logo
+      span.logo-link= t('header.logo')
+
+  .user-nav.btn-group
+    .user
+    a(href='/signin').login.pull-right.anonymous-citizen
+      i.icon-signin
+      span= t('header.signin')
+    a(href='/signup').login.pull-right.anonymous-citizen
+      i.icon-user
+      span= t('header.signup')
+    a.login.pull-left(href=config['organization url'], target='_blank')
+      span= config['organization name']
+    //- a.login.pull-left(href='#', id='feedback')
+    //-   span= t('header.feedback')

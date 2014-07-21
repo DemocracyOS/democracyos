@@ -2,14 +2,23 @@
   "name": "header",
   "description": "header component",
   "dependencies": {
+    "cristiandouce/query": "0.0.1",
     "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5",
-    "cristiandouce/query": "0.0.1"
+    "visionmedia/jade": "1.1.5"
     },
-  "local": [ "render", "citizen", "feedback", "snapper" ],
-  "scripts": [ "main.js", "header.js" ],
-  "styles": [ "header.styl" ],
-  "templates": [ "header-container.jade" ],
-  "images": [ ],
-  "main": "main.js"
+  "local": [
+    "citizen",
+    "feedback",
+    "render",
+    "snapper",
+    "user-badge",
+    "view"
+  ],
+  "scripts": [
+    "index.js",
+    "view.js"
+  ],
+  "styles": [ "styles.styl" ],
+  "templates": [ "template.jade" ],
+  "main": "index.js"
 }
