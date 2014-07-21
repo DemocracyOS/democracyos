@@ -1,0 +1,10 @@
+.user-badge.pull-right
+  a.btn.profile(href='#', data-toggle='dropdown').dropdown-toggle
+    img(src=citizen.gravatar)
+    span.name=citizen.firstName
+    span.caret
+  ul.dropdown-menu
+    li
+      a(href='/settings')= t('header.settings')
+    li
+      a(href='/logout')= t('header.logout')
