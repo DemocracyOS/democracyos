@@ -1,2 +1,2 @@
 - var classes = clause.centered ? 'text-center' : ''
-p.clause(class=classes)!= (clause.clauseName ? clause.clauseName + ': ' : '') + clause.text
+p.clause.commentable-section(class=classes, data-section-id=clause.id)!= (clause.clauseName ? clause.clauseName + ': ' : '') + clause.text

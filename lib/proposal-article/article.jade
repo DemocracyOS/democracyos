@@ -8,7 +8,7 @@
       a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
   
 
-  article.proposal
+  article.proposal.commentable-container
     //- .meta-information
     //-   a.meta-item.meta-location(href="#") Buenos Aires, Argentina
     //-   small.meta-item.meta-timeago 10 days left
@@ -43,7 +43,7 @@
         - var lines = clausesContent ? clausesContent : (proposal.essay || proposal.content || '').split('\n')
         - if (lines.length)
           - var classes = clauses[0].centered ? 'text-center' : ''
-          p.clause(class=classes)!=truncate(lines[0], 230, '... ')
+          p.clause.commentable-section(class=classes, data-section-id=clauses[0].id)!=truncate(lines[0], 230, '... ')
             - if (lines[0].length > 230 || lines.length > 1)
               a.read-more(href="#")= t('read more')
 

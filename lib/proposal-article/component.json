@@ -12,12 +12,13 @@
     "yields/empty": "0.0.1",
     "cristiandouce/to-array": "0.0.1",
     "cristiandouce/query": "0.0.1",
-    "component/t": "1.0.0"
+    "component/t": "1.0.0",
+    "DemocracyOS/side-comments": "*"
   },
-  "local": [ "config", "render", "participants-view" ],
+  "local": [ "config", "render", "participants-view", "citizen" ],
   "scripts": [ "proposal-article.js" ],
   "templates": [ "article.jade", "clause.jade" ],
-  "styles": [ "proposal-article.styl" ],
+  "styles": [ "proposal-article.styl", "side-comments.css", "side-comments-theme.css" ],
   "images": [ ],
   "main": "proposal-article.js"
 }
