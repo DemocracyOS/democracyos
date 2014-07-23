@@ -14,7 +14,7 @@
     "cristiandouce/query": "0.0.1",
     "component/t": "1.0.0"
   },
-  "local": [ "config", "render", "participants-view", "citizen", "side-comments", "request" ],
+  "local": [ "config", "render", "participants-view", "citizen", "proposal-clauses", "request" ],
   "scripts": [ "proposal-article.js" ],
   "templates": [ "article.jade", "clause.jade" ],
   "styles": [ "proposal-article.styl" ],
