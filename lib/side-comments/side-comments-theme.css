@@ -76,6 +76,7 @@
   border-right: 0;
   padding: 15px 0;
   margin-top: -1px;
+  padding-left: 14px;
 }
 .side-comment .comment,
 .side-comment .comment-box {
@@ -95,10 +96,11 @@
 .side-comment .author-avatar img {
   width: 100%;
   height: 100%;
+  border-radius: 100px;
 }
 .side-comment .right-of-avatar {
   float: left;
-  width: 158px;
+  width: 140px;
 }
 .side-comment .author-name {
   font-size: 15px;
@@ -127,7 +129,7 @@
 }
 .side-comment .action-link.cancel:hover,
 .side-comment .action-link.delete:hover {
-  color: #57AD68;
+  color: red;
 }
 .side-comment .voting {
   font-size: 20px;
@@ -223,7 +225,7 @@
     width: 200px;
   }
   .side-comment .right-of-avatar {
-    width: 158px;
+    width: 140px;
   }
   .side-comment .marker {
     display: block;
