@@ -97,10 +97,6 @@
 .side-comment .actions {
   margin: 0;
 }
-.side-comment .actions,
-.side-comment .delete {
-  margin-left: 42px;
-}
 .side-comment .add-comment.active {
   display: block;
 }

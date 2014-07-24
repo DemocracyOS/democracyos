@@ -59,7 +59,7 @@
 }
 .side-comment .comments-wrapper {
   top: -22px;
-  width: 200px;
+  width: 330px;
   padding-bottom: 120px;
 }
 .side-comment.active .comments-wrapper {
@@ -100,7 +100,7 @@
 }
 .side-comment .right-of-avatar {
   float: left;
-  width: 140px;
+  width: auto;
 }
 .side-comment .author-name {
   font-size: 15px;
