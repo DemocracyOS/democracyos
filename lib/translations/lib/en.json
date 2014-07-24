@@ -291,5 +291,13 @@
 
   "This page does not exist": "This page does not exist",
   "go back to": "go back to",
-  "Go back to DemocracyOS": "Go back to DemocracyOS"
+  "Go back to DemocracyOS": "Go back to DemocracyOS",
+
+  "side-comments.post": "Post",
+  "side-comments.cancel": "Cancel",
+  "side-comments.leave-a-comment": "Leave a comment",
+  "side-comments.delete": "Delete",
+  "side-comments.or": "or",
+  "side-comments.login": "Login",
+  "side-comments.signup": "Signup"
 }
