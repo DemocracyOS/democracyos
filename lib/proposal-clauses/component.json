@@ -2,6 +2,7 @@
   "name": "proposal-clauses",
   "description": "proposal's clauses view",
   "dependencies": {
+    "component/t": "1.0.0",
     "visionmedia/jade": "1.1.5"
   },
   "local": [
