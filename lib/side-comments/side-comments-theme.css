@@ -158,6 +158,7 @@
 .side-comment .action-link.downvote:hover {
   color: red;
 }
+.side-comment .restricted,
 .side-comment .add-comment {
   color: #B3B3B1;
   font-size: 14px;
@@ -167,6 +168,10 @@
   letter-spacing: 0.05em;
   text-decoration: none;
   margin-top: 10px;
+}
+.side-comment .restricted {
+  display: block;
+  margin-top: 20px;
 }
 .side-comment .add-comment:before {
   content: "+";
