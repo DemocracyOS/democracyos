@@ -46,6 +46,7 @@
 }
 .side-comment .marker span {
   display: none;
+  font-family: 'Open Sans', sans-serif;
 }
 .side-comment.active .marker,
 .side-comment.has-comments .marker,
