@@ -289,5 +289,14 @@
 
   "This page does not exist": "Questa pagina non esiste",
   "go back to": "Tornare a",
-  "Go back to DemocracyOS": "Tornare a DemocracyOS"
+  "Go back to DemocracyOS": "Tornare a DemocracyOS",
+
+  "side-comments.post": "Messaggio",
+  "side-comments.cancel": "Cancellare",
+  "side-comments.leave-a-comment": "Lascia un commento",
+  "side-comments.delete": "Cancellare",
+  "side-comments.or": "o",
+  "side-comments.login": "Entra",
+  "side-comments.signup": "Inscriviti",
+  "side-comments.delete.confirmation": "Sei sicuro di voler cancellare questo commento?"
 }

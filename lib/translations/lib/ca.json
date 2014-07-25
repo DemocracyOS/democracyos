@@ -286,5 +286,14 @@
 
   "This page does not exist": "Aquesta pàgina no existeix",
   "go back to": "Torna a",
-  "Go back to DemocracyOS": "Torna a DemocracyOS"
+  "Go back to DemocracyOS": "Torna a DemocracyOS",
+
+  "side-comments.post": "Lloc",
+  "side-comments.cancel": "Cancel",
+  "side-comments.leave-a-comment": "Deixa un comentari",
+  "side-comments.delete": "Esborrar",
+  "side-comments.or": "o",
+  "side-comments.login": "Login",
+  "side-comments.signup": "Registra't",
+  "side-comments.delete.confirmation": "Està segur que desitja eliminar aquest comentari?"
 }

@@ -299,5 +299,6 @@
   "side-comments.delete": "Borrar",
   "side-comments.or": "o",
   "side-comments.login": "Login",
-  "side-comments.signup": "Signup"
+  "side-comments.signup": "Signup",
+  "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?"
 }

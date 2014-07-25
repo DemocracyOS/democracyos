@@ -279,5 +279,14 @@
 
   "This page does not exist": "Sivua ei ole olemassa",
   "go back to": "Mene takaisin",
-  "Go back to DemocracyOS": "Mene takaisin DemocracyOS"
+  "Go back to DemocracyOS": "Mene takaisin DemocracyOS",
+
+  "side-comments.post": "virka",
+  "side-comments.cancel": "peruuttaa",
+  "side-comments.leave-a-comment": "Jätä kommentti",
+  "side-comments.delete": "poistaa",
+  "side-comments.or": "tai",
+  "side-comments.login": "käyttäjätunnus",
+  "side-comments.signup": "Rekisteröidy",
+  "side-comments.delete.confirmation": "Oletko varma, että haluat poistaa tämän kommentin?"
 }
