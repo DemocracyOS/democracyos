@@ -71,7 +71,7 @@
 }
 .side-comment ul.comments {
   max-height: 400px;
-  overflow: scroll;
+  overflow: auto;
 }
 .side-comment ul.comments li,
 .side-comment .comment-form {
