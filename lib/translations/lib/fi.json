@@ -288,5 +288,6 @@
   "side-comments.or": "tai",
   "side-comments.login": "käyttäjätunnus",
   "side-comments.signup": "Rekisteröidy",
-  "side-comments.delete.confirmation": "Oletko varma, että haluat poistaa tämän kommentin?"
+  "side-comments.delete.confirmation": "Oletko varma, että haluat poistaa tämän kommentin?",
+  "side-comments.confirmatino.title": "Poista kommentti"
 }

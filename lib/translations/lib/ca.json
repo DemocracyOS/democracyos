@@ -295,5 +295,6 @@
   "side-comments.or": "o",
   "side-comments.login": "Login",
   "side-comments.signup": "Registra't",
-  "side-comments.delete.confirmation": "Està segur que desitja eliminar aquest comentari?"
+  "side-comments.delete.confirmation": "Està segur que desitja eliminar aquest comentari?",
+  "side-comments.confirmatino.title": "Eliminar comentari"
 }

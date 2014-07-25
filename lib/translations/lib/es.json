@@ -300,5 +300,6 @@
   "side-comments.or": "o",
   "side-comments.login": "Login",
   "side-comments.signup": "Signup",
-  "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?"
+  "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?",
+  "side-comments.confirmatino.title": "Delete comment"
 }
