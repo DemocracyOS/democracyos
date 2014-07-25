@@ -113,6 +113,10 @@
 .side-comment a.author-name:hover {
   color: #444;
 }
+.side-comment .author-name small.ago {
+  font-size: 12px;
+  font-weight: normal;
+}
 .side-comment .action-link {
   color: #B3B3B1;
   font-size: 13px;
