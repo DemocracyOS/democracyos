@@ -1,0 +1,10 @@
+{
+  "name": "side-comments",
+  "description": "wrapper for aroc/side-comments component",
+  "dependencies": {
+    "DemocracyOS/side-comments": "*"
+  },
+  "styles": [ "side-comments.css", "side-comments-theme.css" ],
+  "scripts": [ "main.js" ],
+  "main": "main.js"
+}
