@@ -69,8 +69,13 @@
 .side-comment.has-comments .comments-wrapper {
   top: -22px;
 }
+.side-comment ul.comments {
+  max-height: 400px;
+  overflow: scroll;
+}
 .side-comment ul.comments li,
 .side-comment .comment-form {
+  background: white;
   border: 1px solid #F2F2F0;
   border-left: 0;
   border-right: 0;
