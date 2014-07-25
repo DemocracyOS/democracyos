@@ -295,5 +295,5 @@
   "side-comments.login": "Connexion",
   "side-comments.signup": "Inscription",
   "side-comments.delete.confirmation": "Etes-vous sûr de vouloir supprimer ce commentaire?",
-  "side-comments.confirmatino.title": "Effacer un commentaire"
+  "side-comments.confirmation.title": "Effacer un commentaire"
 }
