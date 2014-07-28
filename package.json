@@ -68,7 +68,8 @@
     "type-component": "0.0.1",
     "merge-util": "0.1.0",
     "node-path": "0.0.3",
-    "strip": "0.0.7"
+    "strip": "0.0.7",
+    "notifier-client": "0.0.3"
   },
   "devDependencies": {},
   "main": "pdr",
