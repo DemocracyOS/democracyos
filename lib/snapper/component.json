@@ -3,7 +3,7 @@
   "description": "DemocracyOS sidebar snapper",
   "dependencies": {
     "component/bus": "0.0.2",
-    "component/dom": "0.0.1",
+    "component/dom": "1.0.5",
     "jakiestfu/Snap.js": "85380"
   },
   "scripts": [ "snapper.js" ],

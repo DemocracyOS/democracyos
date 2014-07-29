@@ -75,13 +75,11 @@
 }
 .side-comment ul.comments li,
 .side-comment .comment-form {
-  background: white;
   border: 1px solid #F2F2F0;
   border-left: 0;
   border-right: 0;
-  padding: 15px 0;
+  padding: 15px 14px;
   margin-top: -1px;
-  padding-left: 14px;
 }
 .side-comment .comment,
 .side-comment .comment-box {
@@ -105,7 +103,7 @@
 }
 .side-comment .right-of-avatar {
   float: left;
-  width: auto;
+  width: 260px;
 }
 .side-comment .author-name {
   font-size: 15px;
@@ -178,10 +176,6 @@
   text-decoration: none;
   margin-top: 10px;
 }
-.side-comment .restricted {
-  display: block;
-  margin-top: 20px;
-}
 .side-comment .add-comment:before {
   content: "+";
   border: 2px solid #DEDEDC;
@@ -229,6 +223,17 @@
   color: #B3B3B1;
   padding: 0 5px;
 }
+.side-comment .restricted,
+.side-comment .add-comment {
+  color: #B3B3B1;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.side-comment .restricted {
+  display: block;
+  margin-top: 20px;
+}
 @media (max-width: 768px) {
   .side-comments-open {
     -webkit-transform: translate(-220px, 0);
@@ -236,7 +241,7 @@
     transform: translate(-220px, 0);
   }
   .side-comment .comments-wrapper {
-    width: 200px;
+    width: 210px;
   }
   .side-comment .right-of-avatar {
     width: 140px;

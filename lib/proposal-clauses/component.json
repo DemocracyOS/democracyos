@@ -8,7 +8,6 @@
   "local": [
     "config",
     "citizen",
-    "is-mobile",
     "side-comments",
     "request",
     "stateful-view"
