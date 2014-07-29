@@ -1,8 +1,0 @@
-{
-  "name": "is-mobile",
-  "description": "Checks if the client is mobile",
-  "scripts": [
-    "is-mobile.js"
-  ],
-  "main": "is-mobile.js"
-}
