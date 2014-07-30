@@ -1,0 +1,18 @@
+{
+  "name": "form-view",
+  "description": "Base form view",
+  "dependencies": {
+    "component/dom": "1.0.5",
+    "component/inherit": "0.0.3",
+    "component/spin": "0.0.2",
+    "component/tip": "2.1.1",
+    "visionmedia/debug": "1.0.4"
+  },
+  "local": [
+    "autovalidate",
+    "validate",
+    "view"
+  ],
+  "scripts": [ "form-view.js" ],
+  "main": "form-view.js"
+}
