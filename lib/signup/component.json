@@ -13,7 +13,14 @@
     "component/t": "1.0.0",
     "cristiandouce/query": "0.0.1"
   },
-  "local": [ "regexps", "citizen", "request", "title", "render" ],
+  "local": [
+    "regexps",
+    "citizen",
+    "request",
+    "title",
+    "render",
+    "form-view"
+  ],
   "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js", "resend-validation-email-form-view.js" ],
   "styles": [ "signup.css" ],
   "templates": [ "signup-form.jade" , "email-validation-complete.jade", "resend-validation-email-form.jade"],
