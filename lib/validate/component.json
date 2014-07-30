@@ -1,0 +1,13 @@
+{
+  "name": "validate",
+  "description": "Validate fields and display messages",
+  "dependencies": {
+    "component/dom": "1.0.5",
+    "visionmedia/debug": "1.0.4"
+  },
+  "local": [
+    "validators"
+  ],
+  "scripts": [ "validate.js" ],
+  "main": "validate.js"
+}
