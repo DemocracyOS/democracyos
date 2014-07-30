@@ -1,5 +1,5 @@
 # DemocracyOS
-DemocracyOS is an online space for deliberation and voting on political proposals. It is an operating system of a more open and participatory government.The software aims to stimulate better arguments and come to better rulings, as peers.
+DemocracyOS is an online space for deliberation and voting on political proposals. It is a platform for a more open and participatory government.The software aims to stimulate better arguments and come to better rulings, as peers.
 
 
 
