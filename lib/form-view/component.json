@@ -13,6 +13,7 @@
     "validate",
     "view"
   ],
+  "styles": [ "styles.styl" ],
   "scripts": [ "form-view.js" ],
   "main": "form-view.js"
 }
