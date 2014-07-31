@@ -43,6 +43,22 @@
   "Your password was successfuly updated": "Tu contraseña fue actualizada exitosamente",
   "Current password is invalid": "La contraseña actual no es correcta",
 
+  "validators.required": "Requerido",
+  "validators.invalid.email": "El e-mail no es válido",
+  "validators.invalid.firstname": "El nombre no es válido",
+  "validators.invalid.lastname": "El apellido no es válido",
+  "validators.invalid.url": "URL no válida",
+  "validators.invalid.number": "Número no válido",
+  "invalid.password": "Contraseña no válida",
+  "validators.min-length.singular": "Debe tener al menos 1 caracter",
+  "validators.min-length.plural": "Debe tener al menos {n} caracteres",
+  "validators.input.not-exists": "No existe el elemento {name}",
+  "validators.password.not.match": "Salasanat eivät täsmää",
+  "validators.not.match": "No coinciden",
+  "validators.password.not.match": "Las contraseñas no coinciden",
+  "validators.invalid": "No válido",
+
+
   "sidebar.open": "Abiertos",
   "sidebar.closed": "Cerrados",
   "sidebar.hide-voted": "Ocultar votados por mí",
