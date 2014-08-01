@@ -42,6 +42,7 @@
   "Confirm new password": "Confirm new password",
   "Your password was successfuly updated": "Your password was successfuly updated",
   "Current password is invalid": "Current password is invalid",
+  "Please wait": "Si us plau espera",
 
   "validators.required": "cal",
   "validators.invalid.email": "Adreça de correu electrònic no és vàlid",

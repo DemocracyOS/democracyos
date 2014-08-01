@@ -41,6 +41,7 @@
   "Confirm new password": "Conferma la nuova password",
   "Your password was successfuly updated": "La tua password è stata aggiornata correttamente",
   "Current password is invalid": "La password corrente non è valido",
+  "Please wait": "attendere prego",
 
   "validators.required": "Obbligatorio",
   "validators.invalid.email": "Indirizzo email non valido",

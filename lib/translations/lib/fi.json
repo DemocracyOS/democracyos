@@ -42,6 +42,7 @@
   "Confirm new password": "Vahvista uusi salasana",
   "Your password was successfuly updated": "Salasanasi on nyt päivitetty",
   "Current password is invalid": "Nykyinen salasana on pätemätön",
+  "Please wait": "odota",
 
   "validators.required": "vaadittu",
   "validators.invalid.email": "Virheellinen sähköpostiosoite",
