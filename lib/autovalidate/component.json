@@ -3,7 +3,8 @@
   "description": "Component to validate form inputs and displaying messages on submit",
   "dependencies": {
     "component/dom": "1.0.5",
-    "visionmedia/debug": "1.0.4"
+    "visionmedia/debug": "1.0.4",
+    "yields/serialize": "0.2.0"
   },
   "local": [ "validate" ],
   "scripts": [ "autovalidate.js" ],
