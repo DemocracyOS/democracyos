@@ -4,7 +4,7 @@
       .circle
         i.icon-user
       h1= t('Signup with email')
-    form.form(action='/signup', method="post", role="form", autovalidate='autovalidate')
+    form.form(action='/signup', method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-errors
       .form-group
         label= t('Email')
@@ -21,7 +21,7 @@
       .form-group
         label= t('Re-type password')
         input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'), validate='required same:password')
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=6, value=t('Signup now!'))
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('Signup now!')
       .form-group.clearfix
         - var tos = config['tos enabled'];
         - var pp = config['pp enabled'];
