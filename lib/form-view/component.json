@@ -10,7 +10,9 @@
     "visionmedia/debug": "1.0.4"
   },
   "local": [
+    "autosubmit",
     "autovalidate",
+    "is-mobile",
     "validate",
     "view"
   ],
