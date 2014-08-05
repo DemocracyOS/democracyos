@@ -1,0 +1,14 @@
+{
+  "name": "autosubmit",
+  "description": "Autosubmit a form",
+  "dependencies": {
+    "component/dom": "1.0.5",
+    "visionmedia/debug": "1.0.4",
+    "yields/serialize": "0.2.0"
+  },
+  "local": [
+    "request"
+  ],
+  "scripts": [ "autosubmit.js" ],
+  "main": "autosubmit.js"
+}

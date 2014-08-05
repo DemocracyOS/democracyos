@@ -1,27 +1,27 @@
 .signup-container.inner-container.small-container
   #signup-form
-    .title-page 
+    .title-page
       .circle
         i.icon-user
       h1= t('Signup with email')
-    form.form(action="/signup", method="post", role="form")
+    form.form(action='/signup', method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-errors
       .form-group
         label= t('Email')
-        input.form-control(type='email', name='email', tabindex=1, placeholder=t('example@email.com'))
+        input.form-control(type='email', name='email', tabindex=1, placeholder=t('example@email.com'), validate='required email')
       .form-group
         label #{t('Your firstname')}
-        input.form-control(type='text', id="firstName", name='firstName', tabindex=2, placeholder=t('Firstname'))
+        input.form-control(type='text', id='firstName', name='firstName', tabindex=2, placeholder=t('Firstname'), validate='required firstname')
       .form-group
         label #{t('Your lastname')}
-        input.form-control(type='text', id="lastName", name='lastName', tabindex=3, placeholder=t('Lastname'))
+        input.form-control(type='text', id='lastName', name='lastName', tabindex=3, placeholder=t('Lastname'), validate='required lastname')
       .form-group
         label= t('Password')
-        input.form-control(type='password', name='password', tabindex=4, placeholder=t('Password'))
+        input.form-control(type='password', name='password', tabindex=4, placeholder=t('Password'), validate='required min-length:6')
       .form-group
         label= t('Re-type password')
-        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'))
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=6, value=t('Signup now!'))
+        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'), validate='required same:password')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('Signup now!')
       .form-group.clearfix
         - var tos = config['tos enabled'];
         - var pp = config['pp enabled'];
@@ -31,6 +31,6 @@
           a.btn.btn-link.btn-xs.btn-block(href='/help/privacy-policy')=t('help.pp.title')
   #signup-message.hide
     h1 Welcome
-    p.lead.text-muted #{t("Your sign up data was received. We sent you an email so you can validate your email address.")}.
-    p.lead.text-muted= t("Please check your email (remember to check your spam folder too) and click on the link supplied on the email.")
+    p.lead.text-muted #{t('Your sign up data was received. We sent you an email so you can validate your email address.')}.
+    p.lead.text-muted= t('Please check your email (remember to check your spam folder too) and click on the link supplied on the email.')
     a(href='/signup/resend-validation-email')= t('Resend validation email')
