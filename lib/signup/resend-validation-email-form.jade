@@ -1,16 +1,16 @@
 .resend-container.inner-container.small-container
   #resend-form
-    .title-page 
+    .title-page
       .circle
         i.icon-user
       h1= t('Resend validation email')
-    form.form(action="/resend-validation-email", method="post", role="form")
+    form.form(action='/signup/resend-validation-email', method='post', role='form', autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-errors
       .form-group
         label= t('Email')
-        input.form-control(type='email', name='email', tabindex=1, placeholder=t('example@email.com'))
-      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=5, value=t('Resend email'))
+        input.form-control(type='text', name='email', tabindex=1, placeholder=t('example@email.com'), validate='required email')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=2)=t('Resend email')
   #resend-message.hide
-    h1= t("Email sent")
-    p.lead.text-muted= t("The validation email was resent.")
-    p.lead.text-muted= t("Please check your email (remember to check your spam folder too) and click on the link supplied on the email.")
+    h1= t('Email sent')
+    p.lead.text-muted= t('The validation email was resent.')
+    p.lead.text-muted= t('Please check your email (remember to check your spam folder too) and click on the link supplied on the email.')
