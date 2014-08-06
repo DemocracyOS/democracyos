@@ -2,32 +2,22 @@
   "name": "admin-tags-form",
   "description": "Admin tags form view",
   "dependencies": {
-    "component/classes": "1.2.0",
-    "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
-    "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5",
-    "yields/serialize": "0.2.0",
-    "yields/empty": "0.0.1",
-    "cristiandouce/query": "0.0.1",
-    "component/t": "1.0.0"
+    "component/t": "1.0.0",
+    "visionmedia/jade": "1.1.5"
   },
   "local": [
+    "form-view",
     "tags",
-    "tag-images",
-    "citizen",
-    "render",
-    "request",
-    "regexps"
+    "tag-images"
   ],
   "templates": [
-    "form-template.jade"
+    "template.jade"
   ],
   "styles": [
     "admin-tags-form.css"
   ],
   "scripts": [
-    "form-view.js"
+    "view.js"
   ],
-  "main": "form-view.js"
+  "main": "view.js"
 }
