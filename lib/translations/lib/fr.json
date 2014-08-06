@@ -45,6 +45,7 @@
   "Please wait": "S'il vous plaît, attendez",
 
   "validators.required": "requis",
+  "validators.checked": "Exiger champ vérifié",
   "validators.invalid.email": "Adresse mail invalide",
   "validators.invalid.firstname": "prénom invalide",
   "validators.invalid.lastname": "Nom invalide",

@@ -44,6 +44,7 @@
   "Please wait": "attendere prego",
 
   "validators.required": "Obbligatorio",
+  "validators.checked": "Campo controllato obbligatori",
   "validators.invalid.email": "Indirizzo email non valido",
   "validators.invalid.firstname": "Nome non valido",
   "validators.invalid.lastname": "Cognome non valido",
