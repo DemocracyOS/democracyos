@@ -3,9 +3,7 @@
   "description": "Admin laws Form view",
   "dependencies": {
     "component/t": "1.0.0",
-    "component/classes": "1.2.0",
-    "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
+    "component/dom": "1.0.5",
     "component/datepicker": "*",
     "slifszyc/timepicker": "*",
     "visionmedia/debug": "0.7.4",
@@ -18,6 +16,7 @@
     "cristiandouce/query": "0.0.1"
   },
   "local": [
+    "form-view",
     "tags",
     "laws",
     "render",
@@ -25,14 +24,14 @@
     "regexps"
   ],
   "templates": [
-    "form-template.jade",
-    "form-clause.jade"
+    "template.jade",
+    "clause.jade"
   ],
   "styles": [
-    "form-law.css"
+    "styles.css"
   ],
   "scripts": [
-    "form-view.js"
+    "view.js"
   ],
-  "main": "form-view.js"
+  "main": "view.js"
 }

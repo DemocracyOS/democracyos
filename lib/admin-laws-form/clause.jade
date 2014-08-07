@@ -8,7 +8,7 @@
       input.form-control(type='text', name='clauses[#{clause.id}][clauseName]', value=clause.clauseName)
     .clause-group.clause-order
       label=t('admin-laws-form.clause.label.order')
-      input.form-control(type='text', name='clauses[#{clause.id}][order]', value=clause.order)
+      input.form-control(type='text', name='clauses[#{clause.id}][order]', validate='numeric', value=clause.order)
   .clause-row
     label.pull-left=t('admin-laws-form.clause.label.text')
     div.checkbox.pull-right
