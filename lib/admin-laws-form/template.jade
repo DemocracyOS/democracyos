@@ -12,18 +12,18 @@
       p.bg-warning
         span= t('admin-laws-form.message.private-status')
         a.make-public(href="#")= t('admin-laws-form.button.make-public')
-    form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate)
+    form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
       input(type='hidden', name='_law_id_', value=law.id)
       ul.form-messages
       .form-group
         label= t('admin-laws-form.label.lawId')
-        input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId)
+        input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId, validate='required')
       .form-group
         label= t('admin-laws-form.label.mediaTitle')
-        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle)
+        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle, validate='required')
       .form-group
         label= t('admin-laws-form.label.source')
-        input.form-control(type='url', name='source', tabindex=4, placeholder=t('admin-laws-form.placeholder.source'), value=law.source)
+        input.form-control(type='url', name='source', tabindex=4, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='required url')
       .form-group
         label= t('admin-laws-form.label.tag')
         select.form-control(name='tag', tabindex=5)
@@ -51,7 +51,7 @@
         .law-clauses
           - if (law.clauses && law.clauses.length)
             - each clause, idx in law.clauses
-              include form-clause
+              include clause
         a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-laws-form.button.add-clause')
         span.add-clause-forbidden.hide=t('admin-laws-form.message.add-clause-forbidden')
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=9, value=t('admin-laws-form.button.submit'))
