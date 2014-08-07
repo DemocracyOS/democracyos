@@ -42,7 +42,7 @@
       .clauses
         - if (clauses.length)
           - each clause, i in clauses
-            - var classes = clauses.centered ? ['text-center'] : []
+            - var classes = clause.centered ? ['text-center'] : []
             - var text = (clause.clauseName ? clause.clauseName + ': ' : '') + clause.text
             - if (i > 0) classes.push('hide')
             p.clause.commentable-section(class=classes, data-section-id=clause.id)!=text
