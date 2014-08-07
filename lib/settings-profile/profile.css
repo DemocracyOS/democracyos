@@ -11,3 +11,7 @@
   border-radius: 4px;
   margin-right: 10px;
 }
+
+#profile-wrapper form .form-group span.error {
+  top: 40px;
+}
