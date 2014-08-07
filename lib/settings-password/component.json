@@ -2,22 +2,18 @@
   "name": "settings-password",
   "description": "Settings password view",
   "dependencies": {
-    "component/classes": "1.2.0",
-    "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
     "visionmedia/jade": "1.1.5",
     "visionmedia/debug": "0.7.4",
-    "yields/serialize": "0.2.0",
-    "yields/empty": "0.0.1",
-    "cristiandouce/query": "0.0.1",
     "component/t": "1.0.0"
   },
   "local": [
-    "render",
-    "request"
+    "form-view"
   ],
   "templates": [
-    "password-template.jade"
+    "template.jade"
+  ],
+  "styles": [
+    "styles.styl"
   ],
   "scripts": [
     "view.js"
