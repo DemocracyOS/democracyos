@@ -2,20 +2,17 @@
   "name": "help-glossary",
   "description": "Help glossary view",
   "dependencies": {
-    "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5",
-    "component/classes": "1.2.0",
-    "component/t": "1.0.0",
-    "component/events": "1.0.5",
+    "component/dom": "1.0.5",
     "component/scroll-to": "0.0.1",
-    "cristiandouce/query": "0.0.1",
-    "chjj/marked": "v0.3.2"
+    "component/t": "1.0.0",
+    "chjj/marked": "v0.3.2",
+    "visionmedia/jade": "1.1.5"
   },
   "local": [
-    "render"
+    "view"
   ],
   "templates": [
-    "glossary-template.jade",
+    "template.jade",
     "glossary.md"
   ],
   "scripts": [
