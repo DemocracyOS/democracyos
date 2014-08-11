@@ -52,7 +52,7 @@
         | . 
         a(href="/signin")= t('Login')
         |  #{t('common.or')} 
-        a(href="/signup")= t('Signup')
+        a(href="/signup?reference=" + proposal.id)= t('Signup')
         | .
 
     - if (closed)
