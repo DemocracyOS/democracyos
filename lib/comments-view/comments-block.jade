@@ -26,5 +26,6 @@
           | . 
           a(href="/signin")= t('Login')
           |  #{t('common.or')} 
-          a(href="/signup")= t('Signup')
+          - var signupUrl = '/signup' + (reference ? '?reference=' + reference : '')
+          a(href=signupUrl)= t('Signup')
           | .
