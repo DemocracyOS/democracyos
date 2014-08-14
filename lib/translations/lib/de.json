@@ -231,6 +231,7 @@
   "admin-laws-form.clause.confirmation.body": "Durch diesen Schritt werden Daten unwiderruflich gelöscht. Möchtest du fortfahren?",
   "admin-laws-form.clause.confirmation.cancel": "Abbrechen",
   "admin-laws-form.clause.confirmation.ok": "Löschen",
+  "admin-laws-form.clause.text-centered": "Text zentriert",
 
   "admin-laws-form.message.onsuccess": "Gesetz erfolgreich gespeichert",
   "admin-laws-form.message.validation.lawId-required": "Offizielle Id erforderlich",
