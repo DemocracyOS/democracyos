@@ -8,6 +8,12 @@
       ul.form-messages
       .form-group
         label #{t('settings.notificatinos.get-email-when')}
-      .form-group.get-email-notifications.checkbox
-        label(for='email-notifications') #{t('settings.notifications.new-topic')}
+      .form-group.new-topic.checkbox
+        label(for='new-topic') #{t('settings.notifications.new-topic')}
+      .form-group.replies.checkbox
+        label(for='replies') #{t('someone-replies-your-comments')}
+      .form-group.mentions.checkbox
+        label(for='mentions') #{t('someone-mentions-in-their-comment')}
+      .form-group
+        label #{t('settings.notifications.send-emails')}
       .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=4)=t('Save')
