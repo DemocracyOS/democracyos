@@ -1,0 +1,52 @@
+.toggle
+  position: relative
+  display: inline-block
+  overflow: hidden
+  height: 3em
+  width: 7.6em
+  border-radius: 3em
+  -webkit-transition: background .2s ease-in, color .2s ease-in
+  transition: background .2s ease-in, color .2s ease-in
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  cursor: pointer
+  &.on
+    color: white
+    background: #111
+  &.off
+    color: #bbb
+    background: #eaeaea
+  label.toggle-on-label,
+  label.toggle-off-label
+    position: absolute
+    height: 3em
+    font: 300 1em/3em "Helvetica Neue", Helvetica, sans-serif
+    text-align: center
+    -webkit-transition: -webkit-transform .2s ease-in
+    transition: transform .2s ease-in
+    cursor: pointer
+  label.toggle-on-label
+    right: 3em
+    left: 0
+  label.toggle-off-label
+    right: 0
+    left: 3em
+  .toggle-switch
+    position: absolute
+    left: 0
+    top: 0
+    height: 3em
+    width: 3em
+    border-radius: 3em
+    background-color: white
+    background-color: rgba(255, 255, 255, 0.98)
+    -webkit-background-clip: padding-box
+    background-clip: padding-box
+    border: 2px solid transparent
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    -webkit-transition: left .2s ease-in, margin .2s ease-in
+    transition: left .2s ease-in, margin .2s ease-in
