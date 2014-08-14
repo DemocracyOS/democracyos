@@ -25,8 +25,8 @@
         input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'), validate='required same:password')
       .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('Signup now!')
       .form-group.clearfix
-        - var tos = config['tos enabled'];
-        - var pp = config['pp enabled'];
+        - var tos = config['tos'];
+        - var pp = config['pp'];
         - if (tos)
           a.btn.btn-link.btn-xs.btn-block(href='/help/terms-of-service')=t('help.tos.title')
         - if (pp)
