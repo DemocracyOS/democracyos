@@ -80,7 +80,7 @@
   "Send": "Absenden",
 
   "DemocracyOS - Password reset requested": "DemocracyOS – Zurücksetzen des Passworts wurde angefordert",
-  "Hi {name}": "Hallo {Name}",
+  "Hi {name}": "Hallo {name}",
   "Please click <a href=\"{url}\">here</a> to reset your password": "Bitte <a href=\"{url}\">hier</a> klicken, um das Passwort zurückzusetzen",
   "The DemocracyOS team": "Das DemocracyOS-Team",
   "PS: if you haven't requested to reset your password, please ignore this email": "Bitte diese E-Mail ignorieren, falls kein Zurücksetzen des Passwortes angefordert wurde.",
@@ -109,7 +109,7 @@
   "Lastname": "Nachname",
   "Re-type password": "Passwort erneut eingeben",
   "Signup now!": "Jetzt anmelden!",
-  "Welcome, {name}!": "Willkommen, {Name}!",
+  "Welcome, {name}!": "Willkommen, {name}!",
   "Guest": "Gast",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Registrierung abgeschlossen. Eine E-Mail zu Bestätigung der E-Mail-Adresse wurde versandt.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Öffne die Mail (vergiss nicht, auch im Spam-Ordner nachzusehen) und klicke auf den dort angegebenen Link.",
