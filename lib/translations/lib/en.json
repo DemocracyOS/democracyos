@@ -50,7 +50,6 @@
   "settings.notificatinos.get-email-when": "Get an email when",
   "settings.notifications.new-topic": "A new topic gets published",
   "settings.notificatoins.someone-replies-your-comments": "Someone replies one of your comments",
-  "settings.notifications.someone-mentions-in-their-comment": "Someone mentions you in one of their comments",
 
   "validators.required": "Required",
   "validators.checked": "Required checked field",
