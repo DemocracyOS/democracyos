@@ -44,6 +44,18 @@
   "Current password is invalid": "Current password is invalid",
   "Please wait": "Por favor espere",
 
+  "settings.notifications.title": "Notifications settings",
+  "settings.notificatinos.get-email-when": "Get an email when",
+  "settings.notifications.new-topic": "A new topic gets published",
+  "settings.notificatoins.someone-replies-your-comments": "Someone replies one of your comments",
+  "settings.notifications.someone-mentions-in-their-comment": "Someone mentions you in one of their comments",
+  "settings.notifications.topic-is-near-closing-date": "A topic is near to its closing date",
+
+  "Send emails": "Send emails",
+  "When they happen": "When they happen",
+  "Once a day": "Once a day",
+  "Once a week": "Once a week",
+
   "validators.required": "Required",
   "validators.checked": "Required checked field",
   "validators.invalid.email": "Invalid email address",
@@ -165,6 +177,7 @@
   "Nay": "Nay",
   "Abstain": "Abstain",
   "Yes": "Yes",
+  "No": "No",
   "Cancel": "Cancel",
   "Edit": "Edit",
   "Delegate": "Delegate",
