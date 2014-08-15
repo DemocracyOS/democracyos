@@ -26,6 +26,8 @@
 ### Internationalization
 
 * Catalan: [Emanuel Calvo](https://github.com/3manuek)
-* Italian: [Felipe Muñoz](https://twitter.com/felipemuni)
+* Dutch: [Hendrik Bruinsma](https://twitter.com/readefries)
 * Finnish: [Anni Rautio](https://twitter.com/annirautio) and [Christian Martínez](www.hyvatilmat.com)
 * French: [Magui García Solla](https://twitter.com/magui_1984)
+* German: [Charlotte Breuer](http://breuer-moellemann.de/)
+* Italian: [Felipe Muñoz](https://twitter.com/felipemuni)

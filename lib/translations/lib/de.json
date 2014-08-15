@@ -223,7 +223,7 @@
   "admin-laws-form.button.make-public": "Veröffentlichen",
 
   "admin-laws-form.clause.heading": "Artikel",
-  "admin-laws-form.clause.label.clauseId": "Artikel Id",
+  "admin-laws-form.clause.label.clauseName": "Artikel Name",
   "admin-laws-form.clause.label.order": "Reihenfolge",
   "admin-laws-form.clause.label.text": "Inhalt",
   "admin-laws-form.clause.button.delete": "Löschen",
@@ -231,6 +231,7 @@
   "admin-laws-form.clause.confirmation.body": "Durch diesen Schritt werden Daten unwiderruflich gelöscht. Möchtest du fortfahren?",
   "admin-laws-form.clause.confirmation.cancel": "Abbrechen",
   "admin-laws-form.clause.confirmation.ok": "Löschen",
+  "admin-laws-form.clause.text-centered": "Text zentriert",
 
   "admin-laws-form.message.onsuccess": "Gesetz erfolgreich gespeichert",
   "admin-laws-form.message.validation.lawId-required": "Offizielle Id erforderlich",
