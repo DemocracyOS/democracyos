@@ -1,10 +1,28 @@
 
-0.7.3 / 2014-07-12 
+0.7.4 / 2014-08-14
+==================
+
+ * Add Dutch translations
+ * Add German translations
+ * Add View and FormView base js classes for all view to extend them and not repeat the same logic through all the app
+ * Add Stateful and StatefulView components to handle view states
+ * Add autosubmit and autovalidate for forms
+ * Add SideComments, but comment it out
+ * Add CONTRIBUTORS file
+ * Add MIT License text
+ * Update README.md
+ * Remove trailing whitespaces
+ * Fix environment variables for FAQ, Terms of Service, Privacy Policy and Glossary enabling
+ * Fix email validation flow to redirect to the topic the user was reading before signup
+ * Fix 'Guest' displayed to logged in user as their fullname
+ * Fix SignUp bug on Firefox
+
+0.7.3 / 2014-07-12
 ==================
 
  * Fix not showing page content once page changes having no laws. Closes #385
 
-0.7.2 / 2014-06-23 
+0.7.2 / 2014-06-23
 ==================
 
  * Add 'for' attribute on 'hide-voted' label
