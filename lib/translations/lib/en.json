@@ -51,11 +51,6 @@
   "settings.notifications.new-topic": "A new topic gets published",
   "settings.notificatoins.someone-replies-your-comments": "Someone replies one of your comments",
   "settings.notifications.someone-mentions-in-their-comment": "Someone mentions you in one of their comments",
-  "settings.notifications.topic-is-near-closing-date": "A topic is near to its closing date",
-  "settings.notifications.send-emails": "Send emails",
-  "settings.notifications.when-they-happen": "When they happen",
-  "settings.notifications.once-a-day": "Once a day",
-  "settings.notifications.once-a-week": "Once a week",
 
   "validators.required": "Required",
   "validators.checked": "Required checked field",
