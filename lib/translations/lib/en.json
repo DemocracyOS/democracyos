@@ -76,6 +76,7 @@
   "comments.reply": "Reply",
   "comments.reply-to-argument": "Reply to this argument",
   "comments.sign-in-required": "You must be signed in to argue here",
+  "comments.sign-in-required-to-vote-comments": "You must be signed in to up/downvote arguments",
   "comments.deleted-arguments": "Deleted arguments",
   "comments.your-argument": "Your argument",
   "comments.edit.argument": "Edit argument",

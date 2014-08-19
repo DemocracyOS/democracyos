@@ -74,6 +74,7 @@
   "comments.reply": "Vastaus",
   "comments.reply-to-argument": "Vastauksena tähän väitteeseen",
   "comments.sign-in-required": "Sinun täytyy kirjautua sisään",
+  "comments.sign-in-required-to-vote-comments": "Sinun täytyy olla kirjautunut sisään äänestää perustelut",
   "comments.deleted-arguments": "Poistetut argumentit",
   "comments.your-argument": "Sinun argumenttisi",
   "comments.edit.argument": "Editoi argumenttiä",
