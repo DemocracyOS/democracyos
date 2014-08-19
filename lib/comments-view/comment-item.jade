@@ -45,16 +45,16 @@ li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
         | .
         span.show-spam: a(href="#")= t('show')
       .comment-actions
-        span.comment-counter(class= !citizen.id ? 'hide' : '')=(comment.upvotes.length - comment.downvotes.length)
+        span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
         - var classes = []
         - likes && classes.push('selected')
-        - !citizen.id && classes.push('hide')
+        //- - !citizen.id && classes.push('hide')
         a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
           i.icon-angle-up
           //span.label Aports
         - var classes = []
         - dislikes && classes.push('selected')
-        - !citizen.id && classes.push('hide')
+        //- - !citizen.id && classes.push('hide')
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
           i.icon-angle-down
         - if (length || citizen.id)
