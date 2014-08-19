@@ -44,6 +44,12 @@
   "Current password is invalid": "Nykyinen salasana on pätemätön",
   "Please wait": "odota",
 
+  "settings.notifications.title": "Ilmoitukset asetukset",
+  "settings.notificatinos.get-email-when": "Saat sähköpostia kun",
+  "settings.notifications.new-topic": "uusi aihe saa julkaista",
+  "settings.notificatoins.someone-replies-your-comments": "Joku vastaa yksi teidän kommentteja",
+  "settings.notifications.someone-mentions-in-their-comment": "Joku mainitsee sinut yhdessä huomautuksensa",
+
   "validators.required": "vaadittu",
   "validators.checked": "Vaadittu tarkastetaan kenttä",
   "validators.invalid.email": "Virheellinen sähköpostiosoite",
@@ -161,6 +167,7 @@
   "Nay": "Ei",
   "Abstain": "Pidättäydy",
   "Yes": "Kyllä",
+  "No": "Ei",
   "Cancel": "Peruuta",
   "Edit": "Muokkaa",
   "Delegate": "Delegoi",

@@ -44,6 +44,12 @@
   "Current password is invalid": "Current password is invalid",
   "Please wait": "Si us plau espera",
 
+  "settings.notifications.title": "Configuració de Notificacions",
+  "settings.notificatinos.get-email-when": "Obtenir un email quan",
+  "settings.notifications.new-topic": "Un nou tema es publica",
+  "settings.notificatoins.someone-replies-your-comments": "Algú respon a un dels seus comentaris",
+  "settings.notifications.someone-mentions-in-their-comment": "Algú li esmenta en un dels seus comentaris",
+
   "validators.required": "cal",
   "validators.checked": "Camp obligatori comprovat",
   "validators.invalid.email": "Adreça de correu electrònic no és vàlid",
@@ -165,6 +171,7 @@
   "Nay": "Negatiu",
   "Abstain": "Abstenció",
   "Yes": "Si",
+  "No": "No",
   "Cancel": "Cancel",
   "Edit": "Editer",
   "Delegate": "Delegar",

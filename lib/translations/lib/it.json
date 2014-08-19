@@ -43,6 +43,12 @@
   "Current password is invalid": "La password corrente non è valido",
   "Please wait": "attendere prego",
 
+  "settings.notifications.title": "Impostazioni Notifiche",
+  "settings.notificatinos.get-email-when": "Ricevi una email quando",
+  "settings.notifications.new-topic": "Un nuovo argomento viene pubblicato",
+  "settings.notificatoins.someone-replies-your-comments": "Qualcuno risponde uno dei tuoi commenti",
+  "settings.notifications.someone-mentions-in-their-comment": "Qualcuno ti cita in una delle loro osservazioni",
+
   "validators.required": "Obbligatorio",
   "validators.checked": "Campo controllato obbligatori",
   "validators.invalid.email": "Indirizzo email non valido",
@@ -164,6 +170,7 @@
   "Nay": "Contrario",
   "Abstain": "Astensione",
   "Yes": "Sì",
+  "No": "No",
   "Cancel": "Cancellare",
   "Edit": "Modifica",
   "Delegate": "Delegare",
