@@ -1,4 +1,12 @@
 
+0.7.5 / 2014-08-26
+==================
+
+ * Fix spanish translations
+ * Add menu items for `faq`, `tos`, `pp` and `glossary`, conditional to settings. Closes #412
+ * Add denying user to up/downvote comments if they are not signed in. Closes #403
+ * Add translations for 'You must be signed in to up/downvote arguments' #403
+
 0.7.4 / 2014-08-14
 ==================
 
