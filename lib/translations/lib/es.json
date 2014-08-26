@@ -317,8 +317,8 @@
   "side-comments.leave-a-comment": "Deja un comentario",
   "side-comments.delete": "Borrar",
   "side-comments.or": "o",
-  "side-comments.login": "Login",
-  "side-comments.signup": "Signup",
+  "side-comments.login": "Ingresar",
+  "side-comments.signup": "Registrarse",
   "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?",
   "side-comments.confirmation.title": "Eliminar comentario"
 }
