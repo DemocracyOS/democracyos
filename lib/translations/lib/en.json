@@ -42,7 +42,7 @@
   "Confirm new password": "Confirm new password",
   "Your password was successfuly updated": "Your password was successfuly updated",
   "Current password is invalid": "Current password is invalid",
-  "Please wait": "Por favor espere",
+  "Please wait": "Please wait",
 
   "validators.required": "Required",
   "validators.checked": "Required checked field",
@@ -152,7 +152,7 @@
   "Last name": "Last name",
   "Save": "Save",
 
-  "Close": "Close",
+  "Close": "Closes",
   "Closed": "Closed",
   "Unknown closing date": "Unknown closing date",
   "Vote": "Vote",
