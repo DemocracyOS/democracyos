@@ -43,7 +43,13 @@
           =proposal.author
     h3=proposal.title
     .entry-content
-      p.summary!=proposal.summary
+      - var summary = proposal.summary
+      - var paragraphs = summary.split("\n")
+      .summary
+        - each p, i in paragraphs
+          - if (p != '')
+            p.commentable-section(data-section-id=proposal.id + '-' + i)=p
+
 
       .clauses
         - if (clauses.length)
