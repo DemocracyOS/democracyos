@@ -4,7 +4,7 @@
   "dependencies": {
     "component/inherit": "0.0.3"
   },
-  "local": [
+  "locals": [
     "stateful",
     "view"
   ],

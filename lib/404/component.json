@@ -3,13 +3,13 @@
   "description": "404 layout",
   "dependencies": {
     "component/classes": "1.2.0",
+    "component/dom": "0.7.1",
     "visionmedia/page.js": "1.3.7",
     "visionmedia/jade": "1.1.5",
     "visionmedia/debug": "0.7.4",
-    "yields/empty": "0.0.1",
-    "cristiandouce/query": "0.0.1"
+    "yields/empty": "0.0.1"
   },
-  "local": [
+  "locals": [
     "render"
   ],
   "styles": [ "styles.styl" ],

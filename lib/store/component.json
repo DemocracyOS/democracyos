@@ -4,7 +4,7 @@
   "dependencies": {
     "yields/unserialize": "0.0.1"
   },
-  "local": [
+  "locals": [
     "request"
   ],
   "scripts": [

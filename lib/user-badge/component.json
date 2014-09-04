@@ -5,7 +5,7 @@
     "component/dom": "1.0.5",
     "visionmedia/jade": "1.1.5"
   },
-  "local": [
+  "locals": [
     "citizen",
     "view"
   ],

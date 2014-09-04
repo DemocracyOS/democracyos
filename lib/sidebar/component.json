@@ -5,7 +5,7 @@
     "component/domify": "1.2.0",
     "component/dropdown": "7207a",
     "component/events": "1.0.5",
-    "component/bus": "0.0.2",
+    "component/bus": "^0.0.2",
     "component/emitter": "1.1.1",
     "component/classes": "1.2.0",
     "visionmedia/debug": "0.7.4",
@@ -14,9 +14,9 @@
     "component/closest": "0.1.3",
     "yields/empty": "0.0.1",
     "component/t": "1.0.0",
-    "cristiandouce/query": "0.0.1"
+    "slifszyc/query": "0.0.3"
   },
-  "local": [ "laws", "laws-filter", "render", "stateful" ],
+  "locals": [ "laws", "laws-filter", "render", "stateful" ],
   "scripts": [ "main.js", "sidebar.js", "filter.js", "list.js" ],
   "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade", "check.jade" ],
   "styles": [ "sidebar.css" ],

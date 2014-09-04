@@ -11,10 +11,10 @@
     "visionmedia/jade": "1.1.5",
     "yields/empty": "0.0.1",
     "cristiandouce/to-array": "0.0.1",
-    "cristiandouce/query": "0.0.1",
+    "slifszyc/query": "0.0.3",
     "component/t": "1.0.0"
   },
-  "local": [ "config", "render", "participants-view", "citizen", "proposal-clauses", "request" ],
+  "locals": [ "config", "render", "participants-view", "citizen", "proposal-clauses", "request" ],
   "scripts": [ "proposal-article.js" ],
   "templates": [ "article.jade", "clause.jade" ],
   "styles": [ "proposal-article.styl" ],

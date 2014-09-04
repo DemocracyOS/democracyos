@@ -51,7 +51,7 @@
     }
   },
   "locale" : "en",
-  "logo" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
+  "logo": "/lib/boot/images/logo.png",
   "favicon" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",

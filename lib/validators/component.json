@@ -7,7 +7,7 @@
     "component/t": "1.0.0",
     "visionmedia/debug": "1.0.4"
   },
-  "local": [ "regexps" ],
+  "locals": [ "regexps" ],
   "scripts": [ "validators.js" ],
   "main": "validators.js"
 }
