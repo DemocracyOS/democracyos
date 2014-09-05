@@ -1,4 +1,14 @@
 
+0.7.6 / 2014-09-05
+==================
+
+ * Add navigate back to /law/:id after succesful signin. Closes #369
+ * Update node version to 0.10.28
+ * Update npm version to 1.4.9
+ * Update to Component(1)
+ * Fix English translations
+ * Fix signin tabindex
+
 0.7.5 / 2014-08-26
 ==================
 
