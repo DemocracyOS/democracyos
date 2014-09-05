@@ -1,244 +1,236 @@
 /* Vars
 -------------------------------------------------- */
-:root
-  var-header_height: 60px
-  var-spacing: 20px
-  var-border_radius: 3px
-  var-nav_proposal_width: 266px
-  var-content_width: 580px
-  var-link_blue: #2980b9
-
+content_width = 580px
 /* Comments
 -------------------------------------------------- */
 .comments
-  background: #f9f9f9
-  padding-top: 50px
-  padding-bottom: 50px
+  background #f9f9f9
+  padding-top 50px
+  padding-bottom 50px
 
   .markdown
-    padding: 0
-    margin-top: 10px
-    margin-bottom: 10px
+    padding 0
+    margin-top 10px
+    margin-bottom 10px
 
   .inner-container
-    position: relative
-    margin: auto
-    max-width: var(content_width)
+    position relative
+    margin auto
+    max-width content_width
 
     .lock-spinner
-      background-color: #f9f9f9
+      background-color #f9f9f9
 
       canvas
-        top: 40px !important
+        top 40px !important
 
     .your-arguments
-      margin-bottom: 10px
+      margin-bottom 10px
 
     .new-argument
-      background-color: #f9f9f9
-      border: 1px dashed #ddd
-      font-weight: normal
-      color: #999
+      background-color #f9f9f9
+      border 1px dashed #ddd
+      font-weight normal
+      color #999
       &:hover
-        color: #777
-        border-color: #ccc
+        color #777
+        border-color #ccc
       .icon-plus
-        margin-right: 6px
+        margin-right 6px
 
     .my-argument
-      margin-top: -14px
-      width: 100%
-      overflow: hidden
-      padding: 12px 10px 0px 10px
+      margin-top -14px
+      width 100%
+      overflow hidden
+      padding 12px 10px 0px 10px
 
       .avatar-container
-        float: left
-        width: 46px
-        margin-right: 20px
+        float left
+        width 46px
+        margin-right 20px
         img
-          width: 100%
+          width 100%
 
       .my-argument-form
-        position: relative
-        overflow: hidden
+        position relative
+        overflow hidden
         textarea
-          width: 100%
-          resize: none
+          width 100%
+          resize none
         .btn
-          background-color: #333
-          color: white
+          background-color #333
+          color white
         .form-errors
-          color: red
-          display: block
-  
+          color red
+          display block
+
   h4
-    margin-bottom: 30px
+    margin-bottom 30px
     &.arguments
-      margin-top: 20px
+      margin-top 20px
 
   .comment-form
-    margin-bottom: 50px
-    margin-top: 30px
+    margin-bottom 50px
+    margin-top 30px
     h5
-      width: 100%
+      width 100%
       small
-        width: 60%
-        text-align: right
+        width 60%
+        text-align right
     textarea
-      max-width: 540px
-      width: 100%
-      padding: 2%
+      max-width 540px
+      width 100%
+      padding 2%
     .btn
-      background-color: #333
-      color: white
+      background-color #333
+      color white
 
   .my-arguments-list
-    padding: 0 !important
-    margin-bottom: 30px
+    padding 0 !important
+    margin-bottom 30px
 
   .comment-list,
   .my-arguments-list
     .comment-item
-      max-width: 580px
-      padding: 12px 10px 0px 10px
+      max-width 580px
+      padding 12px 10px 0px 10px
       &:hover
         .media-heading .comment-action
-          display: inline-block
+          display inline-block
       &.remove
         .btn-remove
-          display: none
+          display none
         .comment-text
-          color: #bdc3c7
+          color #bdc3c7
         .remove-comment
-          display: block
+          display block
         .comment-actions
-          display: none
+          display none
 
       .edited
-        margin-left: 3px
+        margin-left 3px
 
       .pull-left
-        width: 46px
-        margin-right: 20px
+        width 46px
+        margin-right 20px
         .avatar
-          width: 46px
-          height: 46px
-          border-radius: 100px
+          width 46px
+          height 46px
+          border-radius 100px
 
       .media-heading .comment-action
-        margin-top: 3px
-        display: none
+        margin-top 3px
+        display none
 
       .media-body
-        position: relative
-        min-height: 76px
+        position relative
+        min-height 76px
 
         .comment-edit-form
-          display: none
+          display none
 
         &.edit
           .comment-body
-            display: none
+            display none
           .comment-edit-form
-            display: block
+            display block
 
       .comment-actions
-        font-weight: bold
-        font-size: 14px
-        color: #333
-        vertical-align: top
+        font-weight bold
+        font-size 14px
+        color #333
+        vertical-align top
 
       .comment-action
-        color: #333
-        font-size: 11px
-        font-weight: bold
+        color #333
+        font-size 11px
+        font-weight bold
         &.no-hide
-          display: inline-block !important
+          display inline-block !important
         &.vote-comment
           i
-            font-weight: bold
-            font-size: 20px
-            margin-right: 10px
+            font-weight bold
+            font-size 20px
+            margin-right 10px
         &:hover
-          text-decoration: none
+          text-decoration none
         &.link-report,
         &.link-remove,
         &.link-edit
-          float: right
-          color: #333
+          float right
+          color #333
           i
-            margin-right: 3px
+            margin-right 3px
       .comment-counter
-        margin: 0px
-        min-width: 20px
-        display: inline-block
+        margin 0px
+        min-width 20px
+        display inline-block
       .spam-message
         display:none
         .show-spam
-          margin: 0px 3px
-          font-size: 0.85em
+          margin 0px 3px
+          font-size 0.85em
       .comment-reply
-        margin-top: 4px
-        font-size: 13px
+        margin-top 4px
+        font-size 13px
         .icon-reply
-          margin-right: 4px
+          margin-right 4px
 
       .comment-text
-        color: #333
+        color #333
         p
-          margin-bottom: 0
+          margin-bottom 0
         a
-          display: inline-block
-          margin-bottom: 12px
+          display inline-block
+          margin-bottom 12px
 
       .oncomment,
       .onreply
-        background-color: rgba(249, 249, 249, 0.5)
-        display: none
-        font-weight: bold
-        height: 100%
-        left: 0
-        padding-top: 15px
-        position: absolute
-        text-align: center
-        top: 0
-        width: 100%
+        background-color rgba(249, 249, 249, 0.5)
+        display none
+        font-weight bold
+        height 100%
+        left 0
+        padding-top 15px
+        position absolute
+        text-align center
+        top 0
+        width 100%
 
         a
-          display: inline-block
-          margin-right: 12px
-        
+          display inline-block
+          margin-right 12px
+
         &.message
-          cursor: default
+          cursor default
 
       .comment-action
         &.like
           &.selected, &:hover
-            color: green
+            color green
         &.dislike
           &.selected, &:hover
-            color: red
+            color red
         &.flag
-          display: none
+          display none
           &.selected, &:hover
-            color: orange
+            color orange
         &.btn-remove, &.btn-reply-remove
           &:hover
-            color: #c0392b
+            color #c0392b
         &.btn-edit, &.btn-reply-edit
           &:hover
-            color: #f39c12
+            color #f39c12
       &.spam
         .comment-text, .comment-actions, .link-report.flag
           display:none
         .spam-message
           display:block
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 700px),
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)
+@media only screen and (min-width  320px) and (max-width  700px), screen and (-webkit-min-pixel-ratio  1.5), screen and (min-pixel-ratio  1.5)
   .comments
     .comment-list
       .comment-item
         .media-heading .comment-action,
         .comment-reply
-            display: inline-block
+            display inline-block

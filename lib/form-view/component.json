@@ -9,7 +9,7 @@
     "component/tip": "2.1.1",
     "visionmedia/debug": "1.0.4"
   },
-  "local": [
+  "locals": [
     "autosubmit",
     "autovalidate",
     "is-mobile",

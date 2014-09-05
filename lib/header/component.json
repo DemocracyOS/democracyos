@@ -2,11 +2,11 @@
   "name": "header",
   "description": "header component",
   "dependencies": {
-    "cristiandouce/query": "0.0.1",
+    "slifszyc/query": "0.0.3",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5"
     },
-  "local": [
+  "locals": [
     "citizen",
     "feedback",
     "render",

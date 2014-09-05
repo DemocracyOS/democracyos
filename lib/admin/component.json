@@ -10,9 +10,9 @@
     "visionmedia/debug": "0.7.4",
     "yields/empty": "0.0.1",
     "yields/serialize": "0.2.0",
-    "cristiandouce/query": "0.0.1"
+    "slifszyc/query": "0.0.3"
   },
-  "local": [
+  "locals": [
     "admin-sidebar",
     "admin-laws",
     "admin-laws-form",

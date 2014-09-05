@@ -8,7 +8,7 @@
     "chjj/marked": "v0.3.2",
     "visionmedia/jade": "1.1.5"
   },
-  "local": [
+  "locals": [
     "view"
   ],
   "templates": [

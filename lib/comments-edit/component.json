@@ -7,12 +7,12 @@
     "component/emitter": "1.1.1",
     "component/events": "1.0.5",
     "component/t": "1.0.0",
-    "cristiandouce/query": "0.0.1",
+    "slifszyc/query": "0.0.3",
     "visionmedia/jade": "1.1.5",
     "visionmedia/debug": "0.7.4",
     "yields/serialize": "0.2.0"
   },
-  "local": [
+  "locals": [
     "render",
     "request"
   ],  

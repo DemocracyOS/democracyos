@@ -2,8 +2,8 @@
   "name": "browser-lock",
   "description": "Locks #browser from user interaction",
   "dependencies": {
-    "component/bus": "0.0.2",
-    "cristiandouce/query": "0.0.1",
+    "component/bus": "^0.0.2",
+    "slifszyc/query": "0.0.3",
     "cristiandouce/loading-lock": "0.0.2"
   },
   "scripts": [ "locker.js" ],

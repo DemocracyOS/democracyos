@@ -1,129 +1,129 @@
 /* Vars
 -------------------------------------------------- */
-:root
-  var-header_height: 60px
-  var-spacing: 20px
-  var-border_radius: 3px
-  var-nav_proposal_width: 266px
-  var-content_width: 580px
-  var-link_blue: #2980b9
+
+header_height = 60px
+spacing = 20px
+border_radius = 3px
+nav_proposal_width = 266px
+content_width = 580px
+link_blue = #2980b9
 
 /* General
 -------------------------------------------------- */
 
 html
-  -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing antialiased
 
 body
-  color: #4d4d4d
-  overflow: hidden
+  color #4d4d4d
+  overflow hidden
 
 h1,h2,h3,h4,h5,h6
-  font-weight: bold
-  color: black
+  font-weight bold
+  color black
 
 a
-  font-weight: bold
+  font-weight bold
   &:hover
-    text-decoration: underline
-    color: #428bca
+    text-decoration underline
+    color #428bca
 
 img.avatar
-  border-radius: 100%
+  border-radius 100%
 
 .btn
-  text-transform: uppercase
-  font-weight: bold
-  letter-spacing: 1px
-  border: 0
+  text-transform uppercase
+  font-weight bold
+  letter-spacing 1px
+  border 0
   &.btn-success
-    background-color: #27ae60
+    background-color #27ae60
 
 .btn-default
-  border: 0
+  border 0
 
 .btn-group > .btn + .dropdown-toggle
-  padding-left: 13px
-  padding-right: 13px
+  padding-left 13px
+  padding-right 13px
 
 .dropdown-menu
-  border-radius: 0
-  text-transform: none
+  border-radius 0
+  text-transform none
 
 .alert
-  color: white
-  font-weight: bold
-  border: 0
-  border-radius: var(border_radius)
+  color white
+  font-weight bold
+  border 0
+  border-radius border_radius
   &.alert-info
-    background-color: #3498db
+    background-color #3498db
   &.alert-success
-    background-color: #27ae60
+    background-color #27ae60
   &.alert-warning
-    background-color: #f1c40f
+    background-color #f1c40f
   &.alert-block
-    background-color: #bebec5
-    color: white
+    background-color #bebec5
+    color white
 
 .system-alert
-  margin-top: 20px
+  margin-top 20px
 
 .caret
-  color: #000
-  position: absolute
-  right: 12px
-  top: 50%
-  margin-top: -1px
+  color #000
+  position absolute
+  right 12px
+  top 50%
+  margin-top -1px
 
 .inner-container
-  padding-left: 20px
-  padding-right: 20px
-  margin: auto
-  max-width: var(content_width)
+  padding-left 20px
+  padding-right 20px
+  margin auto
+  max-width content_width
 
 .small-container
-  max-width: 300px
-  padding-left: 10px
-  padding-right: 10px
-  margin: auto
+  max-width 300px
+  padding-left 10px
+  padding-right 10px
+  margin auto
 
 .title-page
-  text-align: center
-  margin-bottom: 30px
-  margin-top: 30px
+  text-align center
+  margin-bottom 30px
+  margin-top 30px
   .circle
-    background: #bdc3c7
-    color: white
-    width: 80px
-    height: 80px
-    overflow: hidden
-    display: inline-block
-    border-radius: 100px
+    background #bdc3c7
+    color white
+    width 80px
+    height 80px
+    overflow hidden
+    display inline-block
+    border-radius 100px
 
   i
-    font-size: 30px
-    line-height: 80px
-    color: #7f8c8d
+    font-size 30px
+    line-height 80px
+    color #7f8c8d
 
   h1
-    font-size: 12px
-    letter-spacing: 1px
-    text-transform: uppercase
+    font-size 12px
+    letter-spacing 1px
+    text-transform uppercase
 
 /* Site Content Container
 -------------------------------------------------- */
 body.browser-page
   section#content
-    display: none
+    display none
 
 section.site-content
-  top: var(header_height)
-  left: var(nav_proposal_width)
-  right: 0
-  bottom: 0
+  top header_height
+  left nav_proposal_width
+  right 0
+  bottom 0
   &#content
-    z-index: 12
-    left: 0
+    z-index 12
+    left 0
 
 /* Signin page
 -------------------------------------------------- */
@@ -134,228 +134,228 @@ section.site-content
     .forgot
       float:right
       a
-        font-size: 12px
+        font-size 12px
 
 
 /* Sidebar
 -------------------------------------------------- */
 aside.nav-proposal
-  top: var(header_height)
-  left: 0
-  bottom: 0
-  width: var(nav_proposal_width)
-  border-right: 1px solid #BDC3C7
-  overflow-y: scroll
-  background: #ECF0F1
-  z-index: 10
+  top header_height
+  left 0
+  bottom 0
+  width nav_proposal_width
+  border-right 1px solid #BDC3C7
+  overflow-y scroll
+  background #ECF0F1
+  z-index 10
   .navlist
     li
-      border-bottom: 1px solid lighten(#BDC3C7, 40%)
+      border-bottom 1px solid lighten(#BDC3C7, 40%)
       a.voted
-        min-height: 75px
+        min-height 75px
 
       a
-        padding-left: var(spacing)
-        padding-top: 14px
-        padding-bottom: 14px
-        color: black
-        position: relative
-        padding-left: 70px
-        color: #666
-        min-height: 60px
+        padding-left spacing
+        padding-top 14px
+        padding-bottom 14px
+        color black
+        position relative
+        padding-left 70px
+        color #666
+        min-height 60px
 
         .item-tag
-          position: absolute
-          left: var(spacing)
-          top: var(spacing)
-          color: white
+          position absolute
+          left spacing
+          top spacing
+          color white
           svg.hexagon
-            width: 40px
-            height: 40px
-            left: 0
-            top: -8px
-            position: absolute
-            opacity: .2
+            width 40px
+            height 40px
+            left 0
+            top -8px
+            position absolute
+            opacity .2
             // polygon
-            //  fill: #BDC3C7
+            //  fill #BDC3C7
           img
-            width: 20px
-            height: 20px
-            position: absolute
-            z-index: 100
-            width: 30px
-            left: 5px
-            top: 2px
+            width 20px
+            height 20px
+            position absolute
+            z-index 100
+            width 30px
+            left 5px
+            top 2px
 
         .item-badges
-          position: absolute
-          left: math(var(spacing) + 7)
-          top: math(var(spacing) + 34)
-          color: white
+          position absolute
+          left spacing + 7
+          top spacing + 34
+          color white
 
           img
-            width: 16px
-            height: 12px
-            position: absolute
-            z-index: 100
-            left: 5px
-            top: 2px
+            width 16px
+            height 12px
+            position absolute
+            z-index 100
+            left 5px
+            top 2px
 
         &:hover
-          background: #fff
+          background #fff
 
         span.title
-          font-size: 15px
-          line-height: 19px
-          font-weight: bold
-          display: block
-          margin-bottom: 0px
+          font-size 15px
+          line-height 19px
+          font-weight bold
+          display block
+          margin-bottom 0px
 
         span.created-by
-          font-size: 11px
-          opacity: .5
+          font-size 11px
+          opacity .5
 
   .navlist
     li.active
       a
         .item-tag
           svg.hexagon
-            opacity: 1
+            opacity 1
       &.active
         a
-          background: #fff
-          color: black
+          background #fff
+          color black
 
 /* Sidebar dropdown-department
 -------------------------------------------------- */
 .proposal-type
-  position: absolute
-  left: 14px
-  top: 20px
-  background: #F1C42E
-  color: white
-  border-radius: 100px
-  padding: 10px
-  line-height: 10px
+  position absolute
+  left 14px
+  top 20px
+  background #F1C42E
+  color white
+  border-radius 100px
+  padding 10px
+  line-height 10px
   &.proposal-type-2
-    background-color: #E67E22
+    background-color #E67E22
 
 /* Sidebar dropdown-department
 -------------------------------------------------- */
 .dropdown-department
-  padding:  15.5px var(spacing)
-  background-color: #bdc3c7
-  display: block
+  padding  15.5px spacing
+  background-color #bdc3c7
+  display block
   .btn-group
-    float: none
-    width: 100%
+    float none
+    width 100%
     &.open > button.btn.btn-default,
     &.open > button.btn.btn-default.dropdown-toggle
-      background-color: #727f80
-      box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px 0px inset
-      box-shadow: none
+      background-color #727f80
+      box-shadow rgba(0, 0, 0, 0.15) 0px 3px 5px 0px inset
+      box-shadow none
     button.btn.btn-default
-      background-color: #909FA0
-      font-size: 12px
-      color: white
-      text-align: left
+      background-color #909FA0
+      font-size 12px
+      color white
+      text-align left
       &.dropdown-toggle
-        float: right
-        padding-right: 0
-        padding-left: 0
-        width: 8%
-        background-color: #909FA0
+        float right
+        padding-right 0
+        padding-left 0
+        width 8%
+        background-color #909FA0
       &.current-department
-        width: 100%
-        overflow: hidden
-        border-radius: 4px
-        -webkit-font-smoothing: antialiased !important
+        width 100%
+        overflow hidden
+        border-radius 4px
+        -webkit-font-smoothing antialiased !important
     .dropdown-menu
-      width: 100%
-      border-radius: var(border_radius)
+      width 100%
+      border-radius border_radius
       li
-        display: block
-        width: 100%
+        display block
+        width 100%
       a
-        display: block
-        white-space: normal
-        font-weight: bold
-        text-transform: uppercase
-        font-size: 12px
-        padding: 6px 14px
+        display block
+        white-space normal
+        font-weight bold
+        text-transform uppercase
+        font-size 12px
+        padding 6px 14px
         &:hover
-          background: #f1f1f1
-          color: #333
+          background #f1f1f1
+          color #333
 
 /* Feedback button
 -------------------------------------------------- */
 .uv-icon.uv-bottom-right
-  right: 25px !important
+  right 25px !important
 
 
 /* `component/confirmation` adjust styles
 -------------------------------------------------- */
 body
   .overlay
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)
-    z-index: 9999998
+    background radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)
+    z-index 9999998
   #dialog
-    position: fixed
-    display: block
-    max-width: 500px
-    min-width: 250px
-    left: 50%
-    top: 150px
-    right: initial
-    bottom: initial
-    background: #FFF
-    box-shadow: 2px 2px 5px rgba(0,0,0,.4)
-    border: 0px
-    overflow: initial
-    z-index: 9999999
+    position fixed
+    display block
+    max-width 500px
+    min-width 250px
+    left 50%
+    top 150px
+    right initial
+    bottom initial
+    background #FFF
+    box-shadow 2px 2px 5px rgba(0,0,0,.4)
+    border 0px
+    overflow initial
+    z-index 9999999
     p
-      font-size: 1.1em
+      font-size 1.1em
     .content
-      padding: 0px 20px 10px 20px
-      margin-top: 30px
+      padding 0px 20px 10px 20px
+      margin-top 30px
       .title
-        position: absolute
-        left: 0px
-        right: 0px
-        top: 0px
-        min-height: 20px
-        padding: 5px 20px
-        background: #D95E59
-        color: #FFF
-        text-transform: uppercase
-        font-weight: 600
+        position absolute
+        left 0px
+        right 0px
+        top 0px
+        min-height 20px
+        padding 5px 20px
+        background #D95E59
+        color #FFF
+        text-transform uppercase
+        font-weight 600
       .body
-        padding: 20px 0px
-        // margin-top: 30px
+        padding 20px 0px
+        // margin-top 30px
       .close
-        line-height: 10px
-        top: 10px
-        right: 10px
-        font-weight: 600
-        color: #000
-        opacity: .5
+        line-height 10px
+        top 10px
+        right 10px
+        font-weight 600
+        color #000
+        opacity .5
     .confirmation-actions
-      padding: 5px 10px
+      padding 5px 10px
       button
-        border: none
-        color: #FFF
-        background: #aaa
-        padding: 5px 10px
-        letter-spacing: 0.09em
-        text-transform: uppercase
-        font-size: 0.7em
-        outline: none
-        margin-left: 5px
+        border none
+        color #FFF
+        background #aaa
+        padding 5px 10px
+        letter-spacing 0.09em
+        text-transform uppercase
+        font-size 0.7em
+        outline none
+        margin-left 5px
         &.cancel
-          outline: none
+          outline none
           &:focus, &:hover
-            background: #777
+            background #777
         &.main, &.ok
-          background: #D95E59
+          background #D95E59
           &:focus, &:hover
-            background: #952722
+            background #952722

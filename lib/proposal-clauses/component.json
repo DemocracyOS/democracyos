@@ -5,7 +5,7 @@
     "component/t": "1.0.0",
     "visionmedia/jade": "1.1.5"
   },
-  "local": [
+  "locals": [
     "config",
     "citizen",
     "side-comments",

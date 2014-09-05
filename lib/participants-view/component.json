@@ -9,9 +9,9 @@
     "component/aurora-tip": "1.0.0",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
-    "cristiandouce/query": "0.0.1"
+    "slifszyc/query": "0.0.3"
   },
-  "local": [ "config", "render", "request" ],
+  "locals": [ "config", "render", "request" ],
   "scripts": [ "view.js"],
   "templates": [ "box.jade", "participant.jade" ],
   "styles": [ ],

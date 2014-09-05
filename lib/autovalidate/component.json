@@ -6,7 +6,7 @@
     "visionmedia/debug": "1.0.4",
     "yields/serialize": "0.2.0"
   },
-  "local": [ "validate" ],
+  "locals": [ "validate" ],
   "scripts": [ "autovalidate.js" ],
   "main": "autovalidate.js"
 }

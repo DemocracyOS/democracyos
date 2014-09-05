@@ -9,7 +9,7 @@
     "component/inserted": "0.0.2",
     "component/removed": "0.0.3"
   },
-  "local": [ "render" ],
+  "locals": [ "render" ],
   "scripts": [ "view.js" ],
   "main": "view.js"
 }

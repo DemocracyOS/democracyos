@@ -13,9 +13,9 @@
     "yields/empty": "0.0.1",
     "yields/serialize": "0.2.0",
     "component/t": "1.0.0",
-    "cristiandouce/query": "0.0.1"
+    "slifszyc/query": "0.0.3"
   },
-  "local": [
+  "locals": [
     "regexps",
     "citizen",
     "request",

@@ -9,10 +9,10 @@
     "visionmedia/jade": "1.1.5",
     "yields/empty": "0.0.1",
     "yields/serialize": "0.2.0",
-    "cristiandouce/query": "0.0.1",
+    "slifszyc/query": "0.0.3",
     "component/t": "1.0.0"
   },
-  "local": [ "regexps", "citizen", "request", "title", "render" ],
+  "locals": [ "regexps", "citizen", "request", "title", "render" ],
   "scripts": [ "forgot.js", "forgot-view.js", "reset-view.js" ],
   "styles": [ ],
   "templates": [ "forgot-form.jade" , "reset-form.jade" ],
