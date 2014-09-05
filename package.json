@@ -81,6 +81,7 @@
     "npm": "1.4.9"
   },
   "scripts": {
-    "test": ""
+    "test": "",
+    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
   }
 }
