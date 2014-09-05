@@ -78,7 +78,7 @@
   "main": "pdr",
   "engines": {
     "node": "0.10.15",
-    "npm": "1.3.5"
+    "npm": "1.4.9"
   },
   "scripts": {
     "test": ""
