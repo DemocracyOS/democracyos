@@ -77,7 +77,7 @@
   "devDependencies": {},
   "main": "pdr",
   "engines": {
-    "node": "0.10.15",
+    "node": "0.10.28",
     "npm": "1.4.9"
   },
   "scripts": {
