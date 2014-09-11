@@ -52,6 +52,7 @@
   "validators.invalid.url": "URL no válida",
   "validators.invalid.number": "Número no válido",
   "invalid.password": "Contraseña no válida",
+  "validators.invalid.time": "Tiempo no válido",
   "validators.min-length.singular": "Debe tener al menos 1 caracter",
   "validators.min-length.plural": "Debe tener al menos {n} caracteres",
   "validators.input.not-exists": "No existe el elemento {name}",

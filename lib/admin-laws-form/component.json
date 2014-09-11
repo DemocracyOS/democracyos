@@ -4,7 +4,7 @@
   "dependencies": {
     "component/t": "1.0.0",
     "component/dom": "1.0.5",
-    "component/datepicker": "*",
+    "component/datepicker": "1.0.1",
     "slifszyc/timepicker": "*",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",

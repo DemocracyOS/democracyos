@@ -34,6 +34,10 @@
   margin-left: 12px;
 }
 
+#law-wrapper .law-admin form .form-group.closingAt span.error {
+  top: 10px;
+}
+
 #law-wrapper .law-admin form .form-group input[readonly] {
   background-color: #fff;
   cursor: default;

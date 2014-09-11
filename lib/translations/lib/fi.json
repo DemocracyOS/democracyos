@@ -52,6 +52,7 @@
   "validators.invalid.url": "Virheellinen URL-osoite",
   "validators.invalid.number": "Virheellinen numero",
   "invalid.password": "Virheellinen salasana",
+  "validators.invalid.time": "virheellinen aika",
   "validators.min-length.singular": "Sen on oltava vähintään 1 merkki",
   "validators.min-length.plural": "Se mus olla vähintään {n} merkkiä",
   "validators.input.not-exists": "{name} elemen ei ole olemassa",

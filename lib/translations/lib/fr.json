@@ -52,6 +52,7 @@
   "validators.invalid.url": "URL invalide",
   "validators.invalid.number": "nombre incorrect",
   "invalid.password": "mot de passe invalide",
+  "validators.invalid.time": "heure non valide",
   "validators.min-length.singular": "Il doit être d'au moins 1 caractère",
   "validators.min-length.plural": "Il mus soit au moins caractères {n}",
   "validators.input.not-exists": "{name} élémentaire n'existe pas",
