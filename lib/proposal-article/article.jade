@@ -50,11 +50,12 @@
             a.read-more(href="#")= t('read more')
 
     //- Article external links
-    .links
-      p
-        span.glyphicon.glyphicon-link
-        a(target="_blank", href="#{proposal.source}")
-         | #{t('View the original text')}
+    - if (proposal.source)
+      .links
+        p
+          span.glyphicon.glyphicon-link
+          a(target="_blank", href="#{proposal.source}")
+           | #{t('View the original text')}
 
     //- Article participants
     .participants(class=proposal.votable ? '' : 'hide')
