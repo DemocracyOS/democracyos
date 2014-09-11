@@ -213,6 +213,7 @@
   "admin-laws-form.label.tag": "Label",
   "admin-laws-form.label.summary": "Samenvatting",
   "admin-laws-form.label.closingAt": "Sluit op",
+  "admin-laws-form.label.votable": "Votable",
   "admin-laws-form.button.add-clause": "Bepaling toevoegen",
   "admin-laws-form.message.add-clause-forbidden": "De wet moet opgeslagen zijn voordat je een bepaling kunt toevoegen",
   "admin-laws-form.button.submit": "Opslaan",

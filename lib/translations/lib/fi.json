@@ -223,6 +223,7 @@
   "admin-laws-form.label.tag": "Tägi",
   "admin-laws-form.label.summary": "Yhteenveto",
   "admin-laws-form.label.closingAt": "Tilinpäätöspäivänä",
+  "admin-laws-form.label.votable": "Votable",
   "admin-laws-form.button.add-clause": "Lisää ehto",
   "admin-laws-form.message.add-clause-forbidden": "Sinun täytyy tallentaa laki lisätäksesi ehtoja",
   "admin-laws-form.button.submit": "Tallenna",
