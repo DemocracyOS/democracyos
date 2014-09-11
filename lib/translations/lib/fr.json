@@ -229,6 +229,7 @@
   "admin-laws-form.label.tag": "Comission",
   "admin-laws-form.label.summary": "Résumé",
   "admin-laws-form.label.closingAt": "Date de fermeture",
+  "admin-laws-form.label.votable": "Votable",
   "admin-laws-form.button.add-clause": "Nouvel article",
   "admin-laws-form.message.add-clause-forbidden": "La loi doit être sauvegardée avant d' ajouter des articles",
   "admin-laws-form.button.submit": "Sauvegarder",

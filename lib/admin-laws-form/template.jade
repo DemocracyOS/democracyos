@@ -21,6 +21,11 @@
       .form-group
         label= t('admin-laws-form.label.mediaTitle')
         input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle, validate='required')
+      .checkbox
+        label
+          - var votable = !law.id || law.votable
+          input(type='checkbox', id="votable", name='votable', tabindex=3, checked=votable)
+          = t('admin-laws-form.label.votable')
       .form-group
         label= t('admin-laws-form.label.source')
         input.form-control(type='url', name='source', tabindex=4, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='required url')
