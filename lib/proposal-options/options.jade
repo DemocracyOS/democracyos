@@ -8,7 +8,7 @@
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
 - var voted = citizen && ~census.indexOf(citizen.id)
 
-.inner-container.commentable-container
+.inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
     
   .proposal-options
     .vote-box
