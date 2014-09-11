@@ -52,6 +52,7 @@
   "validators.invalid.url": "URL no vàlida",
   "validators.invalid.number": "Nombre no vàlid",
   "invalid.password": "contrasenya no vàlida",
+  "validators.invalid.time": "temps no vàlid",
   "validators.min-length.singular": "Ha de ser com a mínim 1 caràcter",
   "validators.min-length.plural": "És mus ser d'almenys {n} caràcters",
   "validators.input.not-exists": "No existeix {name} elemental",

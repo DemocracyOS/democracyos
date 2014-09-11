@@ -52,6 +52,7 @@
   "validators.invalid.url": "Invalid URL",
   "validators.invalid.number": "Invalid number",
   "invalid.password": "Invalid password",
+  "validators.invalid.time": "Invalid time",
   "validators.min-length.singular": "It must be at least 1 character",
   "validators.min-length.plural": "It must be at least {n} characters",
   "validators.input.not-exists": "{name} elemen does not exists",
