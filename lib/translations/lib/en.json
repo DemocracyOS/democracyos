@@ -235,6 +235,8 @@
   "admin-laws-form.label.clause-truncation-text": "Clause truncation text",
   "admin-laws-form.button.add-clause": "Add clause",
   "admin-laws-form.message.add-clause-forbidden": "Law must be saved to start adding clauses",
+  "admin-laws-form.button.add-link": "Add link",
+  "admin-laws-form.message.add-link-forbidden": "Law must be saved to start adding link",
   "admin-laws-form.button.submit": "Save",
 
   "admin-laws-form.message.public-status": "This law is published to public",
