@@ -232,6 +232,7 @@
   "admin-laws-form.label.summary": "Summary",
   "admin-laws-form.label.closingAt": "Closing at",
   "admin-laws-form.label.votable": "Votable",
+  "admin-laws-form.label.clause-truncation-text": "Clause truncation text",
   "admin-laws-form.button.add-clause": "Add clause",
   "admin-laws-form.message.add-clause-forbidden": "Law must be saved to start adding clauses",
   "admin-laws-form.button.submit": "Save",

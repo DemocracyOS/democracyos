@@ -234,6 +234,7 @@
   "admin-laws-form.label.summary": "Resumen",
   "admin-laws-form.label.closingAt": "Fecha de cierre",
   "admin-laws-form.label.votable": "Votable",
+  "admin-laws-form.label.clause-truncation-text": "Texto para leer articulado",
   "admin-laws-form.button.add-clause": "Nuevo artículo",
   "admin-laws-form.message.add-clause-forbidden": "La ley debe guardarse antes de agregar artículos",
   "admin-laws-form.button.submit": "Guardar",

@@ -214,6 +214,7 @@
   "admin-laws-form.label.summary": "Zusammenfassung",
   "admin-laws-form.label.closingAt": "Schließungsdatum",
   "admin-laws-form.label.votable": "Votable",
+  "admin-laws-form.label.clause-truncation-text": "Klausel Abschneiden Text",
   "admin-laws-form.button.add-clause": "Artikel hinzufügen",
   "admin-laws-form.message.add-clause-forbidden": "Gesetz muss erst gespeichert werden, bevor Artikel hinzugefügt werden können",
   "admin-laws-form.button.submit": "Speichern",
