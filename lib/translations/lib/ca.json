@@ -231,6 +231,7 @@
   "admin-laws-form.label.tag": "Etiquete",
   "admin-laws-form.label.summary": "Sumari",
   "admin-laws-form.label.votable": "Votable",
+  "admin-laws-form.label.clause-truncation-text": "Text truncament Clàusula",
   "admin-laws-form.button.add-clause": "Afegir clàusula",
   "admin-laws-form.message.add-clause-forbidden": "La llei ha de ser guardat per començar a afegir clàusules",
   "admin-laws-form.button.submit": "Guardar",

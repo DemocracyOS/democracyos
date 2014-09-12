@@ -231,6 +231,7 @@
   "admin-laws-form.label.summary": "Riassunto",
   "admin-laws-form.label.closingAt": "Data di chiusura",
   "admin-laws-form.label.votable": "Votable",
+  "admin-laws-form.label.clause-truncation-text": "Testo Clausola troncamento",
   "admin-laws-form.button.add-clause": "Nuovo articolo",
   "admin-laws-form.message.add-clause-forbidden": "La legge deve essere salvato prima di aggiungere articolo",
   "admin-laws-form.button.submit": "Salvare",

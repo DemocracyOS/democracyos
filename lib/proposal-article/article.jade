@@ -42,12 +42,15 @@
       .clauses
         - if (clauses.length)
           - each clause, i in clauses
-            - var classes = clause.centered ? ['text-center'] : []
+            - var classes = ['hide']
+            - classes.push(clause.centered ? 'text-center' : '')
             - var text = (clause.clauseName ? clause.clauseName + ': ' : '') + clause.text
-            - if (i > 0) classes.push('hide')
             p.clause.commentable-section(class=classes, data-section-id=clause.id)!=text
           - if (clauses.length > 1)
-            a.read-more(href="#")= t('read more')
+            - if (proposal.clauseTruncationText)
+              a.read-more(href="#")= proposal.clauseTruncationText
+            - else
+              a.read-more(href="#")= t('read more')
 
     //- Article external links
     - if (proposal.source)
