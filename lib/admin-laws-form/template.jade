@@ -61,5 +61,12 @@
               include clause
         a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-laws-form.button.add-clause')
         span.add-clause-forbidden.hide=t('admin-laws-form.message.add-clause-forbidden')
+      .form-group
+        .law-links
+          - if (law.links && law.links.length)
+            - each link, id in law.link
+              include link
+        a.add-link.btn.btn-block.btn-info(href='#')= t('admin-laws-form.button.add-link')
+        span.add-link-forbidden.hide=t('admin-laws-form.message.add-link-forbidden')
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=10, value=t('admin-laws-form.button.submit'))
     a.delete-law.text-danger(href='#', class= law.id ? '' : 'hide')= t('admin-laws-form.delete-law.button.delete')
