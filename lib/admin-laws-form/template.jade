@@ -64,7 +64,7 @@
       .form-group
         .law-links
           - if (law.links && law.links.length)
-            - each link, id in law.link
+            - each link, id in law.links
               include link
         a.add-link.btn.btn-block.btn-info(href='#')= t('admin-laws-form.button.add-link')
         span.add-link-forbidden.hide=t('admin-laws-form.message.add-link-forbidden')
