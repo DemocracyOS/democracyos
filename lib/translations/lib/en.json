@@ -176,7 +176,8 @@
   "Results will be shown when this law is closed": "Results will be shown when this law is closed",
   "Summary": "Summary",
   "Chart": "Chart",
-  
+  "URL": "URL",
+
   "Clause": "Clause",
   "read more": "Read more",
   "view more": "view more",
@@ -249,11 +250,13 @@
   "admin-laws-form.clause.label.order": "Order",
   "admin-laws-form.clause.label.text": "Text",
   "admin-laws-form.clause.button.delete": "Delete",
-  "admin-laws-form.clause.confirmation.title": "Clause removal",
   "admin-laws-form.clause.confirmation.body": "This action will erase data permanently. Would you like to procced?",
+  "admin-laws-form.clause.confirmation.title": "Clause removal",
   "admin-laws-form.clause.confirmation.cancel": "Cancel",
   "admin-laws-form.clause.confirmation.ok": "Delete",
   "admin-laws-form.clause.text-centered": "Text centered",
+
+  "admin-laws-form.link.confirmation.title": "Link removal",
 
   "admin-laws-form.message.onsuccess": "Law successfuly saved",
   "admin-laws-form.message.validation.lawId-required": "Official Id required",

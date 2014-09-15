@@ -227,6 +227,7 @@
   "admin-laws-form.label.clause-truncation-text": "Lauseke katkaisu teksti",
   "admin-laws-form.button.add-clause": "Lisää ehto",
   "admin-laws-form.message.add-clause-forbidden": "Sinun täytyy tallentaa laki lisätäksesi ehtoja",
+  "admin-laws-form.button.add-link": "lisää linkki",
   "admin-laws-form.button.submit": "Tallenna",
 
   "admin-laws-form.message.public-status": "Tämä laki on julkinen",
@@ -244,6 +245,8 @@
   "admin-laws-form.clause.confirmation.cancel": "Peruuta",
   "admin-laws-form.clause.confirmation.ok": "Poista",
   "admin-laws-form.clause.text-centered": "Teksti keskitetty",
+
+  "admin-laws-form.link.confirmation.title": "linkki poisto",
 
   "admin-laws-form.message.onsuccess": "Laki tallennettu",
   "admin-laws-form.message.validation.lawId-required": "Virallinen Id pakollinen",

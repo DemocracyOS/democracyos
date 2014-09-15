@@ -234,6 +234,7 @@
   "admin-laws-form.label.clause-truncation-text": "Text truncament Clàusula",
   "admin-laws-form.button.add-clause": "Afegir clàusula",
   "admin-laws-form.message.add-clause-forbidden": "La llei ha de ser guardat per començar a afegir clàusules",
+  "admin-laws-form.button.add-link": "afegir link",
   "admin-laws-form.button.submit": "Guardar",
 
   "admin-laws-form.message.public-status": "Aquesta llei es publica en públic",
@@ -251,6 +252,8 @@
   "admin-laws-form.clause.confirmation.cancel": "Cancel",
   "admin-laws-form.clause.confirmation.ok": "Delete",
   "admin-laws-form.clause.text-centered": "Text centrat",
+
+  "admin-laws-form.link.confirmation.title": "eliminació enllaç",
 
   "admin-laws-form.message.onsuccess": "Law successfuly saved",
   "admin-laws-form.message.validation.lawId-required": "Official Id required",
