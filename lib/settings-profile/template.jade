@@ -15,8 +15,11 @@
       .form-group
         label= t('Email')
         input.form-control(type='text', disabled='disabled' name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}', validate='required email')
-      .form-group
-        a(href="https://gravatar.com", target="_blank")
-          img(src=citizen.gravatar, width="30")
-          strong= t('Change your profile picture at gravatar.com')
-      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=4)=t('Save')
+      .form-group.profile-picture
+        .image-container
+          img(src=citizen.profilePicture(), width="65")
+        .controls
+          a(href="https://gravatar.com", target="_blank")
+            strong= t('Change your profile picture at gravatar.com')
+          input.form-control(type='text', name='profilePictureUrl', tabindex=4, placeholder=t('Or paste an image URL here...'), value=citizen.profilePictureUrl, validate='url')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=5)=t('Save')
