@@ -3,7 +3,7 @@
   "description": "Generic comments view component",
   "dependencies": {
     "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/classes": "1.2.0",
     "slifszyc/loading-lock": "0867923281013c00b503c4bc866e103fd5024105",
     "visionmedia/jade": "1.1.5",

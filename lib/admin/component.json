@@ -2,7 +2,7 @@
   "name": "admin",
   "description": "Admin page",
   "dependencies": {
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/emitter": "1.1.1",
     "component/classes": "1.2.0",
     "visionmedia/page.js": "1.3.7",
