@@ -43,6 +43,7 @@
   "Your password was successfuly updated": "Your password was successfuly updated",
   "Current password is invalid": "Current password is invalid",
   "Please wait": "Si us plau espera",
+  "More information": "més informació",
 
   "validators.required": "cal",
   "validators.checked": "Camp obligatori comprovat",

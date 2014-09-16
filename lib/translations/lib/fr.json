@@ -43,6 +43,7 @@
   "Your password was successfuly updated": "Votre mot de passe a été actualisé avec succès",
   "Current password is invalid": "Lo mot de passe actuel est incorrect",
   "Please wait": "S'il vous plaît, attendez",
+  "More information": "plus d'informations",
 
   "validators.required": "requis",
   "validators.checked": "Exiger champ vérifié",

@@ -43,6 +43,7 @@
   "Your password was successfuly updated": "Salasanasi on nyt päivitetty",
   "Current password is invalid": "Nykyinen salasana on pätemätön",
   "Please wait": "odota",
+  "More information": "lisätietoja",
 
   "validators.required": "vaadittu",
   "validators.checked": "Vaadittu tarkastetaan kenttä",
