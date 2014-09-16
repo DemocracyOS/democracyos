@@ -10,7 +10,8 @@
 
 li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
   span.pull-left
-    img(src=comment.author.gravatar).avatar
+    - var src = comment.author.profilePictureUrl ? comment.author.profilePictureUrl : comment.author.gravatar
+    img(src=src).avatar
 
   .media-body
     h5.media-heading
