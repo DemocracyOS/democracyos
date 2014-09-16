@@ -1,4 +1,13 @@
 
+0.8.0 / 2014-09-16
+==================
+
+ * Add citizen profile picture as a URL
+ * Add external links to a law
+ * Add custom text to truncate law clauses
+ * Add unvotable laws
+ * Remove 'source' as a required law attribute
+
 0.7.6c / 2014-09-11
 ==================
 
