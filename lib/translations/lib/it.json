@@ -42,6 +42,7 @@
   "Your password was successfuly updated": "La tua password è stata aggiornata correttamente",
   "Current password is invalid": "La password corrente non è valido",
   "Please wait": "attendere prego",
+  "More information": "maggiori informazioni",
 
   "validators.required": "Obbligatorio",
   "validators.checked": "Campo controllato obbligatori",
@@ -234,6 +235,7 @@
   "admin-laws-form.label.clause-truncation-text": "Testo Clausola troncamento",
   "admin-laws-form.button.add-clause": "Nuovo articolo",
   "admin-laws-form.message.add-clause-forbidden": "La legge deve essere salvato prima di aggiungere articolo",
+  "admin-laws-form.button.add-link": "aggiungere link",
   "admin-laws-form.button.submit": "Salvare",
 
   "admin-laws-form.message.public-status": "Questa legge è aperto al pubblico",
@@ -251,6 +253,8 @@
   "admin-laws-form.clause.confirmation.cancel": "Cancellare",
   "admin-laws-form.clause.confirmation.ok": "Eliminare",
   "admin-laws-form.clause.text-centered": "Testo centrato",
+
+  "admin-laws-form.link.confirmation.title": "rimozione Link",
 
   "admin-laws-form.message.onsuccess": "Legge salvato con successo",
   "admin-laws-form.message.validation.lawId-required": "Identificazione ufficiale richiesta",

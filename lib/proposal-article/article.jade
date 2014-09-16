@@ -52,13 +52,22 @@
             - else
               a.read-more(href="#")= t('read more')
 
-    //- Article external links
+    //- Article source
     - if (proposal.source)
-      .links
+      .source
         p
           span.glyphicon.glyphicon-link
           a(target="_blank", href="#{proposal.source}")
            | #{t('View the original text')}
+
+    //- Article links
+    - if (proposal.links && proposal.links.length)
+      .links
+        h5=t('More information')
+        - each link in proposal.links
+          p
+            span.glyphicon.glyphicon-share
+            a(target="_blank", href=link.url)=link.text
 
     //- Article participants
     .participants(class=proposal.votable ? '' : 'hide')

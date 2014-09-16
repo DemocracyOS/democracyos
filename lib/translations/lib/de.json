@@ -42,6 +42,7 @@
   "Confirm new password": "Neues Passwort wiederholen",
   "Your password was successfuly updated": "Dein Passwort wurde erfolgreich geändert.",
   "Current password is invalid": "Passwort ungültig",
+  "More information": "weitere Informationen",
 
   "sidebar.open": "Offen",
   "sidebar.closed": "Geschlossen",
@@ -217,6 +218,7 @@
   "admin-laws-form.label.clause-truncation-text": "Klausel Abschneiden Text",
   "admin-laws-form.button.add-clause": "Artikel hinzufügen",
   "admin-laws-form.message.add-clause-forbidden": "Gesetz muss erst gespeichert werden, bevor Artikel hinzugefügt werden können",
+  "admin-laws-form.button.add-link": "Link removala",
   "admin-laws-form.button.submit": "Speichern",
 
   "admin-laws-form.message.public-status": "Dieses Gesetz ist öffentlich zugänglich",
@@ -234,6 +236,8 @@
   "admin-laws-form.clause.confirmation.cancel": "Abbrechen",
   "admin-laws-form.clause.confirmation.ok": "Löschen",
   "admin-laws-form.clause.text-centered": "Text zentriert",
+
+  "admin-laws-form.link.confirmation.title": "koppeling verwijderen",
 
   "admin-laws-form.message.onsuccess": "Gesetz erfolgreich gespeichert",
   "admin-laws-form.message.validation.lawId-required": "Offizielle Id erforderlich",

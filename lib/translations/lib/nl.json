@@ -42,6 +42,7 @@
   "Confirm new password": "Bevestig nieuwe wachtwoord",
   "Your password was successfuly updated": "Je wachtwoord is aangepast",
   "Current password is invalid": "Huidig wachtwoord is niet correct",
+  "More information": "meer informatie",
 
   "sidebar.open": "Open",
   "sidebar.closed": "Gesloten",
@@ -217,6 +218,7 @@
   "admin-laws-form.label.clause-truncation-text": "Clausule truncatie tekst",
   "admin-laws-form.button.add-clause": "Bepaling toevoegen",
   "admin-laws-form.message.add-clause-forbidden": "De wet moet opgeslagen zijn voordat je een bepaling kunt toevoegen",
+  "admin-laws-form.button.add-link": "link toevoegen",
   "admin-laws-form.button.submit": "Opslaan",
 
   "admin-laws-form.message.public-status": "De wet is gepubliceerd",
@@ -234,6 +236,7 @@
   "admin-laws-form.clause.confirmation.cancel": "Annuleren",
   "admin-laws-form.clause.confirmation.ok": "Verwijderen",
   "admin-laws-form.clause.text-centered": "Tekst centreren",
+  "admin-laws-form.link.confirmation.title": "koppeling removala",
 
   "admin-laws-form.message.onsuccess": "De wet is opgeslagen",
   "admin-laws-form.message.validation.lawId-required": "Wetsartikel is verplicht",
