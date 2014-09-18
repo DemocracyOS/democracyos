@@ -42,22 +42,35 @@
       .clauses
         - if (clauses.length)
           - each clause, i in clauses
-            - var classes = clause.centered ? ['text-center'] : []
+            - var classes = ['hide']
+            - classes.push(clause.centered ? 'text-center' : '')
             - var text = (clause.clauseName ? clause.clauseName + ': ' : '') + clause.text
-            - if (i > 0) classes.push('hide')
             p.clause.commentable-section(class=classes, data-section-id=clause.id)!=text
           - if (clauses.length > 1)
-            a.read-more(href="#")= t('read more')
+            - if (proposal.clauseTruncationText)
+              a.read-more(href="#")= proposal.clauseTruncationText
+            - else
+              a.read-more(href="#")= t('read more')
 
-    //- Article external links
-    .links
-      p
-        span.glyphicon.glyphicon-link
-        a(target="_blank", href="#{proposal.source}")
-         | #{t('View the original text')}
+    //- Article source
+    - if (proposal.source)
+      .source
+        p
+          span.glyphicon.glyphicon-link
+          a(target="_blank", href="#{proposal.source}")
+           | #{t('View the original text')}
+
+    //- Article links
+    - if (proposal.links && proposal.links.length)
+      .links
+        h5=t('More information')
+        - each link in proposal.links
+          p
+            span.glyphicon.glyphicon-share
+            a(target="_blank", href=link.url)=link.text
 
     //- Article participants
-    .participants
+    .participants(class=proposal.votable ? '' : 'hide')
       //- Rendered by participants view
 
     //- Article share links

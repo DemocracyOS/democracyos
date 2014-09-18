@@ -47,27 +47,44 @@
   min-height: 180px;
 }
 
-#law-wrapper .law-admin form a.add-clause{
+#law-wrapper .law-admin form a.add-clause,
+#law-wrapper .law-admin form a.add-link {
   width: 100%;
   margin: 15px 0px;
+}
+
+#law-wrapper .law-admin form a.add-link.btn-info {
+  background: #16a085;
 }
 
 #law-wrapper form .form-group span.error {
   top: 40px;
 }
 
-#law-wrapper .law-admin form span.add-clause-forbidden {
+#law-wrapper form .form-group .link-group span.error {
+  top: 40px;
+  right: 20px;
+}
+
+#law-wrapper .law-admin form span.add-clause-forbidden,
+#law-wrapper .law-admin form span.add-link-forbidden {
   display: block;
   width: 100%;
   color: #F00;
   text-align: center;
 }
 
-#law-wrapper .law-admin .law-clause h4 {
+#law-wrapper .law-admin .law-links {
+  overflow: hidden;
+}
+
+#law-wrapper .law-admin .law-clause h4,
+#law-wrapper .law-admin .law-link h4 {
   margin-top: 0px;
 }
 
-#law-wrapper .law-admin .law-clause {
+#law-wrapper .law-admin .law-clause,
+#law-wrapper .law-admin .law-link {
   display: block;
   position: relative;
   float: left;
@@ -77,11 +94,13 @@
   border-top: 1px solid #eee;
 }
 
-#law-wrapper .law-admin .law-clause .remove-clause {
+#law-wrapper .law-admin .law-clause .remove-clause,
+#law-wrapper .law-admin .law-link .remove-link {
   float: right;
 }
 
-#law-wrapper .law-admin .law-clause .clause-row {
+#law-wrapper .law-admin .law-clause .clause-row,
+#law-wrapper .law-admin .law-link .link-row {
   display: block;
   position: relative;
   float: left;
@@ -94,7 +113,8 @@
   margin: 0;
 }
 
-#law-wrapper .law-admin .law-clause .clause-row .clause-group {
+#law-wrapper .law-admin .law-clause .clause-row .clause-group,
+#law-wrapper .law-admin .law-link .link-row .link-group {
   display: block;
   position: relative;
   float: left;
@@ -108,7 +128,9 @@
 }
 
 #law-wrapper .law-admin .law-clause .clause-row .clause-group label,
-#law-wrapper .law-admin .law-clause .clause-row .clause-group input {
+#law-wrapper .law-admin .law-clause .clause-row .clause-group input,
+#law-wrapper .law-admin .law-link .link-row .link-group label,
+#law-wrapper .law-admin .law-link .link-row .link-group input {
   width: 95%;
   float: left;
 }

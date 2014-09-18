@@ -31,6 +31,7 @@
   "Sessions": "Sessions",
   "Notifications": "Notifications",
   "Change your profile picture at gravatar.com": "Changez votre photo de profil sur gravatar.com",
+  "Or paste an image URL here...": "Ou coller une URL de l'image ici ...",
   "First name isn't valid": "Le prénom est invalide",
   "Last name isn't valid": "Le nom de famille est invalide",
   "First name should be 100 characters or less": "Le prénom doit contenir 100 caractères au maximum",
@@ -43,6 +44,7 @@
   "Your password was successfuly updated": "Votre mot de passe a été actualisé avec succès",
   "Current password is invalid": "Lo mot de passe actuel est incorrect",
   "Please wait": "S'il vous plaît, attendez",
+  "More information": "plus d'informations",
 
   "validators.required": "requis",
   "validators.checked": "Exiger champ vérifié",
@@ -229,8 +231,11 @@
   "admin-laws-form.label.tag": "Comission",
   "admin-laws-form.label.summary": "Résumé",
   "admin-laws-form.label.closingAt": "Date de fermeture",
+  "admin-laws-form.label.votable": "Votable",
   "admin-laws-form.button.add-clause": "Nouvel article",
+  "admin-laws-form.label.clause-truncation-text": "Texte clause de troncature",
   "admin-laws-form.message.add-clause-forbidden": "La loi doit être sauvegardée avant d' ajouter des articles",
+  "admin-laws-form.button.add-link": "ajouter un lien",
   "admin-laws-form.button.submit": "Sauvegarder",
 
   "admin-laws-form.message.public-status": "Cette loi est ouverte au public",
@@ -248,6 +253,8 @@
   "admin-laws-form.clause.confirmation.cancel": "Annuler",
   "admin-laws-form.clause.confirmation.ok": "Éliminer",
   "admin-laws-form.clause.text-centered": "Texte centré",
+
+  "admin-laws-form.link.confirmation.title": "suppression de la liaison",
 
   "admin-laws-form.message.onsuccess": "Loi sauvegardée avec succès",
   "admin-laws-form.message.validation.lawId-required": "Identification officielle requise",

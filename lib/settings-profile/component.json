@@ -14,7 +14,7 @@
     "template.jade"
   ],
   "styles": [
-    "profile.css"
+    "styles.styl"
   ],
   "scripts": [
     "view.js"
