@@ -2,7 +2,7 @@
   "name": "settings",
   "description": "Account page",
   "dependencies": {
-    "component/dom": "1.0.5",
+    "component/dom": "1.0.6",
     "visionmedia/page.js": "1.3.7",
     "visionmedia/jade": "1.1.5"
   },

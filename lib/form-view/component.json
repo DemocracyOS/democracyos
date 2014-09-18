@@ -2,11 +2,11 @@
   "name": "form-view",
   "description": "Base form view",
   "dependencies": {
-    "component/dom": "1.0.5",
+    "component/dom": "1.0.6",
     "component/inherit": "0.0.3",
     "component/spin": "0.0.2",
     "component/t": "1.0.0",
-    "component/tip": "2.1.1",
+    "component/tip": "2.1.2",
     "visionmedia/debug": "1.0.4"
   },
   "locals": [

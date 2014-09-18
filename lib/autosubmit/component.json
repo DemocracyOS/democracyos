@@ -2,7 +2,7 @@
   "name": "autosubmit",
   "description": "Autosubmit a form",
   "dependencies": {
-    "component/dom": "1.0.5",
+    "component/dom": "1.0.6",
     "visionmedia/debug": "1.0.4",
     "yields/serialize": "0.2.0"
   },

@@ -4,14 +4,14 @@
   "dependencies": {
     "component/domify": "1.2.0",
     "component/dropdown": "7207a",
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/bus": "^0.0.2",
     "component/emitter": "1.1.1",
     "component/classes": "1.2.0",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
     "yields/empty": "0.0.1",
-    "component/closest": "0.1.3",
+    "component/closest": "0.1.4",
     "yields/empty": "0.0.1",
     "component/t": "1.0.0",
     "slifszyc/query": "0.0.3"

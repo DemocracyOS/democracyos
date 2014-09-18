@@ -4,7 +4,7 @@
   "dependencies": {
     "component/domify": "1.2.0",
     "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/bus": "^0.0.2",
     "component/classes": "1.2.0",
     "component/enumerable": "56cbe",
@@ -15,7 +15,7 @@
     "cristiandouce/Chart.js": "eef51",
     "slifszyc/query": "0.0.3",
     "component/t": "1.0.0",
-    "component/closest": "0.1.3",
+    "component/closest": "0.1.4",
     "gvilarino/autocomplete": "fb4ee"
   },
   "locals": [ "citizen", "request", "render" ],

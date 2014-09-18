@@ -3,9 +3,9 @@
   "description": "proposal's article view",
   "dependencies": {
     "component/domify": "1.2.0",
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/classes": "1.2.0",
-    "cristiandouce/tip": "ae4ab",
+    "component/tip": "2.1.2",
     "component/aurora-tip": "1.0.0",
     "component/truncate": "72b55",
     "visionmedia/jade": "1.1.5",

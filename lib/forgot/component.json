@@ -2,7 +2,7 @@
   "name": "forgot",
   "description": "Forgot Password page",
   "dependencies": {
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/classes": "1.2.0",
     "component/emitter": "1.1.1",
     "visionmedia/page.js": "1.3.7",
