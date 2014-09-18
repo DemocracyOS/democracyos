@@ -35,6 +35,12 @@
           span.meta-item.meta-timeago= t('Unknown closing date')
 
     h1=proposal.mediaTitle
+    - if (proposal.author)
+      h2.author=t('admin-laws-form.label.author') + ': '
+        - if (proposal.authorUrl)
+          a(href=proposal.authorUrl, target='_blank')=proposal.author
+        - else
+          =proposal.author
     h3=proposal.title
     .entry-content
       p.summary!=proposal.summary
