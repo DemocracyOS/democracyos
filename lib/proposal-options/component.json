@@ -15,7 +15,7 @@
     "cristiandouce/Chart.js": "eef51",
     "slifszyc/query": "0.0.3",
     "component/t": "1.0.0",
-    "component/closest": "0.1.3",
+    "component/closest": "0.1.4",
     "gvilarino/autocomplete": "fb4ee"
   },
   "locals": [ "citizen", "request", "render" ],
