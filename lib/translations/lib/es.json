@@ -31,6 +31,7 @@
   "Sessions": "Sesiones",
   "Notifications": "Notificaciones",
   "Change your profile picture at gravatar.com": "Cambiá tu foto de perfil en gravatar.com",
+  "Or paste an image URL here...": "O pega una URL con tu imagen aquí...",
   "First name isn't valid": "El nombre ingresado no es válido",
   "Last name isn't valid": "El apellido ingresado no es válido",
   "First name should be 100 characters or less": "El nombre debe poseer 100 caracteres o menos",
@@ -43,6 +44,7 @@
   "Your password was successfuly updated": "Tu contraseña fue actualizada exitosamente",
   "Current password is invalid": "La contraseña actual no es correcta",
   "Please wait": "Por favor espere",
+  "More information": "Más información",
 
   "validators.required": "Requerido",
   "validators.checked": "Elegir una opción",
@@ -233,8 +235,11 @@
   "admin-laws-form.label.tag": "Comisión",
   "admin-laws-form.label.summary": "Resumen",
   "admin-laws-form.label.closingAt": "Fecha de cierre",
+  "admin-laws-form.label.votable": "Votable",
+  "admin-laws-form.label.clause-truncation-text": "Texto para leer articulado",
   "admin-laws-form.button.add-clause": "Nuevo artículo",
   "admin-laws-form.message.add-clause-forbidden": "La ley debe guardarse antes de agregar artículos",
+  "admin-laws-form.button.add-link": "Agregar link",
   "admin-laws-form.button.submit": "Guardar",
 
   "admin-laws-form.message.public-status": "Esta ley está abierta al público",
@@ -252,6 +257,8 @@
   "admin-laws-form.clause.confirmation.cancel": "Cancelar",
   "admin-laws-form.clause.confirmation.ok": "Eliminar",
   "admin-laws-form.clause.text-centered": "Texto centrado",
+
+  "admin-laws-form.link.confirmation.title": "Eliminar link",
 
   "admin-laws-form.message.onsuccess": "Ley guardada exitosamente",
   "admin-laws-form.message.validation.lawId-required": "Identificación oficial requerida",

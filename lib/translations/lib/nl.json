@@ -6,7 +6,7 @@
   "common.back": "Ritornare",
 
   "DemocracyOS": "DemocracyOS",
-  "header.logo": "DemocracyOS Demo",
+  "header.logo": "DemocracyOS",
   "header.signin": "Aanmelden",
   "Login to": "Aanmelden",
   "header.signup": "Inschrijven",
@@ -32,6 +32,7 @@
   "Sessions": "Sessies",
   "Notifications": "Notificaties",
   "Change your profile picture at gravatar.com": "Verander je profielafbeelding op gravatar.com",
+  "Or paste an image URL here...": "Of plak een afbeelding URL hier ...",
   "First name isn't valid": "Je voornaam is niet geldig",
   "Last name isn't valid": "Je achternaam is niet geldig",
   "First name should be 100 characters or less": "Je voornaam kan uit maximaal 100 tekens bestaan",
@@ -43,6 +44,7 @@
   "Confirm new password": "Bevestig nieuwe wachtwoord",
   "Your password was successfuly updated": "Je wachtwoord is aangepast",
   "Current password is invalid": "Huidig wachtwoord is niet correct",
+  "More information": "meer informatie",
 
   "sidebar.open": "Open",
   "sidebar.closed": "Gesloten",
@@ -214,8 +216,11 @@
   "admin-laws-form.label.tag": "Label",
   "admin-laws-form.label.summary": "Samenvatting",
   "admin-laws-form.label.closingAt": "Sluit op",
+  "admin-laws-form.label.votable": "Votable",
+  "admin-laws-form.label.clause-truncation-text": "Clausule truncatie tekst",
   "admin-laws-form.button.add-clause": "Bepaling toevoegen",
   "admin-laws-form.message.add-clause-forbidden": "De wet moet opgeslagen zijn voordat je een bepaling kunt toevoegen",
+  "admin-laws-form.button.add-link": "link toevoegen",
   "admin-laws-form.button.submit": "Opslaan",
 
   "admin-laws-form.message.public-status": "De wet is gepubliceerd",
@@ -233,6 +238,7 @@
   "admin-laws-form.clause.confirmation.cancel": "Annuleren",
   "admin-laws-form.clause.confirmation.ok": "Verwijderen",
   "admin-laws-form.clause.text-centered": "Tekst centreren",
+  "admin-laws-form.link.confirmation.title": "koppeling removala",
 
   "admin-laws-form.message.onsuccess": "De wet is opgeslagen",
   "admin-laws-form.message.validation.lawId-required": "Wetsartikel is verplicht",

@@ -25,6 +25,7 @@
   ],
   "templates": [
     "template.jade",
+    "link.jade",
     "clause.jade"
   ],
   "styles": [
