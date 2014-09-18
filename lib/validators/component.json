@@ -3,7 +3,7 @@
   "description": "Validators for form fields",
   "dependencies": {
     "component/assert": "0.4.0",
-    "component/dom": "1.0.5",
+    "component/dom": "1.0.6",
     "component/t": "1.0.0",
     "visionmedia/debug": "1.0.4"
   },

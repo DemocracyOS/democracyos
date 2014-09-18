@@ -1,4 +1,11 @@
 
+0.8.1 / 2014-09-18
+==================
+
+ * Fix Makefile building the app as well as post-install script
+ * Update dependencies for closest non-deprecated version. Closes #431
+ * Fix translations
+
 0.8.0 / 2014-09-16
 ==================
 

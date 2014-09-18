@@ -4,12 +4,12 @@
   "dependencies": {
     "component/bus": "^0.0.2",
     "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/t": "1.0.0",
-    "component/closest": "0.1.3",
+    "component/closest": "0.1.4",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
-    "cristiandouce/merge-util": "*",
+    "cristiandouce/merge-util": "0.2.0",
     "slifszyc/query": "0.0.3"
   },
   "locals": [
