@@ -1,4 +1,10 @@
 
+0.8.2 / 2014-09-19
+==================
+
+ * Add portuguese locale
+ * Add missing key from `en.json`
+
 0.8.1 / 2014-09-18
 ==================
 
