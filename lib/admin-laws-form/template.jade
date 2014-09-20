@@ -1,0 +1,78 @@
+#law-wrapper
+  .law-admin
+    .heading
+      .circle
+        i.icon-user
+      h1= t(form.title)
+    .publish-status.public-status(class=law.public && law.id ? '' : 'hide')
+      p.bg-success
+        span= t('admin-laws-form.message.public-status')
+        a.make-private(href="#")= t('admin-laws-form.button.make-private')
+    .publish-status.private-status(class=law.draft && law.id ? '' : 'hide')
+      p.bg-warning
+        span= t('admin-laws-form.message.private-status')
+        a.make-public(href="#")= t('admin-laws-form.button.make-public')
+    form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+      input(type='hidden', name='_law_id_', value=law.id)
+      ul.form-messages
+      .form-group
+        label= t('admin-laws-form.label.lawId')
+        input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId)
+      .form-group
+        label= t('admin-laws-form.label.mediaTitle')
+        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle, validate='required')
+      .form-group
+        label= t('admin-laws-form.label.author')
+        input.form-control(type='text', id="lawAuthor", name='lawAuthor', tabindex=3, placeholder='John Doe', value=law.author, validate='author')
+      .form-group
+        label= t('admin-laws-form.label.author') + ' URL'
+        input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=4, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=law.authorUrl, validate='url')
+      .checkbox
+        label
+          - var votable = !law.id || law.votable
+          input(type='checkbox', id="votable", name='votable', tabindex=5, checked=votable)
+          = t('admin-laws-form.label.votable')
+      .form-group
+        label= t('admin-laws-form.label.clause-truncation-text')
+        input.form-control(type='text', name='clauseTruncationText', tabindex=6, placeholder=t('read more'), value=law.clauseTruncationText)
+      .form-group
+        label= t('admin-laws-form.label.source')
+        input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')
+      .form-group
+        label= t('admin-laws-form.label.tag')
+        select.form-control(name='tag', tabindex=8)
+          - each tag in tags
+            option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
+      .form-group
+        label= t('admin-laws-form.label.summary')
+        textarea.form-control(name='summary', tabindex=9)= law.summary
+      .form-group.closingAt
+        label= t('admin-laws-form.label.closingAt')
+        - var closingAt = ''
+        - var closingAtTime = ''
+        - if (law.closingAt)
+          - closingAt = new Date(law.closingAt)
+          - var closingAtTime = closingAt.getHours() + ':' + closingAt.getMinutes()
+          - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
+        .input-group
+          input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
+          span.input-group-addon.clear-closingAt
+            i.glyphicon.glyphicon-remove
+        .input-group
+          input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
+      .form-group
+        .law-clauses
+          - if (law.clauses && law.clauses.length)
+            - each clause, idx in law.clauses
+              include clause
+        a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-laws-form.button.add-clause')
+        span.add-clause-forbidden.hide=t('admin-laws-form.message.add-clause-forbidden')
+      .form-group
+        .law-links
+          - if (law.links && law.links.length)
+            - each link, id in law.links
+              include link
+        a.add-link.btn.btn-block.btn-info(href='#')= t('admin-laws-form.button.add-link')
+        span.add-link-forbidden.hide=t('admin-laws-form.message.add-link-forbidden')
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', tabindex=12, value=t('admin-laws-form.button.submit'))
+    a.delete-law.text-danger(href='#', class= law.id ? '' : 'hide')= t('admin-laws-form.delete-law.button.delete')

@@ -15,7 +15,11 @@
     "organization url",
     "learn more url",
     "google analytics tracking id",
-    "comments per page"
+    "comments per page",
+    "faq",
+    "tos",
+    "pp",
+    "glossary"
   ],
   "auth": {
     "basic": {
@@ -47,7 +51,7 @@
     }
   },
   "locale" : "en",
-  "logo" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
+  "logo": "/lib/boot/images/logo.png",
   "favicon" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",
@@ -57,8 +61,8 @@
   "rss enabled" : true,
   "comments per page": 0,
   "spam limit": 5,
-  "faq enabled": false,
-  "tos enabled": false,
-  "pp enabled": false,
-  "glossary enabled": false
+  "faq": false,
+  "tos": false,
+  "pp": false,
+  "glossary": false
 }

@@ -62,3 +62,16 @@
   background-color: #555;
   z-index: -2;
 }
+
+#tag-wrapper form .form-group span.error {
+  top: 40px;
+}
+
+#tag-wrapper form .form-group .tag-image span.error {
+  display: none;
+}
+
+#tag-wrapper form .tag-image input[type="radio"].error {
+  border: 1px solid #f4999d;
+  box-shadow: inset 0 1px 5px 0 #f4999d;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "stateful-view",
+  "description": "Give states to a View",
+  "dependencies": {
+    "component/inherit": "0.0.3"
+  },
+  "locals": [
+    "stateful",
+    "view"
+  ],
+  "scripts": ["stateful-view.js"],
+  "main": "stateful-view.js"
+}

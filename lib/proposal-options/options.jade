@@ -8,7 +8,7 @@
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
 - var voted = citizen && ~census.indexOf(citizen.id)
 
-.inner-container
+.inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
     
   .proposal-options
     .vote-box
@@ -52,7 +52,7 @@
         | . 
         a(href="/signin")= t('Login')
         |  #{t('common.or')} 
-        a(href="/signup")= t('Signup')
+        a(href="/signup?reference=" + proposal.id)= t('Signup')
         | .
 
     - if (closed)

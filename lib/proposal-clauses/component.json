@@ -1,0 +1,18 @@
+{
+  "name": "proposal-clauses",
+  "description": "proposal's clauses view",
+  "dependencies": {
+    "component/t": "1.0.0",
+    "visionmedia/jade": "1.1.5"
+  },
+  "locals": [
+    "config",
+    "citizen",
+    "side-comments",
+    "request",
+    "stateful-view"
+  ],
+  "scripts": [ "proposal-clauses.js" ],
+  "templates": [ "template.jade" ],
+  "main": "proposal-clauses.js"
+}

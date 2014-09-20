@@ -4,7 +4,7 @@
   "dependencies": {
     "visionmedia/debug": "1.0.3",
     "component/emitter": "1.1.3",
-    "component/inherit": "0.0.3"
+    "kewah/mixin": "0.1.0"
   },
   "scripts": ["stateful.js"],
   "main": "stateful.js"

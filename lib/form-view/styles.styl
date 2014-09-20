@@ -1,0 +1,32 @@
+form
+  .form-group
+    position: relative
+
+    textarea.error,
+    select.error,
+    .input-field.error,
+    input[type=text].error,
+    input[type=password].error,
+    input[type=email].error
+      border: 1px solid #f4999d
+      -ms-box-shadow: inset 0 1px 5px 0 #fbd6
+      -moz-box-shadow: inset 0 1px 5px 0 #fbd6
+      -webkit-box-shadow: inset 0 1px 5px 0 #fbd6
+      box-shadow: inset 0 1px 5px 0 #fbd6d8
+
+    span.error
+      position: absolute
+      top: 35px
+      right: 10px
+      color: #cf4850
+      font-size: 12px
+      text-align: right
+      height: 14px
+      line-height: 14px
+      z-index: 2
+      -webkit-touch-callout: none
+      -webkit-user-select: none
+      -khtml-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none

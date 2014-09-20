@@ -1,0 +1,21 @@
+.signin-container.inner-container.small-container
+  #signin-form
+    .title-page
+      .circle
+        i.icon-signin
+      h1 #{t('Login to') + " " + t('DemocracyOS')}
+
+    form.form(action="/signin", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
+      ul.form-errors
+      .form-group
+        label= t('Email')
+        input.form-control(type='text', name='email', tabindex=1, placeholder=t('example@email.com'), validate='required email')
+      .form-group
+        label= t('Password')
+        .forgot: a(href='/forgot', tabindex=4) #{t('Forgot Password?')}
+
+        input.form-control(type='password', name='password', tabindex=2, placeholder=t('Password'), validate='required')
+      .form-group: .signup
+        span=t('Don\'t have an account?')
+        a(href='/signup', tabindex=5) #{t('Signup now')}
+      .form-group: button.btn.btn-block.btn-primary.btn-lg(tabindex=3)=t('Login')
