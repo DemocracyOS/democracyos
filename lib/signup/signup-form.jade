@@ -24,13 +24,16 @@
         label= t('Re-type password')
         input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'), validate='required same:password')
       .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('Signup now!')
-      .form-group.clearfix
+      .form-group
         - var tos = config['tos'];
         - var pp = config['pp'];
-        - if (tos)
-          a.btn.btn-link.btn-xs.btn-block(href='/help/terms-of-service')=t('help.tos.title')
-        - if (pp)
-          a.btn.btn-link.btn-xs.btn-block(href='/help/privacy-policy')=t('help.pp.title')
+        - if (tos || pp)
+          p.help-block.text-center=t('By signing up you are accepting our')
+          ul.text-center
+            - if (pp)
+              li: a(href='/help/terms-of-service', target='_blank')=t('help.tos.title')
+            - if (tos)
+              li: a(href='/help/privacy-policy', target='_blank')=t('help.pp.title')
   #signup-message.hide
     h1 Welcome
     p.lead.text-muted #{t('Your sign up data was received. We sent you an email so you can validate your email address.')}.
