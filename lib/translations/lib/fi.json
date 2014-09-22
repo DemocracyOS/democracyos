@@ -107,7 +107,7 @@
   "example@email.com": "example@email.com",
   "No citizen for email" : "Email-osoite ei ole rekisterissämme",
   "New Password": "Uusi salasana",
-  "Re-type new password": "Kirjoita uusi salasana uudestaan",
+  "Re-type new password": "Rekisteröitymällä käyttäjä hyväksyy meidän",
   "Password": "Salasana",
   "Repeat Password": "Toista salasana",
   "Reset Password!": "Uusi salasana!",
