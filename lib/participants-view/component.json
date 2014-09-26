@@ -2,16 +2,16 @@
   "name": "participants-view",
   "description": "participants view",
   "dependencies": {
-    "component/events": "1.0.5",
+    "component/events": "1.0.9",
     "component/emitter": "1.1.1",
     "component/classes": "1.2.0",
-    "cristiandouce/tip": "ae4ab",
+    "component/tip": "2.1.2",
     "component/aurora-tip": "1.0.0",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
-    "cristiandouce/query": "0.0.1"
+    "slifszyc/query": "0.0.3"
   },
-  "local": [ "config", "render", "request" ],
+  "locals": [ "config", "render", "request" ],
   "scripts": [ "view.js"],
   "templates": [ "box.jade", "participant.jade" ],
   "styles": [ ],

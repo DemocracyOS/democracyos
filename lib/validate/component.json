@@ -2,10 +2,10 @@
   "name": "validate",
   "description": "Validate fields and display messages",
   "dependencies": {
-    "component/dom": "1.0.5",
+    "component/dom": "1.0.6",
     "visionmedia/debug": "1.0.4"
   },
-  "local": [
+  "locals": [
     "validators"
   ],
   "scripts": [ "validate.js" ],

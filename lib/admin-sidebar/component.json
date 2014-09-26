@@ -4,9 +4,9 @@
   "dependencies": {
     "component/classes": "1.2.0",
     "visionmedia/jade": "1.1.5",
-    "cristiandouce/query": "0.0.1"
+    "slifszyc/query": "0.0.3"
   },
-  "local": [
+  "locals": [
     "render"
   ],
   "templates": [

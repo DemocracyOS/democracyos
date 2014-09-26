@@ -6,7 +6,7 @@
     "visionmedia/jade": "1.1.5",
     "component/t": "1.0.0"
   },
-  "local": [
+  "locals": [
     "citizen",
     "form-view"
   ],
@@ -14,7 +14,7 @@
     "template.jade"
   ],
   "styles": [
-    "profile.css"
+    "styles.styl"
   ],
   "scripts": [
     "view.js"

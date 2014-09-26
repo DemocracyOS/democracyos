@@ -14,9 +14,4 @@ require('node-path')(module, [resolve('.')]);
 
 // Compile client application `./public/app.js` and `./public/app.css`
 var build = require('lib/build');
-var builder = build.createBuilder();
-builder.build(function(err, res) {
-  if (err) return console.log(err), process.exit(1);
-  write('public/app.js', res.require + res.js);
-  write('public/app.css', res.css);
-});
+build();
