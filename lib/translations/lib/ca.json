@@ -46,6 +46,12 @@
   "Please wait": "Si us plau espera",
   "More information": "més informació",
 
+  "settings.notifications.title": "Configuració de Notificacions",
+  "settings.notificatinos.get-email-when": "Obtenir un email quan",
+  "settings.notifications.new-topic": "Un nou tema es publica",
+  "settings.notificatoins.someone-replies-your-comments": "Algú respon a un dels seus comentaris",
+  "settings.notifications.someone-mentions-in-their-comment": "Algú li esmenta en un dels seus comentaris",
+
   "validators.required": "cal",
   "validators.checked": "Camp obligatori comprovat",
   "validators.invalid.email": "Adreça de correu electrònic no és vàlid",
@@ -112,6 +118,7 @@
   "No citizen for email": "Aquest correu electrònic no està registrat",
   "New Password": "Nova contrasenya",
   "Re-type new password": "Introdueix de nou la contrasenya",
+  "By signing up you are accepting our": "En subscriure vostè està acceptant la nostra",
   "Password": "Contrasenya",
   "Repeat Password": "Repetir la contrasenya",
   "Reset Password!": "¡Restablir contrasenya!",
@@ -170,6 +177,7 @@
   "Nay": "Negatiu",
   "Abstain": "Abstenció",
   "Yes": "Si",
+  "No": "No",
   "Cancel": "Cancel",
   "Edit": "Editer",
   "Delegate": "Delegar",

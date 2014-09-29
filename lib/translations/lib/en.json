@@ -45,6 +45,12 @@
   "Current password is invalid": "Current password is invalid",
   "Please wait": "Please wait",
 
+  "settings.notifications.title": "Notifications settings",
+  "settings.notificatinos.get-email-when": "Get an email when",
+  "settings.notifications.new-topic": "A new topic gets published",
+  "settings.notificatoins.someone-replies-your-comments": "Someone replies one of your comments",
+  "settings.notifications.someone-mentions-in-their-comment": "Someone mentions you in one of their comments",
+
   "validators.required": "Required",
   "validators.checked": "Required checked field",
   "validators.invalid.email": "Invalid email address",
@@ -111,6 +117,7 @@
   "No citizen for email" : "No citizen for email",
   "New Password": "New Password",
   "Re-type new password": "Re-type new password",
+  "By signing up you are accepting our": "By signing up you are accepting our",
   "Password": "Password",
   "Repeat Password": "Repeat Password",
   "Reset Password!": "Reset Password!",
@@ -171,6 +178,7 @@
   "Nay": "Nay",
   "Abstain": "Abstain",
   "Yes": "Yes",
+  "No": "No",
   "Cancel": "Cancel",
   "Edit": "Edit",
   "Delegate": "Delegate",

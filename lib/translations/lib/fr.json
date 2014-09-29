@@ -46,6 +46,12 @@
   "Please wait": "S'il vous plaît, attendez",
   "More information": "plus d'informations",
 
+  "settings.notifications.title": "Notifications paramètres",
+  "settings.notificatinos.get-email-when": "Obtenir un e-mail quand",
+  "settings.notifications.new-topic": "Un nouveau sujet est publié",
+  "settings.notificatoins.someone-replies-your-comments": "Quelqu'un répond l'un de vos commentaires",
+  "settings.notifications.someone-mentions-in-their-comment": "Quelqu'un vous parle dans un de leurs commentaires",
+
   "validators.required": "requis",
   "validators.checked": "Exiger champ vérifié",
   "validators.invalid.email": "Adresse mail invalide",
@@ -110,6 +116,7 @@
   "No citizen for email": "Cette adresse de courriel n' est pas registrée",
   "New Password": "Nouveau mot de passe",
   "Re-type new password": "Retapez le nouveau mot de passe",
+  "By signing up you are accepting our": "En vous inscrivant, vous acceptez notre",
   "Password": "Mot de passe",
   "Repeat Password": "Retaper le mot de passe",
   "Reset Password!": "Rétablir mot de passe!",
@@ -168,6 +175,7 @@
   "Nay": "Négatif",
   "Abstain": "Abstention",
   "Yes": "Oui",
+  "No": "Non",
   "Cancel": "Annuler",
   "Edit": "Éditer",
   "Delegate": "Déléguer",
