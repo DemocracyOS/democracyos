@@ -3,10 +3,10 @@
   "description": "Settings notifications view",
   "dependencies": {
     "component/t": "1.0.0",
-    "visionmedia/jade": "1.1.5",
     "visionmedia/debug": "0.7.4"
   },
-  "local": [
+  "locals": [
+    "citizen",
     "form-view",
     "toggle"
   ],
