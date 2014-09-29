@@ -1,5 +1,5 @@
 {
-  "name": "toggle-dos",
+  "name": "toggle",
   "description": "A toggle UI element with style",
   "dependencies": {
     "segmentio/toggle": "0.1.0"
