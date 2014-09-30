@@ -1,4 +1,9 @@
 
+0.8.5 / 2014-09-30
+==================
+
+ * Fix rendering clauses when only 1 clause is present. Closes #440
+
 0.8.4 / 2014-09-29
 ==================
 
