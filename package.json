@@ -1,6 +1,6 @@
 {
   "name": "DemocracyOS",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "homepage": "http://www.democracyos.org/",
   "keywords": [
@@ -41,7 +41,7 @@
   "dependencies": {
     "express": "~3.4.7",
     "jade": "1.6.0",
-    "mongoose": "~3.8.3",
+    "mongoose": "3.8.16",
     "mongoose-voting": "0.1.1",
     "mongoose-gravatar": "~0.2.1",
     "connect-mongo": "~0.4.0",
