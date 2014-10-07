@@ -1,4 +1,9 @@
 
+0.8.14 / 2014-10-07
+==================
+
+ * Bump sidebar-comments dep version to 0.0.9 and stylize them
+
 0.8.13 / 2014-10-07
 ==================
 
