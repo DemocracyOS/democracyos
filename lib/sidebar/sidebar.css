@@ -1,6 +1,9 @@
 #filter-container {
 	background-color: rgba(0, 0, 0, 0);
 	border-bottom: 1px solid #d7dbdd;
+}
+
+#status-filter {
 	margin-bottom: 10px;
 }
 
@@ -14,6 +17,10 @@
 #status-filter a.active {
 	background-color: #727f80;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px 0px inset;
+}
+
+#sort-filter {
+	margin-bottom: 10px;
 }
 
 #hide-voted-filter label {
