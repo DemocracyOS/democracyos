@@ -219,6 +219,10 @@
 .side-comment .actions a {
   float: left;
 }
+.side-comment .read-more {
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+}
 .side-comment .actions .cancel:before {
   content: '\00B7';
   color: #B3B3B1;
@@ -234,6 +238,10 @@
 .side-comment .restricted {
   display: block;
   margin-top: 20px;
+}
+.side-comment .comment-form .error {
+  color: red;
+  font-size: 12px;
 }
 @media (max-width: 768px) {
   .side-comments-open {
