@@ -8,6 +8,11 @@
 - else
   - var spam = comment.flags.length > (comment.upvotes.length - comment.downvotes.length)
 
+mixin remove-action(length)
+  - var hide = length && !citizen.staff ? 'hide' : ''
+  a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=hide)
+    i.icon-remove
+
 li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
   span.pull-left
     - var src = comment.author.profilePictureUrl ? comment.author.profilePictureUrl : comment.author.gravatar
@@ -20,12 +25,13 @@ li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
         - flags && classes.push('selected')
         - !citizen.id && classes.push('hide')
         - var spamTitle = flags ?  t('Not spam') : t('Spam')
+        - if (citizen.staff)
+          +remove-action(length)
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=classes)
           i.glyphicon.glyphicon-flag
           span.count=comment.flags.length ? comment.flags.length : ''
       - else
-        a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=(length ? 'hide' : ''))
-          i.icon-remove
+        +remove-action(length)
         a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
           i.icon-pencil
 
@@ -36,8 +42,11 @@ li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
       small=':'
     .comment-body
       div.comment-text!=markdown(comment.text)
-      - if (own)
+      - if (own || citizen.staff)
         div.oncomment.remove-comment= t('comments.arguments.confirm-remove')
+          -if (!own && citizen.staff)
+            br
+            =t('You are removing this argument as a staff member')
           div.remove-confirm-actions
             a.confirm-remove(href='#')= t('common.ok')
             a.cancel-remove(href='#')= t('common.cancel')
