@@ -92,7 +92,8 @@
   "comments.arguments.reply": "Vastaa tähän väitteeseen",
   "comments.no-citizen-comments": "Mikään muu kansalainen on perusteltujen tämän lain vielä",
   "comments.no-comments": "Ei kansalainen on perusteltujen tämän lain vielä",
-  "Your argument was removed": "Perustelunne poistettiin",
+  "The argument was removed": "Väite poistettiin",
+  "You are removing this argument as a staff member": "Poistat tämän väitteen, koska toimihenkilö",
   "You're not allowed to vote your own argument": "Et saa äänestää oman argumentti",
   "Send": "Lähetä",
 
