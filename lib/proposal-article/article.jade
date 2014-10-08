@@ -48,7 +48,7 @@
       .summary
         - each p, i in paragraphs
           - if (p != '')
-            p.commentable-section(data-section-id=proposal.id + '-' + i)=p
+            p.commentable-section(data-section-id=proposal.id + '-' + i)!=p
 
 
       .clauses
