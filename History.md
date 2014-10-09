@@ -1,4 +1,10 @@
 
+0.8.17 / 2014-10-08
+==================
+
+ * fix admin able to delete side-comments of all users. Closes #448
+ * Fix avatar usage in side-comments. Closes #447
+
 0.8.16 / 2014-10-08
 ==================
 
