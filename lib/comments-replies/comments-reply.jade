@@ -16,7 +16,7 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
           - if (own)
             a.comment-action.link-edit.btn-reply-edit(href="#", title=t('comments.edit.argument'))
               i.icon-pencil
-      | #{reply.author.fullName} 
+      | #{reply.author.fullName}
       small.ago(data-time=reply.createdAt.toString())
       - if (reply.editedAt)
         small.edited · #{t('comments.edited')}
