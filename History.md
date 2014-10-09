@@ -1,4 +1,10 @@
 
+0.8.18 / 2014-10-09
+==================
+
+ * Fix comments not showing up on any law
+ * Fix 'No citizen has argumented on this law yet' message
+
 0.8.17 / 2014-10-08
 ==================
 
