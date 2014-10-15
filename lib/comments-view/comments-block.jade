@@ -8,8 +8,8 @@
           a.pull-right(href='/help/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p
           textarea(name='text', rows='4')
-        button.btn-link.cancel-new-argument.pull-right=t('Cancel')
         input.btn.form-submit.pull-right(type='submit', value=t('Send'))
+        button.btn.btn-link.cancel-new-argument.pull-right=t('Cancel')
         span.help-text.form-errors
       button.btn.btn-block.new-argument.hide
         i.icon-plus
