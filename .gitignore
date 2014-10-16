@@ -17,5 +17,7 @@ node_modules
 components
 public
 
+.vagrant
+
 *.DS_Store
 config*.json
