@@ -43,7 +43,13 @@
           =proposal.author
     h3=proposal.title
     .entry-content
-      p.summary!=proposal.summary
+      - var summary = proposal.summary
+      - var paragraphs = summary.split("\n")
+      .summary
+        - each p, i in paragraphs
+          - if (p != '')
+            p.commentable-section(data-section-id=proposal.id + '-' + i)!=p
+
 
       .clauses
         - if (clauses.length)
@@ -52,7 +58,7 @@
             - classes.push(clause.centered ? 'text-center' : '')
             - var text = (clause.clauseName ? clause.clauseName + ': ' : '') + clause.text
             p.clause.commentable-section(class=classes, data-section-id=clause.id)!=text
-          - if (clauses.length > 1)
+          - if (clauses.length > 0)
             - if (proposal.clauseTruncationText)
               a.read-more(href="#")= proposal.clauseTruncationText
             - else

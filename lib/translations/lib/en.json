@@ -44,6 +44,7 @@
   "Your password was successfuly updated": "Your password was successfuly updated",
   "Current password is invalid": "Current password is invalid",
   "Please wait": "Please wait",
+  "More information": "More information",
 
   "settings.notifications.title": "Notifications settings",
   "settings.notificatinos.get-email-when": "Get an email when",
@@ -99,7 +100,8 @@
   "comments.ordered-by": "Ordered by",
   "comments.no-citizen-comments": "No other citizen has argumented on this law yet",
   "comments.no-comments": "No citizen has argumented on this law yet",
-  "Your argument was removed": "Your argument was removed",
+  "The argument was removed": "The argument was removed",
+  "You are removing this argument as a staff member": "You are removing this argument as a staff member",
   "That comment is not yours!": "That comment is not yours!",
   "Comment has replies, cannot be removed!": "Comment has replies, cannot be removed!",
   "You're not allowed to vote your own argument": "You're not allowed to vote your own argument",
@@ -137,7 +139,6 @@
   "Re-type password": "Re-type password",
   "Signup now!": "Signup now!",
   "Welcome, {name}!": "Welcome, {name}!",
-  "Guest": "Guest",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Your sign up data was received. We sent you an email so you can validate your email address.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.",
   "Your email has been validated and now you are logged in" : "Your email has been validated and now you are logged in", 
@@ -155,7 +156,6 @@
   "The validation email was resent.": "The validation email was resent.",
   "Email not validated" : "The email address for this citizen is not validated. We send citizens a welcome email when they sign up. Please check your email (remember to check your spam folder too) and click on the link supplied on the email. Click <a href='/signup/resend-validation-email'>here</a> if you need the welcome email to be resent",
   "No citizen found with that email address": "No citizen found with that email address",
-  "More information": "More information",
 
   "Account data": "Account data",
   "Account updated": "Account updated",
@@ -250,7 +250,7 @@
   "admin-laws-form.button.add-clause": "Add clause",
   "admin-laws-form.message.add-clause-forbidden": "Law must be saved to start adding clauses",
   "admin-laws-form.button.add-link": "Add link",
-  "admin-laws-form.message.add-link-forbidden": "Law must be saved to start adding link",
+  "admin-laws-form.message.add-link-forbidden": "Law must be saved before adding links",
   "admin-laws-form.button.submit": "Save",
 
   "admin-laws-form.message.public-status": "This law is published to public",
