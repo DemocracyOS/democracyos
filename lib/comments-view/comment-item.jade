@@ -13,7 +13,7 @@ mixin remove-action(length)
   a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=hide)
     i.icon-remove
 
-li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '')
+li.media.comment-item(data-id=comment.id, class=spam ? 'spam' : '', class=own ? 'own' : '')
   span.pull-left
     - var src = comment.author.profilePictureUrl ? comment.author.profilePictureUrl : comment.author.gravatar
     img(src=src).avatar
