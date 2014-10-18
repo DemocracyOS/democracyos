@@ -3,6 +3,7 @@
 GITHUB_TOKEN=$1
 
 install_os_dependencies () {
+    sudo apt-get update
     sudo apt-get install -y nodejs-legacy \
                             npm \
                             git \
