@@ -4,9 +4,6 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-# GITHUB TOKEN to avoid exceed api rate limit
-GITHUB_TOKEN = "A-GITHUB-TOKEN"
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
@@ -128,5 +125,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_client_name = "ORGNAME-validator"
 
   # Enable provisioning with shell
-  config.vm.provision :shell, :path => "vagrant-bootstrap.sh" , :args => GITHUB_TOKEN
+  # GITHUB TOKEN parameter took from environment in order to avoid exceed api rate limit
+  config.vm.provision :shell, :path => "vagrant-bootstrap.sh" , :args => ENV["GITHUB_TOKEN"]
 end

@@ -12,9 +12,19 @@ install_os_dependencies () {
 
 configure_environment () {
     # GITHUB TOKEN to avoid exceed api rate limit
-    echo -e "machine api.github.com\n"\
-            "    login $GITHUB_TOKEN\n"\
-            "    password x-oauth-basic" > /home/vagrant/.netrc
+    if [ ! -z $GITHUB_TOKEN ];
+    then
+        echo -e "machine api.github.com\n"\
+                "    login $GITHUB_TOKEN\n"\
+                "    password x-oauth-basic" > /home/vagrant/.netrc
+    fi
+    # if development.json was not created create a new one based
+    # on sample.json
+    if [ ! -f "./config/development.json" ];
+    then
+        cp ./config/sample.json ./config/development.json
+    fi
+
 }
 
 set_environment_variables () {
