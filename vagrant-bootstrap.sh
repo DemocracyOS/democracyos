@@ -11,6 +11,7 @@ install_os_dependencies () {
 }
 
 configure_environment () {
+    pushd /vagrant/
     # GITHUB TOKEN to avoid exceed api rate limit
     if [ ! -z $GITHUB_TOKEN ];
     then
@@ -24,7 +25,7 @@ configure_environment () {
     then
         cp ./config/sample.json ./config/development.json
     fi
-
+    popd
 }
 
 set_environment_variables () {
