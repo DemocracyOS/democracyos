@@ -6,9 +6,8 @@ file "/vagrant/config/development.json" do
   content ::File.open("/vagrant/config/sample.json").read
   action :create
 end
-
 # if github.token is present create .netrc else remove it
-if !node.github_token.empty? then
+if !node.github_token.nil? then
     template "/home/vagrant/.netrc" do
         user 'vagrant'
         group 'vagrant'
