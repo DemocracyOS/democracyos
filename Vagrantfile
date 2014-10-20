@@ -77,8 +77,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.add_recipe "democracyos"
      # chef.add_role "web"
 
-     # You may also specify custom JSON attributes:
-     # chef.json = { :mysql_password => "foo" }
+     chef.json = { :github_token => ENV['GITHUB_TOKEN'] }
    end
 
   # Enable provisioning with shell

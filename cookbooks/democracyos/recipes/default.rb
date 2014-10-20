@@ -8,7 +8,7 @@ file "/vagrant/config/development.json" do
 end
 
 # if github.token is present create .netrc else remove it
-if !node.default['github']['token'].empty? then
+if !node.github_token.empty? then
     template "/home/vagrant/.netrc" do
         user 'vagrant'
         group 'vagrant'
