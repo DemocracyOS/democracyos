@@ -1,4 +1,14 @@
 
+0.8.20 / 2014-10-20
+==================
+
+ * Fix fetching own comments from mongodb
+
+0.8.19 / 2014-10-15
+==================
+
+ * Fix layout and style of reply buttons. Closes #407
+
 0.8.18 / 2014-10-09
 ==================
 
