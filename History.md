@@ -1,4 +1,9 @@
 
+0.8.21 / 2014-10-21
+==================
+
+ * Fix fixtures use and add acknowledgements to README.md
+
 0.8.20 / 2014-10-20
 ==================
 
