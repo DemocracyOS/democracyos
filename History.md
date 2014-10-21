@@ -1,4 +1,9 @@
 
+0.8.23 / 2014-10-21
+==================
+
+ * Update ref to a breaking dep
+
 0.8.22 / 2014-10-21
 ==================
  * Update all dep refs from 'visionmedia' to 'tj' #456
