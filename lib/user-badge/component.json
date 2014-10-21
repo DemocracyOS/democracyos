@@ -3,7 +3,7 @@
   "description": "user badge component",
   "dependencies": {
     "component/dom": "1.0.6",
-    "visionmedia/jade": "1.1.5"
+    "tj/jade": "1.1.5"
   },
   "locals": [
     "citizen",

@@ -3,7 +3,7 @@
   "description": "Collection of tags",
   "dependencies": {
     "component/emitter": "*",
-    "visionmedia/debug": "0.7.4"
+    "tj/debug": "0.7.4"
   },
   "locals": [
     "request",

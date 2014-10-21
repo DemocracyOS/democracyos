@@ -3,8 +3,8 @@
   "description": "header component",
   "dependencies": {
     "slifszyc/query": "0.0.3",
-    "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5"
+    "tj/debug": "0.7.4",
+    "tj/jade": "1.1.5"
     },
   "locals": [
     "citizen",
