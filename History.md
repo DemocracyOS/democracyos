@@ -1,4 +1,11 @@
 
+0.8.22 / 2014-10-21
+==================
+ * Update all dep refs from 'visionmedia' to 'tj' #456
+ * Update dep for DemocracyOS/side-comments
+ * Update refs for component/t
+ * Pin deps for component/emitter
+
 0.8.21 / 2014-10-21
 ==================
 
