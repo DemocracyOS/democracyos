@@ -8,7 +8,7 @@
     "component/tip": "2.1.2",
     "component/aurora-tip": "1.0.0",
     "component/truncate": "72b55",
-    "visionmedia/jade": "1.1.5",
+    "tj/jade": "1.1.5",
     "yields/empty": "0.0.1",
     "cristiandouce/to-array": "0.0.1",
     "slifszyc/query": "0.0.3",

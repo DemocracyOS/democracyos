@@ -4,8 +4,8 @@
   "dependencies": {
     "component/classes": "1.2.0",
     "component/bus": "^0.0.2",
-    "visionmedia/debug": "0.7.4",
-    "visionmedia/page.js": "1.3.7",
+    "tj/debug": "0.7.4",
+    "tj/page.js": "1.3.7",
     "yields/empty": "0.0.1",
     "slifszyc/query": "0.0.3"
   },
