@@ -6,7 +6,7 @@
     "component/dropdown": "7207a",
     "component/events": "1.0.9",
     "component/bus": "^0.0.2",
-    "component/emitter": "1.1.1",
+    "component/emitter": "1.1.3",
     "component/classes": "1.2.0",
     "tj/debug": "0.7.4",
     "tj/jade": "1.1.5",

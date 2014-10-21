@@ -4,7 +4,7 @@
   "dependencies": {
     "component/classes": "1.2.0",
     "component/domify": "1.2.0",
-    "component/emitter": "1.1.1",
+    "component/emitter": "1.1.3",
     "component/events": "1.0.9",
     "component/t": "1.0.0",
     "slifszyc/query": "0.0.3",

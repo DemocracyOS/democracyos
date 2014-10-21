@@ -3,7 +3,7 @@
   "description": "proposal's options view",
   "dependencies": {
     "component/domify": "1.2.0",
-    "component/emitter": "1.1.1",
+    "component/emitter": "1.1.3",
     "component/events": "1.0.9",
     "component/bus": "^0.0.2",
     "component/classes": "1.2.0",

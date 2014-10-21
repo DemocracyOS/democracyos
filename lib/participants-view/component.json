@@ -3,7 +3,7 @@
   "description": "participants view",
   "dependencies": {
     "component/events": "1.0.9",
-    "component/emitter": "1.1.1",
+    "component/emitter": "1.1.3",
     "component/classes": "1.2.0",
     "component/tip": "2.1.2",
     "component/aurora-tip": "1.0.0",

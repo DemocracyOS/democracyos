@@ -2,7 +2,7 @@
   "name": "laws",
   "description": "Collection of laws",
   "dependencies": {
-    "component/emitter": "*",
+    "component/emitter": "1.1.3",
     "tj/debug": "0.7.4"
   },
   "locals": [

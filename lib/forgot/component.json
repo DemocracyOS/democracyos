@@ -4,7 +4,7 @@
   "dependencies": {
     "component/events": "1.0.9",
     "component/classes": "1.2.0",
-    "component/emitter": "1.1.1",
+    "component/emitter": "1.1.3",
     "tj/page.js": "1.3.7",
     "tj/jade": "1.1.5",
     "yields/empty": "0.0.1",
