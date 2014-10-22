@@ -1,4 +1,11 @@
 
+0.8.24 / 2014-10-22
+==================
+
+ * Fix dep ref back to upstream
+ * Revert "Update ref to a breaking dep"
+ * Revert "Update all dep refs from 'visionmedia' to 'tj' #456"
+
 0.8.23 / 2014-10-21
 ==================
 

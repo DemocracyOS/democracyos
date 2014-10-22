@@ -3,7 +3,7 @@
   "description": "Validate fields and display messages",
   "dependencies": {
     "component/dom": "1.0.6",
-    "tj/debug": "1.0.4"
+    "visionmedia/debug": "1.0.4"
   },
   "locals": [
     "validators"

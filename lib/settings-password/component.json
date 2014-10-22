@@ -2,8 +2,8 @@
   "name": "settings-password",
   "description": "Settings password view",
   "dependencies": {
-    "tj/jade": "1.1.5",
-    "tj/debug": "0.7.4",
+    "visionmedia/jade": "1.1.5",
+    "visionmedia/debug": "0.7.4",
     "component/t": "1.0.0"
   },
   "locals": [

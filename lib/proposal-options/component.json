@@ -9,14 +9,14 @@
     "component/classes": "1.2.0",
     "component/enumerable": "56cbe",
     "component/to-function": "edeb3",
-    "tj/debug": "0.7.4",
-    "tj/page.js": "1.3.7",
-    "tj/jade": "1.1.5",
+    "visionmedia/debug": "0.7.4",
+    "visionmedia/page.js": "1.3.7",
+    "visionmedia/jade": "1.1.5",
     "cristiandouce/Chart.js": "eef51",
     "slifszyc/query": "0.0.3",
     "component/t": "1.0.0",
     "component/closest": "0.1.4",
-    "DemocracyOS/autocomplete": "master"
+    "matthewmueller/autocomplete": "0.1.0"
   },
   "locals": [ "citizen", "request", "render" ],
   "scripts": [ "proposal-options.js" ],
