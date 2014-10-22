@@ -16,7 +16,7 @@
     "slifszyc/query": "0.0.3",
     "component/t": "1.0.0",
     "component/closest": "0.1.4",
-    "DemocracyOS/autocomplete": "master"
+    "gvilarino/autocomplete": "fb4ee"
   },
   "locals": [ "citizen", "request", "render" ],
   "scripts": [ "proposal-options.js" ],
