@@ -3,7 +3,7 @@
   "description": "Admin sidebar",
   "dependencies": {
     "component/classes": "1.2.0",
-    "tj/jade": "1.1.5",
+    "visionmedia/jade": "1.1.5",
     "slifszyc/query": "0.0.3"
   },
   "locals": [

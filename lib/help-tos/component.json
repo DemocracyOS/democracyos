@@ -2,7 +2,7 @@
   "name": "help-tos",
   "description": "Help Terms of Service view",
   "dependencies": {
-    "tj/jade": "1.1.5",
+    "visionmedia/jade": "1.1.5",
     "chjj/marked": "v0.3.2"
   },
   "locals": [
