@@ -16,9 +16,9 @@
     "component/t": "1.0.0",
     "slifszyc/query": "0.0.3"
   },
-  "locals": [ "laws", "laws-filter", "render", "stateful" ],
+  "locals": [ "laws", "citizen", "laws-filter", "render", "stateful" ],
   "scripts": [ "main.js", "sidebar.js", "filter.js", "list.js" ],
-  "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade", "check.jade" ],
+  "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade", "check.jade", "created-by.jade" ],
   "styles": [ "sidebar.css" ],
   "images": [ ],
   "main": "main.js"
