@@ -65,6 +65,7 @@ Main contributors will review your code and possibly ask for changes before your
 
 #### General guidelines
 
+* We flag the issues to community participation as `help wanted`, try to prioritize them.
 * Do not make a pull request withouth having run the app on your own. This means, you have to manually test (at least) that everything works.
 * Try not to pollute your pull request with unintended changes. Keep them simple and small.
 * Pull requests should always be against the `development` branch, never against `master`.
