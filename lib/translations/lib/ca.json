@@ -332,5 +332,8 @@
   "side-comments.login": "Login",
   "side-comments.signup": "Registra't",
   "side-comments.delete.confirmation": "Està segur que desitja eliminar aquest comentari?",
-  "side-comments.confirmation.title": "Eliminar comentari"
+  "side-comments.confirmation.title": "Eliminar comentari",
+
+  "settings-profile.disable-account.title": "Deshabilitar compte",
+  "settings-profile.disable-account.body": "Aquesta acció no es pot desfer"
 }

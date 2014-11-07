@@ -300,5 +300,8 @@
 
   "This page does not exist": "Diese Seite existiert nicht",
   "go back to": "zurück",
-  "Go back to DemocracyOS": "Zurück zu DemocracyOS"
+  "Go back to DemocracyOS": "Zurück zu DemocracyOS",
+
+  "settings-profile.disable-account.title": "Konto deaktivieren",
+  "settings-profile.disable-account.body": "Diese Aktion kann nicht rückgängig gemacht werden"
 }

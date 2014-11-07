@@ -324,5 +324,8 @@
   "side-comments.login": "Connexion",
   "side-comments.signup": "Inscription",
   "side-comments.delete.confirmation": "Etes-vous sûr de vouloir supprimer ce commentaire?",
-  "side-comments.confirmation.title": "Effacer un commentaire"
+  "side-comments.confirmation.title": "Effacer un commentaire",
+
+  "settings-profile.disable-account.title": "Compte désactiver",
+  "settings-profile.disable-account.body": "Cette action ne peut être annulée"
 }

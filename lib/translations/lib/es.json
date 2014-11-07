@@ -332,5 +332,8 @@
   "side-comments.login": "Ingresar",
   "side-comments.signup": "Registrarse",
   "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?",
-  "side-comments.confirmation.title": "Eliminar comentario"
+  "side-comments.confirmation.title": "Eliminar comentario",
+
+  "settings-profile.disable-account.title": "Deshabilitar cuenta",
+  "settings-profile.disable-account.body": "Esta acción no se puede deshacer"
 }

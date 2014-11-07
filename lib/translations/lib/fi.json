@@ -317,5 +317,8 @@
   "side-comments.login": "käyttäjätunnus",
   "side-comments.signup": "Rekisteröidy",
   "side-comments.delete.confirmation": "Oletko varma, että haluat poistaa tämän kommentin?",
-  "side-comments.confirmation.title": "Poista kommentti"
+  "side-comments.confirmation.title": "Poista kommentti",
+
+  "settings-profile.disable-account.title": "Disable tili",
+  "settings-profile.disable-account.body": "Tätä toimintoa ei voi kumota"
 }

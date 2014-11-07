@@ -310,5 +310,8 @@
   "side-comments.login": "Aanmelden",
   "side-comments.signup": "Inschrijven",
   "side-comments.delete.confirmation": "Weet je zeker dat je deze opmerking wilt verwijderen?",
-  "side-comments.confirmation.title": "Verwijder opmerking"
+  "side-comments.confirmation.title": "Verwijder opmerking",
+
+  "settings-profile.disable-account.title": "Account uitschakelen",
+  "settings-profile.disable-account.body": "Deze actie kan niet ongedaan gemaakt worden"
 }

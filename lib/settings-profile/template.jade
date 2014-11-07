@@ -23,3 +23,6 @@
             strong= t('Change your profile picture at gravatar.com')
           input.form-control(type='text', name='profilePictureUrl', tabindex=4, placeholder=t('Or paste an image URL here...'), value=citizen.profilePictureUrl, validate='url')
       .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=5)=t('Save')
+      .form-group
+        a.btn.btn-danger.btn-block.btn-lg.btn-disable-account(href='#', tabindex=6)=t('settings-profile.disable-account.title')
+        p.text-danger.text-center: strong=t('settings-profile.disable-account.body')
