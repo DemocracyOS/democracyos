@@ -151,6 +151,7 @@
   "Email sent" : "Correo electrónico enviado",
   "The validation email was resent.": "El correo electrónico de validación ha sido reenviado.",
   "Email not validated" : "La dirección de correo electrónico no ha sido validada. A cada ciudadano se le envía un correo electrónico de bienvenida al momento de registrarse. El siguiente paso es abrir el correo electrónico que te hemos enviado (no te olvides de la carpeta 'Correo no deseado') y hacer clic en el enlace provisto. Cliquea <a href='/signup/resend-validation-email'>aquí</a> si necesitás que te reenviemos el correo electrónico de bienvenida",
+  "This account has been disabled" : "Esta cuenta ha sido deshabilitada",
   "No citizen found with that email address": "No tenemos registrado ningún ciudadano con esa dirección de correo electrónico",
 
   "Account data": "Datos de la cuenta",

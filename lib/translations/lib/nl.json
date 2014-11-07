@@ -131,6 +131,7 @@
   "Email sent" : "Email verstuurd",
   "The validation email was resent.": "De bevestigingsmail is nog een keer verstuurd.",
   "Email not validated" : "Het mailadres van deze gebruiker is nog niet bevestigd. Als een gebruiker zich aanmeld, versturen we altijd een welkomstmail. Controlleer je mail (vergeet niet je ongewenste berichten te bekijken) en klik op de bevestigingskoppeling. Klik <a href='/signup/resend-validation-email'>hier</a> als je de bevestigingsmail nog een keer wilt ontvangen",
+  "This account has been disabled" : "Dit account is uitgeschakeld",
   "No citizen found with that email address": "Geen gebruiker gevonden met dat mailadres",
 
   "Account data": "Gebruikersgegevens",

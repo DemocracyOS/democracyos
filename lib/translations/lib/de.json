@@ -131,6 +131,7 @@
   "Email sent" : "E-mail gesendet",
   "The validation email was resent.": "Bestätigungs-E-Mail erneut versandt.",
   "Email not validated" : "Die E-Mail-Adresse für diesen Bürger ist nicht bestätigt. Wir versenden eine Willkommens-Mail, wenn ein Bürger sich anmeldet. Bitte überprüfe deinen Posteingang (den Spam-Ordner nicht vergessen) und klicke auf den Link in der E-Mail. Klicke <a href='/signup/resend-validation-email'>hier</a>, wenn du die Willkommens-Mail noch einmal erhalten möchtest",
+  "This account has been disabled" : "Dieses Konto wurde deaktiviert",
   "No citizen found with that email address": "Keinen Bürger mit dieser E-Mail-Adresse gefunden",
 
   "Account data": "Account-Daten",

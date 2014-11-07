@@ -146,6 +146,7 @@
   "Email sent" : "E-mail enviado",
   "The validation email was resent.": "E-mail de validação enviado novamente.",
   "Email not validated" : "O endereço de e-mail desse cidadão não está validado. Enviamos aos cidadãos um e-mail de boas-vindas quando eles se cadastram. Por favor, cheque seu e-mail (lembre-se de checar também sua caixa de spam) e clique no link fornecido. Clique <a href='/signup/resend-validation-email'>aqui</a> para receber novamente o e-mail de boas-vindas",
+  "This account has been disabled" : "Esta conta foi desativada",
   "No citizen found with that email address": "Nenhum cidadão encontrado com esse endereço de e-mail",
   "More information": "Mais informações",
 
