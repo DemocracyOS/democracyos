@@ -149,6 +149,7 @@
   "Email sent" : "Correu electrònic enviat",
   "The validation email was resent.": "El correu electrònico de validació ha estat reenviat.",
   "Email not validated" : "L'adreça de correu electrònic encara no ha estat validada. A cada ciutadà se li envia un correu electrònic de benvinguda. El següent pas és obrir el correu electrònic que et vam enviar (no t'oblidis de revisar el 'correu brossa') i clicar sobre l'enllaç adjunt al correu. Cliqui <a href='/signup/resend-validation-email'>aquí</a> si necessita que li enviem de nou el correu de benvinguda",
+  "This account has been disabled" : "Aquest compte s'ha desactivat",
   "No citizen found with that email address": "No tenim registrat cap ciutadà amb aquesta adreça de correu electrònic.",
 
   "Account data": "Dades del compte",
