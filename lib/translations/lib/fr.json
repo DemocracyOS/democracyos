@@ -147,6 +147,7 @@
   "Email sent" : "Courriel envoyé",
   "The validation email was resent.": "Le courriel de validation a été renvoyé",
   "Email not validated" : "Adresse Email non validée. Tout citoyen reçoît un courriel de bienvenue au moment de son inscription. Le pas suivante est celui d' ouvrir ce courriel (sans oublier de réviser la boîte de courrier non désiré) et de cliquer sur le lien a l' intérieur. Cliquez sur <a href='/signup/resend-validation-email'>aquí</a> si vous avez besoin que nous renvoyons le courriel de bienvenue.",
+  "This account has been disabled" : "Ce compte a été désactivé",
   "No citizen found with that email address": "Nous n' avons aucun citoyen registré avec cette adresse Email",
 
   "Account data": "Informations du compte",
