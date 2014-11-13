@@ -26,7 +26,8 @@
   "Email is not valid": "Email is not valid",
   "A firstname is required": "A firstname is required",
   "A lastname is required": "A lastname is required",
-
+  "Career": "Career",
+  "Career Condition": "Career condition",
   "Profile": "Profile",
   "Sessions": "Sessions",
   "Notifications": "Notifications",
@@ -135,7 +136,7 @@
   "Welcome, {name}!": "Welcome, {name}!",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Your sign up data was received. We sent you an email so you can validate your email address.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.",
-  "Your email has been validated and now you are logged in" : "Your email has been validated and now you are logged in", 
+  "Your email has been validated and now you are logged in" : "Your email has been validated and now you are logged in",
   "You're being redirected in 5 seconds": "You're being redirected in 5 seconds",
   "You can now argue and vote on bills!": "You can now argue and vote on bills!",
   "Go to": "Go to",
