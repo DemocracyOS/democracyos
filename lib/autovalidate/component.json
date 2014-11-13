@@ -1,0 +1,12 @@
+{
+  "name": "autovalidate",
+  "description": "Component to validate form inputs and displaying messages on submit",
+  "dependencies": {
+    "component/dom": "1.0.6",
+    "visionmedia/debug": "1.0.4",
+    "yields/serialize": "0.2.0"
+  },
+  "locals": [ "validate" ],
+  "scripts": [ "autovalidate.js" ],
+  "main": "autovalidate.js"
+}

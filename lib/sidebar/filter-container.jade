@@ -1,6 +1,6 @@
 #laws-filter
   - var formatNumber = function(v) {
-  -  return v <= 99 ? v + ' ' : v + '+ ';
+  -  return v <= 99 ? v + ' ' : '99+ ';
   - };
   - var open = formatNumber(filter.countFiltered('open'));
   - var closed = formatNumber(filter.countFiltered('closed'));
@@ -12,11 +12,9 @@
       data-status='closed'
       )= closed + t('sidebar.closed')
 
-  #sort-filter.btn-group.btn-group-justified
-    button.btn.btn-default.current-department(type='button',
-      data-toggle='dropdown')= t(filter.sorts[filter.get('sort')].label)
-    button.btn.btn-default.dropdown-toggle(type='button',
-      data-toggle='dropdown')
+  #sort-filter.btn-group
+    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')
+      span.pull-left= t(filter.sorts[filter.get('sort')].label)
       span.caret
     ul.dropdown-menu
       - each sort, key in filter.sorts
@@ -30,8 +28,8 @@
 
   -if (citizen.logged())
     #hide-voted-filter.hide-voted-box
-      input(type='checkbox',
+      input#hide-voted(type='checkbox',
         name='hide-voted',
         checked= filter.get('hide-voted')
         )
-      label= t('sidebar.hide-voted')
+      label(for='hide-voted')= t('sidebar.hide-voted')

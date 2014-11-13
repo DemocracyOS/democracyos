@@ -1,8 +1,10 @@
 .email-validation-container.inner-container
-  ul.form-errors.hide
   #email-validation-message
-    h1= t("Welcome, {name}!", { name: ((citizen && citizen.firstName) ? citizen.firstName : t("Guest"))})
+    h1= t("Welcome, {name}!", { name: citizen.firstName })
     p.lead.text-muted #{t("Your email has been validated and now you are logged in")}.
-    p.lead.text-muted= t("You can now argue and vote on bills!")
+    - if (reference)
+      p.lead.text-muted= t("You're being redirected in 5 seconds")
+    - else
+      p.lead.text-muted= t("You can now argue and vote on bills!")
     p.lead.text-muted #{t("Go to")} 
       a(href="/")= t("browsing")

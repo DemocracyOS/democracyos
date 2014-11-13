@@ -1,4 +1,238 @@
 
+0.8.25 / 2014-11-07
+==================
+
+ * Add preventing disabled accounts to sign in
+
+0.8.24 / 2014-10-22
+==================
+
+ * Fix dep ref back to upstream
+ * Revert "Update ref to a breaking dep"
+ * Revert "Update all dep refs from 'visionmedia' to 'tj' #456"
+
+0.8.23 / 2014-10-21
+==================
+
+ * Update ref to a breaking dep
+
+0.8.22 / 2014-10-21
+==================
+ * Update all dep refs from 'visionmedia' to 'tj' #456
+ * Update dep for DemocracyOS/side-comments
+ * Update refs for component/t
+ * Pin deps for component/emitter
+
+0.8.21 / 2014-10-21
+==================
+
+ * Fix fixtures use and add acknowledgements to README.md
+
+0.8.20 / 2014-10-20
+==================
+
+ * Fix fetching own comments from mongodb
+
+0.8.19 / 2014-10-15
+==================
+
+ * Fix layout and style of reply buttons. Closes #407
+
+0.8.18 / 2014-10-09
+==================
+
+ * Fix comments not showing up on any law
+ * Fix 'No citizen has argumented on this law yet' message
+
+0.8.17 / 2014-10-08
+==================
+
+ * fix admin able to delete side-comments of all users. Closes #448
+ * Fix avatar usage in side-comments. Closes #447
+
+0.8.16 / 2014-10-08
+==================
+
+ * Fix summary html rendering
+ * Complete catalan translation
+ * Add side-comments for summary paragraphs. Closes #33
+ * Fix sorting by 'Closing soon'. Close #442
+ * removes spanish error message (changed to english) - PR #442
+ * Update DemocracyOS/side-comments dep version. Close #436
+
+0.8.15 / 2014-10-08
+==================
+
+ * Add deleting comments as a staff member
+
+0.8.14 / 2014-10-07
+==================
+
+ * Bump sidebar-comments dep version to 0.0.9 and stylize them
+
+0.8.13 / 2014-10-07
+==================
+
+ * Bump DemocracyOS/side-comments dep version
+
+0.8.12 / 2014-10-07
+==================
+
+ * Fix side-comments avatar usage. Closes #447
+
+0.8.11 / 2014-10-07
+==================
+
+ * Partially undo last fix
+
+0.8.10 / 2014-10-07
+==================
+
+ * Fix filter box styles
+
+0.8.9 / 2014-10-07
+==================
+
+ * [side-comments] - Fix side-comments dep
+
+0.8.8 / 2014-10-06
+==================
+
+ * Pin mongoose version to 3.8.16
+
+0.8.7 / 2014-10-06
+==================
+
+ * Bump component-resolver dep version
+
+0.8.6 / 2014-10-02
+==================
+
+ * Update timeago dep
+
+0.8.5 / 2014-09-30
+==================
+
+ * Fix rendering clauses when only 1 clause is present. Closes #440
+
+0.8.4 / 2014-09-29
+==================
+
+ * Fix null citizen on lookup
+
+0.8.3 / 2014-09-22
+==================
+
+ * Add author field to law #428
+ * Add ToS and PP accept on signup #405
+ * Remove 'Bill' prefix from title and remove required lawId #424
+ * Fix refresh signin when there are no laws #434
+ * Fix typo on 'Read more'
+
+0.8.2 / 2014-09-19
+==================
+
+ * Add portuguese locale
+ * Add missing key from `en.json`
+
+0.8.1 / 2014-09-18
+==================
+
+ * Fix Makefile building the app as well as post-install script
+ * Update dependencies for closest non-deprecated version. Closes #431
+ * Fix translations
+
+0.8.0 / 2014-09-16
+==================
+
+ * Add citizen profile picture as a URL
+ * Add external links to a law
+ * Add custom text to truncate law clauses
+ * Add unvotable laws
+ * Remove 'source' as a required law attribute
+
+0.7.6c / 2014-09-11
+==================
+
+ * Fix create law
+
+0.7.6b / 2014-09-05
+==================
+
+ * [sidebar] - Fix path to check.png image
+
+0.7.6 / 2014-09-05
+==================
+
+ * Add navigate back to /law/:id after succesful signin. Closes #369
+ * Update node version to 0.10.28
+ * Update npm version to 1.4.9
+ * Update to Component(1)
+ * Fix English translations
+ * Fix signin tabindex
+
+0.7.5 / 2014-08-26
+==================
+
+ * Fix spanish translations
+ * Add menu items for `faq`, `tos`, `pp` and `glossary`, conditional to settings. Closes #412
+ * Add denying user to up/downvote comments if they are not signed in. Closes #403
+ * Add translations for 'You must be signed in to up/downvote arguments' #403
+
+0.7.4 / 2014-08-14
+==================
+
+ * Add Dutch translations
+ * Add German translations
+ * Add View and FormView base js classes for all view to extend them and not repeat the same logic through all the app
+ * Add Stateful and StatefulView components to handle view states
+ * Add autosubmit and autovalidate for forms
+ * Add SideComments, but comment it out
+ * Add CONTRIBUTORS file
+ * Add MIT License text
+ * Update README.md
+ * Remove trailing whitespaces
+ * Fix environment variables for FAQ, Terms of Service, Privacy Policy and Glossary enabling
+ * Fix email validation flow to redirect to the topic the user was reading before signup
+ * Fix 'Guest' displayed to logged in user as their fullname
+ * Fix SignUp bug on Firefox
+
+0.7.3 / 2014-07-12
+==================
+
+ * Fix not showing page content once page changes having no laws. Closes #385
+
+0.7.2 / 2014-06-23
+==================
+
+ * Add 'for' attribute on 'hide-voted' label
+ * Add app stats for admin users #377
+ * Add `#content` lock until page is rendered #183
+ * Add setting `emailValidated` to true when signup in 'development' environment. Closes #374
+ * Add optional text-centered law clauses from the admin #197
+ * Add disclaimer when sidebar has no law to select #355
+ * Add strip package. Closes #334
+ * Add README.md stub
+ * Add glossary #371
+ * Add layout as a separate module #86
+ * Update default logo and favicon URL in config
+ * Update `clauseId` to be non-required `clauseName` #304
+ * Update `sidebar` to hide 'closing-soon' filter when seeing only closed laws #368
+ * Update  with link for Christian Martínez
+ * Update voting to prevent reloading the page. Closes #367
+ * Update 'discore/closest' to 'component/closest'
+ * Fix counter label when there are +99 open/closed laws
+ * Fix anchor colors to be consistent all the way across the app. #375
+ * Fix typo on snapper destroy
+ * Fix participants to be ordered by voted date #339
+ * Fix `read more` links on comments #361
+ * Fix law articles bold color links #354
+ * Fix zoom on mobile (make it un-zoomable) #364
+ * Fix dropdown on all browsers
+ * Fix header race condition #325
+ * Fix facebook and twitter cards, escaping HTML characters
+ * Fix open and closed count as they were counting drafts if you were signed in as admin. Closes #342
+
 0.7.1 / 2014-05-30 
 ==================
 

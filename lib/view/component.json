@@ -1,0 +1,15 @@
+{
+  "name": "view",
+  "description": "Base view",
+  "dependencies": {
+    "component/assert": "0.4.0",
+    "component/dom": "1.0.6",
+    "component/emitter": "1.1.3",
+    "component/inherit": "0.0.3",
+    "component/inserted": "0.0.2",
+    "component/removed": "0.0.3"
+  },
+  "locals": [ "render" ],
+  "scripts": [ "view.js" ],
+  "main": "view.js"
+}

@@ -2,7 +2,7 @@
   "name": "feedback",
   "description": "feedback component",
   "dependencies": { },
-  "local": [ "citizen" ],
+  "locals": [ "citizen" ],
   "scripts": [ "feedback.js", "uservoice.js" ],
   "main": "feedback.js"
 }

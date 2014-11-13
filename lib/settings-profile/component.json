@@ -2,27 +2,19 @@
   "name": "settings-profile",
   "description": "Settings profile view",
   "dependencies": {
-    "component/classes": "1.2.0",
-    "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
-    "yields/serialize": "0.2.0",
-    "yields/empty": "0.0.1",
-    "cristiandouce/query": "0.0.1",
     "component/t": "1.0.0"
   },
-  "local": [
+  "locals": [
     "citizen",
-    "render",
-    "request",
-    "regexps"
+    "form-view"
   ],
   "templates": [
-    "profile-template.jade"
+    "template.jade"
   ],
   "styles": [
-    "profile.css"
+    "styles.styl"
   ],
   "scripts": [
     "view.js"

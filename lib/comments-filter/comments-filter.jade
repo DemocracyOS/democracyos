@@ -2,7 +2,6 @@
   button.btn.btn-default(type='button', data-toggle='dropdown')
     span=t('comments.ordered-by') + ': '
     strong=t(filter.get().label)
-  button.btn.btn-default.btn-caret(type='button', data-toggle='dropdown')
     span.caret
   ul.dropdown-menu
     - each sort, key in sorts

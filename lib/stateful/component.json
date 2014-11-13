@@ -1,0 +1,11 @@
+{
+  "name": "stateful",
+  "description": "Give states to a protoype",
+  "dependencies": {
+    "visionmedia/debug": "1.0.3",
+    "component/emitter": "1.1.3",
+    "kewah/mixin": "0.1.0"
+  },
+  "scripts": ["stateful.js"],
+  "main": "stateful.js"
+}

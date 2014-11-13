@@ -1,0 +1,19 @@
+- clause = clause || {}
+
+.law-clause(data-clause=clause.id)
+  h4= t('admin-laws-form.clause.heading') + (clause.clauseName ? ' ' + clause.clauseName : '')
+  .clause-row
+    .clause-group.clause-id
+      label=t('admin-laws-form.clause.label.clauseName')
+      input.form-control(type='text', name='clauses[#{clause.id}][clauseName]', value=clause.clauseName)
+    .clause-group.clause-order
+      label=t('admin-laws-form.clause.label.order')
+      input.form-control(type='text', name='clauses[#{clause.id}][order]', validate='numeric', value=clause.order)
+  .clause-row
+    label.pull-left=t('admin-laws-form.clause.label.text')
+    div.checkbox.pull-right
+      label
+        input(type='checkbox', name='clauses[#{clause.id}][centered]', checked=clause.centered)
+        =t('admin-laws-form.clause.text-centered')
+    textarea.form-control(name='clauses[#{clause.id}][text]')= clause.text
+  a.remove-clause.btn.btn-danger.btn-xs(href='#')= t('admin-laws-form.clause.button.delete')

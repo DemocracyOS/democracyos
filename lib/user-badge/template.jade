@@ -1,0 +1,16 @@
+.user-badge.pull-right
+  a.btn.profile(href='#', data-toggle='dropdown').dropdown-toggle
+    img(src=citizen.profilePicture())
+    span.name=citizen.firstName
+    span.caret
+  ul.dropdown-menu
+    li: a(href='/settings')= t('header.settings')
+    - if (config['faq'])
+      li: a(href="/help/faq")= t('help.faq.title')
+    - if (config['tos'])
+      li: a(href="/help/terms-of-service")= t('help.tos.title')
+    - if (config['pp'])
+      li: a(href="/help/privacy-policy")= t('help.pp.title')
+    - if (config['glossary'])
+      li: a(href="/help/glossary")= t('help.glossary.title')
+    li: a(href='/logout')= t('header.logout')

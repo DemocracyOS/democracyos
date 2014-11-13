@@ -4,7 +4,7 @@
   "dependencies": {
     "chjj/marked": "v0.3.2"
   },
-  "local": [],
+  "locals": [],
   "scripts": [ "index.js" ],
   "styles": [ ],
   "templates": [ ],

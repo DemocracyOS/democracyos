@@ -15,7 +15,11 @@
     "organization url",
     "learn more url",
     "google analytics tracking id",
-    "comments per page"
+    "comments per page",
+    "faq",
+    "tos",
+    "pp",
+    "glossary"
   ],
   "auth": {
     "basic": {
@@ -47,8 +51,8 @@
     }
   },
   "locale" : "en",
-  "logo" : "http://democraciaenred.org/boot/images/logo.png",
-  "favicon" : "http://democraciaenred.org/favicon.ico",
+  "logo": "/lib/boot/images/logo.png",
+  "favicon" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",
   "learn more url": "http://www.democracyos.org",
@@ -57,7 +61,8 @@
   "rss enabled" : true,
   "comments per page": 0,
   "spam limit": 5,
-  "faq enabled": false,
-  "tos enabled": false,
-  "pp enabled": false
+  "faq": false,
+  "tos": false,
+  "pp": false,
+  "glossary": false
 }

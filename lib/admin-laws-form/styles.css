@@ -1,0 +1,154 @@
+#law-wrapper .publish-status p {
+  padding: 10px;
+  text-align: center;
+}
+
+#law-wrapper .publish-status p span {
+  margin-right: 5px;
+  letter-spacing: 0.04em;
+}
+
+#law-wrapper a.delete-law {
+  float: right;
+  line-height: 14px;
+  text-decoration: underline;
+}
+
+#law-wrapper .publish-status p a {
+  font-size: 12px;
+  text-decoration: underline;
+  letter-spacing: 0.04em;
+}
+
+#law-wrapper .law-admin form .form-group.closingAt {
+  overflow: hidden;
+}
+
+#law-wrapper .law-admin form .form-group.closingAt .input-group {
+  width: 40%;
+  float: left;
+  margin-left: 0;
+}
+
+#law-wrapper .law-admin form .form-group.closingAt .input-group:last-child {
+  margin-left: 12px;
+}
+
+#law-wrapper .law-admin form .form-group.closingAt span.error {
+  top: 10px;
+}
+
+#law-wrapper .law-admin form .form-group input[readonly] {
+  background-color: #fff;
+  cursor: default;
+}
+
+#law-wrapper .law-admin form textarea {
+  min-height: 180px;
+}
+
+#law-wrapper .law-admin form a.add-clause,
+#law-wrapper .law-admin form a.add-link {
+  width: 100%;
+  margin: 15px 0px;
+}
+
+#law-wrapper .law-admin form a.add-link.btn-info {
+  background: #16a085;
+}
+
+#law-wrapper form .form-group span.error {
+  top: 40px;
+}
+
+#law-wrapper form .form-group .link-group span.error {
+  top: 40px;
+  right: 20px;
+}
+
+#law-wrapper .law-admin form span.add-clause-forbidden,
+#law-wrapper .law-admin form span.add-link-forbidden {
+  display: block;
+  width: 100%;
+  color: #F00;
+  text-align: center;
+}
+
+#law-wrapper .law-admin .law-links {
+  overflow: hidden;
+}
+
+#law-wrapper .law-admin .law-clause h4,
+#law-wrapper .law-admin .law-link h4 {
+  margin-top: 0px;
+}
+
+#law-wrapper .law-admin .law-clause,
+#law-wrapper .law-admin .law-link {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
+  border-top: 1px solid #eee;
+}
+
+#law-wrapper .law-admin .law-clause .remove-clause,
+#law-wrapper .law-admin .law-link .remove-link {
+  float: right;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row,
+#law-wrapper .law-admin .law-link .link-row {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 0px;
+  padding: 10px 0px;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .checkbox {
+  margin: 0;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group,
+#law-wrapper .law-admin .law-link .link-row .link-group {
+  display: block;
+  position: relative;
+  float: left;
+  width: 50%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group:first {
+  background: red;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group label,
+#law-wrapper .law-admin .law-clause .clause-row .clause-group input,
+#law-wrapper .law-admin .law-link .link-row .link-group label,
+#law-wrapper .law-admin .law-link .link-row .link-group input {
+  width: 95%;
+  float: left;
+}
+
+#law-wrapper .law-admin .law-clause .clause-row .clause-group.clause-order label,
+#law-wrapper .law-admin .law-clause .clause-row .clause-group.clause-order input {
+  margin-left: 5%;
+}
+
+.popover {
+  display: block !important;
+  cursor: default;
+}
+
+.clock {
+  font-size: 14px;
+}
+
+.clock td {
+  padding: 2px;
+}

@@ -1,0 +1,85 @@
+/* Vars
+-------------------------------------------------- */
+header_height = 60px
+spacing = 20px
+border_radius = 3px
+nav_proposal_width = 266px
+content_width = 580px
+link_blue = #2980b9
+
+/* Header
+-------------------------------------------------- */
+header.app-header, aside.nav-proposal, .site-content, .site-content.loading-lock
+  position fixed
+
+.site-content
+  z-index 1
+  overflow-y scroll
+  background white
+
+#content.site-content
+  overflow-y auto
+
+header.app-header
+  z-index 20
+  top 0
+  left 0
+  right 0
+  height header_height
+  background #51394a
+  // border-bottom 1px solid #2980b9
+  color white
+  padding-left spacing
+  font-weight bold
+  text-transform uppercase
+  font-size 12px
+
+  #toggleButton
+    width 26px
+    height 44px
+    position absolute
+    left spacing
+    padding 10px 0
+    display none
+    .bar-icon
+      height 3px
+      background white
+      margin-bottom 5px
+      display block
+  a
+    color white
+    &:hover
+      color white
+
+  h1
+    display inline-block
+    width 300px
+    font-size 12px
+    margin-top 12px
+    .logo
+      height 40px
+      display inline-block
+      margin-right 10px
+      margin-top -2px
+
+  .user-nav
+    display inline-block
+    float right
+    list-style none
+    margin-right spacing
+    position absolute
+    right 0
+    top 0px
+
+    .user
+      float right
+
+    .login
+      padding 6px 12px
+      display inline-block
+      margin-top 15px
+      i
+        display none
+        font-size 20px
+      &:hover
+        text-decoration none

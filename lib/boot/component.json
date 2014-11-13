@@ -2,16 +2,17 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": {
-    "component/bus": "0.0.2",
     "visionmedia/page.js": "1.3.7",
     "component/t": "1.0.0",
-    "cristiandouce/timeago": "0.0.1",
+    "component/bus": "^0.0.2",
+    "DemocracyOS/timeago": "master",
     "code42day/ga": "1.1.0",
     "slifszyc/user-agent": "0.0.9"
   },
-  "local": [
+  "locals": [
     "config",
     "body-classes",
+    "content-lock",
     "homepage",
     "proposal",
     "law",

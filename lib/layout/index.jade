@@ -1,0 +1,78 @@
+doctype html5
+html(lang='en')
+  head
+    block head
+      //
+      //   Basic Page Needs
+      //   ==================================================
+      title= config('organization name')
+
+      meta(charset='utf-8')
+      meta(name='description', content='')
+      meta(name='author', content='')
+
+      //
+      //   Mobile Specific Metas
+      //   ==================================================
+      meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
+
+      //
+      //   CSS
+      //   ==================================================
+
+      // Boostrap Complete
+      link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+      link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
+
+      // Application Styles
+      link(rel='stylesheet', href='/app.css')
+
+      // HTML5 shim, for IE6-8 support of HTML5 elements
+      //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+
+      // fav and touch icons
+      link(rel='apple-touch-icon', href='/boot/images/touch-icon-iphone.png')
+      link(rel='apple-touch-icon', sizes='76x76', href='/boot/images/touch-icon-ipad.png')
+      link(rel='apple-touch-icon', sizes='120x120', href='/boot/images/touch-icon-iphone-retina.png')
+      link(rel='apple-touch-icon', sizes='152x152', href='/boot/images/touch-icon-ipad-retina.png')
+
+      link(rel="icon", type="image/x-icon", href=config('favicon'))
+
+      script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
+      script.
+        try{Typekit.load();}catch(e){}
+      script.
+        var csrfToken = '#{csrfToken}';
+
+      include includes/remove-hash
+
+  body
+    block body
+      #snap-content.snap-content
+        // Start of `Page Content`
+        header.app-header
+        section#content.site-content
+          block content
+        section#browser.site-content
+          section.app-content
+
+      .snap-drawers
+        aside.nav-proposal
+
+
+      // End of `Page Content`
+      // ======================
+      // Start of `Javascripts`
+
+      //- Core 3rd parties libs
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
+      script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+      include includes/placeholders
+      //- General Site javascript
+      script(src='/app.js')
+
+      //- Boot application
+      script.
+        require('./lib/boot');
+      // End of `Javascripts`

@@ -2,12 +2,13 @@
   "name": "tags",
   "description": "Collection of tags",
   "dependencies": {
-    "component/emitter": "*",
+    "component/emitter": "1.1.3",
     "visionmedia/debug": "0.7.4"
   },
-  "local": [
+  "locals": [
     "request",
-    "render"
+    "render",
+    "stateful"
   ],
   "scripts": [
     "tags.js",

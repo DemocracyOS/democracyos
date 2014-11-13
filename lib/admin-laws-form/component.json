@@ -3,21 +3,20 @@
   "description": "Admin laws Form view",
   "dependencies": {
     "component/t": "1.0.0",
-    "component/classes": "1.2.0",
-    "component/emitter": "1.1.1",
-    "component/events": "1.0.5",
-    "component/datepicker": "*",
-    "slifszyc/timepicker": "*",
+    "component/dom": "1.0.6",
+    "gvilarino/datepicker": "1.0.2",
+    "gvilarino/timepicker": "1.1.2a",
     "visionmedia/debug": "0.7.4",
     "visionmedia/jade": "1.1.5",
     "visionmedia/page.js": "1.3.7",
     "yields/serialize": "0.2.0",
     "yields/empty": "0.0.1",
-    "discore/closest": "0.1.2",
+    "component/closest": "0.1.4",
     "cristiandouce/confirmation": "d0861",
-    "cristiandouce/query": "0.0.1"
+    "slifszyc/query": "0.0.3"
   },
-  "local": [
+  "locals": [
+    "form-view",
     "tags",
     "laws",
     "render",
@@ -25,14 +24,15 @@
     "regexps"
   ],
   "templates": [
-    "form-template.jade",
-    "form-clause.jade"
+    "template.jade",
+    "link.jade",
+    "clause.jade"
   ],
   "styles": [
-    "form-law.css"
+    "styles.css"
   ],
   "scripts": [
-    "form-view.js"
+    "view.js"
   ],
-  "main": "form-view.js"
+  "main": "view.js"
 }

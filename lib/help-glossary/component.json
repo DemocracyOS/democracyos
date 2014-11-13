@@ -1,0 +1,23 @@
+{
+  "name": "help-glossary",
+  "description": "Help glossary view",
+  "dependencies": {
+    "component/dom": "1.0.6",
+    "component/scroll-to": "0.0.1",
+    "component/t": "1.0.0",
+    "chjj/marked": "v0.3.2",
+    "visionmedia/jade": "1.1.5"
+  },
+  "locals": [
+    "view"
+  ],
+  "templates": [
+    "template.jade",
+    "glossary.md"
+  ],
+  "scripts": [
+    "view.js"
+  ],
+  "styles": [ "glossary.styl" ],
+  "main": "view.js"
+}
