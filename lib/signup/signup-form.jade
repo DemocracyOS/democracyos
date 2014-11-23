@@ -18,20 +18,23 @@
         label #{t('Your lastname')}
         input.form-control(type='text', id='lastName', name='lastName', tabindex=3, placeholder=t('Lastname'), validate='required lastname')
       .form-group
-       select.form-control(type='text', id='careerChoice', tabindex=4)
-          option(value='Sistemas') Sistemas
-          option(value='Electrónica') Electrónica
-          option(value='Química') Química
-          option(value='Industrial') Industrial
-          option(value='Mecánica') Mecánica
-          option(value='Textil') Textil
-          option(value='Naval') Naval
+         label #{t('Career')}
+         select.form-control(type='text', name='careerChoice', id='careerChoice', tabindex=4)
+            option(value='') --Selecciona tu carrera--
+            option(value='Sistemas') Sistemas
+            option(value='Electrónica') Electrónica
+            option(value='Química') Química
+            option(value='Industrial') Industrial
+            option(value='Mecánica') Mecánica
+            option(value='Textil') Textil
+            option(value='Naval') Naval
       .form-group
          label #{t('Career Condition')}
-        select.form-control(type='text', id='careerCondition', tabindex=5)
-          option(value='Estudiante') Estudiante
-          option(value='Graduado') Graduado
-          option(value='Docente') Docente
+         select.form-control(type='text', name='careerCondition', id='careerCondition', tabindex=5)
+            option(value='') --Selecciona tu condición de carrera--
+            option(value='Estudiante') Estudiante
+            option(value='Graduado') Graduado
+            option(value='Docente') Docente
       .form-group
         label= t('Password')
         input.form-control(type='password', name='password', tabindex=4, placeholder=t('Password'), validate='required min-length:6')
