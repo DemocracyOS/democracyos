@@ -14,6 +14,7 @@ Please refer to the [Installation](https://github.com/DemocracyOS/app/wiki/Insta
 ## Current DemocracyOS deployments
 
 * [DemocracyOS - PDR](http://dos.partidodelared.org): The Net Party's official deployment of DemocracyOS.
+* [DEMOS](http://demos.legislatura.gov.ar): Buenos Aires City Congress opens up for citizen collaboration in legislation drafting.
 * [Datos Abiertos México](http://politica.datos.gob.mx): Mexican government's official deployment Open Data Policy.
 * [Nuestra ley Telecom](http://nuestraleytelecom.mx/): Mexican initiative for a crowdsourced telecommunications bill.
 * [VaiMudarNaCopa](http://democracia.vaimudar.org/): Brazilian NGO for discussing social and economic impact of the FIFA World Cup.
