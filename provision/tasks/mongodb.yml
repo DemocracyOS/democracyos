@@ -1,0 +1,20 @@
+- name: MongoDB | Fetch 10Gen signing key
+  command: apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+- name: MongoDB | Add 10Gen repository
+  shell:
+    echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/10gen.list
+    creates=/etc/apt/sources.list.d/10gen.list
+- name: MongoDB | Install latest MongoDB release
+  apt: pkg=mongodb-10gen state=present update_cache=yes
+- name: MongoDB | Creates DB directory
+  file: path=/data/db state=directory group=mongodb owner=mongodb
+- name: MongoDB | Push default configuration template
+  template:
+    src="{{repository_basedir}}/provision/templates/mongodb.conf"
+    dest=/etc/mongodb.conf
+    owner=root group=root mode=0644
+  notify:
+  - mongodb-restart
+# Ensure service is running.
+- name: MongoDB | Ensure deamon is running correctly
+  service: name=mongodb state=started

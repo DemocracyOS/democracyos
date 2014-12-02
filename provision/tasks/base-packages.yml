@@ -1,0 +1,17 @@
+- name: Install 'python-apt' module (Ubuntu)
+  command: apt-get install python-apt -y
+- name: ensure packages required are installed
+  apt: pkg={{ item }} state=present
+  with_items:
+    - build-essential
+    - bc
+    - flex
+    - unzip
+    - patch
+    - make
+    - bzip2
+    - autoconf
+    - automake
+    - libtool
+    - git
+    - python-pycurl

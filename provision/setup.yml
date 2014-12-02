@@ -1,0 +1,12 @@
+---
+- hosts: all
+  user: vagrant
+  sudo: True
+  vars:
+    repository_basedir: ..
+  tasks:
+    - include: "{{repository_basedir}}/provision/tasks/base-packages.yml"
+    - include: "{{repository_basedir}}/provision/tasks/mongodb.yml"
+    - include: "{{repository_basedir}}/provision/tasks/dos.yml"
+  handlers:
+    - include: "{{repository_basedir}}/provision/handlers/handlers.yml"

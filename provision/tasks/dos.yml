@@ -1,0 +1,6 @@
+- name: DemocracyOS | Add Node PPA
+  apt_repository: repo='ppa:chris-lea/node.js'
+- name: DemocracyOS | Install NodeJS
+  apt: pkg=nodejs update_cache=yes state=present
+- name: DemocracyOS | Install packages
+  npm: path=/vagrant
