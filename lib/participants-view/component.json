@@ -3,6 +3,7 @@
   "description": "participants view",
   "dependencies": {
     "component/events": "1.0.9",
+    "component/bus": "^0.0.2",
     "component/emitter": "1.1.3",
     "component/classes": "1.2.0",
     "component/tip": "2.1.2",
@@ -11,7 +12,7 @@
     "visionmedia/jade": "1.1.5",
     "slifszyc/query": "0.0.3"
   },
-  "locals": [ "config", "render", "request" ],
+  "locals": [ "config", "render", "request", "citizen" ],
   "scripts": [ "view.js"],
   "templates": [ "box.jade", "participant.jade" ],
   "styles": [ ],
