@@ -9,7 +9,6 @@
   "locals": [
     "citizen",
     "feedback",
-    "render",
     "snapper",
     "user-badge",
     "view"
