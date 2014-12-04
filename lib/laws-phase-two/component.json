@@ -1,0 +1,19 @@
+{
+  "name": "laws-phase-two",
+  "description": "Collection of laws",
+  "dependencies": {
+    "component/emitter": "1.1.3",
+    "visionmedia/debug": "0.7.4"
+  },
+  "locals": [
+    "citizen",
+    "request",
+    "render",
+    "stateful"
+  ],
+  "scripts": [
+    "laws.js",
+    "proto.js"
+  ],
+  "main": "laws.js"
+}

@@ -183,6 +183,7 @@
   "Summary": "Summary",
   "Chart": "Chart",
   "URL": "URL",
+  "Connection error when voting": "An error occurred while processing your vote. Please try again",
 
   "Clause": "Clause",
   "read more": "Read more",
