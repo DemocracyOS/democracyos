@@ -1,0 +1,52 @@
+#settings-container
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+  #settings
+    position relative
+    max-width 650px
+    min-height 100%
+    margin 0 auto
+
+    .sidebar-container
+      position absolute
+      width 180px
+      height 100%
+      padding-left 20px
+
+    .settings-content
+      height 100%
+      max-width 500px
+      min-width 350px
+      margin-left 180px
+      margin-right auto
+      padding 40px 25px
+
+    .btn
+      font-weight 600
+      letter-spacing 0.04em
+      padding 5px 10px
+
+    .btn,
+    input,
+    textarea,
+    select,
+    #button
+      border-radius 2px
+
+    input[type="submit"].btn
+      font-weight normal
+
+    label
+      margin-bottom 10px
+
+    form
+      max-width 350px
+
+@media only screen and (min-width  320px) and (max-width  700px)
+  //Mobile max width
+  #settings-container #settings .settings-content
+    min-width 320
