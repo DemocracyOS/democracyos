@@ -1,0 +1,42 @@
+[submodule "cookbooks/nodejs"]
+	path = cookbooks/nodejs
+	url = https://github.com/redguide/nodejs
+[submodule "cookbooks/apt"]
+	path = cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt
+[submodule "cookbooks/ark"]
+	path = cookbooks/ark
+	url = https://github.com/burtlo/ark
+[submodule "cookbooks/7-zip"]
+	path = cookbooks/7-zip
+	url = https://github.com/sneal/7-zip
+[submodule "cookbooks/windows"]
+	path = cookbooks/windows
+	url = https://github.com/opscode-cookbooks/windows
+[submodule "cookbooks/chef_handler"]
+	path = cookbooks/chef_handler
+	url = https://github.com/opscode-cookbooks/chef_handler
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential
+[submodule "cookbooks/yum-epel"]
+	path = cookbooks/yum-epel
+	url = https://github.com/opscode-cookbooks/yum-epel
+[submodule "cookbooks/yum"]
+	path = cookbooks/yum
+	url = https://github.com/opscode-cookbooks/yum
+[submodule "cookbooks/mongodb"]
+	path = cookbooks/mongodb
+	url = https://github.com/edelight/chef-mongodb
+[submodule "cookbooks/python"]
+	path = cookbooks/python
+	url = https://github.com/poise/python
+[submodule "cookbooks/runit"]
+	path = cookbooks/runit
+	url = https://github.com/hw-cookbooks/runit
+[submodule "cookbooks/git"]
+	path = cookbooks/git
+	url = https://github.com/jssjr/git
+[submodule "cookbooks/dmg"]
+	path = cookbooks/dmg
+	url = https://github.com/opscode-cookbooks/dmg
