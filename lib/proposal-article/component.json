@@ -14,7 +14,7 @@
     "slifszyc/query": "0.0.3",
     "component/t": "1.0.0"
   },
-  "locals": [ "config", "render", "participants-view", "citizen", "proposal-clauses", "request" ],
+  "locals": [ "config", "render", "participants-box", "citizen", "proposal-clauses", "request" ],
   "scripts": [ "proposal-article.js" ],
   "templates": [ "article.jade", "clause.jade" ],
   "styles": [ "proposal-article.styl" ],
