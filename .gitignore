@@ -17,6 +17,8 @@ node_modules
 components
 public
 
-*.DS_Store
 config*.json
+
+*.DS_Store
+.env
 .idea/*
