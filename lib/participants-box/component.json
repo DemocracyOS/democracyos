@@ -1,0 +1,12 @@
+{
+  "name": "participants-box",
+  "locals": [
+    "participant-view",
+    "request",
+    "view"
+  ],
+  "templates": [ "template.jade" ],
+  "scripts": ["view.js"],
+  "styles": ["styles.styl"],
+  "main": "view.js"
+}

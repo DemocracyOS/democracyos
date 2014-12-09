@@ -1,0 +1,12 @@
+{
+  "name": "participant-view",
+  "description": "participant view",
+  "dependencies": {
+    "component/tip": "2.1.2"
+  },
+  "locals": [ "view" ],
+  "scripts": [ "view.js"],
+  "templates": [ "template.jade" ],
+  "styles": [ "styles.styl" ],
+  "main": "view.js"
+}
