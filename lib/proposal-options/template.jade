@@ -9,7 +9,7 @@
 - var voted = citizen && ~census.indexOf(citizen.id)
 
 .inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
-    
+
   .proposal-options
     .vote-box
       .meta-data(class= !!citizen.id ? '' : 'hide')
@@ -36,17 +36,10 @@
           a.vote-option.vote-no(href="#", data-proposal=proposal.id)
             i.flaticon.solid.thumbs-up-1
             span= t('Nay')
-      //-   .proxy-vote
-      //-     a.vote-option.delegate-vote(href="#", data-proposal=proposal.id)
-      //-       i.flaticon.solid.thumbs-up-1
-      //-       span= t('Delegate')
-      //- .delegation-box.hide
-      //-   label= t('Delegate to')
-      //-   input.delegation-input(type="text", name="q")
 
       .votes-cast
         em.text-muted= t('{num} votes cast', { num: census.length || "0" })
-    
+
     - if (!citizen.id)
       p.text-mute.hide= t('You must be signed in to vote on this law')
         | . 
