@@ -204,6 +204,7 @@
 
   "proposal-article.article.alert.text": "Això és la versió de prova de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Més informació",
+  "proposal-options.error.voting": "S'ha produït un error en processar la teva vot. Si us plau, torna a intentar",
 
   "Remove argument" : "Traieu argument",
   "Spam" : "Reportar abús",

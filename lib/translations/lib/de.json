@@ -184,6 +184,7 @@
 
   "proposal-article.article.alert.text": "Dies ist eine Demo-Version von DemocracyOS",
   "proposal-article.article.alert.learn-more": "Mehr erfahren",
+  "proposal-options.error.voting": "Es gab einen Fehler bei der Verarbeitung Ihre Stimme. Bitte versuchen Sie es erneut",
 
   "Remove argument" : "Argument entfernen",
   "Spam" : "Als Spam melden",

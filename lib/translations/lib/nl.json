@@ -185,6 +185,7 @@
 
   "proposal-article.article.alert.text": "Dit is de publieke demonstratie van DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Meer informatie",
+  "proposal-options.error.voting": "Er is een fout verwerking van uw stem. Probeer het nogmaals",
 
   "Remove argument" : "Verwijder opmerking",
   "Spam" : "Ongewenst",

@@ -184,7 +184,6 @@
   "Results will be shown when this law is closed": "Los resultados se mostrarán cuando se cierre la ley",
   "Summary": "Resumen",
   "Chart": "Gráfico",
-  "Connection error when voting": "Ocurrió un error al procesar tu voto. Por favor, vuelve a intentar",
 
   "Clause": "Artículo",
   "read more": "Leer más",
@@ -206,6 +205,7 @@
 
   "proposal-article.article.alert.text": "Ésta es una versión demo de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Más información",
+  "proposal-options.error.voting": "Ocurrió un error al procesar tu voto. Por favor, vuelve a intentar",
 
   "Remove argument" : "Borrar argumento",
   "Spam" : "Reportar abuso",
