@@ -177,12 +177,13 @@
   "Results will be shown when this law is closed": "Tulokset näytettään kun laki on suljettu",
   "Summary": "Yhteenveto",
   "Chart": "Taulukko",
-  
+
   "Clause": "Lauseke",
   "read more": "Lue lisää",
   "view more": "Näytä enemmän",
   "View the original text": "Näytä alkuperäinen teksti",
-  "Participant": "Osallistuja",
+  "Participant.singular": "Osallistuja",
+  "Participant.plural": "Osallistujas",
   "You must be signed in to vote on this law": "Sinun täytyy rekisteröityä äänestääksesi",
 
   "sidebar.listing{listType}": "Näytä kaikki",

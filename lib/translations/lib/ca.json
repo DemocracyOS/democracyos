@@ -188,7 +188,8 @@
   "read more": "Llegir text complet",
   "view more": "Veure més",
   "View the original text": "Veure el text original",
-  "Participant": "Participant",
+  "Participant.singular": "Participant",
+  "Participant.plural": "Participants",
   "You must be signed in to vote on this law": "Ha d'estar registrat per poder veure aquesta llei",
 
   "sidebar.listing{listType}": "Tot",

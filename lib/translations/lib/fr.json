@@ -185,7 +185,8 @@
   "read more": "En lire plus",
   "view more": "en voir plus",
   "View the original text": "Voir le texte original",
-  "Participant": "Concurrent",
+  "Participant.singular": "Concurrent",
+  "Participant.plural": "Concurrents",
   "You must be signed in to vote on this law": "Vous devez être registré pour voter à propos de cette loi",
 
   "sidebar.listing{listType}": "Tout",
