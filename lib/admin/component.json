@@ -27,7 +27,7 @@
     "render"
   ],
   "scripts": [ "admin.js" ],
-  "styles": [ "admin.css", "admin-wrappers.css", "admin-heading.css" ],
+  "styles": [ "admin.styl", "admin-wrappers.styl", "admin-heading.styl" ],
   "templates": [ "admin-container.jade"],
   "main": "admin.js"
 }
