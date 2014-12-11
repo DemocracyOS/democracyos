@@ -58,6 +58,8 @@
   "validators.invalid.time": "Tiempo no válido",
   "validators.min-length.singular": "Debe tener al menos 1 caracter",
   "validators.min-length.plural": "Debe tener al menos {n} caracteres",
+  "validators.max-length.singular": "Debe tener como máximo 1 caracter",
+  "validators.max-length.plural": "Debe tener como máximo {n} caracteres",
   "validators.input.not-exists": "No existe el elemento {name}",
   "validators.password.not.match": "Salasanat eivät täsmää",
   "validators.not.match": "No coinciden",
