@@ -1,4 +1,39 @@
 
+0.8.26 / 2014-12-11
+==================
+
+ * Fix label logic for admin list law. Completes #504 and closes #472
+ * User thumbnail is not aligned with user name. Closes #503
+ * Remove jQuery scrolling to top after successful submit #458
+ * On creating a law, routes to the page for the new law. Closes #421
+ * Removed unique constraint for lawId. Closes #472.
+ * Remove legacy unbinding code fixed updated by #501 for #497
+ * Add restrict middleware to vote endpoint. Closes #490.
+ * Update checking for switchOn and switchOff being typeof function #500
+ * Author name supports apostrophes ('), hyphens (-) and dots (.). Closes #493.
+ * Update view to support unbindAll when element is removed, detaching DOM events and Emitter event handlers. Closes #500
+ * Update proposal-options to inherit from View #282
+ * Update ProposalArticle to inherit from View #282
+ * Fix reply submit button not properly aligned. Closes #495.
+ * #484 Remove unnecesary colon and semicolon from .styl file
+ * fix reply rendering after submittin. Closes #491
+ * Separate participants-box into two separate components: one for holding the box and another one for each participant bubble #282
+ * Remove unnecesary 'render' dependency
+ * Merge pull request #488 from DemocracyOS/revert-487-394-votes-count
+ * Remove unnecesary 'assert' library. Rename onremove method to _onremove to not collision with the FormView onremove method.
+ * #484 Fix rule
+ * #484 Fix h-scrolls on mobile settings. - migrate settings from css to stylus (related to  #215) - Fix media queryes.
+ * #224 - Restrict first name length on user drop down text
+ * Fixed mongoose sessions error. Closes #439.
+ * Update CONTRIBUTING.md
+ * New API method for getting the version info. Closes #444
+ * Merge pull request #455 from bigokro/fix/proceed-in-english
+ * Minor spelling corrections in English (procced --> proceed)
+ * Fixed function declarations on Issue #430
+ * Fix tag duplication on law creation. Closes #430.
+ * Fixed weird behavior when deleting arguments as admin
+ * Fix regex for URL validation. Closes #451
+
 0.8.25 / 2014-11-07
 ==================
 
