@@ -64,6 +64,8 @@
   "validators.invalid.time": "virheellinen aika",
   "validators.min-length.singular": "Sen on oltava vähintään 1 merkki",
   "validators.min-length.plural": "Se mus olla vähintään {n} merkkiä",
+  "validators.max-length.singular": "Sen täytyy olla 1 merkki kauan kuin paljon",
+  "validators.max-length.plural": "Sen täytyy olla vähintään {n} merkkiä pitkä niin paljon",
   "validators.input.not-exists": "{name} elemen ei ole olemassa",
   "validators.password.not.match": "Passwords do not match",
   "validators.not.match": "ei ottelu",

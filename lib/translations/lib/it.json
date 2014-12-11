@@ -63,6 +63,8 @@
   "validators.invalid.time": "ora non valida",
   "validators.min-length.singular": "Essa deve essere almeno 1 carattere",
   "validators.min-length.plural": "Si mus essere almeno {n} caratteri",
+  "validators.max-length.singular": "Deve essere 1 carattere a lungo tanto",
+  "validators.max-length.plural": "Deve essere almeno {n} caratteri tanto",
   "validators.input.not-exists": "{name} elementari non esiste ",
   "validators.password.not.match": "Le password non corrispondono",
   "validators.not.match": "Nessuna corrispondenza",

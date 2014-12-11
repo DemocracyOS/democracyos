@@ -1,0 +1,11 @@
+{
+  "name": "comments",
+  "description": "loads comments",
+  "locals": [
+    "citizen",
+    "request",
+    "stateful"
+  ],
+  "scripts": [ "comments.js" ],
+  "main": "comments.js"
+}
