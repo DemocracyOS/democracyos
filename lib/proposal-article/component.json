@@ -2,21 +2,17 @@
   "name": "proposal-article",
   "description": "proposal's article view",
   "dependencies": {
-    "component/domify": "1.2.0",
-    "component/events": "1.0.9",
-    "component/classes": "1.2.0",
-    "component/tip": "2.1.2",
-    "component/aurora-tip": "1.0.0",
-    "component/truncate": "72b55",
-    "visionmedia/jade": "1.1.5",
-    "yields/empty": "0.0.1",
-    "cristiandouce/to-array": "0.0.1",
-    "slifszyc/query": "0.0.3",
-    "component/t": "1.0.0"
+    "component/truncate": "72b55"
   },
-  "locals": [ "config", "render", "participants-view", "citizen", "proposal-clauses", "request" ],
+  "locals": [
+    "config",
+    "participants-box",
+    "citizen",
+    "proposal-clauses",
+    "view"
+  ],
   "scripts": [ "proposal-article.js" ],
-  "templates": [ "article.jade", "clause.jade" ],
+  "templates": [ "template.jade" ],
   "styles": [ "proposal-article.styl" ],
   "main": "proposal-article.js"
 }
