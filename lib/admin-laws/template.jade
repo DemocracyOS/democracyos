@@ -8,6 +8,10 @@
       - each law in laws
         li(data-id=law.id)
           a(href="/admin/laws/" + law.id)
-            span.law-id=law.lawId
-            | #{' - '}
-            span.law-title=law.mediaTitle
+            span.law-id=law.tag.name
+            - if (law.lawId)
+              | #{' - '}
+              span.law-id=law.lawId
+            - if(law.mediaTitle)
+              | #{' - '}
+              span.law-title=law.mediaTitle
