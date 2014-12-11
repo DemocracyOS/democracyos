@@ -198,6 +198,7 @@
 
   "proposal-article.article.alert.text": "Tämä on DemocracyOS’n julkinen demoversio.",
   "proposal-article.article.alert.learn-more": "Lue lisää",
+  "proposal-options.error.voting": "Oli virhe äänestäsi. Yritä uudelleen",
 
   "Remove argument" : "Poista argumentti",
   "Spam" : "Raportoi roskapostina",

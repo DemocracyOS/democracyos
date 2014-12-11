@@ -201,6 +201,7 @@
 
   "proposal-article.article.alert.text": "Celle-ci est la version de preuve de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "En savoir plus",
+  "proposal-options.error.voting": "Il ya eu une erreur lors du traitement de votre vote. Se il vous plaît essayer à nouveau",
 
   "Remove argument" : "Retirer l'argument",
   "Spam" : "Reporter du contenu indésirable",
