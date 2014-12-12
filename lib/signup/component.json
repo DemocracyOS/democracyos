@@ -25,7 +25,7 @@
     "view"
   ],
   "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js", "resend-validation-email-form-view.js", "email-validation-complete-view.js" ],
-  "styles": [ "signup.css" ],
+  "styles": [ "signup.styl" ],
   "templates": [ "signup-form.jade" , "email-validation-complete.jade", "resend-validation-email-form.jade", "email-validation.jade"],
   "main": "signup.js"
 }
