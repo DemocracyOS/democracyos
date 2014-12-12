@@ -12,6 +12,7 @@
 
   .proposal-options
     .vote-box
+      div#voting-error.alert.alert-warning.hide #{t('proposal-options.error.voting')}.
       .meta-data(class= !!citizen.id ? '' : 'hide')
         - if(~positives.indexOf(citizen.id))
           include vote-positive

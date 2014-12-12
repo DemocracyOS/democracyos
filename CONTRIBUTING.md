@@ -1,6 +1,6 @@
 ## Contributing to DemocracyOS
 
-If you have a question about DemocracyOS (not a bug report) please post it to our [Google Group](http://groups.google.com/group/democracyos-app).
+If you have a question about DemocracyOS (not a bug report) please post it to our [mailing list](http://groups.google.com/group/democracyos-app).
 
 
 ### Reporting bugs / Requesting features

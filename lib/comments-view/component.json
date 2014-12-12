@@ -25,10 +25,11 @@
     "comments-replies",
     "config",
     "comments-filter",
-    "render"
+    "render",
+    "view"
   ],
   "scripts": [ "view.js" ],
   "styles" : [ "comments-view.styl", "comments.css" ],
-  "templates": [ "comments-block.jade", "comment-item.jade" ],
+  "templates": [ "template.jade", "comment-item.jade" ],
   "main": "view.js"
 }
