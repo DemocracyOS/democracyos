@@ -13,7 +13,7 @@
     "sidebar-template.jade"
   ],
   "styles": [
-    "admin-sidebar.css"
+    "admin-sidebar.styl"
   ],
   "scripts": [
     "view.js"
