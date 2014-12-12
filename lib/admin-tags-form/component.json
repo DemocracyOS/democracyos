@@ -14,7 +14,7 @@
     "template.jade"
   ],
   "styles": [
-    "admin-tags-form.css"
+    "admin-tags-form.styl"
   ],
   "scripts": [
     "view.js"
