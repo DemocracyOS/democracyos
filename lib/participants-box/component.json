@@ -1,15 +1,9 @@
 {
   "name": "participants-box",
-  "dependencies": {
-    "component/bus": "0.0.2",
-    "component/indexof": "0.0.1",
-    "component/t": "1.0.0"
-  },
   "locals": [
     "participant-view",
     "request",
-    "view",
-    "citizen"
+    "view"
   ],
   "templates": [ "template.jade" ],
   "scripts": ["view.js"],

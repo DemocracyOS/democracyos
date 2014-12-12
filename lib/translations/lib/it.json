@@ -186,8 +186,7 @@
   "read more": "Legge più",
   "view more": "Guarda più",
   "View the original text": "Vedere il testo originale",
-  "Participant.singular": "Partecipante",
-  "Participant.plural": "Partecipantes",
+  "Participant": "Partecipante",
   "You must be signed in to vote on this law": "Devi aver effettuato l'accesso per votare questa legge",
 
   "sidebar.listing{listType}": "Tutto",
