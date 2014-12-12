@@ -14,7 +14,7 @@
     "title"
   ],
   "scripts": [ "signin.js", "view.js" ],
-  "styles": [ "signin.css" ],
+  "styles": [ "signin.styl" ],
   "templates": [ "template.jade" ],
   "main": "signin.js"
 }
