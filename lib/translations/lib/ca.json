@@ -188,8 +188,6 @@
   "read more": "Llegir text complet",
   "view more": "Veure més",
   "View the original text": "Veure el text original",
-  "Participant.singular": "Participant",
-  "Participant.plural": "Participants",
   "You must be signed in to vote on this law": "Ha d'estar registrat per poder veure aquesta llei",
 
   "sidebar.listing{listType}": "Tot",
@@ -205,6 +203,9 @@
 
   "proposal-article.article.alert.text": "Això és la versió de prova de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Més informació",
+  "proposal-article.participant.singular": "Participant",
+  "proposal-article.participant.plural": "Participants",
+  "proposal-options.error.voting": "S'ha produït un error en processar la teva vot. Si us plau, torna a intentar",
 
   "Remove argument" : "Traieu argument",
   "Spam" : "Reportar abús",

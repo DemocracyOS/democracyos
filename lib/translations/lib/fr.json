@@ -185,8 +185,6 @@
   "read more": "En lire plus",
   "view more": "en voir plus",
   "View the original text": "Voir le texte original",
-  "Participant.singular": "Concurrent",
-  "Participant.plural": "Concurrents",
   "You must be signed in to vote on this law": "Vous devez être registré pour voter à propos de cette loi",
 
   "sidebar.listing{listType}": "Tout",
@@ -202,6 +200,9 @@
 
   "proposal-article.article.alert.text": "Celle-ci est la version de preuve de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "En savoir plus",
+  "proposal-article.participant.singular": "Concurrent",
+  "proposal-article.participant.plural": "Concurrents",
+  "proposal-options.error.voting": "Il ya eu une erreur lors du traitement de votre vote. Se il vous plaît essayer à nouveau",
 
   "Remove argument" : "Retirer l'argument",
   "Spam" : "Reporter du contenu indésirable",

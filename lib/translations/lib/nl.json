@@ -169,8 +169,6 @@
   "read more": "Verder lezen",
   "view more": "meer tonen",
   "View the original text": "Toon oorspronkelijke tekst",
-  "Participant.singular": "Deelnemer",
-  "Participant.plural": "Deelnemers",
   "You must be signed in to vote on this law": "Je moet je aanmelden om te stemmen",
 
   "sidebar.listing{listType}": "Toon alle",
@@ -186,6 +184,9 @@
 
   "proposal-article.article.alert.text": "Dit is de publieke demonstratie van DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Meer informatie",
+  "proposal-article.participant.singular": "Deelnemer",
+  "proposal-article.participant.plural": "Deelnemers",
+  "proposal-options.error.voting": "Er is een fout verwerking van uw stem. Probeer het nogmaals",
 
   "Remove argument" : "Verwijder opmerking",
   "Spam" : "Ongewenst",
