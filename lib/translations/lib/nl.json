@@ -164,13 +164,12 @@
   "Results will be shown when this law is closed": "Wanneer het stemmen op de wet is afgerond, worden de resultaten getoond",
   "Summary": "Overzicht",
   "Chart": "Tabel",
-
+  
   "Clause": "Clausule",
   "read more": "Verder lezen",
   "view more": "meer tonen",
   "View the original text": "Toon oorspronkelijke tekst",
-  "Participant.singular": "Deelnemer",
-  "Participant.plural": "Deelnemers",
+  "Participant": "Deelnemer",
   "You must be signed in to vote on this law": "Je moet je aanmelden om te stemmen",
 
   "sidebar.listing{listType}": "Toon alle",
