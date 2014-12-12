@@ -187,7 +187,6 @@
   "read more": "Read more",
   "view more": "view more",
   "View the original text": "View the original text",
-  "Participant": "Participant",
   "You must be signed in to vote on this law": "You must be signed in to vote on this law",
 
   "sidebar.listing{listType}": "Showing all",
@@ -203,6 +202,8 @@
 
   "proposal-article.article.alert.text": "This is DemocracyOS's public demo.",
   "proposal-article.article.alert.learn-more": "Learn more",
+  "proposal-article.participant.singular": "Participant",
+  "proposal-article.participant.plural": "Participants",
   "proposal-options.error.voting": "An error occurred while processing your vote. Please try again",
 
   "Remove argument" : "Remove argument",

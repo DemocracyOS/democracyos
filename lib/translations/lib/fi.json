@@ -177,12 +177,11 @@
   "Results will be shown when this law is closed": "Tulokset näytettään kun laki on suljettu",
   "Summary": "Yhteenveto",
   "Chart": "Taulukko",
-  
+
   "Clause": "Lauseke",
   "read more": "Lue lisää",
   "view more": "Näytä enemmän",
   "View the original text": "Näytä alkuperäinen teksti",
-  "Participant": "Osallistuja",
   "You must be signed in to vote on this law": "Sinun täytyy rekisteröityä äänestääksesi",
 
   "sidebar.listing{listType}": "Näytä kaikki",
@@ -198,6 +197,8 @@
 
   "proposal-article.article.alert.text": "Tämä on DemocracyOS’n julkinen demoversio.",
   "proposal-article.article.alert.learn-more": "Lue lisää",
+  "proposal-article.participant.singular": "Osallistuja",
+  "proposal-article.participant.plural": "Osallistujas",
   "proposal-options.error.voting": "Oli virhe äänestäsi. Yritä uudelleen",
 
   "Remove argument" : "Poista argumentti",
