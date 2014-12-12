@@ -29,7 +29,7 @@
     "view"
   ],
   "scripts": [ "view.js" ],
-  "styles" : [ "comments-view.styl", "comments.css" ],
+  "styles" : [ "comments-view.styl", "comments.styl" ],
   "templates": [ "template.jade", "comment-item.jade" ],
   "main": "view.js"
 }
