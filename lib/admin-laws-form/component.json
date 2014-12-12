@@ -29,7 +29,7 @@
     "clause.jade"
   ],
   "styles": [
-    "styles.css"
+    "styles.styl"
   ],
   "scripts": [
     "view.js"
