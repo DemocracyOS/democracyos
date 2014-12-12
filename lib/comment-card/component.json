@@ -1,11 +1,11 @@
 {
-  "name": "comments-view",
-  "description": "Generic comments view component",
+  "name": "comment-card",
+  "description": "Generic comment card component",
   "locals": [
     "citizen",
-    "comment-card",
-    "comments",
-    "form-view"
+    "config",
+    "markdown",
+    "view"
   ],
   "scripts": [ "view.js" ],
   "templates": [ "template.jade" ],
