@@ -189,8 +189,6 @@
   "read more": "Leer más",
   "view more": "ver más",
   "View the original text": "Ver el texto original",
-  "Participant.singular": "Participante",
-  "Participant.plural": "Participantes",
   "You must be signed in to vote on this law": "Debes estar registrado para poder votar esta ley",
 
   "sidebar.listing{listType}": "Todo",
@@ -206,6 +204,9 @@
 
   "proposal-article.article.alert.text": "Ésta es una versión demo de DemocracyOS.",
   "proposal-article.article.alert.learn-more": "Más información",
+  "proposal-article.participant.singular": "Participante",
+  "proposal-article.participant.plural": "Participantes",
+  "proposal-options.error.voting": "Ocurrió un error al procesar tu voto. Por favor, vuelve a intentar",
 
   "Remove argument" : "Borrar argumento",
   "Spam" : "Reportar abuso",
