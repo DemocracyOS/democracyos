@@ -4,7 +4,7 @@
   - if (logged)
     .inner-container.my-comments
       h4=t('comments.your.arguments')
-      ul.my-comments-list
+      ul.media-list.my-comments-list
       form.comment-form(method='post', action='/api/law/#{law.id}/comment', autovalidate='autovalidate', autosubmit='autosubmit')
         h5= t('comments.your-argument')
           a.pull-right(href='/help/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
@@ -18,7 +18,7 @@
         =t('comments.new.argument')
   .inner-container.all-comments
     h4=t('comments.arguments')
-    ul.media-list
+    ul.media-list.comments-list
     btn.btn.btn-primary.btn-block.load-arguments.hide=t('comments.load-more')
     - if (!logged)
       .box

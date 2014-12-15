@@ -1,0 +1,58 @@
+.comment-item
+  max-width 580px
+  padding 12px 10px 0px 10px
+  &.spam .spam-message
+    display block
+  &:hover
+    .media-heading .comment-action
+      display inline-block
+
+  .pull-left
+    width 46px
+    margin-right 20px
+    .avatar
+      width 46px
+      height 46px
+      border-radius 100px
+
+  .comment-body
+    .spam-message
+      display none
+
+    .comment-actions
+      font-weight bold
+      font-size 14px
+      color #333
+      vertical-align top
+
+      .comment-counter
+        margin 0px
+        min-width 20px
+        display inline-block
+
+      .comment-action
+        color #333
+        font-size 11px
+        font-weight bold
+        text-decoration none
+        &.vote-comment
+          i
+            font-weight bold
+            font-size 20px
+            margin-right 10px
+        &.like
+          &.selected, &:hover
+            color green
+        &.dislike
+          &.selected, &:hover
+            color red
+        &.flag
+          display none
+          &.selected, &:hover
+            color orange
+        &.btn-remove, &.btn-reply-remove
+          &:hover
+            color #c0392b
+        &.btn-edit, &.btn-reply-edit
+          &:hover
+            color #f39c12

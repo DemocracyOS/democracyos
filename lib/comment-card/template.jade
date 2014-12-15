@@ -11,6 +11,28 @@ li.media.comment-item(class=classes)
       small=':'
     .comment-body
       div.comment-text!=markdown(comment.text)
+      p.spam-message=t('This argument has been flagged as spam')
+        | .
+        span.show-spam: a(href="#")= t('show')
+      .comment-actions
+        span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
+        - var classes = []
+        - likes && classes.push('selected')
+        //- - !citizen.id && classes.push('hide')
+        a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
+          i.icon-angle-up
+          //span.label Aports
+        - var classes = []
+        - dislikes && classes.push('selected')
+        //- - !citizen.id && classes.push('hide')
+        a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
+          i.icon-angle-down
+        - if (repliesCounter || citizen.id)
+          - var title = repliesCounter + ' ' + (repliesCounter > 1 ? t('comments.replies') : t('comments.reply'))
+          a.comment-action.comment-reply.pull-right(href='#', title=title.toLowerCase())
+            span.reply-counter= repliesCounter > 0 ? repliesCounter : ''
+          a.comment-action.comment-reply.pull-right(href='#', title=t('comments.reply-to-argument'))
+            i.icon-reply
   //-     - if (own || citizen.staff)
   //-       div.oncomment.remove-comment= t('comments.arguments.confirm-remove')
   //-         -if (!own && citizen.staff)
