@@ -9,11 +9,12 @@
         h5= t('comments.your-argument')
           a.pull-right(href='/help/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p
-          textarea(name='text', rows='4', validate='required max-length:4096')
-        button.btn.form-submit.pull-right=t('Send')
-        button.btn.btn-link.cancel-new-argument.pull-right=t('Cancel')
+          textarea(name='text', rows='4', validate='required max-length:4096', tabindex=1)
+          ul.form-messages
+        input.btn.form-submit.pull-right(type='submit', tabindex=2, value=t('Send'))
+        a(href='#', tabindex=3).btn.btn-link.cancel-new-comment.pull-right=t('Cancel')
         ul.form-messages
-      button.btn.btn-block.new-argument.hide
+      button.btn.btn-block.new-comment.hide
         i.icon-plus
         =t('comments.new.argument')
   .inner-container.all-comments
