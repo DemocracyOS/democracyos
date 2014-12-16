@@ -1,10 +1,10 @@
-#content-404
+#browser-update
   position: absolute
   background-color: #51394a
   width: 100%
   min-height: 100%
 
-  .container-404
+  .container
     width: 430px
     margin: 0 auto
     padding-top: 160px
@@ -17,18 +17,19 @@
 
     .note
       text-align: center
+      margin: 0 auto
       font-size: 80px
       color: #ecf0f1
-    
-    h1
-      text-align: center
-      color: #ecf0f1
-      margin: 0 auto
 
-    .goback
-      text-align: center
-      margin-top: 20px
-      color: #bdc3c7
+    li
+      color: #BDC3C7;
+      margin-top: 20px;
+
+    p
+      color: #ECF0F1;
+
+    li,p, li a
+      font-size 20px
 
 body.not-found-page
   .app-header
@@ -36,7 +37,7 @@ body.not-found-page
       display: none
 
 @media only screen and (max-width: 700px)
-  #content-404 
-    .container-404
+  #browser-update
+    .container
       width: 90% !important
       padding-top: 15% !important
