@@ -1,0 +1,18 @@
+#browser-update
+  .container
+    img(src=config['logo'])
+    .note=t('browser-update.woops')
+    p=t('browser-update.ie-old-version-warning')
+    p=t('browser-update.in-order-warning')
+    ul
+      li=t('browser-update.switch-to')
+        a(href='http://www.google.com/intl/en/chrome/browser/desktop/index.html',target="_blank") Google Chrome
+
+      li=t('browser-update.switch-to')
+        a(href='http://www.getfirefox.com',target="_blank") Firefox
+
+      li=t('browser-update.update-your')
+        a(href='http://windows.microsoft.com/en-us/internet-explorer/download-ie',target="_blank") Internet explorer
+
+    p=t('browser-update.why')
+    p=t('browser-update.why.newer-browsers')
