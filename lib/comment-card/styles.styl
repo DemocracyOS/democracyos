@@ -2,10 +2,13 @@
   max-width 580px
   padding 12px 10px 0px 10px
   &.spam .spam-message
-    display block
+    display block !important
   &:hover
     .media-heading .comment-action
       display inline-block
+  &.spam
+    .comment-text, .comment-actions, .link-report.flag
+      display none
 
   .pull-left
     width 46px
@@ -14,6 +17,11 @@
       width 46px
       height 46px
       border-radius 100px
+
+  .media-heading .comment-action
+    margin-top 3px
+    display none
+    float right
 
   .comment-body
     .spam-message
@@ -25,34 +33,53 @@
       color #333
       vertical-align top
 
-      .comment-counter
-        margin 0px
-        min-width 20px
-        display inline-block
+  .comment-counter
+    margin 0px
+    min-width 20px
+    display inline-block
 
-      .comment-action
-        color #333
-        font-size 11px
+  .comment-action
+    color #333
+    font-size 11px
+    font-weight bold
+    text-decoration none
+    &.vote-comment
+      i
         font-weight bold
-        text-decoration none
-        &.vote-comment
-          i
-            font-weight bold
-            font-size 20px
-            margin-right 10px
-        &.like
-          &.selected, &:hover
-            color green
-        &.dislike
-          &.selected, &:hover
-            color red
-        &.flag
-          display none
-          &.selected, &:hover
-            color orange
-        &.btn-remove, &.btn-reply-remove
-          &:hover
-            color #c0392b
-        &.btn-edit, &.btn-reply-edit
-          &:hover
-            color #f39c12
+        font-size 20px
+        margin-right 10px
+    &.like
+      &.selected, &:hover
+        color green
+    &.dislike
+      &.selected, &:hover
+        color red
+    &.flag
+      display none
+      &.selected, &:hover
+        color orange
+    &.btn-remove, &.btn-reply-remove
+      &:hover
+        color #c0392b
+    &.btn-edit, &.btn-reply-edit
+      &:hover
+        color #f39c12
+    &.link-report,
+    &.link-remove,
+    &.link-edit
+      float right
+      color #333
+      i
+        margin-right 3px
+
+  .comment-reply
+    margin-top 4px
+    font-size 13px
+    .icon-reply
+      margin-right 4px
+
+@media only screen and (min-width  320px) and (max-width  700px), screen and (-webkit-min-pixel-ratio  1.5), screen and (min-pixel-ratio  1.5)
+  .comment-item
+    .media-heading .comment-action,
+    .comment-reply
+        display inline-block

@@ -9,6 +9,11 @@ li.media.comment-item(class=classes)
       - if (comment.editedAt)
         small.edited · #{t('comments.edited')}
       small=':'
+      - if (citizen.logged() && !own)
+        - var spamTitle = flags ?  t('Not spam') : t('Spam')
+        a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
+          i.glyphicon.glyphicon-flag
+          span.count=comment.flags.length ? comment.flags.length : ''
     .comment-body
       div.comment-text!=markdown(comment.text)
       p.spam-message=t('This argument has been flagged as spam')
@@ -16,12 +21,12 @@ li.media.comment-item(class=classes)
         span.show-spam: a(href="#")= t('show')
       .comment-actions
         span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
-        - var classes = []
+        - classes = []
         - likes && classes.push('selected')
         a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
           i.icon-angle-up
           //span.label Aports
-        - var classes = []
+        - classes = []
         - dislikes && classes.push('selected')
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
           i.icon-angle-down
