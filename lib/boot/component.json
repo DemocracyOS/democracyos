@@ -26,7 +26,8 @@
     "header",
     "logout",
     "help",
-    "404"
+    "404",
+    "browser-update"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.styl", "boot-responsive.styl" ],
