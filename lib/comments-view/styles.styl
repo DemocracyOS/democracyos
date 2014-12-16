@@ -14,11 +14,13 @@ content_width = 580px
     max-width content_width
 
     form.comment-form
+      overflow hidden
+
       textarea
         width 100%
-        resize none
         max-width 540px
-      .btn
+        padding 2%
+      .form-submit
         background-color #333
         color white
       .form-messages
@@ -27,3 +29,14 @@ content_width = 580px
       span.error
         color red
         display block
+
+    .new-comment
+      background-color #f9f9f9
+      border 1px dashed #ddd
+      font-weight normal
+      color #999
+      &:hover
+        color #777
+        border-color #ccc
+      .icon-plus
+        margin-right 6px
