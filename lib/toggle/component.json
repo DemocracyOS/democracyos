@@ -1,0 +1,14 @@
+{
+  "name": "toggle",
+  "description": "A toggle UI element with style",
+  "dependencies": {
+    "segmentio/toggle": "0.1.0"
+  },
+  "styles": [
+    "styles.styl"
+  ],
+  "scripts": [
+    "toggle.js"
+  ],
+  "main": "toggle.js"
+}

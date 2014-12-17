@@ -1,0 +1,23 @@
+{
+  "name": "settings-notifications",
+  "description": "Settings notifications view",
+  "dependencies": {
+    "component/t": "1.0.0",
+    "visionmedia/debug": "0.7.4"
+  },
+  "locals": [
+    "citizen",
+    "form-view",
+    "toggle"
+  ],
+  "templates": [
+    "template.jade"
+  ],
+  "styles": [
+    "styles.styl"
+  ],
+  "scripts": [
+    "view.js"
+  ],
+  "main": "view.js"
+}

@@ -46,6 +46,13 @@
   "Please wait": "Por favor espere",
   "More information": "Más información",
 
+  "settings.notifications.title": "Configuración de notificaciones",
+  "settings.notificatinos.get-email-when": "Recibir un correo electrónico cuando",
+  "settings.notifications.new-topic": "Un nuevo tema es publicado",
+  "someone-replies-your-comments": "Alguien responde a tu argumento",
+  "someone-mentions-in-their-comment": "Eres mencionado en algún argumento",
+  "settings.notificatoins.someone-replies-your-comments": "Alguien contesta uno de tus argumentos",
+
   "validators.required": "Requerido",
   "validators.checked": "Elegir una opción",
   "validators.invalid.email": "El e-mail no es válido",
@@ -174,7 +181,8 @@
   "Yea": "Afirmativo",
   "Nay": "Negativo",
   "Abstain": "Abstención",
-  "Yes": "Yes",
+  "Yes": "Sí",
+  "No": "No",
   "Cancel": "Cancelar",
   "Edit": "Editar",
   "Delegate": "Delegar",
