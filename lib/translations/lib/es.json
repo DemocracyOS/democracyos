@@ -334,5 +334,14 @@
   "side-comments.login": "Ingresar",
   "side-comments.signup": "Registrarse",
   "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?",
-  "side-comments.confirmation.title": "Eliminar comentario"
+  "side-comments.confirmation.title": "Eliminar comentario",
+
+  "browser-update.woops": "Ops!.",
+  "browser-update.ie-old-version-warning": "Estas usando una versión no soportada de Internet Explorer.",
+  "browser-update.in-order-warning": "Para poder usar Demoracy OS, por favor actualzá tu browser",
+  "browser-update.switch-to": "Cambiar a ",
+  "browser-update.update-your": "Actualizá tu version de  ",
+  "browser-update.why": "¿Por que?",
+  "browser-update.why.newer-browsers": "Los browsers mas modernos toman las ventajas de las nuevas tencologias y aseguran experiencias mas seguras."
+
 }
