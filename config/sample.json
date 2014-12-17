@@ -64,5 +64,9 @@
   "faq": false,
   "tos": false,
   "pp": false,
-  "glossary": false
+  "glossary": false,
+  "ssl": true,
+  "serverKey": "server.key",
+  "serverCert": "server.crt",
+  "securePort": 443
 }
