@@ -14,6 +14,9 @@ li.media.comment-item(class=classes)
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
           i.glyphicon.glyphicon-flag
           span.count=comment.flags.length ? comment.flags.length : ''
+      - if (own)
+        a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
+          i.icon-pencil
     .comment-body
       div.comment-text!=markdown(comment.text)
       p.spam-message=t('This argument has been flagged as spam')
@@ -25,7 +28,6 @@ li.media.comment-item(class=classes)
         - likes && classes.push('selected')
         a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
           i.icon-angle-up
-          //span.label Aports
         - classes = []
         - dislikes && classes.push('selected')
         a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
