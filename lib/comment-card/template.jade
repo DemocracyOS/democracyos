@@ -1,3 +1,8 @@
+mixin remove-action
+  - var hide = repliesCounter && !citizen.staff ? 'hide' : ''
+  a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=hide)
+    i.icon-remove
+
 li.media.comment-item(class=classes)
   span.pull-left
     img(src=profilePictureUrl).avatar
@@ -9,16 +14,28 @@ li.media.comment-item(class=classes)
       - if (comment.editedAt)
         small.edited · #{t('comments.edited')}
       small=':'
-      - if (citizen.logged() && !own)
+      - if (own)
+        +remove-action
+        a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
+          i.icon-pencil
+      - else if (citizen.logged())
+        - if (citizen.staff)
+          +remove-action
         - var spamTitle = flags ?  t('Not spam') : t('Spam')
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
           i.glyphicon.glyphicon-flag
           span.count=comment.flags.length ? comment.flags.length : ''
-      - if (own)
-        a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
-          i.icon-pencil
     .comment-body
       div.comment-text!=markdown(comment.text)
+      - if (own || citizen.staff)
+        div.oncomment.remove-comment= t('comments.arguments.confirm-remove')
+          -if (!own && citizen.staff)
+            br
+            =t('You are removing this argument as a staff member')
+          div.remove-confirm-actions
+            a.confirm-remove(href='#')= t('common.ok')
+            a.cancel-remove(href='#')= t('common.cancel')
+      div.oncomment.message
       p.spam-message=t('This argument has been flagged as spam')
         | .
         span.show-spam: a(href="#")= t('show')
