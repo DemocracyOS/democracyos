@@ -2,6 +2,7 @@
   "name": "comment-card",
   "description": "Generic comment card component",
   "dependencies": {
+    "component/dom": "0.7.1",
     "component/t": "1.0.0",
     "visionmedia/debug": "0.7.4"
   },
