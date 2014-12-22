@@ -2,8 +2,8 @@
   "name": "admin-tags",
   "description": "Admin tags view",
   "dependencies": {
-    "visionmedia/jade": "1.1.5",
-    "andrewrk/diacritics": "1.1.0"
+    "jadejs/jade": "1.1.5",
+    "andrewrk/node-diacritics": "1.2.0"
   },
   "locals": [
     "tags",

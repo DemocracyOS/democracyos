@@ -2,7 +2,7 @@
   "name": "admin-laws",
   "description": "Admin laws view",
   "dependencies": {
-    "visionmedia/jade": "1.1.5"
+    "jadejs/jade": "1.1.5"
   },
   "locals": [
     "laws",
