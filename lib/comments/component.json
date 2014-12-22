@@ -3,7 +3,6 @@
   "description": "loads comments",
   "locals": [
     "citizen",
-    "config",
     "request",
     "stateful"
   ],
