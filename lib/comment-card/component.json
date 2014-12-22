@@ -9,6 +9,7 @@
   "locals": [
     "citizen",
     "comments-edit",
+    "comments-replies",
     "config",
     "markdown",
     "request",
