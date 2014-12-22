@@ -16,7 +16,7 @@
     "slifszyc/paragraphs": "0.2.0",
     "yields/empty": "0.0.1",
     "slifszyc/trunkata": "0.2.4",
-    "DemocracyOS/marked": "*"
+    "DemocracyOS/marked": "master"
   },
   "locals": [
     "citizen",
