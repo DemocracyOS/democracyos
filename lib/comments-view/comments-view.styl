@@ -119,9 +119,12 @@ content_width = 580px
           height 46px
           border-radius 100px
 
-      .media-heading .comment-action
-        margin-top 3px
-        display none
+      .media-heading
+        .comment-action
+          margin-top 3px
+          display none
+        small.ago
+          margin-left: 5px
 
       .media-body
         position relative
@@ -153,8 +156,7 @@ content_width = 580px
             font-weight bold
             font-size 20px
             margin-right 10px
-        &:hover
-          text-decoration none
+        text-decoration none
         &.link-report,
         &.link-remove,
         &.link-edit
