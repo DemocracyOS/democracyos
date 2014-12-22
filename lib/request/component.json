@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "component/bus": "^0.0.2",
-    "visionmedia/debug": "0.7.4",
+    "visionmedia/debug": "2.1.0",
     "visionmedia/superagent": "0.16.0"
   },
   "scripts": [ "request.js" ],

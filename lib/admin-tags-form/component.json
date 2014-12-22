@@ -3,7 +3,7 @@
   "description": "Admin tags form view",
   "dependencies": {
     "component/t": "1.0.0",
-    "visionmedia/jade": "1.1.5"
+    "jadejs/jade": "1.1.5"
   },
   "locals": [
     "form-view",

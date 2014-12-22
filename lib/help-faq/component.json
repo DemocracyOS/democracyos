@@ -2,7 +2,7 @@
   "name": "help-faq",
   "description": "Help FAQ view",
   "dependencies": {
-    "visionmedia/jade": "1.1.5",
+    "jadejs/jade": "1.1.5",
     "chjj/marked": "v0.3.2"
   },
   "locals": [

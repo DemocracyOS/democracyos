@@ -6,7 +6,7 @@
     "component/scroll-to": "0.0.1",
     "component/t": "1.0.0",
     "chjj/marked": "v0.3.2",
-    "visionmedia/jade": "1.1.5"
+    "jadejs/jade": "1.1.5"
   },
   "locals": [
     "view"
