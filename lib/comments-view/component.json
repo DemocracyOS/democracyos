@@ -15,13 +15,13 @@
     "slifszyc/query": "0.0.3",
     "slifszyc/paragraphs": "0.2.0",
     "yields/empty": "0.0.1",
-    "slifszyc/trunkata": "0.2.4"
+    "slifszyc/trunkata": "0.2.4",
+    "DemocracyOS/marked": "*"
   },
   "locals": [
     "citizen",
     "request",
     "comments-edit",
-    "markdown",
     "comments-replies",
     "config",
     "comments-filter",
