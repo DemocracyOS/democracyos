@@ -64,5 +64,10 @@
   "faq": false,
   "tos": false,
   "pp": false,
-  "glossary": false
+  "glossary": false,
+  "notifications": {
+    "host": "localhost",
+    "port": 9001,
+    "token": 1234
+  }
 }

@@ -12,6 +12,11 @@ link_blue = #2980b9
 header.app-header, aside.nav-proposal, .site-content, .site-content.loading-lock
   position fixed
 
+.site-content.content-pinned
+aside.nav-proposal.content-pinned
+  transition transform 200ms linear
+  top 0
+
 .site-content
   z-index 1
   overflow-y scroll
@@ -83,3 +88,12 @@ header.app-header
         font-size 20px
       &:hover
         text-decoration none
+
+.headroom
+  transition transform 200ms linear
+
+.headroom--pinned
+  transform translateY(0%)
+
+.headroom--unpinned
+  transform translateY(-100%)

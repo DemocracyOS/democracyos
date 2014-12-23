@@ -2,16 +2,18 @@
   "name": "header",
   "description": "header component",
   "dependencies": {
-    "slifszyc/query": "0.0.3",
+    "component/dom": "0.7.1",
     "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5"
+    "visionmedia/jade": "1.1.5",
+    "democracyos/headroom.js": "0.7.1"
     },
   "locals": [
     "citizen",
     "feedback",
     "snapper",
     "user-badge",
-    "view"
+    "view",
+    "is-mobile"
   ],
   "scripts": [
     "index.js",

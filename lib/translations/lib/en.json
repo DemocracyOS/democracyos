@@ -46,6 +46,11 @@
   "Please wait": "Please wait",
   "More information": "More information",
 
+  "settings.notifications.title": "Notifications settings",
+  "settings.notificatinos.get-email-when": "Get an email when",
+  "settings.notifications.new-topic": "A new topic gets published",
+  "settings.notificatoins.someone-replies-your-comments": "Someone replies one of your comments",
+
   "validators.required": "Required",
   "validators.checked": "Required checked field",
   "validators.invalid.email": "Invalid email address",
@@ -175,6 +180,7 @@
   "Nay": "Nay",
   "Abstain": "Abstain",
   "Yes": "Yes",
+  "No": "No",
   "Cancel": "Cancel",
   "Edit": "Edit",
   "Delegate": "Delegate",
@@ -206,6 +212,7 @@
 
   "proposal-article.article.alert.text": "This is DemocracyOS's public demo.",
   "proposal-article.article.alert.learn-more": "Learn more",
+  "proposal-options.error.voting": "An error occurred while processing your vote. Please try again",
 
   "Remove argument" : "Remove argument",
   "Spam" : "Report as spam",
