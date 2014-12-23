@@ -1,5 +1,5 @@
 {
-  "protocol": "http",
+  "protocol": "https",
   "host": "localhost",
   "privatePort": 3000,
   "publicPort": 3000,
@@ -65,8 +65,9 @@
   "tos": false,
   "pp": false,
   "glossary": false,
-  "ssl": false,
-  "serverKey": "server.key",
-  "serverCert": "server.crt",
-  "securePort": 443
+  "ssl": {
+    "serverKey": "server.key",
+    "serverCert": "server.crt",
+    "port": 443
+  }
 }

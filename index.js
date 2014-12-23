@@ -8,17 +8,17 @@ var http = require('http');
 var https = require('https');
 var balance = require('lib/balance');
 var config = require('lib/config');
-var log = require('debug')('democracyos:root');
+var protocol = config('protocol');
 var ssl = config('ssl');
-var port = ssl ? config('securePort') : config('privatePort');
+var log = require('debug')('democracyos:root');
 
+var secure = protocol === 'https';
+var port = secure ? ssl.port : config('privatePort');
 var server;
 
-if (ssl) {
-  // config('serverKey') = 'server.key'
-  // config('serverCert') = 'server.crt'
-  var privateKey = fs.readFileSync(config('serverKey'), 'utf-8');
-  var certificate = fs.readFileSync(config('serverCert'), 'utf-8');
+if (secure) {
+  var privateKey = fs.readFileSync(ssl.serverKey, 'utf-8');
+  var certificate = fs.readFileSync(ssl.serverCert, 'utf-8');
   var credentials = { key: privateKey, cert: certificate };
   server = https.createServer(credentials, app);
 } else {
