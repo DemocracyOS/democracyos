@@ -57,12 +57,13 @@
   "tos": false,
   "pp": false,
   "glossary": false,
+<<<<<<< HEAD
   "notifications": {
     "url": "http://localhost:9001/api/events",
     "token": 1234
   },
   "secret": "Just a sample secret string",
-  "ssl": true,
+  "ssl": false,
   "serverKey": "server.key",
   "serverCert": "server.crt",
   "securePort": 443
