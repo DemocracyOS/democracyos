@@ -65,7 +65,7 @@
   "tos": false,
   "pp": false,
   "glossary": false,
-  "ssl": true,
+  "ssl": false,
   "serverKey": "server.key",
   "serverCert": "server.crt",
   "securePort": 443
