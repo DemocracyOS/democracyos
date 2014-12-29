@@ -1,31 +1,32 @@
+- var logged = citizen.logged()
+
 .comments
-  .inner-container
-    - if (citizen.id)
-      h4.your-arguments=t('comments.your.arguments')
-      ul.my-arguments-list
-      form.comment-form(method='post', action='/api/#{context}/#{reference}/comment')
+  - if (logged)
+    .inner-container.my-comments
+      h4=t('comments.your.arguments')
+      ul.media-list.my-comments-list
+      form.comment-form(method='post', action='/api/law/#{law.id}/comment', autovalidate='autovalidate', autosubmit='autosubmit')
         h5= t('comments.your-argument')
           a.pull-right(href='/help/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p
-          textarea(name='text', rows='4')
-        input.btn.form-submit.pull-right(type='submit', value=t('Send'))
-        button.btn.btn-link.cancel-new-argument.pull-right=t('Cancel')
-        span.help-text.form-errors
-      button.btn.btn-block.new-argument.hide
+          textarea(name='text', rows='4', validate='required max-length:4096', tabindex=1)
+          ul.form-messages
+        input.btn.form-submit.pull-right(type='submit', tabindex=2, value=t('Send'))
+        a(href='#', tabindex=3).btn.btn-link.cancel-new-comment.pull-right=t('Cancel')
+        ul.form-messages
+      button.btn.btn-block.new-comment.hide
         i.icon-plus
         =t('comments.new.argument')
-    h4.arguments= t('comments.arguments')
-    ul.media-list.comment-list.main-list
-    a.btn.btn-default.btn-xs.toggle-deleted-comments.hide= t('comments.deleted-arguments')
-    ul.media-list.comment-list.deleted-list(class='hide')
-    btn.btn.btn-primary.btn-block.load-arguments.hide
-      =t('comments.load-more')
-    - if (!citizen.id)
+  .inner-container.all-comments
+    h4=t('comments.arguments')
+    ul.media-list.comments-list
+    btn.btn.btn-primary.btn-block.load-comments.hide=t('comments.load-more')
+    - if (!logged)
       .box
         p.text-mute= t('comments.sign-in-required')
           | . 
           a(href="/signin")= t('Login')
           |  #{t('common.or')} 
-          - var signupUrl = '/signup' + (reference ? '?reference=' + reference : '')
+          - var signupUrl = '/signup?reference=' + law.id
           a(href=signupUrl)= t('Signup')
           | .

@@ -75,11 +75,11 @@
   "comments.ordered-by": "Geordnet nach",
   "comments.no-citizen-comments": "Zu diesem Gesetzvorschlag wurden noch keine Argumente vorgebracht.",
   "comments.no-comments": "Zu diesem Gesetz hat noch kein Bürger ein Argument vorgebracht.",
-  "The argument was removed": "Das Argument wurde entfernt",
+  "comments.removed": "Das Argument wurde entfernt",
   "You are removing this argument as a staff member": "Sie sind das Entfernen dieses Argument als Mitarbeiter",
   "That comment is not yours!": "Dieser Kommentar stammt nicht von dir!",
   "Comment has replies, cannot be removed!": "Auf diesen Beitrag wurde bereits geantwortet, er kann nicht mehr entfernt werden.",
-  "You're not allowed to vote your own argument": "Für eigene Beiträge abzustimmen ist nicht erlaubt!",
+  "comments.score.not-allowed": "Für eigene Beiträge abzustimmen ist nicht erlaubt!",
   "Send": "Absenden",
 
   "DemocracyOS - Password reset requested": "DemocracyOS – Zurücksetzen des Passworts wurde angefordert",
