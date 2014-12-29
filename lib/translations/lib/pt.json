@@ -94,10 +94,10 @@
   "comments.ordered-by": "Ordenados por",
   "comments.no-citizen-comments": "Nenhum outro cidadão argumentou aqui ainda",
   "comments.no-comments": "Nenhum outro cidadão argumentou aqui ainda",
-  "Your argument was removed": "Seu argumento foi removido",
+  "comments.removed": "Seu argumento foi removido",
   "That comment is not yours!": "Este comentário não é seu!",
   "Comment has replies, cannot be removed!": "Este comentário tem respostas, não pode ser removido!",
-  "You're not allowed to vote your own argument": "Não é permitido votar em seu próprio argumento",
+  "comments.score.not-allowed": "Não é permitido votar em seu próprio argumento",
   "Send": "Enviar",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Configurar nova senha",

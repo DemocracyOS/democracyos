@@ -100,11 +100,11 @@
   "comments.arguments.reply": "Répondre à cet argument",
   "comments.no-citizen-comments": "Aucun autre citoyen a encore argumenté sur cette loi",
   "comments.no-comments": "Aucun citoyen n'a encore argumenté sur cette loi",
-  "The argument was removed": "L'argument a été retiré",
+  "comments.removed": "L'argument a été retiré",
   "You are removing this argument as a staff member": "Vous supprimez cet argument comme un membre du personnel",
   "That comment is not yours!": "Ce commentaire n'est pas le vôtre!",
   "Comment has replies, cannot be removed!": "Commentaire n'a réponses, ne peut pas être supprimé!",
-  "You're not allowed to vote your own argument": "Vous n'êtes pas autorisé à voter votre propre argument",
+  "comments.score.not-allowed": "Vous n'êtes pas autorisé à voter votre propre argument",
   "Send": "Envoyer",
 
   "DemocracyOS - Password reset requested": "DemocracyOS - Rétablir mot de passe",
