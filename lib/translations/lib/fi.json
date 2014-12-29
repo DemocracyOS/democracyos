@@ -3,6 +3,7 @@
   "common.ok": "OK",
   "common.cancel": "Peruuta",
   "common.back": "Palata",
+  "common.no-user-for-email" : "Email-osoite ei ole rekisterissämme",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS",
@@ -105,16 +106,7 @@
   "comments.score.not-allowed": "Et saa äänestää oman argumentti",
   "Send": "Lähetä",
 
-  "DemocracyOS - Password reset requested": "DemocracyOS - Vaaditaan salasanan päivitys",
-  "Hi {name}": "Hei {name}",
-  "Please click <a href=\"{url}\">here</a> to reset your password": "Klikkaa <a href=\"{url}\">tästä</a> vaihtaaksesi salasanasi",
-  "The DemocracyOS team": "The DemocracyOS tiimi",
-  "PS: if you haven't requested to reset your password, please ignore this email": "PS: Jos et pyytänyt salasanan uusintaa, älä huomioi tätä viestiä.",
-  "DemocracyOS - Welcome!": "DemocracyOS - Tervetuloa!",
-  "Please click <a href=\"{url}\">here</a> to validate your email address": "Klikkaa <a href=\"{url}\">tästä</a> vahvistaaksesi email-osoitteesi",
-  "PS: if you haven't signed up, please ignore this email": "PS: Jos et rekisteröitynyt, älä huomioi tätä viestiä",
   "example@email.com": "example@email.com",
-  "No citizen for email" : "Email-osoite ei ole rekisterissämme",
   "New Password": "Uusi salasana",
   "Re-type new password": "Rekisteröitymällä käyttäjä hyväksyy meidän",
   "Password": "Salasana",
@@ -153,7 +145,6 @@
   "The validation email was resent.": "Vahvistusviesti on nyt lähetetty.",
   "Email not validated" : "Tämän kansalaisen sähköpostiosoite ei ole vahvistettu. Rekisteröintiprosessin yhteydessä lähetämme kaikille tervetuloviestin. Tarkista sähköpostisi (muista tarkistaa myös roskapostikansio) ja klikkaa viestistä löytyvästä linkistä. Paina <a href='/signup/resend-validation-email'>here</a> jos haluat lähettää tervetuloviestin itsellesi uudestaan",
   "This account has been disabled" : "Tämä tili on poistettu käytöstä",
-  "No citizen found with that email address": "Kansalaista tällä sähköpostiosoitteella ei löydy.",
 
   "Account data": "Tilitiedot",
   "Account updated": "Tili päivitetty",

@@ -3,6 +3,7 @@
   "common.ok": "OK",
   "common.cancel": "Annuler",
   "common.back": "Retourner",
+  "common.no-user-for-email": "Cette adresse de courriel n' est pas registrée",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS",
@@ -107,16 +108,7 @@
   "comments.score.not-allowed": "Vous n'êtes pas autorisé à voter votre propre argument",
   "Send": "Envoyer",
 
-  "DemocracyOS - Password reset requested": "DemocracyOS - Rétablir mot de passe",
-  "Hi {name}": "Salut {name}",
-  "Please click <a href=\"{url}\">here</a> to reset your password": "Cliquez s' il vous plaît sur <a href=\"{url}\">ici</a> pour rétablir ton mot de passe",
-  "The DemocracyOS team": "L' équipe de DemocracyOS",
-  "PS: if you haven't requested to reset your password, please ignore this email": "P.S.: Si vous n' avez pas demandé le rétablissement de votre mot de passe, ignorez s' il vous plaît ce courriel",
-  "DemocracyOS - Welcome!": "DemocracyOS - Bienvenue!",
-  "Please click <a href=\"{url}\">here</a> to validate your email address": "Cliquez s' il vous plaît sur <a href=\"{url}\">ici</a> pour valider votre adresse de courriel",
-  "PS: if you haven't signed up, please ignore this email": "P.S.: Si vous n' avez pas creé un compte sur DemocracyOS, ignorez s' il vous plaît ce courriel",
   "example@email.com": "exemple@email.com",
-  "No citizen for email": "Cette adresse de courriel n' est pas registrée",
   "New Password": "Nouveau mot de passe",
   "Re-type new password": "Retapez le nouveau mot de passe",
   "By signing up you are accepting our": "En vous inscrivant, vous acceptez notre",
@@ -156,7 +148,6 @@
   "The validation email was resent.": "Le courriel de validation a été renvoyé",
   "Email not validated" : "Adresse Email non validée. Tout citoyen reçoît un courriel de bienvenue au moment de son inscription. Le pas suivante est celui d' ouvrir ce courriel (sans oublier de réviser la boîte de courrier non désiré) et de cliquer sur le lien a l' intérieur. Cliquez sur <a href='/signup/resend-validation-email'>aquí</a> si vous avez besoin que nous renvoyons le courriel de bienvenue.",
   "This account has been disabled" : "Ce compte a été désactivé",
-  "No citizen found with that email address": "Nous n' avons aucun citoyen registré avec cette adresse Email",
 
   "Account data": "Informations du compte",
   "Account updated": "Compte mis à jour",

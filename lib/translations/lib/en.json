@@ -3,6 +3,7 @@
   "common.ok": "OK",
   "common.cancel": "Cancel",
   "common.back": "Back",
+  "common.no-user-for-email" : "No user found for that email address",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS",
@@ -108,16 +109,7 @@
   "comments.score.not-allowed": "You're not allowed to qualify your own argument",
   "Send": "Send",
 
-  "DemocracyOS - Password reset requested": "DemocracyOS - Password reset requested",
-  "Hi {name}": "Hi {name}",
-  "Please click <a href=\"{url}\">here</a> to reset your password": "Please click <a href=\"{url}\">here</a> to reset your password",
-  "The DemocracyOS team": "The DemocracyOS team",
-  "PS: if you haven't requested to reset your password, please ignore this email": "PS: if you haven't requested to reset your password, please ignore this email",
-  "DemocracyOS - Welcome!": "DemocracyOS - Welcome!",
-  "Please click <a href=\"{url}\">here</a> to validate your email address": "Please click <a href=\"{url}\">here</a> to validate your email address",
-  "PS: if you haven't signed up, please ignore this email": "PS: if you haven't signed up, please ignore this email",
   "example@email.com": "example@email.com",
-  "No citizen for email" : "No citizen for email",
   "New Password": "New Password",
   "Re-type new password": "Re-type new password",
   "By signing up you are accepting our": "By signing up you are accepting our",
@@ -157,7 +149,6 @@
   "The validation email was resent.": "The validation email was resent.",
   "Email not validated" : "The email address for this citizen is not validated. We send citizens a welcome email when they sign up. Please check your email (remember to check your spam folder too) and click on the link supplied on the email. Click <a href='/signup/resend-validation-email'>here</a> if you need the welcome email to be resent",
   "This account has been disabled" : "This account has been disabled",
-  "No citizen found with that email address": "No citizen found with that email address",
 
   "Account data": "Account data",
   "Account updated": "Account updated",

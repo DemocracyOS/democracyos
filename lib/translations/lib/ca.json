@@ -3,6 +3,7 @@
   "common.ok": "OK",
   "common.cancel": "Cancel",
   "common.back": "Tornar",
+  "common.no-user-for-email": "Aquest correu electrònic no està registrat",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS",
@@ -109,16 +110,7 @@
   "comments.score.not-allowed": "No està autoritzat a votar el seu propi argument",
   "Send": "Enviar",
 
-  "DemocracyOS - Password reset requested": "DemocracyOS - Generar una nova contrasenya",
-  "Hi {name}": "Hola {name}",
-  "Please click <a href=\"{url}\">here</a> to reset your password": "Si us plau, cliqui <a href=\"{url}\">aquí</a> per generar la teva contrasenya",
-  "The DemocracyOS team": "L'equip de DemocracyOS",
-  "PS: if you haven't requested to reset your password, please ignore this email": "P.D.: Si no has  generat la teva contrasenya, si us plau ignora aquest correu",
-  "DemocracyOS - Welcome!": "DemocracyOS - Benvinguts/des!",
-  "Please click <a href=\"{url}\">here</a> to validate your email address": "Si us plau cliqui <a href=\"{url}\">aquí</a> per validar la teva adreça de correu electrònic",
-  "PS: if you haven't signed up, please ignore this email": "P.D.: Si no has creat un compte a DemocracyOS, si us plau ignora aquest correu",
   "example@email.com": "ejemplo@email.com",
-  "No citizen for email": "Aquest correu electrònic no està registrat",
   "New Password": "Nova contrasenya",
   "Re-type new password": "Introdueix de nou la contrasenya",
   "By signing up you are accepting our": "En subscriure vostè està acceptant la nostra",
@@ -158,7 +150,6 @@
   "The validation email was resent.": "El correu electrònico de validació ha estat reenviat.",
   "Email not validated" : "L'adreça de correu electrònic encara no ha estat validada. A cada ciutadà se li envia un correu electrònic de benvinguda. El següent pas és obrir el correu electrònic que et vam enviar (no t'oblidis de revisar el 'correu brossa') i clicar sobre l'enllaç adjunt al correu. Cliqui <a href='/signup/resend-validation-email'>aquí</a> si necessita que li enviem de nou el correu de benvinguda",
   "This account has been disabled" : "Aquest compte s'ha desactivat",
-  "No citizen found with that email address": "No tenim registrat cap ciutadà amb aquesta adreça de correu electrònic.",
 
   "Account data": "Dades del compte",
   "Account updated": "Compte actualitzat",
