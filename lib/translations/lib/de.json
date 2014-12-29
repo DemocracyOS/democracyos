@@ -302,5 +302,14 @@
 
   "This page does not exist": "Diese Seite existiert nicht",
   "go back to": "zurück",
-  "Go back to DemocracyOS": "Zurück zu DemocracyOS"
+  "Go back to DemocracyOS": "Zurück zu DemocracyOS",
+
+  "browser-update.woops": "Whoops.",
+  "browser-update.ie-old-version-warning": "Sie verwenden eine nicht unterstützte Version von Internet Explorer.",
+  "browser-update.in-order-warning": "Um Demoracy OS verwenden, aktualisieren Sie bitte Ihren Browser.",
+  "browser-update.switch-to": "Wechseln Sie zu ",
+  "browser-update.update-your": "Aktualisieren Sie Ihren ",
+  "browser-update.why": "Warum?",
+  "browser-update.why.newer-browsers": "Neuere Browser nehmen Vorteile der neuesten Technologien und sorgen für sicheren Surfen Erfahrungen."
+
 }

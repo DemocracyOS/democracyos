@@ -326,5 +326,14 @@
   "side-comments.login": "käyttäjätunnus",
   "side-comments.signup": "Rekisteröidy",
   "side-comments.delete.confirmation": "Oletko varma, että haluat poistaa tämän kommentin?",
-  "side-comments.confirmation.title": "Poista kommentti"
+  "side-comments.confirmation.title": "Poista kommentti",
+
+  "browser-update.woops": "Oho.",
+  "browser-update.ie-old-version-warning": "Käytät tueta Internet Explorerin versiota.",
+  "browser-update.in-order-warning": "Jotta voit käyttää Demoracy OS, päivitä selaimesi.",
+  "browser-update.switch-to": "Vaihda ",
+  "browser-update.update-your": "Päivitä ",
+  "browser-update.why": "Miksi?",
+  "browser-update.why.newer-browsers": "Uudemmat selaimet ottaa edut uusimpien teknologioiden ja turvallisempaa selailu kokemuksia."
+
 }

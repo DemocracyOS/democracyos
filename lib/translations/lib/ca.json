@@ -341,5 +341,13 @@
   "side-comments.login": "Login",
   "side-comments.signup": "Registra't",
   "side-comments.delete.confirmation": "Està segur que desitja eliminar aquest comentari?",
-  "side-comments.confirmation.title": "Eliminar comentari"
+  "side-comments.confirmation.title": "Eliminar comentari",
+
+  "browser-update.woops": "Whoops.",
+  "browser-update.ie-old-version-warning": "Vostè està usant una versió no suportada d'Internet Explorer.",
+  "browser-update.in-order-warning": "Per utilitzar Demoracy OS, si us plau, actualitzi el seu navegador.",
+  "browser-update.switch-to": "Canviar a ",
+  "browser-update.update-your": "Actualitzi la seva ",
+  "browser-update.why": "Per què?",
+  "browser-update.why.newer-browsers": "Els nous navegadors prenen avantatges de les noves tecnologies i garantir una experiència de navegació més segures."
 }
