@@ -12,6 +12,7 @@ var resolve = path.resolve;
 // Little hack to include `NODE_PATH=.`
 require('node-path')(module, [resolve('.')]);
 
+
 // Compile client application `./public/app.js` and `./public/app.css`
 var build = require('lib/build');
 build();
