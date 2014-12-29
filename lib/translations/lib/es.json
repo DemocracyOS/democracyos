@@ -344,7 +344,7 @@
   "side-comments.delete.confirmation": "¿Deseas eliminar este comentario?",
   "side-comments.confirmation.title": "Eliminar comentario",
 
-  "browser-update.woops": "Ops!.",
+  "browser-update.woops": "Ops!",
   "browser-update.ie-old-version-warning": "Estas usando una versión no soportada de Internet Explorer.",
   "browser-update.in-order-warning": "Para poder usar Demoracy OS, por favor actualzá tu browser",
   "browser-update.switch-to": "Cambiar a ",
