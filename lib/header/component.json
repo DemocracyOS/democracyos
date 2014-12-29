@@ -2,9 +2,9 @@
   "name": "header",
   "description": "header component",
   "dependencies": {
-    "component/dom": "0.7.1",
-    "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5",
+    "component/dom": "1.0.6",
+    "visionmedia/debug": "2.1.0",
+    "jadejs/jade": "1.1.5",
     "democracyos/headroom.js": "0.7.1"
     },
   "locals": [

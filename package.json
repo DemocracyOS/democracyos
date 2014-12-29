@@ -48,7 +48,7 @@
     "debug": "~0.7.4",
     "nowww": "~1.1.2",
     "component": "1.0.0-rc5",
-    "component-builder": "1.1.10",
+    "component-builder": "1.2.0",
     "component-resolver": "1.2.4",
     "component-stylus-plugin": "~0.3.1",
     "rework-vars": "~2.0.3",
@@ -73,7 +73,7 @@
     "mkdirp": "0.5.0",
     "builder-jade": "1.0.1",
     "stylus": "0.48.1",
-    "notifier-client": "0.1.0",
+    "notifier-client": "0.1.1",
     "bowser": "0.7.2"
   },
   "devDependencies": {},
