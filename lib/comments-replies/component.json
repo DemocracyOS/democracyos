@@ -11,12 +11,12 @@
     "visionmedia/debug": "2.1.0",
     "jadejs/jade": "1.1.5",
     "yields/empty": "0.0.1",
-    "yields/serialize": "0.2.0"
+    "yields/serialize": "0.2.0",
+    "DemocracyOS/marked": "master"
   },
   "locals": [
     "render",
     "request",
-    "markdown",
     "comments-replies-edit",
     "stateful"
   ],
