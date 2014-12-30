@@ -121,7 +121,7 @@
   "Resend email": "Verstuur mail nog een keer",
   "Email sent" : "Email verstuurd",
   "The validation email was resent.": "De bevestigingsmail is nog een keer verstuurd.",
-  "Email not validated" : "Het mailadres van deze gebruiker is nog niet bevestigd. Als een gebruiker zich aanmeld, versturen we altijd een welkomstmail. Controlleer je mail (vergeet niet je ongewenste berichten te bekijken) en klik op de bevestigingskoppeling. Klik <a href='/signup/resend-validation-email'>hier</a> als je de bevestigingsmail nog een keer wilt ontvangen",
+  "signin.error.email-not-valid" : "Het mailadres van deze gebruiker is nog niet bevestigd. Als een gebruiker zich aanmeld, versturen we altijd een welkomstmail. Controlleer je mail (vergeet niet je ongewenste berichten te bekijken) en klik op de bevestigingskoppeling. Klik <a href='/signup/resend-validation-email'>hier</a> als je de bevestigingsmail nog een keer wilt ontvangen",
   "resend-validation-email-form.error.email-not-valid.no-link" : "Het e-mailadres voor deze burger is niet gevalideerd. We sturen burgers een welkome e-mail wanneer ze zich aanmelden. Controleer uw e-mail (vergeet niet om uw spam map te controleren) en klik op de op de e-mail geleverd link.",
   "This account has been disabled" : "Dit account is uitgeschakeld",
 

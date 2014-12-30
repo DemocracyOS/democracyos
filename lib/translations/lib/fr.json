@@ -146,7 +146,7 @@
   "Resend email": "Renvoyer",
   "Email sent" : "Courriel envoyé",
   "The validation email was resent.": "Le courriel de validation a été renvoyé",
-  "Email not validated" : "Adresse Email non validée. Tout citoyen reçoît un courriel de bienvenue au moment de son inscription. Le pas suivante est celui d' ouvrir ce courriel (sans oublier de réviser la boîte de courrier non désiré) et de cliquer sur le lien a l' intérieur. Cliquez sur <a href='/signup/resend-validation-email'>aquí</a> si vous avez besoin que nous renvoyons le courriel de bienvenue.",
+  "signin.error.email-not-valid" : "Adresse Email non validée. Tout citoyen reçoît un courriel de bienvenue au moment de son inscription. Le pas suivante est celui d' ouvrir ce courriel (sans oublier de réviser la boîte de courrier non désiré) et de cliquer sur le lien a l' intérieur. Cliquez sur <a href='/signup/resend-validation-email'>aquí</a> si vous avez besoin que nous renvoyons le courriel de bienvenue.",
   "resend-validation-email-form.error.email-not-valid.no-link" : "L'adresse e-mail pour ce citoyen ne est pas validé. Nous envoyons citoyens un email de bienvenue lors de leur inscription. Se il vous plaît vérifier votre e-mail (ne oubliez pas de vérifier votre dossier spam trop) et cliquez sur le lien fourni dans le courriel.",
   "This account has been disabled" : "Ce compte a été désactivé",
 

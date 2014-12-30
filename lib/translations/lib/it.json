@@ -148,7 +148,7 @@
   "Resend email": "Risenta email",
   "Email sent": "Email inviata",
   "The validation email was resent.": "L'e-mail di convalida era risentirsi.",
-  "Email not validated": "L'indirizzo email non è stato convalidato. Per ogni cittadino è stata inviata una mail di benvenuto al momento di registro. Il passo successivo è quello di aprire l'email che abbiamo inviato (non dimenticare di aprire la cartella spam) e fare clic sul link fornito. Clicca <a href='/signup/resend-validation-email'>qui</a> se li avete bisogno di risentirsi l'e-mail di benvenuto",
+  "signin.error.email-not-valid": "L'indirizzo email non è stato convalidato. Per ogni cittadino è stata inviata una mail di benvenuto al momento di registro. Il passo successivo è quello di aprire l'email che abbiamo inviato (non dimenticare di aprire la cartella spam) e fare clic sul link fornito. Clicca <a href='/signup/resend-validation-email'>qui</a> se li avete bisogno di risentirsi l'e-mail di benvenuto",
   "resend-validation-email-form.error.email-not-valid.no-link" : "L'indirizzo e-mail per questo cittadino non viene convalidato. Inviamo i cittadini una email di benvenuto al momento di firmare. Controlla la tua email (ricordatevi di controllare la cartella spam troppo) e cliccare sul link fornito nell'e-mail.",
   "This account has been disabled" : "Questo account è stato disattivato",
 
