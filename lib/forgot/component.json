@@ -12,7 +12,7 @@
     "slifszyc/query": "0.0.3",
     "component/t": "1.0.0"
   },
-  "locals": [ "regexps", "citizen", "request", "title", "render" ],
+  "locals": [ "regexps", "citizen", "request", "title", "render", "form-view" ],
   "scripts": [ "forgot.js", "forgot-view.js", "reset-view.js" ],
   "styles": [ ],
   "templates": [ "forgot-form.jade" , "reset-form.jade" ],
