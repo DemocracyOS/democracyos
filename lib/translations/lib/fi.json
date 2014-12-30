@@ -144,7 +144,7 @@
   "Email sent" : "Sähköposti lähetetty",
   "The validation email was resent.": "Vahvistusviesti on nyt lähetetty.",
   "Email not validated" : "Tämän kansalaisen sähköpostiosoite ei ole vahvistettu. Rekisteröintiprosessin yhteydessä lähetämme kaikille tervetuloviestin. Tarkista sähköpostisi (muista tarkistaa myös roskapostikansio) ja klikkaa viestistä löytyvästä linkistä. Paina <a href='/signup/resend-validation-email'>here</a> jos haluat lähettää tervetuloviestin itsellesi uudestaan",
-  "Email not validated no link" : "Sähköpostiosoitteella kansalainen ei ole validoitu. Lähetämme kansalaisten tervetullut sähköpostitse, kun he kirjautuvat. Tarkista sähköpostisi (muista tarkistaa roskapostikansio liian) ja klikkaa linkkiä toimitetaan sähköpostitse.",
+  "resend-validation-email-form.error.email-not-valid.no-link" : "Sähköpostiosoitteella kansalainen ei ole validoitu. Lähetämme kansalaisten tervetullut sähköpostitse, kun he kirjautuvat. Tarkista sähköpostisi (muista tarkistaa roskapostikansio liian) ja klikkaa linkkiä toimitetaan sähköpostitse.",
   "This account has been disabled" : "Tämä tili on poistettu käytöstä",
 
   "Account data": "Tilitiedot",
