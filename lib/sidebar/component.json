@@ -3,7 +3,6 @@
   "description": "Sidebar list of items",
   "dependencies": {
     "component/domify": "1.3.1",
-    "component/dom": "0.7.1",
     "component/dropdown": "7207a",
     "component/events": "1.0.9",
     "component/bus": "^0.0.2",
@@ -17,7 +16,7 @@
     "component/t": "1.0.0",
     "slifszyc/query": "0.0.3"
   },
-  "locals": [ "laws", "laws-filter", "render", "stateful-view", "view" ],
+  "locals": [ "laws", "laws-filter", "render", "stateful-view" ],
   "scripts": [ "main.js", "sidebar.js", "filter.js", "list.js" ],
   "templates": [ "sidebar-container.jade", "list-item.jade", "filter-item.jade", "filter-container.jade", "list-container.jade", "check.jade" ],
   "styles": [ "sidebar.css" ],
