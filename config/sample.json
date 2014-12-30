@@ -52,8 +52,7 @@
   "pp": false,
   "glossary": false,
   "notifications": {
-    "host": "localhost",
-    "port": 9001,
+    "url": "http://localhost:9001/api/events",
     "token": 1234
   }
 }
