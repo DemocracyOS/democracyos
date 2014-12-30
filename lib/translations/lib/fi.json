@@ -130,7 +130,7 @@
   "Welcome, {name}!": "Tervetuloa, {name}!",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Rekisteröitymisesi on nyt kirjattu. Lähetimme sinulle sähköpostia, jotta voit vahvistaa sähköpostiosoitteesi.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Tarkistathan sähköpostisi (muista tarkistaa myös roskapostikansio) and klikkaa sähköpostista löytyvästä linkistä.",
-  "Your email has been validated and now you are logged in" : "Sähköpostisi on nyt vahvistettu, ja olet kirjautunut sisään.", 
+  "Your email has been validated and now you are logged in" : "Sähköpostisi on nyt vahvistettu, ja olet kirjautunut sisään.",
   "You're being redirected in 5 seconds": "Olet ohjataan 5 sekunnissa",
   "You can now argue and vote on bills!": "Voit nyt väitellä ja äänestää!",
   "Go to": "Mene",
