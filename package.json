@@ -82,6 +82,6 @@
   },
   "scripts": {
     "test": "",
-    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
+    "postinstall": "node ./bin/dos-certs && node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
   }
 }
