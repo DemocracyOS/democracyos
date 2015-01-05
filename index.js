@@ -12,7 +12,6 @@ var protocol = config('protocol');
 var ssl = config('ssl');
 var exec = require('child_process').exec;
 var exists = fs.existsSync;
-var sync = require('sync');
 var log = require('debug')('democracyos:root');
 
 var secure = protocol === 'https';
