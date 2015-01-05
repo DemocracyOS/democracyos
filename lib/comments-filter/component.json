@@ -3,22 +3,17 @@
   "description": "Generic comments filter component",
   "dependencies": {
     "component/bus": "^0.0.2",
-    "component/emitter": "1.1.3",
-    "component/events": "1.0.9",
     "component/t": "1.0.0",
     "component/closest": "0.1.4",
-    "visionmedia/debug": "2.1.0",
-    "jadejs/jade": "1.1.5",
-    "cristiandouce/merge-util": "0.2.0",
-    "slifszyc/query": "0.0.3"
+    "visionmedia/debug": "2.1.0"
   },
   "locals": [
     "citizen",
-    "render",
-    "store"
+    "store",
+    "view"
   ],
-  "styles": [ "comments-filter.styl" ],
-  "templates": [ "comments-filter.jade" ],
+  "styles": [ "styles.styl" ],
+  "templates": [ "template.jade" ],
   "scripts": [ "view.js", "sorts.js" ],
   "main": "view.js"
 }

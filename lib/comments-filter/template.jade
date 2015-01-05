@@ -1,7 +1,7 @@
 .dropdown.pull-right.comments-filter
   button.btn.btn-default(type='button', data-toggle='dropdown')
     span=t('comments.ordered-by') + ': '
-    strong=t(filter.get().label)
+    strong=t(label)
     span.caret
   ul.dropdown-menu
     - each sort, key in sorts
