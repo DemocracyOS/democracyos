@@ -13,11 +13,12 @@
     "yields/serialize": "0.2.0"
   },
   "locals": [
+    "form-view",
     "render",
     "request"
   ],
   "scripts": [ "view.js" ],
-  "styles" : [ "comments-replies-edit.styl" ],
-  "templates": [ "comments-replies-edit.jade" ],
+  "styles" : [ "styles.styl" ],
+  "templates": [ "template.jade" ],
   "main": "view.js"
 }
