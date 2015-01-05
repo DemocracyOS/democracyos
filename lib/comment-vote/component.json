@@ -1,0 +1,23 @@
+{
+  "name": "comment-vote",
+  "description": "Comment vote for generic comment view.",
+  "dependencies": {
+    "visionmedia/jade":"1.1.5",
+    "component/emitter":"1.1.3",
+    "component/events":"1.0.9",
+    "component/dom":"1.0.6",
+    "visionmedia/debug":"0.7.4",
+    "component/t":"1.0.0"
+  },
+  "locals": [
+    "view",
+    "citizen",
+    "request",
+    "config",
+    "render"
+  ],
+  "scripts": [ "view.js" ],
+  "styles" : [ "style.styl" ],
+  "templates": [ "template.jade" ],
+  "main": "view.js"
+}
