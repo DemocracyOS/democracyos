@@ -1,5 +1,5 @@
 {
-  "protocol": "https",
+  "protocol": "http",
   "host": "localhost",
   "privatePort": 3000,
   "publicPort": 3000,
