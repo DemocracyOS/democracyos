@@ -18,7 +18,7 @@
     "render",
     "request",
     "comments-replies-edit",
-    "stateful"
+    "stateful-view"
   ],
   "styles": [ "comments-replies.styl" ],
   "scripts": [ "view.js" ],
