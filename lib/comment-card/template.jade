@@ -40,15 +40,6 @@ li.media.comment-item(class=classes)
         | .
         span.show-spam: a(href="#")= t('show')
       .comment-actions
-        span.comment-counter=(comment.upvotes.length - comment.downvotes.length)
-        - classes = []
-        - likes && classes.push('selected')
-        a.comment-action.vote-comment.like(href="#", title=t('Upvote'), class=classes)
-          i.icon-angle-up
-        - classes = []
-        - dislikes && classes.push('selected')
-        a.comment-action.vote-comment.dislike(href="#", title=t('Downvote'), class=classes)
-          i.icon-angle-down
         - if (repliesCounter || citizen.id)
           - var title = repliesCounter + ' ' + (repliesCounter > 1 ? t('comments.replies') : t('comments.reply'))
           a.comment-action.comment-reply.pull-right(href='#', title=title.toLowerCase())

@@ -13,6 +13,7 @@
     "comments-replies",
     "config",
     "request",
+    "comment-vote",
     "view"
   ],
   "scripts": [ "view.js" ],
