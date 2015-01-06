@@ -3,7 +3,6 @@
   "description": "Forgot Password page",
   "dependencies": {
     "component/events": "1.0.9",
-    "component/classes": "1.2.0",
     "component/emitter": "1.1.3",
     "visionmedia/page.js": "1.3.7",
     "jadejs/jade": "1.1.5",
@@ -12,7 +11,7 @@
     "slifszyc/query": "0.0.3",
     "component/t": "1.0.0"
   },
-  "locals": [ "regexps", "citizen", "request", "title", "render" ],
+  "locals": [ "citizen", "request", "title", "render", "form-view" ],
   "scripts": [ "forgot.js", "forgot-view.js", "reset-view.js" ],
   "styles": [ ],
   "templates": [ "forgot-form.jade" , "reset-form.jade" ],
