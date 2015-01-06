@@ -116,7 +116,7 @@
   "Password": "Password",
   "Repeat Password": "Repeat Password",
   "Reset Password!": "Reset Password!",
-  "Forgot Password?": "Forgot Passoword?",
+  "forgot.question": "Forgot Password?",
   "DemocracyOS markdown": "DemocracyOS markdown",
   "Don't have an account?": "Don't have an account?",
   "We will send an email with a link to reset your password": "We will send an email with a link to reset your password",

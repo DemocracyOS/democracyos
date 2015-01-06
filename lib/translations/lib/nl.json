@@ -90,7 +90,7 @@
   "Password": "Wachtwoord",
   "Repeat Password": "Herhaal wachtwoord",
   "Reset Password!": "Wachtwoord opnieuw instellen!",
-  "Forgot Password?": "Wachtwoord vergeten?",
+  "forgot.question": "Wachtwoord vergeten?",
   "DemocracyOS markdown": "DemocracyOS markdown",
   "Don't have an account?": "Ben je al aangemeld?",
   "We will send an email with a link to reset your password": "We sturen je een link om je wachtwoord opnieuw in te stellen",

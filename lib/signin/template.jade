@@ -12,7 +12,7 @@
         input.form-control(type='text', name='email', tabindex=1, placeholder=t('example@email.com'), validate='required email')
       .form-group
         label= t('Password')
-        .forgot: a(href='/forgot', tabindex=4) #{t('Forgot Password?')}
+        .forgot: a(href='/forgot', tabindex=4) #{t('forgot.question')}
 
         input.form-control(type='password', name='password', tabindex=2, placeholder=t('Password'), validate='required')
       .form-group: .signup

@@ -120,7 +120,7 @@
   "Password": "Contraseña",
   "Repeat Password": "Repetir contraseña",
   "Reset Password!": "¡Reestablecer contraseña!",
-  "Forgot Password?": "¿Olvidaste tu contraseña?",
+  "forgot.question": "¿Olvidaste tu contraseña?",
   "DemocracyOS markdown": "DemocracyOS markdown",
   "Don't have an account?": "¿No tienes una cuenta?",
   "We will send an email with a link to reset your password": "Te enviaremos un correo electrónico con un enlace para reestablecer tu contraseña",

@@ -91,7 +91,7 @@
   "Password": "Passwort",
   "Repeat Password": "Passwort wiederholen",
   "Reset Password!": "Passwort zurücksetzen!",
-  "Forgot Password?": "Passwort vergessen?",
+  "forgot.question": "Passwort vergessen?",
   "DemocracyOS markdown": "DemocracyOS Markdown",
   "Don't have an account?": "Noch nicht angemeldet",
   "We will send an email with a link to reset your password": "Du erhältst eine E-Mail mit einem Link, um dein Passwort zurückzusetzen",

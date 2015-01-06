@@ -117,7 +117,7 @@
   "Password": "Contrasenya",
   "Repeat Password": "Repetir la contrasenya",
   "Reset Password!": "¡Restablir contrasenya!",
-  "Forgot Password?": "¿Has oblidat la teva contrasenya?",
+  "forgot.question": "¿Has oblidat la teva contrasenya?",
   "DemocracyOS markdown": "DemocracyOS markdown",
   "Don't have an account?": "No teniu un compte?",
   "We will send an email with a link to reset your password": "T'enviarem un enllaç per regenerar la teva contrasenya",

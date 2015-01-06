@@ -107,7 +107,7 @@
   "Password": "Senha",
   "Repeat Password": "Repetir senha",
   "Reset Password!": "Configurar uma nova senha!",
-  "Forgot Password?": "Esqueceu sua senha?",
+  "forgot.question": "Esqueceu sua senha?",
   "DemocracyOS markdown": "DemocracyOS markdown",
   "Don't have an account?": "Não possui uma conta?",
   "We will send an email with a link to reset your password": "Enviaremos um e-mail com um link para configurar uma nova senha",
