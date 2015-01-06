@@ -1,7 +1,4 @@
 #laws-filter
-  - var formatNumber = function(v) {
-  -  return v <= 99 ? v + ' ' : '99+ ';
-  - };
   - var open = formatNumber(filter.countFiltered('open'));
   - var closed = formatNumber(filter.countFiltered('closed'));
   #status-filter.btn-group.btn-group-justified
@@ -18,18 +15,15 @@
       span.caret
     ul.dropdown-menu
       - each sort, key in filter.sorts
-        - var active = false;
-        - if (sort == filter.sort)
-          - active = true;
+        - var active = key == filter.get('sort')
         li(data-sort=key, class= active ? 'active' : '')
           a(href='#')= t(sort.label)
 
       //- Rendered from client's view
 
-  -if (citizen.logged())
-    #hide-voted-filter.hide-voted-box
-      input#hide-voted(type='checkbox',
-        name='hide-voted',
-        checked= filter.get('hide-voted')
-        )
-      label(for='hide-voted')= t('sidebar.hide-voted')
+  #hide-voted-filter.hide-voted-box(class=citizen.logged() ? '' : 'hide')
+    input#hide-voted(type='checkbox',
+      name='hide-voted',
+      checked= filter.get('hide-voted')
+      )
+    label(for='hide-voted')= t('sidebar.hide-voted')
