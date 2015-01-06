@@ -7,8 +7,5 @@
   ],
   "locals": [
     "boot"
-  ],
-  "dependencies": {
-    "component/bus": "0.0.2"
-  }
+  ]
 }
