@@ -7,7 +7,8 @@
     "slifszyc/query": "0.0.3"
   },
   "locals": [
-    "render"
+    "render",
+    "view"
   ],
   "templates": [
     "sidebar-template.jade"
