@@ -14,7 +14,7 @@
         input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('Last name'), value='#{citizen.lastName}', validate='required lastname')
       .form-group
         label= t('Email')
-        input.form-control(type='text', disabled='disabled' name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}', validate='required email')
+        input.form-control(type='text', disabled='disabled' name='email', tabindex=3, placeholder=t('forgot.mail.example'), value='#{citizen.email}', validate='required email')
       .form-group.profile-picture
         .image-container
           img(src=citizen.profilePicture(), width="65")
