@@ -1,4 +1,49 @@
 
+0.9.0 / 2015-01-06
+==================
+
+ * Fix faulty error handling in forgotpassword and signup with notifier. Closes #549
+ * Remove unneeded entries from component.json
+ * Fix autosubmit and FormView error handling
+ * Made usage of notifier mandatory for mailing users.
+ * Fix edit comment form buttons styles #529
+ * Reply submit button not properly aligned #495
+ * Remove mandrill and mailer dependencies
+ * Refactor homepage to use a middelware instead of an if-check clause. Update dependencies #282
+ * Switch local dep markdown to DemocracyOS/marked for #527
+ * Update dom dependecy to avoid error of chained messages with .html() #282
+ * Remove unused markdown local module. Closes #329
+ * change local markdown dependecy by remote dependency #329
+ * Bumped component-builder version to 1.2.0. Related to #475.
+ * Fixed array length check throwing error with new version of dom. Related to #475.
+ * Changed merge-util argument type on calling. Closes #475.
+ * Remove deprecated comments-view component #282
+ * Remove unused markdown local module. Closes #329
+ * Improve styles and content for update browser page. Add links for donwload browsers. #168
+ * Decreased separation between commenter's name and timestamp.
+ * Hide header on scroll if app is rendered in mobile device. Closes #452.
+ * Add middleware to handle unsupported browsers. Add module for unsupported browsers. #168
+ * Fix #516: Upvote comment button underlines on hover
+ * Fix #515: User name and timestamp overlap on replies
+ * Add comment to current user's comments after successful submit #282
+ * Improved pluralization. Related to #406.
+ * Update participants counter and balloons after voting. Closes #406.
+ * Update citizen model. Made reply notifications true by default
+ * Voting made async and UI blocks when user clicks on voting buttons. Closes #394.
+ * Add mail notifications when a law is published for users that are subscribed to it. Closes #473
+ * Add setting for new-topic notification
+ * Add delivering notifications to client
+ * Add notifications attribute to citizen model
+ * Add notifying when someone replies to an argument
+ * Add notifier integration for forgot-password
+ * Update sample config with notifier requirements
+ * Add missing translations for settings in every language
+ * Enable settings-notifications view #28
+ * Add UI toggle component styled for DemocracyOS
+ * Remove control logs. Actually closes #26
+ * Make notifier usage dependent on configuration settings
+ * Make signup email validations rely on notifier-client
+
 0.8.26 / 2014-12-11
 ==================
 
