@@ -9,12 +9,12 @@
       ul.form-errors
       .form-group
         label= t('Email')
-        input.form-control(type='text', name='email', tabindex=1, placeholder=t('example@email.com'), validate='required email')
+        input.form-control(type='text', name='email', tabindex=1, placeholder=t('forgot.mail.example'), validate='required email')
       .form-group
-        label= t('Password')
-        .forgot: a(href='/forgot', tabindex=4) #{t('Forgot Password?')}
+        label= t('password')
+        .forgot: a(href='/forgot', tabindex=4) #{t('forgot.question')}
 
-        input.form-control(type='password', name='password', tabindex=2, placeholder=t('Password'), validate='required')
+        input.form-control(type='password', name='password', tabindex=2, placeholder=t('password'), validate='required')
       .form-group: .signup
         span=t('Don\'t have an account?')
         a(href='/signup', tabindex=5) #{t('Signup now')}
