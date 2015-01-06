@@ -47,9 +47,10 @@
     "connect-mongo": "~0.4.0",
     "debug": "~0.7.4",
     "nowww": "~1.1.2",
-    "component": "1.0.0-rc5",
+    "component": "1.0.0",
     "component-builder": "1.2.0",
     "component-resolver": "1.2.4",
+    "component-consoler": "^2.0.0",
     "component-stylus-plugin": "~0.3.1",
     "rework-vars": "~2.0.3",
     "rework-math": "~1.0.1",
@@ -72,16 +73,13 @@
     "builder-jade": "1.0.1",
     "stylus": "0.48.1",
     "notifier-client": "0.2.0",
-    "bowser": "0.7.2"
+    "bowser": "0.7.2",
+    "rimraf": "^2.2.8"
   },
   "devDependencies": {},
   "main": "pdr",
   "engines": {
     "node": "0.10.28",
     "npm": "1.4.9"
-  },
-  "scripts": {
-    "test": "",
-    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
   }
 }
