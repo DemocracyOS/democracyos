@@ -1,7 +1,10 @@
 
-0.9.0 / 2014-12-30
+0.9.0 / 2015-01-06
 ==================
 
+ * Fix faulty error handling in forgotpassword and signup with notifier. Closes #549
+ * Remove unneeded entries from component.json
+ * Fix autosubmit and FormView error handling
  * Made usage of notifier mandatory for mailing users.
  * Fix edit comment form buttons styles #529
  * Reply submit button not properly aligned #495
