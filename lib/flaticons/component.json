@@ -2,8 +2,8 @@
   "name": "flaticons",
   "description": "Flaticons asset component",
   "styles": [
-    "social.css",
-    "solid.css"
+    "social.styl",
+    "solid.styl"
   ],
   "files": [
     "flaticons-social.eot",

@@ -15,7 +15,7 @@
     "settings-notifications"
   ],
   "scripts": [ "settings.js" ],
-  "styles": [ "settings.styl", "settings-sidebar.css", "settings-heading.css", "settings-responsive.css" ],
+  "styles": [ "settings.styl", "settings-sidebar.styl", "settings-heading.styl", "settings-responsive.styl" ],
   "templates": [ "settings-container.jade"],
   "main": "settings.js"
 }

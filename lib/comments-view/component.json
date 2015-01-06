@@ -16,7 +16,7 @@
     "request"
   ],
   "scripts": [ "view.js" ],
+  "styles": [ "styles.styl", "comments.styl" ],
   "templates": [ "template.jade" ],
-  "styles": [ "styles.styl" ],
   "main": "view.js"
 }
