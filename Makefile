@@ -24,7 +24,7 @@ packages:
 	@DEBUG=$(DEBUG) node ./bin/dos-config
 	@echo "Done.\n"
 	@echo "Compiling components to ./public..."
-	@DEBUG=$(DEBUG) node ./bin/dos build -o public --watch &
+	@DEBUG=$(DEBUG) node ./bin/dos build --watch &
 	@echo "Done.\n"
 
 clean:
