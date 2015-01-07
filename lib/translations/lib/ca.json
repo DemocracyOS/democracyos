@@ -21,13 +21,6 @@
   "Password argument not set!": "¡La contrasenya no està assignada!",
   "User already exists with name %s": "Ja existeix un usuari amb el nom %s",
 
-  "Password is required": "Es necessita una contrasenya",
-  "Password is not good enough": "La contrasenya no és prou segura",
-  "Passwords do not match": "Les contrasenyes no coincideixen",
-  "Email is not valid": "Correu electrònic no vàlid",
-  "A firstname is required": "Es necessari especificar un nom",
-  "A lastname is required": "Es necessari especificar un cognom",
-
   "Profile": "Profile",
   "Sessions": "Sessions",
   "Notifications": "Notifications",

@@ -22,13 +22,6 @@
   "Password argument not set!": "Du hast keine Sicherheitsfrage festgelegt.",
   "User already exists with name %s": "Dieser Nutzername ist bereits vergeben",
 
-  "Password is required": "Passwort erforderlich",
-  "Password is not good enough": "Passwort nicht sicher genug",
-  "Passwords do not match": "Passwörter stimmen nicht überein",
-  "Email is not valid": "Ungültige E-Mail-Adresse",
-  "A firstname is required": "Vorname erforderlich",
-  "A lastname is required": "Nachname erforderlich",
-
   "Profile": "Profil",
   "Sessions": "Sitzungen",
   "Notifications": "Mitteilungen",

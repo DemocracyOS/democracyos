@@ -21,13 +21,6 @@
   "Password argument not set!": "A senha não está designada",
   "User already exists with name %s": "Já existe um usuário com o nome %s",
 
-  "Password is required": "É necessário uma senha",
-  "Password is not good enough": "A senha não é boa o suficiente",
-  "Passwords do not match": "As senhas não coincidem",
-  "Email is not valid": "Endereço de e-mail inválido",
-  "A firstname is required": "É necessário um nome real",
-  "A lastname is required": "É necessário um sobrenome real",
-
   "Profile": "Perfil",
   "Sessions": "Sessões",
   "Notifications": "Notificações",
