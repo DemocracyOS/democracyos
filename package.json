@@ -7,7 +7,6 @@
     "democracy",
     "democracyos",
     "liquid democracy",
-    "partido de la red",
     "democracia en red",
     "net democracy",
     "net party",
@@ -32,12 +31,16 @@
     {
       "name": "Sacha Lifszyc",
       "email": "sacha.lifszyc@gmail.com"
+    },
+    {
+      "name": "Mariano Vicente",
+      "email": "m.vicent@gmail.com"
+    },
+    {
+      "name": "José Fresco",
+      "email": "josemariafresco@gmail.com"
     }
   ],
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
   "dependencies": {
     "express": "~3.4.7",
     "jade": "1.6.0",
@@ -77,8 +80,6 @@
     "bowser": "0.7.2",
     "rimraf": "^2.2.8"
   },
-  "devDependencies": {},
-  "main": "pdr",
   "engines": {
     "node": "0.10.28",
     "npm": "1.4.9"
