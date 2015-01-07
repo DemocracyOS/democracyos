@@ -4,16 +4,16 @@
   "common.cancel": "Cancel",
   "common.back": "Back",
   "common.no-user-for-email" : "No user found for that email address",
+  "common.app-name": "DemocracyOS",
 
-  "DemocracyOS": "DemocracyOS",
-  "header.logo": "DemocracyOS",
   "header.signin": "Login",
-  "Login to": "Login to",
   "header.signup": "Signup",
-  "Signup now": "Signup now",
   "header.logout": "Logout",
   "header.settings": "Settings",
   "header.feedback": "Feedback",
+
+  "signin.login-to": "Login to",
+  "signin.action.signup": "Signup now",
 
   "Incorrect password": "Incorrect password",
   "Incorrect username": "Incorrect username",

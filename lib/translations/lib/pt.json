@@ -4,16 +4,16 @@
   "common.cancel": "Cancelar",
   "common.back": "Voltar",
   "common.no-user-for-email" : "Endereço de e-mail não cadastrado",
+  "common.app-name": "DemocracyOS",
 
-  "DemocracyOS": "DemocracyOS",
-  "header.logo": "DemocracyOS",
   "header.signin": "Entrar",
-  "Login to": "Entrar em",
   "header.signup": "Cadastrar-se",
-  "Signup now": "Cadastre-se agora",
   "header.logout": "Sair",
   "header.settings": "Opções",
   "header.feedback": "Sugestões",
+
+  "signin.login-to": "Entrar em",
+  "signin.action.signup": "Cadastre-se agora",
 
   "Incorrect password": "Senha incorreta",
   "Incorrect username": "Usuário incorreto",

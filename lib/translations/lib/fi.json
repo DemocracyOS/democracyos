@@ -4,16 +4,16 @@
   "common.cancel": "Peruuta",
   "common.back": "Palata",
   "common.no-user-for-email" : "Email-osoite ei ole rekisterissämme",
+  "common.app-name": "DemocracyOS",
 
-  "DemocracyOS": "DemocracyOS",
-  "header.logo": "DemocracyOS",
   "header.signin": "Kirjaudu",
-  "Login to": "Kirjaudu sisään",
   "header.signup": "Rekisteröi",
-  "Signup now": "Rekisteröidy nyt",
   "header.logout": "Kirjaudu ulos",
   "header.settings": "Asetukset",
   "header.feedback": "Palaute",
+
+  "signin.login-to": "Kirjaudu sisään",
+  "signin.action.signup": "Rekisteröidy nyt",
 
   "Incorrect password": "Väärä salasana",
   "Incorrect username": "Väärä käyttäjätunnus",

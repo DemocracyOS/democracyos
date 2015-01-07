@@ -4,16 +4,16 @@
   "common.cancel": "Annuleren",
   "common.back": "Terug",
   "common.no-user-for-email" : "Geen inwoner voor email",
+  "common.app-name": "DemocracyOS",
 
-  "DemocracyOS": "DemocracyOS",
-  "header.logo": "DemocracyOS",
   "header.signin": "Aanmelden",
-  "Login to": "Aanmelden",
   "header.signup": "Inschrijven",
-  "Signup now": "Nu inschrijven",
   "header.logout": "Afmelden",
   "header.settings": "Instellingen",
   "header.feedback": "Feedback",
+
+  "signin.login-to": "Aanmelden",
+  "signin.action.signup": "Nu inschrijven",
 
   "Incorrect password": "Verkeerd wachtwoord",
   "Incorrect username": "Verkeerde gebruikersnaam",
