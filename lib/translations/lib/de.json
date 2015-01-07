@@ -4,17 +4,17 @@
   "common.cancel": "Abbrechen",
   "common.back": "Zurück",
   "common.no-user-for-email": "Diese E-Mail ist bei uns nicht registriert.",
+  "common.app-name": "DemocracyOS",
 
-  "DemocracyOS": "DemocracyOS",
-  "header.logo": "DemocracyOS",
   "header.signin": "Login",
-  "Login to": "Einloggen bei",
   "header.signup": "Registrierung",
-  "Signup now": "Jetzt registrieren",
   "header.logout": "Logout",
   "header.admin": "Verwalten",
   "header.settings": "Einstellungen",
   "header.feedback": "Vorschläge",
+
+  "signin.login-to": "Einloggen bei",
+  "signin.action.signup": "Jetzt registrieren",
 
   "Incorrect password": "Falsches Passwort",
   "Incorrect username": "Falscher Nutzername",

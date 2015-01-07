@@ -4,17 +4,17 @@
   "common.cancel": "Cancel",
   "common.back": "Tornar",
   "common.no-user-for-email": "Aquest correu electrònic no està registrat",
+  "common.app-name": "DemocracyOS",
 
-  "DemocracyOS": "DemocracyOS",
-  "header.logo": "DemocracyOS",
   "header.signin": "Entrada",
-  "Login to": "Entrada a",
   "header.signup": "Registrar-se",
-  "Signup now": "Registra'm  ara",
   "header.logout": "Tancar la sessió",
   "header.admin": "Adminstrar",
   "header.settings": "El meu compte",
   "header.feedback": "Suggerències",
+
+  "signin.login-to": "Entrada a",
+  "signin.action.signup": "Registra'm  ara",
 
   "Incorrect password": "Contrasenya Incorrecta",
   "Incorrect username": "Nom d'usuari incorrecte",
