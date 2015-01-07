@@ -130,7 +130,7 @@
   "Welcome, {name}!": "Tervetuloa, {name}!",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Rekisteröitymisesi on nyt kirjattu. Lähetimme sinulle sähköpostia, jotta voit vahvistaa sähköpostiosoitteesi.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Tarkistathan sähköpostisi (muista tarkistaa myös roskapostikansio) and klikkaa sähköpostista löytyvästä linkistä.",
-  "Your email has been validated and now you are logged in" : "Sähköpostisi on nyt vahvistettu, ja olet kirjautunut sisään.", 
+  "Your email has been validated and now you are logged in" : "Sähköpostisi on nyt vahvistettu, ja olet kirjautunut sisään.",
   "You're being redirected in 5 seconds": "Olet ohjataan 5 sekunnissa",
   "You can now argue and vote on bills!": "Voit nyt väitellä ja äänestää!",
   "Go to": "Mene",
@@ -143,7 +143,8 @@
   "Resend email": "Lähetä viesti uudestaan",
   "Email sent" : "Sähköposti lähetetty",
   "The validation email was resent.": "Vahvistusviesti on nyt lähetetty.",
-  "Email not validated" : "Tämän kansalaisen sähköpostiosoite ei ole vahvistettu. Rekisteröintiprosessin yhteydessä lähetämme kaikille tervetuloviestin. Tarkista sähköpostisi (muista tarkistaa myös roskapostikansio) ja klikkaa viestistä löytyvästä linkistä. Paina <a href='/signup/resend-validation-email'>here</a> jos haluat lähettää tervetuloviestin itsellesi uudestaan",
+  "signin.error.email-not-valid" : "Tämän kansalaisen sähköpostiosoite ei ole vahvistettu. Rekisteröintiprosessin yhteydessä lähetämme kaikille tervetuloviestin. Tarkista sähköpostisi (muista tarkistaa myös roskapostikansio) ja klikkaa viestistä löytyvästä linkistä. Paina <a href='/signup/resend-validation-email'>here</a> jos haluat lähettää tervetuloviestin itsellesi uudestaan",
+  "resend-validation-email-form.error.email-not-valid.no-link" : "Sähköpostiosoitteella kansalainen ei ole validoitu. Lähetämme kansalaisten tervetullut sähköpostitse, kun he kirjautuvat. Tarkista sähköpostisi (muista tarkistaa roskapostikansio liian) ja klikkaa linkkiä toimitetaan sähköpostitse.",
   "This account has been disabled" : "Tämä tili on poistettu käytöstä",
 
   "Account data": "Tilitiedot",
