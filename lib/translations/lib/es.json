@@ -138,7 +138,7 @@
   "Welcome, {name}!": "¡Felicitaciones, {name}!",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Te registraste. Te hemos enviado un correo electrónico para que puedas validar tu dirección de correo electrónico.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "El siguiente paso es abrir el correo electrónico que te hemos enviado (no te olvides de la carpeta 'Correo no deseado') y hacer clic en el enlace provisto.",  
-  "Your email has been validated and now you are logged in" : "Tu correo electrónico ha sido validado y has ingresado a tu cuenta",   
+  "Your email has been validated and now you are logged in" : "Tu correo electrónico ha sido validado y has ingresado a tu cuenta",
   "You're being redirected in 5 seconds": "En 5 segundos serás redirigido",
   "You can now argue and vote on bills!": "¡Ya podés argumentar y votar en proyectos de ley!",
   "Go to": "Ir a los proyectos para",
@@ -151,7 +151,8 @@
   "Resend email": "Reenviar",
   "Email sent" : "Correo electrónico enviado",
   "The validation email was resent.": "El correo electrónico de validación ha sido reenviado.",
-  "Email not validated" : "La dirección de correo electrónico no ha sido validada. A cada ciudadano se le envía un correo electrónico de bienvenida al momento de registrarse. El siguiente paso es abrir el correo electrónico que te hemos enviado (no te olvides de la carpeta 'Correo no deseado') y hacer clic en el enlace provisto. Cliquea <a href='/signup/resend-validation-email'>aquí</a> si necesitás que te reenviemos el correo electrónico de bienvenida",
+  "signin.error.email-not-valid" : "La dirección de correo electrónico no ha sido validada. A cada ciudadano se le envía un correo electrónico de bienvenida al momento de registrarse. El siguiente paso es abrir el correo electrónico que te hemos enviado (no te olvides de la carpeta 'Correo no deseado') y hacer clic en el enlace provisto. Cliquea <a href='/signup/resend-validation-email'>aquí</a> si necesitás que te reenviemos el correo electrónico de bienvenida",
+  "resend-validation-email-form.error.email-not-valid.no-link" : "La dirección de correo electrónico no ha sido validada. A cada ciudadano se le envía un correo electrónico de bienvenida al momento de registrarse. El siguiente paso es abrir el correo electrónico que te hemos enviado (no te olvides de la carpeta 'Correo no deseado') y hacer clic en el enlace provisto.",
   "This account has been disabled" : "Esta cuenta ha sido deshabilitada",
 
   "Account data": "Datos de la cuenta",
