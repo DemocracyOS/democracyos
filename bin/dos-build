@@ -7,6 +7,7 @@
 var program = require('commander');
 
 program
+  .option('-w, --watch', 'watch for file changes and rebuild automatically')
   .option('-n, --name <file>', 'base name for build files defaulting to "app"', 'app')
   .option('-o, --out <dir>', 'output directory defaulting to ./public', 'public')
   .option('-d, --debug', 'debug mode logging component-builder, component-consoler, component-resolver defaulting to false', false);
@@ -22,7 +23,6 @@ require('node-path')(module, [path.resolve('.')]);
 
 
 var args = program.args;
-var async = require('async');
 var build = require('component-builder');
 var fs = require('fs');
 var exists = fs.existsSync || path.existsSync;
@@ -60,6 +60,18 @@ var tree;
 
 if (!watching) return resolve();
 
+var watcher = require('component-watcher')({
+  root: process.cwd(),
+  extensions: {
+    scripts: ['js', 'json', 'html', 'jade'],
+    styles: ['css', 'styl']
+  }
+});
+
+watcher.on('resolve', resolve);
+watcher.on('scripts', buildScripts);
+watcher.on('styles', buildStyles);
+
 function resolve() {
   if (resolving) return;
   resolving = true;
@@ -76,14 +88,13 @@ function resolve() {
 
     log('resolved dependencies in ' + (Date.now() - start) + 'ms');
 
-    async.parallel(
-      [buildScripts, buildStyles, buildFiles],
-      onbuild
-    );
+    buildScripts();
+    buildStyles();
+    buildFiles();
   })
 }
 
-function buildScripts(fn) {
+function buildScripts() {
   if (resolving) return;
   var start = Date.now();
   build.scripts(tree)
@@ -96,22 +107,20 @@ function buildScripts(fn) {
     .use('templates', build.plugins.string())
     .end(function (err, js) {
       if (err) {
-        fn(err);
         if (fs.existsSync(jsPath)) fs.unlinkSync(jsPath);
         return;
       }
 
       if (!js) return;
       fs.writeFile(jsPath, build.scripts.require + jade.runtime + js);
-      var res = jsPath + ' in '
+      log(jsPath + ' in '
         + (Date.now() - start) + 'ms - '
-        + (js.length / 1024 | 0) + 'kb';
-      fn(null, res);
+        + (js.length / 1024 | 0) + 'kb');
       // reload(jsPath);
     });
 }
 
-function buildStyles(fn) {
+function buildStyles() {
   if (resolving) return;
   var start = Date.now();
   build.styles(tree)
@@ -120,21 +129,19 @@ function buildStyles(fn) {
     .use('styles', build.plugins.urlRewriter(''))
     .end(function (err, css) {
       if (err) {
-        fn(err);
         if (fs.existsSync(cssPath)) fs.unlinkSync(cssPath);
         return;
       }
       if (!css) return;
       fs.writeFile(cssPath, css);
-      var res = cssPath + ' in '
+      log(cssPath + ' in '
         + (Date.now() - start) + 'ms - '
-        + (css.length / 1024 | 0) + 'kb';
-      fn(null, res);
+        + (css.length / 1024 | 0) + 'kb');
       // reload(cssPath);
     });
 }
 
-function buildFiles(fn) {
+function buildFiles() {
   if (resolving) return;
   var start = Date.now();
   build.files(tree, {destination: program.out})
@@ -142,22 +149,11 @@ function buildFiles(fn) {
     .use('files', build.plugins.copy())
     .end(function (err) {
       if (err) {
-        fn(err);
         rimraf(program.out, function(err) {
           if (err) return utils.fatal(err);
         });
       } else {
-        var res = 'files in ' + (Date.now() - start) + 'ms';
-        fn(null, res);
+        log('files in ' + (Date.now() - start) + 'ms');
       }
     });
-}
-
-function onbuild(err, results) {
-  if (err) {
-    return utils.error(err);
-  }
-  results.forEach(function (res) {
-    log(res);
-  })
 }
