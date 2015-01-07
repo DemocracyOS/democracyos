@@ -180,7 +180,6 @@
   "read more": "Leia mais",
   "view more": "veja mais",
   "View the original text": "Veja o texto original",
-  "Participant": "Participante",
   "You must be signed in to vote on this law": "Você deve estar cadastrado para votar nessa lei",
 
   "sidebar.listing{listType}": "Todos",
@@ -196,6 +195,8 @@
 
   "proposal-article.article.alert.text": "Esta é uma versão demo de DemocracyOS's.",
   "proposal-article.article.alert.learn-more": "Mais informações",
+  "proposal-article.participant.singular": "Participante",
+  "proposal-article.participant.plural": "Participantes",
   "proposal-options.error.voting": "Houve um erro ao processar o seu voto. Por favor, tente novamente",
 
   "Remove argument" : "Remover argumento",

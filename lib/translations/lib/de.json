@@ -162,7 +162,6 @@
   "read more": "Mehr lesen",
   "view more": "Mehr ansehen",
   "View the original text": "Originaltext ansehen",
-  "Participant": "Teilnehmer",
   "You must be signed in to vote on this law": "Du musst angemeldet sein, um über dieses Gesetz abzustimmen",
 
   "sidebar.listing{listType}": "Alles",
@@ -177,6 +176,8 @@
 
   "proposal-article.article.alert.text": "Dies ist eine Demo-Version von DemocracyOS",
   "proposal-article.article.alert.learn-more": "Mehr erfahren",
+  "proposal-article.participant.singular": "Teilnehmer",
+  "proposal-article.participant.plural": "Teilnehmers",
   "proposal-options.error.voting": "Es gab einen Fehler bei der Verarbeitung Ihre Stimme. Bitte versuchen Sie es erneut",
 
   "Remove argument" : "Argument entfernen",
