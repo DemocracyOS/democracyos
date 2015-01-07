@@ -22,13 +22,6 @@
   "Password argument not set!": "Er is geen wachtwoord ingevuld!",
   "User already exists with name %s": "Er bestaat al een gebruiker met de naam %s",
 
-  "Password is required": "Een wachtwoord is verplicht",
-  "Password is not good enough": "Het wachtwoord is te zwak",
-  "Passwords do not match": "De wachtwoorden komen niet overeen",
-  "Email is not valid": "E-mailadres is ongeldig",
-  "A firstname is required": "Een voornaam is verplicht",
-  "A lastname is required": "Een achternaam is verplicht",
-
   "Profile": "Profiel",
   "Sessions": "Sessies",
   "Notifications": "Notificaties",

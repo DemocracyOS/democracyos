@@ -22,13 +22,6 @@
   "Password argument not set!": "Password argument not set!",
   "User already exists with name %s": "User already exists with name %s",
 
-  "Password is required": "Password is required",
-  "Password is not good enough": "Password is not good enough",
-  "Passwords do not match": "Passwords do not match",
-  "Email is not valid": "Email is not valid",
-  "A firstname is required": "A firstname is required",
-  "A lastname is required": "A lastname is required",
-
   "Profile": "Profile",
   "Sessions": "Sessions",
   "Notifications": "Notifications",

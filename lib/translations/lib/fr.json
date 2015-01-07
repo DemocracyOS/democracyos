@@ -22,13 +22,6 @@
   "Password argument not set!": "Mot de passe indéfini",
   "User already exists with name %s": "Le nom d' utilisateur %s est déjà pris",
 
-  "Password is required": "Il faut choisir un mot de passe",
-  "Password is not good enough": "Le mot de passe n' est pas suffisamment fort",
-  "Passwords do not match": "Les mots de passe ne correspondent pas",
-  "Email is not valid": "Adresse de courriel invalide",
-  "A firstname is required": "Il faut taper un prénom",
-  "A lastname is required": "Il faut taper un nom de famille",
-
   "Profile": "Profil",
   "Sessions": "Sessions",
   "Notifications": "Notifications",

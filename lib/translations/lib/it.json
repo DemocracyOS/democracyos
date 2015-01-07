@@ -22,13 +22,6 @@
   "Password argument not set!": "Le password non é impostata!",
   "User already exists with name %s": "Utente già esistente con il nome %s",
 
-  "Password is required": "É richiesta una password",
-  "Password is not good enough": "La password non è abbastanza buono",
-  "Passwords do not match": "Password non coincidono",
-  "Email is not valid": "E-mail non é valido",
-  "A firstname is required": "È necessaria una nome",
-  "A lastname is required": "È necessaria un cognome",
-
   "Profile": "Profilo",
   "Sessions": "Sesiones",
   "Notifications": "Notificazione",

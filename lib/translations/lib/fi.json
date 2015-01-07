@@ -22,13 +22,6 @@
   "Password argument not set!": "Salasanaa ei ole!",
   "User already exists with name %s": "Käyttäjätunnus %s on jo käytössä",
 
-  "Password is required": "Salasana vaaditaan",
-  "Password is not good enough": "Salasana ei ole tarpeeksi vahva",
-  "Passwords do not match": "Salasanat eivät ole samat",
-  "Email is not valid": "Email ei ole oikea",
-  "A firstname is required": "Etunimi vaaditaan",
-  "A lastname is required": "Sukunimi vaaditaan",
-
   "Profile": "Profiili",
   "Sessions": "Sessio",
   "Notifications": "Ilmoitukset",
