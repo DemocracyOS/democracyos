@@ -22,6 +22,7 @@ require('node-path')(module, [path.resolve('.')]);
 
 
 var args = program.args;
+var async = require('async');
 var build = require('component-builder');
 var fs = require('fs');
 var exists = fs.existsSync || path.existsSync;
@@ -73,15 +74,16 @@ function resolve() {
 
     tree = res;
 
-    log('build', 'resolved in ' + (Date.now() - start) + 'ms');
+    log('resolved dependencies in ' + (Date.now() - start) + 'ms');
 
-    buildScripts();
-    buildStyles();
-    buildFiles();
+    async.parallel(
+      [buildScripts, buildStyles, buildFiles],
+      onbuild
+    );
   })
 }
 
-function buildScripts() {
+function buildScripts(fn) {
   if (resolving) return;
   var start = Date.now();
   build.scripts(tree)
@@ -94,21 +96,22 @@ function buildScripts() {
     .use('templates', build.plugins.string())
     .end(function (err, js) {
       if (err) {
-        utils.error(err);
+        fn(err);
         if (fs.existsSync(jsPath)) fs.unlinkSync(jsPath);
         return;
       }
 
       if (!js) return;
       fs.writeFile(jsPath, build.scripts.require + jade.runtime + js);
-      log('build', jsPath + ' in '
+      var res = jsPath + ' in '
         + (Date.now() - start) + 'ms - '
-        + (js.length / 1024 | 0) + 'kb');
+        + (js.length / 1024 | 0) + 'kb';
+      fn(null, res);
       // reload(jsPath);
     });
 }
 
-function buildStyles() {
+function buildStyles(fn) {
   if (resolving) return;
   var start = Date.now();
   build.styles(tree)
@@ -117,20 +120,21 @@ function buildStyles() {
     .use('styles', build.plugins.urlRewriter(''))
     .end(function (err, css) {
       if (err) {
-        utils.error(err);
+        fn(err);
         if (fs.existsSync(cssPath)) fs.unlinkSync(cssPath);
         return;
       }
       if (!css) return;
       fs.writeFile(cssPath, css);
-      log('build', cssPath + ' in '
+      var res = cssPath + ' in '
         + (Date.now() - start) + 'ms - '
-        + (css.length / 1024 | 0) + 'kb');
+        + (css.length / 1024 | 0) + 'kb';
+      fn(null, res);
       // reload(cssPath);
     });
 }
 
-function buildFiles() {
+function buildFiles(fn) {
   if (resolving) return;
   var start = Date.now();
   build.files(tree, {destination: program.out})
@@ -138,12 +142,22 @@ function buildFiles() {
     .use('files', build.plugins.copy())
     .end(function (err) {
       if (err) {
-        utils.error(err);
-        rimraf(options.destination, function(err) {
+        fn(err);
+        rimraf(program.out, function(err) {
           if (err) return utils.fatal(err);
         });
       } else {
-        log('build', 'files in ' + (Date.now() - start) + 'ms');
+        var res = 'files in ' + (Date.now() - start) + 'ms';
+        fn(null, res);
       }
     });
+}
+
+function onbuild(err, results) {
+  if (err) {
+    return utils.error(err);
+  }
+  results.forEach(function (res) {
+    log(res);
+  })
 }
