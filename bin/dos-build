@@ -60,6 +60,8 @@ var tree;
 
 if (!watching) return resolve();
 
+log('watching democracyos components\' files to rebuild automatically');
+
 var watcher = require('component-watcher')({
   root: process.cwd(),
   extensions: {
