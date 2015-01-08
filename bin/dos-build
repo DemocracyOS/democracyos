@@ -30,7 +30,7 @@ var jade = require('builder-jade');
 var log = require('debug')('democracyos:build');
 var mkdir = require('mkdirp');
 var Resolve = require('component-resolver');
-var stylus = require('lib/component-stylus');
+var Stylus = require('stylus');
 var utils = require('component-consoler');
 var rimraf = require('rimraf');
 
@@ -53,7 +53,7 @@ process.on('exit', function(){
 
 // resolve
 
-var watching = program.watch || program.reload;
+var watching = program.watch;
 var resolving = false;
 
 var tree;
@@ -118,7 +118,6 @@ function buildScripts() {
       log(jsPath + ' in '
         + (Date.now() - start) + 'ms - '
         + (js.length / 1024 | 0) + 'kb');
-      // reload(jsPath);
     });
 }
 
@@ -139,7 +138,6 @@ function buildStyles() {
       log(cssPath + ' in '
         + (Date.now() - start) + 'ms - '
         + (css.length / 1024 | 0) + 'kb');
-      // reload(cssPath);
     });
 }
 
@@ -158,4 +156,26 @@ function buildFiles() {
         log('files in ' + (Date.now() - start) + 'ms');
       }
     });
+}
+
+function stylus(options) {
+  options = options || {};
+
+  return function plugin(file, done) {
+    if (file.extension !== 'styl') return done();
+    file.read(function (err, string) {
+      if (err) return done(err);
+
+      var renderer = Stylus(string);
+      file.extension = 'css';
+      renderer.render(function (err, css) {
+        if(err) {
+          done(err);
+        } else {
+          file.string = css;
+          done();
+        }
+      });
+    });
+  }
 }
