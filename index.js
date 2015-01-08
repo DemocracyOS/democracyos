@@ -2,8 +2,6 @@
  * Module dependencies.
  */
 
-process.exit(1);
-
 var http = require('http');
 var app = module.exports = require('lib/boot');
 var server = http.createServer(app);
