@@ -54,6 +54,8 @@
   "someone-mentions-in-their-comment": "Eres mencionado en algún argumento",
   "settings.notificatoins.someone-replies-your-comments": "Alguien contesta uno de tus argumentos",
 
+  "notifications.error.connection-refused": "No es posible conectarse al motor de notificaciones",
+
   "validators.required": "Requerido",
   "validators.checked": "Elegir una opción",
   "validators.invalid.email": "El e-mail no es válido",

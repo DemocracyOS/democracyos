@@ -53,6 +53,8 @@
   "settings.notificatoins.someone-replies-your-comments": "Quelqu'un répond l'un de vos commentaires",
   "settings.notifications.someone-mentions-in-their-comment": "Quelqu'un vous parle dans un de leurs commentaires",
 
+  "notifications.error.connection-refused": "Impossible de se connecter au moteur de notifications",
+
   "validators.required": "requis",
   "validators.checked": "Exiger champ vérifié",
   "validators.invalid.email": "Adresse mail invalide",

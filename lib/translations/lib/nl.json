@@ -46,6 +46,8 @@
   "Current password is invalid": "Huidig wachtwoord is niet correct",
   "More information": "meer informatie",
 
+  "notifications.error.connection-refused": "Kan geen verbinding maken met meldingen motor",
+
   "sidebar.open": "Open",
   "sidebar.closed": "Gesloten",
   "sidebar.hide-voted": "Verberg mijn eigen stemmen",
