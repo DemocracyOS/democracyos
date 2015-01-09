@@ -46,6 +46,8 @@
   "Current password is invalid": "Senha atual inválida",
   "Please wait": "Please wait",
 
+  "notifications.error.connection-refused": "Não é possível conectar a notificações motor",
+
   "validators.required": "Required",
   "validators.checked": "Required checked field",
   "validators.invalid.email": "Invalid email address",

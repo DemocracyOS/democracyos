@@ -53,6 +53,8 @@
   "settings.notificatoins.someone-replies-your-comments": "Qualcuno risponde uno dei tuoi commenti",
   "settings.notifications.someone-mentions-in-their-comment": "Qualcuno ti cita in una delle loro osservazioni",
 
+  "notifications.error.connection-refused": "Impossibile connettersi al motore notifiche",
+
   "validators.required": "Obbligatorio",
   "validators.checked": "Campo controllato obbligatori",
   "validators.invalid.email": "Indirizzo email non valido",

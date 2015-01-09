@@ -47,6 +47,8 @@
   "Current password is invalid": "Passwort ungültig",
   "More information": "weitere Informationen",
 
+  "notifications.error.connection-refused": "Unfähig, um Benachrichtigungen Motor verbinden",
+
   "sidebar.open": "Offen",
   "sidebar.closed": "Geschlossen",
   "sidebar.hide-voted": "Meine Entscheidungen verbergen",
