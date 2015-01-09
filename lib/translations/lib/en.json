@@ -52,6 +52,8 @@
   "settings.notifications.new-topic": "A new topic gets published",
   "settings.notificatoins.someone-replies-your-comments": "Someone replies one of your comments",
 
+  "notifications.error.connection-refused": "Unable to connect to notifications engine",
+
   "validators.required": "Required",
   "validators.checked": "Required checked field",
   "validators.invalid.email": "Invalid email address",
