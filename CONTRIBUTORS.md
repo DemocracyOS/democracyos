@@ -4,26 +4,29 @@
 
 #### Development
 
-* [Cristian Douce Suarez](http://twitter.com/cristiandouce)
 * [Guido Vilariño](http://twitter.com/gvilarino)
 * [Sacha Lifszyc](https://twitter.com/slifszyc)
+* [José María Fresco](https://github.com/jfresco)
+* [Mariano Vicente](https://github.com/vmariano)
+
+### Past contributors
 
 #### UX Design
 
 * [Ricardo Rauch](http://twitter.com/gravityonmars)
 
+#### Development
+
+* [Cristian Douce Suarez](http://twitter.com/cristiandouce)
+* [Oscar Guindzberg](https://github.com/oscarguindzberg)
+* [Pablo Moyano](https://github.com/ultraklon)
+
 #### QA
 
 * [Sebastián Ghelerman](https://twitter.com/bastianhell)
 
-### Past contributors
 
-#### Development
-
-* [Oscar Guindzberg](https://github.com/oscarguindzberg)
-* [Pablo Moyano](https://github.com/ultraklon)
-
-### Internationalization
+### Localization
 
 Apart from English and Spanish, maintained by the DemocracyOS team, these brave men and women have helped us making the platform available in the following languages:
 
@@ -34,3 +37,4 @@ Apart from English and Spanish, maintained by the DemocracyOS team, these brave 
 * German: [Charlotte Breuer](http://breuer-moellemann.de/)
 * Italian: [Felipe Muñoz](https://twitter.com/felipemuni)
 * Portuguese: [Open Knowledge Brasil](https://github.com/okfn-brasil)
+* Ukrainian:: [@tarasdudar](https://github.com/tarasdudar)
