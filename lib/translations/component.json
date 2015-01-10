@@ -4,7 +4,6 @@
   "dependencies": {},
   "scripts": [ "index.js" ],
   "json": [
-    "lib/uk.json",
     "lib/ca.json",
     "lib/de.json",
     "lib/en.json",
@@ -13,7 +12,8 @@
     "lib/fi.json",
     "lib/it.json",
     "lib/nl.json",
-    "lib/pt.json"
+    "lib/pt.json",
+    "lib/uk.json"
     ],
   "main": "index.js"
 }
