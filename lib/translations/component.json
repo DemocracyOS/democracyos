@@ -12,7 +12,8 @@
     "lib/fi.json",
     "lib/it.json",
     "lib/nl.json",
-    "lib/pt.json"
+    "lib/pt.json",
+    "lib/uk.json"
     ],
   "main": "index.js"
 }
