@@ -52,6 +52,8 @@
   "settings.notifications.new-topic": "Опубліковано нову тему",
   "settings.notificatoins.someone-replies-your-comments": "Хтось відповів на один з Ваших коментарів",
 
+  "notifications.error.connection-refused": "Сервер повідомлень не підключено",
+
   "validators.required": "Обов'язково",
   "validators.checked": "Обов'язково виділені поля",
   "validators.invalid.email": "Невірна адреса електронної пошти",
@@ -133,7 +135,7 @@
   "Signup now!": "Зареєструватися!",
   "Welcome, {name}!": "Ласкаво просимо, {ім'я}!",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "Ваші реєстраційні дані отримані. Ми відправили Вам лист, щоб Ви могли перевірити Вашу адресу електронної пошти.",
-  "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Будь ласка, перевірте свою електронну пошту (не забудьте перевірити папку зі спамом, теж) і натисніть на посилання в листі.",
+  "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Будь ласка, перевірте свою електронну пошту (не забудьте перевірити папку зі спамом теж) і натисніть на посилання в листі.",
   "Your email has been validated and now you are logged in" : "Ваше повідомлення було підтверджено і в даний час ви увійшли до", 
   "You're being redirected in 5 seconds": "Переадресація за 5 секунд",
   "You can now argue and vote on bills!": "Тепер ви можете дискутувати і голосувати по законопроектах!",
@@ -144,10 +146,11 @@
   "here": "тут",
   "Resend validation email": "Вислати повторно листа",
   "Resend validation email complete": "Повторно листа вислано",
-  "Resend email": "повторно листа",
-  "Email sent" : "лист відправлено",
+  "Resend email": "Послати лист",
+  "Email sent" : "Лист відправлено",
   "The validation email was resent.": "Електронний лист перевірки був відправлений.",
-  "Email not validated" : "Адресу електронної пошти не підтверджено. Ми посилаємо громадянам вітальний лист під час реєстрації. Будь ласка, перевірте свою електронну пошту (Не забудьте перевірити папку зі спамом, теж) і натисніть на посилання в листі. Натисніть <a href='/signup/resend-validation-email'>тут</a> якщо вам потрібно знову вислати вітальний лист",
+  "signin.error.email-not-valid" : "Адресу електронної пошти не підтверджено. Ми посилаємо громадянам вітальний лист під час реєстрації. Будь ласка, перевірте свою електронну пошту (Не забудьте перевірити папку зі спамом теж) і натисніть на посилання в листі. Натисніть <a href='/signup/resend-validation-email'>тут</a> якщо вам потрібно знову вислати вітальний лист",
+  "resend-validation-email-form.error.email-not-valid.no-link" : "Адресу електронної пошти не підтверджено. Ми посилаємо громадянам вітальний лист під час реєстрації. Будь ласка, перевірте свою електронну пошту (Не забудьте перевірити папку зі спамом теж) і натисніть на посилання в листі.",
   "This account has been disabled" : "Цей обліковий запис був видалений",
 
   "Account data": "Дані аккаунта",
@@ -187,7 +190,6 @@
   "read more": "Читати далі",
   "view more": "Переглянути більше",
   "View the original text": "Перегляд оригінального тексту",
-  "Participant": "Учасник",
   "You must be signed in to vote on this law": "Ви повинні увійти в систему для голосування по цьому закону",
 
   "sidebar.listing{listType}": "Показані всі",
@@ -271,7 +273,7 @@
   "admin-laws-form.message.validation.lawId-required": "Потрібен Офіційний Ідентифікатор",
   "admin-laws-form.message.validation.mediaTitle-required": "Потрібна назва для засобів інформації",
   "admin-laws-form.message.validation.source-required": "Потрібно Джерело",
-  "admin-laws-form.message.validation.source-invalid": "Джерело повино мати дійсний URL",
+  "admin-laws-form.message.validation.source-invalid": "Джерело повинно мати дійсний URL",
 
   "admin-laws-form.delete-law.button.delete": "Видалити",
   "admin-laws-form.delete-law.confirmation.title": "Видалити закон",
