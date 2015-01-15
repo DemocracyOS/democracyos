@@ -16,7 +16,10 @@ run: packages
 
 packages:
 	@echo "Installing dependencies..."
-	@npm install
+	@DEBUG=$(DEBUG) npm install
+	@echo "Done.\n"
+	@echo "Watching files..."
+	@DEBUG=$(DEBUG) node ./bin/dos build --watch &
 	@echo "Done.\n"
 
 clean:

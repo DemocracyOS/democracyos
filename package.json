@@ -7,7 +7,6 @@
     "democracy",
     "democracyos",
     "liquid democracy",
-    "partido de la red",
     "democracia en red",
     "net democracy",
     "net party",
@@ -32,24 +31,30 @@
     {
       "name": "Sacha Lifszyc",
       "email": "sacha.lifszyc@gmail.com"
+    },
+    {
+      "name": "Mariano Vicente",
+      "email": "m.vicent@gmail.com"
+    },
+    {
+      "name": "José Fresco",
+      "email": "josemariafresco@gmail.com"
     }
   ],
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
   "dependencies": {
     "express": "~3.4.7",
     "jade": "1.6.0",
-    "mongoose": "3.8.16",
+    "mongoose": "3.8.21",
     "mongoose-voting": "0.1.1",
     "mongoose-gravatar": "~0.2.1",
     "connect-mongo": "~0.4.0",
     "debug": "~0.7.4",
     "nowww": "~1.1.2",
-    "component": "1.0.0-rc5",
+    "component": "1.0.0",
     "component-builder": "1.2.0",
     "component-resolver": "1.2.4",
+    "component-consoler": "^2.0.0",
+    "component-watcher": "^1.0.2",
     "component-stylus-plugin": "~0.3.1",
     "rework-vars": "~2.0.3",
     "rework-math": "~1.0.1",
@@ -72,16 +77,14 @@
     "builder-jade": "1.0.1",
     "stylus": "0.48.1",
     "notifier-client": "0.2.0",
-    "bowser": "0.7.2"
+    "bowser": "0.7.2",
+    "rimraf": "^2.2.8"
   },
-  "devDependencies": {},
-  "main": "pdr",
   "engines": {
-    "node": "0.10.28",
+    "node": "0.11.14",
     "npm": "1.4.9"
   },
   "scripts": {
-    "test": "",
     "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
   }
 }

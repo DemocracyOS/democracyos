@@ -4,14 +4,178 @@
  * Module dependencies.
  */
 
-var fs = require('fs');
-var write = fs.writeFileSync;
+var program = require('commander');
+
+program
+  .option('-w, --watch', 'watch for file changes and rebuild automatically')
+  .option('-n, --name <file>', 'base name for build files defaulting to "app"', 'app')
+  .option('-o, --out <dir>', 'output directory defaulting to ./public', 'public')
+  .option('-d, --debug', 'debug mode logging component-builder, component-consoler, component-resolver defaulting to false', false);
+
+program.parse(process.argv);
+
+if (program.debug) require('debug').enable('component-builder*,component-consoler*,component-resolver*');
+
 var path = require('path');
-var resolve = path.resolve;
 
 // Little hack to include `NODE_PATH=.`
-require('node-path')(module, [resolve('.')]);
+require('node-path')(module, [path.resolve('.')]);
 
-// Compile client application `./public/app.js` and `./public/app.css`
-var build = require('lib/build');
-build();
+
+var args = program.args;
+var build = require('component-builder');
+var fs = require('fs');
+var exists = fs.existsSync || path.existsSync;
+var jade = require('builder-jade');
+var log = require('debug')('democracyos:build');
+var mkdir = require('mkdirp');
+var Resolve = require('component-resolver');
+var Stylus = require('stylus');
+var utils = require('component-consoler');
+var rimraf = require('rimraf');
+
+// component.json required
+
+if (!exists('component.json')) utils.fatal('missing component.json');
+
+var jsPath = path.join(program.out, program.name + '.js');
+var cssPath = path.join(program.out, program.name + '.css');
+
+mkdir.sync(program.out);
+
+// whitespace
+
+console.log();
+
+process.on('exit', function(){
+  console.log();
+});
+
+// resolve
+
+var watching = program.watch;
+var resolving = false;
+
+var tree;
+
+if (!watching) return resolve();
+
+log('watching democracyos components\' files to rebuild automatically');
+
+var watcher = require('component-watcher')({
+  root: process.cwd(),
+  extensions: {
+    scripts: ['js', 'json', 'html', 'jade'],
+    styles: ['css', 'styl']
+  }
+});
+
+watcher.on('resolve', resolve);
+watcher.on('scripts', buildScripts);
+watcher.on('styles', buildStyles);
+
+function resolve() {
+  if (resolving) return;
+  resolving = true;
+  var start = Date.now();
+  Resolve(process.cwd(), null, function (err, res) {
+    resolving = false;
+    if (err) {
+      if (!watching) utils.fatal(err);
+      utils.error('build', 'resolve failed: ' + err.message);
+      return;
+    }
+
+    tree = res;
+
+    log('resolved dependencies in ' + (Date.now() - start) + 'ms');
+
+    buildScripts();
+    buildStyles();
+    buildFiles();
+  })
+}
+
+function buildScripts() {
+  if (resolving) return;
+  var start = Date.now();
+  build.scripts(tree)
+    .use('scripts', build.plugins.js())
+    .use('json', build.plugins.json())
+    .use('templates', jade({
+      string: false,
+      runtime: true
+    }))
+    .use('templates', build.plugins.string())
+    .end(function (err, js) {
+      if (err) {
+        if (fs.existsSync(jsPath)) fs.unlinkSync(jsPath);
+        return;
+      }
+
+      if (!js) return;
+      fs.writeFile(jsPath, build.scripts.require + jade.runtime + js);
+      log(jsPath + ' in '
+        + (Date.now() - start) + 'ms - '
+        + (js.length / 1024 | 0) + 'kb');
+    });
+}
+
+function buildStyles() {
+  if (resolving) return;
+  var start = Date.now();
+  build.styles(tree)
+    .use('styles', build.plugins.css())
+    .use('styles', stylus())
+    .use('styles', build.plugins.urlRewriter(''))
+    .end(function (err, css) {
+      if (err) {
+        if (fs.existsSync(cssPath)) fs.unlinkSync(cssPath);
+        return;
+      }
+      if (!css) return;
+      fs.writeFile(cssPath, css);
+      log(cssPath + ' in '
+        + (Date.now() - start) + 'ms - '
+        + (css.length / 1024 | 0) + 'kb');
+    });
+}
+
+function buildFiles() {
+  if (resolving) return;
+  var start = Date.now();
+  build.files(tree, {destination: program.out})
+    .use('images', build.plugins.copy())
+    .use('files', build.plugins.copy())
+    .end(function (err) {
+      if (err) {
+        rimraf(program.out, function(err) {
+          if (err) return utils.fatal(err);
+        });
+      } else {
+        log('files in ' + (Date.now() - start) + 'ms');
+      }
+    });
+}
+
+function stylus(options) {
+  options = options || {};
+
+  return function plugin(file, done) {
+    if (file.extension !== 'styl') return done();
+    file.read(function (err, string) {
+      if (err) return done(err);
+
+      var renderer = Stylus(string);
+      file.extension = 'css';
+      renderer.render(function (err, css) {
+        if(err) {
+          done(err);
+        } else {
+          file.string = css;
+          done();
+        }
+      });
+    });
+  }
+}
