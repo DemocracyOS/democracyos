@@ -22,7 +22,8 @@
     "title",
     "render",
     "form-view",
-    "view"
+    "view",
+    "config"
   ],
   "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js", "resend-validation-email-form-view.js", "email-validation-complete-view.js" ],
   "styles": [ "signup.styl" ],
