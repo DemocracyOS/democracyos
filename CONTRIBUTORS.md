@@ -34,6 +34,7 @@ Apart from English and Spanish, maintained by the DemocracyOS team, these brave 
 * Dutch: [Hendrik Bruinsma](https://twitter.com/readefries)
 * Finnish: [Anni Rautio](https://twitter.com/annirautio) and [Christian Martínez](www.hyvatilmat.com)
 * French: [Magui García Solla](https://twitter.com/magui_1984)
+* Galician [David A. Lareo](https://github.com/dalareo) and [Diego Jiménez](https://github.com/diegomestizo)
 * German: [Charlotte Breuer](http://breuer-moellemann.de/)
 * Italian: [Felipe Muñoz](https://twitter.com/felipemuni)
 * Portuguese: [Open Knowledge Brasil](https://github.com/okfn-brasil)
