@@ -72,7 +72,8 @@
     "builder-jade": "1.0.1",
     "stylus": "0.48.1",
     "notifier-client": "0.2.0",
-    "bowser": "0.7.2"
+    "bowser": "0.7.2",
+    "jwt-simple": "0.2.0"
   },
   "devDependencies": {},
   "main": "pdr",
