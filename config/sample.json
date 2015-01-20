@@ -54,5 +54,6 @@
   "notifications": {
     "url": "http://localhost:9001/api/events",
     "token": 1234
-  }
+  },
+  "secret": "Just a sample secret string"
 }
