@@ -12,7 +12,8 @@
     "citizen",
     "form-view",
     "title",
-    "config"
+    "config",
+    "jwt"
   ],
   "scripts": [ "signin.js", "view.js" ],
   "styles": [ "signin.styl" ],
