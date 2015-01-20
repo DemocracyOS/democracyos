@@ -4,6 +4,11 @@
   "privatePort": 3000,
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
+  "authPages": {
+    "useExternal": false,
+    "signinUrl": "http://platform.democracyos.org/signin",
+    "signupUrl": "http://platform.democracyos.org/signup"
+  },
   "client": [
     "protocol",
     "host",
@@ -19,7 +24,8 @@
     "faq",
     "tos",
     "pp",
-    "glossary"
+    "glossary",
+    "authPages"
   ],
   "auth": {
     "basic": {

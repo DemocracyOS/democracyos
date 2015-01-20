@@ -11,7 +11,8 @@
   "locals": [
     "citizen",
     "form-view",
-    "title"
+    "title",
+    "config"
   ],
   "scripts": [ "signin.js", "view.js" ],
   "styles": [ "signin.styl" ],
