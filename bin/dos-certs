@@ -14,11 +14,10 @@ var exec = require('child_process').exec;
 var config = require('lib/config');
 var ssl = config('ssl');
 
-var useSsl = 'https' === config('protocol');
 var serverKey = ssl.dir + '/' + ssl.serverKey;
 var serverCert = ssl.dir + '/' + ssl.serverCert;
 
-if (useSsl && (!exists(serverCert) || !exists(serverKey))) {
+if (!exists(serverCert) || !exists(serverKey)) {
   if (!exists(ssl.dir)) mkdir(ssl.dir);
 
   exec('openssl genrsa 1024 > ' + serverKey, function(err, stdout, stderr) {
