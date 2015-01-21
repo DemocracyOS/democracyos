@@ -10,17 +10,18 @@ var balance = require('lib/balance');
 var config = require('lib/config');
 var protocol = config('protocol');
 var ssl = config('ssl');
-var exec = require('child_process').exec;
 var exists = fs.existsSync;
 var log = require('debug')('democracyos:root');
 
-var secure = protocol === 'https';
+var secure = 'https' === protocol;
+var serverKey = ssl.dir + '/' + ssl.serverKey;
+var serverCert = ssl.dir + '/' + ssl.serverCert;
 var port = secure ? ssl.port : config('privatePort');
 var server;
 
 if (secure) {
-  var privateKey = fs.readFileSync(ssl.serverKey, 'utf-8');
-  var certificate = fs.readFileSync(ssl.serverCert, 'utf-8');
+  var privateKey = fs.readFileSync(serverKey, 'utf-8');
+  var certificate = fs.readFileSync(serverCert, 'utf-8');
   var credentials = { key: privateKey, cert: certificate };
   server = https.createServer(credentials, app);
 } else {

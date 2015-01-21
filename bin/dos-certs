@@ -8,23 +8,31 @@ require('node-path')(module, [resolve('.')]);
 
 var fs = require('fs');
 var exists = fs.existsSync;
+var mkdir = fs.mkdirSync;
 var exec = require('child_process').exec;
 var config = require('lib/config');
 var ssl = config('ssl');
 
-if (!exists(ssl.serverCert) || !exists(ssl.serverKey)) {
-  exec('openssl genrsa 1024 > server.key', function(err, stdout, stderr) {
+var useSsl = 'https' === config('protocol');
+var serverKey = ssl.dir + '/' + ssl.serverKey;
+var serverCert = ssl.dir + '/' + ssl.serverCert;
+
+if (useSsl && (!exists(serverCert) || !exists(serverKey))) {
+  if (!exists(ssl.dir)) mkdir(ssl.dir);
+
+  exec('openssl genrsa 1024 > ' + serverKey, function(err, stdout, stderr) {
     if (stdout.length) console.log(stdout);
     if (err != null) return console.log('Exception: ' + err), process.exit(1);
 
-    exec('openssl req -new -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com" -key server.key -out csr.pem', function(err, stdout, stderr) {
+    exec('openssl req -new -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com" -key ' + serverKey + ' -out csr.pem', function(err, stdout, stderr) {
       if (stdout.length) console.log(stdout);
       if (err != null) return console.log(err), process.exit(1);
 
-      exec('openssl x509 -req -days 365 -in csr.pem -signkey server.key -out server.crt', function(err, stdout, stderr) {
+      exec('openssl x509 -req -days 365 -in csr.pem -signkey ' + serverKey + ' -out ' + serverCert, function(err, stdout, stderr) {
         if (stdout.length) console.log(stdout);
         if (err != null) return console.log(err), process.exit(1);
         process.exit(0);
+
       });
     });
   });
