@@ -73,7 +73,8 @@
     "stylus": "0.48.1",
     "notifier-client": "0.2.0",
     "bowser": "0.7.2",
-    "jwt-simple": "0.2.0"
+    "jwt-simple": "0.2.0",
+    "moment": "2.9.0"
   },
   "devDependencies": {},
   "main": "pdr",
