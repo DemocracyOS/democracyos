@@ -14,14 +14,12 @@ var exists = fs.existsSync;
 var log = require('debug')('democracyos:root');
 
 var secure = 'https' === protocol;
-var serverKey = ssl.dir + '/' + ssl.serverKey;
-var serverCert = ssl.dir + '/' + ssl.serverCert;
 var port = secure ? ssl.port : config('privatePort');
 var server;
 
 if (secure) {
-  var privateKey = fs.readFileSync(serverKey, 'utf-8');
-  var certificate = fs.readFileSync(serverCert, 'utf-8');
+  var privateKey = fs.readFileSync(ssl.serverKey, 'utf-8');
+  var certificate = fs.readFileSync(ssl.serverCert, 'utf-8');
   var credentials = { key: privateKey, cert: certificate };
   server = https.createServer(credentials, app);
 } else {
