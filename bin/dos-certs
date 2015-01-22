@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var resolve = path.resolve;
+
+// Little hack to include `NODE_PATH=.`
+require('node-path')(module, [resolve('.')]);
+
+var fs = require('fs');
+var exists = fs.existsSync;
+var mkdir = fs.mkdirSync;
+var rm = fs.unlinkSync;
+var exec = require('child_process').exec;
+var config = require('lib/config');
+var ssl = config('ssl');
+
+var serverKey = ssl.dir + '/' + ssl.serverKey;
+var serverCert = ssl.dir + '/' + ssl.serverCert;
+
+if (!exists(serverCert) || !exists(serverKey)) {
+  if (!exists(ssl.dir)) mkdir(ssl.dir);
+
+  exec('openssl genrsa 1024 > ' + serverKey, function(err, stdout, stderr) {
+    if (stdout.length) console.log(stdout);
+    if (err != null) return console.log('Exception: ' + err), process.exit(1);
+
+    exec('openssl req -new -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com" -key ' + serverKey + ' -out csr.pem', function(err, stdout, stderr) {
+      if (stdout.length) console.log(stdout);
+      if (err != null) return console.log(err), process.exit(1);
+
+      exec('openssl x509 -req -days 365 -in csr.pem -signkey ' + serverKey + ' -out ' + serverCert, function(err, stdout, stderr) {
+        rm('csr.pem');
+        if (stdout.length) console.log(stdout);
+        if (err != null) return console.log(err), process.exit(1);
+        process.exit(0);
+
+      });
+    });
+  });
+}

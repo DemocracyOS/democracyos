@@ -61,5 +61,11 @@
     "url": "http://localhost:9001/api/events",
     "token": 1234
   },
-  "secret": "Just a sample secret string"
+  "secret": "Just a sample secret string",
+  "ssl": {
+    "dir": "ssl",
+    "serverKey": "server.key",
+    "serverCert": "server.crt",
+    "port": 443
+  }
 }
