@@ -65,6 +65,7 @@
   "ssl": {
     "serverKey": "server.key",
     "serverCert": "server.crt",
-    "port": 443
+    "port": 443,
+    "mode": "noredirect"
   }
 }
