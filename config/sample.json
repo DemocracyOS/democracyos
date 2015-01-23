@@ -63,9 +63,9 @@
   },
   "secret": "Just a sample secret string",
   "ssl": {
-    "dir": "ssl",
     "serverKey": "server.key",
     "serverCert": "server.crt",
-    "port": 443
+    "port": 443,
+    "redirect": "normal"
   }
 }

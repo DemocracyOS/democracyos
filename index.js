@@ -3,33 +3,39 @@
  */
 
 var app = module.exports = require('lib/boot');
-var fs = require('fs');
 var http = require('http');
 var https = require('https');
 var balance = require('lib/balance');
 var config = require('lib/config');
-var protocol = config('protocol');
-var ssl = config('ssl');
-var exists = fs.existsSync;
+var fs = require('fs');
 var log = require('debug')('democracyos:root');
 
-var secure = 'https' === protocol;
-var serverKey = ssl.dir + '/' + ssl.serverKey;
-var serverCert = ssl.dir + '/' + ssl.serverCert;
-var port = secure ? ssl.port : config('privatePort');
-var server;
+var secure = 'https' == config('protocol');
 
+/**
+ * Configure standard server
+ */
+var server = http.createServer(app);
+var port = config('privatePort');
+
+
+/**
+ * Configure secure server (SSL) if necessary
+ */
+var secureServer;
+var securePort;
 if (secure) {
-  var privateKey = fs.readFileSync(serverKey, 'utf-8');
-  var certificate = fs.readFileSync(serverCert, 'utf-8');
-  var credentials = { key: privateKey, cert: certificate };
-  server = https.createServer(credentials, app);
-} else {
-  server = http.createServer(app);
+  var ssl = config('ssl');
+
+  var privateKey = fs.readFileSync(ssl.serverKey, 'utf-8');
+  var certificate = fs.readFileSync(ssl.serverCert, 'utf-8');
+
+  secureServer = https.createServer({ key: privateKey, cert: certificate }, app);
+  securePort = ssl.port;
 }
 
 /**
- * Launch the server
+ * Launch the servers
  */
 
 if (module === require.main) {
@@ -37,5 +43,11 @@ if (module === require.main) {
     server.listen(port, function() {
       log('Application started on port %d', port);
     });
+
+    if (secureServer && securePort) {
+      secureServer.listen(securePort, function() {
+        log('Secure application started on port %d', securePort);
+      });
+    }
   });
 }
