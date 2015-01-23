@@ -66,6 +66,6 @@
     "serverKey": "server.key",
     "serverCert": "server.crt",
     "port": 443,
-    "mode": "noredirect"
+    "redirect": "normal"
   }
 }
