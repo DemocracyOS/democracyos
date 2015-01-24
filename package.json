@@ -65,7 +65,7 @@
     "truncate": "~1.0.2",
     "t-component": "1.0.0",
     "type-component": "0.0.1",
-    "merge-util": "0.1.0",
+    "merge-util": "0.3.1",
     "node-path": "0.0.3",
     "strip": "0.0.7",
     "mkdirp": "0.5.0",
