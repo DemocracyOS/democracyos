@@ -7,7 +7,6 @@
 * [Guido Vilariño](http://twitter.com/gvilarino)
 * [Sacha Lifszyc](https://twitter.com/slifszyc)
 * [José María Fresco](https://github.com/jfresco)
-* [Mariano Vicente](https://github.com/vmariano)
 
 ### Past contributors
 
@@ -20,6 +19,7 @@
 * [Cristian Douce Suarez](http://twitter.com/cristiandouce)
 * [Oscar Guindzberg](https://github.com/oscarguindzberg)
 * [Pablo Moyano](https://github.com/ultraklon)
+* [Mariano Vicente](https://github.com/vmariano)
 
 #### QA
 

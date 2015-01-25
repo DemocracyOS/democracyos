@@ -1,6 +1,6 @@
 {
   "name": "DemocracyOS",
-  "version": "0.9.0a",
+  "version": "0.10.0",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "homepage": "http://www.democracyos.org/",
   "keywords": [
@@ -32,11 +32,15 @@
     {
       "name": "Sacha Lifszyc",
       "email": "sacha.lifszyc@gmail.com"
+    },
+    {
+      "name": "José Fresco",
+      "email": "josemariafresco@gmail.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git://github.com/DemocracyOS/app.git"
   },
   "dependencies": {
     "express": "~3.4.7",
@@ -65,7 +69,7 @@
     "truncate": "~1.0.2",
     "t-component": "1.0.0",
     "type-component": "0.0.1",
-    "merge-util": "0.1.0",
+    "merge-util": "0.3.1",
     "node-path": "0.0.3",
     "strip": "0.0.7",
     "mkdirp": "0.5.0",
