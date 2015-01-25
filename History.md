@@ -1,4 +1,49 @@
 
+0.10.0 / 2015-01-25
+==================
+
+ * Update configuration defaults mechanism
+ * Bump 'merge-util' server-side dep to version 0.3.1 and fix handling of config merge in env.js
+ * Fix usage of config setting for external signin/signup URLs
+ * Update CONTRIBUTORS.md
+ * Bump 'merge-util' server-side dep to version 0.3.1 and fix handling of config merge in env.js
+ * Fix usage of config setting for external signin/signup URLs
+ * Support SSL via configuration. Closes #98 #587
+ * Fixed race condition. Related to #98.
+ * Add bin/dos-ssl script for self-signed SSL certificates #98.
+ * Scroll and focus on textarea when clicking on New Argument button. Closes #555.
+ * Added restrict middleware to update and delete operations #282 #580
+ * Fixed misuse of dom.addClass method. Closes #580.
+ * Rebase from development
+ * Implemented JSON Web Tokens (JWT) authentication middleware #578
+ * Added config parameter to disable signin/signup. Closes #573.
+ * Add Galician translation
+ * Add Ukrainian translation
+ * Rename MongoDB collection citizens to users
+ * Rename db-api/citizen.js to user.js
+ * Use mongoUsersUrl or fallback to mongoUrl if the key doesn't exists in the config #559
+ * Remove user-model module and export User model in lib/models #559
+ * Update comments' and replies' author to get populated by the User model #559
+ * Deprecated MONGO_HQ env var name in favor of MONGO_URL. Addendum to #525
+ * Fix code to meet conventions
+ * Fix read more participants. Closes #565
+ * Add mongoUsersUrl to env config file #559
+ * Add missing translations for #560 #478
+ * Basic wrapper for notifier-client #560
+ * Merge branch 'update/notifier-no-data-deps' into development
+ * Update payload for 'law-published' notification. Closes #561
+ * Added Gitter badge to README.md
+ * Update error handling on response override to match refactored approach in FormView
+ * Update re-send validation email view. Closes #478
+ * Updates law filter model without fetch from server. Related to #460.
+ * Changed the way voting badge is added to the sidebar. Closes #460.
+ * CSS to Stylus where missing #215.
+ * Replace vote up/down on comment card by comment-vote. Closes #471
+ * Expose unvote calls  #471
+ * Introduce comment vote view.  #471
+ * Refactored several views to extend from View and FormView #282
+ * Fixed onvote event binding. Closes #406.
+
 0.9.0a / 2015-01-16
 ==================
 
