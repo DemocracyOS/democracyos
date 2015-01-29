@@ -116,7 +116,7 @@
 
   .oncomment,
   .onreply
-    background-color rgba(249, 249, 249, 0.5)
+    background-color rgba(249, 249, 249, 0.9)
     display none
     font-weight bold
     height 100%
@@ -151,6 +151,11 @@
     &.btn-edit, &.btn-reply-edit
       &:hover
         color #f39c12
+
+    &.error
+      a
+        margin-right 0
+
   &.spam
     .comment-text, .comment-actions, .link-report.flag
       display:none
