@@ -9,7 +9,7 @@ li.media.comment-item(class=classes)
 
   .media-body
     h5.media-heading
-      | #{comment.author.fullName} 
+      | #{comment.author.fullName}
       small.ago(data-time=comment.createdAt.toString())
       - if (comment.editedAt)
         small.edited · #{t('comments.edited')}
@@ -26,16 +26,16 @@ li.media.comment-item(class=classes)
           i.glyphicon.glyphicon-flag
           span.count=comment.flags.length ? comment.flags.length : ''
     .comment-body
-      div.comment-text!=markdown(comment.text)
+      .comment-text!=markdown(comment.text)
       - if (own || citizen.staff)
-        div.oncomment.remove-comment= t('comments.arguments.confirm-remove')
+        .oncomment.remove-comment= t('comments.arguments.confirm-remove')
           -if (!own && citizen.staff)
             br
             =t('You are removing this argument as a staff member')
-          div.remove-confirm-actions
+          .remove-confirm-actions
             a.confirm-remove(href='#')= t('common.ok')
             a.cancel-remove(href='#')= t('common.cancel')
-      div.oncomment.message
+      .oncomment.message
       p.spam-message=t('This argument has been flagged as spam')
         | .
         span.show-spam: a(href="#")= t('show')
@@ -46,11 +46,11 @@ li.media.comment-item(class=classes)
             span.reply-counter= repliesCounter > 0 ? repliesCounter : ''
           a.comment-action.comment-reply.pull-right(href='#', title=t('comments.reply-to-argument'))
             i.icon-reply
-      div.oncomment.error
-      div.oncomment.loginrequired
+      span.error
+      .oncomment.loginrequired
         =t('comments.sign-in-required-to-vote-comments')
         |. 
-        a(href='/signin')= t('Login') 
+        a(href='/signin')= t('Login')
         |  #{t('common.or')} 
         a(href='/signup')= t('Signup')
         |.
