@@ -38,16 +38,16 @@
             i.flaticon.solid.thumbs-up-1
             span= t('Nay')
 
+        - if (!citizen.id)
+          p.text-mute.overlay-vote.hide= t('You must be signed in to vote on this law')
+            | . 
+            a(href="/signin")= t('Login')
+            |  #{t('common.or')} 
+            a(href="/signup?reference=" + proposal.id)= t('Signup')
+            | .
+
       .votes-cast
         em.text-muted= t('{num} votes cast', { num: census.length || "0" })
-
-    - if (!citizen.id)
-      p.text-mute.hide= t('You must be signed in to vote on this law')
-        | . 
-        a(href="/signin")= t('Login')
-        |  #{t('common.or')} 
-        a(href="/signup?reference=" + proposal.id)= t('Signup')
-        | .
 
     - if (closed)
       .results-box.row.clearfix
