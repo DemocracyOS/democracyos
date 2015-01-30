@@ -4,7 +4,7 @@
       .circle
         i.icon-signin
       h1= t('forgot.question')
-    p #{t('forgot.explanation')}.
+    p.explanation-message #{t('forgot.explanation')}.
     p.success-message.text-info.hide #{t('forgot.mail.sent')}.
     form(action="/forgot", method="post", autosubmit='autosubmit', autovalidate='autovalidate')
       ul.form-messages
