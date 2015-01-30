@@ -47,4 +47,12 @@ li.media.comment-item(class=classes)
           a.comment-action.comment-reply.pull-right(href='#', title=t('comments.reply-to-argument'))
             i.icon-reply
       div.oncomment.error
+      div.oncomment.loginrequired
+        =t('comments.sign-in-required-to-vote-comments')
+        |. 
+        a(href='/signin')= t('Login') 
+        |  #{t('common.or')} 
+        a(href='/signup')= t('Signup')
+        |.
+
   .replies-container
