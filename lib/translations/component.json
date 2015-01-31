@@ -15,6 +15,7 @@
     "lib/nl.json",
     "lib/pt.json",
     "lib/ru.json",
+    "lib/sv.json",
     "lib/uk.json"
     ],
   "main": "index.js"
