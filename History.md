@@ -1,4 +1,18 @@
 
+0.10.2 / 2015-01-30
+==================
+
+ * Add swedish translation and credits
+ * Changed 'forgot password' error description #602
+ * Redirect to Resend validation token page if nonvalidated email is submitted. Closes #602.
+ * Forgot password form xplanation now hides when form is submitted. Closes #594.
+ * 'You must login' message placed over voting buttons. Closes #592.
+ * Fixed signin after signup token validation. Closes #595.
+ * Put 'signin required' message over argument on up/downvoting. Closes #593.
+ * Fixed settings responsive styles. Closes #591
+ * Move demo link above the image in README.md
+ * Add Russian translation credits
+
 0.10.1 / 2015-01-25
 ==================
 
