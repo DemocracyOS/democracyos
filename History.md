@@ -1,4 +1,10 @@
 
+0.10.3 / 2015-01-31
+==================
+
+ * Fix Display side-comments button only on paragraph mouse-over for paragraphs with no comments. Closes #606
+ * Fix tag icons go glitchy when tag names are shorter than 3 characters. Closes #607
+
 0.10.2 / 2015-01-30
 ==================
 
