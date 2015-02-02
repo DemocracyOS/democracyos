@@ -1,4 +1,10 @@
 
+0.10.4 / 2015-02-01
+==================
+
+ * Fix handling of errors on formview. Fixes #610
+ * Make 'new-topic' notifications true by default
+
 0.10.3 / 2015-01-31
 ==================
 
