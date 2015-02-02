@@ -123,6 +123,7 @@
   "Don't have an account?": "Har du inget konto?",
   "forgot.explanation": "Vi kommer skicka en länk för att återställa ditt lösenord",
   "forgot.mail.sent": "Vi skickade just ett meddelande till din email-adress med instruktioner för hur man skapar ett nytt lösenord",
+  "forgot.error.email-not-valid": "Du måste bekräfta din e-postadress innan du kan återställa ditt lösenord",
 
   "Signup complete" : "Registrering färdig",
   "Signup with email": "Registrera med email-adress",

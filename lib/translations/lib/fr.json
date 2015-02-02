@@ -122,6 +122,7 @@
   "Don't have an account?": "Vous n' avez pas un compte?",
   "forgot.explanation": "On vous enverra par courriel un lien pour rétablir votre mot de passe",
   "forgot.mail.sent": "Nous avons envoyé un message à votre boîte mail avec les instructions pour créer un nouveau mot de passe",
+  "forgot.error.email-not-valid": "Vous devez valider votre adresse de courriel avant vous pouvez réinitialiser votre mot de passe",
 
   "Signup complete" : "Inscription complète",
   "Signup with email": "Inscription avec Email",

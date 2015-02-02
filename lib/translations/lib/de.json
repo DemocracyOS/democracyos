@@ -98,6 +98,7 @@
   "Don't have an account?": "Noch nicht angemeldet",
   "forgot.explanation": "Du erhältst eine E-Mail mit einem Link, um dein Passwort zurückzusetzen",
   "forgot.mail.sent": "Eine Nachricht mit Anweisungen zum Zurücksetzen des Passwortes wurde an die hinterlegte E-Mail Adresse versandt",
+  "forgot.error.email-not-valid": "Sie müssen Ihre E-Mail-Adresse zu bestätigen, bevor Sie Ihren Account Passwort zurücksetzen",
 
   "Signup complete" : "Anmeldung erfolgreich",
   "Signup with email": "Mit E-Mail-Adresse anmelden",

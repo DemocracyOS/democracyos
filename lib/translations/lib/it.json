@@ -124,6 +124,7 @@
   "Don't have an account?": "Non hai un account?",
   "forgot.explanation": "Invieremo una email con un link per reimpostare la password",
   "forgot.mail.sent": "Abbiamo appena inviato un messaggio al tuo indirizzo email con le istruzioni per creare una nuova password",
+  "forgot.error.email-not-valid": "È necessario convalidare il tuo indirizzo e-mail prima di poter reimpostare la password",
 
   "Signup complete": "Registrazione completa",
   "Signup with email": "Registrazione con indirizzo e-mail",

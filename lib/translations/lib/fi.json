@@ -117,8 +117,9 @@
   "forgot.question": "Unohditko salasanasi?",
   "DemocracyOS markdown": "DemocracyOS markdown",
   "Don't have an account?": "Sinulla ei ole tiliä?",
-  "forgot.explanation": "Lähetämme sähköpostin, mistä löydät linkin salasanasi uusimista varten.",
-  "forgot.mail.sent": "Lähetimme sinulle viestin, mistä löydät ohjeet uuden salasanan luomista varten.",
+  "forgot.explanation": "Lähetämme sähköpostin, mistä löydät linkin salasanasi uusimista varten",
+  "forgot.mail.sent": "Lähetimme sinulle viestin, mistä löydät ohjeet uuden salasanan luomista varten",
+  "forgot.error.email-not-valid": "Sinun täytyy vahvistaa sähköpostiosoitteesi ennen kuin voit nollata tilin salasanan",
 
   "Signup complete" : "Rekisteröinti valmis",
   "Signup with email": "Kirjaudu sähköpostilla",

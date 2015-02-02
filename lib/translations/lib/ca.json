@@ -124,6 +124,7 @@
   "Don't have an account?": "No teniu un compte?",
   "forgot.explanation": "T'enviarem un enllaç per regenerar la teva contrasenya",
   "forgot.mail.sent": "T'enviarem un correu electrònic amb les instruccions per crear una nova contrasenya",
+  "forgot.error.email-not-valid": "Vostè ha de validar la seva adreça de correu electrònic per poder restablir la contrasenya de compte",
 
   "Signup complete" : "Registre completat",
   "Signup with email": "Registrar-se amb el correu electrònic",
