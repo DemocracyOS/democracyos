@@ -6,7 +6,6 @@
     "component/inherit": "0.0.3",
     "component/spin": "0.0.2",
     "component/t": "1.0.0",
-    "component/tip": "2.1.2",
     "visionmedia/debug": "2.1.0"
   },
   "locals": [
