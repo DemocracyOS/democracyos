@@ -97,6 +97,7 @@
   "Don't have an account?": "Ben je al aangemeld?",
   "forgot.explanation": "We sturen je een link om je wachtwoord opnieuw in te stellen",
   "forgot.mail.sent": "We hebben je net een e-mail gestuurd om je wachtwoord opnieuw in te stellen",
+  "forgot.error.email-not-valid": "Vous devez valider votre adresse de courriel avant vous pouvez réinitialiser votre mot de passe",
 
   "Signup complete" : "Aanmelden voltooid",
   "Signup with email": "Meld je aan met je e-mail adres",

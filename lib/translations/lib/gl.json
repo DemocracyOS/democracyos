@@ -123,6 +123,7 @@
   "Don't have an account?": "Non tes unha conta?",
   "forgot.explanation": "Enviarémosche un correo electrónico cunha ligazón para reestablecer o teu contrasinal",
   "forgot.mail.sent": "Enviamos unha mensaxe ao teu correo electrónico con instrucións para crear un novo contrasinal",
+  "forgot.error.email-not-valid": "Vostede debe validar o enderezo de correo electrónico antes de pode axustar o contrasinal da conta",
 
   "Signup complete" : "Rexistro completo",
   "Signup with email": "Rexistro con correo electrónico",

@@ -127,6 +127,7 @@
   "Don't have an account?": "¿No tienes una cuenta?",
   "forgot.explanation": "Te enviaremos un correo electrónico con un enlace para reestablecer tu contraseña",
   "forgot.mail.sent": "Enviamos un mensaje a tu correo electrónico con instrucciones para crear una nueva contraseña",
+  "forgot.error.email-not-valid": "Tienes que validar tu dirección de correo electrónico antes de poder reestablecer tu contraseña",
 
   "Signup complete" : "Registración completa",
   "Signup with email": "Registración con correo electrónico",

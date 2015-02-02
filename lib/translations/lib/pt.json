@@ -114,6 +114,7 @@
   "Don't have an account?": "Não possui uma conta?",
   "forgot.explanation": "Enviaremos um e-mail com um link para configurar uma nova senha",
   "forgot.mail.sent": "Acabamos de enviar um e-mail com instruções para configurar uma nova senha",
+  "forgot.error.email-not-valid": "Você deve validar o seu endereço de e-mail antes que você possa redefinir sua senha",
 
   "Signup complete" : "Cadastro completo",
   "Signup with email": "Cadastro com endereço de e-mail",
