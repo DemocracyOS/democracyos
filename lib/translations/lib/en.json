@@ -4,6 +4,7 @@
   "common.cancel": "Cancel",
   "common.back": "Back",
   "common.no-user-for-email" : "No user found for that email address",
+  "common.user-already-validated" : "This citizen already validated the email address",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS",
