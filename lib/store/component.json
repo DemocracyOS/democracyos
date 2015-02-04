@@ -3,8 +3,8 @@
   "description": "Basic data saving on localStorage with fallback to server session or cookies",
   "dependencies": {
     "yields/unserialize": "0.0.1",
-    "marcuswestin/store.js": "1.3.17",
-    "component/cookie": "1.1.1"
+    "marcuswestin/store.js": "^1.3.17",
+    "component/cookie": "^1.1.1"
   },
   "locals": [
     "request"
