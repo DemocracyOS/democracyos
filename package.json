@@ -19,7 +19,7 @@
   "contributors": [
     {
       "name": "Cristian Douce",
-      "email": "cristian@partidodelared.org"
+      "email": "cristian@gravityonmars.com"
     },
     {
       "name": "Ricardo Rauch",
@@ -27,15 +27,23 @@
     },
     {
       "name": "Guido Vilariño",
-      "email": "gvilarino@gmail.com"
+      "email": "guido@democraciaenred.org"
     },
     {
       "name": "Sacha Lifszyc",
-      "email": "sacha.lifszyc@gmail.com"
+      "email": "sacha@democraciaenred.org"
     },
     {
       "name": "José Fresco",
       "email": "josemariafresco@gmail.com"
+    },
+    {
+      "name": "Mariano Vicente",
+      "email": "m.vicent@gmail.com"
+    },
+    {
+      "name": "Matías Lescano",
+      "email": "matiasj.lescano@gmail.com"
     }
   ],
   "repository": {
