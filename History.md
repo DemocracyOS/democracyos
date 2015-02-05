@@ -1,4 +1,12 @@
 
+0.10.5 / 2015-02-05
+==================
+
+ * Update contributors
+ * Bump version of DemocracyOS/side-comments. Fixes #615
+ * Set timeago update interval to 30 secs (default) #615
+ * Changed express.get by config to get token secret. Closes #613
+
 0.10.4 / 2015-02-01
 ==================
 
