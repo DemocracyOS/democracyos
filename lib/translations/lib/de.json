@@ -130,6 +130,8 @@
   "resend-validation-email-form.error.email-not-valid.no-link" : "Die E-Mail-Adresse für diese Bürger nicht validiert. Wir senden die Bürger ein Willkommens-Mail, wenn sie sich. Bitte überprüfen Sie Ihre E-Mail (denken Sie daran, Ihren Spam-Ordner zu überprüfen), und klicken Sie auf den auf dem E-Mail geliefert Link.",
   "This account has been disabled" : "Dieses Konto wurde deaktiviert",
 
+  "signup.user-already-validated" : "Diese Bürger bereits die E-Mail-Adresse validiert",
+
   "Account data": "Account-Daten",
   "Account updated": "Account aktualisiert",
   "Your account has been updated.": "Dein Account wurde aktualisiert.",

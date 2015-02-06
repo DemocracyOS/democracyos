@@ -153,6 +153,8 @@
   "resend-validation-email-form.error.email-not-valid.no-link" : "L'adresse e-mail pour ce citoyen ne est pas validé. Nous envoyons citoyens un email de bienvenue lors de leur inscription. Se il vous plaît vérifier votre e-mail (ne oubliez pas de vérifier votre dossier spam trop) et cliquez sur le lien fourni dans le courriel.",
   "This account has been disabled" : "Ce compte a été désactivé",
 
+  "signup.user-already-validated" : "Ce citoyen déjà validé l'adresse e-mail",
+
   "Account data": "Informations du compte",
   "Account updated": "Compte mis à jour",
   "Your account has been updated.": "Votre compte à été mis à jour",
