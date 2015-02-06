@@ -2,6 +2,7 @@
   "name": "comments-replies",
   "description": "Generic comments-replies component",
   "dependencies": {
+    "component/bus": "^0.0.2",
     "component/classes": "1.2.0",
     "component/emitter": "1.1.3",
     "component/events": "1.0.9",

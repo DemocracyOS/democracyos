@@ -7,6 +7,7 @@
 * [Guido Vilariño](http://twitter.com/gvilarino)
 * [Sacha Lifszyc](https://twitter.com/slifszyc)
 * [José María Fresco](https://github.com/jfresco)
+* [Matías Lescano](https://github.com/mjlescano)
 
 ### Past contributors
 
