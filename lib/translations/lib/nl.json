@@ -128,6 +128,8 @@
   "resend-validation-email-form.error.email-not-valid.no-link" : "Het e-mailadres voor deze burger is niet gevalideerd. We sturen burgers een welkome e-mail wanneer ze zich aanmelden. Controleer uw e-mail (vergeet niet om uw spam map te controleren) en klik op de op de e-mail geleverd link.",
   "This account has been disabled" : "Dit account is uitgeschakeld",
 
+  "signup.user-already-validated" : "Deze burger al het e-mailadres gevalideerd",
+
   "Account data": "Gebruikersgegevens",
   "Account updated": "Gebruikersgegevens bijgewerkt",
   "Your account has been updated.": "Je gegevens zijn aangepast.",

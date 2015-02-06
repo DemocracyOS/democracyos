@@ -150,6 +150,8 @@
   "resend-validation-email-form.error.email-not-valid.no-link" : "Sähköpostiosoitteella kansalainen ei ole validoitu. Lähetämme kansalaisten tervetullut sähköpostitse, kun he kirjautuvat. Tarkista sähköpostisi (muista tarkistaa roskapostikansio liian) ja klikkaa linkkiä toimitetaan sähköpostitse.",
   "This account has been disabled" : "Tämä tili on poistettu käytöstä",
 
+  "signup.user-already-validated" : "Tämä kansalainen jo validoitu sähköpostiosoite",
+
   "Account data": "Tilitiedot",
   "Account updated": "Tili päivitetty",
   "Your account has been updated.": "Tilisi on päivitetty.",
