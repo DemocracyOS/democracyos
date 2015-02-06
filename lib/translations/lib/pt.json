@@ -147,6 +147,8 @@
   "This account has been disabled" : "Esta conta foi desativada",
   "More information": "Mais informações",
 
+  "signup.user-already-validated" : "Esse cidadão já validado o endereço de email",
+
   "Account data": "Dados da conta",
   "Account updated": "Conta atualizada",
   "Your account has been updated.": "Sua conta foi atualizada.",

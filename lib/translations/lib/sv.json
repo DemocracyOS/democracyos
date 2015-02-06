@@ -154,6 +154,8 @@
   "resend-validation-email-form.error.email-not-valid.no-link" : "Email-adressen för denna medborgare är ej ännu bekräftad. Vi skickar ut ett välkomstmeddelande till alla medborgare när de registrerar sig. Vänligen kolla din email (inlusive spam-korgen) och klicka på länken i mailet.",
   "This account has been disabled" : "Kontot har spärrats",
 
+  "signup.user-already-validated" : "Denna medborgaren redan validerats e-postadressen",
+
   "Account data": "Kontoinformation",
   "Account updated": "Konto uppdaterat",
   "Your account has been updated.": "Ditt konto har uppdaterats.",
