@@ -12,8 +12,7 @@
   "scripts": [
     "store.js",
     "storages/localStorage.js",
-    "storages/cookie.js",
-    "storages/remote.js"
+    "storages/cookie.js"
   ],
   "main": "store.js"
 }
