@@ -13,7 +13,6 @@ li.media.comment-item(class=classes)
       small.ago(data-time=comment.createdAt.toString())
       - if (comment.editedAt)
         small.edited · #{t('comments.edited')}
-      small=':'
       - if (own)
         +remove-action
         a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
