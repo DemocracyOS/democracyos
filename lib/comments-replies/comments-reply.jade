@@ -20,7 +20,6 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
       small.ago(data-time=(reply.createdAt ? reply.createdAt.toString() : new Date()))
       - if (reply.editedAt)
         small.edited · #{t('comments.edited')}
-      small=':'
     .reply-body
       div.reply-text!=markdown(reply.text)
       - if (own || citizen.staff)
