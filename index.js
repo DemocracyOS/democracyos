@@ -9,6 +9,7 @@ var balance = require('lib/balance');
 var config = require('lib/config');
 var fs = require('fs');
 var log = require('debug')('democracyos:root');
+var multicore = config('multicore');
 
 var secure = 'https' == config('protocol');
 
@@ -34,12 +35,7 @@ if (secure) {
   securePort = ssl.port;
 }
 
-/**
- * Launch the servers
- */
-
-if (module === require.main) {
-  balance(function() {
+var launch = function launchServer () {
     server.listen(port, function() {
       log('Application started on port %d', port);
     });
@@ -49,5 +45,12 @@ if (module === require.main) {
         log('Secure application started on port %d', securePort);
       });
     }
-  });
+  }
+
+/**
+ * Launch the servers
+ */
+
+if (module === require.main) {
+  multicore ? balance(launch) : launch();
 }

@@ -66,5 +66,6 @@
     "serverCert": "server.crt",
     "port": 443,
     "redirect": "normal"
-  }
+  },
+  "multicore": false
 }
