@@ -1,8 +1,22 @@
 
+0.10.6 / 2015-02-07
+==================
+
+ * Fix error when clicking on show replies when not logged in. Fixes #632
+ * Fix usage of COMMENTS_PER_PAGE in env.js so 0 is always default
+ * Fixed paging limit in side-comments. Closes #623
+ * Don't allow validated users to request resend validation email. Closes #604
+ * Fixed separation between commenter and timestamp. Closes #620
+ * When posting a new comment, timestamp shows immediately Closes #619
+ * Make multicore server optional via config. Closes #611
+ * Remove setting timeago.interval since default is good enough (30 secs)
+ * Add wrapper for multiple local-storage options. Closes #582
+ * Make multiple CPU core usage optional via config. Closes #611
+
 0.10.5 / 2015-02-05
 ==================
 
- * Update contributors
+ * Update contributor acknowledgements
  * Bump version of DemocracyOS/side-comments. Fixes #615
  * Set timeago update interval to 30 secs (default) #615
  * Changed express.get by config to get token secret. Closes #613
