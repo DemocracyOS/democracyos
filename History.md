@@ -8,7 +8,6 @@
  * Don't allow validated users to request resend validation email. Closes #604
  * Fixed separation between commenter and timestamp. Closes #620
  * When posting a new comment, timestamp shows immediately Closes #619
- * Make multicore server optional via config. Closes #611
  * Remove setting timeago.interval since default is good enough (30 secs)
  * Add wrapper for multiple local-storage options. Closes #582
  * Make multiple CPU core usage optional via config. Closes #611
