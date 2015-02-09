@@ -13,7 +13,8 @@
     "yields/empty": "0.0.1",
     "component/closest": "0.1.4",
     "cristiandouce/confirmation": "d0861",
-    "slifszyc/query": "0.0.3"
+    "slifszyc/query": "0.0.3",
+    "DemocracyOS/moment": "develop"
   },
   "locals": [
     "form-view",

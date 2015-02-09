@@ -52,7 +52,7 @@
         - var closingAtTime = ''
         - if (law.closingAt)
           - closingAt = new Date(law.closingAt)
-          - var closingAtTime = closingAt.getHours() + ':' + closingAt.getMinutes()
+          - var closingAtTime = moment(closingAt).format('H:mm')
           - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
         .input-group
           input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
