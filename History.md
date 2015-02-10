@@ -1,4 +1,12 @@
 
+0.10.7 / 2015-02-10
+===================
+
+  * Remove bus emitting events to call timeago.update(). Update timeago update interval #631
+  * Bump DemocracyOS/side-comments version to 0.0.13 #631
+  * Fix hour formatting in law admin. Closes #625
+  * Fix duplicate entry in changelog
+
 0.10.6 / 2015-02-07
 ==================
 
@@ -415,12 +423,12 @@
  * Fix facebook and twitter cards, escaping HTML characters
  * Fix open and closed count as they were counting drafts if you were signed in as admin. Closes #342
 
-0.7.1 / 2014-05-30 
+0.7.1 / 2014-05-30
 ==================
 
  * Remove 404 not found page
 
-0.7.0 / 2014-05-29 
+0.7.0 / 2014-05-29
 ==================
 
  * Add 404 not found page
@@ -438,7 +446,7 @@
  * Fix transportation tag image issue
  * See migrating to 0.7.x
 
-0.6.7 / 2014-05-16 
+0.6.7 / 2014-05-16
 ==================
 
  * Comments are marked as spam when they exceed a config parameter or, if not set, when they have more spam reports than score (upvotes minus downvotes)
@@ -458,12 +466,12 @@
 
  * Remove unneeded remotes from root `component.json`
 
-0.6.3 / 2014-05-12 
+0.6.3 / 2014-05-12
 ==================
 
  * Fix build failure based on remotes. Change remotes order.
 
-0.6.2 / 2014-05-09 
+0.6.2 / 2014-05-09
 ==================
 
  * Fix comments paging and sorting
@@ -496,7 +504,7 @@
 
  * Fix 'voted' check after sign-in. Fixes #326
 
-0.4.10 / 2014-04-03 
+0.4.10 / 2014-04-03
 ==================
 
  * Refresh sidebar after casting vote
@@ -534,17 +542,17 @@
  * Fix law min-height for voted badge. Closes #294
  * Update `sample.json`
 
-0.4.8 / 2014-03-31 
+0.4.8 / 2014-03-31
 ==================
 
  * Add published laws RSS feed
 
-0.4.7 / 2014-03-20 
+0.4.7 / 2014-03-20
 ==================
 
  * Add `closingAt` law attribute on admin
 
-0.4.6 / 2014-03-18 
+0.4.6 / 2014-03-18
 ==================
 
  * Fix comments at law view rendering bumping slifszyc/paragraphs to 0.2.0 version

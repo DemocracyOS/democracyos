@@ -1,6 +1,6 @@
 {
   "name": "DemocracyOS",
-  "version": "0.10.6",
+  "version": "0.10.7",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "homepage": "http://www.democracyos.org/",
   "keywords": [
@@ -97,6 +97,6 @@
   },
   "scripts": {
     "test": "",
-    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
+    "postinstall": "node ./bin/dos-install --config && node ./bin/dos-config && node ./bin/dos-build"
   }
 }
