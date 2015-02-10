@@ -2,7 +2,6 @@
   "name": "comments-view",
   "description": "Generic comments view component",
   "dependencies": {
-    "component/bus": "^0.0.2",
     "component/dom": "1.0.6",
     "component/t": "1.0.0",
     "slifszyc/loading-lock": "0867923281013c00b503c4bc866e103fd5024105",
