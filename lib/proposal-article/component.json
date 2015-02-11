@@ -2,7 +2,8 @@
   "name": "proposal-article",
   "description": "proposal's article view",
   "dependencies": {
-    "component/truncate": "72b55"
+    "component/truncate": "72b55",
+    "component/dom": "1.0.6"
   },
   "locals": [
     "config",
