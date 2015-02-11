@@ -15,7 +15,7 @@ header.app-header, aside.nav-proposal, .site-content, .site-content.loading-lock
 .site-content.content-pinned
 aside.nav-proposal.content-pinned
   transition transform 200ms linear
-  top 0
+  padding-top 0
 
 .site-content
   z-index 1
@@ -89,11 +89,19 @@ header.app-header
       &:hover
         text-decoration none
 
+vendors(prop, args, fn = null)
+  val = fn == null ? args : fn + '(' + args + ')'
+  -moz-{prop} val
+  -webkit-{prop} val
+  -o-{prop} val
+  -ms-{prop} val
+  {prop} val
+
 .headroom
-  transition transform 200ms linear
+  vendors(transition, all 200ms linear)
 
 .headroom--pinned
-  transform translateY(0%)
+  vendors(transform, 0%, translateY)
 
 .headroom--unpinned
-  transform translateY(-100%)
+  vendors(transform, -100%, translateY)
