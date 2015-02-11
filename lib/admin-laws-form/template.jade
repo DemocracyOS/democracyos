@@ -40,7 +40,7 @@
         input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')
       .form-group
         label= t('admin-laws-form.label.tag')
-        select.form-control(name='tag', tabindex=8)
+        select.form-control(name='tag', tabindex=8, validate='required')
           - each tag in tags
             option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
       .form-group
