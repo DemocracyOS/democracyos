@@ -1,8 +1,14 @@
 
+0.10.9 / 2015-02-11
+==================
+
+ * Fix jump when scrolling headroom. Closes #637
+ * Fix saving a `law` with no `tag` on it. Closes #624
+
 0.10.8 / 2015-02-10
 ===================
 
-  * [timeago] - Fix interval to be 1s #631
+  * Fix `timeago` interval to be 1s #631
 
 0.10.7 / 2015-02-10
 ===================
