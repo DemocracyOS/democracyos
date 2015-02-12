@@ -10,10 +10,11 @@
     "participants-box",
     "citizen",
     "proposal-clauses",
+    "render",
     "view"
   ],
   "scripts": [ "proposal-article.js" ],
-  "templates": [ "template.jade" ],
+  "templates": [ "template.jade", "paragraph.jade" ],
   "styles": [ "proposal-article.styl" ],
   "main": "proposal-article.js"
 }
