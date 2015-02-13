@@ -4,6 +4,8 @@
     span.name.ellipsis=citizen.firstName
     span.caret
   ul.dropdown-menu
+    - if (citizen.staff)
+      li: a(href='/admin')= t('header.admin')
     li: a(href='/settings')= t('header.settings')
     - if (config['faq'])
       li: a(href="/help/faq")= t('help.faq.title')
