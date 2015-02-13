@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var fs = require('fs');
+
+// Little hack to include `NODE_PATH=.`
+require('node-path')(module, [path.resolve('.')]);
+
+// Compile client application `./public/app.js` and `./public/app.css`
+var config = require('lib/config');
+
+var googleTranslate = require('google-translate')(config.googleAPIKey);
+
+var text = process.argv[3];
+
+var fromLang = process.argv[2];
+
+var toLangs = fs.readdirSync(__dirname+'/../lib/translations/lib')
+  .map(function(v){
+    return v.replace('.json', '');
+  });
+
+toLangs.splice(toLangs.indexOf(fromLang), 1);
+
+toLangs.forEach(function(toLang){
+  googleTranslate.translate(text, fromLang, toLang, function(err, translation){
+    if( err ) return console.error(err);
+    console.log(toLang + ': ' + translation.translatedText);
+  });
+});
