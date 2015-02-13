@@ -90,7 +90,9 @@
     "express-sslify": "0.1.1",
     "transliteration": "~0.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "google-translate": "^0.1.8"
+  },
   "main": "pdr",
   "engines": {
     "node": "0.10.28",
