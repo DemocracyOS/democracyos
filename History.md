@@ -1,4 +1,10 @@
 
+0.10.11 / 2015-02-14
+==================
+
+ * Add link to admin panel on dropdown. Closes #635
+ * Minor tweaks for Ukrainian and Russian translations
+
 0.10.10 / 2015-02-13
 ====================
 
