@@ -45,7 +45,6 @@
   "settings.notificatinos.get-email-when": "Saat sähköpostia kun",
   "settings.notifications.new-topic": "uusi aihe saa julkaista",
   "settings.notificatoins.someone-replies-your-comments": "Joku vastaa yksi teidän kommentteja",
-  "settings.notifications.someone-mentions-in-their-comment": "Joku mainitsee sinut yhdessä huomautuksensa",
 
   "notifications.error.connection-refused": "Yhteyttä ilmoitukset moottori",
 
@@ -78,7 +77,9 @@
   "sorts.recently-updated": "Äskettäin päivitetty",
 
   "comments.arguments": "Argumentit",
-  "comments.my.arguments": "Mikä on argumentti?",
+  "comments.my.arguments": "Mikä on argumentit?",
+  "comments.your.arguments": "Sinun argumentit",
+  "comments.new.argument": "Uusi argumentti",
   "comments.replies": "Vastaukset",
   "comments.reply": "Vastaus",
   "comments.reply-to-argument": "Vastauksena tähän väitteeseen",
@@ -88,6 +89,8 @@
   "comments.your-argument": "Sinun argumenttisi",
   "comments.edit.argument": "Editoi argumenttiä",
   "comments.edited": "editoitu",
+  "comments.arguments.confirm-remove": "Haluatko poistaa tämän vastauksen?",
+  "comments.arguments.reply": "Vastaa tähän argumentti",
   "comments.load-more": "Lataa lisää argumentteja",
   "comments.sorts.score": "Score",
   "comments.sorts.newest-first": "Uusin ensin",
@@ -105,6 +108,7 @@
   "forgot.mail.example": "forgot.mail.example",
   "password.new": "Uusi salasana",
   "password.retype": "Rekisteröitymällä käyttäjä hyväksyy meidän",
+  "By signing up you are accepting our": "Rekisteröitymällä voit hyväksyt meidän",
   "password": "Salasana",
   "password.repeat": "Toista salasana",
   "forgot.reset": "Uusi salasana!",
@@ -177,6 +181,7 @@
   "Results will be shown when this law is closed": "Tulokset näytettään kun laki on suljettu",
   "Summary": "Yhteenveto",
   "Chart": "Taulukko",
+  "URL": "URL",
 
   "Clause": "Lauseke",
   "read more": "Lue lisää",
@@ -206,8 +211,12 @@
   "Not spam" : "Tämä ei ole roskaposti",
   "Upvote" : "Hyvä kommentti",
   "Downvote" : "Huono kommentti",
+  "Reply": "Vastaa",
+  "Replies": "Vastaukset",
+  "No replies": "Ei vastauksia",
   "Argument is limited to 4096 characters": "Argumentti voi olla vain 4096 merkkiä",
   "Argument cannot be empty": "Argumentti ei voi olla tyhjä",
+  "Reply cannot be empty": "Vastaa ei voi olla tyhjä",
 
   "To not take part on the citizen's decision": "Ei vaikuta kansalaisen päätökseen ",
   "To respect parlament methodology": "Kunnioittaa parlamentin menetelmiä",
@@ -236,6 +245,7 @@
   "admin-laws-form.button.add-clause": "Lisää ehto",
   "admin-laws-form.message.add-clause-forbidden": "Sinun täytyy tallentaa laki lisätäksesi ehtoja",
   "admin-laws-form.button.add-link": "lisää linkki",
+  "admin-laws-form.message.add-link-forbidden": "Lain täytyy tallentaa ennen kuin lisäät linkkejä",
   "admin-laws-form.button.submit": "Tallenna",
 
   "admin-laws-form.message.public-status": "Tämä laki on julkinen",
@@ -290,7 +300,10 @@
   "markdown.emphasis.example.3": "Yhdistetty painotetaan kanssa **asteriskit ja _alaviivoja_**.",
   "markdown.url-autolinking.title": "URL autolinking",
   "markdown.url-autolinking.text": "DemocracyOS markdown tulee AutoLink standardi URL-osoitteita, joten jos haluat linkittää URL, voit kirjoittaa URL-osoitteen ja se muuttui linkki kyseiseen URL",
+  "markdown.url-autolinking.text.2": "Voit myös luoda inline linkki, käärimällä linkin teksti suluissa ( [ ] ), ja sitten kääre linkin suluissa ( ( ) ).",
+  "markdown.url-autolinking.text.3": "Esimerkiksi luoda linkin http://www.example.com, jossa on linkki, jossa lukee, Kirauduu sisään Example.com!, olisit kirjoittaa tähän:",
   "markdown.url-autolinking.example": "Kirauduu sisään: http://example.com",
+  "markdown.url-autolinking.example2": "[Kirauduu sisään Example.com!](http://www.example.com)",
   "markdown.linebreaks.title": "Rivinvaihdot",
   "markdown.linebreaks.text": "Yli 2 rivinvaihdot tulee pakata. Esimerkiksi:",
   "markdown.linebreaks.example.1": "Tässä meille on rivi aloittamaan.\n",
@@ -304,8 +317,9 @@
 
   "help.title": "Apu",
   "help.faq.title": "Usein kysytyt kysymykset",
-  "help.tos.title": "Terms of Service",
-  "help.pp.title": "Privacy Policy",
+  "help.tos.title": "Käyttöehdot",
+  "help.pp.title": "Yksityisyyden suoja",
+  "help.glossary.title": "Sanasto",
   "help.markdown.title": "muotoileminen help",
 
   "This page does not exist": "Sivua ei ole olemassa",
@@ -329,5 +343,4 @@
   "browser-update.update-your": "Päivitä ",
   "browser-update.why": "Miksi?",
   "browser-update.why.newer-browsers": "Uudemmat selaimet ottaa edut uusimpien teknologioiden ja turvallisempaa selailu kokemuksia."
-
 }
