@@ -45,7 +45,6 @@
   "settings.notificatinos.get-email-when": "Obtenir un email quan",
   "settings.notifications.new-topic": "Un nou tema es publica",
   "settings.notificatoins.someone-replies-your-comments": "Algú respon a un dels seus comentaris",
-  "settings.notifications.someone-mentions-in-their-comment": "Algú li esmenta en un dels seus comentaris",
 
   "notifications.error.connection-refused": "No es pot connectar al motor de notificacions",
 
