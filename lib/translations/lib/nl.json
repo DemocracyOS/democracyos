@@ -3,7 +3,7 @@
   "common.ok": "OK",
   "common.cancel": "Annuleren",
   "common.back": "Terug",
-  "common.no-user-for-email" : "Geen inwoner voor email",
+  "common.no-user-for-email" : "Geen gebruiker gevonden met dat e-mailadres",
 
   "DemocracyOS": "DemocracyOS",
   "header.logo": "DemocracyOS",
@@ -25,7 +25,7 @@
   "Password is required": "Een wachtwoord is verplicht",
   "Password is not good enough": "Het wachtwoord is te zwak",
   "Passwords do not match": "De wachtwoorden komen niet overeen",
-  "Email is not valid": "Email adres is not valide",
+  "Email is not valid": "E-mailadres is ongeldig",
   "A firstname is required": "Een voornaam is verplicht",
   "A lastname is required": "Een achternaam is verplicht",
 
@@ -33,11 +33,11 @@
   "Sessions": "Sessies",
   "Notifications": "Notificaties",
   "Change your profile picture at gravatar.com": "Verander je profielafbeelding op gravatar.com",
-  "Or paste an image URL here...": "Of plak een afbeelding URL hier ...",
-  "First name isn't valid": "Je voornaam is niet geldig",
-  "Last name isn't valid": "Je achternaam is niet geldig",
-  "First name should be 100 characters or less": "Je voornaam kan uit maximaal 100 tekens bestaan",
-  "Last name should be 100 characters or less": "Je achternaam kan uit maximaal 100 tekens bestaan",
+  "Or paste an image URL here...": "Of plak een afbeelding URL hier...",
+  "First name isn't valid": "Voornaam is ongeldig",
+  "Last name isn't valid": "Achternaam is ongeldig",
+  "First name should be 100 characters or less": "Voornaam kan uit maximaal 100 tekens bestaan",
+  "Last name should be 100 characters or less": "Achternaam kan uit maximaal 100 tekens bestaan",
   "Your profile was successfuly updated": "Je profiel is bijgewerkt",
   "Change password": "Verander wachtwoord",
   "Current password": "Huidig wachtwoord",
@@ -45,9 +45,9 @@
   "Confirm new password": "Bevestig nieuwe wachtwoord",
   "Your password was successfuly updated": "Je wachtwoord is aangepast",
   "Current password is invalid": "Huidig wachtwoord is niet correct",
-  "More information": "meer informatie",
+  "More information": "Meer informatie",
 
-  "notifications.error.connection-refused": "Kan geen verbinding maken met meldingen motor",
+  "notifications.error.connection-refused": "Kan geen verbinding maken met notificatie-server",
 
   "sidebar.open": "Open",
   "sidebar.closed": "Gesloten",
@@ -56,7 +56,7 @@
   "sorts.closing-soon": "Sluit binnenkort",
   "sorts.newest-first": "Nieuwste eerst",
   "sorts.oldest-first": "Oudste eerst",
-  "sorts.recently-updated": "Recentl aangepast",
+  "sorts.recently-updated": "Recentelijk aangepast",
 
   "comments.arguments": "Opmerkingen",
   "comments.my.arguments": "Wat is jouw opmerking?",
@@ -101,8 +101,8 @@
   "forgot.error.email-not-valid": "Vous devez valider votre adresse de courriel avant vous pouvez réinitialiser votre mot de passe",
 
   "Signup complete" : "Aanmelden voltooid",
-  "Signup with email": "Meld je aan met je e-mail adres",
-  "Email": "E-mail adres",
+  "Signup with email": "Meld je aan met je e-mailadres",
+  "Email": "E-mailadres",
   "Your firstname": "Je voornaam",
   "Your lastname": "Je achternaam",
   "Firstname": "Voornaam",
@@ -111,10 +111,10 @@
   "Signup now!": "Meld je aan!",
   "Welcome, {name}!": "Welkom, {name}!",
   "Guest": "Gast",
-  "Your sign up data was received. We sent you an email so you can validate your email address.": "We hebben je gegevens ontvangen. We zullen je een e-mail sturen om je e-mail adres te bevestigen.",
+  "Your sign up data was received. We sent you an email so you can validate your email address.": "We hebben je gegevens ontvangen. We zullen je een e-mail sturen om je e-mailadres te bevestigen.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Lees snel je e-mail (ook je ongewenste berichten) en klik op de link in de e-mail.",
-  "Your email has been validated and now you are logged in" : "Je hebt je e-mail adres bevestigd en je kunt je nu aanmelden",
-  "You can now argue and vote on bills!": "Je kunt nu discusiëren over en stemmen op wetsontwerpen!",
+  "Your email has been validated and now you are logged in" : "Je hebt je e-mailadres bevestigd en je kunt je nu aanmelden",
+  "You can now argue and vote on bills!": "Je kunt nu discussiëren over en stemmen op wetsontwerpen!",
   "Go to": "Ga naar",
   "browsing": "browsing",
   "Your sign up data was received": "Je gegevens zijn ontvangen",
@@ -161,6 +161,7 @@
   "Results will be shown when this law is closed": "Wanneer het stemmen op de wet is afgerond, worden de resultaten getoond",
   "Summary": "Overzicht",
   "Chart": "Tabel",
+  "URL": "URL",
 
   "Clause": "Clausule",
   "read more": "Verder lezen",
@@ -183,7 +184,7 @@
   "proposal-article.article.alert.learn-more": "Meer informatie",
   "proposal-article.participant.singular": "Deelnemer",
   "proposal-article.participant.plural": "Deelnemers",
-  "proposal-options.error.voting": "Er is een fout verwerking van uw stem. Probeer het nogmaals",
+  "proposal-options.error.voting": "Er is een fout opgetreden in de verwerking van uw stem. Probeer het nogmaals",
 
   "Remove argument" : "Verwijder opmerking",
   "Spam" : "Ongewenst",
@@ -222,7 +223,7 @@
   "admin-laws-form.label.clause-truncation-text": "Clausule truncatie tekst",
   "admin-laws-form.button.add-clause": "Bepaling toevoegen",
   "admin-laws-form.message.add-clause-forbidden": "De wet moet opgeslagen zijn voordat je een bepaling kunt toevoegen",
-  "admin-laws-form.button.add-link": "link toevoegen",
+  "admin-laws-form.button.add-link": "Link toevoegen",
   "admin-laws-form.button.submit": "Opslaan",
 
   "admin-laws-form.message.public-status": "De wet is gepubliceerd",
@@ -312,12 +313,12 @@
   "side-comments.delete.confirmation": "Weet je zeker dat je deze opmerking wilt verwijderen?",
   "side-comments.confirmation.title": "Verwijder opmerking",
 
-  "browser-update.woops": "Whoops.",
+  "browser-update.woops": "Oeps.",
   "browser-update.ie-old-version-warning": "U gebruikt een oudere versie van Internet Explorer.",
-  "browser-update.in-order-warning": "Om Demoracy OS gebruiken, werkt u uw browser.",
-  "browser-update.switch-to": "Schakelaar op ",
+  "browser-update.in-order-warning": "Om Demoracy OS gebruiken dient u gebruik te maken van een nieuwere browser.",
+  "browser-update.switch-to": "Schakel over op ",
   "browser-update.update-your": "Update uw ",
   "browser-update.why": "Waarom?",
-  "browser-update.why.newer-browsers": "Nieuwere browsers nemen voordelen van de nieuwste technologieën en zorgen voor veiliger surfen op ervaringen."
+  "browser-update.why.newer-browsers": "Nieuwere browsers gebruiken de nieuwste technologieën en zorgen voor een veiligere surfervaring."
 
 }
