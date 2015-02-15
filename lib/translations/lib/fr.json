@@ -45,7 +45,6 @@
   "settings.notificatinos.get-email-when": "Obtenir un e-mail quand",
   "settings.notifications.new-topic": "Un nouveau sujet est publié",
   "settings.notificatoins.someone-replies-your-comments": "Quelqu'un répond l'un de vos commentaires",
-  "settings.notifications.someone-mentions-in-their-comment": "Quelqu'un vous parle dans un de leurs commentaires",
 
   "notifications.error.connection-refused": "Impossible de se connecter au moteur de notifications",
 
@@ -79,6 +78,8 @@
 
   "comments.arguments": "Arguments",
   "comments.my.arguments": "Quel est votre argument?",
+  "comments.your.arguments": "Mon arguments",
+  "comments.new.argument": "Nouveau argument",
   "comments.replies": "Réponses",
   "comments.reply": "Répondre",
   "comments.reply-to-argument": "Répondre à cet argument",
@@ -180,6 +181,7 @@
   "Results will be shown when this law is closed": "Les résultas seront montrés lorsque la loi sera fermée",
   "Summary": "Résumé",
   "Chart": "Graphique",
+  "URL": "URL",
 
   "Clause": "Article",
   "read more": "En lire plus",
@@ -239,10 +241,11 @@
   "admin-laws-form.label.summary": "Résumé",
   "admin-laws-form.label.closingAt": "Date de fermeture",
   "admin-laws-form.label.votable": "Votable",
-  "admin-laws-form.button.add-clause": "Nouvel article",
   "admin-laws-form.label.clause-truncation-text": "Texte clause de troncature",
+  "admin-laws-form.button.add-clause": "Nouvel article",
   "admin-laws-form.message.add-clause-forbidden": "La loi doit être sauvegardée avant d' ajouter des articles",
   "admin-laws-form.button.add-link": "ajouter un lien",
+  "admin-laws-form.message.add-link-forbidden": "La loi doit être sauvegardée avant d' ajouter des liens",
   "admin-laws-form.button.submit": "Sauvegarder",
 
   "admin-laws-form.message.public-status": "Cette loi est ouverte au public",
@@ -288,7 +291,7 @@
   "admin-tags-form.message.validation.name-required": "Nom requis",
 
   "markdown.cheatsheet.title": "Formatage aide",
-  "démarque DemocracyOS aromatisé": "Democracyos.markdown.flavored",
+  "democracyos.markdown.flavored": "Démarque DemocracyOS aromatisé",
   "markdown.will.become": "Deviendra: ",
   "markdown.text.1": "DemocracyOS utiliser les règles de démarque pour la argumenting la suite sur les lois",
   "markdown.title.emphasis": "l'accent du texte",
@@ -296,8 +299,11 @@
   "markdown.emphasis.example.2": "L'accent , alias gras , avec des astérisques ** ** ou __ underscores__ .",
   "markdown.emphasis.example.3": "Parallèlement à l'accent ** astérisques ** et _underscores_ .",
   "markdown.url-autolinking.title": "URL autolinking",
-  "markdown.url-autolinking.text": "DemocracyOS démarque norme seront AUTOLINK URL , donc si vous voulez faire un lien vers une URL , vous pouvez simplement entrer l'URL et il sera transformé en un lien vers URL . ",
-  "markdown.url-autolinking.example": "Entrez à http://example.com",
+  "markdown.url-autolinking.text": "DemocracyOS démarque norme seront AUTOLINK URL, donc si vous voulez faire un lien vers une URL, vous pouvez simplement entrer l'URL et il sera transformé en un lien vers URL.",
+  "markdown.url-autolinking.text.2": "En outre, vous pouvez créer une liaison en ligne, en enveloppant le texte du lien entre crochets ( [ ] ), puis envelopper le lien entre parenthèses ( ( ) ).",
+  "markdown.url-autolinking.text.3": "Par exemple, pour créer un lien vers http://www.example.com, avec un texte de lien qui dit, Entrez à Exemple.com!, vous écririez ceci:",
+  "markdown.url-autolinking.example": "Entrez à http://exemple.com",
+  "markdown.url-autolinking.example2": "[Entrez à Exemple.com!](http://www.exemple.com)",
   "markdown.linebreaks.title": "Mises en",
   "markdown.linebreaks.text": "Plus de 2 sauts de ligne vont se comprimé. Par exemple:",
   "markdown.linebreaks.example.1": "Voici une ligne pour nous de commencer avec.\n",
@@ -313,6 +319,7 @@
   "help.faq.title": "Foire aux questions",
   "help.tos.title": "Conditions d'Utilisation",
   "help.pp.title": "Politique de confidentialité",
+  "help.glossary.title": "Glossaire",
   "help.markdown.title": "Formatage aide",
 
   "This page does not exist": "Cette page n'existe pas",
