@@ -45,8 +45,6 @@
   "settings.notificatinos.get-email-when": "Recibir un correo electrónico cuando",
   "settings.notifications.new-topic": "Un nuevo tema es publicado",
   "someone-replies-your-comments": "Alguien responde a tu argumento",
-  "someone-mentions-in-their-comment": "Eres mencionado en algún argumento",
-  "settings.notificatoins.someone-replies-your-comments": "Alguien contesta uno de tus argumentos",
 
   "notifications.error.connection-refused": "No es posible conectarse al motor de notificaciones",
 
@@ -65,11 +63,9 @@
   "validators.max-length.singular": "Debe tener como máximo 1 caracter",
   "validators.max-length.plural": "Debe tener como máximo {n} caracteres",
   "validators.input.not-exists": "No existe el elemento {name}",
-  "validators.password.not.match": "Salasanat eivät täsmää",
-  "validators.not.match": "No coinciden",
   "validators.password.not.match": "Las contraseñas no coinciden",
+  "validators.not.match": "No coinciden",
   "validators.invalid": "No válido",
-
 
   "sidebar.open": "Abiertos",
   "sidebar.closed": "Cerrados",
@@ -185,6 +181,7 @@
   "Results will be shown when this law is closed": "Los resultados se mostrarán cuando se cierre la ley",
   "Summary": "Resumen",
   "Chart": "Gráfico",
+  "URL": "URL",
 
   "Clause": "Artículo",
   "read more": "Leer más",
@@ -248,6 +245,7 @@
   "admin-laws-form.button.add-clause": "Nuevo artículo",
   "admin-laws-form.message.add-clause-forbidden": "La ley debe guardarse antes de agregar artículos",
   "admin-laws-form.button.add-link": "Agregar link",
+  "admin-laws-form.message.add-clause-forbidden": "La ley debe guardarse antes de agregar links",
   "admin-laws-form.button.submit": "Guardar",
 
   "admin-laws-form.message.public-status": "Esta ley está abierta al público",
@@ -345,5 +343,4 @@
   "browser-update.update-your": "Actualizá tu version de  ",
   "browser-update.why": "¿Por que?",
   "browser-update.why.newer-browsers": "Los browsers mas modernos toman las ventajas de las nuevas tencologias y aseguran experiencias mas seguras."
-
 }
