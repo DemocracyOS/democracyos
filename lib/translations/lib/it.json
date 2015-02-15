@@ -45,7 +45,6 @@
   "settings.notificatinos.get-email-when": "Ricevi una email quando",
   "settings.notifications.new-topic": "Un nuovo argomento viene pubblicato",
   "settings.notificatoins.someone-replies-your-comments": "Qualcuno risponde uno dei tuoi commenti",
-  "settings.notifications.someone-mentions-in-their-comment": "Qualcuno ti cita in una delle loro osservazioni",
 
   "notifications.error.connection-refused": "Impossibile connettersi al motore notifiche",
 
@@ -182,6 +181,7 @@
   "Results will be shown when this law is closed": "I risultati saranno visualizzati quando questa legge è chiuso",
   "Summary": "Riassunto",
   "Chart": "Grafico",
+  "URL": "URL",
 
   "Clause": "Articolo",
   "read more": "Legge più",
@@ -245,6 +245,7 @@
   "admin-laws-form.button.add-clause": "Nuovo articolo",
   "admin-laws-form.message.add-clause-forbidden": "La legge deve essere salvato prima di aggiungere articolo",
   "admin-laws-form.button.add-link": "aggiungere link",
+  "admin-laws-form.message.add-clause-forbidden": "La legge deve essere salvato prima di aggiungere links",
   "admin-laws-form.button.submit": "Salvare",
 
   "admin-laws-form.message.public-status": "Questa legge è aperto al pubblico",
@@ -318,6 +319,7 @@
   "help.faq.title": "FAQ",
   "help.tos.title": "Termini di servizio",
   "help.pp.title": "Norme sulla privacy",
+  "help.glossary.title": "Glossario",
   "help.markdown.title": "Aiuta di edizione",
 
   "This page does not exist": "Questa pagina non esiste",
@@ -341,5 +343,4 @@
   "browser-update.update-your": "Aggiorna il tuo ",
   "browser-update.why": "Perché?",
   "browser-update.why.newer-browsers": "I browser più recenti prendono vantaggi delle più moderne tecnologie e garantire esperienze di navigazione sicure."
-
 }
