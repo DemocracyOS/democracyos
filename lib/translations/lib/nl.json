@@ -38,9 +38,34 @@
   "Confirm new password": "Bevestig nieuwe wachtwoord",
   "Your password was successfuly updated": "Je wachtwoord is aangepast",
   "Current password is invalid": "Huidig wachtwoord is niet correct",
+  "Please wait": "Wacht alstublieft",
   "More information": "Meer informatie",
 
+  "settings.notifications.title": "Bekendmakingen voorkeuren",
+  "settings.notificatinos.get-email-when": "Ontvang een email als",
+  "settings.notifications.new-topic": "Een nieuw bericht wordt gepubliceerd",
+  "settings.notificatoins.someone-replies-your-comments": "Iemand reageert een van uw commentaar",
+
   "notifications.error.connection-refused": "Kan geen verbinding maken met notificatie-server",
+
+  "validators.required": "Verplicht",
+  "validators.checked": "Verplicht gecontroleerd veld",
+  "validators.invalid.email": "E-mailadres is ongeldig",
+  "validators.invalid.firstname": "Voornaam is ongeldig",
+  "validators.invalid.lastname": "Achternaam is ongeldig",
+  "validators.invalid.author": "Auteur is ongeldig",
+  "validators.invalid.url": "URL is ongeldig",
+  "validators.invalid.number": "Ongeldig nummer",
+  "invalid.password": "Ongeldig wachtwoord",
+  "validators.invalid.time": "Ongeldig tijd",
+  "validators.min-length.singular": "Het moet minstens 1 karakter",
+  "validators.min-length.plural": "Het moet minstens {n} karakters",
+  "validators.max-length.singular": "Het moet 1 karakter lang hooguit",
+  "validators.max-length.plural": "Het moet {n} tekens lang hooguit",
+  "validators.input.not-exists": "{name} element bestaat niet",
+  "validators.password.not.match": "Wachtwoorden komen niet overeen",
+  "validators.not.match": "Geen match",
+  "validators.invalid": "Ongeldig",
 
   "sidebar.open": "Open",
   "sidebar.closed": "Gesloten",
@@ -59,6 +84,7 @@
   "comments.reply": "Reactie",
   "comments.reply-to-argument": "Reageer op deze opmerking",
   "comments.sign-in-required": "Je moet aangemeld zijn om te reageren",
+  "comments.sign-in-required-to-vote-comments": "Je moet ingelogd zijn om argumenten te kwalificeren",
   "comments.deleted-arguments": "Verwijderde opmerkingen",
   "comments.your-argument": "Jouw opmerking",
   "comments.edit.argument": "Pas opmerking aan",
@@ -103,10 +129,10 @@
   "Re-type password": "Herhaal je wachtwoord",
   "Signup now!": "Meld je aan!",
   "Welcome, {name}!": "Welkom, {name}!",
-  "Guest": "Gast",
   "Your sign up data was received. We sent you an email so you can validate your email address.": "We hebben je gegevens ontvangen. We zullen je een e-mail sturen om je e-mailadres te bevestigen.",
   "Please check your email (remember to check your spam folder too) and click on the link supplied on the email.": "Lees snel je e-mail (ook je ongewenste berichten) en klik op de link in de e-mail.",
   "Your email has been validated and now you are logged in" : "Je hebt je e-mailadres bevestigd en je kunt je nu aanmelden",
+  "You're being redirected in 5 seconds": "Je wordt doorgestuurd in 5 seconden",
   "You can now argue and vote on bills!": "Je kunt nu discussiëren over en stemmen op wetsontwerpen!",
   "Go to": "Ga naar",
   "browsing": "browsing",
@@ -145,6 +171,7 @@
   "Nay": "Tegen",
   "Abstain": "Onthouden van stemmen",
   "Yes": "Ja",
+  "No": "Nee",
   "Cancel": "Annuleren",
   "Edit": "Aanpassen",
   "Delegate": "Delegeren",
@@ -207,6 +234,7 @@
   "admin-laws-form.title.edit": "Wet aanpassen",
   "admin-laws-form.label.lawId": "Wetboek/wetsartikel",
   "admin-laws-form.label.mediaTitle": "Titel",
+  "admin-laws-form.label.author": "Auteur",
   "admin-laws-form.label.source": "Bron",
   "admin-laws-form.placeholder.source": "http://wetten.overheid.nl/",
   "admin-laws-form.label.tag": "Label",
@@ -217,6 +245,7 @@
   "admin-laws-form.button.add-clause": "Bepaling toevoegen",
   "admin-laws-form.message.add-clause-forbidden": "De wet moet opgeslagen zijn voordat je een bepaling kunt toevoegen",
   "admin-laws-form.button.add-link": "Link toevoegen",
+  "admin-laws-form.message.add-link-forbidden": "Onderwerp moeten worden opgeslagen voordat het toevoegen van links",
   "admin-laws-form.button.submit": "Opslaan",
 
   "admin-laws-form.message.public-status": "De wet is gepubliceerd",
@@ -234,6 +263,7 @@
   "admin-laws-form.clause.confirmation.cancel": "Annuleren",
   "admin-laws-form.clause.confirmation.ok": "Verwijderen",
   "admin-laws-form.clause.text-centered": "Tekst centreren",
+
   "admin-laws-form.link.confirmation.title": "koppeling removala",
 
   "admin-laws-form.message.onsuccess": "De wet is opgeslagen",
@@ -313,5 +343,4 @@
   "browser-update.update-your": "Update uw ",
   "browser-update.why": "Waarom?",
   "browser-update.why.newer-browsers": "Nieuwere browsers gebruiken de nieuwste technologieën en zorgen voor een veiligere surfervaring."
-
 }
