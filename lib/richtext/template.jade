@@ -7,20 +7,23 @@
         option(value='sans-serif', selected) Sans Serif
         option(value='Georgia, serif') Serif
         option(value='Monaco, \'Courier New\', monospace') Monospace
+
       - if (toolbar.fontSize)
       select.ql-size(title='Size')
         option(value='10px') Small
         option(value='13px', selected) Normal
         option(value='18px') Large
         option(value='32px') Huge
-      - if(toolbar.fontWidth)
+
+    - if (toolbar.fontWidth)
     span.ql-format-group
       span.ql-format-button.ql-bold(title='Bold')
       span.ql-format-separator
       span.ql-format-button.ql-italic(title='Italic')
       span.ql-format-separator
       span.ql-format-button.ql-underline(title='Underline')
-    - if(toolbar.fontStyle)
+
+    - if (toolbar.fontStyle)
     span.ql-format-group
       each c in ['ql-color', 'ql-background']
         select(class=c, title=(c=='ql-color'?'Text Color':'Background Color'))
@@ -34,11 +37,19 @@
         option(value='right')
         option(value='justify')
     span.ql-format-group
+    if (toolbar.link)
       span.ql-format-button.ql-link(title='Link')
+
+    if (toolbar.image)
       span.ql-format-separator
       span.ql-format-button.ql-image(title='Image')
+
+    if (toolbar.bullet)
       span.ql-format-separator
       span.ql-format-button.ql-bullet(title='Bullet')
+
+    if (toolbar.list)
       span.ql-format-separator
       span.ql-format-button.ql-list(title='List')
+
   #editor
