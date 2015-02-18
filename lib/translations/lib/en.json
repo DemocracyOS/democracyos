@@ -327,8 +327,10 @@
   "Go back to DemocracyOS": "Go back to DemocracyOS",
 
   "side-comments.post": "Post",
+  "side-comments.save": "Save",
   "side-comments.cancel": "Cancel",
   "side-comments.leave-a-comment": "Leave a comment",
+  "side-comments.edit": "Edit",
   "side-comments.delete": "Delete",
   "side-comments.or": "or",
   "side-comments.login": "Login",
