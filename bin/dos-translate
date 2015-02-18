@@ -118,11 +118,11 @@ function commandTranslateMissing(opts) {
     console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:');
 
     var edited = false;
-    var format_regex = /%[a-z]/
+    var format_regex = /%[a-z]|{[a-z\-]+}/
 
     missings[lang].forEach(function(k){
       if (format_regex.test(fromLang[k])) {
-        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with % format.')
+        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with % of {var} format.')
         return
       }
 
