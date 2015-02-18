@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+<<<<<<< HEAD
 // Little hack to include `NODE_PATH=.`
 var path = require('path');
 require('node-path')(module, [path.resolve('.')]);
@@ -46,6 +47,27 @@ function halt(err){
   process.exit(1);
 }
 
+=======
+var path = require('path');
+var fs = require('fs');
+var arrDiff = require('arr-diff');
+var jsonFile = require('json-file-plus');
+
+// Little hack to include `NODE_PATH=.`
+require('node-path')(module, [path.resolve('.')]);
+
+// Compile client application `./public/app.js` and `./public/app.css`
+var config = require('lib/config');
+
+var googleTranslate = require('google-translate')(config.googleAPIKey);
+
+// Load the list of available languages.
+var LANGS_FOLDER = 'lib/translations/lib'
+var langs = fs.readdirSync(LANGS_FOLDER).map(function(v){
+  return v.replace('.json', '');
+});
+
+>>>>>>> b315043300926f750907b03185dffd08db945135
 function getLangPath(lang) {
   return path.join(LANGS_FOLDER, lang + '.json');
 }
@@ -54,6 +76,7 @@ function getLang(lang) {
   return require(getLangPath(lang));
 }
 
+<<<<<<< HEAD
 function getLangKeys(lang) {
   return Object.keys(getLang(lang));
 }
@@ -84,6 +107,47 @@ function commandListMissing(opts) {
 
   opts.to.forEach(function(lang){
     var toKeys = getLangKeys(lang);
+=======
+
+var opts = require('nomnom')
+  .options({
+    from: {
+      abbr: 'f',
+      help: 'Base language to use as reference.',
+      required: true,
+      choices: langs
+    },
+    to: {
+      abbr: 't',
+      help: 'Target language, will default to all the other languages.',
+      list: true,
+      choices: langs
+    },
+    'list-missing': {
+      abbr: 'l',
+      help: 'Shows a list of missing keys on the specified `--to` languages.',
+      flag: true
+    },
+    'translate-missing': {
+      abbr: 'm',
+      help: 'Fill missing keys of `--to` using the translated values of `--from`.',
+      flag: true
+    }
+  })
+  .nom();
+
+// Make `--to` param optional
+if (!opts.to || !opts.to.length) {
+  opts.to = langs.filter(function(v){ return v !== opts.from; })
+}
+
+
+if (opts['list-missing']) {
+  var fromKeys = Object.keys(getLang(opts.from));
+
+  opts.to.forEach(function(lang){
+    var toKeys = Object.keys(getLang(lang));
+>>>>>>> b315043300926f750907b03185dffd08db945135
     var missing = arrDiff(fromKeys, toKeys);
 
     if (!missing.length) return;
@@ -96,6 +160,7 @@ function commandListMissing(opts) {
   });
 }
 
+<<<<<<< HEAD
 function commandTranslateMissing(opts) {
   defaultToParam(opts)
 
