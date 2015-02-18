@@ -152,7 +152,7 @@ function commandTranslateMissing(opts) {
 }
 
 function commandDeleteKey(opts) {
-  var langs = opts.from ? opts.from : languages
+  var langs = opts.from || languages
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Deleting keys from `' + lang + '`:');
@@ -172,7 +172,7 @@ function commandDeleteKey(opts) {
 }
 
 function commandRenameKey(opts) {
-  var langs = opts.from ? opts.from : languages
+  var langs = opts.from || languages
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Renaming keys from `' + lang + '`:');
@@ -244,6 +244,19 @@ function commandDeleteExtra(opts) {
       from: [lang],
       key: extra
     })
+  });
+}
+
+function commandSort(opts){
+  var langs = opts.lang || languages
+
+  forEachLanguageFile(langs, function(lang, file){
+    file.sort();
+    file.save().then(function() {
+      console.log('`' + lang + '` sorted.');
+    }).catch(function(err) {
+      halt(err);
+    });
   });
 }
 
@@ -354,5 +367,14 @@ nomnom.command('delete-extra')
   })
   .callback(commandDeleteExtra)
   .help('Delete extra keys from `--on` that are not present on `--base`.');
+
+nomnom.command('sort')
+  .option('lang', {
+    abbr: 'l',
+    help: 'Languages to sort. Defaults to all.',
+    list: true
+  })
+  .callback(commandSort)
+  .help('Sort the file keys from a language(s).');
 
 nomnom.nom();
