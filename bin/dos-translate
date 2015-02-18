@@ -14,6 +14,10 @@ var languages = fs.readdirSync(LANGS_FOLDER).map(function(v){
   return v.replace('.json', '');
 });
 
+/*
+ * Utility Functions
+ */
+
 function halt(err){
   if (err) console.error(err)
   process.exit(1);
@@ -42,52 +46,18 @@ function forEachLanguageFile(langs, cb) {
   });
 }
 
-var opts = require('nomnom')
-  .options({
-    from: {
-      abbr: 'f',
-      help: 'Base language to use as reference.',
-      choices: languages
-    },
-    to: {
-      abbr: 't',
-      help: 'Target language, will default to all the other languages.',
-      list: true,
-      choices: languages
-    },
-    'list-missing': {
-      abbr: 'l',
-      help: 'Shows a list of missing keys on the specified `--to` languages.',
-      flag: true
-    },
-    'translate-missing': {
-      abbr: 'm',
-      help: 'Fill missing keys of `--to` using the translated values of `--from`.',
-      flag: true
-    },
-    'delete-key': {
-      abbr: 'd',
-      help: 'Delete the given key(s) on all language files.',
-      list: true
-    }
-  })
-  .nom();
-
-function requireFrom() {
-  if (!opts.from) halt('Need to specify `--from` param.');
-}
-
-// Make `--to` param optional
-function defaultTo() {
+function defaultToParam(opts) {
   if (!opts.to || !opts.to.length) {
     opts.to = languages.filter(function(v){ return v !== opts.from; })
   }
 }
 
+/*
+ * Commands
+ */
 
-if (opts['list-missing']) (function(){
-  requireFrom()
-  defaultTo()
+function commandListMissing(opts) {
+  defaultToParam(opts)
 
   var fromKeys = getLangKeys(opts.from);
 
@@ -103,12 +73,10 @@ if (opts['list-missing']) (function(){
       console.log('  - ' + k);
     });
   });
-})();
+}
 
-
-if (opts['translate-missing']) (function(){
-  requireFrom()
-  defaultTo()
+function commandTranslateMissing(opts) {
+  defaultToParam(opts)
 
   var googleTranslate = require('google-translate')(config.googleAPIKey);
   var fromLang = getLang(opts.from);
@@ -124,9 +92,21 @@ if (opts['translate-missing']) (function(){
     return !!missing.length;
   });
 
+
   forEachLanguageFile(langs, function(lang, file){
+    console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:');
+
+    var format_regex = /%[a-z]/
+
     missings[lang].forEach(function(k){
+
+      if (format_regex.test(fromLang[k])) {
+        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with % format.')
+        return
+      }
+
       googleTranslate.translate(fromLang[k], opts.from, lang, callback);
+
       function callback(err, translation) {
         if (err) return halt(err);
 
@@ -142,25 +122,136 @@ if (opts['translate-missing']) (function(){
       }
     });
   });
-})();
+}
 
+function commandDeleteKey(opts) {
+  var langs = opts.from ? opts.from : languages
 
-if (opts['delete-key']) (function(){
+  forEachLanguageFile(langs, function(lang, file){
+    console.log('Deleting keys from `' + lang + '`:');
 
-  forEachLanguageFile(languages, function(lang, file){
-    opts['delete-key'].forEach(function(key){
-      if (!file.data[key]) return;
-      file.data[key] = undefined;
+    opts.key.forEach(function(k){
+      if (!file.data[k]) return;
+      file.data[k] = undefined;
+      console.log('  "' + k + '"');
     });
 
     file.save().then(function() {
-      console.log('Deleted keys from `' + lang + '`:')
-      opts['delete-key'].forEach(function(key){
-        console.log('  "' + key + '"');
-      });
+      console.log('Done!');
     }).catch(function(err) {
       halt(err);
     });
   });
+}
 
-})();
+function commandRenameKey(opts) {
+  var langs = opts.from ? opts.from : languages
+
+  forEachLanguageFile(langs, function(lang, file){
+    console.log('Renaming keys from `' + lang + '`:');
+
+    if (opts.key.length !== opts.name.length) {
+      halt('Have to provide the same amount of keys and names.');
+    }
+
+    opts.key.forEach(function(k, i){
+      if (!file.data[k]) return;
+
+      var name = opts.name[i];
+      var value = file.data[k];
+
+      file.data[k] = undefined;
+      file.data[name] = value;
+
+      console.log('  "' + k + '" => "' + name + '"');
+    });
+
+    file.save().then(function() {
+      console.log('Done!');
+    }).catch(function(err) {
+      halt(err);
+    });
+  });
+}
+
+/*
+ * Definition of terminal interface
+ */
+
+var nomnom = require('nomnom');
+
+nomnom.command('list-missing')
+  .option('from', {
+    abbr: 'f',
+    help: 'Base language to use the keys as reference.',
+    choices: languages,
+    required: true
+  })
+  .option('to', {
+    abbr: 't',
+    help: 'Target language, will default to all other languages.',
+    choices: languages,
+    required: false,
+    list: true
+  })
+  .callback(commandListMissing)
+  .help('Find all the missing keys.');
+
+nomnom.command('translate-missing')
+  .option('from', {
+    abbr: 'f',
+    help: 'Base language to use as reference.',
+    choices: languages,
+    required: true
+  })
+  .option('to', {
+    abbr: 't',
+    help: 'Target language, will default to all other languages.',
+    choices: languages,
+    required: false,
+    list: true
+  })
+  .callback(commandTranslateMissing)
+  .help('Translate missing keys.');
+
+nomnom.command('delete-key')
+  .option('key', {
+    abbr: 'k',
+    help: 'Key(s) to delete.',
+    required: true,
+    list: true
+  })
+  .option('from', {
+    abbr: 'f',
+    help: 'Target language(s), will default to all languages.',
+    choices: languages,
+    required: false,
+    list: true
+  })
+  .callback(commandDeleteKey)
+  .help('Delete a given key from selected language files.');
+
+nomnom.command('rename-key')
+  .option('key', {
+    abbr: 'k',
+    help: 'Key(s) to rename.',
+    required: true,
+    list: true
+  })
+  .option('name', {
+    abbr: 'n',
+    help: 'New name to set the key(s), keep in mind to have the same order as `--key` param.',
+    required: true,
+    list: true
+  })
+  .option('from', {
+    abbr: 'f',
+    help: 'Target language(s), will default to all languages.',
+    choices: languages,
+    required: false,
+    list: true
+  })
+  .callback(commandRenameKey)
+  .help('Rename a given key from selected language files.');
+
+nomnom.nom();
