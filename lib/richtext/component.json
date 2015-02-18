@@ -2,7 +2,8 @@
   "name": "richtext",
   "dependencies": {
     "component/dom": "1.0.6",
-    "democracyos/quill": "0.19.9"
+    "democracyos/quill": "0.19.9",
+    "cristiandouce/merge-util": "0.2.0"
   },
   "locals": [
     "view"
