@@ -210,6 +210,43 @@ function commandRenameKey(opts) {
   });
 }
 
+function commandListExtra(opts) {
+  var on = opts.on || languages;
+
+  var baseKeys = getLangKeys(opts.base);
+
+  on.forEach(function(lang){
+    var keys = getLangKeys(lang);
+    var extra = arrDiff(keys, baseKeys);
+
+    if (!extra.length) return;
+
+    console.log('Extra ' + extra.length + ' keys on `' + lang + '`:');
+
+    extra.forEach(function(k){
+      console.log('  - ' + k);
+    });
+  });
+}
+
+function commandDeleteExtra(opts) {
+  var on = opts.on || languages;
+
+  var baseKeys = getLangKeys(opts.base);
+
+  on.forEach(function(lang){
+    var keys = getLangKeys(lang);
+    var extra = arrDiff(keys, baseKeys);
+
+    if (!extra.length) return;
+
+    commandDeleteKey({
+      from: [lang],
+      key: extra
+    })
+  });
+}
+
 /*
  * Definition of terminal interface
  */
@@ -289,5 +326,33 @@ nomnom.command('rename-key')
   })
   .callback(commandRenameKey)
   .help('Rename a given key from selected language files.');
+
+nomnom.command('list-extra')
+  .option('base', {
+    abbr: 'b',
+    help: 'Language to use as the base for the comparisons.',
+    required: true
+  })
+  .option('on', {
+    abbr: 'n',
+    help: 'Language(s) you want to list extra keys from. Defaults to all.',
+    list: true
+  })
+  .callback(commandListExtra)
+  .help('Prints a list of the keys of `--on` that are not present on `--base`.');
+
+nomnom.command('delete-extra')
+  .option('base', {
+    abbr: 'b',
+    help: 'Language to use as the base for the comparisons.',
+    required: true
+  })
+  .option('on', {
+    abbr: 'n',
+    help: 'Language(s) you want to delete extra keys. Defaults to all.',
+    list: true
+  })
+  .callback(commandDeleteExtra)
+  .help('Delete extra keys from `--on` that are not present on `--base`.');
 
 nomnom.nom();
