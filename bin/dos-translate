@@ -7,12 +7,35 @@ require('node-path')(module, [path.resolve('.')]);
 var fs = require('fs');
 var arrDiff = require('arr-diff');
 var config = require('lib/config');
+var jsonFile = require('json-file-plus');
 
 // Load the list of available languages.
 var LANGS_FOLDER = 'lib/translations/lib'
 var languages = fs.readdirSync(LANGS_FOLDER).map(function(v){
   return v.replace('.json', '');
 });
+
+/*
+ * Extend proto of JSONFile object
+ */
+
+(function(){
+  function sort(old) {
+    if (typeof(old) !== 'object' && old !== null) {
+        return old;
+    }
+    var copy = Array.isArray(old) ? [] : {};
+    var keys = Object.keys(old).sort();
+    keys.forEach(function(key) {
+        copy[key] = sort(old[key]);
+    });
+    return copy;
+  }
+
+  jsonFile.JSONFile.prototype.sort = function(){
+    this.data = sort(this.data)
+  }
+})();
 
 /*
  * Utility Functions
@@ -36,8 +59,6 @@ function getLangKeys(lang) {
 }
 
 function forEachLanguageFile(langs, cb) {
-  var jsonFile = require('json-file-plus');
-
   return langs.forEach(function(lang){
     jsonFile(getLangPath(lang), function(err, file) {
       if (err) return halt(err);
@@ -96,10 +117,10 @@ function commandTranslateMissing(opts) {
   forEachLanguageFile(langs, function(lang, file){
     console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:');
 
+    var edited = false;
     var format_regex = /%[a-z]/
 
     missings[lang].forEach(function(k){
-
       if (format_regex.test(fromLang[k])) {
         console.warn('  Couldnt translate `' + k + '`, it has a variable defined with % format.')
         return
@@ -113,14 +134,20 @@ function commandTranslateMissing(opts) {
         var t = {};
         t[k] = translation.translatedText;
         file.set(t);
+        console.log('  "' + k + '": "' + translation.translatedText + '"');
 
-        file.save().then(function() {
-          console.log('  "' + k + '": "' + translation.translatedText + '"');
-        }).catch(function(err) {
-          halt(err);
-        });
+        edited = true;
       }
     });
+
+    if (edited) {
+      file.sort();
+      file.save().then(function() {
+        console.log('Done!');
+      }).catch(function(err) {
+        halt(err);
+      });
+    }
   });
 }
 
@@ -154,23 +181,32 @@ function commandRenameKey(opts) {
       halt('Have to provide the same amount of keys and names.');
     }
 
+    var edited = false;
+
     opts.key.forEach(function(k, i){
       if (!file.data[k]) return;
 
       var name = opts.name[i];
       var value = file.data[k];
 
+      if (k === name) return;
+
       file.data[k] = undefined;
       file.data[name] = value;
+
+      edited = true;
 
       console.log('  "' + k + '" => "' + name + '"');
     });
 
-    file.save().then(function() {
-      console.log('Done!');
-    }).catch(function(err) {
-      halt(err);
-    });
+    if (edited) {
+      file.sort();
+      file.save().then(function() {
+        console.log('Done!');
+      }).catch(function(err) {
+        halt(err);
+      });
+    }
   });
 }
 
