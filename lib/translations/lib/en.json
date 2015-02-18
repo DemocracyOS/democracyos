@@ -239,7 +239,6 @@
 
   "admin-tags-form.message.onsuccess": "Tag successfully saved",
 
-  "markdown.cheatsheet.title": "Formatting help",
   "democracyos.markdown.flavored": "DemocracyOS flavored markdown",
   "markdown.will.become": "Will become:",
   "markdown.text.1": "DemocracyOS uses the following markdown rules for debating on topics",
@@ -275,13 +274,8 @@
   "go back to": "go back to",
   "Go back to DemocracyOS": "Go back to DemocracyOS",
 
-  "side-comments.post": "Post",
   "side-comments.cancel": "Cancel",
-  "side-comments.leave-a-comment": "Leave a comment",
   "side-comments.delete": "Delete",
-  "side-comments.or": "or",
-  "side-comments.login": "Login",
-  "side-comments.signup": "Signup",
   "side-comments.delete.confirmation": "Are you sure you want to delete this comment?",
   "side-comments.confirmation.title": "Delete comment",
 
