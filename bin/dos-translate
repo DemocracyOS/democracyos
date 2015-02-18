@@ -1,23 +1,23 @@
 #!/usr/bin/env node
 
-var path = require('path');
-var fs = require('fs');
-var arrDiff = require('arr-diff');
-var jsonFile = require('json-file-plus');
-
 // Little hack to include `NODE_PATH=.`
+var path = require('path');
 require('node-path')(module, [path.resolve('.')]);
 
-// Compile client application `./public/app.js` and `./public/app.css`
+var fs = require('fs');
+var arrDiff = require('arr-diff');
 var config = require('lib/config');
-
-var googleTranslate = require('google-translate')(config.googleAPIKey);
 
 // Load the list of available languages.
 var LANGS_FOLDER = 'lib/translations/lib'
-var langs = fs.readdirSync(LANGS_FOLDER).map(function(v){
+var languages = fs.readdirSync(LANGS_FOLDER).map(function(v){
   return v.replace('.json', '');
 });
+
+function halt(err){
+  if (err) console.error(err)
+  process.exit(1);
+}
 
 function getLangPath(lang) {
   return path.join(LANGS_FOLDER, lang + '.json');
@@ -27,20 +27,33 @@ function getLang(lang) {
   return require(getLangPath(lang));
 }
 
+function getLangKeys(lang) {
+  return Object.keys(getLang(lang));
+}
+
+function forEachLanguageFile(langs, cb) {
+  var jsonFile = require('json-file-plus');
+
+  return langs.forEach(function(lang){
+    jsonFile(getLangPath(lang), function(err, file) {
+      if (err) return halt(err);
+      cb.call(file, lang, file);
+    });
+  });
+}
 
 var opts = require('nomnom')
   .options({
     from: {
       abbr: 'f',
       help: 'Base language to use as reference.',
-      required: true,
-      choices: langs
+      choices: languages
     },
     to: {
       abbr: 't',
       help: 'Target language, will default to all the other languages.',
       list: true,
-      choices: langs
+      choices: languages
     },
     'list-missing': {
       abbr: 'l',
@@ -51,21 +64,35 @@ var opts = require('nomnom')
       abbr: 'm',
       help: 'Fill missing keys of `--to` using the translated values of `--from`.',
       flag: true
+    },
+    'delete-key': {
+      abbr: 'd',
+      help: 'Delete the given key(s) on all language files.',
+      list: true
     }
   })
   .nom();
 
+function requireFrom() {
+  if (!opts.from) halt('Need to specify `--from` param.');
+}
+
 // Make `--to` param optional
-if (!opts.to || !opts.to.length) {
-  opts.to = langs.filter(function(v){ return v !== opts.from; })
+function defaultTo() {
+  if (!opts.to || !opts.to.length) {
+    opts.to = languages.filter(function(v){ return v !== opts.from; })
+  }
 }
 
 
-if (opts['list-missing']) {
-  var fromKeys = Object.keys(getLang(opts.from));
+if (opts['list-missing']) (function(){
+  requireFrom()
+  defaultTo()
+
+  var fromKeys = getLangKeys(opts.from);
 
   opts.to.forEach(function(lang){
-    var toKeys = Object.keys(getLang(lang));
+    var toKeys = getLangKeys(lang);
     var missing = arrDiff(fromKeys, toKeys);
 
     if (!missing.length) return;
@@ -76,40 +103,64 @@ if (opts['list-missing']) {
       console.log('  - ' + k);
     });
   });
-}
+})();
 
 
-if (opts['translate-missing']) {
+if (opts['translate-missing']) (function(){
+  requireFrom()
+  defaultTo()
+
+  var googleTranslate = require('google-translate')(config.googleAPIKey);
   var fromLang = getLang(opts.from);
-  var fromKeys = Object.keys(fromLang);
+  var fromKeys = getLangKeys(opts.from);
 
-  opts.to.forEach(function(lang){
-    var toKeys = Object.keys(getLang(lang));
+  var missings = {}
+  var langs = opts.to.filter(function(lang){
+    var toKeys = getLangKeys(lang);
     var missing = arrDiff(fromKeys, toKeys);
 
-    if (!missing.length) return;
+    if (missing.length) missings[lang] = missing;
 
-    console.log('Translating ' + missing.length + ' missing keys on `' + lang + '`:');
+    return !!missing.length;
+  });
 
-    jsonFile(getLangPath(lang), function(err, file) {
-      if (err) return console.error(err);
+  forEachLanguageFile(langs, function(lang, file){
+    missings[lang].forEach(function(k){
+      googleTranslate.translate(fromLang[k], opts.from, lang, callback);
+      function callback(err, translation) {
+        if (err) return halt(err);
 
-      missing.forEach(function(k){
-        googleTranslate.translate(fromLang[k], opts.from, lang, function(err, translation){
-          if( err ) return console.error(err);
+        var t = {};
+        t[k] = translation.translatedText;
+        file.set(t);
 
-          var t = {};
-          t[k] = translation.translatedText;
-          file.set(t);
-
-          file.save().then(function() {
-            console.log('  "' + k + '": "' + translation.translatedText + '"');
-          }).catch(function (err) {
-            console.error(err);
-          });
+        file.save().then(function() {
+          console.log('  "' + k + '": "' + translation.translatedText + '"');
+        }).catch(function(err) {
+          halt(err);
         });
-      });
-
+      }
     });
   });
-}
+})();
+
+
+if (opts['delete-key']) (function(){
+
+  forEachLanguageFile(languages, function(lang, file){
+    opts['delete-key'].forEach(function(key){
+      if (!file.data[key]) return;
+      file.data[key] = undefined;
+    });
+
+    file.save().then(function() {
+      console.log('Deleted keys from `' + lang + '`:')
+      opts['delete-key'].forEach(function(key){
+        console.log('  "' + key + '"');
+      });
+    }).catch(function(err) {
+      halt(err);
+    });
+  });
+
+})();
