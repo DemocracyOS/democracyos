@@ -1,0 +1,8 @@
+.git
+.gitignore
+.env
+.DS_Store
+.dockerignore
+Dockerfile
+
+Procfile
