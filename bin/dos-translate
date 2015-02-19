@@ -115,8 +115,8 @@ function commandTranslateMissing(opts) {
   forEachLanguageFile(langs, function(lang, file){
     console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:');
 
-    var edited = false;
-    var format_regex = /%[a-z]|{[a-z\-]+}/
+    var format_regex = /%[a-z]|{[a-z\-]+}/;
+    var count = 0;
 
     missings[lang].forEach(function(k){
       if (format_regex.test(baseLang[k])) {
@@ -124,9 +124,13 @@ function commandTranslateMissing(opts) {
         return
       }
 
+      count++;
+
       googleTranslate.translate(baseLang[k], opts.base, lang, callback);
 
       function callback(err, translation) {
+        count--;
+
         if (err) return halt(err);
 
         var t = {};
@@ -134,18 +138,16 @@ function commandTranslateMissing(opts) {
         file.set(t);
         console.log('  "' + k + '": "' + translation.translatedText + '"');
 
-        edited = true;
+        if (count === 0) {
+          file.sort();
+          file.save().then(function() {
+            console.log('Done!');
+          }).catch(function(err) {
+            halt(err);
+          });
+        }
       }
     });
-
-    if (edited) {
-      file.sort();
-      file.save().then(function() {
-        console.log('Done!');
-      }).catch(function(err) {
-        halt(err);
-      });
-    }
   });
 }
 
