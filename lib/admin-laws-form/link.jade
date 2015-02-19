@@ -6,6 +6,6 @@
       label=t('admin-laws-form.clause.label.text')
       input.form-control(type='text', name='links[#{link.id}][text]', value=link.text, validate='required')
     .link-group.link-url
-      label=t('URL')
+      label=t('admin-laws-form.url')
       input.form-control(type='text', name='links[#{link.id}][url]', validate='url', value=link.url)
   a.remove-link.btn.btn-danger.btn-xs(href='#')= t('admin-laws-form.clause.button.delete')

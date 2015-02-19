@@ -8,7 +8,7 @@
     form.form(action="/signin", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-errors
       .form-group
-        label= t('Email')
+        label= t('signup.email')
         input.form-control(type='text', name='email', tabindex=1, placeholder=t('forgot.mail.example'), validate='required email')
       .form-group
         label= t('password')

@@ -11,8 +11,8 @@
         p
           textarea(name='text', rows='4', validate='required max-length:4096', tabindex=1)
           ul.form-messages
-        input.btn.form-submit.pull-right(type='submit', tabindex=2, value=t('Send'))
-        a(href='#', tabindex=3).btn.btn-link.cancel-new-comment.pull-right=t('Cancel')
+        input.btn.form-submit.pull-right(type='submit', tabindex=2, value=t('comments.send'))
+        a(href='#', tabindex=3).btn.btn-link.cancel-new-comment.pull-right=t('common.cancel')
         ul.form-messages
       button.btn.btn-block.new-comment.hide
         i.icon-plus
@@ -24,9 +24,9 @@
     - if (!logged)
       .box
         p.text-mute= t('comments.sign-in-required')
-          | . 
+          | .
           a(href="/signin")= t('Login')
-          |  #{t('common.or')} 
+          |  #{t('common.or')}
           - var signupUrl = '/signup?reference=' + law.id
           a(href=signupUrl)= t('Signup')
           | .

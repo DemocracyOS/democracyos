@@ -29,10 +29,10 @@
       p
         i.icon-time
         - if (proposal.closingAt)
-          span.time-ago-label= (closed ? t('Closed') : t('Close')) + " "
+          span.time-ago-label= (closed ? t('common.closed') : t('common.close')) + " "
           span.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
         - else
-          span.meta-item.meta-timeago= t('Unknown closing date')
+          span.meta-item.meta-timeago= t('proposal-article.unknown-closing-date')
 
     h1=proposal.mediaTitle
     - if (proposal.author)
@@ -62,7 +62,7 @@
             - if (proposal.clauseTruncationText)
               a.read-more(href="#")= proposal.clauseTruncationText
             - else
-              a.read-more(href="#")= t('read more')
+              a.read-more(href="#")= t('common.read-more')
 
     //- Article source
     - if (proposal.source)
@@ -70,12 +70,12 @@
         p
           span.glyphicon.glyphicon-link
           a(target="_blank", href="#{proposal.source}")
-           | #{t('View the original text')}
+           | #{t('proposal-article.view-original-text')}
 
     //- Article links
     - if (proposal.links && proposal.links.length)
       .links
-        h5=t('More information')
+        h5=t('common.more-information')
         - each link in proposal.links
           p
             span.glyphicon.glyphicon-share
@@ -87,6 +87,6 @@
 
     //- Article share links
     .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
-      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  
-      a(target="_blank", href="https://plus.google.com/share?url=#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus 
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook
+      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter
+      a(target="_blank", href="https://plus.google.com/share?url=#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus
