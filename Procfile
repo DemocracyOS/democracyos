@@ -1,1 +1,1 @@
-web: DEBUG=$(DEBUG) node index.js
+web: node index.js
