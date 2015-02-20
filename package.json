@@ -101,5 +101,8 @@
   "engines": {
     "node": "0.10.28",
     "npm": "1.4.9"
+  },
+  "scripts": {
+    "postinstall": "node ./bin/dos-install --config && node ./bin/dos-config && node ./bin/dos-build"
   }
 }
