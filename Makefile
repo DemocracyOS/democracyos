@@ -18,6 +18,14 @@ packages:
 	@echo "Installing dependencies..."
 	@npm install
 	@echo "Done.\n"
+	@echo "Installing components..."
+	@DEBUG=$(DEBUG) node ./bin/dos-install --config
+	@echo "Updating config settings..."
+	@DEBUG=$(DEBUG) node ./bin/dos-config
+	@echo "Done.\n"
+	@echo "Compiling components to ./public..."
+	@DEBUG=$(DEBUG) node ./bin/dos-build
+	@echo "Done.\n"
 
 clean:
 	@echo "Removing dependencies, components and built assets."
