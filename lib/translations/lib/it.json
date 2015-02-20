@@ -174,6 +174,7 @@
   "proposal-article.article.alert.text": "Questa é una versione demo da DemocracyOS.",
   "proposal-article.participant.plural": "Partecipantes",
   "proposal-article.participant.singular": "Partecipante",
+  "proposal-article.unknown-closing-date": "Data di chiusura Unknown",
   "proposal-article.view-original-text": "Vedere il testo originale",
   "proposal-options.abstain": "Astensione",
   "proposal-options.change-vote": "Voglio cambiare il mio voto",
