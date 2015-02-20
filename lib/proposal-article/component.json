@@ -3,7 +3,8 @@
   "description": "proposal's article view",
   "dependencies": {
     "component/truncate": "72b55",
-    "component/dom": "1.0.6"
+    "component/dom": "1.0.6",
+    "yields/wrap": "0.0.1"
   },
   "locals": [
     "config",
