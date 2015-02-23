@@ -91,7 +91,8 @@
     "t-component": "1.0.0",
     "transliteration": "~0.1.1",
     "truncate": "~1.0.2",
-    "type-component": "0.0.1"
+    "type-component": "0.0.1",
+    "batch": "~0.5.2"
   },
   "devDependencies": {
     "google-translate": "^0.1.8"
@@ -102,7 +103,6 @@
     "npm": "1.4.9"
   },
   "scripts": {
-    "test": "",
     "postinstall": "node ./bin/dos-install --config && node ./bin/dos-config && node ./bin/dos-build"
   }
 }
