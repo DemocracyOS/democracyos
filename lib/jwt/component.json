@@ -1,0 +1,11 @@
+{
+  "name": "jwt",
+  "description": "JSON Web Tokens (JWT) wrapper",
+  "dependencies": {},
+  "locals": [
+    "store"
+  ],
+  "styles": [],
+  "scripts": [ "jwt.js" ],
+  "main": "jwt.js"
+}

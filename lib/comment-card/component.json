@@ -1,0 +1,23 @@
+{
+  "name": "comment-card",
+  "description": "Generic comment card component",
+  "dependencies": {
+    "component/dom": "0.7.1",
+    "component/t": "1.0.0",
+    "visionmedia/debug": "0.7.4",
+    "DemocracyOS/marked": "master"
+  },
+  "locals": [
+    "citizen",
+    "comments-edit",
+    "comments-replies",
+    "config",
+    "request",
+    "comment-vote",
+    "view"
+  ],
+  "scripts": [ "view.js" ],
+  "templates": [ "template.jade" ],
+  "styles": [ "styles.styl" ],
+  "main": "view.js"
+}

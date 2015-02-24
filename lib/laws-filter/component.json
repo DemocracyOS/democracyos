@@ -3,11 +3,11 @@
   "description": "Filter for laws. Saves state in session or localStorage if availble",
   "dependencies": {
     "component/emitter": "1.1.3",
-    "visionmedia/debug": "0.7.4",
-    "cristiandouce/merge-util": "*",
+    "visionmedia/debug": "2.1.0",
+    "cristiandouce/merge-util": "0.2.0",
     "component/t": "1.0.0",
-    "component/type": "*",
-    "component/to-function": "*"
+    "component/type": "1.0.0",
+    "component/to-function": "2.0.5"
     },
   "locals": [
     "citizen",

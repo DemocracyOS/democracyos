@@ -1,0 +1,5 @@
+{
+  "name": "browser-update",
+  "description": "Browser update layout",
+  "styles": [ "styles.styl" ]
+}

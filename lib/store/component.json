@@ -1,15 +1,18 @@
 {
   "name": "store",
-  "description": "Basic data saving on localStorage with fallback to server session",
+  "description": "Basic data saving on localStorage with fallback to server session or cookies",
   "dependencies": {
-    "yields/unserialize": "0.0.1"
+    "yields/unserialize": "0.0.1",
+    "marcuswestin/store.js": "^1.3.17",
+    "component/cookie": "^1.1.1"
   },
   "locals": [
     "request"
   ],
   "scripts": [
     "store.js",
-    "local.js"
+    "storages/localStorage.js",
+    "storages/cookie.js"
   ],
   "main": "store.js"
 }

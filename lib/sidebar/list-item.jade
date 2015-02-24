@@ -1,7 +1,7 @@
 - var voted = citizen.logged() && !!item.voted
 
 li(data-id=item.id)
-  a(href='/#{listType}/'+item.id, class = voted ? 'voted' : '')
+  a(href='/law/#{item.id}', class = voted ? 'voted' : '')
     .item-tag
       img(src=tagImages[item.tag.image].url)
       svg(viewbox='0 0 126 144', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns').hexagon
@@ -16,8 +16,8 @@ li(data-id=item.id)
     span.title= item.mediaTitle
     span.created-by
       - if (item.participants.length > 0)
-        - var plural = 1 === item.participants.length ? '' : 's'
-        div= item.participants.length + ' ' + t('Participant') + plural
+        - var cardinality = 1 === item.participants.length ? 'singular' : 'plural'
+        div= item.participants.length + ' ' + t('proposal-article.participant.' + cardinality)
       - if (item.closingAt)
         - var closed = item.closingAt && +new Date(item.closingAt) < Date.now()
         span.time-ago-label= (closed ? t('Closed') : t('Close')) + ' '

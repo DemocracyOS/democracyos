@@ -40,7 +40,7 @@
         input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')
       .form-group
         label= t('admin-laws-form.label.tag')
-        select.form-control(name='tag', tabindex=8)
+        select.form-control(name='tag', tabindex=8, validate='required')
           - each tag in tags
             option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
       .form-group
@@ -52,7 +52,7 @@
         - var closingAtTime = ''
         - if (law.closingAt)
           - closingAt = new Date(law.closingAt)
-          - var closingAtTime = closingAt.getHours() + ':' + closingAt.getMinutes()
+          - var closingAtTime = moment(closingAt).format('H:mm')
           - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
         .input-group
           input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)

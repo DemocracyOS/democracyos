@@ -1,23 +1,11 @@
 {
   "name": "comments-edit",
   "description": "Comments editing component",
-  "dependencies": {
-    "component/classes": "1.2.0",
-    "component/domify": "1.2.0",
-    "component/emitter": "1.1.3",
-    "component/events": "1.0.9",
-    "component/t": "1.0.0",
-    "slifszyc/query": "0.0.3",
-    "visionmedia/jade": "1.1.5",
-    "visionmedia/debug": "0.7.4",
-    "yields/serialize": "0.2.0"
-  },
   "locals": [
-    "render",
-    "request"
+    "form-view"
   ],
   "scripts": [ "view.js" ],
-  "styles" : [ "comments-edit.styl" ],
-  "templates": [ "comments-edit.jade" ],
+  "styles" : [ "styles.styl" ],
+  "templates": [ "template.jade" ],
   "main": "view.js"
 }

@@ -6,14 +6,15 @@
     "component/dom": "1.0.6",
     "gvilarino/datepicker": "1.0.2",
     "gvilarino/timepicker": "1.1.2a",
-    "visionmedia/debug": "0.7.4",
-    "visionmedia/jade": "1.1.5",
+    "visionmedia/debug": "2.1.0",
+    "jadejs/jade": "1.1.5",
     "visionmedia/page.js": "1.3.7",
     "yields/serialize": "0.2.0",
     "yields/empty": "0.0.1",
     "component/closest": "0.1.4",
     "cristiandouce/confirmation": "d0861",
-    "slifszyc/query": "0.0.3"
+    "slifszyc/query": "0.0.3",
+    "DemocracyOS/moment": "develop"
   },
   "locals": [
     "form-view",
@@ -29,7 +30,7 @@
     "clause.jade"
   ],
   "styles": [
-    "styles.css"
+    "styles.styl"
   ],
   "scripts": [
     "view.js"

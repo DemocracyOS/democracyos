@@ -10,9 +10,13 @@
     "lib/es.json",
     "lib/fr.json",
     "lib/fi.json",
+    "lib/gl.json",
     "lib/it.json",
     "lib/nl.json",
-    "lib/pt.json"
+    "lib/pt.json",
+    "lib/ru.json",
+    "lib/sv.json",
+    "lib/uk.json"
     ],
   "main": "index.js"
 }

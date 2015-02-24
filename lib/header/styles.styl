@@ -12,6 +12,11 @@ link_blue = #2980b9
 header.app-header, aside.nav-proposal, .site-content, .site-content.loading-lock
   position fixed
 
+.site-content.content-pinned
+aside.nav-proposal.content-pinned
+  transition transform 200ms linear
+  padding-top 0
+
 .site-content
   z-index 1
   overflow-y scroll
@@ -83,3 +88,20 @@ header.app-header
         font-size 20px
       &:hover
         text-decoration none
+
+vendors(prop, args, fn = null)
+  val = fn == null ? args : fn + '(' + args + ')'
+  -moz-{prop} val
+  -webkit-{prop} val
+  -o-{prop} val
+  -ms-{prop} val
+  {prop} val
+
+.headroom
+  vendors(transition, all 200ms linear)
+
+.headroom--pinned
+  vendors(transform, 0%, translateY)
+
+.headroom--unpinned
+  vendors(transform, -100%, translateY)

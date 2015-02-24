@@ -1,4 +1,191 @@
 
+0.10.13 / 2015-02-15
+==================
+
+ * Update all translations for full i18n support.
+
+0.10.12 / 2015-02-15
+==================
+
+ * Update Dutch translation (thanks @Dandandan).
+
+0.10.11 / 2015-02-14
+==================
+
+ * Add link to admin panel on dropdown. Closes #635
+ * Minor tweaks for Ukrainian and Russian translations
+
+0.10.10 / 2015-02-13
+====================
+
+  * Add translitarate when normalizing. Closes #642
+
+0.10.9 / 2015-02-11
+==================
+
+ * Fix jump when scrolling headroom. Closes #637
+ * Fix saving a `law` with no `tag` on it. Closes #624
+
+0.10.8 / 2015-02-10
+===================
+
+  * Fix `timeago` interval to be 1s #631
+
+0.10.7 / 2015-02-10
+===================
+
+  * Remove bus emitting events to call timeago.update(). Update timeago update interval #631
+  * Bump DemocracyOS/side-comments version to 0.0.13 #631
+  * Fix hour formatting in law admin. Closes #625
+  * Fix duplicate entry in changelog
+
+0.10.6 / 2015-02-07
+==================
+
+ * Fix error when clicking on show replies when not logged in. Fixes #632
+ * Fix usage of COMMENTS_PER_PAGE in env.js so 0 is always default
+ * Fixed paging limit in side-comments. Closes #623
+ * Don't allow validated users to request resend validation email. Closes #604
+ * Fixed separation between commenter and timestamp. Closes #620
+ * When posting a new comment, timestamp shows immediately Closes #619
+ * Remove setting timeago.interval since default is good enough (30 secs)
+ * Add wrapper for multiple local-storage options. Closes #582
+ * Make multiple CPU core usage optional via config. Closes #611
+
+0.10.5 / 2015-02-05
+==================
+
+ * Update contributor acknowledgements
+ * Bump version of DemocracyOS/side-comments. Fixes #615
+ * Set timeago update interval to 30 secs (default) #615
+ * Changed express.get by config to get token secret. Closes #613
+
+0.10.4 / 2015-02-01
+==================
+
+ * Fix handling of errors on formview. Fixes #610
+ * Make 'new-topic' notifications true by default
+
+0.10.3 / 2015-01-31
+==================
+
+ * Fix Display side-comments button only on paragraph mouse-over for paragraphs with no comments. Closes #606
+ * Fix tag icons go glitchy when tag names are shorter than 3 characters. Closes #607
+
+0.10.2 / 2015-01-30
+==================
+
+ * Add swedish translation and credits
+ * Changed 'forgot password' error description #602
+ * Redirect to Resend validation token page if nonvalidated email is submitted. Closes #602.
+ * Forgot password form xplanation now hides when form is submitted. Closes #594.
+ * 'You must login' message placed over voting buttons. Closes #592.
+ * Fixed signin after signup token validation. Closes #595.
+ * Put 'signin required' message over argument on up/downvoting. Closes #593.
+ * Fixed settings responsive styles. Closes #591
+ * Move demo link above the image in README.md
+ * Add Russian translation credits
+
+0.10.1 / 2015-01-25
+==================
+
+ * Add Russian language
+
+0.10.0 / 2015-01-25
+==================
+
+ * Update configuration defaults mechanism
+ * Bump 'merge-util' server-side dep to version 0.3.1 and fix handling of config merge in env.js
+ * Fix usage of config setting for external signin/signup URLs
+ * Update CONTRIBUTORS.md
+ * Bump 'merge-util' server-side dep to version 0.3.1 and fix handling of config merge in env.js
+ * Fix usage of config setting for external signin/signup URLs
+ * Support SSL via configuration. Closes #98 #587
+ * Fixed race condition. Related to #98.
+ * Add bin/dos-ssl script for self-signed SSL certificates #98.
+ * Scroll and focus on textarea when clicking on New Argument button. Closes #555.
+ * Added restrict middleware to update and delete operations #282 #580
+ * Fixed misuse of dom.addClass method. Closes #580.
+ * Rebase from development
+ * Implemented JSON Web Tokens (JWT) authentication middleware #578
+ * Added config parameter to disable signin/signup. Closes #573.
+ * Add Galician translation
+ * Add Ukrainian translation
+ * Rename MongoDB collection citizens to users
+ * Rename db-api/citizen.js to user.js
+ * Use mongoUsersUrl or fallback to mongoUrl if the key doesn't exists in the config #559
+ * Remove user-model module and export User model in lib/models #559
+ * Update comments' and replies' author to get populated by the User model #559
+ * Deprecated MONGO_HQ env var name in favor of MONGO_URL. Addendum to #525
+ * Fix code to meet conventions
+ * Fix read more participants. Closes #565
+ * Add mongoUsersUrl to env config file #559
+ * Add missing translations for #560 #478
+ * Basic wrapper for notifier-client #560
+ * Merge branch 'update/notifier-no-data-deps' into development
+ * Update payload for 'law-published' notification. Closes #561
+ * Added Gitter badge to README.md
+ * Update error handling on response override to match refactored approach in FormView
+ * Update re-send validation email view. Closes #478
+ * Updates law filter model without fetch from server. Related to #460.
+ * Changed the way voting badge is added to the sidebar. Closes #460.
+ * CSS to Stylus where missing #215.
+ * Replace vote up/down on comment card by comment-vote. Closes #471
+ * Expose unvote calls  #471
+ * Introduce comment vote view.  #471
+ * Refactored several views to extend from View and FormView #282
+ * Fixed onvote event binding. Closes #406.
+
+0.9.0a / 2015-01-16
+==================
+
+ * Fix side-comments. Fixes #572
+
+0.9.0 / 2015-01-06
+==================
+
+ * Fix faulty error handling in forgotpassword and signup with notifier. Closes #549
+ * Remove unneeded entries from component.json
+ * Fix autosubmit and FormView error handling
+ * Made usage of notifier mandatory for mailing users.
+ * Fix edit comment form buttons styles #529
+ * Reply submit button not properly aligned #495
+ * Remove mandrill and mailer dependencies
+ * Refactor homepage to use a middelware instead of an if-check clause. Update dependencies #282
+ * Switch local dep markdown to DemocracyOS/marked for #527
+ * Update dom dependecy to avoid error of chained messages with .html() #282
+ * Remove unused markdown local module. Closes #329
+ * change local markdown dependecy by remote dependency #329
+ * Bumped component-builder version to 1.2.0. Related to #475.
+ * Fixed array length check throwing error with new version of dom. Related to #475.
+ * Changed merge-util argument type on calling. Closes #475.
+ * Remove deprecated comments-view component #282
+ * Remove unused markdown local module. Closes #329
+ * Improve styles and content for update browser page. Add links for donwload browsers. #168
+ * Decreased separation between commenter's name and timestamp.
+ * Hide header on scroll if app is rendered in mobile device. Closes #452.
+ * Add middleware to handle unsupported browsers. Add module for unsupported browsers. #168
+ * Fix #516: Upvote comment button underlines on hover
+ * Fix #515: User name and timestamp overlap on replies
+ * Add comment to current user's comments after successful submit #282
+ * Improved pluralization. Related to #406.
+ * Update participants counter and balloons after voting. Closes #406.
+ * Update citizen model. Made reply notifications true by default
+ * Voting made async and UI blocks when user clicks on voting buttons. Closes #394.
+ * Add mail notifications when a law is published for users that are subscribed to it. Closes #473
+ * Add setting for new-topic notification
+ * Add delivering notifications to client
+ * Add notifications attribute to citizen model
+ * Add notifying when someone replies to an argument
+ * Add notifier integration for forgot-password
+ * Update sample config with notifier requirements
+ * Add missing translations for settings in every language
+ * Enable settings-notifications view #28
+ * Add UI toggle component styled for DemocracyOS
+ * Remove control logs. Actually closes #26
+ * Make notifier usage dependent on configuration settings
+ * Make signup email validations rely on notifier-client
+
 0.8.26 / 2014-12-11
 ==================
 
@@ -268,12 +455,12 @@
  * Fix facebook and twitter cards, escaping HTML characters
  * Fix open and closed count as they were counting drafts if you were signed in as admin. Closes #342
 
-0.7.1 / 2014-05-30 
+0.7.1 / 2014-05-30
 ==================
 
  * Remove 404 not found page
 
-0.7.0 / 2014-05-29 
+0.7.0 / 2014-05-29
 ==================
 
  * Add 404 not found page
@@ -291,7 +478,7 @@
  * Fix transportation tag image issue
  * See migrating to 0.7.x
 
-0.6.7 / 2014-05-16 
+0.6.7 / 2014-05-16
 ==================
 
  * Comments are marked as spam when they exceed a config parameter or, if not set, when they have more spam reports than score (upvotes minus downvotes)
@@ -311,12 +498,12 @@
 
  * Remove unneeded remotes from root `component.json`
 
-0.6.3 / 2014-05-12 
+0.6.3 / 2014-05-12
 ==================
 
  * Fix build failure based on remotes. Change remotes order.
 
-0.6.2 / 2014-05-09 
+0.6.2 / 2014-05-09
 ==================
 
  * Fix comments paging and sorting
@@ -349,7 +536,7 @@
 
  * Fix 'voted' check after sign-in. Fixes #326
 
-0.4.10 / 2014-04-03 
+0.4.10 / 2014-04-03
 ==================
 
  * Refresh sidebar after casting vote
@@ -387,17 +574,17 @@
  * Fix law min-height for voted badge. Closes #294
  * Update `sample.json`
 
-0.4.8 / 2014-03-31 
+0.4.8 / 2014-03-31
 ==================
 
  * Add published laws RSS feed
 
-0.4.7 / 2014-03-20 
+0.4.7 / 2014-03-20
 ==================
 
  * Add `closingAt` law attribute on admin
 
-0.4.6 / 2014-03-18 
+0.4.6 / 2014-03-18
 ==================
 
  * Fix comments at law view rendering bumping slifszyc/paragraphs to 0.2.0 version

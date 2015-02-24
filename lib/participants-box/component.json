@@ -1,9 +1,16 @@
 {
   "name": "participants-box",
+  "dependencies": {
+    "component/bus": "0.0.2",
+    "visionmedia/page.js": "1.3.7",
+    "yields/empty": "0.0.1",
+    "component/t": "1.0.0"
+  },
   "locals": [
     "participant-view",
     "request",
-    "view"
+    "view",
+    "citizen"
   ],
   "templates": [ "template.jade" ],
   "scripts": ["view.js"],

@@ -3,17 +3,18 @@
   "description": "Admin sidebar",
   "dependencies": {
     "component/classes": "1.2.0",
-    "visionmedia/jade": "1.1.5",
+    "jadejs/jade": "1.1.5",
     "slifszyc/query": "0.0.3"
   },
   "locals": [
-    "render"
+    "render",
+    "view"
   ],
   "templates": [
     "sidebar-template.jade"
   ],
   "styles": [
-    "admin-sidebar.css"
+    "admin-sidebar.styl"
   ],
   "scripts": [
     "view.js"
