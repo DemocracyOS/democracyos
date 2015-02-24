@@ -25,7 +25,7 @@
     "pp",
     "glossary",
     "authPages",
-    "debugging"
+    "client debug"
   ],
   "auth": {
     "basic": {
@@ -69,9 +69,6 @@
     "redirect": "normal"
   },
   "multicore": false,
-  "debugging": {
-    "server": false,
-    "client": false
-  },
+  "client debug": false,
   "googleAPIKey": ""
 }
