@@ -6,10 +6,10 @@
     "component/dom": "1.0.6",
     "visionmedia/page.js": "1.3.7",
     "jadejs/jade": "1.1.5",
-    "visionmedia/debug": "2.1.0",
     "yields/empty": "0.0.1"
   },
   "locals": [
+    "debug",
     "render"
   ],
   "styles": [ "styles.styl" ],

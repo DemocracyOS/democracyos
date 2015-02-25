@@ -7,8 +7,7 @@
     "component/bus": "^0.0.2",
     "DemocracyOS/timeago": "master",
     "code42day/ga": "1.1.0",
-    "slifszyc/user-agent": "0.0.9",
-    "visionmedia/debug": "2.1.0"
+    "slifszyc/user-agent": "0.0.9"
   },
   "locals": [
     "config",
@@ -28,7 +27,8 @@
     "logout",
     "help",
     "404",
-    "browser-update"
+    "browser-update",
+    "debug"
   ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.styl", "boot-responsive.styl" ],
