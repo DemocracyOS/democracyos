@@ -45,7 +45,7 @@ var launch = function launchServer () {
         log('Secure application started on port %d', securePort);
       });
     }
-  }
+  };
 
 /**
  * Launch the servers

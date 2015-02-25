@@ -1,0 +1,10 @@
+{
+  "name": "debug",
+  "dependencies": { },
+  "locals": [
+    "config",
+    "debug"
+  ],
+  "scripts": [ "index.js" ],
+  "main": "index.js"
+}
