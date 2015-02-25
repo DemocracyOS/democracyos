@@ -1,0 +1,15 @@
+{
+  "name": "richtext",
+  "dependencies": {
+    "component/dom": "1.0.6",
+    "democracyos/quill": "0.19.11",
+    "cristiandouce/merge-util": "0.2.0"
+  },
+  "locals": [
+    "view"
+  ],
+  "scripts": [ "richtext.js" ],
+  "templates": [ "template.jade" ],
+  "styles": [ "richtext.styl" ],
+  "main": "richtext.js"
+}
