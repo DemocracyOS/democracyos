@@ -6,7 +6,6 @@
     "component/dom": "1.0.6",
     "gvilarino/datepicker": "1.0.2",
     "gvilarino/timepicker": "1.1.2a",
-    "visionmedia/debug": "2.1.0",
     "jadejs/jade": "1.1.5",
     "visionmedia/page.js": "1.3.7",
     "yields/serialize": "0.2.0",
@@ -22,7 +21,8 @@
     "laws",
     "render",
     "request",
-    "regexps"
+    "regexps",
+    "debug"
   ],
   "templates": [
     "template.jade",

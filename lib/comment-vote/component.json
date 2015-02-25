@@ -3,7 +3,6 @@
   "description": "Comment vote for generic comment view.",
   "dependencies": {
     "component/dom": "1.0.6",
-    "visionmedia/debug": "2.1.0",
     "component/t": "1.0.0"
   },
   "locals": [
@@ -11,7 +10,8 @@
     "citizen",
     "request",
     "config",
-    "render"
+    "render",
+    "debug"
   ],
   "scripts": [ "view.js" ],
   "styles" : [ "style.styl" ],

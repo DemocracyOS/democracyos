@@ -1,10 +1,9 @@
 {
   "name": "debug",
-  "dependencies": {
-    "visionmedia/debug": "2.1.0"
-  },
+  "dependencies": { },
   "locals": [
-    "config"
+    "config",
+    "debug"
   ],
   "scripts": [ "index.js" ],
   "main": "index.js"
