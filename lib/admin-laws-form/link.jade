@@ -3,9 +3,9 @@
 .law-link(data-link=link.id)
   .link-row
     .link-group.link-id
-      label=t('admin-laws-form.clause.label.text')
-      input.form-control(type='text', name='links[#{link.id}][text]', value=link.text, validate='required')
+      input.form-control(type='text', name='links[#{link.id}][text]', value=link.text, validate='required', placeholder=t('admin-laws-form.clause.label.text'))
     .link-group.link-url
-      label=t('admin-laws-form.url')
-      input.form-control(type='text', name='links[#{link.id}][url]', validate='url', value=link.url)
-  a.remove-link.btn.btn-danger.btn-xs(href='#')= t('admin-laws-form.clause.button.delete')
+      input.form-control(type='text', name='links[#{link.id}][url]', validate='url', value=link.url, placeholder=t('admin-laws-form.url'))
+    .link-group.link-commands
+      a.remove-link.btn(href='#')
+        span.glyphicon.glyphicon-trash
