@@ -33,8 +33,8 @@
           input(type='checkbox', id="votable", name='votable', tabindex=5, checked=votable)
           = t('admin-laws-form.label.votable')
       .form-group
-        label= t('admin-laws-form.label.clause-truncation-text')
-        input.form-control(type='text', name='clauseTruncationText', tabindex=6, placeholder=t('common.read-more'), value=law.clauseTruncationText)
+        label.col-sm-2.control-label= t('admin-laws-form.label.votable')
+        .col-sm-10.votable-toggle
       .form-group
         label= t('admin-laws-form.label.source')
         input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')

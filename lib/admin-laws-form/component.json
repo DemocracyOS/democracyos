@@ -23,7 +23,8 @@
     "render",
     "request",
     "regexps",
-    "richtext"
+    "richtext",
+    "toggle"
   ],
   "templates": [
     "template.jade",
