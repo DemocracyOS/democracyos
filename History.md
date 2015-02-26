@@ -1,4 +1,29 @@
 
+0.10.14 / 2015-02-26
+====================
+
+  * Add missing translations Closes #671
+  * Add instanceUrl and law.id to data sent to notifier #673
+  * Add debugging configurations Closes #653
+  * Add debug on Procfile and move running instructions to postinstall script on package.json file #465
+  * Add unknown closing date translation Closes #655
+  * Add missing keys Close #476
+  * Add initial docker-related files
+  * Add translation lib #643
+  * Add in-app editing of side comments
+  * Fix no comments msg when comment deleted Closes #662
+  * Fix some portuguese translations
+  * Fix combo filer visibility Closes #553
+  * Fix build to process.exit(1) on error during build #465
+  * Fix re-load of user when already logged Closes #652 #376
+  * Fix bin file permissions #643
+  * Fix error after login Closes #376
+  * Fix login, use response data, dont fetch again user #376
+  * Remove useless keys on en language #476
+  * Remove unnecesary setting DEBUG on Procfile #465
+  * Refactor citizen.optional middleware #376
+  * Refactor db-api user public interface
+
 0.10.13 / 2015-02-15
 ==================
 
