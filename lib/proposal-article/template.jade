@@ -50,11 +50,10 @@
             - var classes = ['hide']
             - classes.push(clause.centered ? 'text-center' : '')
             .clause.commentable-section(class=classes, data-section-id=clause.id)!=clause.text
-          - if (clauses.length > 0)
-            - if (proposal.clauseTruncationText)
-              a.read-more(href="#")= proposal.clauseTruncationText
-            - else
-              a.read-more(href="#")= t('common.read-more')
+      - if (proposal.clauseTruncationText)
+        a.read-more(href="#")= proposal.clauseTruncationText
+      - else
+        a.read-more(href="#")= t('common.read-more')
 
     //- Article source
     - if (proposal.source)
