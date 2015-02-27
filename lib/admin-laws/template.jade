@@ -5,17 +5,27 @@
         i.icon-paper
       h1= t('admin-laws.list.title')
     .row
-      .col-md-offset-2.col-md-8
-        .input-group.input-group-lg
+      .col-md-3
+        .btn.btn-success.new
+          span.glyphicon.glyphicon-plus
+          | 
+          =t('admin-laws.list.add-topic')
+      .col-md-6
+        .input-group.input-group-md
           span.input-group-addon
             i.glyphicon.glyphicon-search
-          input.form-control.input-lg.search(type='text', placeholder='#{t("dashboard.search.placeholder")}', autofocus)
+          input.form-control.search(type='text', placeholder='#{t("admin-laws.list.search.placeholder")}', autofocus)
+      .col-md-3
+        .btn-group
+          button.btn.btn-default.btn-sm.sort(data-sort='law-date')=t('admin-laws.list.sort.date')
+          button.btn.btn-default.btn-sm.sort(data-sort='law-title')=t('admin-laws.list.sort.alpha')
 
     ul.list
       - each law in laws
         li(data-id=law.id)
           a(href="/admin/laws/" + law.id)
             span.law-id=law.tag.name
+            span.law-date.hide=law.createdAt
             - if (law.lawId)
               | #{' - '}
               span.law-id=law.lawId
