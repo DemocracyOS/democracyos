@@ -2,7 +2,8 @@
   "name": "admin-laws",
   "description": "Admin laws view",
   "dependencies": {
-    "jadejs/jade": "1.1.5"
+    "jadejs/jade": "1.1.5",
+    "javve/list.js": "1.1.1"
   },
   "locals": [
     "laws",

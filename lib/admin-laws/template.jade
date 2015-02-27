@@ -4,7 +4,14 @@
       .circle
         i.icon-paper
       h1= t('admin-laws.list.title')
-    ul
+    .row
+      .col-md-offset-2.col-md-8
+        .input-group.input-group-lg
+          span.input-group-addon
+            i.glyphicon.glyphicon-search
+          input.form-control.input-lg.search(type='text', placeholder='#{t("dashboard.search.placeholder")}', autofocus)
+
+    ul.list
       - each law in laws
         li(data-id=law.id)
           a(href="/admin/laws/" + law.id)
