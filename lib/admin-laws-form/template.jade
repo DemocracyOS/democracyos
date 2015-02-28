@@ -12,54 +12,61 @@
       p.bg-warning
         span= t('admin-laws-form.message.private-status')
         a.make-public(href="#")= t('admin-laws-form.button.make-public')
-    form.form(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+    form.form-horizontal(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
       input(type='hidden', name='_law_id_', value=law.id)
       ul.form-messages
       .form-group
-        label= t('admin-laws-form.label.lawId')
-        input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId)
+        label.col-sm-2.control-label= t('admin-laws-form.label.lawId')
+        .col-sm-10
+          input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId)
       .form-group
-        label= t('admin-laws-form.label.mediaTitle')
-        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle, validate='required')
+        label.col-sm-2.control-label= t('admin-laws-form.label.mediaTitle')
+        .col-sm-10
+          input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle, validate='required')
       .form-group
-        label= t('admin-laws-form.label.author')
-        input.form-control(type='text', id="lawAuthor", name='lawAuthor', tabindex=3, placeholder='John Doe', value=law.author, validate='author')
+        label.col-sm-2.control-label= t('admin-laws-form.label.author')
+        .col-sm-10
+          input.form-control(type='text', id="lawAuthor", name='lawAuthor', tabindex=3, placeholder='John Doe', value=law.author, validate='author')
       .form-group
-        label= t('admin-laws-form.label.author') + ' URL'
-        input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=4, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=law.authorUrl, validate='url')
-      .checkbox
-        label
-          - var votable = !law.id || law.votable
-          input(type='checkbox', id="votable", name='votable', tabindex=5, checked=votable)
-          = t('admin-laws-form.label.votable')
+        label.col-sm-2.control-label= t('admin-laws-form.label.author') + ' URL'
+        .col-sm-10
+          input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=4, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=law.authorUrl, validate='url')
       .form-group
         label.col-sm-2.control-label= t('admin-laws-form.label.votable')
         .col-sm-10.votable-toggle
       .form-group
-        label= t('admin-laws-form.label.source')
-        input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')
+        label.col-sm-2.control-label= t('admin-laws-form.label.clause-truncation-text')
+        .col-sm-10
+          input.form-control(type='text', name='clauseTruncationText', tabindex=6, placeholder=t('common.read-more'), value=law.clauseTruncationText)
       .form-group
-        label= t('admin-laws-form.label.tag')
-        select.form-control(name='tag', tabindex=8, validate='required')
-          - each tag in tags
-            option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
+        label.col-sm-2.control-label= t('admin-laws-form.label.source')
+        .col-sm-10
+          input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')
       .form-group
-        label= t('admin-laws-form.label.summary')
-        textarea.form-control(name='summary', tabindex=9)= law.summary
+        label.col-sm-2.control-label= t('admin-laws-form.label.tag')
+        .col-sm-10
+          select.form-control(name='tag', tabindex=8, validate='required')
+            - each tag in tags
+              option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
+      .form-group
+        label.col-sm-2.control-label= t('admin-laws-form.label.summary')
+        .col-sm-10
+          textarea.form-control(name='summary', tabindex=9)= law.summary
       .form-group.closingAt
-        label= t('admin-laws-form.label.closingAt')
+        label.col-sm-2.control-label= t('admin-laws-form.label.closingAt')
         - var closingAt = ''
         - var closingAtTime = ''
         - if (law.closingAt)
           - closingAt = new Date(law.closingAt)
           - var closingAtTime = moment(closingAt).format('H:mm')
           - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
-        .input-group
-          input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
-          span.input-group-addon.clear-closingAt
-            i.glyphicon.glyphicon-remove
-        .input-group
-          input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
+        .col-sm-10
+          .input-group
+            input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
+            span.input-group-addon.clear-closingAt
+              i.glyphicon.glyphicon-remove
+          .input-group
+            input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
       .form-group
         .law-clauses
           - if (law.clauses && law.clauses.length)
