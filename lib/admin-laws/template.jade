@@ -4,7 +4,7 @@
       .circle
         i.icon-paper
       h1= t('admin-laws.list.title')
-    .row
+    .row.well.well-lg
       .col-md-3
         .btn.btn-success.new
           span.glyphicon.glyphicon-plus
@@ -17,18 +17,30 @@
           input.form-control.search(type='text', placeholder='#{t("admin-laws.list.search.placeholder")}', autofocus)
       .col-md-3
         .btn-group
-          button.btn.btn-default.btn-sm.sort(data-sort='law-date')=t('admin-laws.list.sort.date')
-          button.btn.btn-default.btn-sm.sort(data-sort='law-title')=t('admin-laws.list.sort.alpha')
-
-    ul.list
-      - each law in laws
-        li(data-id=law.id)
-          a(href="/admin/laws/" + law.id)
-            span.law-id=law.tag.name
+          span.pull-left=t('Sort by ')
+          button.btn.btn-default.btn-sm.sort(data-sort='law-date')
+            span.glyphicon.glyphicon-time
+          button.btn.btn-default.btn-sm.sort(data-sort='law-title')
+            span.glyphicon.glyphicon-font
+    .row
+      .list.list-group
+        - each law in laws
+          a.list-group-item(href="/admin/laws/" + law.id, data-lawid=law.id)
+            button.btn.btn-default.pull-right.delete-law
+              span.glyphicon.glyphicon-trash
+            h4.law-title=law.mediaTitle
+              small=law.lawId
+            - if (law.author)
+              span.glyphicon.glyphicon-user
+              span.text=law.author
+            span.glyphicon.glyphicon-time
+            - if (law.closingAt)
+              - var date = new Date(law.closingAt)
+              - var relative = moment(date).fromNow()
+              - var when = (date < Date.now()) ? 'past' : 'future'
+              span.text=t('admin.laws.list.close.' + when) + ' ' + relative
+            - else
+              span.text=t('article.unknown-closing-date')
+            span.glyphicon.glyphicon-tag
+            span.text.law-id=law.tag.name
             span.law-date.hide=law.createdAt
-            - if (law.lawId)
-              | #{' - '}
-              span.law-id=law.lawId
-            - if(law.mediaTitle)
-              | #{' - '}
-              span.law-title=law.mediaTitle
