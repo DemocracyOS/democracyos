@@ -2,13 +2,13 @@
   "name": "settings-profile",
   "description": "Settings profile view",
   "dependencies": {
-    "visionmedia/debug": "2.1.0",
     "jadejs/jade": "1.1.5",
     "component/t": "1.0.0"
   },
   "locals": [
     "citizen",
-    "form-view"
+    "form-view",
+    "debug"
   ],
   "templates": [
     "template.jade"

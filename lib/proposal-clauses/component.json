@@ -12,7 +12,8 @@
     "citizen",
     "side-comments",
     "request",
-    "stateful-view"
+    "stateful-view",
+    "debug"
   ],
   "scripts": [ "proposal-clauses.js" ],
   "templates": [ "template.jade" ],

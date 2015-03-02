@@ -17,7 +17,6 @@ run: packages
 packages:
 	@echo "Installing dependencies..."
 	@npm install
-	@echo "Done.\n"
 
 clean:
 	@echo "Removing dependencies, components and built assets."
