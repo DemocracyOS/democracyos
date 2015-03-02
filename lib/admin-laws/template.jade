@@ -1,18 +1,18 @@
 #laws-wrapper
   .laws-admin
     .row.well.well-lg
-      .col-md-3
+      .col-md-3.col-xs-3
         .btn.btn-success.new
           span.glyphicon.glyphicon-plus
           | 
           =t('admin-laws.list.add-topic')
-      .col-md-6
+      .col-md-6.col-xs-6
         .input-group.input-group-md
           span.input-group-addon
             i.glyphicon.glyphicon-search
           input.form-control.search(type='text', placeholder='#{t("admin-laws.list.search.placeholder")}', autofocus)
       .col-md-3
-        span.sort-label.pull-left=t('admin-laws.list.sort')
+        span.sort-label.pull-left.hidden-xs=t('admin-laws.list.sort')
         .btn-group
           button.btn.btn-primary.sort(data-sort='law-date')
             span.glyphicon.glyphicon-time
