@@ -4,6 +4,7 @@
   "dependencies": {
     "component/dom": "1.0.6",
     "component/t": "1.0.0",
+    "solde9/scroll-to": "0.0.2",
     "slifszyc/loading-lock": "0867923281013c00b503c4bc866e103fd5024105"
   },
   "locals": [
