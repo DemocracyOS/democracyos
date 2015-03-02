@@ -92,7 +92,8 @@
     "transliteration": "~0.1.1",
     "truncate": "~1.0.2",
     "type-component": "0.0.1",
-    "batch": "~0.5.2"
+    "batch": "~0.5.2",
+    "cors": "2.5.3"
   },
   "devDependencies": {
     "google-translate": "^0.1.8"
