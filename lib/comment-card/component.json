@@ -4,7 +4,6 @@
   "dependencies": {
     "component/dom": "0.7.1",
     "component/t": "1.0.0",
-    "visionmedia/debug": "0.7.4",
     "DemocracyOS/marked": "master"
   },
   "locals": [
@@ -14,7 +13,8 @@
     "config",
     "request",
     "comment-vote",
-    "view"
+    "view",
+    "debug"
   ],
   "scripts": [ "view.js" ],
   "templates": [ "template.jade" ],

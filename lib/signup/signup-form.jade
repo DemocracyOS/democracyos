@@ -22,7 +22,7 @@
         input.form-control(type='password', name='password', tabindex=4, placeholder=t('password'), validate='required min-length:6')
       .form-group
         label= t('signup.retype-password')
-        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'), validate='required same:password')
+        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('password.repeat'), validate='required same:password')
       .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('signup.now')
       .form-group
         - var tos = config['tos'];

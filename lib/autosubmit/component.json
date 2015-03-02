@@ -3,11 +3,11 @@
   "description": "Autosubmit a form",
   "dependencies": {
     "component/dom": "1.0.6",
-    "visionmedia/debug": "2.1.0",
     "yields/serialize": "0.2.0"
   },
   "locals": [
-    "request"
+    "request",
+    "debug"
   ],
   "scripts": [ "autosubmit.js" ],
   "main": "autosubmit.js"
