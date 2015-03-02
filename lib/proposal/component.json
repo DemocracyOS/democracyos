@@ -2,7 +2,6 @@
   "name": "proposal",
   "description": "proposal pages",
   "dependencies": {
-    "visionmedia/debug": "2.1.0",
     "visionmedia/page.js": "1.3.7",
     "yields/empty": "0.0.1"
   },
@@ -12,7 +11,8 @@
     "sidebar",
     "proposal-article",
     "proposal-options",
-    "comments-view"
+    "comments-view",
+    "debug"
   ],
   "scripts": [ "proposal.js" ],
   "styles": [ ],
