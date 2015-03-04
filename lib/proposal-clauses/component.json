@@ -3,7 +3,9 @@
   "description": "proposal's clauses view",
   "dependencies": {
     "component/t": "1.0.0",
-    "jadejs/jade": "1.1.5"
+    "component/dom": "1.0.6",
+    "jadejs/jade": "1.1.5",
+    "visionmedia/debug": "2.1.0"
   },
   "locals": [
     "config",

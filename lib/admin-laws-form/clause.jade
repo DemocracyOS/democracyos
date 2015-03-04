@@ -15,5 +15,6 @@
       label
         input(type='checkbox', name='clauses[#{clause.id}][centered]', checked=clause.centered)
         =t('admin-laws-form.clause.text-centered')
+  .clause-row.text
     textarea.form-control(name='clauses[#{clause.id}][text]')= clause.text
   a.remove-clause.btn.btn-danger.btn-xs(href='#')= t('admin-laws-form.clause.button.delete')
