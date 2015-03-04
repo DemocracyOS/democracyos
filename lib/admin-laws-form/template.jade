@@ -8,42 +8,42 @@
       input(type='hidden', name='_law_id_', value=law.id)
       ul.form-messages
       .form-group
-        label.col-sm-2.control-label= t('admin-laws-form.label.lawId')
-        .col-sm-10
-          input.form-control(type='text', id="lawId", name='lawId', tabindex=1, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId)
-      .form-group
         label.col-sm-2.control-label= t('admin-laws-form.label.mediaTitle')
         .col-sm-10
-          input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=2, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle, validate='required')
-      .form-group
-        label.col-sm-2.control-label= t('admin-laws-form.label.author')
-        .col-sm-10
-          input.form-control(type='text', id="lawAuthor", name='lawAuthor', tabindex=3, placeholder='John Doe', value=law.author, validate='author')
-      .form-group
-        label.col-sm-2.control-label= t('admin-laws-form.label.author') + ' URL'
-        .col-sm-10
-          input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=4, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=law.authorUrl, validate='url')
-      .form-group
-        label.col-sm-2.control-label= t('admin-laws-form.label.votable')
-        .col-sm-10.votable-toggle
-      .form-group
-        label.col-sm-2.control-label= t('admin-laws-form.label.clause-truncation-text')
-        .col-sm-10
-          input.form-control(type='text', name='clauseTruncationText', tabindex=6, placeholder=t('common.read-more'), value=law.clauseTruncationText)
-      .form-group
-        label.col-sm-2.control-label= t('admin-laws-form.label.source')
-        .col-sm-10
-          input.form-control(type='url', name='source', tabindex=7, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')
+          input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=1, placeholder=t('admin-laws-form.label.mediaTitle'), value=law.mediaTitle, validate='required')
       .form-group
         label.col-sm-2.control-label= t('admin-laws-form.label.tag')
         .col-sm-10
-          select.form-control(name='tag', tabindex=8, validate='required')
+          select.form-control(name='tag', tabindex=2, validate='required')
             - each tag in tags
               option(selected= law.tag ? tag.hash === law.tag.hash : false, value=tag.hash)= tag.name
       .form-group
+        label.col-sm-2.control-label= t('admin-laws-form.label.lawId')
+        .col-sm-10
+          input.form-control(type='text', id="lawId", name='lawId', tabindex=3, placeholder=t('admin-laws-form.label.lawId'), value=law.lawId)
+      .form-group
+        label.col-sm-2.control-label= t('admin-laws-form.label.author')
+        .col-sm-10
+          input.form-control(type='text', id="lawAuthor", name='lawAuthor', tabindex=4, placeholder='John Doe', value=law.author, validate='author')
+      .form-group
+        label.col-sm-2.control-label= t('admin-laws-form.label.author') + ' URL'
+        .col-sm-10
+          input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=5, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=law.authorUrl, validate='url')
+      .form-group
+        label.col-sm-2.control-label= t('admin-laws-form.label.votable')
+        .col-sm-10.votable-toggle
+      .form-group.hide
+        label.col-sm-2.control-label= t('admin-laws-form.label.clause-truncation-text')
+        .col-sm-10
+          input.form-control(type='text', name='clauseTruncationText', placeholder=t('common.read-more'), value=law.clauseTruncationText)
+      .form-group
+        label.col-sm-2.control-label= t('admin-laws-form.label.source')
+        .col-sm-10
+          input.form-control(type='url', name='source', tabindex=6, placeholder=t('admin-laws-form.placeholder.source'), value=law.source, validate='url')
+      .form-group
         label.col-sm-2.control-label= t('admin-laws-form.label.summary')
         .col-sm-10
-          textarea.form-control(name='summary', tabindex=9)= law.summary
+          textarea.form-control(name='summary', tabindex=7)= law.summary
       .form-group.closingAt
         label.col-sm-2.control-label= t('admin-laws-form.label.closingAt')
         - var closingAt = ''
