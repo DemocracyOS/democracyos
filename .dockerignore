@@ -3,6 +3,5 @@
 .env
 .DS_Store
 .dockerignore
-Dockerfile
 
 Procfile
