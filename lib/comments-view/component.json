@@ -13,6 +13,7 @@
     "comment-card",
     "comments-filter",
     "form-view",
+    "is-in-viewport",
     "request",
     "debug"
   ],
