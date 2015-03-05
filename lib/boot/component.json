@@ -34,10 +34,7 @@
   "styles": [ "boot.styl", "boot-responsive.styl" ],
   "images": [
     "images/check.png",
-    "images/touch-icon-iphone.png",
-    "images/touch-icon-ipad.png",
-    "images/touch-icon-iphone-retina.png",
-    "images/touch-icon-ipad-retina.png",
+    "images/favicon.ico",
     "images/logo.png"
   ],
   "main": "boot.js"
