@@ -1,4 +1,24 @@
 
+0.11.0 / 2015-03-04
+==================
+
+ * Add hiding 'Read more' link text when topic has got only one paragraph contained in a single <div> element #438
+ * Fix usage of mongodb connections to replica sets
+ * Add checking for * CORS wildcard
+ * Remove Dockerfile from .dockerignore
+ * Update usage of mongodb by adding the db module
+ * Add CORS support. CORS_DOMAINS env variables holds a whitelist of domains
+ * Fix bad legacy text rendering #438
+ * Hide clauses Add button for new laws and laws that have not clauses #675
+ * Merge branch 'add/quilljs' into update/admin
+ * Fix bad rendering on clauses with manually entered HTML #438
+ * Fix responsive wrapping in clauses #438
+ * Embed video responsively #438
+ * Add video tooltip #438
+ * Add Bullet button to toolbar #438
+ * Fix side-commented empty lines #438
+ * Add richtext editor for editing `law`s #438
+
 0.10.14 / 2015-02-26
 ====================
 
