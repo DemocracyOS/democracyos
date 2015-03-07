@@ -1,4 +1,11 @@
 
+0.11.1 / 2015-03-06
+===================
+
+  * [law-comment] - Send notification to notifier when a law is commented
+  * [law-voted] - Add notifier notification
+  * [jwt] - Store jwt in cookies to work out between hub and DemocracyOS
+
 0.11.0 / 2015-03-04
 ==================
 
