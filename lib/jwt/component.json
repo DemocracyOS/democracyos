@@ -1,9 +1,9 @@
 {
   "name": "jwt",
   "description": "JSON Web Tokens (JWT) wrapper",
-  "dependencies": {
-    "component/cookie": "1.1.1"
-  },
+  "locals": [
+    "store"
+  ],
   "scripts": [ "jwt.js" ],
   "main": "jwt.js"
 }
