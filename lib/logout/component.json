@@ -8,7 +8,8 @@
   "locals": [
     "config",
     "request",
-    "debug"
+    "debug",
+    "citizen"
   ],
   "scripts": [ "logout.js" ],
   "styles": [ ],

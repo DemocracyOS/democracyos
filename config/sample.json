@@ -7,7 +7,6 @@
   "cors domains": [],
   "signin url": "",
   "signup url": "",
-  "logout url": "",
   "client": [
     "protocol",
     "host",
