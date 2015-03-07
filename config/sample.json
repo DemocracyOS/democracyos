@@ -5,10 +5,8 @@
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "cors domains": [],
-  "authPages": {
-      "signinUrl": "",
-      "signupUrl": ""
-    },
+  "signin url": "",
+  "signup url": "",
   "client": [
     "protocol",
     "host",
@@ -25,7 +23,8 @@
     "tos",
     "pp",
     "glossary",
-    "authPages",
+    "signin url",
+    "signup url",
     "client debug"
   ],
   "auth": {
