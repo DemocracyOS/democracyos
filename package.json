@@ -60,7 +60,6 @@
     "component-builder": "1.2.0",
     "component-resolver": "1.2.4",
     "component-stylus-plugin": "~0.3.1",
-    "connect-mongo": "~0.4.0",
     "debug": "^2.1.1",
     "express": "~3.4.7",
     "express-sslify": "0.1.1",
@@ -73,8 +72,8 @@
     "merge-util": "0.3.1",
     "mkdirp": "0.5.0",
     "moment": "2.9.0",
-    "mongoose": "3.8.16",
-    "mongoose-gravatar": "~0.2.1",
+    "mongoose": "3.8.24",
+    "mongoose-gravatar": "0.3.0",
     "mongoose-voting": "0.1.1",
     "node-path": "0.0.3",
     "nomnom": "^1.8.1",
@@ -105,6 +104,6 @@
     "npm": "1.4.9"
   },
   "scripts": {
-    "postinstall": "node ./bin/dos-install --config && node ./bin/dos-config && node ./bin/dos-build"
+    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
   }
 }
