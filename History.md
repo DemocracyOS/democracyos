@@ -1,4 +1,22 @@
 
+0.11.3 / 2015-03-07
+===================
+
+  * Remove 404 page to avoid problem on issue #690
+  * Fix auth pages, saving a cookie supporting all subdomains if necessary (does not apply for localhost)
+
+0.11.2 / 2015-03-07
+===================
+
+  * Fix signup and signin external urls
+
+0.11.1 / 2015-03-06
+===================
+
+  * [law-comment] - Send notification to notifier when a law is commented
+  * [law-voted] - Add notifier notification
+  * [jwt] - Store jwt in cookies to work out between hub and DemocracyOS
+
 0.11.0 / 2015-03-04
 ==================
 
