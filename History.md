@@ -1,4 +1,10 @@
 
+0.11.4 / 2015-03-08
+===================
+
+  * Add redirect to external signin and signup on backend
+  * Fix calling next() no an error decoding jwt so it continues but without loading the user into the request
+
 0.11.3 / 2015-03-07
 ===================
 
