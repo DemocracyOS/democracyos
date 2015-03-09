@@ -1,4 +1,14 @@
 
+0.12.0 / 2015-03-09
+==================
+
+ * make fallback PORT value equal to the one in sample.json
+ * remove multicore option
+ * fix usage of mongodb for replicasets
+ * bump mongoose to 3.8.24
+ * check if user found after decoding JWT token
+ * fix typo in tag error handling function name
+
 0.11.4 / 2015-03-08
 ===================
 
