@@ -73,7 +73,7 @@
     "merge-util": "0.3.1",
     "mkdirp": "0.5.0",
     "moment": "2.9.0",
-    "mongoose": "3.8.16",
+    "mongoose": "3.8.24",
     "mongoose-gravatar": "~0.2.1",
     "mongoose-voting": "0.1.1",
     "node-path": "0.0.3",
