@@ -68,7 +68,6 @@
     "port": 443,
     "redirect": "normal"
   },
-  "multicore": false,
   "client debug": false,
   "googleAPIKey": ""
 }
