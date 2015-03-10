@@ -1,4 +1,10 @@
 
+0.12.2 / 2015-03-10
+==================
+
+ * disable new topic notifications being true by default
+ * update default favicon file path
+
 0.12.1 / 2015-03-09
 ==================
 
