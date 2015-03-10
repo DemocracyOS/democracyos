@@ -4,7 +4,7 @@
   "privatePort": 3000,
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
-  "cors domains": [],
+  "cors domains": "",
   "signin url": "",
   "signup url": "",
   "client": [
