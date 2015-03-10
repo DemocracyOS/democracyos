@@ -1,4 +1,10 @@
 
+0.12.1 / 2015-03-09
+==================
+
+ * externalize `db` module to democracyos-db repo
+ * Add bug report template to `CONTRIBUTING.md`
+
 0.12.0 / 2015-03-09
 ==================
 
