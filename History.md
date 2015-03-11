@@ -1,4 +1,11 @@
 
+0.12.6 / 2015-03-10
+==================
+
+ * update dockerfile description
+ * expose client config on layout/index.jade for deployments where the config is part of the release and cannot be built
+ * fix header user-badge height #699
+
 0.12.5 / 2015-03-10
 ==================
 
