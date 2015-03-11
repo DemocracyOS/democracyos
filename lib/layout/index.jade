@@ -66,6 +66,8 @@ html(lang='en')
       script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
       include includes/placeholders
       //- General Site javascript
+      script.
+        window.config=!{JSON.stringify(client)}
       script(src='/app.js')
 
       //- Boot application
