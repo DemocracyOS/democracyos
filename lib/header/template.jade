@@ -5,7 +5,7 @@
     span.bar-icon
 
   h1#logo
-    a(href='/')
+    a(href=config['home link'] || '/')
       img(src=config['logo']).logo
       span.logo-link= t('common.app-name')
 

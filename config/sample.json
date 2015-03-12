@@ -25,7 +25,8 @@
     "glossary",
     "signin url",
     "signup url",
-    "client debug"
+    "client debug",
+    "home link"
   ],
   "auth": {
     "basic": {
@@ -69,5 +70,6 @@
     "redirect": "normal"
   },
   "client debug": false,
-  "googleAPIKey": ""
+  "googleAPIKey": "",
+  "home link": "/"
 }
