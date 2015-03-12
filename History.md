@@ -1,4 +1,13 @@
 
+0.12.9 / 2015-03-12
+==================
+
+ * Make '_target' attr conditional to 'home link' setting on header org link
+ * Revert "Fix organization link to open on same tab"
+ * Fix logo link on header Closes #701
+ * Fix organization link to open on same tab
+ * Merge branch 'release-0.12.8' into development
+
 0.12.8 / 2015-03-11
 ==================
 
