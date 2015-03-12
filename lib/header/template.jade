@@ -17,7 +17,8 @@
     a(href='/signup').login.pull-right.anonymous-citizen
       i.icon-user
       span= t('header.signup')
-    a.login.pull-left(href=config['organization url'], target='_blank')
+    - var target = config['home link'] ? {} : { 'target': '_blank'};
+    a.login.pull-left(href=config['organization url'])&attributes(target)
       span= config['organization name']
     //- a.login.pull-left(href='#', id='feedback')
     //-   span= t('header.feedback')
