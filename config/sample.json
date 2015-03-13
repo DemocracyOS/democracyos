@@ -27,7 +27,7 @@
     "signup url",
     "client debug",
     "home link",
-    "external logo"
+    "logo mobile"
   ],
   "auth": {
     "basic": {
@@ -46,6 +46,7 @@
   },
   "locale" : "en",
   "logo": "/lib/boot/images/logo.png",
+  "logo mobile": "/lib/boot/images/logo.png",
   "favicon" : " /lib/boot/images/favicon.ico",
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",
@@ -72,6 +73,5 @@
   },
   "client debug": false,
   "googleAPIKey": "",
-  "home link": "/",
-  "external logo": ""
+  "home link": "/"
 }
