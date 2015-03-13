@@ -4,10 +4,15 @@
     span.bar-icon
     span.bar-icon
 
-  h1#logo
-    a(href=config['home link'] || '/')
-      img(src=config['logo']).logo
-      span.logo-link= t('common.app-name')
+  - var logo = config['external logo']
+  - if (logo)
+    a.logo(href=config['home link'] || '/')
+      h1(style='background-image: url("#{logo}")')=config['organization name']
+  - else
+    h1#logo.logo-title
+      a(href=config['home link'] || '/')
+        img(src=config['logo']).logo-image
+        span.logo-link= t('common.app-name')
 
   .user-nav.btn-group
     .user

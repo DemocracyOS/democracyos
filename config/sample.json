@@ -26,7 +26,8 @@
     "signin url",
     "signup url",
     "client debug",
-    "home link"
+    "home link",
+    "external logo"
   ],
   "auth": {
     "basic": {
@@ -71,5 +72,6 @@
   },
   "client debug": false,
   "googleAPIKey": "",
-  "home link": "/"
+  "home link": "/",
+  "external logo": ""
 }

@@ -3,6 +3,7 @@
   "description": "header component",
   "dependencies": {
     "component/dom": "1.0.6",
+    "logo/logo": "0.0.1",
     "jadejs/jade": "1.1.5",
     "democracyos/headroom.js": "0.7.1"
     },
