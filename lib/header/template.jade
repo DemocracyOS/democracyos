@@ -4,15 +4,14 @@
     span.bar-icon
     span.bar-icon
 
-  - var logo = config['external logo']
-  - if (logo)
-    a.logo(href=config['home link'] || '/')
-      h1(style='background-image: url("#{logo}")')=config['organization name']
-  - else
-    h1#logo.logo-title
+    h1#logo
       a(href=config['home link'] || '/')
-        img(src=config['logo']).logo-image
-        span.logo-link= t('common.app-name')
+        - var mobileLogo = !!config['logo mobile']
+        - var classes = mobileLogo ? 'hidden-xs' : ''
+        img(src=config['logo'], class=classes).logo-image
+        - if (mobileLogo)
+          img(src=config['logo mobile']).logo-image.visible-xs-inline-block
+        //- span.logo-link=t('common.app-name')
 
   .user-nav.btn-group
     .user
