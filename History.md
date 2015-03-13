@@ -1,4 +1,12 @@
 
+0.12.10 / 2015-03-13
+==================
+
+ * Add reponsive logo for mobile #699
+ * Add create my first topic button for staff members Closes #703
+ * Fix new law button on admin
+ * Fix new tag button on admin
+
 0.12.9 / 2015-03-12
 ==================
 
