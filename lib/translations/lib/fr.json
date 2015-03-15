@@ -2,6 +2,7 @@
   "404.back-to-democracyos": "Retour à DemocracyOS",
   "404.go-back-to": "Retour à",
   "404.not-exists": "Cette page n'existe pas",
+  "admin-laws-form.alert.no-tags": "Pas de tags ont été trouvés, se il vous plaît <a href=\"/admin/tags/create\">créer un</a> avant de commencer à créer des sujets",
   "admin-laws-form.button.add-clause": "Nouvel article",
   "admin-laws-form.button.add-link": "ajouter un lien",
   "admin-laws-form.button.make-private": "Dépublier",
