@@ -2,6 +2,7 @@
   "404.back-to-democracyos": "Вернуться к DemocracyOS",
   "404.go-back-to": "вернуться к",
   "404.not-exists": "Этой страницы не существует",
+  "admin-laws-form.alert.no-tags": "Нет тегов не были найдены, пожалуйста, <a href=\"/admin/tags/create\">создайте его</a> перед началом создания темы",
   "admin-laws-form.button.add-clause": "Добавить поправку",
   "admin-laws-form.button.add-link": "Добавить ссылку",
   "admin-laws-form.button.make-private": "Отменить публикацию",
