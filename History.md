@@ -1,4 +1,9 @@
 
+0.12.12 / 2015-03-15
+====================
+
+  * Add create tag link if no tags are found before creating any law. Closes #707
+
 0.12.11 / 2015-03-15
 ====================
 
