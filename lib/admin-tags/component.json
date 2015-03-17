@@ -17,5 +17,8 @@
   "scripts": [
     "view.js"
   ],
+  "styles": [
+    "styles.styl"
+  ],
   "main": "view.js"
 }
