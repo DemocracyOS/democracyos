@@ -4,6 +4,7 @@
   "dependencies": {
     "component/cookie": "1.1.1"
   },
+  "locals": [ "regexps" ],
   "scripts": [ "jwt.js", "domain.js" ],
   "main": "jwt.js"
 }
