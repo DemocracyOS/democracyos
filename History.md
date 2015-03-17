@@ -1,4 +1,11 @@
 
+0.13.0 / 2015-03-17
+===================
+
+  * Add IP address as domains
+  * Fix admin responsiveness. Closes #691
+  * Fix buttons position. Closes #708
+
 0.12.15 / 2015-03-16
 ====================
 
