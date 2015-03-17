@@ -1,14 +1,14 @@
 #law-wrapper
-  .law-admin.col-md-10
-    .heading
-      .circle
-        i.icon-user
-      h1= t(form.title)
-    - if (tags.length == 0)
-      p.alert.alert-danger.text-center!=t('admin-laws-form.alert.no-tags')
-      p.text-center
-        a.btn.btn-lg.btn-primary.create-tag(href='/admin/tags/create')=t('admin-tags-form.title.create')
-    - else 
+  - if (tags.length == 0)
+    p.alert.alert-danger.text-center!=t('admin-laws-form.alert.no-tags')
+    p.text-center
+      a.btn.btn-lg.btn-primary.create-tag(href='/admin/tags/create')=t('admin-tags-form.title.create')
+  - else
+    .law-admin.col-md-10
+      .heading
+        .circle
+          i.icon-user
+        h1= t(form.title)
       form.form-horizontal(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
         input(type='hidden', name='_law_id_', value=law.id)
         ul.form-messages
@@ -81,18 +81,13 @@
             a.add-link.btn.btn-block.btn-info(href='#')= t('admin-laws-form.button.add-link')
             .form-group: input.btn.btn-success.btn-block.btn-lg.hide(type='submit', tabindex=12, value=t('admin-laws-form.button.submit'))
           span.add-link-forbidden.hide=t('admin-laws-form.message.add-link-forbidden')
-      .col-md-2
-        .row.commands
-          .row
-            a.btn.btn-success.save
-              span=t('admin-laws-form.button.submit')
-          .row
-            a.btn.btn-primary.make-private(class=law.public && law.id ? '' : 'hide')
-              span=t('admin-laws-form.button.make-private')
-          .row
-            a.btn.btn-primary.make-public(class=law.draft && law.id ? '' : 'hide')
-              span=t('admin-laws-form.button.make-public')
-          - if (law.id)
-            .row
-              a.btn.btn-danger.delete-law
-                span=t('admin-laws-form.delete-law.button.delete')
+    .col-md-2.commands
+      a.btn.btn-success.btn-block.save
+        span=t('admin-laws-form.button.submit')
+      a.btn.btn-primary.btn-block.make-private(class=law.public && law.id ? '' : 'hide')
+        span=t('admin-laws-form.button.make-private')
+      a.btn.btn-primary.btn-block.make-public(class=law.draft && law.id ? '' : 'hide')
+        span=t('admin-laws-form.button.make-public')
+      - if (law.id)
+        a.btn.btn-danger.btn-block.delete-law
+          span=t('admin-laws-form.delete-law.button.delete')
