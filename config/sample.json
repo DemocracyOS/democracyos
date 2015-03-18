@@ -7,6 +7,7 @@
   "cors domains": "",
   "signin url": "",
   "signup url": "",
+  "settings url": "",
   "client": [
     "protocol",
     "host",
@@ -25,6 +26,7 @@
     "glossary",
     "signin url",
     "signup url",
+    "settings url",
     "client debug",
     "home link",
     "logo mobile"
