@@ -4,4 +4,6 @@
 .DS_Store
 .dockerignore
 
+config/*.json
+
 Procfile

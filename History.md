@@ -1,4 +1,121 @@
 
+0.14.0 / 2015-03-19
+==================
+
+ * Add quill support for video and image embedding over https
+ * Update gravatar requests to go through https
+ * Bump tj/debug version to 2.1.3 since it prevented built
+ * Add external settings page. Closes #712
+
+0.13.0 / 2015-03-17
+===================
+
+  * Add IP address as domains
+  * Fix admin responsiveness. Closes #691
+  * Fix buttons position. Closes #708
+
+0.12.15 / 2015-03-16
+====================
+
+  * Fix domains in jwt. #706
+
+0.12.14 / 2015-03-16
+====================
+
+  * Clear cookie after getting the domain in jwt. #706
+
+0.12.13 / 2015-03-16
+====================
+
+  * Fix exporting top level subdomain for jwt. Closes #706
+
+0.12.12 / 2015-03-15
+====================
+
+  * Add create tag link if no tags are found before creating any law. Closes #707
+
+0.12.11 / 2015-03-15
+====================
+
+  * [jwt] - Update jwt component to look like hub's
+
+0.12.10 / 2015-03-13
+==================
+
+ * Add reponsive logo for mobile #699
+ * Add create my first topic button for staff members Closes #703
+ * Fix new law button on admin
+ * Fix new tag button on admin
+
+0.12.9 / 2015-03-12
+==================
+
+ * Make '_target' attr conditional to 'home link' setting on header org link
+ * Revert "Fix organization link to open on same tab"
+ * Fix logo link on header Closes #701
+ * Fix organization link to open on same tab
+ * Merge branch 'release-0.12.8' into development
+
+0.12.8 / 2015-03-11
+==================
+
+ * add deploymentId on feeds
+
+0.12.7 / 2015-03-10
+==================
+
+ * update header background color to match hub's
+
+0.12.6 / 2015-03-10
+==================
+
+ * update dockerfile description
+ * expose client config on layout/index.jade for deployments where the config is part of the release and cannot be built
+ * fix header user-badge height #699
+
+0.12.5 / 2015-03-10
+==================
+
+ * fix usage of CORS_DOMAINS env variable
+
+0.12.4 / 2015-03-10
+===================
+
+  * Fix cors domains should be a string
+
+0.12.3 / 2015-03-10
+==================
+
+ * update client config build logging
+
+0.12.2 / 2015-03-10
+==================
+
+ * disable new topic notifications being true by default
+ * update default favicon file path
+
+0.12.1 / 2015-03-09
+==================
+
+ * externalize `db` module to democracyos-db repo
+ * Add bug report template to `CONTRIBUTING.md`
+
+0.12.0 / 2015-03-09
+==================
+
+ * make fallback PORT value equal to the one in sample.json
+ * remove multicore option
+ * fix usage of mongodb for replicasets
+ * bump mongoose to 3.8.24
+ * check if user found after decoding JWT token
+ * fix typo in tag error handling function name
+
+0.11.4 / 2015-03-08
+===================
+
+  * Add redirect to external signin and signup on backend
+  * Fix calling next() no an error decoding jwt so it continues but without loading the user into the request
+
 0.11.3 / 2015-03-07
 ===================
 
@@ -13,9 +130,9 @@
 0.11.1 / 2015-03-06
 ===================
 
-  * [law-comment] - Send notification to notifier when a law is commented
-  * [law-voted] - Add notifier notification
-  * [jwt] - Store jwt in cookies to work out between hub and DemocracyOS
+  * Send notification to notifier when a law is commented
+  * Add notifier notification
+  * Store jwt in cookies to work out between hub and DemocracyOS
 
 0.11.0 / 2015-03-04
 ==================

@@ -3,6 +3,6 @@
   "description": "Client config component generated dynamicaly by ./bin/dos-build",
   "dependencies": {},
   "locals": [],
-  "scripts": [ "client.js" ],
-  "main": "client.js"
+  "scripts": [ "config.js", "client.js" ],
+  "main": "config.js"
 }

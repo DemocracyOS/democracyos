@@ -9,7 +9,6 @@ var balance = require('lib/balance');
 var config = require('lib/config');
 var fs = require('fs');
 var log = require('debug')('democracyos:root');
-var multicore = config('multicore');
 
 var secure = 'https' == config('protocol');
 
@@ -48,9 +47,7 @@ var launch = function launchServer () {
   };
 
 /**
- * Launch the servers
+ * Launch the server!
  */
 
-if (module === require.main) {
-  multicore ? balance(launch) : launch();
-}
+if (module === require.main) launch();

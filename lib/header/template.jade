@@ -4,10 +4,14 @@
     span.bar-icon
     span.bar-icon
 
-  h1#logo
-    a(href='/')
-      img(src=config['logo']).logo
-      span.logo-link= t('common.app-name')
+    h1#logo
+      a(href=config['home link'] || '/')
+        - var mobileLogo = !!config['logo mobile']
+        - var classes = mobileLogo ? 'hidden-xs' : ''
+        img(src=config['logo'], class=classes).logo-image
+        - if (mobileLogo)
+          img(src=config['logo mobile']).logo-image.visible-xs-inline-block
+        //- span.logo-link=t('common.app-name')
 
   .user-nav.btn-group
     .user
@@ -17,7 +21,8 @@
     a(href='/signup').login.pull-right.anonymous-citizen
       i.icon-user
       span= t('header.signup')
-    a.login.pull-left(href=config['organization url'], target='_blank')
+    - var target = config['home link'] ? {} : { 'target': '_blank'};
+    a.login.pull-left(href=config['organization url'])&attributes(target)
       span= config['organization name']
     //- a.login.pull-left(href='#', id='feedback')
     //-   span= t('header.feedback')
