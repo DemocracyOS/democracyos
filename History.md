@@ -1,4 +1,12 @@
 
+0.14.0 / 2015-03-19
+==================
+
+ * Add quill support for video and image embedding over https
+ * Update gravatar requests to go through https
+ * Bump tj/debug version to 2.1.3 since it prevented built
+ * Add external settings page. Closes #712
+
 0.13.0 / 2015-03-17
 ===================
 
