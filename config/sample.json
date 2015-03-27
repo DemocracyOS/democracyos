@@ -5,9 +5,7 @@
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "cors domains": "",
-  "signin url": "",
-  "signup url": "",
-  "settings url": "",
+  "hub url": "",
   "client": [
     "protocol",
     "host",
@@ -24,9 +22,7 @@
     "tos",
     "pp",
     "glossary",
-    "signin url",
-    "signup url",
-    "settings url",
+    "hub url",
     "client debug",
     "home link",
     "logo mobile"
