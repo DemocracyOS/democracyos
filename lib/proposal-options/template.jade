@@ -40,9 +40,9 @@
 
         - if (!citizen.id)
           p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in')
-            | .
+            | .&nbsp;
             a(href="/signin")= t('signin.login')
-            |  #{t('common.or')}
+            |  #{t('common.or')}&nbsp;
             a(href="/signup?reference=" + proposal.id)= t('signin.signup')
             | .
 
