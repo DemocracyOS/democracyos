@@ -61,7 +61,7 @@ program
     confirm('This will delete all your data. Continue?\n')(function(err, ok) {
       if (err) return error('Whoops, %s', err);
       if (!ok) return write('There you go! =)');
-      
+
       connect(function() {
         mongoose.connection.db.dropDatabase(function (err) {
           if (err) return error('Whoops, %s', err);
@@ -138,7 +138,7 @@ function models(fn) {
   var files = dir(resolve('./lib/models/'));
   files && files.forEach(function(f) {
     if (~except.indexOf(f)) return;
-    require(resolve('./lib/models/' + f ));
+    require(resolve('./lib/models/' + f ))(mongoose);
   });
   fn && fn();
 }

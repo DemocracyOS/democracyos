@@ -75,5 +75,6 @@
   },
   "client debug": false,
   "googleAPIKey": "",
-  "home link": "/"
+  "home link": "/",
+  "users whitelist": false
 }
