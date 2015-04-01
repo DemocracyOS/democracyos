@@ -1,0 +1,18 @@
+{
+  "name": "admin-users",
+  "dependencies": {
+    "visionmedia/page.js": "1.3.7"
+  },
+  "locals": [
+    "admin-sidebar",
+    "render",
+    "request",
+    "view"
+  ],
+  "scripts": [
+    "admin-users.js",
+    "view.js"
+  ],
+  "templates": [ "template.jade" ],
+  "main": "admin-users.js"
+}
