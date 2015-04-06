@@ -268,6 +268,7 @@
   "signup.with-email": "Реєстрація з електронною поштою",
   "signup.your-firstname": "Ваше Ім'я",
   "signup.your-lastname": "Ваше Прізвище",
+  "signup.whitelist.email": "Email {адресу електронної пошти} не дозволене адміністратором",
   "sorts.closing-soon": "Закриваються скоро",
   "sorts.newest-first": "Найновіші спочатку",
   "sorts.oldest-first": "Найстаріші спочатку",

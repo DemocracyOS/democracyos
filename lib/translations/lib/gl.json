@@ -268,6 +268,7 @@
   "signup.with-email": "Rexistro con correo electrónico",
   "signup.your-firstname": "O teu nome",
   "signup.your-lastname": "O teu apelido",
+  "signup.whitelist.email": "Email {email} non é permitido polo administrador",
   "sorts.closing-soon": "Próximos a pechar",
   "sorts.newest-first": "Máis novos primeiro",
   "sorts.oldest-first": "Máis vellos primeiro",

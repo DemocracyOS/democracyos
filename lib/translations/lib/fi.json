@@ -268,6 +268,7 @@
   "signup.with-email": "Kirjaudu sähköpostilla",
   "signup.your-firstname": "Etunimesi",
   "signup.your-lastname": "Sukunimesi",
+  "signup.whitelist.email": "Sähköposti {email} ei sallita ylläpitäjä",
   "sorts.closing-soon": "Suljetaan pian",
   "sorts.newest-first": "Uusin ensin",
   "sorts.oldest-first": "Vanhin ensin",

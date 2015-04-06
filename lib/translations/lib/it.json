@@ -268,6 +268,7 @@
   "signup.with-email": "Registrazione con indirizzo e-mail",
   "signup.your-firstname": "Tuo primo nome",
   "signup.your-lastname": "Tuo cognome",
+  "signup.whitelist.email": "Email {email} non è consentito dall'amministratore",
   "sorts.closing-soon": "Chiusura presto",
   "sorts.newest-first": "Recente primo",
   "sorts.oldest-first": "Prima i più vecchi",

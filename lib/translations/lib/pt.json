@@ -268,6 +268,7 @@
   "signup.with-email": "Cadastro com endereço de e-mail",
   "signup.your-firstname": "Seu nome",
   "signup.your-lastname": "Seu sobrenome",
+  "signup.whitelist.email": "Email {email} não é permitido pelo administrador",
   "sorts.closing-soon": "Próximos a fechar",
   "sorts.newest-first": "Mais novos primeiro",
   "sorts.oldest-first": "Mais velhos primeiro",
