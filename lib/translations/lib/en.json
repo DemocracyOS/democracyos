@@ -72,6 +72,7 @@
   "admin-tags.list.title": "System tags",
   "admin-tags.list.add-tag": "New",
   "admin-tags.list.search.placeholder": "Search a tag...",
+  "admin-whitelist.list.add": "Add",
   "article.unknown-closing-date": "Unknown closing date",
   "browser-update.ie-old-version-warning": "You are using an usuported version of Internet Explorer.",
   "browser-update.in-order-warning": "In order to use Demoracy OS, please update your browser.",

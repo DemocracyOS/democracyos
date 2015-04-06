@@ -1,5 +1,5 @@
 {
-  "name": "admin-users",
+  "name": "admin-whitelist",
   "dependencies": {
     "visionmedia/page.js": "1.3.7"
   },
@@ -10,9 +10,9 @@
     "view"
   ],
   "scripts": [
-    "admin-users.js",
+    "admin-whitelist.js",
     "view.js"
   ],
   "templates": [ "template.jade" ],
-  "main": "admin-users.js"
+  "main": "admin-whitelist.js"
 }

@@ -1,0 +1,24 @@
+#laws-wrapper
+  .laws-admin
+    .row.well.well-lg
+      .col-md-2.col-xs-12
+        .btn.btn-success.btn-block.new
+          span.glyphicon.glyphicon-plus
+          = ' ' + t('admin-whitelist.list.add')
+      //- .col-md-7.col-xs-12.text-center
+      //-   .input-group.input-group-md
+      //-     span.input-group-addon
+      //-       i.glyphicon.glyphicon-search
+      //-     input.form-control.search(type='text', placeholder='#{t("admin-whitelist.list.search.placeholder")}')
+    table.table.table-hover
+      thead
+        tr
+          th Type
+          th Value
+          th Action
+      tbody
+      - each whitelist in whitelists
+        td=whitelist.type
+        td=whitelist.value
+        td
+      
