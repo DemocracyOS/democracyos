@@ -71,6 +71,7 @@
   "admin-tags.list.add-tag": "Novo",
   "admin-tags.list.search.placeholder": "Buscar unha marca ...",
   "admin-tags.list.title": "Etiquetas do sistema",
+  "admin-users.list.search.placeholder": "Busca por correo-e",
   "article.unknown-closing-date": "Data de peche descoñecida",
   "browser-update.ie-old-version-warning": "Estas usando unha versión non soportada de Internet Explorer.",
   "browser-update.in-order-warning": "Para poder usar DemoracyOS, por favor actualzá o teu navegador",

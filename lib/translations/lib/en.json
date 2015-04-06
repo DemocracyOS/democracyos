@@ -51,6 +51,7 @@
   "admin-laws.list.add-topic": "New",
   "admin-laws.list.sort": "Sort",
   "admin-laws.list.search.placeholder": "Search a topic...",
+  "admin-users.list.search.placeholder": "Search by email",
   "admin-laws.list.close.past": "Closed",
   "admin-laws.list.close.future": "Closing",
   "admin-sidebar.laws.create": "Create",

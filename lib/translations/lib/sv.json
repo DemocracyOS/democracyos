@@ -71,6 +71,7 @@
   "admin-tags.list.add-tag": "Ny",
   "admin-tags.list.search.placeholder": "Sök en tagg ...",
   "admin-tags.list.title": "Systemtaggar",
+  "admin-users.list.search.placeholder": "Sök via e-post",
   "article.unknown-closing-date": "Okänt låsdatum",
   "browser-update.ie-old-version-warning": "Du använder en version av Internet Explorer som ej stöds.",
   "browser-update.in-order-warning": "För att använda Demoracy OS, vänligen uppdatera din webbläsare.",

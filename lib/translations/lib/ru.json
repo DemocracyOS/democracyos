@@ -71,6 +71,7 @@
   "admin-tags.list.add-tag": "Новый",
   "admin-tags.list.search.placeholder": "Выберите тег ...",
   "admin-tags.list.title": "Системные ключевые слова",
+  "admin-users.list.search.placeholder": "Поиск по электронной почте",
   "article.unknown-closing-date": "Неизвестная дата закрытия",
   "browser-update.ie-old-version-warning": "Вы пользуетесь устаревшей версией Internet Explorer.",
   "browser-update.in-order-warning": "Пожалуйста обновите Вашу версию для того чтобы Вы могли пользоваться платформой DemocracyOS.",

@@ -1,0 +1,14 @@
+{
+  "name": "users",
+  "description": "Collection of users",
+  "locals": [
+    "request",
+    "stateful",
+    "debug"
+  ],
+  "scripts": [
+    "users.js",
+    "proto.js"
+  ],
+  "main": "users.js"
+}

@@ -71,6 +71,7 @@
   "admin-tags.list.add-tag": "Nuevo",
   "admin-tags.list.search.placeholder": "Buscar una etiqueta ...",
   "admin-tags.list.title": "Etiquetas del sistema",
+  "admin-users.list.search.placeholder": "Búsqueda por email",
   "article.unknown-closing-date": "Fecha de cierre desconocida",
   "browser-update.ie-old-version-warning": "Estas usando una versión no soportada de Internet Explorer.",
   "browser-update.in-order-warning": "Para poder usar Demoracy OS, por favor actualzá tu browser",

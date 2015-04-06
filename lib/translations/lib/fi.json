@@ -71,6 +71,7 @@
   "admin-tags.list.add-tag": "Uusi",
   "admin-tags.list.search.placeholder": "Etsi tag ...",
   "admin-tags.list.title": "Ohjelman tägit",
+  "admin-users.list.search.placeholder": "Hae sähköpostitse",
   "article.unknown-closing-date": "Tuntematon päätöspäivä",
   "browser-update.ie-old-version-warning": "Käytät tueta Internet Explorerin versiota.",
   "browser-update.in-order-warning": "Jotta voit käyttää Demoracy OS, päivitä selaimesi.",
