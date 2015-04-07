@@ -34,7 +34,7 @@ goto end
 :help
 
 echo make command
-echo
+@echo
 echo run
 echo packages
 echo clean
