@@ -18,7 +18,8 @@
           th Action
       tbody
       - each whitelist in whitelists
-        td=whitelist.type
-        td=whitelist.value
-        td
-      
+        tr(id='whitelist-#{whitelist.id}')
+          td=whitelist.type
+          td=whitelist.value
+          td
+            a.remove(href='#' data-id=whitelist.id title='Remove'): i.glyphicon.glyphicon-trash
