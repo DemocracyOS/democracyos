@@ -98,13 +98,16 @@
     "xss": "0.1.20"
   },
   "devDependencies": {
-    "google-translate": "^0.1.8"
+    "google-translate": "^0.1.8",
+    "rimraf": "^2.3.2"
   },
   "main": "pdr",
   "engines": {
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
+    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build",
+    "start": "node index.js",
+    "clean": "rimraf node_modules && rimraf components && rimraf public"
   }
 }
