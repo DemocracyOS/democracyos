@@ -68,6 +68,8 @@ html(lang='en')
       //- General Site javascript
       script.
         window.config=!{JSON.stringify(client)}
+        window.translations=!{JSON.stringify(translations)}
+        window.locale='!{locale}'
       script(src='/app.js')
 
       //- Boot application
