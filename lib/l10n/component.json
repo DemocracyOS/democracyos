@@ -1,0 +1,12 @@
+{
+  "name": "l10n",
+  "description": "Localization helpers",
+  "dependencies": {
+  },
+  "locals": [
+  ],
+  "scripts": [
+    "l10n.js"
+  ],
+  "main": "l10n.js"
+}
