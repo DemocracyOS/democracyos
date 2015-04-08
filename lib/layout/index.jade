@@ -67,9 +67,11 @@ html(lang='en')
       //- General Site javascript
       script.
         window.config=!{JSON.stringify(client)}
+        window.locale='#{locale}'
+        window.translations=!{JSON.stringify(translations)}
       script(src='/app.js')
 
       //- Boot application
-      script.
-        require('./lib/boot');
+      script require('./lib/boot');
+
       //- End of `Javascripts`
