@@ -10,6 +10,7 @@ if NODE_ENV == "" set NODE_ENV="development"
 
 if not "%1" == "run" goto packages
 echo "Starting application..."
+echo "To begin using UKDemocracyOS, navigate to localhost:3000 in a browser window"
 set NODE_PATH=.
 set DEBUG=%DEBUG%
 node index.js
