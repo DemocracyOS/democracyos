@@ -1,5 +1,5 @@
 {
-  "name": "admin-whitelist",
+  "name": "admin-whitelists",
   "dependencies": {
     "component/t": "1.0.0",
     "component/closest": "0.1.4",
@@ -12,7 +12,8 @@
     "admin-sidebar",
     "render",
     "request",
-    "view"
+    "view",
+    "whitelists"
   ],
   "scripts": [
     "admin-whitelist.js",
