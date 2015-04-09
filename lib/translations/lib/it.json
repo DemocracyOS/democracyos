@@ -63,7 +63,7 @@
   "admin-sidebar.tags.create": "Creare",
   "admin-sidebar.tags.list": "Lista",
   "admin-sidebar.tags.title": "Etichetta",
-  "admin-sidebar.users.title": "Utenti",
+  "admin-sidebar.whitelists.title": "Utenti",
   "admin-tags-form.button.submit": "Salvare",
   "admin-tags-form.label.image": "Immagine",
   "admin-tags-form.label.name": "Nome",

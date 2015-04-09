@@ -60,7 +60,7 @@
   "admin-sidebar.tags.create": "Create",
   "admin-sidebar.tags.list": "List",
   "admin-sidebar.tags.title": "Tags",
-  "admin-sidebar.users.title": "Users",
+  "admin-sidebar.whitelists.title": "Enabled users",
   "admin-tags-form.button.submit": "Save",
   "admin-tags-form.label.image": "Image",
   "admin-tags-form.label.name": "Name",

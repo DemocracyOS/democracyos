@@ -29,7 +29,8 @@
     "settings url",
     "client debug",
     "home link",
-    "logo mobile"
+    "logo mobile",
+    "users whitelist"
   ],
   "auth": {
     "basic": {

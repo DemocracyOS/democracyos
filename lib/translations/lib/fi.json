@@ -59,7 +59,7 @@
   "admin-sidebar.tags.create": "Luo",
   "admin-sidebar.tags.list": "Lista",
   "admin-sidebar.tags.title": "Tagit",
-  "admin-sidebar.users.title": "Käyttäjät",
+  "admin-sidebar.whitelists.title": "Käyttäjät",
   "admin-tags-form.button.submit": "Tallenna",
   "admin-tags-form.label.image": "Kuva",
   "admin-tags-form.label.name": "Nimi",
