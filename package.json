@@ -109,5 +109,8 @@
     "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build",
     "start": "node index.js",
     "clean": "rimraf node_modules && rimraf components && rimraf public"
+  },
+  "component": {
+    "timeout": 240000
   }
 }

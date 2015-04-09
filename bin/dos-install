@@ -16,10 +16,12 @@ var exec = require('child_process').exec;
 var program = require('commander');
 var installc = resolve('./node_modules/.bin/component-install');
 var env = process.env.NODE_ENV || 'development';
+var package_json = require('../package.json');
 
 program
   .option('-c, --config', 'copy and/or merge configuration file')
   .option('-C, --no-components', 'ignore components install')
+  .option('-t, --timeout', 'set timeout value for components install (default 4 minutes)')
   .parse(process.argv);
 
 
@@ -45,8 +47,13 @@ if (program.config) {
   }
 };
 
+var timeout = program.timeout ||
+              process.env.TIMEOUT ||
+              package_json.component.timeout ||
+              10000;
+
 if (program.components && exists(installc)) {
-  exec(installc + " --timeout 240000", function(err, stdout, stderr) {
+  exec(installc + (timeout ? " --timeout " + timeout : ""), function(err, stdout, stderr) {
     if (stdout.length) console.log(stdout);
     if (stderr.length) return console.log(stderr), process.exit(1);
     if (err != null) return console.log(err), process.exit(1);
