@@ -29,7 +29,8 @@
     "settings url",
     "client debug",
     "home link",
-    "logo mobile"
+    "logo mobile",
+    "users whitelist"
   ],
   "auth": {
     "basic": {
@@ -75,5 +76,6 @@
   },
   "client debug": false,
   "googleAPIKey": "",
-  "home link": "/"
+  "home link": "/",
+  "users whitelist": false
 }
