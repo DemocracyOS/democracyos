@@ -7,7 +7,6 @@
     "visionmedia/superagent": "0.16.0"
   },
   "locals": [
-    "jwt",
     "debug"
   ],
   "scripts": [ "request.js" ],
