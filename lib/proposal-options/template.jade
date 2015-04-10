@@ -39,12 +39,11 @@
             span= t('proposal-options.nay')
 
         - if (!citizen.id)
-          p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in')
-            | .
+          p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in') + '. '
             a(href="/signin")= t('signin.login')
-            |  #{t('common.or')}
+            = ' ' + t('common.or') + ' '
             a(href="/signup?reference=" + proposal.id)= t('signin.signup')
-            | .
+            = '.'
 
       .votes-cast
         em.text-muted= t('proposal-options.votes-cast', { num: census.length || "0" })
