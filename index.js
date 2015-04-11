@@ -37,11 +37,13 @@ if (secure) {
 var launch = function launchServer () {
     server.listen(port, function() {
       log('Application started on port %d', port);
+      console.log('Application started at http://localhost:%d', port);
     });
 
     if (secureServer && securePort) {
       secureServer.listen(securePort, function() {
         log('Secure application started on port %d', securePort);
+	console.log('Secure application started on http://localhost:%d', securePort);
       });
     }
   };
