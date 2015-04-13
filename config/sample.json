@@ -30,7 +30,8 @@
     "client debug",
     "home link",
     "logo mobile",
-    "users whitelist"
+    "users whitelist",
+    "visibility"
   ],
   "auth": {
     "basic": {
@@ -78,5 +79,6 @@
   "googleAPIKey": "",
   "home link": "/",
   "users whitelist": false,
-  "deploymentDomain": "localhost"
+  "deploymentDomain": "localhost",
+  "visibility": "hidden"
 }
