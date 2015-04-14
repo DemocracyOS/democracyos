@@ -84,6 +84,7 @@
   "admin-whitelists-form.button.submit": "Spara",
   "admin-whitelists-form.button.delete": "Radera",
   "admin-whitelists-form.message.onsuccess": "Regel sparats",
+  "admin-whitelists-form.value.placeholder": "Kommaseparerade e-post eller bara en e-post",
   "article.unknown-closing-date": "Okänt låsdatum",
   "browser-update.ie-old-version-warning": "Du använder en version av Internet Explorer som ej stöds.",
   "browser-update.in-order-warning": "För att använda Demoracy OS, vänligen uppdatera din webbläsare.",

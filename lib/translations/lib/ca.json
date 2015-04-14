@@ -83,6 +83,7 @@
   "admin-whitelists-form.button.submit": "Guardar",
   "admin-whitelists-form.button.delete": "Esborrar",
   "admin-whitelists-form.message.onsuccess": "Regla guardat correctament",
+  "admin-whitelists-form.value.placeholder": "Comma correus electrònics o només un correu electrònic separat",
   "article.unknown-closing-date": "Data de tancament desconeguda",
   "browser-update.ie-old-version-warning": "Vostè està usant una versió no suportada d'Internet Explorer.",
   "browser-update.in-order-warning": "Per utilitzar Demoracy OS, si us plau, actualitzi el seu navegador.",

@@ -83,6 +83,7 @@
   "admin-whitelists-form.button.submit": "Guardar",
   "admin-whitelists-form.button.delete": "Eliminar",
   "admin-whitelists-form.message.onsuccess": "Regla guardada exitosamente",
+  "admin-whitelists-form.value.placeholder": "Emails separados por coma o sólo un email",
   "article.unknown-closing-date": "Fecha de cierre desconocida",
   "browser-update.ie-old-version-warning": "Estas usando una versión no soportada de Internet Explorer.",
   "browser-update.in-order-warning": "Para poder usar Demoracy OS, por favor actualzá tu browser",

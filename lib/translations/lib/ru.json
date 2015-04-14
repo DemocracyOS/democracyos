@@ -83,6 +83,7 @@
   "admin-whitelists-form.button.submit": "Сохранить",
   "admin-whitelists-form.button.delete": "удалять",
   "admin-whitelists-form.message.onsuccess": "Правило успешно сохранены",
+  "admin-whitelists-form.value.placeholder": "Разделенных запятыми электронную почту или просто одно сообщение",
   "article.unknown-closing-date": "Неизвестная дата закрытия",
   "browser-update.ie-old-version-warning": "Вы пользуетесь устаревшей версией Internet Explorer.",
   "browser-update.in-order-warning": "Пожалуйста обновите Вашу версию для того чтобы Вы могли пользоваться платформой DemocracyOS.",
