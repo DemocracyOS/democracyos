@@ -83,6 +83,7 @@
   "admin-whitelists-form.button.submit": "Salva",
   "admin-whitelists-form.button.delete": "Cancellare",
   "admin-whitelists-form.message.onsuccess": "Regola salvato con successo",
+  "admin-whitelists-form.value.placeholder": "Comma-mail o solo una e-mail separata",
   "article.unknown-closing-date": "Data di chiusura sconosciuta",
   "browser-update.ie-old-version-warning": "Si utilizza una versione usuported di Internet Explorer.",
   "browser-update.in-order-warning": "Per poter utilizzare Demoracy OS, si prega di aggiornare il browser.",

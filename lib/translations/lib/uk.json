@@ -84,6 +84,7 @@
   "admin-whitelists-form.button.submit": "зберегти",
   "admin-whitelists-form.button.delete": "видаляти",
   "admin-whitelists-form.message.onsuccess": "Правило успішно збережені",
+  "admin-whitelists-form.value.placeholder": "Розділених комами електронну пошту або просто одне повідомлення",
   "article.unknown-closing-date": "Невідома дата закриття",
   "browser-update.ie-old-version-warning": "Ви користуєтеся застарілою версіею Internet Explorer.",
   "browser-update.in-order-warning": "Будь ласка обновіть Вашу версію для того щоб Ви могли користуватися платформою DemocracyOS.",

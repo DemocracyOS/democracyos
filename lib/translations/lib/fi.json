@@ -83,6 +83,7 @@
   "admin-whitelists-form.button.submit": "Tallenna",
   "admin-whitelists-form.button.delete": "poistaa",
   "admin-whitelists-form.message.onsuccess": "Sääntö tallennettu",
+  "admin-whitelists-form.value.placeholder": "Pilkulla erotettuna sähköposteja tai vain yksi sähköpostiosoite",
   "article.unknown-closing-date": "Tuntematon päätöspäivä",
   "browser-update.ie-old-version-warning": "Käytät tueta Internet Explorerin versiota.",
   "browser-update.in-order-warning": "Jotta voit käyttää Demoracy OS, päivitä selaimesi.",
