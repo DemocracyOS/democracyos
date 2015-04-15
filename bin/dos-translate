@@ -67,24 +67,20 @@ function forEachLanguageFile(langs, cb) {
   });
 }
 
-function defaultToParam(opts) {
-  if (!opts.to || !opts.to.length) {
-    opts.to = languages.filter(function(v){ return v !== opts.from; })
-  }
-}
-
 /*
  * Commands
  */
 
 function commandListMissing(opts) {
-  defaultToParam(opts)
+  if (!opts.on || !opts.on.length) {
+    opts.on = languages.filter(function(v){ return v !== opts.base; })
+  }
 
-  var fromKeys = getLangKeys(opts.from);
+  var baseKeys = getLangKeys(opts.base);
 
-  opts.to.forEach(function(lang){
-    var toKeys = getLangKeys(lang);
-    var missing = arrDiff(fromKeys, toKeys);
+  opts.on.forEach(function(lang){
+    var onKeys = getLangKeys(lang);
+    var missing = arrDiff(baseKeys, onKeys);
 
     if (!missing.length) return;
 
@@ -97,16 +93,18 @@ function commandListMissing(opts) {
 }
 
 function commandTranslateMissing(opts) {
-  defaultToParam(opts)
+  if (!opts.on || !opts.on.length) {
+    opts.on = languages.filter(function(v){ return v !== opts.base; })
+  }
 
   var googleTranslate = require('google-translate')(config.googleAPIKey);
-  var fromLang = getLang(opts.from);
-  var fromKeys = getLangKeys(opts.from);
+  var baseLang = getLang(opts.base);
+  var baseKeys = getLangKeys(opts.base);
 
   var missings = {}
-  var langs = opts.to.filter(function(lang){
-    var toKeys = getLangKeys(lang);
-    var missing = arrDiff(fromKeys, toKeys);
+  var langs = opts.on.filter(function(lang){
+    var onKeys = getLangKeys(lang);
+    var missing = arrDiff(baseKeys, onKeys);
 
     if (missing.length) missings[lang] = missing;
 
@@ -117,18 +115,22 @@ function commandTranslateMissing(opts) {
   forEachLanguageFile(langs, function(lang, file){
     console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:');
 
-    var edited = false;
-    var format_regex = /%[a-z]|{[a-z\-]+}/
+    var format_regex = /%[a-z]|{[a-z\-]+}/;
+    var count = 0;
 
     missings[lang].forEach(function(k){
-      if (format_regex.test(fromLang[k])) {
+      if (format_regex.test(baseLang[k])) {
         console.warn('  Couldnt translate `' + k + '`, it has a variable defined with % of {var} format.')
         return
       }
 
-      googleTranslate.translate(fromLang[k], opts.from, lang, callback);
+      count++;
+
+      googleTranslate.translate(baseLang[k], opts.base, lang, callback);
 
       function callback(err, translation) {
+        count--;
+
         if (err) return halt(err);
 
         var t = {};
@@ -136,23 +138,21 @@ function commandTranslateMissing(opts) {
         file.set(t);
         console.log('  "' + k + '": "' + translation.translatedText + '"');
 
-        edited = true;
+        if (count === 0) {
+          file.sort();
+          file.save().then(function() {
+            console.log('Done!');
+          }).catch(function(err) {
+            halt(err);
+          });
+        }
       }
     });
-
-    if (edited) {
-      file.sort();
-      file.save().then(function() {
-        console.log('Done!');
-      }).catch(function(err) {
-        halt(err);
-      });
-    }
   });
 }
 
 function commandDeleteKey(opts) {
-  var langs = opts.from || languages
+  var langs = opts.base || languages
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Deleting keys from `' + lang + '`:');
@@ -172,7 +172,7 @@ function commandDeleteKey(opts) {
 }
 
 function commandRenameKey(opts) {
-  var langs = opts.from || languages
+  var langs = opts.on || languages
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Renaming keys from `' + lang + '`:');
@@ -241,7 +241,7 @@ function commandDeleteExtra(opts) {
     if (!extra.length) return;
 
     commandDeleteKey({
-      from: [lang],
+      on: [lang],
       key: extra
     })
   });
@@ -267,14 +267,14 @@ function commandSort(opts){
 var nomnom = require('nomnom');
 
 nomnom.command('list-missing')
-  .option('from', {
-    abbr: 'f',
+  .option('base', {
+    abbr: 'b',
     help: 'Base language to use the keys as reference.',
     choices: languages,
     required: true
   })
-  .option('to', {
-    abbr: 't',
+  .option('on', {
+    abbr: 'o',
     help: 'Target language, will default to all other languages.',
     choices: languages,
     required: false,
@@ -284,14 +284,14 @@ nomnom.command('list-missing')
   .help('Find all the missing keys.');
 
 nomnom.command('translate-missing')
-  .option('from', {
-    abbr: 'f',
+  .option('base', {
+    abbr: 'b',
     help: 'Base language to use as reference.',
     choices: languages,
     required: true
   })
-  .option('to', {
-    abbr: 't',
+  .option('on', {
+    abbr: 'o',
     help: 'Target language, will default to all other languages.',
     choices: languages,
     required: false,
@@ -307,8 +307,8 @@ nomnom.command('delete-key')
     required: true,
     list: true
   })
-  .option('from', {
-    abbr: 'f',
+  .option('on', {
+    abbr: 'o',
     help: 'Target language(s), will default to all languages.',
     choices: languages,
     required: false,
@@ -330,8 +330,8 @@ nomnom.command('rename-key')
     required: true,
     list: true
   })
-  .option('from', {
-    abbr: 'f',
+  .option('on', {
+    abbr: 'o',
     help: 'Target language(s), will default to all languages.',
     choices: languages,
     required: false,

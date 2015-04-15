@@ -1,11 +1,18 @@
 #tags-wrapper
   .tags-admin
-    .heading
-      .circle
-        i.icon-paper
-      h1= t('admin-tags.list.title')
-    ul
-      - each tag in tags
-        li(data-id=tag.id)
-          a(href="/admin/tags/" + tag.id)
+    .row.well.well-lg
+      .col-xs-12.col-md-2
+        .btn.btn-success.btn-block.new
+          span.glyphicon.glyphicon-plus
+          = ' ' + t('admin-tags.list.add-tag')
+      .col-xs-12.col-md-7.col-md-offset-3
+        .input-group.input-group-md
+          span.input-group-addon
+            i.glyphicon.glyphicon-search
+          input.form-control.search(type='text', placeholder='#{t("admin-tags.list.search.placeholder")}', autofocus)
+      .col-md-3
+    .row
+      .list.list-group
+        - each tag in tags
+          a.list-group-item(href="/admin/tags/" + tag.id)
             span.tag-title=tag.name

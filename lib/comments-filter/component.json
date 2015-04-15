@@ -4,13 +4,13 @@
   "dependencies": {
     "component/bus": "^0.0.2",
     "component/t": "1.0.0",
-    "component/closest": "0.1.4",
-    "visionmedia/debug": "2.1.0"
+    "component/closest": "0.1.4"
   },
   "locals": [
     "citizen",
     "store",
-    "view"
+    "view",
+    "debug"
   ],
   "styles": [ "styles.styl" ],
   "templates": [ "template.jade" ],

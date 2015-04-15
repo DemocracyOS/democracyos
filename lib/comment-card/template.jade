@@ -1,6 +1,6 @@
 mixin remove-action
   - var hide = repliesCounter && !citizen.staff ? 'hide' : ''
-  a.comment-action.link-remove.btn-remove(href="#", title=t('Remove argument'), class=hide)
+  a.comment-action.link-remove.btn-remove(href="#", title=t('comment-card.remove-argument'), class=hide)
     i.icon-remove
 
 li.media.comment-item(class=classes)
@@ -20,7 +20,7 @@ li.media.comment-item(class=classes)
       - else if (citizen.logged())
         - if (citizen.staff)
           +remove-action
-        - var spamTitle = flags ?  t('Not spam') : t('Spam')
+        - var spamTitle = flags ?  t('comment-card.not-spam') : t('comment-card.report-spam')
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
           i.glyphicon.glyphicon-flag
           span.count=comment.flags.length ? comment.flags.length : ''
@@ -30,14 +30,14 @@ li.media.comment-item(class=classes)
         .oncomment.remove-comment= t('comments.arguments.confirm-remove')
           -if (!own && citizen.staff)
             br
-            =t('You are removing this argument as a staff member')
+            =t('comments.removing-argument')
           .remove-confirm-actions
             a.confirm-remove(href='#')= t('common.ok')
             a.cancel-remove(href='#')= t('common.cancel')
       .oncomment.message
-      p.spam-message=t('This argument has been flagged as spam')
+      p.spam-message=t('comment-card.flagged-as-spam')
         | .
-        span.show-spam: a(href="#")= t('show')
+        span.show-spam: a(href="#")= t('comment-card.show')
       .comment-actions
         - if (repliesCounter || citizen.id)
           - var title = repliesCounter + ' ' + (repliesCounter > 1 ? t('comments.replies') : t('comments.reply'))
@@ -48,10 +48,10 @@ li.media.comment-item(class=classes)
       span.error
       .oncomment.loginrequired
         =t('comments.sign-in-required-to-vote-comments')
-        |. 
-        a(href='/signin')= t('Login')
-        |  #{t('common.or')} 
-        a(href='/signup')= t('Signup')
+        |.
+        a(href='/signin')= t('signin.login')
+        |  #{t('common.or')}
+        a(href='/signup')= t('signin.signup')
         |.
 
   .replies-container

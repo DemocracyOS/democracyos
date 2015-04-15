@@ -3,7 +3,6 @@
   "description": "header component",
   "dependencies": {
     "component/dom": "1.0.6",
-    "visionmedia/debug": "2.1.0",
     "jadejs/jade": "1.1.5",
     "democracyos/headroom.js": "0.7.1"
     },
@@ -13,7 +12,8 @@
     "snapper",
     "user-badge",
     "view",
-    "is-mobile"
+    "is-mobile",
+    "debug"
   ],
   "scripts": [
     "index.js",

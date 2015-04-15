@@ -3,15 +3,17 @@
   "description": "proposal's clauses view",
   "dependencies": {
     "component/t": "1.0.0",
+    "component/dom": "1.0.6",
     "jadejs/jade": "1.1.5",
-    "visionmedia/debug": "2.1.0"
+    "visionmedia/debug": "^2.1.3"
   },
   "locals": [
     "config",
     "citizen",
     "side-comments",
     "request",
-    "stateful-view"
+    "stateful-view",
+    "debug"
   ],
   "scripts": [ "proposal-clauses.js" ],
   "templates": [ "template.jade" ],

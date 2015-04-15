@@ -2,17 +2,20 @@
   "name": "proposal-article",
   "description": "proposal's article view",
   "dependencies": {
-    "component/truncate": "72b55"
+    "component/truncate": "72b55",
+    "component/dom": "1.0.6",
+    "yields/wrap": "0.0.1"
   },
   "locals": [
     "config",
     "participants-box",
     "citizen",
     "proposal-clauses",
+    "render",
     "view"
   ],
   "scripts": [ "proposal-article.js" ],
-  "templates": [ "template.jade" ],
+  "templates": [ "template.jade", "paragraph.jade" ],
   "styles": [ "proposal-article.styl" ],
   "main": "proposal-article.js"
 }

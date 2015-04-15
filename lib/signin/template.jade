@@ -8,7 +8,7 @@
     form.form(action="/signin", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-errors
       .form-group
-        label= t('Email')
+        label= t('signup.email')
         input.form-control(type='text', name='email', tabindex=1, placeholder=t('forgot.mail.example'), validate='required email')
       .form-group
         label= t('password')
@@ -16,6 +16,6 @@
 
         input.form-control(type='password', name='password', tabindex=2, placeholder=t('password'), validate='required')
       .form-group: .signup
-        span=t('Don\'t have an account?')
+        span=t('signin.dont-have-account')
         a(href='/signup', tabindex=5) #{t('signin.action.signup')}
-      .form-group: button.btn.btn-block.btn-primary.btn-lg(tabindex=3)=t('Login')
+      .form-group: button.btn.btn-block.btn-primary.btn-lg(tabindex=3)=t('signin.login')

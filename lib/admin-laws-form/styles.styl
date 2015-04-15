@@ -1,4 +1,14 @@
 #law-wrapper
+  .alert-danger
+    color #d95e59
+    a
+      color #952722
+  .create-tag
+    text-transform none
+    padding-top 0.8em
+    padding-bottom 0.6em
+    border-radius 3px
+    font-size 1em
   form
     .form-group
       span.error
@@ -22,11 +32,6 @@
       span
         margin-right 5px
         letter-spacing 0.04em
-
-  a.delete-law
-    float right
-    line-height 14px
-    text-decoration underline
 
   .law-admin
     form
@@ -81,6 +86,8 @@
           label
           input
             margin-left 5%
+        &.text
+          margin-top -20px
 
     .law-clause
     .law-link
@@ -88,12 +95,8 @@
       position relative
       float left
       width 100%
-      margin 20px 0px 0px 0px
-      padding 20px 0px 0px 0px
-      border-top 1px solid #eee
 
       .remove-clause
-      .remove-link
         float right
 
       .clause-row
@@ -110,7 +113,7 @@
           display block
           position relative
           float left
-          width 50%
+          width 45%
           margin 0px
           padding 0px
 
@@ -119,8 +122,24 @@
             width 95%
             float left
 
+          &.link-commands
+            width 10%
+            a
+              padding 0
+              margin-top 4px
+
+              span
+                color lightgray
+
       h4
         margin-top 0
+
+  .commands
+    margin 30px 0
+
+    .btn
+      width 100%
+      margin-bottom 3px
 
 .popover
   display block !important

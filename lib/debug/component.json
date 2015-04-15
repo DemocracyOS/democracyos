@@ -1,0 +1,11 @@
+{
+  "name": "debug",
+  "dependencies": {
+    "tj/debug": "^2.1.3"
+  },
+  "locals": [
+    "config"
+  ],
+  "scripts": [ "index.js" ],
+  "main": "index.js"
+}

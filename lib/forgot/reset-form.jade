@@ -1,6 +1,6 @@
 .forgot-container.small-container
   #forgot-form.reset
-    .title-page 
+    .title-page
       .circle
         i.icon-signin
       h1= t('forgot.reset')
@@ -13,4 +13,4 @@
       .form-group
         label= t('password.retype')
         input.form-control(type='password', name='re_password', tabindex=2, placeholder=t('password.repeat'), validate='required same:password')
-      .form-group: input.btn.btn-primary(type='submit', tabindex=3, value=t('Send'))
+      .form-group: input.btn.btn-primary(type='submit', tabindex=3, value=t('form.send'))

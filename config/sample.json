@@ -4,10 +4,10 @@
   "privatePort": 3000,
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
-  "authPages": {
-      "signinUrl": "",
-      "signupUrl": ""
-    },
+  "cors domains": "",
+  "signin url": "",
+  "signup url": "",
+  "settings url": "",
   "client": [
     "protocol",
     "host",
@@ -24,7 +24,13 @@
     "tos",
     "pp",
     "glossary",
-    "authPages"
+    "signin url",
+    "signup url",
+    "settings url",
+    "client debug",
+    "home link",
+    "logo mobile",
+    "users whitelist"
   ],
   "auth": {
     "basic": {
@@ -43,7 +49,8 @@
   },
   "locale" : "en",
   "logo": "/lib/boot/images/logo.png",
-  "favicon" : " http://democracyos-demo.s3.amazonaws.com/logo.png",
+  "logo mobile": "/lib/boot/images/logo.png",
+  "favicon" : " /lib/boot/images/favicon.ico",
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",
   "learn more url": "http://www.democracyos.org",
@@ -67,6 +74,8 @@
     "port": 443,
     "redirect": "normal"
   },
-  "multicore": false,
-  "googleAPIKey": ""
+  "client debug": false,
+  "googleAPIKey": "",
+  "home link": "/",
+  "users whitelist": false
 }
