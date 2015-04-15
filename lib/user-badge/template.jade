@@ -1,9 +1,9 @@
 .user-badge.pull-right
-  a.btn.profile(href='#', data-toggle='dropdown').dropdown-toggle
+  a.btn.profile
     img(src=citizen.profilePicture())
     span.name.ellipsis=citizen.firstName
     span.caret
-  ul.dropdown-menu
+  ul.dropdown-list
     - if (citizen.staff)
       li: a(href='/admin')= t('header.admin')
     li: a(href='/settings')= t('header.settings')
