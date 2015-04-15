@@ -13,7 +13,8 @@
     "component/closest": "0.1.4",
     "yields/empty": "0.0.1",
     "component/t": "1.0.0",
-    "slifszyc/query": "0.0.3"
+    "slifszyc/query": "0.0.3",
+    "mjlescano/toggle-parent": "0.1.0"
   },
   "locals": [
     "citizen",
