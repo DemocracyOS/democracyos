@@ -83,6 +83,7 @@
   "admin-whitelists-form.button.submit": "Salvar",
   "admin-whitelists-form.button.delete": "Excluir",
   "admin-whitelists-form.message.onsuccess": "Regra salvo com sucesso",
+  "admin-whitelists-form.value.placeholder": "Separados por vírgula e-mails ou apenas um e-mail",
   "article.unknown-closing-date": "Data de fechamento desconhecida",
   "browser-update.ie-old-version-warning": "Você está usando uma versão sem suporte do Internet Explorer.",
   "browser-update.in-order-warning": "Para utilizar Demoracy OS, por favor, atualize seu navegador.",
