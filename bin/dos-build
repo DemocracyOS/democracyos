@@ -21,4 +21,4 @@ Builder.build(function(err, res) {
 
   write('public/app.js', res.js);
   write('public/app.css', res.css);
-});
+}, { compress: true });
