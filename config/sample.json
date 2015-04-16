@@ -77,5 +77,6 @@
   "client debug": false,
   "googleAPIKey": "",
   "home link": "/",
-  "users whitelist": false
+  "users whitelist": false,
+  "deploymentDomain": "localhost"
 }
