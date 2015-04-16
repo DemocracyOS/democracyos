@@ -1,10 +1,10 @@
 .user-badge.pull-right
-  a.btn.profile(href='#', data-toggle='dropdown').dropdown-toggle
+  a.btn.profile
     img(src=citizen.profilePicture())
     - var color = config['header font color']
     span.name.ellipsis(style=color ? 'color: #{color}' : '')=citizen.firstName
     span.caret
-  ul.dropdown-menu
+  ul.dropdown-list
     - if (citizen.staff)
       li: a(href='/admin')= t('header.admin')
     li: a(href='/settings')= t('header.settings')

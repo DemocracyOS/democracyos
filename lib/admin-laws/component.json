@@ -6,7 +6,7 @@
     "visionmedia/page.js": "1.3.7",
     "javve/list.js": "1.1.1",
     "DemocracyOS/moment": "develop",
-    "cristiandouce/confirmation": "d0861",
+    "component/confirmation": "0.0.5",
     "component/t": "1.0.0",
     "component/dom": "1.0.6"
   },
