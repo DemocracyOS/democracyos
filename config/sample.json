@@ -30,12 +30,18 @@
     "client debug",
     "home link",
     "logo mobile",
-    "users whitelist"
+    "users whitelist",
+    "facebook signin"
   ],
   "auth": {
     "basic": {
       "username": "",
       "password": ""
+    },
+    "facebook": {
+      "clientID": "FBClientId",
+      "clientSecret": "FBClientSecret",
+      "callbackURL": "http://localhost:3000/auth/facebook/callback"
     }
   },
   "socialshare" : {
@@ -77,5 +83,6 @@
   "client debug": false,
   "googleAPIKey": "",
   "home link": "/",
-  "users whitelist": false
+  "users whitelist": false,
+  "facebook signin": true
 }

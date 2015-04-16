@@ -15,7 +15,7 @@
 
   .user-nav.btn-group
     .user
-    a(href='/signin').login.pull-right.anonymous-citizen
+    a(href=config['facebook signin'] ? '/auth/facebook' : '/signin').login.pull-right.anonymous-citizen
       i.icon-signin
       span= t('header.signin')
     a(href='/signup').login.pull-right.anonymous-citizen
