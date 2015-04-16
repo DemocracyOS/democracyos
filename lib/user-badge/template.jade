@@ -1,8 +1,8 @@
 .user-badge.pull-right
   a.btn.profile(href='#', data-toggle='dropdown').dropdown-toggle
     img(src=citizen.profilePicture())
-    - var style = config['header fg color'] ? 'color: '.concat(config['header fg color']) : '';
-    span.name.ellipsis(style=style)=citizen.firstName
+    - var color = config['header font color']
+    span.name.ellipsis(style=color ? 'color: #{color}' : '')=citizen.firstName
     span.caret
   ul.dropdown-menu
     - if (citizen.staff)

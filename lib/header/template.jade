@@ -15,7 +15,8 @@
 
   .user-nav.btn-group
     .user
-    - var style = config['header fg color'] ? 'color: '.concat(config['header fg color']) : '';
+    - var color = config['header font color'];
+    - var style = color ? 'color: ' + color : '';
     a(href='/signin', style=style).login.pull-right.anonymous-citizen
       i.icon-signin
       span= t('header.signin')
