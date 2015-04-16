@@ -12,6 +12,13 @@ var write = fs.writeFileSync;
 // Little hack to include `NODE_PATH=.`
 require('node-path')(module, [resolve('.')]);
 
+var environment = process.env.NODE_ENV || 'development';
+
+var options = {};
+
+if (environment === 'production'){
+  options.compress = true;
+}
 
 // Compile client application `./public/app.js` and `./public/app.css`
 var Builder = require('lib/build');
@@ -21,4 +28,4 @@ Builder.build(function(err, res) {
 
   write('public/app.js', res.js);
   write('public/app.css', res.css);
-}, { compress: true });
+}, options);
