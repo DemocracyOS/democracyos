@@ -30,7 +30,9 @@
     "client debug",
     "home link",
     "logo mobile",
-    "users whitelist"
+    "users whitelist",
+    "header background color",
+    "header font color"
   ],
   "auth": {
     "basic": {
@@ -54,6 +56,8 @@
   "organization name" : "DemocracyOS on GitHub",
   "organization url" : "https://github.com/DemocracyOS/app",
   "learn more url": "http://www.democracyos.org",
+  "header background color": "",
+  "header font color": "",
   "staff": [],
   "google analytics tracking id" : "",
   "rss enabled" : true,

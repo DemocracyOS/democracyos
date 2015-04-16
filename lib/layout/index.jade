@@ -46,7 +46,8 @@ html(lang='en')
     block body
       #snap-content.snap-content
         //- Start of `Page Content`
-        header.app-header
+        - var color = config['header background color'];
+        header.app-header(style=color ? 'background-color: #{color};' : '')
         section#content.site-content
           block content
         section#browser.site-content
