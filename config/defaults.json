@@ -1,0 +1,86 @@
+{
+  "protocol": "http",
+  "host": "localhost",
+  "privatePort": 3000,
+  "publicPort": 3000,
+  "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
+  "corsDomains": "",
+  "signinUrl": "",
+  "signupUrl": "",
+  "settingsUrl": "",
+  "client": [
+    "protocol",
+    "host",
+    "publicPort",
+    "env",
+    "logo",
+    "favicon",
+    "organizationName",
+    "organizationUrl",
+    "learnMoreUrl",
+    "googleAnalyticsTrackingId",
+    "commentsPerPage",
+    "faq",
+    "tos",
+    "pp",
+    "glossary",
+    "signinUrl",
+    "signupUrl",
+    "settingsUrl",
+    "clientDebug",
+    "homeLink",
+    "logoMobile",
+    "usersWhitelist",
+    "headerBackgroundColor",
+    "headerFontColor"
+  ],
+  "auth": {
+    "basic": {
+      "username": "",
+      "password": ""
+    }
+  },
+  "socialshare" : {
+    "siteName" : "DemocracyOS",
+    "siteDescription" : "DemocracyOS voting system",
+    "image" : "https://2.gravatar.com/avatar/a8b9176bd0d042db078bf38500727671?d=https%3A%2F%2Fidenticons.github.com%2F14bae9f2564556f8eb23cc263a779f59.png&s=400",
+    "domain" : "democracyos.org",
+    "twitter" : {
+      "username" : "@democracyos"
+    }
+  },
+  "locale" : "en",
+  "logo": "/lib/boot/images/logo.png",
+  "logoMobile": "/lib/boot/images/logo.png",
+  "favicon" : " /lib/boot/images/favicon.ico",
+  "organizationName" : "DemocracyOS on GitHub",
+  "organizationUrl" : "https://github.com/DemocracyOS/app",
+  "learnMoreUrl": "http://www.democracyos.org",
+  "headerBackgroundColor": "",
+  "headerFontColor": "",
+  "staff": [],
+  "googleAnalyticsTrackingId" : "",
+  "rssEnabled" : true,
+  "commentsPerPage": 0,
+  "spamLimit": 5,
+  "faq": false,
+  "tos": false,
+  "pp": false,
+  "glossary": false,
+  "notifications": {
+    "url": "http://localhost:9001/api/events",
+    "token": 1234
+  },
+  "secret": "Just a sample secret string",
+  "ssl": {
+    "serverKey": "server.key",
+    "serverCert": "server.crt",
+    "port": 443,
+    "redirect": "normal"
+  },
+  "clientDebug": "",
+  "googleAPIKey": "",
+  "homeLink": "/",
+  "usersWhitelist": false,
+  "deploymentDomain": "localhost"
+}
