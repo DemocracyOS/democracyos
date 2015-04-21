@@ -1,7 +1,7 @@
 .user-badge.pull-right
   a.btn.profile
     img(src=citizen.profilePicture())
-    - var color = config['header font color']
+    - var color = config['headerFontColor']
     span.name.ellipsis(style=color ? 'color: #{color}' : '')=citizen.firstName
     span.caret
   ul.dropdown-list

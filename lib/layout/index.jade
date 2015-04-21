@@ -5,7 +5,7 @@ html(lang='en')
       //-
       //-   Basic Page Needs
       //-   ==================================================
-      title= config('organization name')
+      title= config('organizationName')
 
       meta(charset='utf-8')
       meta(name='description', content='')
@@ -46,7 +46,7 @@ html(lang='en')
     block body
       #snap-content.snap-content
         //- Start of `Page Content`
-        - var color = config['header background color'];
+        - var color = config['headerBackgroundColor'];
         header.app-header(style=color ? 'background-color: #{color};' : '')
         section#content.site-content
           block content
