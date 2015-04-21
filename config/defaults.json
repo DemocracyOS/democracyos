@@ -1,19 +1,43 @@
 {
+  "locale" : "en",
   "protocol": "http",
   "host": "localhost",
-  "privatePort": 3000,
   "publicPort": 3000,
+  "privatePort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
+  "mongoUsersUrl": "",
+  "secret": "Generate a secret token and paste it here.",
+  "deploymentId": "",
+  "deploymentDomain": "",
   "corsDomains": "",
   "signinUrl": "",
   "signupUrl": "",
   "settingsUrl": "",
+  "staff": [],
+  "auth": {
+    "basic": {
+      "username": "",
+      "password": ""
+    }
+  },
+  "ssl": {
+    "serverKey": "server.key",
+    "serverCert": "server.crt",
+    "port": 443,
+    "redirect": "normal"
+  },
+  "notifications": {
+    "url": "http://localhost:9001/api/events",
+    "token": 1234
+  },
   "client": [
     "protocol",
     "host",
     "publicPort",
     "env",
+    "locale",
     "logo",
+    "logoMobile",
     "favicon",
     "organizationName",
     "organizationUrl",
@@ -21,25 +45,19 @@
     "googleAnalyticsTrackingId",
     "commentsPerPage",
     "faq",
-    "tos",
     "pp",
+    "tos",
     "glossary",
     "signinUrl",
     "signupUrl",
     "settingsUrl",
     "clientDebug",
     "homeLink",
-    "logoMobile",
     "usersWhitelist",
+    "deploymentDomain",
     "headerBackgroundColor",
     "headerFontColor"
   ],
-  "auth": {
-    "basic": {
-      "username": "",
-      "password": ""
-    }
-  },
   "socialshare" : {
     "siteName" : "DemocracyOS",
     "siteDescription" : "DemocracyOS voting system",
@@ -49,16 +67,12 @@
       "username" : "@democracyos"
     }
   },
-  "locale" : "en",
   "logo": "/lib/boot/images/logo.png",
   "logoMobile": "/lib/boot/images/logo.png",
   "favicon" : " /lib/boot/images/favicon.ico",
   "organizationName" : "DemocracyOS on GitHub",
   "organizationUrl" : "https://github.com/DemocracyOS/app",
   "learnMoreUrl": "http://www.democracyos.org",
-  "headerBackgroundColor": "",
-  "headerFontColor": "",
-  "staff": [],
   "googleAnalyticsTrackingId" : "",
   "rssEnabled" : true,
   "commentsPerPage": 0,
@@ -67,20 +81,10 @@
   "tos": false,
   "pp": false,
   "glossary": false,
-  "notifications": {
-    "url": "http://localhost:9001/api/events",
-    "token": 1234
-  },
-  "secret": "Just a sample secret string",
-  "ssl": {
-    "serverKey": "server.key",
-    "serverCert": "server.crt",
-    "port": 443,
-    "redirect": "normal"
-  },
-  "clientDebug": "",
-  "googleAPIKey": "",
   "homeLink": "/",
+  "clientDebug": "",
   "usersWhitelist": false,
-  "deploymentDomain": "localhost"
+  "headerBackgroundColor": "",
+  "headerFontColor": "",
+  "googleAPIKey": ""
 }

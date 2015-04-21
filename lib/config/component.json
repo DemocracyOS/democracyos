@@ -1,0 +1,8 @@
+{
+  "name": "config",
+  "description": "Client config component",
+  "dependencies": {},
+  "locals": [],
+  "scripts": [ "config.js" ],
+  "main": "config.js"
+}

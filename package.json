@@ -107,6 +107,6 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "node ./bin/dos-install && node ./bin/dos-config && node ./bin/dos-build"
+    "postinstall": "node ./bin/dos-install && node ./bin/dos-build"
   }
 }
