@@ -5,7 +5,7 @@ html(lang='en')
       //-
       //-   Basic Page Needs
       //-   ==================================================
-      title= config('organizationName')
+      title= config.organizationName
 
       meta(charset='utf-8')
       meta(name='description', content='')
@@ -31,7 +31,7 @@ html(lang='en')
       //if lt IE 9
       script(type='text/javascript', src='//html5shim.googlecode.com/svn/trunk/html5.js')
 
-      link(rel="icon", type="image/x-icon", href=config('favicon'))
+      link(rel="icon", type="image/x-icon", href=config.favicon)
 
       script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
       script.
