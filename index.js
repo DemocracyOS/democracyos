@@ -10,13 +10,13 @@ var config = require('lib/config');
 var fs = require('fs');
 var log = require('debug')('democracyos:root');
 
-var secure = 'https' == config('protocol');
+var secure = 'https' == config.protocol;
 
 /**
  * Configure standard server
  */
 var server = http.createServer(app);
-var port = config('privatePort');
+var port = config.privatePort;
 
 
 /**
@@ -25,7 +25,7 @@ var port = config('privatePort');
 var secureServer;
 var securePort;
 if (secure) {
-  var ssl = config('ssl');
+  var ssl = config.ssl;
 
   var privateKey = fs.readFileSync(ssl.serverKey, 'utf-8');
   var certificate = fs.readFileSync(ssl.serverCert, 'utf-8');

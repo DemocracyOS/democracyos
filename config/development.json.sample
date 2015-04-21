@@ -1,0 +1,8 @@
+{
+  "protocol": "https",
+  "host": "democracyos.dev",
+  "publicPort": 8080,
+  "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
+  "locale" : "en",
+  "organizationName" : "Example of Development Configuration"
+}
