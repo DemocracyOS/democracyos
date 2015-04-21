@@ -15,6 +15,7 @@ var merge = require('merge-util');
 var exec = require('child_process').exec;
 var program = require('commander');
 var installc = resolve('./node_modules/.bin/component-install');
+var crypto = require('crypto');
 var env = process.env.NODE_ENV || 'development';
 
 program
@@ -29,21 +30,12 @@ program
 
 if (program.config) {
   var dest = resolve('./config/' + env + '.json');
-  var orig = resolve('./config/sample.json');
+  var orig = resolve('./config/defaults.json');
   if (!exists(dest)) {
-    // non-simple copying
-    write(dest, read(orig));
-  } else {
-    var conf = parse(read(dest));
-    var sample = parse(read(orig));
-
-    // Merge current config into original sample
-    merge(sample, conf);
-
-    // save config file
-    write(dest, stringify(sample, null, 2));
+    var token = crypto.randomBytes(32).toString('hex');
+    write(dest, stringify({ secret: token }, null, 2));
   }
-};
+}
 
 if (program.components && exists(installc)) {
   exec(installc, function(err, stdout, stderr) {
@@ -51,4 +43,4 @@ if (program.components && exists(installc)) {
     if (stderr.length) return console.log(stderr), process.exit(1);
     if (err != null) return console.log(err), process.exit(1);
   });
-};
+}
