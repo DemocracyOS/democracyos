@@ -300,6 +300,6 @@
   "validators.min-length.plural": "It must be at least {n} characters",
   "validators.min-length.singular": "It must be at least 1 character",
   "validators.not.match": "No match",
-  "validators.password.not.match": "Passwords do not match",
+  "validators.password.not.match": "Passwords mismatch",
   "validators.required": "Required"
 }
