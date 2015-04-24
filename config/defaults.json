@@ -1,5 +1,5 @@
 {
-  "locale" : "en",
+  "locale": "en",
   "protocol": "http",
   "host": "localhost",
   "publicPort": 3000,
@@ -58,23 +58,23 @@
     "headerBackgroundColor",
     "headerFontColor"
   ],
-  "socialshare" : {
-    "siteName" : "DemocracyOS",
-    "siteDescription" : "DemocracyOS voting system",
-    "image" : "https://2.gravatar.com/avatar/a8b9176bd0d042db078bf38500727671?d=https%3A%2F%2Fidenticons.github.com%2F14bae9f2564556f8eb23cc263a779f59.png&s=400",
-    "domain" : "democracyos.org",
-    "twitter" : {
-      "username" : "@democracyos"
+  "socialshare": {
+    "siteName": "DemocracyOS",
+    "siteDescription": "DemocracyOS voting system",
+    "image": "https://2.gravatar.com/avatar/a8b9176bd0d042db078bf38500727671?d=https%3A%2F%2Fidenticons.github.com%2F14bae9f2564556f8eb23cc263a779f59.png&s=400",
+    "domain": "democracyos.org",
+    "twitter": {
+      "username": "@democracyos"
     }
   },
   "logo": "/lib/boot/images/logo.png",
   "logoMobile": "/lib/boot/images/logo.png",
-  "favicon" : " /lib/boot/images/favicon.ico",
-  "organizationName" : "DemocracyOS on GitHub",
-  "organizationUrl" : "https://github.com/DemocracyOS/app",
+  "favicon": " /lib/boot/images/favicon.ico",
+  "organizationName": "DemocracyOS on GitHub",
+  "organizationUrl": "https://github.com/DemocracyOS/app",
   "learnMoreUrl": "http://www.democracyos.org",
-  "googleAnalyticsTrackingId" : "",
-  "rssEnabled" : true,
+  "googleAnalyticsTrackingId": "",
+  "rssEnabled": true,
   "commentsPerPage": 0,
   "spamLimit": 5,
   "faq": false,

@@ -7,8 +7,6 @@ var fs = require('fs');
 var exists = fs.existsSync;
 var read = fs.readFileSync;
 var write = fs.writeFileSync;
-var parse = JSON.parse;
-var stringify = JSON.stringify;
 var path = require('path');
 var resolve = path.resolve;
 var merge = require('merge-util');
@@ -28,12 +26,29 @@ program
  * Make sure there is a config file
  */
 
-if (program.config) {
+if (program.config && env !== 'production') {
   var dest = resolve('./config/' + env + '.json');
-  var orig = resolve('./config/defaults.json');
   if (!exists(dest)) {
-    var token = crypto.randomBytes(32).toString('hex');
-    write(dest, stringify({ secret: token }, null, 2));
+    console.log('Missing configuration file for environment, creating ' + dest);
+    var defaults = require(resolve('./config/defaults'));
+
+    var config = {
+      secret: crypto.randomBytes(32).toString('hex')
+    };
+
+    [
+      "protocol",
+      "host",
+      "publicPort",
+      "mongoUrl",
+      "locale",
+      "organizationName",
+      "organizationUrl",
+    ].forEach(function(key){
+      config[key] = defaults[key];
+    });
+
+    write(dest, JSON.stringify(config, null, 2));
   }
 }
 

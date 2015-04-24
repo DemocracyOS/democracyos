@@ -1,3 +1,2 @@
 *.json
 !defaults.json
-!*.sample
