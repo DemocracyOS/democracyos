@@ -1,7 +1,7 @@
 {
   "name": "debug",
   "dependencies": {
-    "tj/debug": "^2.1.3"
+    "visionmedia/debug": "^2.1.3"
   },
   "locals": [
     "config"
