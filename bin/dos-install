@@ -29,7 +29,7 @@ program
 if (program.config && env !== 'production') {
   var dest = resolve('./config/' + env + '.json');
   if (!exists(dest)) {
-    console.log('Missing configuration file for environment, creating ' + dest);
+    console.log('Creating ' + dest);
     var defaults = require(resolve('./config/defaults'));
 
     var config = {
