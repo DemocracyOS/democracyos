@@ -16,7 +16,7 @@ var secure = 'https' == config.protocol;
  * Configure standard server
  */
 var server = http.createServer(app);
-var port = config.privatePort;
+var port = process.env.PORT || config.privatePort; // Heroku's $PORT env variable
 
 
 /**
