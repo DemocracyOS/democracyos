@@ -41,7 +41,7 @@
     "facebook": {
       "clientID": "FBClientId",
       "clientSecret": "FBClientSecret",
-      "callbackURL": "http://localhost:3000/auth/facebook/callback"
+      "callback": "http://localhost:3000/auth/facebook/callback"
     }
   },
   "socialshare" : {
