@@ -1,19 +1,19 @@
 .user-badge.pull-right
   a.btn.profile
     img(src=citizen.profilePicture())
-    - var color = config['header font color']
+    - var color = config.headerFontColor
     span.name.ellipsis(style=color ? 'color: #{color}' : '')=citizen.firstName
     span.caret
   ul.dropdown-list
     - if (citizen.staff)
       li: a(href='/admin')= t('header.admin')
     li: a(href='/settings')= t('header.settings')
-    - if (config['faq'])
+    - if (config.faq)
       li: a(href="/help/faq")= t('help.faq.title')
-    - if (config['tos'])
+    - if (config.tos)
       li: a(href="/help/terms-of-service")= t('help.tos.title')
-    - if (config['pp'])
+    - if (config.pp)
       li: a(href="/help/privacy-policy")= t('help.pp.title')
-    - if (config['glossary'])
+    - if (config.glossary)
       li: a(href="/help/glossary")= t('help.glossary.title')
     li: a(href='/logout')= t('header.logout')

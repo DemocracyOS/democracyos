@@ -1,3 +1,2 @@
-!sample.json
-development.json
-production.json
+*.json
+!defaults.json
