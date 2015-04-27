@@ -8,7 +8,6 @@
   },
   "locals": [
     "citizen",
-    "config",
     "title",
     "render",
     "settings-profile",
