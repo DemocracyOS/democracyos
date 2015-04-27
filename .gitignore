@@ -23,3 +23,5 @@ config*.json
 *.DS_Store
 .env
 .idea/*
+
+.env

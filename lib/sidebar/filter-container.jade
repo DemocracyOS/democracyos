@@ -10,10 +10,10 @@
       )= closed + t('sidebar.closed')
 
   #sort-filter.btn-group
-    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')
+    button.btn.btn-default.current-department(type='button')
       span.pull-left= t(filter.sorts[filter.get('sort')].label)
       span.caret
-    ul.dropdown-menu
+    ul.dropdown-list
       - each sort, key in filter.sorts
         - var active = key == filter.get('sort')
         li(data-sort=key, class= active ? 'active' : '')

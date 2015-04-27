@@ -13,7 +13,8 @@
     "user-badge",
     "view",
     "is-mobile",
-    "debug"
+    "debug",
+    "config"
   ],
   "scripts": [
     "index.js",

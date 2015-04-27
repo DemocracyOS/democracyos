@@ -4,7 +4,7 @@
     "component/t": "1.0.0",
     "component/closest": "0.1.4",
     "javve/list.js": "1.1.1",
-    "cristiandouce/confirmation": "d0861",
+    "component/confirmation": "0.0.5",
     "visionmedia/debug": "2.1.3",
     "visionmedia/page.js": "1.3.7"
   },
