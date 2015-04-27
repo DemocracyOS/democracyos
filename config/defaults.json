@@ -18,6 +18,11 @@
     "basic": {
       "username": "",
       "password": ""
+    },
+    "facebook": {
+      "clientID": "",
+      "clientSecret": "",
+      "callback": ""
     }
   },
   "ssl": {
@@ -56,7 +61,8 @@
     "usersWhitelist",
     "deploymentDomain",
     "headerBackgroundColor",
-    "headerFontColor"
+    "headerFontColor",
+    "facebookSignin"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -86,5 +92,6 @@
   "usersWhitelist": false,
   "headerBackgroundColor": "",
   "headerFontColor": "",
-  "googleAPIKey": ""
+  "googleAPIKey": "",
+  "facebookSignin": false
 }
