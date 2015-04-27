@@ -18,6 +18,11 @@
     "basic": {
       "username": "",
       "password": ""
+    },
+    "facebook": {
+      "clientID": "",
+      "clientSecret": "",
+      "callback": ""
     }
   },
   "ssl": {
