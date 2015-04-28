@@ -1,4 +1,13 @@
 
+0.15.0 / 2015-04-28
+==================
+
+  * Refactor app configuration #762
+  * Remove bootstrap.js and dependencies #757
+  * Add some parameterizable styles for header #730
+  * Add users whitelist #722
+  * Update store JWT in cookie at signin #735
+
 0.14.0 / 2015-03-19
 ==================
 
