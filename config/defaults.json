@@ -3,7 +3,6 @@
   "protocol": "http",
   "host": "localhost",
   "publicPort": 3000,
-  "privatePort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "mongoUsersUrl": "",
   "jwtSecret": "Generate a secret token and paste it here.",
