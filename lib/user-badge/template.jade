@@ -8,7 +8,7 @@
     - if (citizen.staff)
       li: a(href='/admin')= t('header.admin')
     li: a(href='/settings')= t('header.settings')
-    - if (config.faq)
+    - if (config.frequentlyAskedQuestions)
       li: a(href="/help/faq")= t('help.faq.title')
     - if (config.tos)
       li: a(href="/help/terms-of-service")= t('help.tos.title')

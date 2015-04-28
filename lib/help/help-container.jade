@@ -3,7 +3,7 @@
     .sidebar-container
       ul.help-menu
         li.heading= t('help.title')
-        - if (config.faq)
+        - if (config.frequentlyAskedQuestions)
           li: a(href="/help/faq")= t('help.faq.title')
         - if (config.tos)
           li: a(href="/help/terms-of-service")= t('help.tos.title')
