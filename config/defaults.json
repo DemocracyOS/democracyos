@@ -13,10 +13,16 @@
   "signupUrl": "",
   "settingsUrl": "",
   "staff": [],
+  "facebookSignin": false,
   "auth": {
     "basic": {
       "username": "",
       "password": ""
+    },
+    "facebook": {
+      "clientID": "",
+      "clientSecret": "",
+      "callback": ""
     }
   },
   "https": {
@@ -55,7 +61,8 @@
     "usersWhitelist",
     "deploymentDomain",
     "headerBackgroundColor",
-    "headerFontColor"
+    "headerFontColor",
+    "facebookSignin"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
