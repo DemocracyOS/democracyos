@@ -33,7 +33,7 @@ if (program.config && env !== 'production') {
     var defaults = require(resolve('./config/defaults'));
 
     var config = {
-      secret: crypto.randomBytes(32).toString('hex')
+      jwtSecret: crypto.randomBytes(32).toString('hex')
     };
 
     [
