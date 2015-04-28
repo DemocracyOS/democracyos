@@ -19,7 +19,7 @@
       "password": ""
     }
   },
-  "ssl": {
+  "https": {
     "serverKey": "server.key",
     "serverCert": "server.crt",
     "port": 443,

@@ -25,13 +25,13 @@ var port = process.env.PORT || config.publicPort; // Heroku's $PORT env variable
 var secureServer;
 var securePort;
 if (secure) {
-  var ssl = config.ssl;
+  var https = config.https;
 
-  var privateKey = fs.readFileSync(ssl.serverKey, 'utf-8');
-  var certificate = fs.readFileSync(ssl.serverCert, 'utf-8');
+  var privateKey = fs.readFileSync(https.serverKey, 'utf-8');
+  var certificate = fs.readFileSync(https.serverCert, 'utf-8');
 
   secureServer = https.createServer({ key: privateKey, cert: certificate }, app);
-  securePort = ssl.port;
+  securePort = https.port;
 }
 
 var launch = function launchServer () {
