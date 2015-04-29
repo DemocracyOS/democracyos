@@ -126,7 +126,12 @@
     "store": "1.3.17",
     "gulp-stylint": "1.1.2",
     "gulp-jshint": "1.10.0",
-    "emitter-es6": "0.0.1"
+    "emitter-es6": "0.0.1",
+    "gulp-stylus": "2.0.1",
+    "gulp-concat-css": "2.2.0",
+    "gulp-minify-css": "1.1.0",
+    "gulp-add-src": "0.2.0"
+
   },
   "browser": {
     "emitter": "emitter-es6",
