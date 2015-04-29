@@ -122,10 +122,15 @@
     "Snap.js": "git://github.com/jfresco/Snap.js.git#add/package-json",
     "toggle-parent": "git://github.com/jfresco/toggle-parent.git#fix/npm-dependencies",
     "headroom.js": "git://github.com/WickyNilliams/headroom.js.git#master",
-    "component-emitter": "1.2.0"
+    "component-closest": "0.1.4",
+    "store": "1.3.17",
+    "gulp-stylint": "1.1.2",
+    "gulp-jshint": "1.10.0",
+    "emitter-es6": "0.0.1"
   },
   "browser": {
-    "emitter": "component-emitter"
+    "emitter": "emitter-es6",
+    "closest": "component-closest"
   },
   "devDependencies": {
     "google-translate": "^0.1.8"
