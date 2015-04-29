@@ -295,7 +295,7 @@
   "validators.invalid.number": "Invalid number",
   "validators.invalid.time": "Invalid time",
   "validators.invalid.url": "Invalid URL",
-  "validators.max-length.plural": "It must be at least {n} characters long at most",
+  "validators.max-length.plural": "It must be {n} characters long at most",
   "validators.max-length.singular": "It must be 1 character long at most",
   "validators.min-length.plural": "It must be at least {n} characters",
   "validators.min-length.singular": "It must be at least 1 character",
