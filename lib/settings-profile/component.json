@@ -8,7 +8,8 @@
   "locals": [
     "citizen",
     "form-view",
-    "debug"
+    "debug",
+    "l10n"
   ],
   "templates": [
     "template.jade"
