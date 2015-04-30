@@ -4,7 +4,6 @@
   "dependencies": {
     "component/t": "1.0.0"
   },
-  "locals": [ "request" ],
   "scripts": [ "l10n.js", "supported.js" ],
   "main": "l10n.js"
 }
