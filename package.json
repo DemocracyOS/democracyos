@@ -59,6 +59,7 @@
     "builder-jade": "1.0.1",
     "bus": "0.0.3",
     "change-case": "^2.3.0",
+    "component-classes": "1.2.4",
     "co-prompt": "~1.0.0",
     "commander": "~2.0.0",
     "component": "1.0.0",
@@ -67,6 +68,7 @@
     "component-dom": "1.0.7",
     "component-resolver": "1.2.4",
     "component-stylus-plugin": "~0.3.1",
+    "component-spin": "0.1.1",
     "component-type": "^1.1.0",
     "cookie-parser": "1.3.3",
     "cors": "2.5.3",
@@ -74,6 +76,8 @@
     "deep-mixin": "^1.0.0",
     "democracyos-db": "0.0.1",
     "domify": "^1.3.3",
+    "component-empty": "0.0.1",
+    "confirmation-component": "git://github.com/component/confirmation",
     "express": "~3.4.7",
     "express-sslify": "0.1.1",
     "ga": "git://github.com/jfresco/ga.git#add/package-json",
@@ -87,6 +91,7 @@
     "jadeify": "^4.2.0",
     "json-file-plus": "^2.0.0",
     "jwt-simple": "0.2.0",
+    "list.js": "git://github.com/slifszyc/list.js",
     "loading-lock": "git://github.com/jfresco/loading-lock.git#add/package-json",
     "marked": "~0.2.9",
     "merge": "^1.2.0",
@@ -103,6 +108,7 @@
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
     "passport-local-mongoose": "~0.2.4",
+    "query": "0.0.3",
     "removed": "0.0.5",
     "rework-math": "~1.0.1",
     "rework-shade": "~1.4.3",
@@ -140,10 +146,20 @@
     "side-comments": "git://github.com/democracyos/side-comments#fix/npm-entry-point",
     "assert": "1.3.0",
     "qs": "2.4.1",
+    "datepicker": "git://github.com/slifszyc/datepicker",
+    "quill": "git://github.com/DemocracyOS/quill",
+    "diacritics": "1.2.1",
+    "toggle": "git://github.com/slifszyc/toggle",
     "stringify": "3.1.0"
   },
   "browser": {
-    "closest": "component-closest"
+    "closest": "component-closest",
+    "classes": "component-classes",
+    "confirmation": "confirmation-component",
+    "dom": "component-dom",
+    "empty": "component-empty",
+    "spin": "component-spin",
+    "t": "t-component"
   },
   "devDependencies": {
     "google-translate": "^0.1.8"
