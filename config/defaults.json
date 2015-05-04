@@ -23,7 +23,7 @@
       "clientID": "",
       "clientSecret": "",
       "callback": "",
-      "scope": [ "email" ]
+      "permissions": [ "email" ]
     }
   },
   "https": {
