@@ -140,7 +140,8 @@
     "side-comments": "git://github.com/democracyos/side-comments#fix/npm-entry-point",
     "assert": "1.3.0",
     "qs": "2.4.1",
-    "stringify": "3.1.0"
+    "stringify": "3.1.0",
+    "markdownify": "0.1.0"
   },
   "browser": {
     "closest": "component-closest"
