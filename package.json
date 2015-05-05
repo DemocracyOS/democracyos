@@ -150,7 +150,8 @@
     "quill": "git://github.com/DemocracyOS/quill",
     "diacritics": "1.2.1",
     "toggle": "git://github.com/slifszyc/toggle",
-    "stringify": "3.1.0"
+    "stringify": "3.1.0",
+    "markdownify": "0.1.0"
   },
   "browser": {
     "closest": "component-closest",
