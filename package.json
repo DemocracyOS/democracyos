@@ -135,7 +135,6 @@
     "gulp-concat-css": "2.2.0",
     "gulp-minify-css": "1.1.0",
     "gulp-add-src": "0.2.0",
-    "title": "1.0.0",
     "truncate": "1.0.4",
     "wrap": "git://github.com/jfresco/wrap#master",
     "chart.js": "1.0.2",
