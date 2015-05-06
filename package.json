@@ -121,7 +121,6 @@
     "transliteration": "~0.1.1",
     "truncate": "~1.0.2",
     "type-component": "0.0.1",
-    "ua-parser-js": "^0.7.6",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "xss": "0.1.20",
