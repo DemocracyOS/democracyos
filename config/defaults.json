@@ -22,8 +22,7 @@
     "facebook": {
       "clientID": "",
       "clientSecret": "",
-      "callback": "",
-      "permissions": [ "email" ]
+      "callback": ""
     }
   },
   "https": {
