@@ -1,0 +1,9 @@
+{
+  "name": "l10n",
+  "description": "Localization helpers",
+  "dependencies": {
+    "component/t": "1.0.0"
+  },
+  "scripts": [ "l10n.js", "supported.js" ],
+  "main": "l10n.js"
+}

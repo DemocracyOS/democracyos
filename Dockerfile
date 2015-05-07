@@ -17,4 +17,4 @@ WORKDIR /usr/src/democracyos/app
 # If you change the port, remember to set the proper ENV var to match.
 EXPOSE 80
 
-CMD node ./bin/dos-config && node index.js
+CMD node index.js

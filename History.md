@@ -1,4 +1,13 @@
 
+0.15.0 / 2015-04-28
+==================
+
+  * Refactor app configuration #762
+  * Remove bootstrap.js and dependencies #757
+  * Add some parameterizable styles for header #730
+  * Add users whitelist #722
+  * Update store JWT in cookie at signin #735
+
 0.14.0 / 2015-03-19
 ==================
 
@@ -50,7 +59,7 @@
 0.12.9 / 2015-03-12
 ==================
 
- * Make '_target' attr conditional to 'home link' setting on header org link
+ * Make '_target' attr conditional to 'homeLink' setting on header org link
  * Revert "Fix organization link to open on same tab"
  * Fix logo link on header Closes #701
  * Fix organization link to open on same tab
@@ -64,7 +73,7 @@
 0.12.7 / 2015-03-10
 ==================
 
- * update header background color to match hub's
+ * update headerBackgroundColor to match hub's
 
 0.12.6 / 2015-03-10
 ==================
@@ -81,7 +90,7 @@
 0.12.4 / 2015-03-10
 ===================
 
-  * Fix cors domains should be a string
+  * Fix corsDomains should be a string
 
 0.12.3 / 2015-03-10
 ==================
@@ -733,7 +742,7 @@
  * Update article template and config so alert is optional.
  * Update default fixtures
  * Change default locale to 'en'
- * Update header background color
+ * Update headerBackgroundColor
  * Add list alphabetically sorting. Closes #299
  * Merge pull request #302 from Magui1984/development
  * Create fr.json

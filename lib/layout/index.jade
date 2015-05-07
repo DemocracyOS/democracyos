@@ -5,7 +5,7 @@ html(lang='en')
       //-
       //-   Basic Page Needs
       //-   ==================================================
-      title= config('organization name')
+      title= config.organizationName
 
       meta(charset='utf-8')
       meta(name='description', content='')
@@ -31,7 +31,7 @@ html(lang='en')
       //if lt IE 9
       script(type='text/javascript', src='//html5shim.googlecode.com/svn/trunk/html5.js')
 
-      link(rel="icon", type="image/x-icon", href=config('favicon'))
+      link(rel="icon", type="image/x-icon", href=config.favicon)
 
       script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
       script.
@@ -46,7 +46,8 @@ html(lang='en')
     block body
       #snap-content.snap-content
         //- Start of `Page Content`
-        header.app-header
+        - var color = config.headerBackgroundColor;
+        header.app-header(style=color ? 'background-color: #{color};' : '')
         section#content.site-content
           block content
         section#browser.site-content
@@ -62,14 +63,15 @@ html(lang='en')
 
       //- Core 3rd parties libs
       script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
-      script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
       include includes/placeholders
       //- General Site javascript
       script.
         window.config=!{JSON.stringify(client)}
+        window.config.locale='#{locale}'
+        window.translations=!{JSON.stringify(translations)}
       script(src='/app.js')
 
       //- Boot application
-      script.
-        require('./lib/boot');
+      script require('./lib/boot');
+
       //- End of `Javascripts`
