@@ -62,7 +62,8 @@
     "deploymentDomain",
     "headerBackgroundColor",
     "headerFontColor",
-    "facebookSignin"
+    "facebookSignin",
+    "visibility"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -92,5 +93,6 @@
   "usersWhitelist": false,
   "headerBackgroundColor": "",
   "headerFontColor": "",
-  "googleAPIKey": ""
+  "googleAPIKey": "",
+  "visibility": "visible"
 }
