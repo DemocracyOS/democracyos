@@ -8,5 +8,5 @@ require('./lib/build/watch');
 require('./lib/build/assets');
 
 gulp
-  .task('build', ['javascript', 'css'])
+  .task('build', ['javascript', 'css', 'assets'])
   .task('default', ['build', 'serve'])
