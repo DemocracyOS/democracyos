@@ -150,7 +150,10 @@
     "toggle": "git://github.com/slifszyc/toggle",
     "stringify": "3.1.0",
     "markdownify": "0.1.0",
-    "brfs": "1.4.0"
+    "gulp-util": "3.0.4",
+    "rimraf": "2.3.3",
+    "brfs": "1.4.0",
+    "through2-concurrent": "1.0.0"
   },
   "browser": {
     "closest": "component-closest",
@@ -173,5 +176,9 @@
       "jadeify"
     ]
   },
-  "scripts": {}
+  "scripts": {
+    "postinstall": "./node_modules/.bin/gulp build",
+    "start": "./node_modules/.bin/gulp",
+    "dist": "./node_modules/.bin/gulp dist"
+  }
 }
