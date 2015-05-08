@@ -1,4 +1,14 @@
 
+0.16.0 / 2015-05-08
+===================
+
+  * Improvements on spanish translations #767
+  * Add Hungarian translations #793
+  * Improvements on french translations #784
+  * Now the user can change the app language from settings page #630
+  * Improvements on Portuguese translations #779
+  * Add App visivility configuration #741
+
 0.15.0 / 2015-04-28
 ==================
 
