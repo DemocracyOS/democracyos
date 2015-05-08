@@ -141,7 +141,7 @@
     "component-tip": "2.4.1",
     "get-form-data": "1.2.2",
     "component-spin": "0.1.1",
-    "side-comments": "git://github.com/democracyos/side-comments#fix/npm-entry-point",
+    "side-comments": "git://github.com/DemocracyOS/side-comments#fix/npm-entry-point",
     "assert": "1.3.0",
     "qs": "2.4.1",
     "datepicker": "git://github.com/slifszyc/datepicker",
