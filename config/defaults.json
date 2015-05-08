@@ -33,7 +33,7 @@
   },
   "notifications": {
     "url": "http://localhost:9001/api/events",
-    "token": ""
+    "token": "1234"
   },
   "client": [
     "protocol",
