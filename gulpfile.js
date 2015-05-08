@@ -6,10 +6,10 @@ var settings = {
 };
 
 require('./lib/build/js')(settings);
-require('./lib/build/css');
-require('./lib/build/public');
-require('./lib/build/serve');
-require('./lib/build/watch');
+require('./lib/build/css')(settings);
+require('./lib/build/public')(settings);
+require('./lib/build/serve')(settings);
+require('./lib/build/watch')(settings);
 require('./lib/build/assets')(settings);
 require('./lib/build/clean')(settings);
 
