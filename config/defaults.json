@@ -22,7 +22,8 @@
     "facebook": {
       "clientID": "",
       "clientSecret": "",
-      "callback": ""
+      "callback": "",
+      "permissions": [ "email" ]
     }
   },
   "https": {
