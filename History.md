@@ -1,4 +1,10 @@
 
+0.16.1 / 2015-05-12
+===================
+
+  * Fix users whitelist configuration #806
+  * Fix https configuration #803
+
 0.16.0 / 2015-05-08
 ===================
 
