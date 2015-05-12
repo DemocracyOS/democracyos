@@ -3,6 +3,7 @@
   "protocol": "http",
   "host": "localhost",
   "publicPort": 3000,
+  "privatePort": 0,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "mongoUsersUrl": "",
   "jwtSecret": "Generate a secret token and paste it here.",
@@ -22,7 +23,6 @@
     "facebook": {
       "clientID": "",
       "clientSecret": "",
-      "callback": "",
       "permissions": [ "email" ]
     }
   },
