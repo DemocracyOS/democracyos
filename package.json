@@ -138,7 +138,7 @@
     "truncate": "1.0.4",
     "wrap": "git://github.com/jfresco/wrap#master",
     "chart.js": "1.0.2",
-    "component-tip": "2.4.1",
+    "component-tip": "git://github.com/slifszyc/tip",
     "get-form-data": "1.2.2",
     "component-spin": "0.1.1",
     "side-comments": "git://github.com/DemocracyOS/side-comments#fix/npm-entry-point",
@@ -162,7 +162,8 @@
     "dom": "component-dom",
     "empty": "component-empty",
     "spin": "component-spin",
-    "t": "t-component"
+    "t": "t-component",
+    "tip": "component-tip"
   },
   "devDependencies": {
     "google-translate": "^0.1.8"
