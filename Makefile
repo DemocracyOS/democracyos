@@ -13,7 +13,7 @@ endif
 GULP="./node_modules/.bin/gulp"
 
 run: packages
-	@NODE_PATH=. DEBUG=$(DEBUG) $(GULP) build
+	@NODE_PATH=. DEBUG=$(DEBUG) $(GULP) serve
 
 packages:
 	@echo "Installing dependencies..."

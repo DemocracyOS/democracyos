@@ -14,6 +14,6 @@ require('./lib/build/assets')(settings);
 require('./lib/build/clean')(settings);
 
 gulp
-  .task('build', ['js:lint', 'js:build', 'css:lint', 'css:build', 'assets'])
-  .task('dist', ['js:lint', 'js:dist', 'css:lint', 'css:dist', 'assets'])
+  .task('build', [/*'js:lint',*/ 'js:build', /*'css:lint',*/ 'css:build', 'assets'])
+  .task('dist', [/*'js:lint',*/ 'js:dist', /*'css:lint',*/ 'css:dist', 'assets'])
   .task('default', ['build', 'serve'])
