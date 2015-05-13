@@ -75,9 +75,9 @@
       "username": "@democracyos"
     }
   },
-  "logo": "/lib/boot/images/logo.png",
-  "logoMobile": "/lib/boot/images/logo.png",
-  "favicon": " /lib/boot/images/favicon.ico",
+  "logo": "/boot/logo.png",
+  "logoMobile": "/boot/logo.png",
+  "favicon": " /boot/favicon.ico",
   "organizationName": "DemocracyOS on GitHub",
   "organizationUrl": "https://github.com/DemocracyOS/app",
   "learnMoreUrl": "http://www.democracyos.org",
