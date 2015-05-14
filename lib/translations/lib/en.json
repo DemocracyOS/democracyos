@@ -269,6 +269,7 @@
   "signin.error.email-not-valid": "The email address for this citizen is not validated. We send citizens a welcome email when they sign up. Please check your email (remember to check your spam folder too) and click on the link supplied on the email. Click <a href='/signup/resend-validation-email'>here</a> if you need the welcome email to be resent",
   "signin.login": "Login",
   "signin.login-to": "Login to",
+  "signin.login-with-facebook": "Login with Facebook",
   "signin.signup": "Signup",
   "signup.accepting": "By signing up you are accepting our",
   "signup.being-redirected": "You're being redirected in 5 seconds",
