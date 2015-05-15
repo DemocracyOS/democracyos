@@ -70,7 +70,6 @@
   "admin-tags.list.add-tag": "Ny",
   "admin-tags.list.search.placeholder": "Sök en tagg ...",
   "admin-tags.list.title": "Systemtaggar",
-  "admin-users.list.search.placeholder": "Sök via e-post",
   "admin-sidebar.whitelists.title": "Aktiverade användare",
   "admin-whitelist.delete-whitelist.confirmation.body": "Denna åtgärd kommer att radera data permanent. Vill du fortsätta?",
   "admin-whitelist.delete-whitelist.confirmation.cancel": "Avboka",
