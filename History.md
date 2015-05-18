@@ -1,4 +1,12 @@
 
+0.17.0 / 2015-05-18
+===================
+
+  * Consolidate TLS/SSL configuration #822
+  * Add fallback on missing translation keys with default locale #808
+  * Add facebook login/signup form #815
+  * Remove privatePort config key #788
+
 0.16.2 / 2015-05-12
 ===================
 
