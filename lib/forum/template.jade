@@ -5,7 +5,7 @@ main.container
         h1.feed-title=t('forum.form.title')
         p.feed-desc=t('forum.form.description')
 
-      form.form(action="/forums", method="post", role="form", novalidate, autovalidate, autosubmit)
+      form.form(action="/api/forum", method="post", role="form", novalidate, autovalidate, autosubmit)
         h2.feed-subtitle=t('forum.form.subtitle')
         ul.form-errors
 
