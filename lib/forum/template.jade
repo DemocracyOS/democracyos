@@ -5,13 +5,13 @@ main.container
         h1.feed-title Constitution
         p.feed-desc Settings and rules that apply to all proposals in this democracy.
 
-      form.form(action="/democracies", method="post", role="form", novalidate, autovalidate, autosubmit)
-        h2.feed-subtitle Democracy Info
+      form.form(action="/forums", method="post", role="form", novalidate, autovalidate, autosubmit)
+        h2.feed-subtitle Forum Info
         ul.form-errors
 
         .fieldsets
           fieldset
-            label= t('deployment.form.url.label')
+            label= t('forum.form.url.label')
             .input-group
               span.input-group-addon= domain
               .form-group.clearfix.subdomain
@@ -19,8 +19,8 @@ main.container
               span.error.name-unavailable.hide URL is not available
 
           fieldset
-            label= t('deployment.form.title.label')
+            label= t('forum.form.title.label')
             .form-group.clearfix.title
-              input(type='text', name='title', tabindex=2, placeholder=t('deployment.form.title.placeholder'), validate='required')
+              input(type='text', name='title', tabindex=2, placeholder=t('forum.form.title.placeholder'), validate='required')
 
-        button.btn.btn-block.btn-primary.btn-lg(tabindex=5)=t('deployment.form.create.submit')
+        button.btn.btn-block.btn-primary.btn-lg(tabindex=5)=t('forum.form.create.submit')
