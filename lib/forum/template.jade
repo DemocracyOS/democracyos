@@ -2,21 +2,21 @@ main.container
   .row
     article.feed-item.deployment-new-form.col-xs-12.col-md-8.col-md-offset-2
       .feed-top
-        h1.feed-title Constitution
-        p.feed-desc Settings and rules that apply to all proposals in this democracy.
+        h1.feed-title=t('forum.form.title')
+        p.feed-desc=t('forum.form.description')
 
       form.form(action="/forums", method="post", role="form", novalidate, autovalidate, autosubmit)
-        h2.feed-subtitle Forum Info
+        h2.feed-subtitle=t('forum.form.subtitle')
         ul.form-errors
 
         .fieldsets
           fieldset
             label= t('forum.form.url.label')
             .input-group
-              span.input-group-addon= domain
+              span.input-group-addon=domain
               .form-group.clearfix.subdomain
-                input(type='text', name='name', tabindex=1, validate='required subdomain', autofocus, id='hostname', autocorrect='off', autocapitalize='off')
-              span.error.name-unavailable.hide URL is not available
+                input(type='text', name='name', tabindex=1, validate='required forum', autofocus, id='hostname', autocorrect='off', autocapitalize='off')
+              span.error.name-unavailable.hide=t('forum.form.url.unavailable')
 
           fieldset
             label= t('forum.form.title.label')
