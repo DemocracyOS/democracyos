@@ -2,7 +2,8 @@ var gulp = require('gulp');
 
 var settings = {
   public: './public/',
-  clientEntryPoint: './lib/boot/boot.js'
+  clientEntryPoint: './lib/boot/boot.js',
+  verbose: false
 };
 
 require('./lib/build/js')(settings);
