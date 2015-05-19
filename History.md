@@ -1,4 +1,11 @@
 
+0.17.1 / 2015-05-19
+===================
+
+  * Add headerContrast configuration #795
+  * Dont remove stylings on law summary #810
+  * Fix side comments #807 #759
+
 0.17.0 / 2015-05-18
 ===================
 
