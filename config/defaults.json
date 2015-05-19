@@ -97,5 +97,6 @@
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,
-  "singleDemocracy": true
+  "singleDemocracy": true,
+  "feedsLimit": 10
 }
