@@ -4,8 +4,7 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
   .arrow-up
   .arrow-up.inner
   span.pull-left
-    - var src = reply.author.profilePictureUrl ? reply.author.profilePictureUrl : reply.author.gravatar
-    img(src=src).avatar
+    img(src=reply.author.avatar).avatar
 
   .media-body
     h5.media-heading
