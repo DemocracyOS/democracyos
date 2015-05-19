@@ -316,5 +316,8 @@
   "validators.min-length.singular": "It must be at least 1 character",
   "validators.not.match": "No match",
   "validators.password.not.match": "Passwords do not match",
-  "validators.required": "Required"
+  "validators.required": "Required",
+
+  "newsfeed.title": "Build your own democracy today",
+  "newsfeed.subtitle": "Please <a href=\"/signin\">signin</a> or <a href=\"signup\">signup</a> to start using DemocracyOS"
 }
