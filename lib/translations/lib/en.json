@@ -328,6 +328,6 @@
   "validators.password.not.match": "Passwords do not match",
   "validators.required": "Required",
 
-  "newsfeed.title": "Build your own democracy today",
-  "newsfeed.subtitle": "Please <a href=\"/signin\">signin</a> or <a href=\"signup\">signup</a> to start using DemocracyOS"
+  "newsfeed.welcome.title": "Build your own democracy today",
+  "newsfeed.welcome.body": "Please <a href=\"/signin\">signin</a> or <a href=\"signup\">signup</a> to start using DemocracyOS"
 }
