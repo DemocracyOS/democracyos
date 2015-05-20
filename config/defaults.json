@@ -94,6 +94,7 @@
   "usersWhitelist": false,
   "headerBackgroundColor": "",
   "headerFontColor": "",
+  "headerContrast": false,
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,
