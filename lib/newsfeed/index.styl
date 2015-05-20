@@ -1,0 +1,199 @@
+.newsfeeds
+  color black
+
+  .loading-container
+    display block
+    height 80px
+
+    .lock-spinner
+      background-color transparent
+
+  .newsfeed
+    background white
+    margin-bottom 22px
+    padding 10px
+    overflow hidden
+
+    section
+      margin-top 12px
+
+    footer
+      margin-top 12px
+
+    .profile
+      margin-left 3px
+      img
+        width 50px
+        border-radius 100px
+      span.name
+        display inline
+        margin-left 10px
+        font-weight bold
+        font-size 12px
+        line-height 20px
+        padding-top 4px
+        padding-right 12px
+        max-width 150px
+    .name
+      height 50px
+      line-height 50px
+      margin-left 12px
+      color #40a660
+      font-family 'Open Sans', sans-serif
+      font-size 12px
+      font-weight 100
+    .btn
+      height 50px
+      line-height 48px
+      padding 0 12px
+      font-weight 900
+      font-size 16px
+
+    header
+      h1
+        color rgb(51, 51, 51)
+        font-size 25px
+        margin 0 0 6px 0
+        a, a:hover
+          color black
+          font-weight normal
+
+      small
+        display inline-block
+        margin-right 12px
+
+        i
+          margin-right 4px
+
+      .tag
+        background #ccc
+        border-radius 10px
+        color #fff
+        padding 3px 9px
+        text-transform capitalize
+        &:hover
+          background-color #969696
+
+      .closing-at
+        font-size 12px
+
+        &.closed
+          color red
+        &.closing
+          color #f8af3c
+        &.unknown
+          color #ababab
+
+    .summary
+      font-size 15px
+      margin 6px 0
+
+    .read-more
+      font-size 0.8em
+      text-transform uppercase
+      margin 0
+      font-weight 100
+      text-align right
+
+      a
+        font-size 1em
+        font-weight inherit
+        color inherit
+
+      a:after
+        content ' »'
+
+    img
+      display block
+      margin 0 auto
+      max-height 275px
+      max-width 100%
+
+    .comment
+      margin-top 0px
+      padding 15px
+      background-color #e3e3e3
+      border-radius 5px
+      color #666
+      line-height 22px
+      margin-top 12px
+      position relative
+      font-weight 400
+      font-size 12px
+
+    .arrow-down
+      border-top 10px solid #e3e3e3
+      margin-top -10px
+      margin-left 15px
+
+    .vote-bubble
+      font-family Arial, 'Helvetica Neue', Helvetica, sans-serif
+      padding 10px
+      background-color #a4cb53
+      display inline-block
+      border-radius 5px
+      color white
+      margin-bottom 12px
+      text-transform uppercase
+      font-size 14px
+      font-weight normal
+
+      + .arrow-down
+        border-top-color #a4cb53
+        margin-top -14px
+        margin-left 18px
+        margin-bottom 6px
+
+    .share-links
+      height 50px
+      line-height 50px
+      a
+        background #ccc
+        padding 10px
+        margin-right 10px
+        border-radius 100%
+        color white
+        display inline-block
+        line-height 10px
+        -webkit-transition all 0.3s ease
+        &:hover
+          text-decoration none
+        &.facebook:hover
+          background #3b5998
+        &.twitter:hover
+          background #3498db
+
+    .btn
+      color #fff
+      font-weight bold
+      padding 0 12px
+      text-transform uppercase
+
+    .positive
+      background-color #a4cb53
+      border-color #aed167
+      &:hover
+        background-color #aed167
+      + .arrow-down
+        border-top-color #a4cb53
+    .negative
+      background-color #d03630
+      border-color #d95e59
+      &:hover
+        background-color #d95e59
+      + .arrow-down
+        border-top-color #d03630
+    .neutral
+      background-color #3498db
+      border-color #5faee3
+      &:hover
+        background-color #5faee3
+      + .arrow-down
+        border-top-color #3498db
+    .see-results
+      background #fff
+      border 2px solid #8156a6
+      color #8156a6
+      &:hover
+        background-color #8156a6
+        color #fff
