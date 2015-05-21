@@ -158,7 +158,8 @@
     "del": "1.1.1",
     "brfs": "1.4.0",
     "through2-concurrent": "1.0.0",
-    "nanomodal": "5.1.1"
+    "nanomodal": "5.1.1",
+    "watchify": "3.2.1"
   },
   "browser": {
     "closest": "component-closest",
