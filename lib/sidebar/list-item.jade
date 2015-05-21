@@ -1,7 +1,9 @@
 - var voted = citizen.logged() && !!item.voted
+- var url = forum ? ('/' + forum) : ''
+- url += '/law/' + item.id
 
 li(data-id=item.id)
-  a(href='/law/#{item.id}', class = voted ? 'voted' : '')
+  a(href=url, class = voted ? 'voted' : '')
     .item-tag
       img(src=tagImages[item.tag.image].url)
       svg(viewbox='0 0 126 144', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns').hexagon
