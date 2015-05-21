@@ -331,5 +331,12 @@
   "newsfeed.welcome.title": "Build your own democracy today",
   "newsfeed.welcome.body": "Please <a href=\"/signin\">signin</a> or <a href=\"signup\">signup</a> to start using DemocracyOS",
   "newsfeed.button.load-more": "Load more",
-  "newsfeed.nothing-to-show": "Nothing to show"
+  "newsfeed.nothing-to-show": "Nothing to show",
+  "feed.call-to-action.positive": "Voted yes",
+  "feed.call-to-action.negative": "Voted no",
+  "feed.call-to-action.neutral": "Abstained",
+  "feed.call-to-action.participate": "Participate",
+  "feed.call-to-action.start-a-democracy": "Start a democracy",
+  "feed.call-to-action.see-results": "See results",
+  "feed.call-to-action.reply": "Reply this"
 }

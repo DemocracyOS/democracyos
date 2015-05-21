@@ -320,5 +320,12 @@
   "validators.required": "Requerido",
 
   "newsfeed.welcome.title": "Empieza tu propia democracia hoy",
-  "newsfeed.welcome.body": "Por favor <a href=\"/signin\">ingresa</a> o <a href=\"signup\">regístrate</a> para empezar a usar DemocracyOS"
+  "newsfeed.welcome.body": "Por favor <a href=\"/signin\">ingresa</a> o <a href=\"signup\">regístrate</a> para empezar a usar DemocracyOS",
+  "feed.call-to-action.positive": "Votado positivo",
+  "feed.call-to-action.negative": "Votado negativo",
+  "feed.call-to-action.neutral": "Votado abstención",
+  "feed.call-to-action.participate": "Participa",
+  "feed.call-to-action.start-a-democracy": "Inicia una democracia",
+  "feed.call-to-action.see-results": "Ver resultados",
+  "feed.call-to-action.reply": "Responde"
 }

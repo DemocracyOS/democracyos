@@ -1,5 +1,12 @@
+- var positives = feed.law.upvotes || []
+- var negatives = feed.law.downvotes || []
+- var neutrals = feed.law.abstentions || []
+- var census = neutrals.concat(negatives).concat(positives) || []
+
+- var participants = feed.participants || []
+
 - var closed = feed.closingAt && +new Date(feed.closingAt) < Date.now()
-- var participants = feed.law.participants || []
+- var voted = citizen.id && ~census.indexOf(citizen.id)
 - var url = '/' + feed.forum.name + '/law/' + feed.law.id
 
 .row
@@ -28,10 +35,40 @@
           .col-xs-12(class=classes)
             !=feed.paragraphs.html
             - if (feed.paragraphs.more)
-              p.read-more: a(href="")= t('common.read-more')
+              p.read-more: a(href=url)= t('common.read-more')
           - if (feed.image)
             .col-xs-12.col-sm-6
               img(src=feed.image)
       - else if (feed.type == 'law-commented')
         p.comment #{feed.comment}
           .arrow-down
+    footer
+      - if (feed.data.user)
+        - if (feed.type == 'law-voted')
+          - var color = feed.data.vote == 'positive' ? 'positive' : (feed.data.vote == 'negative' ? 'negative' : 'neutral')
+          .vote-bubble(class=color)=t('feed.call-to-action.' + color)
+          .arrow-down
+        .profile.pull-left
+          img(src=feed.data.user.avatar)
+        p.name.pull-left=feed.data.user.fullName
+      .call-to-action
+        - if (feed.type == 'law-commented' && feed.data.user.id != citizen.id)
+          a.btn.btn-default.pull-right.purple(href=url)=t('feed.call-to-action.reply')
+        - else
+          - if (closed)
+            a.btn.btn-default.pull-right.see-results(href=url)=t('feed.call-to-action.see-results')
+          - else
+            - if (voted)
+              - if(~positives.indexOf(citizen.id))
+                - var vote = 'positive'
+                - var text = t('feed.call-to-action.positive')
+              - else if (~negatives.indexOf(citizen.id))
+                - var vote = 'negative'
+                - var text = t('feed.call-to-action.negative')
+              - else if (~neutrals.indexOf(citizen.id))
+                - var vote = 'neutral'
+                - var text = t('feed.call-to-action.neutral')
+            - else
+              - var vote = 'purple'
+              - var text = t('feed.call-to-action.participate')
+            a.btn.btn-default.pull-right(class=vote, href=url)=text
