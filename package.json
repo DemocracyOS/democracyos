@@ -84,6 +84,7 @@
     "mongoose-gravatar": "0.3.0",
     "mongoose-validators": "^0.1.0",
     "mongoose-voting": "0.1.1",
+    "mout": "^0.11.0",
     "node-path": "0.0.3",
     "nomnom": "^1.8.1",
     "notifier-client": "0.2.0",
