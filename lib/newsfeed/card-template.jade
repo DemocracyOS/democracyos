@@ -1,10 +1,11 @@
 - var closed = feed.closingAt && +new Date(feed.closingAt) < Date.now()
 - var participants = feed.law.participants || []
+- var url = '/' + feed.forum.name + '/law/' + feed.law.id
 
 .row
   article.col-xs-12.col-md-8.col-md-offset-2.newsfeed
     header
-      h1=feed.law.mediaTitle
+      h1: a(href=url)=feed.law.mediaTitle
       small
         i.glyphicon.glyphicon-user
         - var cardinality = participants.length == 1 ? 'singular' : 'plural'
