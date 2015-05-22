@@ -101,7 +101,8 @@
     "transliteration": "~0.1.1",
     "truncate": "~1.0.2",
     "type-component": "0.0.1",
-    "xss": "0.1.20"
+    "video-url-inspector": "1.x",
+    "xss": "0.x"
   },
   "devDependencies": {
     "google-translate": "^0.1.8"
