@@ -40,7 +40,7 @@
             .col-xs-12.col-sm-6
               img(src=feed.image)
       - else if (feed.type == 'law-commented')
-        p.comment #{feed.comment}
+        p.comment #{feed.comment.text}
           .arrow-down
     footer
       - if (feed.data.user)
