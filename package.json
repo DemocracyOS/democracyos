@@ -174,8 +174,9 @@
     ]
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/gulp build",
-    "start": "./node_modules/.bin/gulp",
-    "dist": "./node_modules/.bin/gulp dist"
+    "start": "NODE_PATH=. node index.js",
+    "build": "./node_modules/.bin/gulp build",
+    "watch": "./node_modules/.bin/gulp watch",
+    "clean": "./node_modules/.bin/gulp clean"
   }
 }
