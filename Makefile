@@ -14,7 +14,15 @@ GULP="./node_modules/.bin/gulp"
 
 run: packages
 	@echo "Launching..."
-	@NODE_PATH=. DEBUG=$(DEBUG) $(GULP) watch
+	@$(GULP) watch
+
+serve: build
+	@echo "Launching..."
+	@$(GULP) serve
+
+build: packages
+	@echo "Building..."
+	@$(GULP) build
 
 packages:
 	@echo "Installing dependencies..."
