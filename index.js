@@ -1,53 +1,30 @@
-/**
- * Module dependencies.
- */
-
-var app = module.exports = require('lib/boot');
-var http = require('http');
-var https = require('https');
-var balance = require('lib/balance');
 var config = require('lib/config');
-var fs = require('fs');
+var app = require('lib/boot');
+var serverFactory = require('lib/server-factory');
 var log = require('debug')('democracyos:root');
 
-var secure = 'https' == config('protocol');
 
 /**
- * Configure standard server
+ * Module export
  */
-var server = http.createServer(app);
-var port = config('privatePort');
+
+module.exports = app;
 
 
 /**
- * Configure secure server (SSL) if necessary
+ * Launch the server(s)!
  */
-var secureServer;
-var securePort;
-if (secure) {
-  var ssl = config('ssl');
 
-  var privateKey = fs.readFileSync(ssl.serverKey, 'utf-8');
-  var certificate = fs.readFileSync(ssl.serverCert, 'utf-8');
+var servers = serverFactory(app, {
+  port: process.env.PORT || config.publicPort,
+  protocol: config.protocol,
+  https: config.https
+});
 
-  secureServer = https.createServer({ key: privateKey, cert: certificate }, app);
-  securePort = ssl.port;
-}
-
-var launch = function launchServer () {
-    server.listen(port, function() {
-      log('Application started on port %d', port);
+if (module === require.main){
+  servers.forEach(function listen(server) {
+    server.listen(function(){
+      log('Server started at port %s.', server.port);
     });
-
-    if (secureServer && securePort) {
-      secureServer.listen(securePort, function() {
-        log('Secure application started on port %d', securePort);
-      });
-    }
-  };
-
-/**
- * Launch the server!
- */
-
-if (module === require.main) launch();
+  });
+}

@@ -4,7 +4,8 @@
   "dependencies": {
     "component/bus": "^0.0.2",
     "component/t": "1.0.0",
-    "component/closest": "0.1.4"
+    "component/closest": "0.1.4",
+    "mjlescano/toggle-parent": "0.1.0"
   },
   "locals": [
     "citizen",

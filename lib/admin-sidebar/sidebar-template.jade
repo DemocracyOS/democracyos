@@ -1,3 +1,5 @@
 ul.admin-menu.nav.nav-pills.nav-stacked
-  li: a(href="/admin/laws")= t('admin-sidebar.laws.title')
-  li: a(href="/admin/tags")= t('admin-sidebar.tags.title')
+  li: a(href="/admin/laws")=t('admin-sidebar.laws.title')
+  li: a(href="/admin/tags")=t('admin-sidebar.tags.title')
+  - if (config.usersWhitelist)
+    li: a(href="/admin/users")=t('admin-sidebar.whitelists.title')

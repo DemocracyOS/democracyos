@@ -1,0 +1,19 @@
+#whitelist-wrapper
+  .whitelist-admin
+    form.form.form-horizontal(action=form.action, method="post", role="form", autocomplete="off", autovalidate='autovalidate', autosubmit='autosubmit')
+      ul.form-messages
+      .form-group
+        label=t('admin-whitelist.type')
+        select.form-control(name='type', validate='required')
+          - each type in [ 'email' ]
+            option(selected=(whitelist.type == type) value=type)=type
+      .form-group
+        label=t('admin-whitelist.value')
+        - if (whitelist.id)
+          input.form-control(type='text', name='value', value=whitelist.value, validate='required email')
+        - else
+          textarea.form-control(type='text', name='value', validate='required emails' placeholder=t('admin-whitelists-form.value.placeholder'))
+      .form-group
+        button.btn.btn-success.btn-block.btn-lg=t('admin-whitelists-form.button.submit')
+        - if (whitelist.id)
+          a.btn.btn-danger.btn-block.btn-lg.btn-delete(href='#')=t('admin-whitelists-form.button.delete')

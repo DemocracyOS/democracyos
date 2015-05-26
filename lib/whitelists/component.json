@@ -1,0 +1,15 @@
+{
+  "name": "whitelists",
+  "description": "Collection of whitelists",
+  "locals": [
+    "request",
+    "render",
+    "stateful",
+    "debug"
+  ],
+  "scripts": [
+    "whitelists.js",
+    "proto.js"
+  ],
+  "main": "whitelists.js"
+}

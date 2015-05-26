@@ -1,8 +1,8 @@
 {
   "name": "config",
-  "description": "Client config component generated dynamicaly by ./bin/dos-build",
+  "description": "Client config component",
   "dependencies": {},
   "locals": [],
-  "scripts": [ "config.js", "client.js" ],
+  "scripts": [ "config.js" ],
   "main": "config.js"
 }

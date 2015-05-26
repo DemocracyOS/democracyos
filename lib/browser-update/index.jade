@@ -4,7 +4,7 @@ html(lang='en')
     //
     //   Basic Page Needs
     //   ==================================================
-    title= config('organization name')
+    title= config.organizationName
 
     meta(charset='utf-8')
     meta(name='description', content='')
@@ -31,7 +31,7 @@ html(lang='en')
   body.browser-update
     #browser-update
       .container
-        img(src=config['logo'])
+        img(src=config.logo)
         .note=t('browser-update.woops')
         p=t('browser-update.ie-old-version-warning')
         p=t('browser-update.in-order-warning')

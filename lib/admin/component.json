@@ -17,6 +17,8 @@
     "admin-laws-form",
     "admin-tags",
     "admin-tags-form",
+    "admin-whitelists",
+    "admin-whitelists-form",
     "regexps",
     "citizen",
     "laws",
@@ -24,7 +26,8 @@
     "request",
     "title",
     "render",
-    "debug"
+    "debug",
+    "config"
   ],
   "scripts": [ "admin.js" ],
   "styles": [ "admin.styl", "admin-wrappers.styl", "admin-heading.styl" ],

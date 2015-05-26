@@ -1,0 +1,12 @@
+{
+  "name": "visibility",
+  "dependencies": {
+    "visionmedia/page.js": "1.3.7"
+  },
+  "locals": [
+    "citizen",
+    "config"
+  ],
+  "scripts": [ "visibility.js" ],
+  "main": "visibility.js"
+}

@@ -13,7 +13,8 @@
     "citizen",
     "sidebar",
     "render",
-    "debug"
+    "debug",
+    "visibility"
   ],
   "scripts": [
     "homepage.js"

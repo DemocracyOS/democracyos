@@ -3,13 +3,13 @@
     .sidebar-container
       ul.help-menu
         li.heading= t('help.title')
-        - if (config['faq'])
+        - if (config.frequentlyAskedQuestions)
           li: a(href="/help/faq")= t('help.faq.title')
-        - if (config['tos'])
+        - if (config.termsOfService)
           li: a(href="/help/terms-of-service")= t('help.tos.title')
-        - if (config['pp'])
+        - if (config.privacyPolicy)
           li: a(href="/help/privacy-policy")= t('help.pp.title')
-        - if (config['glossary'])
+        - if (config.glossary)
           li: a(href="/help/glossary")= t('help.glossary.title')
         li: a(href="/help/markdown")= t('help.markdown.title')
     .help-content

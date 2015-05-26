@@ -16,6 +16,7 @@
     "slifszyc/query": "0.0.3"
   },
   "locals": [
+    "auth-facebook",
     "regexps",
     "citizen",
     "request",
@@ -23,8 +24,7 @@
     "render",
     "form-view",
     "view",
-    "config",
-    "jwt"
+    "config"
   ],
   "scripts": [ "signup.js", "signup-form-view.js", "email-validation-form-view.js", "resend-validation-email-form-view.js", "email-validation-complete-view.js" ],
   "styles": [ "signup.styl" ],

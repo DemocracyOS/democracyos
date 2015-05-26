@@ -9,11 +9,11 @@
     "component/t": "1.0.0"
   },
   "locals": [
+    "auth-facebook",
     "citizen",
     "form-view",
     "title",
-    "config",
-    "jwt"
+    "config"
   ],
   "scripts": [ "signin.js", "view.js" ],
   "styles": [ "signin.styl" ],

@@ -1,0 +1,24 @@
+{
+  "name": "admin-whitelists-form",
+  "dependencies": {
+    "component/t": "1.0.0",
+    "visionmedia/debug": "2.1.3",
+    "visionmedia/page.js": "1.3.7"
+  },
+  "locals": [
+    "form-view",
+    "request",
+    "whitelists"
+  ],
+  "scripts": [
+    "admin-whitelists-form.js",
+    "form-view.js"
+  ],
+  "templates": [
+    "template.jade"
+  ],
+  "styles": [
+    "styles.styl"
+  ],
+  "main": "admin-whitelists-form.js"
+}

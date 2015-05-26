@@ -15,11 +15,15 @@
       .form-group
         label= t('signup.email')
         input.form-control(type='text', disabled='disabled' name='email', tabindex=3, placeholder=t('forgot.mail.example'), value='#{citizen.email}', validate='required email')
+      .form-group
+        label #{t('settings.locale')}
+        select.form-control(id='locale', name='locale', tabindex=4)
+        //- input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('settings.last-name'), value='#{citizen.lastName}', validate='required lastname')
       .form-group.profile-picture
         .image-container
           img(src=citizen.profilePicture(), width="65")
         .controls
           a(href="https://gravatar.com", target="_blank")
             strong= t('settings.change-at-gravatar')
-          input.form-control(type='text', name='profilePictureUrl', tabindex=4, placeholder=t('settings.paste-url-image'), value=citizen.profilePictureUrl, validate='url')
-      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=5)=t('settings.save')
+          input.form-control(type='text', name='profilePictureUrl', tabindex=5, placeholder=t('settings.paste-url-image'), value=citizen.profilePictureUrl, validate='url')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('settings.save')

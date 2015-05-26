@@ -17,7 +17,8 @@
     "admin-sidebar.styl"
   ],
   "scripts": [
+    "index.js",
     "view.js"
   ],
-  "main": "view.js"
+  "main": "index.js"
 }
