@@ -36,7 +36,7 @@
 
     h1=proposal.mediaTitle
     - if (proposal.author)
-      h2.author=t('admin-laws-form.label.author') + ': '
+      h2.author=t('admin-topic-form.label.author') + ': '
         - if (proposal.authorUrl)
           a(href=proposal.authorUrl, target='_blank')=proposal.author
         - else
@@ -78,6 +78,6 @@
 
     //- Article share links
     .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook
-      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter
-      a(target="_blank", href="https://plus.google.com/share?url=#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/topic/#{proposal.id}").flaticon.social.facebook
+      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.twitter
+      a(target="_blank", href="https://plus.google.com/share?url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.google-plus
