@@ -175,8 +175,8 @@
   },
   "scripts": {
     "start": "NODE_PATH=. node index.js",
-    "build": "./node_modules/.bin/gulp build",
-    "watch": "./node_modules/.bin/gulp watch",
-    "clean": "./node_modules/.bin/gulp clean"
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "clean": "gulp clean"
   }
 }
