@@ -1,4 +1,12 @@
 
+0.17.2 / 2015-05-26
+===================
+
+  * Update DemocracyOS/side-comments version
+  * Fix Law summary html filter #839
+  * Set default value null for learnMoreUrl #837
+  * Fix logout bug. Sometimes it just didnt work #811
+
 0.17.1 / 2015-05-19
 ===================
 
