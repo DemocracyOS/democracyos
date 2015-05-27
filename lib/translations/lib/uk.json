@@ -70,7 +70,6 @@
   "admin-tags.list.add-tag": "Новий",
   "admin-tags.list.search.placeholder": "Виберіть тег ...",
   "admin-tags.list.title": "Системні ключові слова",
-  "admin-users.list.search.placeholder": "Пошук по електронній пошті",
   "admin-sidebar.whitelists.title": "включено користувачі",
   "admin-whitelist.delete-whitelist.confirmation.body": "Ця дія буде прати дані постійно. Бажаєте продовжити?",
   "admin-whitelist.delete-whitelist.confirmation.cancel": "Скасувати",

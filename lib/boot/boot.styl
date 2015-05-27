@@ -302,25 +302,34 @@ body
   .overlay
     background radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)
     z-index 9999998
-  #dialog
+  .dialog.confirmation
     position fixed
     display block
-    max-width 500px
-    min-width 250px
     left 50%
     top 150px
     right initial
     bottom initial
+    max-width 100%
+    width 400px
+    margin-left -200px
     background #FFF
     box-shadow 2px 2px 5px rgba(0,0,0,.4)
     border 0px
     overflow initial
     z-index 9999999
+
+    @media (max-width: 399px)
+      left 1%
+      width 98%
+      margin-left 0
+
     p
       font-size 1.1em
     .content
       padding 0px 20px 10px 20px
-      margin-top 30px
+      width 100% // overrides .dialog width from dialog component
+      max-width none
+      min-width 0
       .title
         position absolute
         left 0px
@@ -334,7 +343,7 @@ body
         font-weight 600
       .body
         padding 20px 0px
-        // margin-top 30px
+        margin-top 30px
       .close
         line-height 10px
         top 10px
