@@ -1,3 +1,2 @@
 a.participant-profile(href="javascript:void();", title=participant.fullName, class= index < 5 ? '' : 'hide')
-  - var src = participant.profilePictureUrl ? participant.profilePictureUrl : participant.gravatar
-  img.avatar(src=src)
+  img.avatar(src=participant.avatar)
