@@ -65,7 +65,8 @@
     "facebookSignin",
     "visibility",
     "usersWhitelist",
-    "singleDemocracy"
+    "singleDemocracy",
+    "tweetText"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -99,5 +100,6 @@
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,
-  "singleDemocracy": true
+  "singleDemocracy": true,
+  "tweetText": ""
 }
