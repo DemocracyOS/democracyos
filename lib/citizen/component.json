@@ -3,7 +3,6 @@
   "description": "citizen",
   "dependencies": {
     "component/bus": "^0.0.2",
-    "component/cookie": "1.1.1",
     "component/emitter": "1.1.3",
     "component/emitter": "1.1.1",
     "visionmedia/page.js": "1.3.7"
