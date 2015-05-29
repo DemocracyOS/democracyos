@@ -1,6 +1,6 @@
 .email-validation-container.inner-container
   #email-validation-message
-    h1= t('signup.welcome', { name: citizen.firstName })
+    h1= t('signup.welcome', { name: user.firstName })
     p.lead.text-muted #{t('signup.email-validated')}.
     - if (reference)
       p.lead.text-muted= t('signup.being-redirected')

@@ -1,11 +1,11 @@
 .user-badge.pull-right
   a.btn.profile
-    img(src=citizen.profilePicture())
+    img(src=user.profilePicture())
     - var color = config.headerFontColor
-    span.name.ellipsis(style=color ? 'color: #{color}' : '')=citizen.firstName
+    span.name.ellipsis(style=color ? 'color: #{color}' : '')=user.firstName
     span.caret
   ul.dropdown-list
-    - if (citizen.staff)
+    - if (user.staff)
       li: a(href='/admin')= t('header.admin')
     li: a(href='/settings')= t('header.settings')
     - if (config.frequentlyAskedQuestions)
