@@ -13,14 +13,23 @@ endif
 GULP="./node_modules/.bin/gulp"
 
 run: packages
-	@NODE_PATH=. DEBUG=$(DEBUG) $(GULP) serve
+	@echo "Launching..."
+	@$(GULP) watch
+
+serve: build
+	@echo "Launching..."
+	@$(GULP) serve
+
+build: packages
+	@echo "Building..."
+	@$(GULP) build
 
 packages:
 	@echo "Installing dependencies..."
 	@npm install
 
 clean:
-	@echo "Removing dependencies, components and built assets."
+	@echo "Removing dependencies, components and built assets..."
 	@rm -rf node_modules components public
 	@echo "Done.\n"
 
