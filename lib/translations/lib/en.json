@@ -307,7 +307,7 @@
   "signup.resend-validation-email": "Resend validation email",
   "signup.resend-validation-email-complete": "Resend validation email complete",
   "signup.retype-password": "Re-type password",
-  "signup.user-already-validated": "This citizen already validated the email address",
+  "signup.user-already-validated": "This user already validated the email address",
   "signup.validation-email-resent": "The validation email was resent.",
   "signup.welcome": "Welcome, {name}!",
   "signup.with-email": "Signup with email",
