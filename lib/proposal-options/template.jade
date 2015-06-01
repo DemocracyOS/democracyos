@@ -6,7 +6,7 @@
 - var participants = proposal.participants || []
 
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
-- var voted = citizen && ~census.indexOf(user.id)
+- var voted = user && ~census.indexOf(user.id)
 
 .inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
 
