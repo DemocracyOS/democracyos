@@ -4,6 +4,7 @@
   "host": "localhost",
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
+  "mongoUsersUrl": "",
   "jwtSecret": "Generate a secret token and paste it here.",
   "deploymentId": "",
   "deploymentDomain": "",
@@ -64,7 +65,8 @@
     "facebookSignin",
     "visibility",
     "usersWhitelist",
-    "singleDemocracy"
+    "singleDemocracy",
+    "tweetText"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -80,7 +82,7 @@
   "favicon": " /boot/favicon.ico",
   "organizationName": "DemocracyOS on GitHub",
   "organizationUrl": "https://github.com/DemocracyOS/app",
-  "learnMoreUrl": "http://www.democracyos.org",
+  "learnMoreUrl": "",
   "googleAnalyticsTrackingId": "",
   "rssEnabled": true,
   "commentsPerPage": 0,
@@ -94,9 +96,11 @@
   "usersWhitelist": false,
   "headerBackgroundColor": "",
   "headerFontColor": "",
+  "headerContrast": false,
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,
   "singleDemocracy": true,
-  "feedsLimit": 10
+  "feedsLimit": 10,
+  "tweetText": ""
 }
