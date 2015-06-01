@@ -1,6 +1,6 @@
 - var voted = citizen.logged() && !!item.voted
 - var url = forum ? ('/' + forum) : ''
-- url += '/law/' + item.id
+- url += '/topic/' + item.id
 
 li(data-id=item.id)
   a(href=url, class = voted ? 'voted' : '')

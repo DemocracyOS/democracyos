@@ -1,35 +1,35 @@
-- var positives = feed.law.upvotes || []
-- var negatives = feed.law.downvotes || []
-- var neutrals = feed.law.abstentions || []
+- var positives = feed.topic.upvotes || []
+- var negatives = feed.topic.downvotes || []
+- var neutrals = feed.topic.abstentions || []
 - var census = neutrals.concat(negatives).concat(positives) || []
 
 - var participants = feed.participants || []
 
 - var closed = feed.closingAt && +new Date(feed.closingAt) < Date.now()
 - var voted = citizen.id && ~census.indexOf(citizen.id)
-- var url = '/' + feed.forum.name + '/law/' + feed.law.id
+- var url = '/' + feed.topic.forum.name + '/topic/' + feed.topic.id
 
 .row
   article.col-xs-12.col-md-8.col-md-offset-2.newsfeed
     header
-      h1: a(href=url)=feed.law.mediaTitle
+      h1: a(href=url)=feed.topic.mediaTitle
       small
         i.glyphicon.glyphicon-user
         - var cardinality = participants.length == 1 ? 'singular' : 'plural'
         | #{ participants.length } #{t('proposal-article.participant.' + cardinality)}
-      - if (feed.law.tag)
+      - if (feed.topic.tag)
         small.tag
           i.glyphicon.glyphicon-tag
-          =feed.law.tag.name
-      small.closing-at(class=closed ? 'closed' : (feed.law.closingAt ? 'closing' : 'unknown'))
+          =feed.topic.tag.name
+      small.closing-at(class=closed ? 'closed' : (feed.topic.closingAt ? 'closing' : 'unknown'))
         i.glyphicon.glyphicon-time
-        - if (feed.law.closingAt)
+        - if (feed.topic.closingAt)
           span.time-ago-label= (closed ? t('common.closed') : t('common.close')) + " "
-          span.meta-item.meta-timeago.ago(data-time=feed.law.closingAt.toString())
+          span.meta-item.meta-timeago.ago(data-time=feed.topic.closingAt.toString())
         - else
           span.meta-item.meta-timeago.unknown= t('article.unknown-closing-date')
     section
-      - if (feed.type == 'law-published' || feed.type == 'law-voted')
+      - if (feed.type == 'topic-published' || feed.type == 'topic-voted')
         .row
           - var classes = feed.image ? 'col-sm-6' : 'col-sm-12'
           .col-xs-12(class=classes)
@@ -39,12 +39,12 @@
           - if (feed.image)
             .col-xs-12.col-sm-6
               img(src=feed.image)
-      - else if (feed.type == 'law-commented')
+      - else if (feed.type == 'topic-commented')
         p.comment #{feed.comment.text}
           .arrow-down
     footer
       - if (feed.data.user)
-        - if (feed.type == 'law-voted')
+        - if (feed.type == 'topic-voted')
           - var color = feed.data.vote == 'positive' ? 'positive' : (feed.data.vote == 'negative' ? 'negative' : 'neutral')
           .vote-bubble(class=color)=t('feed.call-to-action.' + color)
           .arrow-down
@@ -52,7 +52,7 @@
           img(src=feed.data.user.avatar)
         p.name.pull-left=feed.data.user.fullName
       .call-to-action
-        - if (feed.type == 'law-commented' && feed.data.user.id != citizen.id)
+        - if (feed.type == 'topic-commented' && feed.data.user.id != citizen.id)
           a.btn.btn-default.pull-right.purple(href=url)=t('feed.call-to-action.reply')
         - else
           - if (closed)
