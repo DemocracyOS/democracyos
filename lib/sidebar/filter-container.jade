@@ -21,7 +21,7 @@
 
       //- Rendered from client's view
 
-  #hide-voted-filter.hide-voted-box(class=citizen.logged() ? '' : 'hide')
+  #hide-voted-filter.hide-voted-box(class=user.logged() ? '' : 'hide')
     input#hide-voted(type='checkbox',
       name='hide-voted',
       checked= filter.get('hide-voted')
