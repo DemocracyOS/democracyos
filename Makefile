@@ -12,11 +12,7 @@ endif
 
 GULP="./node_modules/.bin/gulp"
 
-run: packages
-	@echo "Launching..."
-	@$(GULP) watch
-
-serve: build
+run: build
 	@echo "Launching..."
 	@$(GULP) serve
 

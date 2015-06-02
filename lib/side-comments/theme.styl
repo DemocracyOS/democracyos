@@ -3,9 +3,9 @@
   transition all 0.22s ease
 
 .side-comments-open
-  -webkit-transform translate(-220px, 0)
-  -ms-transform translate(-220px, 0)
-  transform translate(-220px, 0)
+  -webkit-transform s("translate(-220px, 0)")
+  -ms-transform s("translate(-220px, 0)")
+  transform s("translate(-220px, 0)")
 
 .commentable-section
   -webkit-box-sizing border-box
@@ -40,10 +40,11 @@
     width 330px
     padding-bottom 120px
     width 210px
+    opacity 0
+    transition opacity .2s
   &.active
     .comments-wrapper
-      -webkit-animation fadein 0.2s
-      animation fadein 0.2s
+      opacity 1
   &.has-comments
     .comments-wrapper
       top -22px
@@ -218,6 +219,6 @@
 
 @media (max-width: 768px)
   .side-comments-open
-    -webkit-transform translate(-220px, 0)
-    -ms-transform translate(-220px, 0)
-    transform translate(-220px, 0)
+    -webkit-transform s("translate(-220px, 0)")
+    -ms-transform s("translate(-220px, 0)")
+    transform s("translate(-220px, 0)")
