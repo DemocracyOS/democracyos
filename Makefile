@@ -14,10 +14,6 @@ GULP="./node_modules/.bin/gulp"
 
 run: packages
 	@echo "Launching..."
-	@$(GULP) watch
-
-serve: build
-	@echo "Launching..."
 	@$(GULP) serve
 
 build: packages
