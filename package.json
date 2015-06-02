@@ -91,7 +91,7 @@
     "notifier-client": "0.2.0",
     "nowww": "~1.1.2",
     "passport": "~0.1.17",
-    "passport-facebook": "~2.0.0",
+    "passport-facebook": "2.0.x",
     "passport-local": "~0.1.6",
     "passport-local-mongoose": "~0.2.4",
     "strip": "0.0.7",
