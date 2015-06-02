@@ -48,9 +48,9 @@ border_radius = 3px
         &:hover
           background-color darken(#d95e59, 40%)
         i
-          transform:rotate(180deg)
-          -ms-transform:rotate(180deg) /* IE 9 */
-          -webkit-transform:rotate(180deg)
+          transform s("rotate(%s)", 180deg)
+          -ms-transform s("rotate(%s)", 180deg) /* IE 9 */
+          -webkit-transform s("rotate(%s)", 180deg)
 
       &.vote-abstain
         background-color #666
