@@ -6,7 +6,7 @@
 - var participants = feed.participants || []
 
 - var closed = feed.closingAt && +new Date(feed.closingAt) < Date.now()
-- var voted = citizen.id && ~census.indexOf(citizen.id)
+- var voted = user.id && ~census.indexOf(user.id)
 - var url = '/' + feed.topic.forum.name + '/topic/' + feed.topic.id
 
 .row
@@ -52,20 +52,20 @@
           img(src=feed.data.user.avatar)
         p.name.pull-left=feed.data.user.fullName
       .call-to-action
-        - if (feed.type == 'topic-commented' && feed.data.user.id != citizen.id)
+        - if (feed.type == 'topic-commented' && feed.data.user.id != user.id)
           a.btn.btn-default.pull-right.purple(href=url)=t('feed.call-to-action.reply')
         - else
           - if (closed)
             a.btn.btn-default.pull-right.see-results(href=url)=t('feed.call-to-action.see-results')
           - else
             - if (voted)
-              - if(~positives.indexOf(citizen.id))
+              - if(~positives.indexOf(user.id))
                 - var vote = 'positive'
                 - var text = t('feed.call-to-action.positive')
-              - else if (~negatives.indexOf(citizen.id))
+              - else if (~negatives.indexOf(user.id))
                 - var vote = 'negative'
                 - var text = t('feed.call-to-action.negative')
-              - else if (~neutrals.indexOf(citizen.id))
+              - else if (~neutrals.indexOf(user.id))
                 - var vote = 'neutral'
                 - var text = t('feed.call-to-action.neutral')
             - else
