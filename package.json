@@ -147,7 +147,8 @@
     "nanomodal": "5.1.1",
     "watchify": "3.2.1",
     "yargs": "3.9.1",
-    "gulp-if": "1.2.5"
+    "gulp-if": "1.2.5",
+    "gulp-livereload": "3.8.0"
   },
   "browser": {
     "closest": "component-closest",
