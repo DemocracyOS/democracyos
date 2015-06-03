@@ -1,4 +1,21 @@
 
+0.17.3 / 2015-05-27
+===================
+
+  * Fix emebed videos on https #859
+  * Normalize usage of avatar on user model #854
+  * Fixed overflow on remove confirmation box #850
+  * Default translations 'en' <- 'config.locale' <- 'user.locale' #828
+  * Set user locale on signup Closes #828
+
+0.17.2 / 2015-05-26
+===================
+
+  * Update DemocracyOS/side-comments version
+  * Fix Law summary html filter #839
+  * Set default value null for learnMoreUrl #837
+  * Fix logout bug. Sometimes it just didnt work #811
+
 0.17.1 / 2015-05-19
 ===================
 
