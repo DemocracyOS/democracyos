@@ -86,7 +86,7 @@
     "jwt-simple": "0.2.0",
     "locale": "0.0.20",
     "list.js": "git://github.com/slifszyc/list.js",
-    "loading-lock": "git://github.com/jfresco/loading-lock.git#add/package-json",
+    "loading-lock": "git://github.com/slifszyc/loading-lock",
     "marked": "~0.2.9",
     "merge": "^1.2.0",
     "mkdirp": "^0.5.0",
