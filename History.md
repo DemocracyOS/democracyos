@@ -1,4 +1,14 @@
 
+0.17.4 / 2015-06-03
+===================
+
+  * Fixed bug that didn't ñet signup STAFF members #882
+  * Remove DEPLOYMENT_DOMAIN config #873
+  * Refresh token when is older than 1 day #874
+  * Delete incompatible token cookies #871
+  * Implemented httpOnly cookie option and a signout endpoint #846.
+  * Added support for ':' character in URLs #834
+
 0.17.3 / 2015-05-27
 ===================
 
