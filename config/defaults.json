@@ -65,7 +65,7 @@
     "facebookSignin",
     "visibility",
     "usersWhitelist",
-    "singleDemocracy",
+    "singleForum",
     "tweetText"
   ],
   "socialshare": {
@@ -100,7 +100,7 @@
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,
-  "singleDemocracy": true,
+  "singleForum": true,
   "feedsLimit": 10,
   "tweetText": ""
 }
