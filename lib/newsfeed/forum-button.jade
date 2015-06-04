@@ -1,0 +1,7 @@
+- if (forum)
+  a.btn.btn-link.go-to-forum.pull-right(href='/' + forum.name)
+    span=forum.title + ' '
+    i.glyphicon.glyphicon-menu-right
+- else
+  a.btn.purple.pull-right(href='/forums/new')
+    =t('feed.call-to-action.start-a-forum')
