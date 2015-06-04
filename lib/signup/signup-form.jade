@@ -25,8 +25,8 @@
         input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('password.repeat'), validate='required same:password')
       .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('signup.now')
       .form-group
-        - var tos = config['tos'];
-        - var pp = config['pp'];
+        - var tos = config.termsOfService;
+        - var pp = config.privacyPolicy;
         - if (tos || pp)
           p.help-block.text-center=t('signup.accepting')
           ul.text-center

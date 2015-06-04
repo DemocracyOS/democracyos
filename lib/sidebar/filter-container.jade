@@ -1,4 +1,4 @@
-#laws-filter
+#topics-filter
   - var open = formatNumber(filter.countFiltered('open'));
   - var closed = formatNumber(filter.countFiltered('closed'));
   #status-filter.btn-group.btn-group-justified
@@ -10,10 +10,10 @@
       )= closed + t('sidebar.closed')
 
   #sort-filter.btn-group
-    button.btn.btn-default.current-department(type='button', data-toggle='dropdown')
+    button.btn.btn-default.current-department(type='button')
       span.pull-left= t(filter.sorts[filter.get('sort')].label)
       span.caret
-    ul.dropdown-menu
+    ul.dropdown-list
       - each sort, key in filter.sorts
         - var active = key == filter.get('sort')
         li(data-sort=key, class= active ? 'active' : '')
@@ -21,7 +21,7 @@
 
       //- Rendered from client's view
 
-  #hide-voted-filter.hide-voted-box(class=citizen.logged() ? '' : 'hide')
+  #hide-voted-filter.hide-voted-box(class=user.logged() ? '' : 'hide')
     input#hide-voted(type='checkbox',
       name='hide-voted',
       checked= filter.get('hide-voted')

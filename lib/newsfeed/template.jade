@@ -1,0 +1,11 @@
+.container.newsfeeds
+  - if (!user.logged())
+    .jumbotron.text-center
+      h1=t('newsfeed.welcome.title')
+      p!=t('newsfeed.welcome.body')
+  .feeds
+  .row
+    .col-xs-10.col-md-8.col-md-offset-2.col-xs-offset-1
+      p.loading-container.hide
+      button.btn.purple.btn-block.load-more.hide=t('newsfeed.button.load-more')
+      p.nothing.hide.text-center=t('newsfeed.nothing-to-show')

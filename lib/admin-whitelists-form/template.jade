@@ -9,7 +9,10 @@
             option(selected=(whitelist.type == type) value=type)=type
       .form-group
         label=t('admin-whitelist.value')
-        input.form-control(type='text', name='value', value=whitelist.value, validate='required email')
+        - if (whitelist.id)
+          input.form-control(type='text', name='value', value=whitelist.value, validate='required email')
+        - else
+          textarea.form-control(type='text', name='value', validate='required emails' placeholder=t('admin-whitelists-form.value.placeholder'))
       .form-group
         button.btn.btn-success.btn-block.btn-lg=t('admin-whitelists-form.button.submit')
         - if (whitelist.id)

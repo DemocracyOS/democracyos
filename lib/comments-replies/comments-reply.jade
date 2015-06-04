@@ -1,15 +1,14 @@
-- var own = reply.author.id == citizen.id
+- var own = reply.author.id == user.id
 
 li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
   .arrow-up
   .arrow-up.inner
   span.pull-left
-    - var src = reply.author.profilePictureUrl ? reply.author.profilePictureUrl : reply.author.gravatar
-    img(src=src).avatar
+    img(src=reply.author.avatar).avatar
 
   .media-body
     h5.media-heading
-      - if (own || citizen.staff)
+      - if (own || user.staff)
         .actions
           a.comment-action.link-remove.btn-reply-remove(href="#", title=t('comment-card.remove-argument'))
             i.icon-remove
@@ -22,7 +21,7 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
         small.edited · #{t('comments.edited')}
     .reply-body
       div.reply-text!=markdown(reply.text)
-      - if (own || citizen.staff)
+      - if (own || user.staff)
         div.onreply.remove-reply= t('comments.replies.confirm-remove')
           - if (!own)
             br

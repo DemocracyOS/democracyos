@@ -32,7 +32,7 @@ See [CONTRIBUTORS.md](https://github.com/DemocracyOS/app/blob/development/CONTRI
 ## Links
 
 * [DemocracyOS official site](http://www.democracyos.org). The project's official site.
-* [DemocracyOS maling list](http://groups.google.com/group/democracyos-app): questions about DemocracyOS exclusively. For bug reports or feature requests please use the project's [Issues](https://github.com/DemocracyOS/app/issues).
+* [DemocracyOS mailing list](https://groups.google.com/forum/#!forum/democracyos-app): questions about DemocracyOS exclusively. For bug reports or feature requests please use the project's [Issues](https://github.com/DemocracyOS/app/issues).
 * [Democracia en Red](http://www.democraciaenred.org): The `Net Democracy Foundation` official site.
 
 ## Browser support

@@ -1,11 +1,11 @@
 mixin remove-action
-  - var hide = repliesCounter && !citizen.staff ? 'hide' : ''
+  - var hide = repliesCounter && !user.staff ? 'hide' : ''
   a.comment-action.link-remove.btn-remove(href="#", title=t('comment-card.remove-argument'), class=hide)
     i.icon-remove
 
 li.media.comment-item(class=classes)
   span.pull-left
-    img(src=profilePictureUrl).avatar
+    img(src=avatar).avatar
 
   .media-body
     h5.media-heading
@@ -17,8 +17,8 @@ li.media.comment-item(class=classes)
         +remove-action
         a.comment-action.link-edit.btn-edit(href="#", title=t('comments.edit.argument'))
           i.icon-pencil
-      - else if (citizen.logged())
-        - if (citizen.staff)
+      - else if (user.logged())
+        - if (user.staff)
           +remove-action
         - var spamTitle = flags ?  t('comment-card.not-spam') : t('comment-card.report-spam')
         a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
@@ -26,9 +26,9 @@ li.media.comment-item(class=classes)
           span.count=comment.flags.length ? comment.flags.length : ''
     .comment-body
       .comment-text!=markdown(comment.text)
-      - if (own || citizen.staff)
+      - if (own || user.staff)
         .oncomment.remove-comment= t('comments.arguments.confirm-remove')
-          -if (!own && citizen.staff)
+          -if (!own && user.staff)
             br
             =t('comments.removing-argument')
           .remove-confirm-actions
@@ -39,7 +39,7 @@ li.media.comment-item(class=classes)
         | .
         span.show-spam: a(href="#")= t('comment-card.show')
       .comment-actions
-        - if (repliesCounter || citizen.id)
+        - if (repliesCounter || user.id)
           - var title = repliesCounter + ' ' + (repliesCounter > 1 ? t('comments.replies') : t('comments.reply'))
           a.comment-action.comment-reply.pull-right(href='#', title=title.toLowerCase())
             span.reply-counter= repliesCounter > 0 ? repliesCounter : ''

@@ -5,24 +5,26 @@
     span.bar-icon
 
     h1#logo
-      a(href=config['home link'] || '/')
-        - var mobileLogo = !!config['logo mobile']
+      a(href=config.homeLink || '/')
+        - var mobileLogo = !!config.logoMobile
         - var classes = mobileLogo ? 'hidden-xs' : ''
-        img(src=config['logo'], class=classes).logo-image
+        img(src=config.logo, class=classes).logo-image
         - if (mobileLogo)
-          img(src=config['logo mobile']).logo-image.visible-xs-inline-block
+          img(src=config.logoMobile).logo-image.visible-xs-inline-block
         //- span.logo-link=t('common.app-name')
 
   .user-nav.btn-group
     .user
-    a(href='/signin').login.pull-right.anonymous-citizen
+    - var color = config.headerFontColor;
+    - var style = color ? 'color: ' + color : '';
+    a(href='/signin', style=style).login.pull-right.anonymous-user
       i.icon-signin
       span= t('header.signin')
-    a(href='/signup').login.pull-right.anonymous-citizen
+    a(href='/signup', style=style).login.pull-right.anonymous-user
       i.icon-user
       span= t('header.signup')
-    - var target = config['home link'] ? {} : { 'target': '_blank'};
-    a.login.pull-left(href=config['organization url'])&attributes(target)
-      span= config['organization name']
+    - var target = config.homeLink ? {} : { 'target': '_blank'};
+    a.login.pull-left(href=config.organizationUrl, style=style)&attributes(target)
+      span= config.organizationName
     //- a.login.pull-left(href='#', id='feedback')
     //-   span= t('header.feedback')

@@ -6,6 +6,7 @@ lib-cov
 *.out
 *.pid
 *.gz
+.npmrc
 
 pids
 logs
@@ -23,3 +24,5 @@ config*.json
 *.DS_Store
 .env
 .idea/*
+
+.env
