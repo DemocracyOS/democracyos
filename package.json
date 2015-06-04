@@ -148,7 +148,8 @@
     "watchify": "3.2.1",
     "yargs": "3.9.1",
     "gulp-if": "1.2.5",
-    "gulp-livereload": "3.8.0"
+    "gulp-livereload": "3.8.0",
+    "gulp-eslint": "0.13.0"
   },
   "browser": {
     "closest": "component-closest",
