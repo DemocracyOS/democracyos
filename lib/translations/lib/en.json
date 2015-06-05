@@ -164,7 +164,6 @@
   "forum.status.destroying": "Destroying...",
   "forum.status.error": "There was an error in this democracy, try again later please.",
   "header.admin": "Manage",
-  "header.feedback": "Feedback",
   "header.logout": "Logout",
   "header.settings": "Settings",
   "header.signin": "Login",
