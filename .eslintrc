@@ -1,0 +1,27 @@
+{
+  "rules": {
+    "indent": [ 2, 2 ],
+    "quotes": [ 2, "single" ],
+    "linebreak-style": [ 2, "unix" ],
+    "semi": [ 1, "always" ],
+    "yoda": "always",
+    "eqeqeq": "smart",
+    "curly": 0,
+    "plusplus": false,
+    "evil": false,
+    "debug": false,
+    "no-use-before-define": "nofunc",
+    "new-parens": false,
+    "no-underscore-dangle": [ 1, true ],
+    "no-unused-vars": [ 1, { "vars": "all", "args": "after-used" } ],
+    "eol-last": [ 1, true ]
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  }
+}
