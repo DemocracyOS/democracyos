@@ -2,8 +2,8 @@ main.container
   .row
     article.feed-item.forum-new-form.col-xs-12.col-md-8.col-md-offset-2
       .feed-top
-        h1.feed-title=t('forum.form.title')
-        p.feed-desc=t('forum.form.description')
+        h1.feed-title= t('forum.form.title')
+        p.feed-desc= t('forum.form.description')
 
       form.form(action="/api/forum", method="post", role="form", novalidate, autovalidate, autosubmit)
         h2.feed-subtitle=t('forum.form.subtitle')
@@ -12,15 +12,14 @@ main.container
         .fieldsets
           fieldset
             label= t('forum.form.url.label')
-            .input-group
-              span.input-group-addon=domain
-              .form-group.clearfix.subdomain
-                input(type='text', name='name', tabindex=1, validate='required forum', autofocus, id='hostname', autocorrect='off', autocapitalize='off')
+            .input-group.subdomain
+              div.input-group-addon= domain
+              input(type='text', name='name', validate='required forum', autofocus, id='hostname', autocorrect='off', autocapitalize='off')
               span.error.name-unavailable.hide=t('forum.form.url.unavailable')
 
           fieldset
             label= t('forum.form.title.label')
             .form-group.clearfix.title
-              input(type='text', name='title', tabindex=2, placeholder=t('forum.form.title.placeholder'), validate='required')
+              input(type='text', name='title', placeholder= t('forum.form.title.placeholder'), validate='required')
 
-        button.btn.btn-block.btn-primary.btn-lg(tabindex=5)=t('forum.form.create.submit')
+        button.btn.btn-block.btn-primary.btn-lg= t('forum.form.create.submit')
