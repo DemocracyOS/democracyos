@@ -1,7 +1,7 @@
 {
     "borderNone": true,
     "brackets": false,
-    "colons": true,
+    "colons": false,
     "colors": false,
     "commaSpace": true,
     "commentSpace": false,
