@@ -54,13 +54,21 @@ body.forum-new
     padding-bottom 0
     font-size 14px
     font-weight 400
-    @media (min-width: 480px)
+
+    @media (min-width: 700px)
       margin-top 12px
+
+  .form-group,
+  .input-group
+    span.error
+      top 15px
+      right 8px
 
   input[type="text"],
   .input-group
     width 100%
-    @media (min-width: 480px)
+
+    @media (min-width: 700px)
       width 60%
       float right
 
@@ -75,26 +83,25 @@ body.forum-new
     background-color white
     color black
 
-  #hostname
-    text-transform lowercase
-
   .input-group
-    input[type="text"]:first-child
+    input[type="text"]
       width 100%
-      border-bottom-right-radius 0
-      border-top-right-radius 0
+
+      &:first-child
+        border-top-right-radius 0
+        border-bottom-right-radius 0
 
     .input-group-addon
       border-color #dedede
       background-color #fafafa
 
+      & + input[type="text"]
+        border-top-left-radius 0
+        border-bottom-left-radius 0
+
 
   .form-group
     margin 0
-
-    span.error
-      top 15px
-      right 8px
 
     &.title
       @media screen and (max-width: 700px)
