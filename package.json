@@ -153,15 +153,6 @@
     "eslint": "0.22.1",
     "verigy": "2.0.1"
   },
-  "browser": {
-    "closest": "component-closest",
-    "confirmation": "confirmation-component",
-    "dom": "component-dom",
-    "empty": "component-empty",
-    "spin": "component-spin",
-    "t": "t-component",
-    "tip": "component-tip"
-  },
   "devDependencies": {
     "nomnom": "^1.8.1",
     "arr-diff": "^1.0.1",
