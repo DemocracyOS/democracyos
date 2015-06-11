@@ -43,13 +43,14 @@
           =proposal.author
     h3=proposal.title
     .entry-content
-      .body
+      .body!=proposal.summary
       .clauses
+        - var clauses = proposal.clauses.slice(1)
         - if (clauses.length)
           - each clause, i in clauses
-            - var classes = ['hide']
+            - var classes = ['hide', 'clause', 'commentable-section']
             - classes.push(clause.centered ? 'text-center' : '')
-            .clause.commentable-section(class=classes, data-section-id=clause.id)!=clause.text
+            !=toHTML(clause, { className: classes })
       - if (proposal.clauseTruncationText)
         a.read-more(href="#")= proposal.clauseTruncationText
       - else
