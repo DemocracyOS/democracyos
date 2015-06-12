@@ -112,5 +112,6 @@
   },
   "scripts": {
     "postinstall": "node ./bin/dos-install --config && node ./bin/dos-build"
-  }
+  },
+  "license": "MIT"
 }
