@@ -1,4 +1,13 @@
 
+0.17.5 / 2015-06-12
+===================
+
+  * Fix UI refresh on logout #921
+  * Fix forgot password when VISIBILITY is 'hidden' #920
+  * Add email normalization #689
+  * Add ALLOW_EMAIL_ALIASES configuration #689
+  * Add error handler for incorrect current password #714
+
 0.17.4 / 2015-06-03
 ===================
 
