@@ -14,7 +14,7 @@
     "render",
     "debug",
     "visibility",
-    "laws"
+    "laws-filter"
   ],
   "scripts": [
     "homepage.js"
