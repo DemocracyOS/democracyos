@@ -1,4 +1,13 @@
 
+0.17.6 / 2015-06-16
+===================
+
+  * Update notifier-client version to 0.3.0
+  * Fix homepage first law shown #898
+  * Use config.headerFontColor on mobile menu icon #930
+  * Add license in package.json
+  * Use relative links in readme
+
 0.17.5 / 2015-06-12
 ===================
 
