@@ -11,10 +11,10 @@
   "development": {},
   "locals": [
     "citizen",
-    "sidebar",
     "render",
     "debug",
-    "visibility"
+    "visibility",
+    "laws"
   ],
   "scripts": [
     "homepage.js"
