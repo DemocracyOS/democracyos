@@ -95,5 +95,5 @@
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,
-  "showResults": false
+  "alwaysShowTopicResults": false
 }
