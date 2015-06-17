@@ -94,5 +94,6 @@
   "headerContrast": false,
   "googleAPIKey": "",
   "visibility": "visible",
-  "usersWhitelist": false
+  "usersWhitelist": false,
+  "alwaysShowTopicResults": false
 }

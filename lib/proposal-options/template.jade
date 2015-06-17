@@ -48,7 +48,7 @@
       .votes-cast
         em.text-muted= t('proposal-options.votes-cast', { num: census.length || "0" })
 
-    - if (closed)
+    - if (closed || config.alwaysShowTopicResults)
       .results-box.row.clearfix
         p.alert.alert-info(class=census.length ? 'hide' : ''): label= t('proposal-options.no-votes-cast')
         .results-chart(class= census.length ? '' : 'hide').col-sm-6
