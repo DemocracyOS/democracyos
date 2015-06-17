@@ -43,7 +43,7 @@
           =proposal.author
     h3=proposal.title
     .entry-content
-      .body!=proposal.summary
+      .body!=toHTML(proposal.clauses[0], { className: ['commentable-section'] })
       .clauses
         - var clauses = proposal.clauses.slice(1)
         - if (clauses.length)
