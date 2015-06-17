@@ -48,8 +48,8 @@
         - var clauses = proposal.clauses.slice(1)
         - if (clauses.length)
           - each clause, i in clauses
-            - var classes = ['hide', 'clause', 'commentable-section']
-            - classes.push(clause.centered ? 'text-center' : '')
+            - var classes = ['hide', 'clause']
+            - classes.push(clause.empty ? '' : 'commentable-section')
             !=toHTML(clause, { className: classes, iframeResponsive: true })
       - if (proposal.clauseTruncationText)
         a.read-more(href="#")= proposal.clauseTruncationText
