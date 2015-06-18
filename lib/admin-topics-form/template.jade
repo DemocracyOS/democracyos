@@ -65,7 +65,7 @@
             .input-group
               input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
         .form-group
-          .topic-clauses
+          .topic-clauses.hide
             - if (topic.clauses && topic.clauses.length)
               - each clause, idx in topic.clauses
                 include clause
