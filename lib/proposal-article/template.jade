@@ -51,8 +51,8 @@
             - var classes = ['hide', 'clause']
             - classes.push(clause.empty ? '' : 'commentable-section')
             !=toHTML(clause, { className: classes, iframeResponsive: true })
-      - if (proposal.clauseTruncationText)
-        a.read-more(href="#")= proposal.clauseTruncationText
+      - if (proposal.bodyTruncationText)
+        a.read-more(href="#")= proposal.bodyTruncationText
       - else
         a.read-more(href="#")= t('common.read-more')
 
