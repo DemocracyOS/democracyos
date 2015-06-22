@@ -88,7 +88,7 @@
     "mout": "^0.11.0",
     "node-path": "0.0.3",
     "nomnom": "^1.8.1",
-    "notifier-client": "0.3.0",
+    "notifier-client": "0.3.1",
     "nowww": "~1.1.2",
     "passport": "~0.1.17",
     "passport-facebook": "2.0.x",
