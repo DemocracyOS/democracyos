@@ -66,7 +66,7 @@
     "component": "1.0.0",
     "component-closest": "0.1.4",
     "component-cookie": "^1.1.1",
-    "component-dom": "1.0.7",
+    "component-dom": "1.0.8",
     "component-empty": "0.0.1",
     "component-spin": "0.1.1",
     "component-tip": "git://github.com/slifszyc/tip",
