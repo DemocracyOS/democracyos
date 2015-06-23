@@ -329,6 +329,8 @@
 
   "newsfeed.welcome.title": "Empieza tu propia democracia hoy",
   "newsfeed.welcome.body": "Por favor <a href=\"/signin\">ingresa</a> o <a href=\"signup\">regístrate</a> para empezar a usar DemocracyOS",
+  "newsfeed.button.load-more": "Cargar más",
+  "newsfeed.nothing-to-show": "Nada que mostrar",
   "feed.call-to-action.positive": "Votado positivo",
   "feed.call-to-action.negative": "Votado negativo",
   "feed.call-to-action.neutral": "Votado abstención",
