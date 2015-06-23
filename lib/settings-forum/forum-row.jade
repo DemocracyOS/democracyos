@@ -1,7 +1,7 @@
 .forum
   .title.pull-left
-    p: strong= forum.attr('title')
-    a.url(href=forum.url())= forum.url()
+    p: strong= forum.title
+    a.url(href=forum.url)= forum.url
   a.btn-remove.pull-right(href='#')
     i.glyphicon.glyphicon-trash
   .status.creating
