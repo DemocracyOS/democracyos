@@ -1,5 +1,5 @@
 ul.admin-menu.nav.nav-pills.nav-stacked
-  li: a(href="/admin/topics")=t('admin-sidebar.topics.title')
-  li: a(href="/admin/tags")=t('admin-sidebar.tags.title')
+  li: a(href=router("/admin/topics"))=t('admin-sidebar.topics.title')
+  li: a(href=router("/admin/tags"))=t('admin-sidebar.tags.title')
   - if (config.usersWhitelist)
-    li: a(href="/admin/users")=t('admin-sidebar.whitelists.title')
+    li: a(href=router("/admin/users"))=t('admin-sidebar.whitelists.title')
