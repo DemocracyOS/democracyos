@@ -1,5 +1,5 @@
 .content#forum-delete-modal
-  form(method='delete', action='/api/forum/'+forum.name, autosubmit, autovalidate)
+  form(method='delete', autovalidate)
     .title=t('settings-forums.delete.confirmation.title')
       a(href='#').close.cancel
         | &times;
