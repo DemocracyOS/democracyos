@@ -1,6 +1,6 @@
 ## Contributing to DemocracyOS
 
-If you have a question about DemocracyOS (not a bug report) please post it to our [mailing list](http://groups.google.com/group/democracyos-app).
+If you have a question about DemocracyOS (not a bug report) please post it to our [mailing list](http://groups.google.com/group/democracyos-app) or on [Gitter](https://gitter.im/DemocracyOS/app).
 
 
 ### Reporting bugs / Requesting features
@@ -20,9 +20,9 @@ A good approach to a bug report is being very clear on how to reproduce it. Foll
 > 1. Run app with `make`
 > 2. Navigate to `/route`
 > 3. Click on `button` and see error in `console` output
-> 
+>
 > Results: What is the actual result that makes it a bug? (e.g: Misaligned text in header, see attached snapshot, etc.)
-> 
+>
 > Expected results: What should it look like? (e.g.: text in header should be aligned with dropdowns, etc.)
 
 
@@ -46,7 +46,7 @@ git remote add upstream git@github.com:DemocracyOS/app.git
 Create a new branch for the changes you are going to contribute, with a relevant name. Some examples:
 ```
 git checkout -b feature/some-new-stuff
-git checkout -b fix/some-bug 
+git checkout -b fix/some-bug
 git checkout -b remove/some-file
 ```
 
