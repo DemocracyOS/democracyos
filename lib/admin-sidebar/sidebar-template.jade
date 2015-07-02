@@ -1,5 +1,7 @@
+- var prepend = forum ? ('/' + forum.name) : ''
+
 ul.admin-menu.nav.nav-pills.nav-stacked
-  li: a(href="/admin/topics")=t('admin-sidebar.topics.title')
-  li: a(href="/admin/tags")=t('admin-sidebar.tags.title')
+  li: a(href="#{prepend}/admin/topics" data-section='topics')=t('admin-sidebar.topics.title')
+  li: a(href="#{prepend}/admin/tags" data-section='tags')=t('admin-sidebar.tags.title')
   - if (config.usersWhitelist)
-    li: a(href="/admin/users")=t('admin-sidebar.whitelists.title')
+    li: a(href="/admin/users" data-section='users')=t('admin-sidebar.whitelists.title')
