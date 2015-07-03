@@ -63,7 +63,7 @@
     "facebookSignin",
     "visibility",
     "usersWhitelist",
-    "singleForum",
+    "multiForum",
     "tweetText"
   ],
   "socialshare": {
@@ -97,7 +97,7 @@
   "googleAPIKey": "",
   "visibility": "visible",
   "usersWhitelist": false,
-  "singleForum": true,
+  "multiForum": false,
   "feedsLimit": 10,
   "tweetText": ""
 }
