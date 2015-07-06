@@ -238,6 +238,7 @@
   "settings.locale": "Language",
   "settings.locale.ca": "Catalan",
   "settings.locale.de": "Deutsche",
+  "settings.locale.el": "Greek",
   "settings.locale.en": "English",
   "settings.locale.es": "Spanish",
   "settings.locale.fi": "Finnish",
