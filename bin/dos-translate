@@ -7,7 +7,7 @@ var jsonFile = require('json-file-plus');
 var config = require('../lib/config');
 
 // Load the list of available languages.
-var LANGS_FOLDER = 'lib/translations/lib';
+var LANGS_FOLDER = path.resolve(__dirname, '../lib/translations/lib');
 var languages = fs.readdirSync(LANGS_FOLDER).map(function(v){
   return v.replace('.json', '');
 });
