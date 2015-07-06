@@ -115,7 +115,7 @@ function commandTranslateMissing(opts) {
 
     missings[lang].forEach(function(k){
       if (formatRegex.test(baseLang[k])) {
-        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with %{var} format.');
+        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with {var} format.');
         return;
       }
 
