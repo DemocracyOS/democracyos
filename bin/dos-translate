@@ -136,10 +136,14 @@ function commandTranslateMissing(opts) {
 
     batch.end(function(err){
       if (err) throw err;
-      file.sort();
-      file.save().then(function() {
+      if (opts.test) {
         console.log('Done!');
-      });
+      } else {
+        file.sort();
+        file.save().then(function() {
+          console.log('Done!');
+        });
+      }
     });
   });
 }
@@ -289,6 +293,12 @@ nomnom.command('translate-missing')
     choices: languages,
     required: false,
     list: true
+  })
+  .option('test', {
+    abbr: 't',
+    flag: true,
+    help: 'Print translations but not save them.',
+    required: false
   })
   .callback(commandTranslateMissing)
   .help('Translate missing keys.');
