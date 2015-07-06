@@ -104,7 +104,7 @@
     "xss": "0.x"
   },
   "devDependencies": {
-    "google-translate": "^0.1.8"
+    "google-translate": "^1.0.0"
   },
   "main": "pdr",
   "engines": {

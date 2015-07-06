@@ -4,6 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var arrDiff = require('arr-diff');
 var jsonFile = require('json-file-plus');
+var Batch = require('batch');
 var config = require('../lib/config');
 
 // Load the list of available languages.
@@ -108,35 +109,37 @@ function commandTranslateMissing(opts) {
     console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:');
 
     var formatRegex = /%[a-z]|{[a-z\-]+}/;
-    var count = 0;
+    var batch = new Batch;
+
+    batch.concurrency(3);
 
     missings[lang].forEach(function(k){
       if (formatRegex.test(baseLang[k])) {
-        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with % of {var} format.');
+        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with %{var} format.');
         return;
       }
 
-      count++;
+      batch.push(function(done){
+        googleTranslate.translate(baseLang[k], opts.base, lang, function (err, translation) {
+          if (err) {
+            console.error(err);
+            done();
+          }
+          var t = {};
+          t[k] = translation.translatedText;
+          file.set(t);
+          console.log('  "' + k + '": "' + translation.translatedText + '"');
+          done();
+        });
+      });
+    });
 
-      googleTranslate.translate(baseLang[k], opts.base, lang, callback);
-
-      function callback(err, translation) {
-        count--;
-
-        if (err) throw err;
-
-        var t = {};
-        t[k] = translation.translatedText;
-        file.set(t);
-        console.log('  "' + k + '": "' + translation.translatedText + '"');
-
-        if (count === 0) {
-          file.sort();
-          file.save().then(function() {
-            console.log('Done!');
-          });
-        }
-      }
+    batch.end(function(err){
+      if (err) throw err;
+      file.sort();
+      file.save().then(function() {
+        console.log('Done!');
+      });
     });
   });
 }
