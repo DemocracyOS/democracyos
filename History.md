@@ -1,4 +1,10 @@
 
+0.19.0 / 2015-07-06
+==================
+
+ * Add Greek translation
+ * Add Chinese (traditional) translation credit
+
 0.18.0 / 2015-07-02
 ==================
 
