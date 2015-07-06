@@ -32,6 +32,7 @@
 Apart from English and Spanish, maintained by the DemocracyOS team, these brave men and women have helped us making the platform available in the following languages:
 
 * Catalan: [Emanuel Calvo](https://github.com/3manuek)
+* Chinese (traditional): [Jackie Tin](https://twitter.com/tinjackie) and [Fabricio Di Salvo](https://twitter.com/FabricioDiSalvo)
 * Dutch: [Hendrik Bruinsma](https://twitter.com/readefries)
 * Finnish: [Anni Rautio](https://twitter.com/annirautio) and [Christian Martínez](www.hyvatilmat.com)
 * French: [Magui García Solla](https://twitter.com/magui_1984)
@@ -42,3 +43,5 @@ Apart from English and Spanish, maintained by the DemocracyOS team, these brave 
 * Russian: [@tarasdudar](https://github.com/tarasdudar)
 * Swedish: [@Feilin-Ruidian](https://github.com/Feilin-Ruidian)
 * Ukrainian: [@tarasdudar](https://github.com/tarasdudar)
+
+Note: supported languages not listed here were either generated with the Google Translate API or we just made a mistake (sorry for that!)
