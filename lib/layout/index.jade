@@ -62,9 +62,9 @@ html(lang='en')
       include includes/placeholders
       //- General Site javascript
       script.
-        window.config=!{JSON.stringify(client)}
-        window.config.locale='#{locale}'
-        window.translations=!{JSON.stringify(translations)}
+        window.config=!{JSON.stringify(client)};
+        window.config.locale='#{locale}';
+        window.translations=!{JSON.stringify(translations)};
       script(src='/app.js')
       //- End of `Javascripts`
   include includes/fonts
