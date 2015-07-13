@@ -80,6 +80,7 @@
     "democracyos-video-url-inspector": "^1.0.2",
     "diacritics": "1.2.1",
     "domify": "^1.3.3",
+    "emitter": "git://github.com/Mango/emitter",
     "eslint": "0.22.1",
     "express": "~3.4.7",
     "express-sslify": "0.1.1",
