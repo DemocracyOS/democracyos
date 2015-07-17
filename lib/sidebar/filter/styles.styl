@@ -1,0 +1,47 @@
+.sidebar-filter
+  border-bottom 1px solid #d7dbdd
+
+  .btn-group
+    float none
+    width 100%
+
+    &.open > button.btn.btn-default,
+    &.open > button.btn.btn-default.dropdown-toggle
+      background-color #727f80
+      box-shadow none
+
+    button.btn.btn-default
+      background-color #909FA0
+      font-size 12px
+      color #fff
+      text-align left
+
+      &.dropdown-toggle
+        float right
+        padding-right 0
+        padding-left 0
+        width 8%
+        background-color #909FA0
+
+      &.current-department
+        width 100%
+        border-radius 4px
+        -webkit-font-smoothing antialiased
+        overflow hidden
+
+    .dropdown-menu
+      width 100%
+      border-radius border_radius
+      li
+        display block
+        width 100%
+      a
+        display block
+        padding 6px 14px
+        white-space normal
+        font-weight bold
+        text-transform uppercase
+        font-size 12px
+        &:hover
+          background #f1f1f1
+          color #333
