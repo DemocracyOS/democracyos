@@ -99,5 +99,6 @@
   "usersWhitelist": false,
   "multiForum": false,
   "feedsLimit": 10,
-  "tweetText": ""
+  "tweetText": "",
+  "forceSafeImageURLs": true
 }
