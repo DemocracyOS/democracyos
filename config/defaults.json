@@ -64,7 +64,8 @@
     "visibility",
     "usersWhitelist",
     "multiForum",
-    "tweetText"
+    "tweetText",
+    "segmentKey"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
