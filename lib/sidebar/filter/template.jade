@@ -2,8 +2,10 @@
 
 .sidebar-filter
   .sidebar-filter-status.btn-group.btn-group-justified
-    a.btn.btn-default(data-status='open', data-open-count)= formatNumber(openCount) + t('sidebar.open')
-    a.btn.btn-default(data-status='closed', data-closed-count)= formatNumber(closedCount) + t('sidebar.closed')
+    a.btn.btn-default(data-status='open', class=(filter.status === 'open' ? 'active' : ''))
+      = formatNumber(openCount) + t('sidebar.open')
+    a.btn.btn-default(data-status='closed', class=(filter.status === 'closed' ? 'active' : ''))
+      = formatNumber(closedCount) + t('sidebar.closed')
 
   .sidebar-filter-sort.btn-group
     button.btn.btn-default.current-department(type='button')
