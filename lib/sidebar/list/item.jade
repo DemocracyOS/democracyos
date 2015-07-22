@@ -1,6 +1,6 @@
 - var voted = user.logged() && !!item.voted
 
-li(data-id=item.id)
+li(data-id=item.id, class=active ? 'active' : '')
   a(href=item.url, class = voted ? 'voted' : '')
     .item-tag
       img(src=tagImages[item.tag.image].url)
