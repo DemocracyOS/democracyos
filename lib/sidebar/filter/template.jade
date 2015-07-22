@@ -1,4 +1,4 @@
-- const formatNumber = v => (v < 100 ? v : '99+') + ' ';
+- var formatNumber = function (v) { return (v < 100 ? v : '99+') + ' '; };
 
 .sidebar-filter
   .sidebar-filter-status.btn-group.btn-group-justified
@@ -18,6 +18,6 @@
   .sidebar-filter-hide-voted(class=user.logged() ? '' : 'hide')
     input#hide-voted(type='checkbox',
       name='hide-voted',
-      checked= filter.hideVoted
-      )
+      checked= filter.hideVoted,
+      data-hide-voted)
     label(for='hide-voted')= t('sidebar.hide-voted')
