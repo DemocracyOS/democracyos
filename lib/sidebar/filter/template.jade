@@ -8,7 +8,7 @@
       = formatNumber(closedCount) + t('sidebar.closed')
 
   .sidebar-filter-sort.btn-group
-    button.btn.btn-default.current-department(type='button')
+    button.btn.btn-default.current-department(type='button', data-sort-btn)
       span.pull-left= t(currentSort.label)
       span.caret
     ul.dropdown-list
