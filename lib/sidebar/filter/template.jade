@@ -1,0 +1,23 @@
+- const formatNumber = v => (v < 100 ? v : '99+') + ' ';
+
+.sidebar-filter
+  .sidebar-filter-status.btn-group.btn-group-justified
+    a.btn.btn-default(data-status='open', data-open-count)= formatNumber(openCount) + t('sidebar.open')
+    a.btn.btn-default(data-status='closed', data-closed-count)= formatNumber(closedCount) + t('sidebar.closed')
+
+  .sidebar-filter-sort.btn-group
+    button.btn.btn-default.current-department(type='button')
+      span.pull-left= t(currentSort.label)
+      span.caret
+    ul.dropdown-list
+      each sort, name in sorts
+        - var active = name == currentSort.name
+        li(data-sort=name, class= active ? 'active' : '')
+          a(href='#')= t(sort.label)
+
+  .sidebar-filter-hide-voted(class=user.logged() ? '' : 'hide')
+    input#hide-voted(type='checkbox',
+      name='hide-voted',
+      checked= filter.hideVoted
+      )
+    label(for='hide-voted')= t('sidebar.hide-voted')
