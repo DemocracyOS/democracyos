@@ -14,7 +14,9 @@ var exec = require('child_process').exec;
 var program = require('commander');
 var installc = resolve('./node_modules/.bin/component-install');
 var crypto = require('crypto');
-var env = process.env.NODE_ENV || 'development';
+var env = process.env.NODE_ENV || 'development_';
+
+var RETRY_LIMIT = 10;
 
 program
   .option('-c, --config', 'copy and/or merge configuration file')
@@ -53,9 +55,27 @@ if (program.config && env !== 'production') {
 }
 
 if (program.components && exists(installc)) {
+    return attemptInstall(0);
+}
+
+// components often need a few goes.
+function attemptInstall (retryCount, error) {
+
+  if (error) {
+    console.log(error);
+    console.log('retrying, attempt %n of %n', retryCount, RETRY_LIMIT);
+    return attemptInstall(retryCount + 1);
+  }
+
+  if (retryCount >= RETRY_LIMIT) {
+    console.log('retry limit exceeded. Aborting');
+    return process.exit(1);
+  }
+
   exec(installc, function(err, stdout, stderr) {
     if (stdout.length) console.log(stdout);
-    if (stderr.length) return console.log(stderr), process.exit(1);
-    if (err != null) return console.log(err), process.exit(1);
+    if (stderr.length) return attemptInstall(retryCount + 1, stderr);
+    if (err != null) return attemptInstall(retryCount + 1, err);
   });
+
 }
