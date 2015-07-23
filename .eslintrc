@@ -14,9 +14,7 @@
     "new-parens": false,
     "no-underscore-dangle": false,
     "no-unused-vars": [ 1, { "vars": "all", "args": "after-used" } ],
-    "eol-last": [ 1, true ],
-    "no-labels": false,
-    "no-empty-label": false
+    "eol-last": [ 1, true ]
   },
   "env": {
     "es6": true,
