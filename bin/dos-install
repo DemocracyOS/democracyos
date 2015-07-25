@@ -58,7 +58,9 @@ if (program.components && exists(installc)) {
     return attemptInstall(0);
 }
 
-// components often need a few goes.
+/**
+ * Retry the install RETRY_LIMIT times.
+ */
 function attemptInstall (retryCount, error) {
 
   if (error) {
