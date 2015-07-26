@@ -14,7 +14,7 @@ var exec = require('child_process').exec;
 var program = require('commander');
 var installc = resolve('./node_modules/.bin/component-install');
 var crypto = require('crypto');
-var env = process.env.NODE_ENV || 'development_';
+var env = process.env.NODE_ENV || 'development';
 var RETRY_LIMIT = 10;
 
 program
