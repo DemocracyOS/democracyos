@@ -15,7 +15,6 @@ var program = require('commander');
 var installc = resolve('./node_modules/.bin/component-install');
 var crypto = require('crypto');
 var env = process.env.NODE_ENV || 'development_';
-
 var RETRY_LIMIT = 10;
 
 program
