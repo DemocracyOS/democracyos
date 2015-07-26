@@ -15,6 +15,7 @@ var program = require('commander');
 var installc = resolve('./node_modules/.bin/component-install');
 var crypto = require('crypto');
 var env = process.env.NODE_ENV || 'development';
+var RETRY_LIMIT = 10;
 
 program
   .option('-c, --config', 'copy and/or merge configuration file')
@@ -53,9 +54,29 @@ if (program.config && env !== 'production') {
 }
 
 if (program.components && exists(installc)) {
+    return attemptInstall(0);
+}
+
+/**
+ * Retry the install RETRY_LIMIT times.
+ */
+function attemptInstall (retryCount, error) {
+
+  if (error) {
+    console.log(error);
+    console.log('retrying, attempt %n of %n', retryCount, RETRY_LIMIT);
+    return attemptInstall(retryCount);
+  }
+
+  if (retryCount >= RETRY_LIMIT) {
+    console.log('retry limit exceeded. Aborting');
+    return process.exit(1);
+  }
+
   exec(installc, function(err, stdout, stderr) {
     if (stdout.length) console.log(stdout);
-    if (stderr.length) return console.log(stderr), process.exit(1);
-    if (err != null) return console.log(err), process.exit(1);
+    if (stderr.length) return attemptInstall(retryCount + 1, stderr);
+    if (err != null) return attemptInstall(retryCount + 1, err);
   });
+
 }
