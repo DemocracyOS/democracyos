@@ -65,7 +65,7 @@ function attemptInstall (retryCount, error) {
   if (error) {
     console.log(error);
     console.log('retrying, attempt %n of %n', retryCount, RETRY_LIMIT);
-    return attemptInstall(retryCount + 1);
+    return attemptInstall(retryCount);
   }
 
   if (retryCount >= RETRY_LIMIT) {
