@@ -188,7 +188,7 @@
   "markdown.url-autolinking.text.3": "Például ha a http://www.pelda.com oldalra mutasson link, a szövege pedig az legyen, hogy Látogasson el a Pelda.com oldalra!, ezt kell begépelned:",
   "markdown.url-autolinking.title": "Link",
   "markdown.will.become": "Ebből ez lesz:",
-  "notifications.error.connection-refused": "Nem sikerült kapcsolódni az értesítési motorhoz",
+  "notifications.error": "Nem sikerült kapcsolódni az értesítési motorhoz",
   "password": "Jelszó",
   "password.new": "Új jelszó",
   "password.repeat": "Jelszó megismétlése",

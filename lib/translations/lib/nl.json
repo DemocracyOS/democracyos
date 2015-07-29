@@ -188,7 +188,7 @@
   "markdown.url-autolinking.text.3": "Als je bijvoorbeeld een koppeling wilt maken naar http://www.voorbeeld.nl met de tekst 'Bezoek voorbeeld.nl', dan voer je het volgende in:",
   "markdown.url-autolinking.title": "Koppelingen",
   "markdown.will.become": "Wordt:",
-  "notifications.error.connection-refused": "Kan geen verbinding maken met notificatie-server",
+  "notifications.error": "Kan geen verbinding maken met notificatie-server",
   "password": "Wachtwoord",
   "password.new": "Nieuw wachtwoord",
   "password.repeat": "Herhaal wachtwoord",
