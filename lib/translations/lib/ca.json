@@ -188,7 +188,7 @@
   "markdown.url-autolinking.text.3": "For example, to create a link to http://www.example.com, with a link text that says, Visit Example.com!, you'd write this:",
   "markdown.url-autolinking.title": "URL autolinking",
   "markdown.will.become": "Es convertirà en:",
-  "notifications.error.connection-refused": "No es pot connectar al motor de notificacions",
+  "notifications.error": "No es pot connectar al motor de notificacions",
   "password": "Contrasenya",
   "password.new": "Nova contrasenya",
   "password.repeat": "Repetir la contrasenya",

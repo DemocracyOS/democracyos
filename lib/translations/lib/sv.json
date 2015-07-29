@@ -188,7 +188,7 @@
   "markdown.url-autolinking.text.3": "Till exempel, för att skapa en länk till http://www.example.com med en hyperlänk som säger Besök Example.com! skriver man följande:",
   "markdown.url-autolinking.title": "Länk",
   "markdown.will.become": "Blir:",
-  "notifications.error.connection-refused": "Kan inte ansluta till notifikationsservern",
+  "notifications.error": "Kan inte ansluta till notifikationsservern",
   "password": "Lösenord",
   "password.new": "Nytt lösenörd",
   "password.repeat": "Upprepa lösenord",
