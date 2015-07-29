@@ -200,7 +200,7 @@
   "markdown.url-autolinking.text.3": "For example, to create a link to http://www.example.com, with a link text that says: Visit Example.com!, you'd write this:",
   "markdown.url-autolinking.title": "Link",
   "markdown.will.become": "Will become:",
-  "notifications.error.connection-refused": "Unable to connect to notifications engine",
+  "notifications.error": "Unable to connect to notifications engine",
   "password": "Password",
   "password.new": "New Password",
   "password.repeat": "Repeat Password",

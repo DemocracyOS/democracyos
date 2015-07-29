@@ -188,7 +188,7 @@
   "markdown.url-autolinking.text.3": "Por exemplo, para criar um link para http://www.exemplo.com.br, com um texto de link que diz, Visite Exemplo.com.br!, você escrevveria o seguinte:",
   "markdown.url-autolinking.title": "Link",
   "markdown.will.become": "Resultará:",
-  "notifications.error.connection-refused": "Não é possível conectar a notificações motor",
+  "notifications.error": "Não é possível conectar a notificações motor",
   "password": "Senha",
   "password.new": "Nova senha",
   "password.repeat": "Repetir senha",
