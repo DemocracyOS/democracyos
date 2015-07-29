@@ -43,7 +43,7 @@
         p.comment #{feed.comment.text}
           .arrow-down
     footer
-      - if (feed.data.user)
+      - if (feed.data && feed.data.user)
         - if (feed.type == 'topic-voted')
           - var color = feed.data.vote == 'positive' ? 'positive' : (feed.data.vote == 'negative' ? 'negative' : 'neutral')
           .vote-bubble(class=color)=t('feed.call-to-action.' + color)
