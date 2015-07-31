@@ -27,8 +27,7 @@ html(lang='en')
       link(rel='stylesheet', href='/app.css')
 
       //- HTML5 shim, for IE6-8 support of HTML5 elements
-      //if lt IE 9
-      script(type='text/javascript', src='//html5shim.googlecode.com/svn/trunk/html5.js')
+      script(src="https://cdn.polyfill.io/v1/polyfill.min.js")
 
       link(rel="icon", type="image/x-icon", href=config.favicon)
 
@@ -58,7 +57,7 @@ html(lang='en')
       //- Start of `Javascripts`
 
       //- Core 3rd parties libs
-      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
       include includes/placeholders
       //- General Site javascript
       script.
