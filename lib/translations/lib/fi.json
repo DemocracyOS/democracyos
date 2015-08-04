@@ -248,6 +248,8 @@
   "settings.locale.ru": "Venäjän",
   "settings.locale.sv": "Ruotsi",
   "settings.locale.uk": "Ukrainan",
+  "settings.locale.pl": "Puola",
+  "settings.locale.zh_TW": "Kiinalainen",
   "side-comments.cancel": "peruuttaa",
   "side-comments.confirmation.title": "Poista kommentti",
   "side-comments.delete": "poistaa",
