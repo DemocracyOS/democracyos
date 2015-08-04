@@ -1,8 +1,6 @@
 [
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0095/12"
+    "topicId": "0095/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"
   , "officialTitle": ""
   , "mediaTitle": "Comercios con accesibilidad física para todos"
@@ -29,9 +27,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0151/13"
+    "topicId": "0151/13"
   , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
   , "mediaTitle": "Plan integral de ciclovías"
@@ -62,9 +58,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0203/12"
+    "topicId": "0203/12"
   , "tag" : "Cultura"  
   , "officialTitle": ""
   , "mediaTitle": "Declarar Ciudadano Ilustre al actor, director y maestro escénico, Osvaldo Bonet"
@@ -85,9 +79,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0204/12"
+    "topicId": "0204/12"
   , "tag" : "Cultura"    
   , "officialTitle": ""
   , "mediaTitle": "Declarar Ciudadano Ilustre al Dr. Sergio Gabriel Torres"
@@ -107,9 +99,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0205/12"
+    "topicId": "0205/12"
   , "tag" : "Cultura"  
   , "officialTitle": ""
   , "mediaTitle": "Declarar Ciudadana Ilustre a la Sra. Iris Scaccheri"
@@ -130,9 +120,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0234/12"
+    "topicId": "0234/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Advertencias sobre alimentos procesados"
@@ -183,9 +171,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0419/12"
+    "topicId": "0419/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Tu tiempo de espera en locales comerciales"
@@ -225,9 +211,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0522/12"
+    "topicId": "0522/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Modificación ley publicidad Juegos de Azar"
@@ -252,9 +236,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0589/12"
+    "topicId": "0589/12"
   , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
   , "mediaTitle": "Semáforos más inteligentes"
@@ -279,9 +261,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0648/12"
+    "topicId": "0648/12"
   , "tag" : "Protección y Uso del Espacio Público"  
   , "officialTitle": ""
   , "mediaTitle": "Concesiones de Bares/Kioscos en parques"
@@ -386,9 +366,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0720/12"
+    "topicId": "0720/12"
   , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
   , "mediaTitle": "Ahora le toca a las bicicletas con motor"
@@ -458,9 +436,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0786/12"
+    "topicId": "0786/12"
   , "tag" : "Cultura"  
   , "officialTitle": ""
   , "mediaTitle": "Clemente Onelli será calle"
@@ -480,9 +456,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0798/12"
+    "topicId": "0798/12"
   , "tag" : "Seguridad"  
   , "officialTitle": ""
   , "mediaTitle": "Nuevo plan de evacuación y simulacro en casos de explosión e incendio"
@@ -607,9 +581,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0807/12"
+    "topicId": "0807/12"
   , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Una oficina de empresa de telefonía móvil por comuna"
@@ -644,9 +616,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0216/13"
+    "topicId": "0216/13"
   , "tag" : "Justicia"  
   , "officialTitle": ""
   , "mediaTitle": "Cambios en la forma de designación de las cabezas Ministerio Público"
@@ -696,9 +666,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0163/13"
+    "topicId": "0163/13"
   , "tag" : "Planeamiento Urbano"  
   , "officialTitle": "Creación de un nuevo barrio en la ciudad"
   , "source": "https://s3.amazonaws.com/pdr-app/0163-13.doc"
@@ -753,9 +721,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0268/13"
+    "topicId": "0268/13"
   , "tag" : "Protección y Uso del Espacio Público "  
   , "officialTitle": ""
   , "mediaTitle": "La defensa del peatón frente al TC en la CABA"
@@ -775,9 +741,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0340/12"
+    "topicId": "0340/12"
   , "tag" : "Presupuesto, Hacienda, Administración Financiera y Política Tributaria"  
   , "officialTitle": ""
   , "mediaTitle": "Vendemos el edificio de la calle Bartolomé Mitre 1247/49/51/55"
@@ -812,9 +776,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0416/12"
+    "topicId": "0416/12"
   , "tag" : "Defensa de Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Envíos gratis para embarazadas, jubilados y personas con necesidades especiales"
@@ -834,9 +796,7 @@
     ]
 },
 {
-    "state" : "bill"
-  , "status" : "open"  
-  , "topicId": "0906/12"
+    "topicId": "0906/12"
   , "tag" : "Defensa de Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Cajero automático honesto"

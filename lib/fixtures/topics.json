@@ -1,8 +1,6 @@
 [
 {
-    "state" : "bill"
-  , "status" : "open"
-  , "topicId": "EMI Nº 00086"
+    "topicId": "EMI Nº 00086"
   , "tag" : "Internet"
   , "officialTitle": ""
   , "mediaTitle": "Internet civil framework"
