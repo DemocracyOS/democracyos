@@ -40,7 +40,7 @@
         .form-group.hide
           label.col-sm-2.control-label= t('admin-topics-form.label.clause-truncation-text')
           .col-sm-10
-            input.form-control(type='text', name='clauseTruncationText', placeholder=t('common.read-more'), value=topic.clauseTruncationText)
+            input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
         .form-group
           label.col-sm-2.control-label= t('admin-topics-form.label.source')
           .col-sm-10
@@ -48,7 +48,7 @@
         .form-group
           label.col-sm-2.control-label= t('admin-topics-form.label.summary')
           .col-sm-10
-            textarea.form-control(name='summary', tabindex=7)= topic.summary
+            textarea.form-control(name='body', tabindex=7)= topic.body
         .form-group.closingAt
           label.col-sm-2.control-label= t('admin-topics-form.label.closingAt')
           - var closingAt = ''
@@ -65,7 +65,7 @@
             .input-group
               input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
         .form-group
-          .topic-clauses
+          .topic-clauses.hide
             - if (topic.clauses && topic.clauses.length)
               - each clause, idx in topic.clauses
                 include clause

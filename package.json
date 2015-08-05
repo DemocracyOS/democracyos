@@ -131,7 +131,7 @@
     "qs": "2.4.1",
     "quill": "git://github.com/DemocracyOS/quill",
     "removed": "0.0.5",
-    "side-comments": "git://github.com/DemocracyOS/side-comments#master",
+    "side-comments": "git://github.com/DemocracyOS/side-comments#0.0.19",
     "store": "1.3.17",
     "stringify": "3.1.0",
     "strip": "0.0.7",
@@ -150,9 +150,15 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "3.2.1",
+    "yargs": "3.9.1",
+    "gulp-if": "1.2.5",
+    "gulp-livereload": "3.8.0",
+    "gulp-eslint": "0.13.0",
+    "eslint": "0.22.1",
+    "verigy": "2.0.1",
+    "jsdom": "3.1.2",
     "wrap": "git://github.com/jfresco/wrap#master",
-    "xss": "0.x",
-    "yargs": "3.9.1"
+    "xss": "0.2.2"
   },
   "devDependencies": {
     "nomnom": "^1.8.1",

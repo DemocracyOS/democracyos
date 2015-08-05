@@ -36,22 +36,23 @@
 
     h1=proposal.mediaTitle
     - if (proposal.author)
-      h2.author=t('admin-topic-form.label.author') + ': '
+      h2.author=t('admin-topics-form.label.author') + ': '
         - if (proposal.authorUrl)
           a(href=proposal.authorUrl, target='_blank')=proposal.author
         - else
           =proposal.author
     h3=proposal.title
     .entry-content
-      .summary
+      .body!=toHTML(proposal.clauses[0], { className: ['commentable-section'], iframeResponsive: true })
       .clauses
+        - var clauses = proposal.clauses.slice(1)
         - if (clauses.length)
           - each clause, i in clauses
-            - var classes = ['hide']
-            - classes.push(clause.centered ? 'text-center' : '')
-            .clause.commentable-section(class=classes, data-section-id=clause.id)!=clause.text
-      - if (proposal.clauseTruncationText)
-        a.read-more(href="#")= proposal.clauseTruncationText
+            - var classes = ['hide', 'clause']
+            - classes.push(clause.empty ? '' : 'commentable-section')
+            !=toHTML(clause, { className: classes, iframeResponsive: true })
+      - if (proposal.bodyTruncationText)
+        a.read-more(href="#")= proposal.bodyTruncationText
       - else
         a.read-more(href="#")= t('common.read-more')
 
