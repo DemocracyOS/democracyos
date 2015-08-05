@@ -19,7 +19,6 @@ Please refer to the [Installation](https://github.com/DemocracyOS/app/wiki/Insta
 * [Datos Abiertos México](http://politica.datos.gob.mx): Mexican government's official deployment Open Data Policy.
 * [Nuestra ley Telecom](http://nuestraleytelecom.mx/): Mexican initiative for a crowdsourced telecommunications bill.
 * [VaiMudarNaCopa](http://democracia.vaimudar.org/): Brazilian NGO for discussing social and economic impact of the FIFA World Cup.
-* [Vot-it](http://vot-it.org/): Tunisian official constitution debate and voting.
 
 ## Contributing
 
