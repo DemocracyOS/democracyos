@@ -283,6 +283,7 @@
   "signup.email": "Email",
   "signup.email-sent": "Email sent",
   "signup.email-validated": "Your email has been validated and now you are logged in",
+  "signup.facebook.need-email-error": "To signup you need to have configured an email on your facebook account.",
   "signup.firstname": "Firstname",
   "signup.go-to": "Go to",
   "signup.lastname": "Lastname",
