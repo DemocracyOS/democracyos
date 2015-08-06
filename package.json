@@ -78,7 +78,7 @@
     "debug": "^2.2.0",
     "del": "1.1.1",
     "democracyos-db": "0.0.1",
-    "democracyos-notifier": "^0.0.6",
+    "democracyos-notifier": "^0.0.9",
     "democracyos-video-url-inspector": "^1.0.2",
     "diacritics": "1.2.1",
     "domify": "^1.3.3",
