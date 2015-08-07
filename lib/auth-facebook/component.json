@@ -3,7 +3,8 @@
   "dependencies": {
     "visionmedia/page.js": "1.3.7",
     "component/t": "1.0.0",
-    "component/classes": "1.2.0"
+    "component/classes": "1.2.0",
+    "component/cookie": "^1.1.1"
   },
   "locals": [
     "view",

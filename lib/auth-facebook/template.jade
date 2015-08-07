@@ -4,6 +4,8 @@
       i.icon-signin
     h1= t('signin.login-to') + ' ' + t('common.app-name')
   form(action="/auth/facebook", method="get", role="form")
+    - if (flashMessage)
+      p= flashMessage.message
     button.btn-facebook(type="submit")
       span.flaticon.social.facebook
       = t('signin.login-with-facebook')
