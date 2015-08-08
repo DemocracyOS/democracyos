@@ -2,12 +2,12 @@
   "name": "comments-edit",
   "description": "Comments editing component",
   "dependencies": {
-    "component/dom": "1.0.6",
-    "solde9/scroll-to": "0.0.2"
+    "component/dom": "1.0.6"
   },
   "locals": [
     "form-view",
-    "is-in-viewport"
+    "is-in-viewport",
+    "scroll-to"
   ],
   "scripts": [ "view.js" ],
   "styles" : [ "styles.styl" ],

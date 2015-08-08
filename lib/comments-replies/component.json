@@ -9,7 +9,6 @@
     "component/t": "1.0.0",
     "slifszyc/query": "0.0.3",
     "component/closest": "0.1.4",
-    "solde9/scroll-to": "0.0.2",
     "jadejs/jade": "1.1.5",
     "yields/empty": "0.0.1",
     "yields/serialize": "0.2.0",
@@ -20,6 +19,7 @@
     "render",
     "request",
     "comments-replies-edit",
+    "scroll-to",
     "stateful-view",
     "debug"
   ],

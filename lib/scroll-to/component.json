@@ -1,0 +1,10 @@
+{
+  "name": "scroll-to",
+  "description": "wrapper for solde9/scroll-to component",
+  "dependencies": {
+    "component/dom": "1.0.6",
+    "solde9/scroll-to": "0.0.2"
+  },
+  "scripts": [ "scroll-to.js" ],
+  "main": "scroll-to.js"
+}
