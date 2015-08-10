@@ -80,6 +80,7 @@
   "logoMobile": "/boot/logo.png",
   "favicon": " /boot/favicon.ico",
   "organizationName": "DemocracyOS on GitHub",
+  "organizationEmail": "no-reply@democracyos.org",
   "organizationUrl": "https://github.com/DemocracyOS/app",
   "learnMoreUrl": "",
   "googleAnalyticsTrackingId": "",
