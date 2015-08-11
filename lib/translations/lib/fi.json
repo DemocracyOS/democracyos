@@ -188,7 +188,7 @@
   "markdown.url-autolinking.text.3": "Esimerkiksi luoda linkin http://www.example.com, jossa on linkki, jossa lukee, Kirauduu sisään Example.com!, olisit kirjoittaa tähän:",
   "markdown.url-autolinking.title": "URL autolinking",
   "markdown.will.become": "Tulee:",
-  "notifications.error.connection-refused": "Yhteyttä ilmoitukset moottori",
+  "notifications.error": "Yhteyttä ilmoitukset moottori",
   "password": "Salasana",
   "password.new": "Uusi salasana",
   "password.repeat": "Toista salasana",

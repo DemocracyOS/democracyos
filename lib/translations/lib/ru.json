@@ -188,7 +188,7 @@
   "markdown.url-autolinking.text.3": "Например, чтобы создать ссылку на http://www.example.com, с текстом ссылки, где говорится, Посетите example.com !, вы должны написать так:",
   "markdown.url-autolinking.title": "Ссылка",
   "markdown.will.become": "Превратится на:",
-  "notifications.error.connection-refused": "Сервер сообщений не подключен",
+  "notifications.error": "Сервер сообщений не подключен",
   "password": "Пароль",
   "password.new": "Новый пароль",
   "password.repeat": "Повторите пароль",

@@ -211,6 +211,7 @@
   "newsfeed.nothing-to-show": "Nothing to show",
   "newsfeed.welcome.body": "Please <a href=\"/signin\">signin</a> or <a href=\"signup\">signup</a> to start using DemocracyOS",
   "newsfeed.welcome.title": "Build your own democracy today",
+  "notifications.error": "Unable to connect to notifications engine",
   "notifications.error.connection-refused": "Unable to connect to notifications engine",
   "password": "Password",
   "password.new": "New Password",
