@@ -64,6 +64,8 @@ html(lang='en')
         window.config=!{JSON.stringify(client)};
         window.config.locale='#{locale}';
         window.translations=!{JSON.stringify(translations)};
+      - if (config.segmentKey)
+        include includes/segment
       script(src='/app.js')
       //- End of `Javascripts`
   include includes/fonts

@@ -65,7 +65,8 @@
     "visibility",
     "usersWhitelist",
     "multiForum",
-    "tweetText"
+    "tweetText",
+    "segmentKey"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -102,5 +103,6 @@
   "multiForum": false,
   "feedsLimit": 10,
   "tweetText": "",
-  "forceSafeImageURLs": true
+  "forceSafeImageURLs": true,
+  "segmentKey": ""
 }
