@@ -1,16 +1,14 @@
 #!/usr/bin/env node
 
-// Little hack to include `NODE_PATH=.`
 var path = require('path');
-require('node-path')(module, [path.resolve('.')]);
-
 var fs = require('fs');
 var arrDiff = require('arr-diff');
-var config = require('lib/config');
 var jsonFile = require('json-file-plus');
+var Batch = require('batch');
+var config = require('../lib/config');
 
 // Load the list of available languages.
-var LANGS_FOLDER = 'lib/translations/lib'
+var LANGS_FOLDER = path.resolve(__dirname, '../lib/translations/lib');
 var languages = fs.readdirSync(LANGS_FOLDER).map(function(v){
   return v.replace('.json', '');
 });
@@ -21,30 +19,25 @@ var languages = fs.readdirSync(LANGS_FOLDER).map(function(v){
 
 (function(){
   function sort(old) {
-    if (typeof(old) !== 'object' && old !== null) {
-        return old;
+    if (typeof old !== 'object' && old !== null) {
+      return old;
     }
     var copy = Array.isArray(old) ? [] : {};
     var keys = Object.keys(old).sort();
     keys.forEach(function(key) {
-        copy[key] = sort(old[key]);
+      copy[key] = sort(old[key]);
     });
     return copy;
   }
 
   jsonFile.JSONFile.prototype.sort = function(){
-    this.data = sort(this.data)
-  }
+    this.data = sort(this.data);
+  };
 })();
 
 /*
  * Utility Functions
  */
-
-function halt(err){
-  if (err) console.error(err)
-  process.exit(1);
-}
 
 function getLangPath(lang) {
   return path.join(LANGS_FOLDER, lang + '.json');
@@ -61,7 +54,7 @@ function getLangKeys(lang) {
 function forEachLanguageFile(langs, cb) {
   return langs.forEach(function(lang){
     jsonFile(getLangPath(lang), function(err, file) {
-      if (err) return halt(err);
+      if (err) throw err;
       cb.call(file, lang, file);
     });
   });
@@ -72,8 +65,8 @@ function forEachLanguageFile(langs, cb) {
  */
 
 function commandListMissing(opts) {
-  if (!opts.on || !opts.on.length) {
-    opts.on = languages.filter(function(v){ return v !== opts.base; })
+  if (!opts.on || !opts.on.length) {
+    opts.on = languages.filter(function(v){ return v !== opts.base; });
   }
 
   var baseKeys = getLangKeys(opts.base);
@@ -92,16 +85,16 @@ function commandListMissing(opts) {
   });
 }
 
-function commandTranslateMissing(opts) {
-  if (!opts.on || !opts.on.length) {
-    opts.on = languages.filter(function(v){ return v !== opts.base; })
+function commandTranslateMissing(opts) {
+  if (!opts.on || !opts.on.length) {
+    opts.on = languages.filter(function(v){ return v !== opts.base; });
   }
 
   var googleTranslate = require('google-translate')(config.googleAPIKey);
   var baseLang = getLang(opts.base);
   var baseKeys = getLangKeys(opts.base);
 
-  var missings = {}
+  var missings = {};
   var langs = opts.on.filter(function(lang){
     var onKeys = getLangKeys(lang);
     var missing = arrDiff(baseKeys, onKeys);
@@ -115,44 +108,48 @@ function commandTranslateMissing(opts) {
   forEachLanguageFile(langs, function(lang, file){
     console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:');
 
-    var format_regex = /%[a-z]|{[a-z\-]+}/;
-    var count = 0;
+    var formatRegex = /%[a-z]|{[a-z\-]+}/;
+    var batch = new Batch;
+
+    batch.concurrency(3);
 
     missings[lang].forEach(function(k){
-      if (format_regex.test(baseLang[k])) {
-        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with % of {var} format.')
-        return
+      if (formatRegex.test(baseLang[k])) {
+        console.warn('  Couldnt translate `' + k + '`, it has a variable defined with {var} format.');
+        return;
       }
 
-      count++;
+      batch.push(function(done){
+        googleTranslate.translate(baseLang[k], opts.base, lang, function (err, translation) {
+          if (err) {
+            console.error(err);
+            done();
+          }
+          var t = {};
+          t[k] = translation.translatedText;
+          file.set(t);
+          console.log('  "' + k + '": "' + translation.translatedText + '"');
+          done();
+        });
+      });
+    });
 
-      googleTranslate.translate(baseLang[k], opts.base, lang, callback);
-
-      function callback(err, translation) {
-        count--;
-
-        if (err) return halt(err);
-
-        var t = {};
-        t[k] = translation.translatedText;
-        file.set(t);
-        console.log('  "' + k + '": "' + translation.translatedText + '"');
-
-        if (count === 0) {
-          file.sort();
-          file.save().then(function() {
-            console.log('Done!');
-          }).catch(function(err) {
-            halt(err);
-          });
-        }
+    batch.end(function(err){
+      if (err) throw err;
+      if (opts.test) {
+        console.log('Done!');
+      } else {
+        file.sort();
+        file.save().then(function() {
+          console.log('Done!');
+        });
       }
     });
   });
 }
 
 function commandDeleteKey(opts) {
-  var langs = opts.base || languages
+  var langs = opts.base || languages;
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Deleting keys from `' + lang + '`:');
@@ -166,19 +163,19 @@ function commandDeleteKey(opts) {
     file.save().then(function() {
       console.log('Done!');
     }).catch(function(err) {
-      halt(err);
+      throw err;
     });
   });
 }
 
 function commandRenameKey(opts) {
-  var langs = opts.on || languages
+  var langs = opts.on || languages;
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Renaming keys from `' + lang + '`:');
 
     if (opts.key.length !== opts.name.length) {
-      halt('Have to provide the same amount of keys and names.');
+      throw new Error('Have to provide the same amount of keys and names.');
     }
 
     var edited = false;
@@ -204,7 +201,7 @@ function commandRenameKey(opts) {
       file.save().then(function() {
         console.log('Done!');
       }).catch(function(err) {
-        halt(err);
+        throw err;
       });
     }
   });
@@ -243,19 +240,19 @@ function commandDeleteExtra(opts) {
     commandDeleteKey({
       on: [lang],
       key: extra
-    })
+    });
   });
 }
 
 function commandSort(opts){
-  var langs = opts.lang || languages
+  var langs = opts.lang || languages;
 
   forEachLanguageFile(langs, function(lang, file){
     file.sort();
     file.save().then(function() {
       console.log('`' + lang + '` sorted.');
     }).catch(function(err) {
-      halt(err);
+      throw err;
     });
   });
 }
@@ -296,6 +293,12 @@ nomnom.command('translate-missing')
     choices: languages,
     required: false,
     list: true
+  })
+  .option('test', {
+    abbr: 't',
+    flag: true,
+    help: 'Print translations but not save them.',
+    required: false
   })
   .callback(commandTranslateMissing)
   .help('Translate missing keys.');

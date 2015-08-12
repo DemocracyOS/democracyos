@@ -32,8 +32,9 @@
     "redirect": "normal"
   },
   "notifications": {
-    "url": "http://localhost:9001/api/events",
-    "token": "1234"
+    "notifier": "",
+    "token": "",
+    "mandrillToken": ""
   },
   "client": [
     "protocol",
@@ -80,6 +81,7 @@
   "logoMobile": "/boot/logo.png",
   "favicon": " /boot/favicon.ico",
   "organizationName": "DemocracyOS on GitHub",
+  "organizationEmail": "no-reply@democracyos.org",
   "organizationUrl": "https://github.com/DemocracyOS/app",
   "learnMoreUrl": "",
   "googleAnalyticsTrackingId": "",

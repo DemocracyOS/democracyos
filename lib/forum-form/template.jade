@@ -13,7 +13,9 @@ main.container
           fieldset
             label= t('forum.form.url.label')
             .input-group.subdomain
-              div.input-group-addon= domain
+              div.input-group-addon
+                span.desktop= domain
+                span.mobile /
               input(type='text', name='name', validate='required forum', autofocus, id='hostname', autocorrect='off', autocapitalize='off')
               span.error.name-unavailable.hide=t('forum.form.url.unavailable')
 
