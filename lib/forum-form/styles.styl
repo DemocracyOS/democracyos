@@ -95,7 +95,6 @@
         border-top-left-radius 0
         border-bottom-left-radius 0
 
-
   .form-group
     margin 0
 
@@ -104,8 +103,14 @@
         .error
           top 40px
 
-    &.subdomain
-      @media screen and (max-width: 700px)
-        .error
-          top -21px
-          right -4px
+  .subdomain
+    .input-group-addon
+      .mobile
+        display none
+
+      @media screen and (max-width: 450px)
+        .desktop
+          display none
+
+        .mobile
+          display inline
