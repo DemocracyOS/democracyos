@@ -142,7 +142,7 @@
     "t-component": "^1.0.0",
     "through2-concurrent": "1.0.0",
     "timeago": "git://github.com/jfresco/timeago.git#master",
-    "toggle": "git://github.com/slifszyc/toggle",
+    "democracyos-toggle": "^0.1.0",
     "toggle-parent": "git://github.com/jfresco/toggle-parent.git#fix/npm-dependencies",
     "transliteration": "~0.1.1",
     "trim-html": "0.1.7",
