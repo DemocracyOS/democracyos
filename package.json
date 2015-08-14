@@ -87,7 +87,7 @@
     "express": "~3.4.7",
     "express-sslify": "0.1.1",
     "fb-signed-parser": "0.0.3",
-    "ga": "git://github.com/jfresco/ga.git#add/package-json",
+    "democracyos-ga": "^1.2.0",
     "get-form-data": "1.2.2",
     "gulp": "^3.8.11",
     "gulp-add-src": "0.2.0",
