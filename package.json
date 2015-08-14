@@ -141,7 +141,7 @@
     "superagent": "^1.2.0",
     "t-component": "^1.0.0",
     "through2-concurrent": "1.0.0",
-    "timeago": "git://github.com/jfresco/timeago.git#master",
+    "democracyos-timeago": "^0.0.1",
     "democracyos-toggle": "^0.1.0",
     "democracyos-toggle-parent": "^0.1.0",
     "transliteration": "~0.1.1",
