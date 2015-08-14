@@ -131,7 +131,7 @@
     "passport-local": "~0.1.6",
     "passport-local-mongoose": "~0.2.4",
     "qs": "2.4.1",
-    "quill": "git://github.com/DemocracyOS/quill",
+    "democracyos-quill": "^0.19.12",
     "removed": "0.0.5",
     "side-comments": "git://github.com/DemocracyOS/side-comments#0.0.19",
     "store": "1.3.17",
