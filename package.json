@@ -143,7 +143,7 @@
     "through2-concurrent": "1.0.0",
     "timeago": "git://github.com/jfresco/timeago.git#master",
     "democracyos-toggle": "^0.1.0",
-    "toggle-parent": "git://github.com/jfresco/toggle-parent.git#fix/npm-dependencies",
+    "democracyos-toggle-parent": "^0.1.0",
     "transliteration": "~0.1.1",
     "trim-html": "0.1.7",
     "truncate": "1.0.4",
