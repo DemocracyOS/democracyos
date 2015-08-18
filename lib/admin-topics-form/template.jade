@@ -4,7 +4,7 @@
     p.text-center
       a.btn.btn-lg.btn-primary.create-tag(href='/admin/tags/create')=t('admin-tags-form.title.create')
   - else
-    .topic-admin.col-md-10
+    .topic-admin.col-md-9
       .heading
         .circle
           i.icon-user
@@ -13,57 +13,48 @@
         input(type='hidden', name='_topic_id_', value=topic.id)
         ul.form-messages
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.mediaTitle')
-          .col-sm-10
-            input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=1, placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
+          label= t('admin-topics-form.label.mediaTitle')
+          input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=1, placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.tag')
-          .col-sm-10
-            select.form-control(name='tag', tabindex=2, validate='required')
-              - each tag in tags
-                option(selected= topic.tag ? tag.hash === topic.tag.hash : false, value=tag.hash)= tag.name
+          label= t('admin-topics-form.label.tag')
+          select.form-control(name='tag', tabindex=2, validate='required')
+            - each tag in tags
+              option(selected= topic.tag ? tag.hash === topic.tag.hash : false, value=tag.hash)= tag.name
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.topicId')
-          .col-sm-10
-            input.form-control(type='text', id="topicId", name='topicId', tabindex=3, placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
+          label= t('admin-topics-form.label.topicId')
+          input.form-control(type='text', id="topicId", name='topicId', tabindex=3, placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.author')
-          .col-sm-10
-            input.form-control(type='text', id="topicAuthor", name='topicAuthor', tabindex=4, placeholder='John Doe', value=topic.author, validate='author')
+          label= t('admin-topics-form.label.author')
+          input.form-control(type='text', id="topicAuthor", name='topicAuthor', tabindex=4, placeholder='John Doe', value=topic.author, validate='author')
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.author') + ' URL'
-          .col-sm-10
-            input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=5, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
+          label= t('admin-topics-form.label.author') + ' URL'
+          input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=5, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.votable')
-          .col-sm-10.votable-toggle
+          label= t('admin-topics-form.label.votable')
+          .votable-toggle
         .form-group.hide
-          label.col-sm-2.control-label= t('admin-topics-form.label.clause-truncation-text')
-          .col-sm-10
-            input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
+          label= t('admin-topics-form.label.clause-truncation-text')
+          input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.source')
-          .col-sm-10
-            input.form-control(type='url', name='source', tabindex=6, placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
+          label= t('admin-topics-form.label.source')
+          input.form-control(type='url', name='source', tabindex=6, placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
         .form-group
-          label.col-sm-2.control-label= t('admin-topics-form.label.summary')
-          .col-sm-10
-            textarea.form-control(name='body', tabindex=7)= topic.body
+          label= t('admin-topics-form.label.summary')
+          textarea.form-control(name='body', tabindex=7)= topic.body
         .form-group.closingAt
-          label.col-sm-2.control-label= t('admin-topics-form.label.closingAt')
+          label= t('admin-topics-form.label.closingAt')
           - var closingAt = ''
           - var closingAtTime = ''
           - if (topic.closingAt)
             - closingAt = new Date(topic.closingAt)
             - var closingAtTime = moment(closingAt).format('H:mm')
             - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
-          .col-sm-10
-            .input-group
-              input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
-              span.input-group-addon.clear-closingAt
-                i.glyphicon.glyphicon-remove
-            .input-group
-              input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
+          .input-group
+            input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
+            span.input-group-addon.clear-closingAt
+              i.glyphicon.glyphicon-remove
+          .input-group
+            input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
         .form-group
           .topic-clauses.hide
             - if (topic.clauses && topic.clauses.length)
@@ -72,16 +63,16 @@
               a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-topics-form.button.add-clause')
           span.add-clause-forbidden.hide=t('admin-topics-form.message.add-clause-forbidden')
         .form-group
-          label.col-sm-2.control-label=t('admin-topics-form.label.resources')
-          .topic-links.col-sm-10
+          label=t('admin-topics-form.label.resources')
+          .topic-links
             - if (topic.links && topic.links.length)
               - each link, id in topic.links
                 include link
-          .col-sm-2.pull-right
+          .pull-left
             a.add-link.btn.btn-block.btn-info(href='#')= t('admin-topics-form.button.add-link')
             .form-group: input.btn.btn-success.btn-block.btn-lg.hide(type='submit', tabindex=12, value=t('admin-topics-form.button.submit'))
           span.add-link-forbidden.hide=t('admin-topics-form.message.add-link-forbidden')
-    .col-md-2.commands
+    .col-md-3.commands
       a.btn.btn-success.btn-block.save
         span=t('admin-topics-form.button.submit')
       a.btn.btn-primary.btn-block.make-private(class=topic.public && topic.id ? '' : 'hide')
