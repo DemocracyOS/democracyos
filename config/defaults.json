@@ -32,7 +32,7 @@
     "redirect": "normal"
   },
   "notifications": {
-    "notifier": "",
+    "url": "",
     "token": "",
     "mandrillToken": ""
   },
