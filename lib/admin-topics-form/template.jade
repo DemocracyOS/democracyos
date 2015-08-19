@@ -56,13 +56,6 @@
           .input-group
             input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
         .form-group
-          .topic-clauses.hide
-            - if (topic.clauses && topic.clauses.length)
-              - each clause, idx in topic.clauses
-                include clause
-              a.add-clause.btn.btn-info.btn-xs(href='#')= t('admin-topics-form.button.add-clause')
-          span.add-clause-forbidden.hide=t('admin-topics-form.message.add-clause-forbidden')
-        .form-group
           label=t('admin-topics-form.label.resources')
           .topic-links
             - if (topic.links && topic.links.length)
