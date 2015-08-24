@@ -34,7 +34,17 @@
   "notifications": {
     "url": "",
     "token": "",
-    "mandrillToken": ""
+    "notifier": {
+      "mongoUrl": "",
+      "collection": "",
+      "mailer": {
+        "service": "",
+        "auth": {
+          "user": "",
+          "pass": ""
+        }
+      }
+    }
   },
   "client": [
     "protocol",
