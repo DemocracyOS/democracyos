@@ -34,15 +34,11 @@
   "notifications": {
     "url": "",
     "token": "",
-    "notifier": {
-      "mongoUrl": "",
-      "collection": "",
-      "mailer": {
-        "service": "",
-        "auth": {
-          "user": "",
-          "pass": ""
-        }
+    "mailer": {
+      "service": "",
+      "auth": {
+        "user": "",
+        "pass": ""
       }
     }
   },
