@@ -73,7 +73,8 @@
     "multiForum",
     "tweetText",
     "segmentKey",
-    "spamLimit"
+    "spamLimit",
+    "availableLocales"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -111,5 +112,23 @@
   "feedsLimit": 10,
   "tweetText": "",
   "forceSafeImageURLs": true,
-  "segmentKey": ""
+  "segmentKey": "",
+  "availableLocales": [
+    "ca",
+    "de",
+    "en",
+    "es",
+    "fi",
+    "fr",
+    "gl",
+    "hu",
+    "it",
+    "nl",
+    "pl",
+    "pt",
+    "ru",
+    "sv",
+    "uk",
+    "zh_TW"
+  ]
 }
