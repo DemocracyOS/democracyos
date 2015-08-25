@@ -68,7 +68,7 @@
     "tweetText",
     "segmentKey",
     "spamLimit",
-    "availableTranslations"
+    "availableLocales"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -107,7 +107,7 @@
   "tweetText": "",
   "forceSafeImageURLs": true,
   "segmentKey": "",
-  "availableTranslations": [
+  "availableLocales": [
     "ca",
     "de",
     "en",
