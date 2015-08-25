@@ -34,7 +34,13 @@
   "notifications": {
     "url": "",
     "token": "",
-    "mandrillToken": ""
+    "mailer": {
+      "service": "",
+      "auth": {
+        "user": "",
+        "pass": ""
+      }
+    }
   },
   "client": [
     "protocol",
