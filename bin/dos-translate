@@ -149,7 +149,7 @@ function commandTranslateMissing(opts) {
 }
 
 function commandDeleteKey(opts) {
-  var langs = opts.base || languages;
+  var langs = opts.on || languages;
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Deleting keys from `' + lang + '`:');
