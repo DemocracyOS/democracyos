@@ -329,6 +329,7 @@
   "validators.invalid.author": "El autor no es válido",
   "validators.invalid.email": "El correo electronico no es válido",
   "validators.invalid.firstname": "El nombre no es válido",
+  "validators.invalid.forum": "Nombre no válido",
   "validators.invalid.lastname": "El apellido no es válido",
   "validators.invalid.number": "Número no válido",
   "validators.invalid.time": "Tiempo no válido",
