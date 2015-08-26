@@ -257,6 +257,27 @@ function commandSort(opts){
   });
 }
 
+function commandDeleteRepeatedValues(opts) {
+  var on = opts.on || languages;
+
+  var baseLanguage = getLang(opts.base);
+
+  on.forEach(function(lang){
+    var language = getLang(lang);
+    var toDelete = [];
+
+    Object.keys(language).forEach(function(key){
+      if (!baseLanguage[key]) return;
+      if (baseLanguage[key] === language[key]) toDelete.push(key);
+    });
+
+    if (toDelete.length) commandDeleteKey({
+      on: [lang],
+      key: toDelete
+    });
+  });
+}
+
 /*
  * Definition of terminal interface
  */
@@ -370,6 +391,22 @@ nomnom.command('delete-extra')
   })
   .callback(commandDeleteExtra)
   .help('Delete extra keys from `--on` that are not present on `--base`.');
+
+nomnom.command('delete-repeated-values')
+  .option('base', {
+    abbr: 'b',
+    help: 'Language to use as the base for the comparisons.',
+    required: true
+  })
+  .option('on', {
+    abbr: 'o',
+    help: 'Language(s) you want to delete keys from. Defaults to all.',
+    choices: languages,
+    required: false,
+    list: true
+  })
+  .callback(commandDeleteRepeatedValues)
+  .help('Delete keys from `--on` with the same values as `--base`.');
 
 nomnom.command('sort')
   .option('lang', {
