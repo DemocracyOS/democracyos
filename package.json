@@ -166,7 +166,7 @@
     "nomnom": "^1.8.1",
     "arr-diff": "^1.0.1",
     "json-file-plus": "^3.0.0",
-    "google-translate": "^0.1.8"
+    "google-translate": "^1.0.0"
   },
   "main": "pdr",
   "engines": {
