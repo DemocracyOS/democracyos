@@ -1,8 +1,13 @@
 {
   "name": "comments-edit",
   "description": "Comments editing component",
+  "dependencies": {
+    "component/dom": "1.0.6"
+  },
   "locals": [
-    "form-view"
+    "form-view",
+    "is-in-viewport",
+    "scroll-to"
   ],
   "scripts": [ "view.js" ],
   "styles" : [ "styles.styl" ],

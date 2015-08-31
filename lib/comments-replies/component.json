@@ -15,9 +15,11 @@
     "DemocracyOS/marked": "master"
   },
   "locals": [
+    "is-in-viewport",
     "render",
     "request",
     "comments-replies-edit",
+    "scroll-to",
     "stateful-view",
     "debug"
   ],
