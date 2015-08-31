@@ -1,22 +1,40 @@
-* [Getting Started](README.md)
-* [Contributing](contributing.md)
-* [Development](developing)
-  * [Install on your machine](install.md)
-  * [How to create a Module for Democracy OS](https://github.com/DemocracyOS/app/wiki/How-to-Component-at-DemocracyOS)
-  * [How to add new tag images](https://github.com/DemocracyOS/app/wiki/How-to-add-new-tag-images)
-  * [How to add a custom language file](https://github.com/DemocracyOS/app/wiki/Add-a-custom-language-file)
-* [Deployment](deploying)
-  * [to Heroku](deploying/heroku.md)
-  * [to Ubuntu](deploying/ubuntu.md)
-* [Configuration](configuration)
-  * [How to configure Facebook Signin/Signup](https://github.com/DemocracyOS/app/wiki/Facebook-Signin-Signup)
-* [Migrating](migrating)
-  * [From all previous to 0.15.0 and up](https://github.com/DemocracyOS/app/wiki/Migrating-to-0.15.x)
-  * [From all previous to 0.10.0 and up](https://github.com/DemocracyOS/app/wiki/Migrating-to-0.10.x)
-  * [From all previous to 0.9.0 and up](https://github.com/DemocracyOS/app/wiki/Migrating-to-0.9.0)
-  * [From all previous to 0.8.26 and up](https://github.com/DemocracyOS/app/wiki/Migrating-to-0.8.26)
-  * [From all previous to 0.7.6 and up](https://github.com/DemocracyOS/app/wiki/Migrating-to--0.7.6)
-  * [From all previous up to 0.7.5](https://github.com/DemocracyOS/app/wiki/Migrating-to-0.7.x)
-  * [From 0.3.x to 0.4.x](https://github.com/DemocracyOS/app/wiki/Migrating-from-0.3.x-to-0.4.x)
-* [Tutorials](tutorials)
-  * [How to use the admin](tutorials/admin.md)
+---
+title: DemocracyOS Documentation
+---
+
+# DemocracyOS Documentation
+
+DemocracyOS is an online space for deliberation and voting on political proposals. It is a platform for a more open and participatory government. The software aims to stimulate better arguments and come to better rulings, as peers.
+
+## Getting Started
+
+If you want your personal DemocracyOS instance ASAP, read our [Deploy to Heroku]() guide.
+
+To start hacking, first read the [CONTRUBUTING]() guidelines, then [install DemocracyOS]() on your development machine.
+
+## Technology
+
+ * Javascript, javascript, javascript
+ * Node.js for server side code
+ * Babel.js for all the ES2015 magic
+ * Browserify for client side bundler
+ * Stylus for css styles
+ * Jade for templating
+ * MongoDB for storing data
+ * Mongoose for modeling application data
+
+## Browser Support
+
+Supports real browsers and IE10+.
+
+## Get involved!
+
+### [DemocracyOS mailing list](https://groups.google.com/forum/#!forum/democracyos-app)
+
+Questions about DemocracyOS exclusively.
+
+### [Issues](https://github.com/DemocracyOS/app/issues)
+
+For bug reports or feature requests please use the project's.
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DemocracyOS/app?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
