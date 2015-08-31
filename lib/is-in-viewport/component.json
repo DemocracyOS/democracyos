@@ -1,0 +1,6 @@
+{
+  "name": "is-in-viewport",
+  "description": "Determines wether an element is inside the viewport",
+  "scripts": [ "is-in-viewport.js" ],
+  "main": "is-in-viewport.js"
+}

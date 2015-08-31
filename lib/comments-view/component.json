@@ -12,7 +12,9 @@
     "comment-card",
     "comments-filter",
     "form-view",
+    "is-in-viewport",
     "request",
+    "scroll-to",
     "debug"
   ],
   "scripts": [ "view.js" ],
