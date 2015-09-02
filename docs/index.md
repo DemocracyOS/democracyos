@@ -1,5 +1,5 @@
 ---
-title: DemocracyOS Documentation
+title: Getting Started
 ---
 
 # DemocracyOS Documentation
