@@ -3,7 +3,7 @@
 - var neutrals = feed.topic.abstentions || []
 - var census = neutrals.concat(negatives).concat(positives) || []
 
-- var participants = feed.participants || []
+- var participants = feed.topic.participants || []
 
 - var closed = feed.closingAt && +new Date(feed.closingAt) < Date.now()
 - var voted = user.id && ~census.indexOf(user.id)
