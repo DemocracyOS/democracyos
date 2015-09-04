@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Novo",
   "admin-tags.list.search.placeholder": "Procure uma marca ...",
   "admin-tags.list.title": "Etiquetas do sistema",
-  "admin-topics-form.alert.no-tags": "Nenhuma tag foram encontrados, por favor, <a href=\"/admin/tags/create\">crie uma</a> antes de começar a criar tópicos",
+  "admin-topics-form.alert.no-tags": "Nenhuma tag foram encontrados, por favor, crie uma antes de começar a criar tópicos",
   "admin-topics-form.button.add-clause": "Adicionar artigo",
   "admin-topics-form.button.add-link": "Adicionar link",
   "admin-topics-form.button.make-private": "Desfazer publicação",

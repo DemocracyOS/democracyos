@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Новый",
   "admin-tags.list.search.placeholder": "Выберите тег ...",
   "admin-tags.list.title": "Системные ключевые слова",
-  "admin-topics-form.alert.no-tags": "Нет тегов не были найдены, пожалуйста, <a href=\"/admin/tags/create\">создайте его</a> перед началом создания темы",
+  "admin-topics-form.alert.no-tags": "Нет тегов не были найдены, пожалуйста, создайте его перед началом создания темы",
   "admin-topics-form.button.add-clause": "Добавить поправку",
   "admin-topics-form.button.add-link": "Добавить ссылку",
   "admin-topics-form.button.make-private": "Отменить публикацию",

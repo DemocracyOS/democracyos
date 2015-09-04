@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Uusi",
   "admin-tags.list.search.placeholder": "Etsi tag ...",
   "admin-tags.list.title": "Ohjelman tägit",
-  "admin-topics-form.alert.no-tags": "Ei tageja löytynyt, ole hyvä ja <a href=\"/admin/tags/create\">luoda</a> ennen alkaa luoda aiheita",
+  "admin-topics-form.alert.no-tags": "Ei tageja löytynyt, ole hyvä ja luoda ennen alkaa luoda aiheita",
   "admin-topics-form.button.add-clause": "Lisää ehto",
   "admin-topics-form.button.add-link": "lisää linkki",
   "admin-topics-form.button.make-private": "Piilota",

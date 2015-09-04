@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Nouveau",
   "admin-tags.list.search.placeholder": "Rechercher une étiquette ...",
   "admin-tags.list.title": "Étiquettes du système",
-  "admin-topics-form.alert.no-tags": "Aucune étiquette n'a été trouvée, merci d'en <a href=\"/admin/tags/create\">créer une</a> avant de commencer à créer une loi",
+  "admin-topics-form.alert.no-tags": "Aucune étiquette n'a été trouvée, merci d'en créer une avant de commencer à créer une loi",
   "admin-topics-form.button.add-clause": "Nouvel article",
   "admin-topics-form.button.add-link": "Ajouter un lien",
   "admin-topics-form.button.make-private": "Dépublier",
