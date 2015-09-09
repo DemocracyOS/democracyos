@@ -3,12 +3,15 @@ title: Coding Styles
 position: 5
 ---
 
-### GIT conventions
+# Coding Styles
+
+## GIT conventions
+
 In general terms, we agree with almost everything said in this [blog post about GIT conventions](https://medium.com/code-adventures/a940ee20862d) and so should you. We only add/differ the following:
 
-* Commits should try to be as simple (atomic) as possible, but not simpler. Meaning you should always be able to revert specific `fix`es, `edit`s, `update`s, `add`s, and `remove`s with `git revert`
+Commits should try to be as simple (atomic) as possible, but not simpler. Meaning you should always be able to revert specific `fix`es, `edit`s, `update`s, `add`s, and `remove`s with `git revert`
 
-### Javascript
+## Javascript
 
 * Two spaces for indentation, never tabs.
 * `var` everything, never comma first.
@@ -22,7 +25,7 @@ In general terms, we agree with almost everything said in this [blog post about 
   * `function (err) {`
 * Use [Yoda conditions](https://en.wikipedia.org/wiki/Yoda_conditions), always `'string' === typeof el` instead of `typeof el === 'string'`.
 
-### Stylesheets
+## Stylesheets
 
 * See [.stylintrc](/.stylintrc) file. More info: https://rosspatton.github.io/stylint/
 * For module specific styles, comply with `#unique-template-top-node-selector .my-generic-css-update { ... }`
@@ -30,16 +33,14 @@ In general terms, we agree with almost everything said in this [blog post about 
 * For multiple, comma-separated selectors, place each selector on its own line.
 * Attribute selectors, like `input[type="text"]` should always wrap the attribute's value in double quotes, for consistency and safety (see this [blog post on unquoted attribute values](http://mathiasbynens.be/notes/unquoted-attribute-values) that can lead to XSS attacks).
 
-
-#### HTML/Jade
+## HTML/Jade
 
 * Two spaces for indentation, never tabs.
 * Double quotes only, never single quotes.
 * Avoid trailing whitespace. Blank lines should not have any space.
-* Use CDNs and HTTPS for third-party JS when possible. We don't use protocol-relative URLs in this case because they break when viewing the page locally via file://.
+* Use CDNs and HTTPS for third-party JS when possible. We don't use protocol-relative URLs in this case because they break when viewing the page locally via `file://.
 
-
-### Local Modules
+## Local Modules
 
 * Each Module should be placed in it's containing folder on `/lib`, as [NodeJS Starter](https://github.com/rickyrauch/nodejs-starter). _(e.g. `/lib/sidebar`, `/lib/models`)_
 * Entry points:
