@@ -158,7 +158,7 @@
     "gulp-eslint": "0.13.0",
     "eslint": "0.22.1",
     "verigy": "2.0.1",
-    "jsdom": "3.1.2",
+    "jsdom": "6.3.0",
     "democracyos-wrap": "~0.0.2",
     "xss": "0.2.2"
   },
