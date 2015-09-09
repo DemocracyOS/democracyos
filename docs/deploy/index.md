@@ -1,6 +1,7 @@
 ---
-title: Deploying
+title: Deploy
 ---
-# Deploying
+
+# Deploy Guides
 * [Heroku](heroku.md)
 * [Ubuntu](ubuntu.md)
