@@ -3,20 +3,20 @@ title: Contributing
 position: 4
 ---
 
-## Contributing to DemocracyOS
+# Contributing to DemocracyOS
 
 If you have a question about DemocracyOS (not a bug report) please post it to our [mailing list](http://groups.google.com/group/democracyos-app) or on [Gitter](https://gitter.im/DemocracyOS/app).
 
 
-### Reporting bugs / Requesting features
+## Reporting bugs / Requesting features
 
 For practical reasons we only accept issues that are bug reports or feature requests. Make sure to read the following guidelines before opening new issues.
 
-#### Avoid duplication
+### Avoid duplication
 
 You'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix available.
 
-#### Help us help you
+### Help us help you
 
 Share as much information as possible. Include operating system and version, browser and version, version of DemocracyOS. Also include steps to reproduce the bug and any logs from browser and/or process whenever possible.
 
@@ -31,7 +31,7 @@ A good approach to a bug report is being very clear on how to reproduce it. Foll
 > Expected results: What should it look like? (e.g.: text in header should be aligned with dropdowns, etc.)
 
 
-### Pull requests
+## Pull requests
 
 To contribute code, start by forking our repo on github. You'll get something like this:
 ```
@@ -78,7 +78,7 @@ Finally go to `https://github.com/DemocracyOS/app` in the browser and issue a ne
 
 Main contributors will review your code and possibly ask for changes before your code is pulled in to the main repository. We appreciate your time and efforts!
 
-#### General guidelines
+### General guidelines
 
 * We flag the issues to community participation as [help wanted](https://github.com/DemocracyOS/app/labels/help%20wanted), try to prioritize these.
 * Do not make a pull request withouth having run the app on your own. This means, you have to at least [smoke test](http://en.wikipedia.org/wiki/Smoke_testing_(software))  what you did. If you can include some tests with your PR, all the better.

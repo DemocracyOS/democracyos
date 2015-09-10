@@ -41,13 +41,15 @@ Finally, check your [environment variables](https://github.com/DemocracyOS/app/w
 - Make sure MongoDB is running and reachable as configured in `config/development.json`. (Default values should work)
 - Set the environment variable `NODE_PATH` with value: `.`.
 - From the root path of the project, run `make` to download all the necessary dependencies and run the local server.
-- For users behind corporate proxy, its recommended to redirect git clone to https (git config --global url."https://".insteadOf git://) and set properly http and https proxy env.
+- For users behind corporate proxy, its recommended to clone the project using `https:` instead of `git:` url.
 
 ## Running
 
 Once DemocracyOS components and dependencies are installed, you can start the application like this:
 
-`make run`
+```bash
+make run
+```
 
 Take a look at the [Makefile](https://github.com/DemocracyOS/app/blob/master/Makefile) for more information about the possible tasks you can run.
 
@@ -58,7 +60,7 @@ You can check the current DemocracyOS version going to `http://localhost:3000/ap
 In case you want to use SSL in your dev environment (it's disabled by default), you'll need to have proper certificate files.
 We ship a script that generates the needed files. Just run the following command in the project root:
 
-```
+```bash
 NODE_PATH=. node bin/dos-ssl
 ```
 
@@ -68,7 +70,7 @@ Then modify your configuration file by changing the `protocol` property to `http
 
 The default configuration file make the app listens to port 443 to handle SSL connections. In some OSs, a normal user cannot perform this operation, and you are likely to get this error:
 
-```
+```javascript
 events.js:72
        throw er; // Unhandled 'error' event
              ^
