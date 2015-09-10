@@ -38,7 +38,7 @@ if (program.config && env !== 'production') {
       'mongoUrl',
       'locale',
       'organizationName',
-      'organizationUrl',
+      'organizationUrl'
     ].forEach(function(key){
       config[key] = defaults[key];
     });
