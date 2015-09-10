@@ -25,13 +25,17 @@ And, if you want to have DemocracyOS up and running on production, read one of t
 
 ## Technology
 
- * Javascript, javascript, javascript.
- * Node.js for server side code.
- * Babel.js for all the ES2015 magic on client side.
- * Browserify for client side bundler.
- * Stylus for css styles.
- * Jade for templating.
- * MongoDB for storing data.
- * Mongoose for modeling application data.
+ * [Javascript](https://es.wikipedia.org/wiki/JavaScript), javascript, javascript.
+ * [NodeJS & NPM](http://nodejs.org/download) for server side code.
+ * [Babel.js](https://babeljs.io/) for all the ES2015 magic on client side.
+ * [Browserify](http://browserify.org/) for client side bundles.
+ * [Stylus](https://learnboost.github.io/stylus/) for css styles.
+ * [Jade](http://jade-lang.com/) for templating.
+ * [MongoDB](http://www.mongodb.org/downloads) for storing data.
+ * [Mongoose](http://mongoosejs.com/) for modeling application data.
 
 _Supports real browsers and IE10+._
+
+## Let us know!
+
+if you are launching live instances of DemocracyOS don't forget to email Mair Williams (mair [at] democracyos.org) so we can help you with communication from our networks. It's also easier for us to let you know about new features and progress if we know who's running the instances.
