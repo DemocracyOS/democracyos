@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Nuovo",
   "admin-tags.list.search.placeholder": "Cerca un tag ...",
   "admin-tags.list.title": "Etichette di sistema",
-  "admin-topics-form.alert.no-tags": "Non sono stati trovati i tag, si prega di <a href=\"/admin/tags/create\">crearne uno</a> prima di iniziare a creare temi",
+  "admin-topics-form.alert.no-tags": "Non sono stati trovati i tag, si prega di crearne uno prima di iniziare a creare temi",
   "admin-topics-form.button.add-clause": "Nuovo articolo",
   "admin-topics-form.button.add-link": "aggiungere link",
   "admin-topics-form.button.make-private": "Annullare la pubblicazione",

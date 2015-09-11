@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Új",
   "admin-tags.list.search.placeholder": "Címke keresése",
   "admin-tags.list.title": "Rendszercímkék",
-  "admin-topics-form.alert.no-tags": "Nem találhatóak címkék. Kérlek <a href=\"/admin/tags/create\">hozz létre</a> egyet, mielőtt témákat hozol létre",
+  "admin-topics-form.alert.no-tags": "Nem találhatóak címkék. Kérlek hozz létre egyet, mielőtt témákat hozol létre",
   "admin-topics-form.button.add-clause": "Kiegészítés hozzáadása",
   "admin-topics-form.button.add-link": "Link hozzáadása",
   "admin-topics-form.button.make-private": "Visszavonás",

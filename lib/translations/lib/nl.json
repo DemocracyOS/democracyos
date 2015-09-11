@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Nieuw",
   "admin-tags.list.search.placeholder": "Zoek een tag ...",
   "admin-tags.list.title": "Systeem labels",
-  "admin-topics-form.alert.no-tags": "Geen tags gevonden, dan kunt u <a href=\"/admin/tags/create\">een maken</a> voor de start het creëren van onderwerpen",
+  "admin-topics-form.alert.no-tags": "Geen tags gevonden, dan kunt u een maken voor de start het creëren van onderwerpen",
   "admin-topics-form.button.add-clause": "Bepaling toevoegen",
   "admin-topics-form.button.add-link": "Link toevoegen",
   "admin-topics-form.button.make-private": "Ongepubliceerd",
