@@ -7,7 +7,7 @@
   "mongoUsersUrl": "",
   "jwtSecret": "Generate a secret token and paste it here.",
   "deploymentId": "",
-  "corsDomains": "",
+  "corsDomains": [],
   "signinUrl": "",
   "signupUrl": "",
   "settingsUrl": "",
