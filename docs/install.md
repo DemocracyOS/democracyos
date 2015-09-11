@@ -37,7 +37,7 @@ Finally, check your [environment variables](https://github.com/DemocracyOS/app/w
 
 - [Fork](http://help.github.com/articles/fork-a-repo) or download this repository.
 - `cd` to the project's location
-- Based on the `config/defaults.json` create your own configuration with the values you need to override (`e.g. config/development.json`)
+- Create the default configuration file running `node ./bin/dos-install --config`, or head to the [Configuration](configuration.md) guide for further customizations.
 - Make sure MongoDB is running and reachable as configured in `config/development.json`. (Default values should work)
 - Set the environment variable `NODE_PATH` with value: `.`.
 - From the root path of the project, run `make` to download all the necessary dependencies and run the local server.
@@ -64,7 +64,7 @@ We ship a script that generates the needed files. Just run the following command
 NODE_PATH=. node bin/dos-ssl
 ```
 
-Then modify your configuration file by changing the `protocol` property to `https` and run it normally.
+Then modify your configuration file by changing the `protocol` property to `https` and run it normally. Configuration options for SSL are listed [here](configuration.md#ssl).
 
 ### A note on using port 443
 

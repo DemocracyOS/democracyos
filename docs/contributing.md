@@ -20,7 +20,7 @@ You'd help us out a lot by first checking if someone else has reported the same 
 
 Share as much information as possible. Include operating system and version, browser and version, version of DemocracyOS. Also include steps to reproduce the bug and any logs from browser and/or process whenever possible.
 
-A good approach to a bug report is being very clear on how to reproduce it. Following this template might help (kudos to [@bastianhell](https://github.com/bastianhell):
+A good approach to a bug report is being very clear on how to reproduce it. Following this template might help (kudos to [@bastianhell](https://github.com/bastianhell)):
 
 > 1. Run app with `make`
 > 2. Navigate to `/route`
@@ -34,21 +34,25 @@ A good approach to a bug report is being very clear on how to reproduce it. Foll
 ## Pull requests
 
 To contribute code, start by forking our repo on github. You'll get something like this:
+
 ```
 https://github.com/user/app
 ```
 
 Then clone your fork:
+
 ```
 git clone git@github.com:user/app && cd app/
 ```
 
 Add the official repo as a remote, to track changes:
+
 ```
 git remote add upstream git@github.com:DemocracyOS/app.git
 ```
 
 Create a new branch for the changes you are going to contribute, with a relevant name. Some examples:
+
 ```
 git checkout -b feature/some-new-stuff
 git checkout -b fix/some-bug
@@ -56,6 +60,7 @@ git checkout -b remove/some-file
 ```
 
 Hack your changes: (you don't need to actually run this)
+
 ```
 vim somefile.txt
 git add somefile.txt
@@ -63,12 +68,14 @@ git commit -a -m"adding somefile.txt"
 ```
 
 When you think your code is ready, prepare for pushing the code by first getting the changes from the main repo:
+
 ```
 git pull --rebase upstream development
 ```
 (You may need to solve any conflicts from the rebase at this point)
 
 After that you can push the changes to your fork, by doing:
+
 ```
 git push origin feature/some-new-stuff
 git push origin fix/some-bug

@@ -7,6 +7,8 @@ position: 1
 
 DemocracyOS is an online space for deliberation and voting on political proposals. It is a platform for a more open and participatory government. The software aims to stimulate better arguments and come to better rulings, as peers.
 
+Welcome to the Documentation site. Here you'll find information on how to install, use and extend DemocracyOS. If you see any error in this site please report a bug on the project's [Issues](https://github.com/DemocracyOS/app/issues) page. Or if you want to go a little further, fix it on [github.com/DemocracyOS/app/docs](https://github.com/DemocracyOS/app/tree/development/docs) and send a [Pull Request](contributing.html#pull-requests).
+
 ## Support
 
 Go to the [DemocracyOS Mailing List](https://groups.google.com/forum/#!forum/democracyos-app) for questions about DemocracyOS exclusively.
