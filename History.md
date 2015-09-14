@@ -1,4 +1,21 @@
 
+0.19.2 / 2015-09-14
+===================
+
+  * Add showing a message to the user on facebook login error Closes #1001
+  * Add codeclimate badge
+  * Add profileFields key to Passport's Facebook strategy constructor, as seen in https://github.com/jaredhanson/passport-facebook/issues/129#issuecomment-124039674. Fixes empty email issue on login.
+  * Add publicEmails config
+  * Add not allowing to register fb users without email Closes #1001
+  * Add textarea.focus() on comments #659
+  * Add scroll only if element is outside the viewport in comment replies #684
+  * Add isElementInViewport function #684
+  * Add not allowing to show emails on public instances
+  * Added Polish translation
+  * Update CodeClimate badge
+  * Update smooth scroll #659
+  * Remove vot-it reference
+
 0.19.1 / 2015-09-14
 ===================
 
