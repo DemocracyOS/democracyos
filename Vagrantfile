@@ -2,7 +2,7 @@ provision = {}
 
 provision['base'] = <<BASH
   sudo apt-get update
-  sudo apt-get install gcc make build-essential git -y
+  sudo apt-get install gcc make build-essential git libkrb5-dev -y
 BASH
 
 provision['mongodb'] = <<BASH
@@ -42,6 +42,11 @@ Vagrant.configure(2) do |config|
 
     v.customize ['modifyvm', :id, '--memory', mem]
     v.customize ['modifyvm', :id, '--cpus', cpus]
+
+    # Required for NFS to work, pick any local IP
+    config.vm.network :private_network, ip: '192.168.50.50'
+    # Use NFS for shared folders for better performance
+    config.vm.synced_folder '.', '/vagrant', nfs: true
   end
 
   config.vm.network 'forwarded_port', guest: 3000, host: 3000 # server
