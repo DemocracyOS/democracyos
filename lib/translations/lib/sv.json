@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Ny",
   "admin-tags.list.search.placeholder": "Sök en tagg ...",
   "admin-tags.list.title": "Systemtaggar",
-  "admin-topics-form.alert.no-tags": "Inga taggar hittades, vänligen <a href=\"/admin/tags/create\">skapa en</a> före start skapar ämnen",
+  "admin-topics-form.alert.no-tags": "Inga taggar hittades, vänligen skapa en före start skapar ämnen",
   "admin-topics-form.button.add-clause": "Lägg till klausul",
   "admin-topics-form.button.add-link": "Lägg till länk",
   "admin-topics-form.button.make-private": "Dra tillbaka",

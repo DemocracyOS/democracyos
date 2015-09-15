@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Nou",
   "admin-tags.list.search.placeholder": "Cercar una etiqueta ...",
   "admin-tags.list.title": "Etiquetes de sistema",
-  "admin-topics-form.alert.no-tags": "No es van trobar etiquetes, si us plau <a href=\"/admin/tags/create\">creeu-ne un</a> abans de començar a crear temes",
+  "admin-topics-form.alert.no-tags": "No es van trobar etiquetes, si us plau creeu-ne un abans de començar a crear temes",
   "admin-topics-form.button.add-clause": "Afegir clàusula",
   "admin-topics-form.button.add-link": "afegir link",
   "admin-topics-form.button.make-private": "Anul·lar la publicació",

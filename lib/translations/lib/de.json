@@ -20,7 +20,7 @@
   "admin-tags.list.add-tag": "Neu",
   "admin-tags.list.search.placeholder": "Suchen ein Tag ...",
   "admin-tags.list.title": "System-Tags",
-  "admin-topics-form.alert.no-tags": "Es wurden keine Tags gefunden, bitte <a href=\"/admin/tags/create\">erstellen Sie ein</a> vor Beginn der Erstellung Themen",
+  "admin-topics-form.alert.no-tags": "Es wurden keine Tags gefunden, bitte erstellen Sie ein vor Beginn der Erstellung Themen",
   "admin-topics-form.button.add-clause": "Artikel hinzufügen",
   "admin-topics-form.button.add-link": "Link removala",
   "admin-topics-form.button.make-private": "Veröffentlichung zurückziehen",
