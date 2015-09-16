@@ -185,7 +185,7 @@ By default DemocracyOS uses an embeded [Notifier](https://github.com/DemocracyOS
 #### **notifications.mailer.service**
 * env: `NOTIFICATIONS_MAILER_SERVICE`
 
-Url of the Notifier server.
+Notifier service. Any of [nodemailer-wellknown](https://github.com/andris9/nodemailer-wellknown#supported-services).
 
 #### **notifications.mailer.auth.user**
 * env: `NOTIFICATIONS_MAILER_AUTH_USER`
@@ -193,7 +193,7 @@ Url of the Notifier server.
 User for the [notifier](https://github.com/DemocracyOS/notifier) transport.
 
 #### **notifications.mailer.auth.pass**
-* env: `NOTIFICATIONS_MAILER_AUTH_USER`
+* env: `NOTIFICATIONS_MAILER_AUTH_PASS`
 
 Password for the [notifier](https://github.com/DemocracyOS/notifier) transport.
 
