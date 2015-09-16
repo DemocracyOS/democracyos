@@ -29,8 +29,6 @@ To get started with DemocracyOS, you will need to have installed:
 
 Running on **Windows** environment is not currently supported. If you happen to be familiar with [Docker](https://www.docker.io/) or [Vagrant](http://www.vagrantup.com/), please lend us a hand and submit a [PR](http://help.github.com/articles/using-pull-requests) so we can collaborate on a solution for this.
 
-Finally, check your [environment variables](https://github.com/DemocracyOS/app/wiki/Environment-variables) and read [Environments and config files](https://github.com/DemocracyOS/app/wiki/Environments-and-config-files) if something is not working properly.
-
 ## Install
 
 ### Unix and OS/X
