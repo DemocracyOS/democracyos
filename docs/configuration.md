@@ -351,3 +351,108 @@ When `true` will add a little shadow to the header. Recommended to be used when 
 
 
 ### Static Pages
+
+#### **frequentlyAskedQuestions**
+* env: `FREQUENTLY_ASKED_QUESTIONS`
+* default: false
+
+When `true` will enable the route under `/help/faq` in which the content of `lib/help-faq/faq.md` is going to be shown
+
+#### **termsOfService**
+* env: `TERMS_OF_SERVICE`
+* default: false
+
+When `true` will enable the route under `/help/terms-of-service` in which the content of `lib/help-tos/tos.md` is going to be shown
+
+#### **privacyPolicy**
+* env: `PRIVACY_POLICY`
+* default: false
+
+When `true` will enable the route under `/help/privacy-policy` in which the content of `lib/help-pp/pp.md` is going to be shown
+
+#### **glossary**
+* env: `GLOSSARY`
+* default: false
+
+When `true` will enable the route under `/help/privacy-policy` in which the content of `lib/help-pp/pp.md` is going to be shown
+
+### In-App featuresn
+
+#### **facebookSignin**
+* env: `FACEBOOK_SIGNIN`
+* default: false
+
+When `true` will enable signin/signup using Facbook instead of the default email and password.
+
+#### **learnMoreUrl**
+* env: `LEARN_MORE_URL`
+* default: ""
+
+Link to any URL explaining more about the particular DemocracyOS instance or any other thing that wants to be clarified as the institution using it or any kind of impact on the real world the decision arrived on the software will have.
+
+#### **rssEnabled**
+* env: `RSS_ENABLED`
+* default: true
+
+When `true` will enable a route under `/rss` that can be used as a RSS Feed (XML)
+
+#### **commentsPerPage**
+* env: `COMMENTS_PER_PAGE`
+* default: 0
+
+Number specifying how many comments will be listed before a "Show more" button is shown. 0 will get all comments from the backend.
+
+#### **clientDebug**
+* env: `CLIENT_DEBUG`
+* default: ""
+
+Namespace (string) used by [visionmedia/debug](https://github.com/visionmedia/debug) to show debugging messages on the browser
+
+#### **clientDebug**
+* env: `CLIENT_DEBUG`
+* default: ""
+
+Namespace (string) used by [visionmedia/debug](https://github.com/visionmedia/debug) to show debugging messages on the browser
+
+#### **feedsLimit**
+* env: `FEEDS_LIMIT`
+* default: 10
+
+Number of feed cards shown on the homepage when `multiForum` is set to true
+
+#### **tweetText**
+* env: `TWEET_TEXT`
+* default: ""
+
+Text used when sharing a topic on Twitter
+
+#### **googleAPIKey**
+* env: `GOOGLE_API_KEY`
+* default: ""
+
+Key (string) used by [google-translate](https://github.com/Localize/node-google-translate) use [Google Translator](https://cloud.google.com/translate/v2/getting_started?hl=en) in order to use the command in `bin/dos-translate`
+
+### Social sharing
+
+This settings will be used when sharing a link on Facebook or Twitter.
+They are used in `lib/facebook-card` and `lib/twitter-card` modules to generate the proper HTML to give to Facebook.
+
+#### **siteName**
+* env: `SOCIALSHARE_SITE_NAME`
+* default: "DemocracyOS"
+
+#### **siteDescription**
+* env: `SOCIALSHARE_SITE_DESCRIPTION`
+* default: "DemocracyOS voting system"
+
+#### **image**
+* env: `SOCIALSHARE_IMAGE`
+* default: "https://2.gravatar.com/avatar/a8b9176bd0d042db078bf38500727671?d=https%3A%2F%2Fidenticons.github.com%2F14bae9f2564556f8eb23cc263a779f59.png&s=400"
+
+#### **domain**
+* env: `SOCIALSHARE_DOMAIN`
+* default: "democracyos.org"
+
+#### **twitter.username**
+* env: `SOCIALSHARE_TWITTER_USERNAME`
+* default: "@democracyos"
