@@ -3,6 +3,9 @@ title: how to create a topic
 position: 5
 ---
 
+After creating your "democracy" and a tag, the topic is basically the bill proposal you want to insert in your democracy
+for discussion. Here you have to write the proposal, you can add information for the debate and participate from it.
+
 After you create a tag, you have to click on "new" or search for a pre existing topic
 ![Image of Yaktocat](https://cldup.com/ZIAcJzRna3.png)
 
