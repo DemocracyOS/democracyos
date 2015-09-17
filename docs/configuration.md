@@ -435,6 +435,7 @@ Key (string) used by [google-translate](https://github.com/Localize/node-google-
 ### Social sharing
 
 This settings will be used when sharing a link on Facebook or Twitter.
+
 They are used in `lib/facebook-card` and `lib/twitter-card` modules to generate the proper HTML to give to Facebook.
 
 #### **siteName**
