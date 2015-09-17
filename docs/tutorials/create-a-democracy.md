@@ -3,6 +3,8 @@ title: How to create a democracy
 position: 3
 ---
 
+What we call a "Democracy" is the possibility of create, simply, your own implementation of DemocracyOS.
+
 Firstly, you have to click on "start a democracy"
 ![Image of Yaktocat](https://cldup.com/fswNjRzcrs.png)
 
