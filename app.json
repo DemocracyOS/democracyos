@@ -1,0 +1,42 @@
+{
+  "name": "DemocracyOS",
+  "description": "An online space for voting on political proposals. The software aims to stimulate better arguments and come to better rulings",
+  "keywords": [
+    "democracy",
+    "democracyos",
+    "liquid democracy",
+    "partido de la red",
+    "democracia en red",
+    "net democracy",
+    "net party",
+    "online democracy",
+    "web democracy",
+    "change the tool"
+  ],
+  "author": "Democracia en Red <speak@democracyos.org>",
+  "website": "https://democracyos.org/",
+  "repository": "https://github.com/DemocracyOS/app",
+  "logo": "https://cldup.com/guAAqPM85t.png",
+  "addons": [
+    "mongolab:sandbox",
+    "sendgrid:starter"
+  ],
+  "env": {
+    "JWT_SECRET": {
+      "description": "A secret key for verifying the integrity of signed cookies",
+      "generator": "secret"
+    },
+    "NODE_PATH": {
+      "description": "The number of processes to run.",
+      "value": "."
+    },
+    "NODE_ENV": {
+      "description": "Environment in which the process is running",
+      "value": "production"
+    },
+    "DEBUG": {
+      "description": "Namespace (string) used by visionmedia/debug to show debugging messages on the browser",
+      "value": "democracyos*"
+    }
+  }  
+}
