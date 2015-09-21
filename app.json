@@ -28,6 +28,15 @@
     },
     "STAFF": {
       "description": "Comma separated emails listed here will have access to /admin"
+    },
+    "ORGANIZATION_NAME": {
+      "description": "Title of the app to be shown on the right side of the header"
+    },
+    "ORGANIZATION_URL": {
+      "description": "Link to take the user when clicks on organizationName"
+    },
+    "HOST": {
+      "description": "Public accessible URL to your app. For example: foo-democracyos.herokuapp.com"
     }
-  }  
+  }
 }
