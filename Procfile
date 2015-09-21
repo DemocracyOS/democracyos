@@ -1,1 +1,1 @@
-web: gulp build && node index.js
+web: gulp build && NODE_PATH=. node index.js

@@ -26,17 +26,8 @@
       "description": "A secret key for verifying the integrity of signed cookies",
       "generator": "secret"
     },
-    "NODE_PATH": {
-      "description": "The number of processes to run.",
-      "value": "."
-    },
-    "NODE_ENV": {
-      "description": "Environment in which the process is running",
-      "value": "production"
-    },
-    "DEBUG": {
-      "description": "Namespace (string) used by visionmedia/debug to show debugging messages on the browser",
-      "value": "democracyos*"
+    "STAFF": {
+      "description": "Comma separated emails listed here will have access to /admin"
     }
   }  
 }
