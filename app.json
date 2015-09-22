@@ -37,10 +37,6 @@
     },
     "HOST": {
       "description": "Public accessible URL to your app. For example: foo-democracyos.herokuapp.com"
-    },
-    "PUBLIC_PORT": {
-      "description": "Port where the application should listen, and to be considered when building application URLs",
-      "value": "80"
     }
   }
 }
