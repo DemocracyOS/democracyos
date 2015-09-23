@@ -1,4 +1,4 @@
-# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/DemocracyOS/app/tree/add/heroku-button)
+# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/DemocracyOS/app/tree/1.0.0)
 [![Dependencies](https://david-dm.org/DemocracyOS/app.svg)](https://david-dm.org/DemocracyOS/app.svg)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DemocracyOS/app)
 [![Code Climate](https://codeclimate.com/github/DemocracyOS/app/badges/gpa.svg)](https://codeclimate.com/github/DemocracyOS/app)
