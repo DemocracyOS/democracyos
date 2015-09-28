@@ -3,5 +3,5 @@ title: Deploy
 ---
 
 # Deploy Guides
-* [Heroku](heroku.md)
-* [Ubuntu](ubuntu.md)
+
+> TODO: Add How-Tos for deployment on different servers
