@@ -1,16 +1,18 @@
 ---
-title: forgot password?
+title: How to recover your password?
 position: 2
 ---
 
-The first thing you have to do if forgot your password is click in "Forgot password?"
-![Image of Yaktocat](https://cldup.com/TfrqvmVpDZ.png)
+# How to recover your password?
 
-Then, you have to enter the email you use for registration
-![Image of Yaktocat](https://cldup.com/kekR_2hsno.png)
+1. First, you have to click on "Forgot Password?" at the login page.
+![forgot-password-1](https://cldup.com/TfrqvmVpDZ.png)
 
-An email will be delivered
-![Image of Yaktocat](https://cldup.com/9leoqAG6sO.png)
+2. Then, enter your email.
+![forgot-password-2](https://cldup.com/kekR_2hsno.png)
 
-Check your email and "click here" you will be re directed to enter the new password
-![Image of Yaktocat](https://cldup.com/HqK0l8lhHs.png)
+3. After some minutes, we will send you and email.
+![forgot-password-3](https://cldup.com/9leoqAG6sO.png)
+
+4. Check your email and then click where it says "click here". Then, you will be able to enter your new password.
+![forgot-password-4](https://cldup.com/HqK0l8lhHs.png)
