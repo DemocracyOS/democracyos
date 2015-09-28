@@ -1,4 +1,10 @@
 
+0.19.3 / 2015-09-28
+===================
+
+  * Allow access to /forgot when config.visibility is 'hidden'
+  * Include Deploy to Heroku button on README.md
+
 0.19.2 / 2015-09-14
 ===================
 
