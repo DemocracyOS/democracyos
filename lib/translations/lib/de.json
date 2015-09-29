@@ -301,7 +301,7 @@
   "sorts.oldest-first": "Älteste zuerst",
   "sorts.recently-updated": "Kürzlich aktualisiert",
   "validators.checked": "Pflichtfeld überprüft",
-  "validators.input.not-exists": "{Name} Element ist nicht vorhanden",
+  "validators.input.not-exists": "{name} Element ist nicht vorhanden",
   "validators.invalid": "Ungültig",
   "validators.invalid.author": "Invalid Autor",
   "validators.invalid.email": "Ungültige E-Mail-Adresse",
