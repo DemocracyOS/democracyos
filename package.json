@@ -76,7 +76,7 @@
     "del": "1.1.1",
     "democracyos-confirmation": "^0.0.5",
     "democracyos-db": "0.0.1",
-    "democracyos-notifier": "^0.0.12",
+    "democracyos-notifier": "^0.0.13",
     "democracyos-snap.js": "^2.0.0",
     "democracyos-tip": "^2.4.1",
     "democracyos-video-url-inspector": "^1.0.2",
