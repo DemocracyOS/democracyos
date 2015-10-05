@@ -34,7 +34,7 @@ Environment Variables also can be used to override options (recommended for `pro
 * `Boolean` values should be `true` or `false`.
   * e.g.: `"rssEnabled": false` => `RSS_ENABLED="false"`
 
-_* For more info, the values are casted using [`lib/config/cast-string.js`](https://github.com/DemocracyOS/app/blob/development/lib/config/cast-string.js)._
+> _For more info, the values are casted using [`lib/config/cast-string.js`](https://github.com/DemocracyOS/app/blob/development/lib/config/cast-string.js)._
 
 ## Configuration Values
 
