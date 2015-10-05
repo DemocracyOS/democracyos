@@ -5,27 +5,21 @@ position: 3
 
 # Configuration
 
-In order to run DemocracyOS, some config settings are needed. These settings can be defined either as a JSON file following the `config/defaults.json`, or through environment variables.
+In order to run DemocracyOS, some config settings are needed. Default values are listed on `config/defaults.json`.
 
-## Overriding Defaults
+> _WARNING: Never change values at `config/defaults.json`, to edit any value use the methods listed below._
 
-Default config options will be loaded from `/config/defaults.json`. Also it will be used as reference for the `Type` the values should have.
+## Configuring
 
 ### Configuration Files
 
-Environment specific options can be added using `/config/{NODE_ENV}.json`. E.g.: If your `NODE_ENV` is `development` and a file at `/config/development.json` exists, the options there will override the ones at `/config/defaults.json`.
+Environment specific options can be added using `config/{NODE_ENV}.json`. E.g.: If your `NODE_ENV` is `development` you can use `config/development.json`, the options there will override the ones at `config/defaults.json`.
 
 
 You can generate configuration files using the command:
 
 ```
-node ./bin/dos-install --config
-```
-
-Or, for other environment than `development`:
-
-```
-NODE_ENV=production node ./bin/dos-install --config
+NODE_ENV=development node ./bin/dos-install --config
 ```
 
 ### Environment Variables
