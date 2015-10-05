@@ -5,10 +5,10 @@ mixin remove-action
 
 li.media.comment-item(class=classes)
   span.pull-left
-    img(src=avatar).avatar
+    img.avatar(src=avatar, title=comment.author.displayName)
 
   .media-body
-    h5.media-heading
+    h5.media-heading(title=comment.author.displayName)
       | #{comment.author.fullName}
       small.ago(data-time=comment.createdAt.toString())
       - if (comment.editedAt)

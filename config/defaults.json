@@ -13,6 +13,7 @@
   "staff": [],
   "allowEmailAliases": true,
   "facebookSignin": false,
+  "publicEmails": false,
   "auth": {
     "basic": {
       "username": "",
