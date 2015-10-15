@@ -63,6 +63,7 @@ In defaults.json:
   ...
 
 }
+```
 In production, those environment variables must be:
 ```
 MY_VARIABLE="not default"
