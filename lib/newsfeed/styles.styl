@@ -2,7 +2,7 @@ body.newsfeed #content
   background #ccc
 
 .newsfeeds
-  color black
+  color #000
   padding-bottom 40px
 
   .forum-card
@@ -11,8 +11,10 @@ body.newsfeed #content
     color #f5f5f5
     margin-bottom 20px
     overflow hidden
+
     &:hover
       text-decoration none
+
       h1
         text-decoration underline
 
@@ -41,9 +43,11 @@ body.newsfeed #content
 
     .profile
       margin-left 3px
+
       img
         width 50px
         border-radius 100px
+
       span.name
         display inline
         margin-left 10px
@@ -53,6 +57,7 @@ body.newsfeed #content
         padding-top 4px
         padding-right 12px
         max-width 150px
+
     .name
       height 50px
       line-height 50px
@@ -61,6 +66,7 @@ body.newsfeed #content
       font-family 'Open Sans', sans-serif
       font-size 12px
       font-weight 100
+
     .btn
       height 50px
       line-height 48px
@@ -73,8 +79,10 @@ body.newsfeed #content
       font-weight bold
       padding 0 12px
       text-transform uppercase
+
       &.go-to-forum
         color #337ab7
+
         i.glyphicon-cog
           margin-top 16px
 
@@ -83,8 +91,9 @@ body.newsfeed #content
       border-color #a573d1
       color #fff
       font-weight bold
+
       &:hover
         background-color #a573d1
         color #fff
-      + .arrow-down
+      & + .arrow-down
         border-top-color #8156a6
