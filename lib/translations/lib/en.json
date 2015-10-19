@@ -159,6 +159,8 @@
   "forum.form.title": "Constitution",
   "forum.form.title.label": "Democracy Title",
   "forum.form.title.placeholder": "The title for your democracy",
+  "forum.form.summary.label": "Summary",
+  "forum.form.summary.placeholder": "What is your democracy about?",
   "forum.form.url.label": "Democracy URL",
   "forum.form.url.unavailable": "URL is not available",
   "forum.status.creating": "Creating democracy...",

@@ -5,6 +5,21 @@ body.newsfeed #content
   color black
   padding-bottom 40px
 
+  .forum-item
+    display block
+    padding 40px 20px
+    color #f5f5f5
+    margin-bottom 20px
+    overflow hidden
+    &:hover
+      text-decoration none
+      h1
+        text-decoration underline
+
+    h1
+      margin-top 0
+      color #f5f5f5
+
   .loading-container
     display block
     height 80px
@@ -52,125 +67,7 @@ body.newsfeed #content
       padding 0 12px
       font-weight 900
       font-size 16px
-
-    header
-      h1
-        color rgb(51, 51, 51)
-        font-size 25px
-        margin 0 0 6px 0
-        a, a:hover
-          color black
-          font-weight normal
-
-      small
-        display inline-block
-        margin-right 12px
-
-        i
-          margin-right 4px
-
-      .tag
-        background #ccc
-        border-radius 10px
-        color #fff
-        padding 3px 9px
-        text-transform capitalize
-        &:hover
-          background-color #969696
-
-      .closing-at
-        font-size 12px
-
-        &.closed
-          color red
-        &.closing
-          color #f8af3c
-        &.unknown
-          color #ababab
-
-    .body
-      font-size 15px
-      margin 6px 0
-
-    .read-more
-      font-size 0.8em
-      text-transform uppercase
-      margin 0
-      font-weight 100
-      text-align right
-
-      a
-        font-size 1em
-        font-weight inherit
-        color inherit
-
-      a:after
-        content ' »'
-
-    img
-      display block
-      margin 0 auto
-      max-height 275px
-      max-width 100%
-
-    .comment
-      margin-top 0px
-      padding 15px
-      background-color #e3e3e3
-      border-radius 5px
-      color #666
-      line-height 22px
-      margin-top 12px
-      position relative
-      font-weight 400
-      font-size 12px
-
-    .arrow-down
-      width 0
-      height 0
-      border-left 10px solid transparent
-      border-right 10px solid transparent
-      border-top 10px solid #e3e3e3
-      margin-top -10px
-      margin-left 15px
-
-    .vote-bubble
-      font-family Arial, 'Helvetica Neue', Helvetica, sans-serif
-      padding 10px
-      background-color #a4cb53
-      display inline-block
-      border-radius 5px
-      color white
-      margin-bottom 12px
-      text-transform uppercase
-      font-size 14px
-      font-weight normal
-
-      + .arrow-down
-        border-top-color #a4cb53
-        margin-top -14px
-        margin-left 18px
-        margin-bottom 6px
-
-    .share-links
-      height 50px
-      line-height 50px
-      a
-        background #ccc
-        padding 10px
-        margin-right 10px
-        border-radius 100%
-        color white
-        display inline-block
-        line-height 10px
-        -webkit-transition all 0.3s ease
-        &:hover
-          text-decoration none
-        &.facebook:hover
-          background #3b5998
-        &.twitter:hover
-          background #3498db
-
+      
     .btn
       color #fff
       font-weight bold
@@ -181,42 +78,13 @@ body.newsfeed #content
         i.glyphicon-cog
           margin-top 16px
 
-    .positive
-      background-color #a4cb53
-      border-color #aed167
+    .purple
+      background-color #8156a6
+      border-color #a573d1
+      color #fff
+      font-weight bold
       &:hover
-        background-color #aed167
-      + .arrow-down
-        border-top-color #a4cb53
-    .negative
-      background-color #d03630
-      border-color #d95e59
-      &:hover
-        background-color #d95e59
-      + .arrow-down
-        border-top-color #d03630
-    .neutral
-      background-color #3498db
-      border-color #5faee3
-      &:hover
-        background-color #5faee3
-      + .arrow-down
-        border-top-color #3498db
-    .see-results
-      background #fff
-      border 2px solid #8156a6
-      color #8156a6
-      &:hover
-        background-color #8156a6
+        background-color #a573d1
         color #fff
-
-.purple
-  background-color #8156a6
-  border-color #a573d1
-  color #fff
-  font-weight bold
-  &:hover
-    background-color #a573d1
-    color #fff
-  + .arrow-down
-    border-top-color #8156a6
+      + .arrow-down
+        border-top-color #8156a6
