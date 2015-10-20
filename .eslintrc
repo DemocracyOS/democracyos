@@ -10,6 +10,7 @@
     "plusplus": false,
     "evil": false,
     "debug": false,
+    "no-new": 0,
     "no-use-before-define": "nofunc",
     "new-parens": false,
     "no-underscore-dangle": false,
