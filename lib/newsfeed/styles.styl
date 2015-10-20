@@ -1,11 +1,14 @@
 body.newsfeed #content
-  background #ccc
+  background #f0f0f0
 
 @import './forum-card/styles'
 
-.newsfeeds
+.newsfeed-content
   color #000
-  padding-bottom 40px
+  margin-left auto
+  margin-right auto
+  padding 0 15px 40px
+  max-width 570px
 
   .loading-container
     display block
@@ -14,7 +17,7 @@ body.newsfeed #content
     .lock-spinner
       background-color transparent
 
-  .newsfeed
+  .forum-settings
     background white
     margin-bottom 22px
     padding 10px
@@ -30,6 +33,7 @@ body.newsfeed #content
       margin-left 3px
 
       img
+        display inline-block
         width 50px
         border-radius 100px
 
