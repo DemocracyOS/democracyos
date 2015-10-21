@@ -5,83 +5,89 @@ color = #eee
 color2 = #999
 
 #forums-wrapper
-  .forums
-    .forum
-      position relative
-      overflow hidden
-      padding 12px
+  .forum
+    position relative
+    overflow hidden
+    padding 12px
 
-      &.status-non-existent
-        display none
+    &.status-non-existent
+      display none
 
-      &.status-creating
-        .status.creating
-          display block
+    &.status-creating
+      .status.creating
+        display block
 
-      &.status-destroying
-        .status.destroying
-          display block
+    &.status-destroying
+      .status.destroying
+        display block
 
-      &.status-error
-        .status.error
-          display block
+    &.status-error
+      .status.error
+        display block
 
-      .status
-        display none
-        position absolute
-        left 0
-        top 0
-        width 100%
-        height 100%
-        background-color rgba(#fff, .9)
+    .status
+      display none
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      background-color rgba(#fff, .9)
 
-        &.error
-          color red
+      &.error
+        color red
 
-        p
-          margin 5px 0 3px
-          font-size 11px
-          color #555
-          text-align center
-
-      .loader-wrapper
-        margin-top 15px
+      p
+        margin 5px 0 3px
+        font-size 11px
+        color #555
         text-align center
 
-      .loader
-        display inline-block
-        margin-right 8px
-        margin-left 12px
-        border-radius 100%
-        width boxSize * 1px
-        height boxSize * 1px
-        box-shadow boxSize*1px boxSize*1px color2,
-          boxSize*-1px boxSize*1px color,
-          boxSize*-1px boxSize*-1px color2,
-          boxSize*1px boxSize*-1px color
-        -webkit-animation spin ease infinite 4s
-        animation spin ease infinite 4s
+    .loader-wrapper
+      margin-top 15px
+      text-align center
 
-      &:hover
-        background-color #f5f5f5
+    .loader
+      display inline-block
+      margin-right 8px
+      margin-left 12px
+      border-radius 100%
+      width boxSize * 1px
+      height boxSize * 1px
+      box-shadow boxSize*1px boxSize*1px color2,
+        boxSize*-1px boxSize*1px color,
+        boxSize*-1px boxSize*-1px color2,
+        boxSize*1px boxSize*-1px color
+      -webkit-animation spin ease infinite 4s
+      animation spin ease infinite 4s
+
+    &:hover
+      background-color #f5f5f5
+
+    .actions
+      a
+        color inherit
+
+        & + a
+          margin-left .8em
 
       .btn-remove
         color #d95e59
 
-      .url
-        font-weight 100
-        color #555
-        font-style italic
-        font-size .8em
+    .url
+      font-weight 100
+      color #555
+      font-style italic
+      font-size .8em
 
-    .btn.purple
-      border-radius 4px !important
-      font-size 16px
-      font-weight bold !important
-      height 50px
-      line-height 50px
-      padding 0 12px !important
-      text-transform uppercase
+  .btn.purple
+    border-radius 4px !important
+    font-size 16px
+    font-weight bold !important
+    height 50px
+    line-height 50px
+    padding 0 12px !important
+    text-transform uppercase
 
 #forum-delete-modal
   .confirmation-actions
