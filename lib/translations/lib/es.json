@@ -198,8 +198,6 @@
   "newsfeed.call-to-action.start-a-forum": "Inicia una democracia",
   "newsfeed.nothing-to-show": "Nada que mostrar",
   "newsfeed.title": "Democracias",
-  "newsfeed.welcome.body": "Por favor <a href=\"/signin\">ingresa</a> o <a href=\"signup\">regístrate</a> para empezar a usar DemocracyOS",
-  "newsfeed.welcome.title": "Empieza tu propia democracia hoy",
   "notifications.error": "No es posible conectarse al motor de notificaciones",
   "notifications.error.connection-refused": "No es posible conectarse al motor de notificaciones",
   "password": "Contraseña",

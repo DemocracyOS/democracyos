@@ -259,8 +259,6 @@
     "newsfeed.button.load-more": "Load më shumë",
     "newsfeed.call-to-action.start-a-forum": "Fillo një demokraci",
     "newsfeed.nothing-to-show": "Asgjë për të treguar",
-    "newsfeed.welcome.body": "Ju lutemi <a href=\"/signin\">signin</a> ose <a href=\"signup\">regjistrohu</a> për të filluar përdorimin e DemocracyOS",
-    "newsfeed.welcome.title": "Ndërtojnë demokracinë tuaj sot",
     "notifications.error": "Në pamundësi për t'u lidhur me njoftime motor",
     "notifications.error.connection-refused": "Në pamundësi për t'u lidhur me njoftime motor",
     "password": "Fjalëkalimi",

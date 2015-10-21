@@ -1,94 +1,55 @@
-body.newsfeed #content
-  background #f0f0f0
-
-@import './forum-card/styles'
-
 boxSize = 6
 color = #888
 color2 = #aaa
 
-.newsfeed-content
-  color #000
-  margin-left auto
-  margin-right auto
-  padding 0 15px 40px
-  max-width 570px
+body.newsfeed #content
+  padding-top 60px
+  background #f0f0f0
 
-  .title
-    h2
-      color #666
-      font-weight 300
-      margin 1em 0 .7em
+.newsfeed-page
+  .content
+    color #000
+    margin-left auto
+    margin-right auto
+    padding 0 15px 40px
+    max-width 570px
 
-  .forum-settings
-    background white
-    margin-bottom 22px
-    padding 10px
-    overflow hidden
+    .title
+      h2
+        color #666
+        font-weight 300
+        margin 1em 0 .7em
 
-    section
-      margin-top 12px
-
-    footer
-      margin-top 12px
-
-    .profile
-      margin-left 3px
-
-      img
-        display inline-block
-        width 50px
-        border-radius 100px
-
-      span.name
-        display inline
-        margin-left 10px
-        font-weight bold
-        font-size 12px
-        line-height 20px
-        padding-top 4px
-        padding-right 12px
-        max-width 150px
-
-    .name
-      height 50px
-      line-height 50px
-      margin-left 12px
-      color #40a660
-      font-family 'Open Sans', sans-serif
-      font-size 12px
-      font-weight 100
-
-    .btn
-      height 50px
-      line-height 48px
-      padding 0 12px
-      font-weight 900
+  .forum-info
+    .cover
+      padding 3em 0 5em
       font-size 16px
+      background-size cover
+      background-repeat no-repeat
+      background-position center top
+      background-image unquote("url('https://democracyosorg.s3.amazonaws.com/cover-hands.jpg')")
 
-    .btn
-      color #fff
-      font-weight bold
-      padding 0 12px
-      text-transform uppercase
+      .content
+        padding-bottom 0
 
-      &.go-to-forum
-        color #337ab7
+      h1,
+      p
+        color #f5f5f5
 
-        i.glyphicon-cog
-          margin-top 16px
+      h1
+        margin 0 0 .3em
+        line-height 1.2
+        font-weight 300
 
-    .purple
-      background-color #8156a6
-      border-color #a573d1
-      color #fff
-      font-weight bold
+      p
+        margin 0 0 1em
+        font-size 1em
+        font-weight 300
 
-      &:hover
-        background-color #a573d1
-        color #fff
-      & + .arrow-down
-        border-top-color #8156a6
+      .btn
+        text-transform none
+        padding-left 2em
+        padding-right 2em
 
   .forum-pagination
     display block
@@ -163,3 +124,5 @@ color2 = #aaa
       boxSize*-1px boxSize*-1px color2
   }
 }
+
+@import './forum-card/styles'

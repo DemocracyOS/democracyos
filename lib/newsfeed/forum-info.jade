@@ -6,5 +6,7 @@
     a.btn.btn-link.go-to-forum.pull-right(href='#{forum.url}admin')
       i.glyphicon.glyphicon-cog
   - else
-    a.btn.purple.pull-right(href='/forums/new')
-      = t('newsfeed.call-to-action.start-a-forum')
+    .cover
+      .content
+        a.btn.purple.pull-right(href='/forums/new')
+          = t('newsfeed.call-to-action.start-a-forum')
