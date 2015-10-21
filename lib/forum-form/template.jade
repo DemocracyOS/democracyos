@@ -27,6 +27,6 @@ main.container
           fieldset
             label= t('forum.form.summary.label')
             .form-group.clearfix.summary
-              input(type='text', name='summary', placeholder= t('forum.form.summary.placeholder'), validate='required')
+              input(type='text', name='summary', placeholder= t('forum.form.summary.placeholder'), validate='required max-length:300')
 
         button.btn.btn-block.btn-primary.btn-lg= t('forum.form.create.submit')
