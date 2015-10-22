@@ -5,8 +5,11 @@
     span.name.ellipsis(style=color ? 'color: #{color}' : '')=user.firstName
     span.caret
   ul.dropdown-list
-    - if (!config.multiForum && user.staff)
-      li: a(href='/admin')= t('header.admin')
+    - if (config.multiForum)
+      li: a(href='/settings/forums')= t('header.forums')
+    - else
+      - if (user.staff)
+        li: a(href='/admin')= t('header.admin')
     li: a(href='/settings')= t('header.settings')
     - if (config.frequentlyAskedQuestions)
       li: a(href="/help/faq")= t('help.faq.title')
