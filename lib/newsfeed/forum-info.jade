@@ -1,12 +1,15 @@
 .forum-info
   - if (forum)
-    a.btn.btn-link.go-to-forum.pull-right(href=forum.url)
-      span= forum.title
-      i.glyphicon.glyphicon-menu-right
-    a.btn.btn-link.go-to-forum.pull-right(href='#{forum.url}admin')
-      i.glyphicon.glyphicon-cog
+    .content.manage
+      p
+        a(href='/settings/forums')
+          = t('newsfeed.call-to-action.manage-forums')
+          i.glyphicon.glyphicon-menu-right
   - else
     .cover
       .content
-        a.btn.purple.pull-right(href='/forums/new')
+        h1= t('newsfeed.welcome.title')
+        p= t('newsfeed.welcome.body')
+        a.btn.btn-white(href="/forums/new")
           = t('newsfeed.call-to-action.start-a-forum')
+          i.glyphicon.glyphicon-chevron-right
