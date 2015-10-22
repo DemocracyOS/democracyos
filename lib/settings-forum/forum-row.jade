@@ -1,9 +1,13 @@
 .forum
   .title.pull-left
-    p: strong= forum.title
+    p
+      a.url(href=forum.url): strong= forum.title
     a.url(href=forum.url)= forum.url
-  a.btn-remove.pull-right(href='#')
-    i.glyphicon.glyphicon-trash
+  .actions.pull-right
+    a(href='#{forum.url}admin')
+      i.glyphicon.glyphicon-cog
+    a.btn-remove(href='#')
+      i.glyphicon.glyphicon-trash
   .status.creating
     .loader-wrapper: .loader
     p= t('forum.status.creating')
