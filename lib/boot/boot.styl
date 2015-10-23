@@ -1,12 +1,19 @@
+@import '../../node_modules/democracyos-toggle/lib/index.css'
+@import '../../node_modules/democracyos-loading-lock/loading-lock.css'
+@import '../../node_modules/democracyos-confirmation/confirmation.css'
+@import '../../node_modules/democracyos-datepicker/node_modules/democracyos-aurora/node_modules/democracyos-aurora-popover/node_modules/democracyos-aurora-tip/aurora-tip.css'
+@import '../../node_modules/democracyos-tip/tip.css'
+@import '../../node_modules/democracyos-datepicker/datepicker.css'
+@import '../../node_modules/democracyos-datepicker/node_modules/democracyos-calendar/lib/calendar.css'
+@import '../../node_modules/democracyos-datepicker/node_modules/democracyos-aurora/node_modules/democracyos-aurora-calendar/style.css'
+@import '../../node_modules/democracyos-datepicker/node_modules/democracyos-aurora/node_modules/democracyos-aurora-popover/aurora-popover.css'
+@import '../../node_modules/democracyos-quill/dist/quill.base.css'
+@import '../../node_modules/democracyos-quill/dist/quill.snow.css'
+
 /* Vars
 -------------------------------------------------- */
 
-header_height = 60px
-spacing = 20px
-border_radius = 3px
-nav_proposal_width = 266px
-content_width = 580px
-link_blue = #2980b9
+@import './vars'
 
 /* General
 -------------------------------------------------- */
@@ -17,6 +24,7 @@ html
 body
   color #4d4d4d
   overflow hidden
+  font-family "Open Sans", sans-serif
 
 h1,h2,h3,h4,h5,h6
   font-weight bold
@@ -36,12 +44,20 @@ img.avatar
   font-weight bold
   letter-spacing .1px
   border 0
-  padding 8px 12px 4px
+  border-radius 2px
+
   &.btn-success
     background-color #27ae60
 
 .btn-default
   border 0
+
+.btn-white
+  color #333
+  background-color #f5f5f5
+
+  &:hover
+    background-color #eee
 
 .btn-group > .btn + .dropdown-toggle
   padding-left 13px
@@ -118,7 +134,7 @@ body.browser-page
     display none
 
 section.site-content
-  padding-top header_height
+  padding-top header_height + 30px
   top 0
   left nav_proposal_width
   right 0
@@ -151,83 +167,6 @@ aside.nav-proposal
   overflow-y scroll
   background #ECF0F1
   z-index 10
-  .navlist
-    li
-      border-bottom 1px solid lighten(#BDC3C7, 40%)
-      a.voted
-        min-height 75px
-
-      a
-        padding-left spacing
-        padding-top 14px
-        padding-bottom 14px
-        color black
-        position relative
-        padding-left 70px
-        color #666
-        min-height 60px
-
-        .item-tag
-          position absolute
-          left spacing
-          top spacing
-          color white
-          svg.hexagon
-            width 40px
-            height 40px
-            left 0
-            top -8px
-            position absolute
-            opacity .2
-            // polygon
-            //  fill #BDC3C7
-          img
-            width 20px
-            height 20px
-            position absolute
-            z-index 100
-            width 30px
-            left 5px
-            top 2px
-
-        .item-badges
-          position absolute
-          left spacing + 7
-          top spacing + 34
-          color white
-
-          img
-            width 16px
-            height 12px
-            position absolute
-            z-index 100
-            left 5px
-            top 2px
-
-        &:hover
-          background #fff
-
-        span.title
-          font-size 15px
-          line-height 19px
-          font-weight bold
-          display block
-          margin-bottom 0px
-
-        span.created-by
-          font-size 11px
-          opacity .5
-
-  .navlist
-    li.active
-      a
-        .item-tag
-          svg.hexagon
-            opacity 1
-      &.active
-        a
-          background #fff
-          color black
 
 /* Sidebar dropdown-department
 -------------------------------------------------- */
@@ -243,66 +182,14 @@ aside.nav-proposal
   &.proposal-type-2
     background-color #E67E22
 
-/* Sidebar dropdown-department
--------------------------------------------------- */
-.dropdown-department
-  padding  15.5px spacing 5px
-  background-color #bdc3c7
-  display block
-  .btn-group
-    float none
-    width 100%
-    &.open > button.btn.btn-default,
-    &.open > button.btn.btn-default.dropdown-toggle
-      background-color #727f80
-      box-shadow rgba(0, 0, 0, 0.15) 0px 3px 5px 0px inset
-      box-shadow none
-    button.btn.btn-default
-      background-color #909FA0
-      font-size 12px
-      color white
-      text-align left
-      &.dropdown-toggle
-        float right
-        padding-right 0
-        padding-left 0
-        width 8%
-        background-color #909FA0
-      &.current-department
-        width 100%
-        overflow hidden
-        border-radius 4px
-        -webkit-font-smoothing antialiased !important
-    .dropdown-menu
-      width 100%
-      border-radius border_radius
-      li
-        display block
-        width 100%
-      a
-        display block
-        white-space normal
-        font-weight bold
-        text-transform uppercase
-        font-size 12px
-        padding 6px 14px
-        &:hover
-          background #f1f1f1
-          color #333
-
-/* Feedback button
--------------------------------------------------- */
-.uv-icon.uv-bottom-right
-  right 25px !important
-
-
 /* `component/confirmation` adjust styles
 -------------------------------------------------- */
 body
   .overlay
     background radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)
     z-index 9999998
-  .dialog.confirmation
+
+  .dialog
     position fixed
     display block
     left 50%
@@ -330,6 +217,7 @@ body
       width 100% // overrides .dialog width from dialog component
       max-width none
       min-width 0
+
       .title
         position absolute
         left 0px
@@ -376,3 +264,6 @@ body
   overflow: hidden
   text-overflow: ellipsis
   white-space: nowrap;
+
+@import '../*/styles'
+@import './boot-responsive'

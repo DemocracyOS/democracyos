@@ -36,24 +36,19 @@
 
     h1=proposal.mediaTitle
     - if (proposal.author)
-      h2.author=t('admin-laws-form.label.author') + ': '
+      h2.author=t('admin-topics-form.label.author') + ': '
         - if (proposal.authorUrl)
           a(href=proposal.authorUrl, target='_blank')=proposal.author
         - else
           =proposal.author
     h3=proposal.title
     .entry-content
-      .summary
       .clauses
-        - if (clauses.length)
-          - each clause, i in clauses
-            - var classes = ['hide']
-            - classes.push(clause.centered ? 'text-center' : '')
-            .clause.commentable-section(class=classes, data-section-id=clause.id)!=clause.text
-      - if (proposal.clauseTruncationText)
-        a.read-more(href="#")= proposal.clauseTruncationText
-      - else
-        a.read-more(href="#")= t('common.read-more')
+        - var clauses = proposal.clauses
+        each clause, i in clauses
+          - var classes = ['clause']
+          - classes.push(clause.empty ? 'hide' : 'commentable-section')
+          !=toHTML(clause, { className: classes, iframeResponsive: true })
 
     //- Article source
     - if (proposal.source)
@@ -77,7 +72,8 @@
       //- Rendered by participants view
 
     //- Article share links
+    - var text = config.tweetText || proposal.mediaTitle
     .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook
-      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter
-      a(target="_blank", href="https://plus.google.com/share?url=#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/topic/#{proposal.id}").flaticon.social.facebook
+      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.twitter
+      a(target="_blank", href="https://plus.google.com/share?url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.google-plus

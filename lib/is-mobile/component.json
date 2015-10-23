@@ -1,6 +1,0 @@
-{
-  "name": "is-mobile",
-  "description": "Determines wether a browser is mobile",
-  "scripts": [ "is-mobile.js" ],
-  "main": "is-mobile.js"
-}

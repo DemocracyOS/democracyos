@@ -8,8 +8,7 @@ html(lang='en')
       title= config.organizationName
 
       meta(charset='utf-8')
-      meta(name='description', content='')
-      meta(name='author', content='')
+      meta(name='description', content=config.socialshare.siteDescription)
 
       //-
       //-   Mobile Specific Metas
@@ -21,21 +20,17 @@ html(lang='en')
       //-   ==================================================
 
       //- Boostrap Complete
-      link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+      link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
       link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', rel='stylesheet')
 
       //- Application Styles
       link(rel='stylesheet', href='/app.css')
 
       //- HTML5 shim, for IE6-8 support of HTML5 elements
-      //if lt IE 9
-      script(type='text/javascript', src='//html5shim.googlecode.com/svn/trunk/html5.js')
+      script(src="https://cdn.polyfill.io/v1/polyfill.min.js")
 
       link(rel="icon", type="image/x-icon", href=config.favicon)
 
-      script(type='text/javascript', src='//use.typekit.net/wva0yvr.js')
-      script.
-        try{Typekit.load();}catch(e){}
       script.
         var csrfToken = '#{csrfToken}';
 
@@ -62,16 +57,15 @@ html(lang='en')
       //- Start of `Javascripts`
 
       //- Core 3rd parties libs
-      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
       include includes/placeholders
       //- General Site javascript
       script.
-        window.config=!{JSON.stringify(client)}
-        window.config.locale='#{locale}'
-        window.translations=!{JSON.stringify(translations)}
+        window.config=!{JSON.stringify(client)};
+        window.config.locale='#{locale}';
+        window.translations=!{JSON.stringify(translations)};
+      - if (config.segmentKey)
+        include includes/segment
       script(src='/app.js')
-
-      //- Boot application
-      script require('./lib/boot');
-
       //- End of `Javascripts`
+  include includes/fonts

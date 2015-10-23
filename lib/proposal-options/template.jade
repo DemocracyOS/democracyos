@@ -6,19 +6,19 @@
 - var participants = proposal.participants || []
 
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
-- var voted = citizen && ~census.indexOf(citizen.id)
+- var voted = user && ~census.indexOf(user.id)
 
 .inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
 
   .proposal-options
     .vote-box
       div#voting-error.alert.alert-warning.hide #{t('proposal-options.error.voting')}.
-      .meta-data(class= !!citizen.id ? '' : 'hide')
-        - if(~positives.indexOf(citizen.id))
+      .meta-data(class= !!user.id ? '' : 'hide')
+        - if(~positives.indexOf(user.id))
           include vote-positive
-        - else if (~negatives.indexOf(citizen.id))
+        - else if (~negatives.indexOf(user.id))
           include vote-negative
-        - else if (~neutrals.indexOf(citizen.id))
+        - else if (~neutrals.indexOf(user.id))
           include vote-neutral
 
         a.meta-item.change-vote(href="#", class= voted && !closed ? '' : 'hide')
@@ -38,7 +38,7 @@
             i.flaticon.solid.thumbs-up-1
             span= t('proposal-options.nay')
 
-        - if (!citizen.id)
+        - if (!user.id)
           p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in') + '. '
             a(href="/signin")= t('signin.login')
             = ' ' + t('common.or') + ' '
@@ -48,7 +48,7 @@
       .votes-cast
         em.text-muted= t('proposal-options.votes-cast', { num: census.length || "0" })
 
-    - if (closed || config.alwaysShowTopicResults)
+    - if (closed)
       .results-box.row.clearfix
         p.alert.alert-info(class=census.length ? 'hide' : ''): label= t('proposal-options.no-votes-cast')
         .results-chart(class= census.length ? '' : 'hide').col-sm-6

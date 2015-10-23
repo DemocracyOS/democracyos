@@ -123,7 +123,7 @@ function commandTranslateMissing(opts) {
         googleTranslate.translate(baseLang[k], opts.base, lang, function (err, translation) {
           if (err) {
             console.error(err);
-            done();
+            return done();
           }
           var t = {};
           t[k] = translation.translatedText;
@@ -149,7 +149,7 @@ function commandTranslateMissing(opts) {
 }
 
 function commandDeleteKey(opts) {
-  var langs = opts.base || languages;
+  var langs = opts.on || languages;
 
   forEachLanguageFile(langs, function(lang, file){
     console.log('Deleting keys from `' + lang + '`:');
@@ -253,6 +253,27 @@ function commandSort(opts){
       console.log('`' + lang + '` sorted.');
     }).catch(function(err) {
       throw err;
+    });
+  });
+}
+
+function commandDeleteRepeatedValues(opts) {
+  var on = opts.on || languages;
+
+  var baseLanguage = getLang(opts.base);
+
+  on.forEach(function(lang){
+    var language = getLang(lang);
+    var toDelete = [];
+
+    Object.keys(language).forEach(function(key){
+      if (!baseLanguage[key]) return;
+      if (baseLanguage[key] === language[key]) toDelete.push(key);
+    });
+
+    if (toDelete.length) commandDeleteKey({
+      on: [lang],
+      key: toDelete
     });
   });
 }
@@ -370,6 +391,22 @@ nomnom.command('delete-extra')
   })
   .callback(commandDeleteExtra)
   .help('Delete extra keys from `--on` that are not present on `--base`.');
+
+nomnom.command('delete-repeated-values')
+  .option('base', {
+    abbr: 'b',
+    help: 'Language to use as the base for the comparisons.',
+    required: true
+  })
+  .option('on', {
+    abbr: 'o',
+    help: 'Language(s) you want to delete keys from. Defaults to all.',
+    choices: languages,
+    required: false,
+    list: true
+  })
+  .callback(commandDeleteRepeatedValues)
+  .help('Delete keys from `--on` with the same values as `--base`.');
 
 nomnom.command('sort')
   .option('lang', {

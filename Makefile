@@ -10,18 +10,23 @@ ifndef NODE_ENV
   NODE_ENV="development"
 endif
 
-run: packages
-	@echo "Starting application..."
-	@NODE_PATH=. DEBUG=$(DEBUG) node index.js
+GULP="./node_modules/.bin/gulp"
+
+run: build
+	@echo "Launching..."
+	@$(GULP) serve
+
+build: packages
+	@echo "Building..."
+	@$(GULP) build
 
 packages:
 	@echo "Installing dependencies..."
 	@npm install
 
 clean:
-	@echo "Removing dependencies, components and built assets."
+	@echo "Removing dependencies, components and built assets..."
 	@rm -rf node_modules components public
 	@echo "Done.\n"
-
 
 .PHONY: clean

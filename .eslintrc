@@ -10,9 +10,10 @@
     "plusplus": false,
     "evil": false,
     "debug": false,
+    "no-new": 0,
     "no-use-before-define": "nofunc",
     "new-parens": false,
-    "no-underscore-dangle": [ 1, true ],
+    "no-underscore-dangle": false,
     "no-unused-vars": [ 1, { "vars": "all", "args": "after-used" } ],
     "eol-last": [ 1, true ]
   },

@@ -18,14 +18,12 @@
     .user
     - var color = config.headerFontColor;
     - var style = color ? 'color: ' + color : '';
-    a(href='/signin', style=style).login.pull-right.anonymous-citizen
+    a(href='/signin', style=style).login.pull-right.anonymous-user
       i.icon-signin
       span= t('header.signin')
-    a(href='/signup', style=style).login.pull-right.anonymous-citizen
+    a(href='/signup', style=style).login.pull-right.anonymous-user
       i.icon-user
       span= t('header.signup')
     - var target = config.homeLink ? {} : { 'target': '_blank'};
     a.login.pull-left(href=config.organizationUrl, style=style)&attributes(target)
       span= config.organizationName
-    //- a.login.pull-left(href='#', id='feedback')
-    //-   span= t('header.feedback')

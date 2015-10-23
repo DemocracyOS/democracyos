@@ -11,8 +11,8 @@
         label= t('signup.email')
         input.form-control(type='text', name='email', tabindex=1, placeholder=t('forgot.mail.example'), validate='required email')
       .form-group
-        label= t('password')
         .forgot: a(href='/forgot', tabindex=4) #{t('forgot.question')}
+        label= t('password')
 
         input.form-control(type='password', name='password', tabindex=2, placeholder=t('password'), validate='required')
       .form-group: .signup
