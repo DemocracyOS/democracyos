@@ -1,4 +1,203 @@
 
+1.0.0 / 2015-10-23
+==================
+
+  * [forum] - Fix showing create new topic on own forum #1091
+  * add settings/forums link on user-badge
+  * clear topicStore before loading forum homepage
+  * remove unused variables
+  * remove unused variables
+  * preload forum homepage before rendering
+  * fix forums/new form styles
+  * fix newsfeed margin
+  * [translations:es] - Add missing translations for forum form
+  * Merge pull request #1094 from DemocracyOS/fix-forums-list-update
+  * Merge pull request #1092 from DemocracyOS/fix-forum-admin-link
+  * fix forums list reloading Closes #1090
+  * Merge pull request #1093 from DemocracyOS/fix/forum-api
+  * [forum-api] - Fix finding forums by ids and names
+  * fix styles
+  * add cover image on forums homepage
+  * add cover when user is not logged in
+  * add create button when all forums where deleted Closes #1089
+  * fix create a forum button on settings/forum
+  * add forums/admin link on settings/forums
+  * Merge pull request #1086 from DemocracyOS/add/new-homepage
+  * [homepage] - Add -createdAt sorting and title in Spanish
+  * add forums/admin link on settings/forums
+  * Fix deleting a forum and validating summary < 300 characters
+  * add this.switchOn and this.switchOff on base view
+  * Merge pull request #1085 from DemocracyOS/fix/uncapitalize-urls
+  * add homepage title
+  * fix homepage pagination button
+  * add pagination of forums on homepage
+  * [routing] - Add 301 redirect to lowercased version of that URL if uppercase characters are present. Close #1084
+  * fix forum admin
+  * [docs] - Revert deploy docs
+  * [docs] - Add deploy docs
+  * sort translation files
+  * add pagination on forum-api
+  * fix js styles
+  * always populate owner when fetching forum
+  * fix forum config bar responsiveness
+  * add styleings to forum lists on homepage
+  * use view/mixins on newsfeed
+  * fix selectors
+  * normalize forum-card name
+  * [homepage] - New basic homepage listing forums #1079
+  * [docs] - Fix markdown bug
+  * Add development guide
+  * [feed] - Remove all Feed references #1079
+  * Fixed admin link. Closes #1075
+  * Release 0.19.3
+  * allow to access /forgot when visibility=hidden
+  * Fixed Deploy to Heroku button link. Closes #1062
+  * Update Deploy to Heroku link
+  * Update README.md to include Deploy to Heroku button
+  * Release 0.19.2
+  * Release 0.19.1
+  * [whitelist] - Update max whitelists shown per page (5000)
+  * Rebase
+  * Merge pull request #684 from solde9/fix/smooth-scrolling
+  * Rearranged CodeClimate badge
+  * Added codeclimate badge
+  * Merge pull request #1007 from DemocracyOS/add/show-email-config
+  * dont allow to show emails on public instances
+  * Merge pull request #1009 from DemocracyOS/fix/facebook-login
+  * [facebook-strategy] Added profileFields key to Passport's Facebook strategy constructor, as seen in https://github.com/jaredhanson/passport-facebook/issues/129#issuecomment-124039674. Fixes empty email issue on login.
+  * [comments] - Smooth scroll: Wrap common functionality #659
+  * show a message to the user on facebook login error Closes #1001
+  * [comments] - Modify smooth scroll #659
+  * add publicEmails config
+  * dont allow to register fb users without email Closes #1001
+  * [comments] - add textarea.focus() #659
+  * [comments-edit] - Add smooth-scrolling #659
+  * [comments-replies] - scroll only if element is outside the viewport #684
+  * [comments-view] - scroll only if element is outside the viewport #684
+  * [is-in-viewport] - Add isElementInViewport function #684
+  * [comments-replies] - Add smooth-scrolling while opening the form #659
+  * [comments-view] - Add smooth-scrolling while opening the form #659
+  * Merge pull request #1000 from jacobmiller/patch-1
+  * rm vot-it
+  * Merge pull request #972 from galiumodorat/feature/Polish-translation
+  * added Polish translation
+  * Release 0.19.0
+  * Add greek translation credit
+  * add greek laguage name
+  * add greek translations
+  * add test option
+  * add test option
+  * fix dos-translate async processing
+  * fix dos-translate directory pointing
+  * fix dos-translate library
+  * Release 0.18.0
+  * Merge pull request #962 from fabriciodisalvo/patch-1
+  * Added missing line for 'Chinese (Trad)' language
+  * Added missing line for 'Chinese (Trad)' language
+  * Update en.json
+  * Update supported.js
+  * Update zh_TW.json
+  * Create zh_TW.json
+  * add gitter link on CONTRIBUTING
+  * Update license year
+  * bump notifier-client dep version
+  * Merge pull request #942 from fonorobert/update/accented-chars-in-names
+  * add new accented chars to regex, closes #941
+  * rename config.showResults to config.alwaysShowTopicResults
+  * add local config reference to component.json
+  * remove console.log statement
+  * Release 0.17.6
+  * update notifier-client to 0.3.0
+  * fix wait for laws.loaded before rendering homepage
+  * Fix homepage first law shown
+  * Merge pull request #938 from DemocracyOS/fix-law-show
+  * law page depend on laws bus, not on sidebar Closes #898
+  * remove duplicated config key
+  * Merge pull request #931 from DemocracyOS/fix-mobile-menu-icon
+  * use headerFontColor on mobile menu icon Closes #930
+  * add showResults config key and check it in proposal-options, closes #926
+  * fix t() invoke on proposal-options.js
+  * add .eslintrc file
+  * Merge pull request #924 from a0viedo/patch-2
+  * Merge pull request #925 from a0viedo/patch-3
+  * added license in package.json
+  * using relative links in readme
+  * Release 0.17.5
+  * Fix async of logout Closes #921
+  * fix user token loading
+  * Merge pull request #920 from DemocracyOS/fix-forgot-route
+  * fix user verification
+  * allow public access to /forgot routes Closes #919
+  * Add email normalization Closes #689
+  * Revert "added japanese"
+  * removed console print statements
+  * removed extra line added
+  * changed tabs to spaces
+  * Add error handler for incorrect current password
+  * fixed bug where JSON.parse was being called on non-JSON data
+  * undid data additions
+  * added japanese
+
+0.19.3 / 2015-09-28
+===================
+
+  * Allow access to /forgot when config.visibility is 'hidden'
+  * Include Deploy to Heroku button on README.md
+
+0.19.2 / 2015-09-14
+===================
+
+  * Add showing a message to the user on facebook login error Closes #1001
+  * Add codeclimate badge
+  * Add profileFields key to Passport's Facebook strategy constructor, as seen in https://github.com/jaredhanson/passport-facebook/issues/129#issuecomment-124039674. Fixes empty email issue on login.
+  * Add publicEmails config
+  * Add not allowing to register fb users without email Closes #1001
+  * Add textarea.focus() on comments #659
+  * Add scroll only if element is outside the viewport in comment replies #684
+  * Add isElementInViewport function #684
+  * Add not allowing to show emails on public instances
+  * Added Polish translation
+  * Update CodeClimate badge
+  * Update smooth scroll #659
+  * Remove vot-it reference
+
+0.19.1 / 2015-09-14
+===================
+
+  * Update max whitelists shown per page (5000)
+
+0.19.0 / 2015-07-06
+==================
+
+ * Add Greek translation
+ * Add Chinese (traditional) translation credit
+
+0.18.0 / 2015-07-02
+==================
+
+ * add support for Chinese (Traditional) language
+ * add gitter link on CONTRIBUTING.md
+ * add new accented chars to regex, closes #941
+ * add config setting to always show voting results. Closes #926
+
+0.17.6 / 2015-06-16
+===================
+
+  * Update notifier-client version to 0.3.0
+  * Fix homepage first law shown #898
+  * Use config.headerFontColor on mobile menu icon #930
+  * Add license in package.json
+  * Use relative links in readme
+
+0.17.5 / 2015-06-12
+===================
+
+  * Fix UI refresh on logout #921
+  * Fix forgot password when VISIBILITY is 'hidden' #920
+  * Add email normalization #689
+  * Add ALLOW_EMAIL_ALIASES configuration #689
+  * Add error handler for incorrect current password #714
+
 0.17.4 / 2015-06-03
 ===================
 
@@ -125,7 +324,6 @@
  * Revert "Fix organization link to open on same tab"
  * Fix logo link on header Closes #701
  * Fix organization link to open on same tab
- * Merge branch 'release-0.12.8' into development
 
 0.12.8 / 2015-03-11
 ==================
@@ -216,7 +414,6 @@
  * Add CORS support. CORS_DOMAINS env variables holds a whitelist of domains
  * Fix bad legacy text rendering #438
  * Hide clauses Add button for new laws and laws that have not clauses #675
- * Merge branch 'add/quilljs' into update/admin
  * Fix bad rendering on clauses with manually entered HTML #438
  * Fix responsive wrapping in clauses #438
  * Embed video responsively #438
@@ -373,7 +570,6 @@
  * Add mongoUsersUrl to env config file #559
  * Add missing translations for #560 #478
  * Basic wrapper for notifier-client #560
- * Merge branch 'update/notifier-no-data-deps' into development
  * Update payload for 'law-published' notification. Closes #561
  * Added Gitter badge to README.md
  * Update error handling on response override to match refactored approach in FormView

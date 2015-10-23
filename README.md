@@ -1,4 +1,4 @@
-# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.png)](http://bit.ly/1KvH82I)
+# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.png)](http://bit.ly/1PGomtT)
 [![Dependencies](https://david-dm.org/DemocracyOS/app.svg)](https://david-dm.org/DemocracyOS/app.svg)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DemocracyOS/app)
 [![Code Climate](https://codeclimate.com/github/DemocracyOS/app/badges/gpa.svg)](https://codeclimate.com/github/DemocracyOS/app)
@@ -28,11 +28,11 @@ Please refer to the [Installation](https://github.com/DemocracyOS/app/wiki/Insta
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/DemocracyOS/app/blob/development/CONTRIBUTING.md) for further details.
+Please see [CONTRIBUTING.md](https://github.com/DemocracyOS/app/blob/master/CONTRIBUTING.md) for further details.
 
 ## Contributors
 
-See [CONTRIBUTORS.md](https://github.com/DemocracyOS/app/blob/development/CONTRIBUTORS.md) to get to know the DemocracyOS team and contributors.
+See [CONTRIBUTORS.md](https://github.com/DemocracyOS/app/blob/master/CONTRIBUTORS.md) to get to know the DemocracyOS team and contributors.
 
 ## Links
 
