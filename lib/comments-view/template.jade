@@ -5,7 +5,7 @@
     .inner-container.my-comments
       h4=t('comments.your.arguments')
       ul.media-list.my-comments-list
-      form.comment-form(method='post', action='/api/comment/#{type}/#{item.id}/comment', autovalidate='autovalidate', autosubmit='autosubmit')
+      form.comment-form(method='post', action='/api/comment/comment?type=#{type}&id=#{item.id}', autovalidate='autovalidate', autosubmit='autosubmit')
         h5= t('comments.your-argument')
           a.pull-right(href='/help/markdown', target='_blank') #{t('markdown.comments.formatting-help')}
         p
