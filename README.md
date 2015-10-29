@@ -9,6 +9,9 @@ Check out the [live DemocracyOS demo](http://demo.democracyos.org).
 
 ![DemocracyOS](https://i.cloudup.com/F7G3UjbWBx.gif)
 
+## Requirements
+
+* Node.js v4
 
 ## Installation
 Please refer to the [Installation](https://github.com/DemocracyOS/app/wiki/Installation) wiki page for detailed instructions on how to install and setup your instance of DemocracyOS.
