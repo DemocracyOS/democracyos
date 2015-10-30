@@ -1,4 +1,19 @@
 
+1.0.1 / 2015-10-30
+==================
+
+  * Add new config variables for sending emails. Close #1106
+  * Add not marking as empty a clause with img elements Closes #1098
+  * Add user.optional middleware on /signup and /signin. Close #1107
+  * Add sublime files to .gitignore
+  * Update democracyos-notifier to ~0.0.14
+  * Update .gitignore
+  * Remove lib/tags/tags.js
+  * Remove notificiation on topic-commented, closes #1080
+  * Fix error on remove date
+  * Fix #1066, clear closign add closes datepicker
+  * Fix cache cleaning of Store.findAll
+
 1.0.0 / 2015-10-23
 ==================
 
