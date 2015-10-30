@@ -30,6 +30,6 @@ main.container
           fieldset
             label= t('forum.form.location.label')
             .form-group.clearfix.location
-              input(type='text', name='location', placeholder= t('forum.form.location.placeholder'), maxlength=300, validate='max-length:300')
+              input(id='location', type='text', name='location', placeholder= t('forum.form.location.placeholder'), maxlength=300, validate='max-length:300')
 
         button.btn.btn-block.btn-primary.btn-lg= t('forum.form.create.submit')
