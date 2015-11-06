@@ -1,0 +1,12 @@
+.notifications-page
+  h1=t('notifications.title')
+  table.table.table-hover
+    - each notification in notifications
+      tr(data-url=notification.url)
+        td.text-center
+          i.glyphicon(class=notification.buttonIcon)
+        td(colspan=notification.avatar ? 1 : 2)
+          | #{notification.text}
+          p.small.ago=notification.when
+        - if (notification.avatar)
+          td: img(src=notification.avatar)

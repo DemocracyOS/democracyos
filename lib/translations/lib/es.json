@@ -211,6 +211,7 @@
   "newsfeed.welcome.title": "Empieza tu democracia hoy",
   "notifications.error": "No es posible conectarse al motor de notificaciones",
   "notifications.error.connection-refused": "No es posible conectarse al motor de notificaciones",
+  "notifications.title": "Notificaciones",
   "password": "Contraseña",
   "password.new": "Nueva contraseña",
   "password.repeat": "Repetir contraseña",

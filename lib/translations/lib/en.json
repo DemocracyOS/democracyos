@@ -211,6 +211,7 @@
   "newsfeed.welcome.title": "Start your democracy now",
   "notifications.error": "Unable to connect to notifications engine",
   "notifications.error.connection-refused": "Unable to connect to notifications engine",
+  "notifications.title": "Notifications",
   "password": "Password",
   "password.new": "New Password",
   "password.repeat": "Repeat Password",
