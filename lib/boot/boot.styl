@@ -36,10 +36,14 @@ h6
   color inherit
 
 a
+  color #3d699e
   font-weight bold
-  &:hover
-    text-decoration underline
+
+  &:hover,
+  &:focus,
+  &:active
     color #428bca
+    text-decoration none
 
 img.avatar
   border-radius 100%
@@ -259,9 +263,9 @@ body
             background #952722
 
 .ellipsis
-  overflow: hidden
-  text-overflow: ellipsis
-  white-space: nowrap;
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
 
 @import '../*/styles'
 @import './boot-responsive'
