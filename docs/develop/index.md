@@ -10,7 +10,7 @@ We'll be using version `^1.0.0` of DemocracyOS.
 # Stack
 
 #### Node.js and NPM
-You need [Node.js v4.2.1](https://nodejs.org/en/blog/release/v4.2.1/) to run DemocracyOS.
+You need [Node.js v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) or greater to run DemocracyOS.
 
 There are many options out there to get it installed:
 
