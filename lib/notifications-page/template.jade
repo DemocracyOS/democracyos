@@ -2,11 +2,21 @@
   h1=t('notifications.title')
   table.table.table-hover
     - each notification in notifications
+      - var glyphicon = ''
+      case notification.type
+        when 'reply'
+          - glyphicon = 'glyphicon-comment'
+        when 'topic'
+          - glyphicon = 'glyphicon-exclamation-sign'
+        when 'upvote'
+          - glyphicon = 'glyphicon-chevron-up'
+        when 'downvote'
+          - glyphicon = 'glyphicon-chevron-down'
       tr(data-url=notification.url)
         td.text-center
-          i.glyphicon(class=notification.buttonIcon)
-        td(colspan=notification.avatar ? 1 : 2)
+          i.glyphicon(class=glyphicon)
+        td(colspan=notification.relatedUser ? 1 : 2)
           | #{notification.text}
-          p.small.ago=notification.when
-        - if (notification.avatar)
-          td: img(src=notification.avatar)
+          p.small.ago=notification.createdAt
+        - if (notification.relatedUser)
+          td: img(src=notification.relatedUser.avatar)
