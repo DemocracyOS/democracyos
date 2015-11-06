@@ -24,16 +24,43 @@ html
 body
   color rgba(#000, .8)
   overflow hidden
-  font-family "Open Sans", sans-serif
+  font-size 16px
+  line-height 1.4
+  font-family 'Open Sans', sans-serif
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6
-  font-weight bold
+p
   color inherit
+
+p
+  font-weight 400
+  font-size 1em
+
+.lead
+  font-size 1.2em
+
+h1,
+h2,
+h3
+  line-height 1.2
+  font-weight 700
+
+h1
+  font-size 3em
+  margin-top 1em
+  margin-bottom .5em
+
+h2
+  font-size 1.75em
+  margin-top 1.2em
+  margin-bottom .8em
+
+h3
+  font-size 1em
+  margin-top 1.375em
+  margin-bottom 1.375em
 
 a
   color #3d699e
@@ -54,8 +81,11 @@ img.avatar
   border 0
   border-radius 2px
 
-  &.btn-success
-    background-color #27ae60
+.btn-success
+  background-color #27ae60
+
+  &:hover
+    background-color #1C8045
 
 .btn-default
   border 0
