@@ -2,8 +2,6 @@
 
 .sidebar-list
   li
-    border-bottom 1px solid lighten(#BDC3C7, 40%)
-
     &.active
       a
         color black
@@ -12,6 +10,9 @@
           svg.hexagon
             opacity 1
 
+      span.title
+        color inherit
+
     a.voted
       min-height 75px
 
@@ -19,10 +20,9 @@
       padding-left spacing
       padding-top 14px
       padding-bottom 14px
-      color black
+      color inherit
       position relative
       padding-left 70px
-      color #666
       min-height 60px
 
     .item-tag
@@ -68,10 +68,12 @@
     span.title
       font-size 15px
       line-height 19px
-      font-weight bold
+      font-weight 700
       display block
       margin-bottom 0px
+      color #666
 
     span.created-by
       font-size 11px
       opacity .5
+      font-weight normal
