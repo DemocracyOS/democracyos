@@ -5,12 +5,12 @@ title: Develop
 DemocracyOS development guide
 ==========================
 
-We'll be using `1.0.0` branch of DemocracyOS.
+We'll be using version `^1.0.0` of DemocracyOS.
 
 # Stack
 
 #### Node.js and NPM
-We support the [latest version](https://nodejs.org/en/blog/release/v4.2.1/) of [Node.js](https://nodejs.org/en) so you must have it installed.
+You need [Node.js v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) or greater to run DemocracyOS.
 
 There are many options out there to get it installed:
 
