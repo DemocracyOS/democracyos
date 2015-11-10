@@ -39,6 +39,7 @@ Apart from English and Spanish, maintained by the DemocracyOS team, these brave 
 * German: [Charlotte Breuer](http://breuer-moellemann.de/)
 * Italian: [Felipe Muñoz](https://twitter.com/felipemuni)
 * Portuguese: [Open Knowledge Brasil](https://github.com/okfn-brasil)
+* Romanian: [Alex Proca](https://alexproca.ro)
 * Russian: [@tarasdudar](https://github.com/tarasdudar)
 * Swedish: [@Feilin-Ruidian](https://github.com/Feilin-Ruidian)
 * Ukrainian: [@tarasdudar](https://github.com/tarasdudar)
