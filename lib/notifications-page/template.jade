@@ -17,6 +17,6 @@
           i.glyphicon(class=glyphicon)
         td(colspan=notification.relatedUser ? 1 : 2)
           | #{notification.text}
-          p.small.ago=notification.createdAt
+          p.small.ago(data-time=notification.createdAt.toString())
         - if (notification.relatedUser)
           td: img(src=notification.relatedUser.avatar)
