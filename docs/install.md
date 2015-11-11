@@ -20,7 +20,7 @@ This is a quick reference to get DemocracyOS up and running.
 To get started with DemocracyOS, you will need to have installed:
 
 * [MongoDB](http://www.mongodb.org/downloads) open-source document database.
-* [NodeJS & NPM](http://nodejs.org/download) platform.
+* [NodeJS & NPM](http://nodejs.org/) platform.
 * [Git](http://git-scm.com/downloads) distributed version control system. If you're on github and don't have `git`, [you're doing it wrong](http://knowyourmeme.com/memes/youre-doing-it-wrong).
 * [Make](http://www.gnu.org/software/make/) build automation utility.
 * [OpenSSL](https://www.openssl.org/related/binaries.html) in case you want to generate SSL certificates.
