@@ -1,12 +1,12 @@
 - var positives = proposal.upvotes || []
 - var negatives = proposal.downvotes || []
 - var neutrals = proposal.abstentions || []
-- var census = neutrals.concat(negatives).concat(positives) || []
+- var census = proposal.census
 
 - var participants = proposal.participants || []
 
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
-- var voted = user && ~census.indexOf(user.id)
+- var voted = user && proposal.voted
 
 .inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
 
@@ -46,18 +46,18 @@
             = '.'
 
       .votes-cast
-        em.text-muted= t('proposal-options.votes-cast', { num: census.length || "0" })
+        em.text-muted= t('proposal-options.votes-cast', { num: census })
 
     - if (closed)
       .results-box.row.clearfix
-        p.alert.alert-info(class=census.length ? 'hide' : ''): label= t('proposal-options.no-votes-cast')
-        .results-chart(class= census.length ? '' : 'hide').col-sm-6
+        p.alert.alert-info(class=census ? 'hide' : ''): label= t('proposal-options.no-votes-cast')
+        .results-chart(class= census ? '' : 'hide').col-sm-6
           canvas#results-chart(width="220", height="220")
-        .results-summary(class= census.length ? '' : 'hide').col-sm-6
+        .results-summary(class= census ? '' : 'hide').col-sm-6
           - if (positives.length)
             .votes-afirmative.votes-results
               h5= t('proposal-options.yea')
-              - var width = census.length ? (positives.length/census.length)*100 : 0;
+              - var width = census ? (positives.length/census)*100 : 0;
               - var width = Math.round(width*100)/100
               - var s = 1 === positives.length ? '' : 's'
               span.percent #{width} %
@@ -66,7 +66,7 @@
           - if (negatives.length)
             .votes-negative.votes-results
               h5= t('proposal-options.nay')
-              - var width = census.length ? (negatives.length/census.length)*100 : 0;
+              - var width = census ? (negatives.length/census)*100 : 0;
               - var width = Math.round(width*100)/100
               - var s = 1 === negatives.length ? '' : 's'
                 span.percent #{width} %
@@ -75,7 +75,7 @@
           - if (neutrals.length)
             .votes-neutral.votes-results
               h5= t('proposal-options.abstain')
-              - var width = census.length ? (neutrals.length/census.length)*100 : 0;
+              - var width = census ? (neutrals.length/census)*100 : 0;
               - var width = Math.round(width*100)/100
               - var s = 1 === neutrals.length ? '' : 's'
                 span.percent #{width} %
