@@ -1,4 +1,14 @@
 
+1.0.2 / 2015-11-18
+==================
+
+  * Add Romanian language #1134 Thanks @alexproca!
+  * Remove unsued local libs #1130
+  * Add Node.js 4.0 requirement #1114
+  * Add and enforce new Styleguide #1127
+  * Remove Google+ share button
+  * Fix notification parameters overwriting #1122
+
 1.0.1 / 2015-10-30
 ==================
 
