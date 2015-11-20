@@ -15,6 +15,16 @@ You'd help us out a lot by first checking if someone else has reported the same 
 
 Share as much information as possible. Include operating system and version, browser and version, version of DemocracyOS. Also include steps to reproduce the bug and any logs from browser and/or process whenever possible.
 
+A good approach to a bug report is being very clear on how to reproduce it. Following this template might help (kudos to [@bastianhell](https://github.com/bastianhell):
+
+> 1. Run app with `make`
+> 2. Navigate to `/route`
+> 3. Click on `button` and see error in `console` output
+> 
+> Results: What is the actual result that makes it a bug? (e.g: Misaligned text in header, see attached snapshot, etc.)
+> 
+> Expected results: What should it look like? (e.g.: text in header should be aligned with dropdowns, etc.)
+
 
 ### Pull requests
 

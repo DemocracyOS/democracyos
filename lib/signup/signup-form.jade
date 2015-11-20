@@ -3,32 +3,32 @@
     .title-page
       .circle
         i.icon-user
-      h1= t('Signup with email')
+      h1= t('signup.with-email')
     form.form(action='/signup', method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       - if (reference)
         input(type='hidden', name='reference', value=reference)
       ul.form-errors
       .form-group
-        label= t('Email')
-        input.form-control(type='email', name='email', tabindex=1, placeholder=t('example@email.com'), validate='required email')
+        label= t('signup.email')
+        input.form-control(type='email', name='email', tabindex=1, placeholder=t('forgot.mail.example'), validate='required email')
       .form-group
-        label #{t('Your firstname')}
-        input.form-control(type='text', id='firstName', name='firstName', tabindex=2, placeholder=t('Firstname'), validate='required firstname')
+        label #{t('signup.your-firstname')}
+        input.form-control(type='text', id='firstName', name='firstName', tabindex=2, placeholder=t('signup.firstname'), validate='required firstname')
       .form-group
-        label #{t('Your lastname')}
-        input.form-control(type='text', id='lastName', name='lastName', tabindex=3, placeholder=t('Lastname'), validate='required lastname')
+        label #{t('signup.your-lastname')}
+        input.form-control(type='text', id='lastName', name='lastName', tabindex=3, placeholder=t('signup.lastname'), validate='required lastname')
       .form-group
-        label= t('Password')
-        input.form-control(type='password', name='password', tabindex=4, placeholder=t('Password'), validate='required min-length:6')
+        label= t('password')
+        input.form-control(type='password', name='password', tabindex=4, placeholder=t('password'), validate='required min-length:6')
       .form-group
-        label= t('Re-type password')
-        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('Repeat Password'), validate='required same:password')
-      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('Signup now!')
+        label= t('signup.retype-password')
+        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('password.repeat'), validate='required same:password')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('signup.now')
       .form-group
-        - var tos = config['tos'];
-        - var pp = config['pp'];
+        - var tos = config.termsOfService;
+        - var pp = config.privacyPolicy;
         - if (tos || pp)
-          p.help-block.text-center=t('By signing up you are accepting our')
+          p.help-block.text-center=t('signup.accepting')
           ul.text-center
             - if (pp)
               li: a(href='/help/terms-of-service', target='_blank')=t('help.tos.title')
@@ -36,6 +36,6 @@
               li: a(href='/help/privacy-policy', target='_blank')=t('help.pp.title')
   #signup-message.hide
     h1 Welcome
-    p.lead.text-muted #{t('Your sign up data was received. We sent you an email so you can validate your email address.')}.
-    p.lead.text-muted= t('Please check your email (remember to check your spam folder too) and click on the link supplied on the email.')
-    a(href='/signup/resend-validation-email')= t('Resend validation email')
+    p.lead.text-muted #{t('signup.received')}.
+    p.lead.text-muted= t('signup.check-email')
+    a(href='/signup/resend-validation-email')= t('signup.resend-validation-email')

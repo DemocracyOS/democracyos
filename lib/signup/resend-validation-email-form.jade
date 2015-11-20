@@ -3,14 +3,14 @@
     .title-page
       .circle
         i.icon-user
-      h1= t('Resend validation email')
+      h1= t('signup.resend-validation-email')
     form.form(action='/signup/resend-validation-email', method='post', role='form', autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-errors
       .form-group
-        label= t('Email')
-        input.form-control(type='text', name='email', tabindex=1, placeholder=t('example@email.com'), validate='required email')
-      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=2)=t('Resend email')
+        label= t('signup.email')
+        input.form-control(type='text', name='email', tabindex=1, placeholder=t('forgot.mail.example'), validate='required email')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=2)=t('signup.resend-email')
   #resend-message.hide
-    h1= t('Email sent')
-    p.lead.text-muted= t('The validation email was resent.')
-    p.lead.text-muted= t('Please check your email (remember to check your spam folder too) and click on the link supplied on the email.')
+    h1= t('signup.email-sent')
+    p.lead.text-muted= t('signup.validation-email-resent')
+    p.lead.text-muted= t('signup.check-email')

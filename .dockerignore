@@ -1,0 +1,9 @@
+.git
+.gitignore
+.env
+.DS_Store
+.dockerignore
+
+config/*.json
+
+Procfile

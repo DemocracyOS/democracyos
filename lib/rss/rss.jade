@@ -5,17 +5,17 @@ rss(version='2.0',
     xmlns:dc='http://purl.org/dc/elements/1.1/'
     xmlns:atom='http://www.w3.org/2005/Atom')
   channel
-    title= config['organization name']
+    title= config.organizationName
     atom:link(href= baseUrl + '/rss', rel='self', type='application/rss+xml')
     link= baseUrl
-    description= config['organization name']
-    if laws.length
-      pubDate= new Date(laws[0].publishedAt).toUTCString()
-    each law in laws
-      - var permalink = baseUrl + '/law/' + law.id
+    description= config.organizationName
+    if topics.length
+      pubDate= new Date(topics[0].publishedAt).toUTCString()
+    each topic in topics
+      - var permalink = baseUrl + '/topic/' + topic.id
       item
-        title= law.mediaTitle
+        title= topic.mediaTitle
         link= permalink
-        pubDate= new Date(law.publishedAt).toUTCString()
+        pubDate= new Date(topic.publishedAt).toUTCString()
         guid(isPermaLink='true')= permalink
-        description= law.summary
+        description= topic.body

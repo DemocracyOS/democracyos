@@ -8,7 +8,8 @@
       padding-bottom: 10px
       margin-bottom: 20px
       text-align: left
-      border-bottom: 4px solid #333
+      border-bottom: 4px solid rgba(#000, .8)
+
       svg.hexagon
         left: 0
         position: absolute
@@ -52,7 +53,7 @@
         i
           display: inline-block
   aside.nav-proposal
-    top: 0
+    padding-top: 0
 
   section.site-content
     left: 0
@@ -69,12 +70,6 @@
       margin-right: 0
       text-align: center
 
-  article.proposal
-    h1
-      font-size: 30px
-    .entry-content
-      font-size: 100%
-
   .uv-icon
     display: none !important
 
@@ -89,13 +84,13 @@
     bottom: 0
     width: auto
     height: auto
-    z-index: 200000
+    z-index: 9990
     -webkit-overflow-scrolling: touch
-    -webkit-transform: translate3d(0, 0, 0)
-    -moz-transform: translate3d(0, 0, 0)
-    -ms-transform: translate3d(0, 0, 0)
-    -o-transform: translate3d(0, 0, 0)
-    transform: translate3d(0, 0, 0)
+    -webkit-transform: s('translate3d(0, 0, 0)')
+    -moz-transform: s('translate3d(0, 0, 0)')
+    -ms-transform: s('translate3d(0, 0, 0)')
+    -o-transform: s('translate3d(0, 0, 0)')
+    transform: s('translate3d(0, 0, 0)')
 
   .snap-drawers
     position: absolute

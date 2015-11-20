@@ -2,10 +2,6 @@
 -------------------------------------------------- */
 header_height = 60px
 spacing = 20px
-border_radius = 3px
-nav_proposal_width = 266px
-content_width = 580px
-link_blue = #2980b9
 
 /* Header
 -------------------------------------------------- */
@@ -15,7 +11,7 @@ header.app-header, aside.nav-proposal, .site-content, .site-content.loading-lock
 .site-content.content-pinned
 aside.nav-proposal.content-pinned
   transition transform 200ms linear
-  top 0
+  padding-top 0
 
 .site-content
   z-index 1
@@ -31,13 +27,15 @@ header.app-header
   left 0
   right 0
   height header_height
-  background #51394a
-  // border-bottom 1px solid #2980b9
+  background #64476e
   color white
   padding-left spacing
   font-weight bold
   text-transform uppercase
   font-size 12px
+
+  &.with-contrast
+    box-shadow 0 2px 2px #d5d5d5
 
   #toggleButton
     width 26px
@@ -48,13 +46,13 @@ header.app-header
     display none
     .bar-icon
       height 3px
-      background white
       margin-bottom 5px
       display block
+
   a
-    color white
-    &:hover
-      color white
+     color white
+     &:hover
+       color white
 
   h1
     display inline-block
@@ -66,6 +64,11 @@ header.app-header
       display inline-block
       margin-right 10px
       margin-top -2px
+
+  img.logo-image
+    height 28px
+    margin-top 5px
+    display inline-block
 
   .user-nav
     display inline-block
@@ -83,17 +86,27 @@ header.app-header
       padding 6px 12px
       display inline-block
       margin-top 15px
+      line-height 1.8
+
       i
         display none
         font-size 20px
       &:hover
         text-decoration none
 
+vendors(prop, args, fn = null)
+  val = fn == null ? args : fn + '(' + args + ')'
+  -moz-{prop} val
+  -webkit-{prop} val
+  -o-{prop} val
+  -ms-{prop} val
+  {prop} val
+
 .headroom
-  transition transform 200ms linear
+  vendors(transition, all 200ms linear)
 
 .headroom--pinned
-  transform translateY(0%)
+  vendors(transform, 0%, translateY)
 
 .headroom--unpinned
-  transform translateY(-100%)
+  vendors(transform, -100%, translateY)

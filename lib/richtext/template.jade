@@ -1,0 +1,57 @@
+.quill-wrapper
+  #toolbar.toolbar-container
+    - var colors = ["rgb(0, 0, 0)", "rgb(230, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 138, 0)", "rgb(0, 102, 204)", "rgb(153, 51, 255)", "rgb(255, 255, 255)", "rgb(250, 204, 204)", "rgb(255, 235, 204)", "rgb(255, 255, 204)", "rgb(204, 232, 204)", "rgb(204, 224, 245)", "rgb(235, 214, 255)", "rgb(187, 187, 187)", "rgb(240, 102, 102)", "rgb(255, 194, 102)", "rgb(255, 255, 102)", "rgb(102, 185, 102)", "rgb(102, 163, 224)", "rgb(194, 133, 255)", "rgb(136, 136, 136)", "rgb(161, 0, 0)", "rgb(178, 107, 0)", "rgb(178, 178, 0)", "rgb(0, 97, 0)", "rgb(0, 71, 178)", "rgb(107, 36, 178)", "rgb(68, 68, 68)", "rgb(92, 0, 0)", "rgb(102, 61, 0)", "rgb(102, 102, 0)", "rgb(0, 55, 0)", "rgb(0, 41, 102)", "rgb(61, 20, 102)"]
+    span.ql-format-group
+      - if (toolbar.fontFace)
+      select.ql-font(title='Font')
+        option(value='sans-serif', selected) Sans Serif
+        option(value='Georgia, serif') Serif
+        option(value='Monaco, \'Courier New\', monospace') Monospace
+
+      - if (toolbar.fontSize)
+      select.ql-size(title='Size')
+        option(value='12px') Small
+        option(value='16px' selected) Normal
+        option(value='24px') Large
+        option(value='32px') Huge
+
+    - if (toolbar.fontWidth)
+    span.ql-format-group
+      span.ql-format-button.ql-bold(title='Bold')
+      span.ql-format-separator
+      span.ql-format-button.ql-italic(title='Italic')
+      span.ql-format-separator
+      span.ql-format-button.ql-underline(title='Underline')
+
+    - if (toolbar.fontStyle)
+    span.ql-format-group
+      each c in ['ql-color', 'ql-background']
+        select(class=c, title=(c=='ql-color'?'Text Color':'Background Color'))
+          each color,i in colors
+            option(value=color, selected=((c == 'ql-color' && color == 'rgb(0, 0, 0)') || (c == 'ql-background' && color == 'rgb(255, 255, 255)') ? true : false))
+        if c == 'ql-color'
+        span.ql-format-separator
+      select.ql-align(title='Text Alignment')
+        option(value='left', selected)
+        option(value='center')
+        option(value='right')
+        option(value='justify')
+    span.ql-format-group
+    if (toolbar.link)
+      span.ql-format-button.ql-link(title='Link')
+
+    if (toolbar.image)
+      span.ql-format-separator
+      span.ql-format-button.ql-image(title='Image')
+      span.ql-format-separator
+      span.ql-format-button.ql-video(title='Video')
+
+    if (toolbar.bullet)
+      span.ql-format-separator
+      span.ql-format-button.ql-bullet(title='Bullet')
+
+    if (toolbar.list)
+      span.ql-format-separator
+      span.ql-format-button.ql-list(title='List')
+
+  #editor

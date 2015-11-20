@@ -1,6 +1,6 @@
 - var closed = proposal.closed
 .inner-container
-  - var learnMore = config['learn more url']
+  - var learnMore = config.learnMoreUrl
   - if (learnMore)
     div.alert.alert-warning.alert-dismissable.system-alert
       button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
@@ -23,46 +23,32 @@
         g#Page-1(fill='none', fill-rule='evenodd', sketch:type='MSPage')
           polygon#Polygon-1(d='M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0', fill='#{proposal.tag.color}', sketch:type='MSShapeGroup', points='63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 ')
 
-      span(style="color: #{proposal.tag.color}")= proposal.tag.name
+      div(style="color: #{proposal.tag.color}")= proposal.tag.name
 
     .meta-information
       p
         i.icon-time
         - if (proposal.closingAt)
-          span.time-ago-label= (closed ? t('Closed') : t('Close')) + " "
+          span.time-ago-label= (closed ? t('common.closed') : t('common.close')) + " "
           span.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
         - else
-          span.meta-item.meta-timeago= t('Unknown closing date')
+          span.meta-item.meta-timeago= t('proposal-article.unknown-closing-date')
 
     h1=proposal.mediaTitle
     - if (proposal.author)
-      h2.author=t('admin-laws-form.label.author') + ': '
+      h2.author=t('admin-topics-form.label.author') + ': '
         - if (proposal.authorUrl)
           a(href=proposal.authorUrl, target='_blank')=proposal.author
         - else
           =proposal.author
     h3=proposal.title
     .entry-content
-      - var summary = proposal.summary
-      - var paragraphs = summary.split("\n")
-      .summary
-        - each p, i in paragraphs
-          - if (p != '')
-            p.commentable-section(data-section-id=proposal.id + '-' + i)!=p
-
-
       .clauses
-        - if (clauses.length)
-          - each clause, i in clauses
-            - var classes = ['hide']
-            - classes.push(clause.centered ? 'text-center' : '')
-            - var text = (clause.clauseName ? clause.clauseName + ': ' : '') + clause.text
-            p.clause.commentable-section(class=classes, data-section-id=clause.id)!=text
-          - if (clauses.length > 0)
-            - if (proposal.clauseTruncationText)
-              a.read-more(href="#")= proposal.clauseTruncationText
-            - else
-              a.read-more(href="#")= t('read more')
+        - var clauses = proposal.clauses
+        each clause, i in clauses
+          - var classes = ['clause']
+          - classes.push(clause.empty ? 'hide' : 'commentable-section')
+          !=toHTML(clause, { className: classes, iframeResponsive: true })
 
     //- Article source
     - if (proposal.source)
@@ -70,12 +56,12 @@
         p
           span.glyphicon.glyphicon-link
           a(target="_blank", href="#{proposal.source}")
-           | #{t('View the original text')}
+           | #{t('proposal-article.view-original-text')}
 
     //- Article links
     - if (proposal.links && proposal.links.length)
       .links
-        h5=t('More information')
+        h5=t('common.more-information')
         - each link in proposal.links
           p
             span.glyphicon.glyphicon-share
@@ -86,7 +72,7 @@
       //- Rendered by participants view
 
     //- Article share links
+    - var text = config.tweetText || proposal.mediaTitle
     .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/law/#{proposal.id}").flaticon.social.facebook  
-      a(target="_blank", href="http://twitter.com/share?text=#{proposal.mediaTitle}&url=#{baseUrl}/law/#{proposal.id}").flaticon.social.twitter  
-      a(target="_blank", href="https://plus.google.com/share?url=#{baseUrl}/law/#{proposal.id}").flaticon.social.google-plus 
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/topic/#{proposal.id}").flaticon.social.facebook
+      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.twitter

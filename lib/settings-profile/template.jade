@@ -3,23 +3,27 @@
     .heading
       .circle
         i.icon-user
-      h1= t('Profile')
+      h1= t('settings.profile')
     form.form(action="/settings/profile", method="post", role="form", autocomplete="off", autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-messages
       .form-group
-        label #{t('First name')}
-        input.form-control(type='text', id="firstName", name='firstName', tabindex=1, placeholder=t('First name'), value='#{citizen.firstName}', validate='required firstname')
+        label #{t('settings.first-name')}
+        input.form-control(type='text', id="firstName", name='firstName', tabindex=1, placeholder=t('settings.first-name'), value='#{user.firstName}', validate='required firstname')
       .form-group
-        label #{t('Last name')}
-        input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('Last name'), value='#{citizen.lastName}', validate='required lastname')
+        label #{t('settings.last-name')}
+        input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('settings.last-name'), value='#{user.lastName}', validate='required lastname')
       .form-group
-        label= t('Email')
-        input.form-control(type='text', disabled='disabled' name='email', tabindex=3, placeholder=t('example@email.com'), value='#{citizen.email}', validate='required email')
+        label= t('signup.email')
+        input.form-control(type='text', disabled='disabled' name='email', tabindex=3, placeholder=t('forgot.mail.example'), value='#{user.email}', validate='required email')
+      .form-group
+        label #{t('settings.locale')}
+        select.form-control(id='locale', name='locale', tabindex=4)
+        //- input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('settings.last-name'), value='#{user.lastName}', validate='required lastname')
       .form-group.profile-picture
         .image-container
-          img(src=citizen.profilePicture(), width="65")
+          img(src=user.profilePicture(), width="65")
         .controls
           a(href="https://gravatar.com", target="_blank")
-            strong= t('Change your profile picture at gravatar.com')
-          input.form-control(type='text', name='profilePictureUrl', tabindex=4, placeholder=t('Or paste an image URL here...'), value=citizen.profilePictureUrl, validate='url')
-      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=5)=t('Save')
+            strong= t('settings.change-at-gravatar')
+          input.form-control(type='text', name='profilePictureUrl', tabindex=5, placeholder=t('settings.paste-url-image'), value=user.profilePictureUrl, validate='url')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('settings.save')

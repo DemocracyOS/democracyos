@@ -1,4 +1,623 @@
 
+1.0.3 / 2015-11-18
+==================
+
+  * Fix word breaking on comment-boxes #1144
+
+1.0.2 / 2015-11-18
+==================
+
+  * Add Romanian language #1134 Thanks @alexproca!
+  * Remove unsued local libs #1130
+  * Add Node.js 4.0 requirement #1114
+  * Add and enforce new Styleguide #1127
+  * Remove Google+ share button
+  * Fix notification parameters overwriting #1122
+
+1.0.1 / 2015-10-30
+==================
+
+  * Add new config variables for sending emails. Close #1106
+  * Add not marking as empty a clause with img elements Closes #1098
+  * Add user.optional middleware on /signup and /signin. Close #1107
+  * Add sublime files to .gitignore
+  * Update democracyos-notifier to ~0.0.14
+  * Update .gitignore
+  * Remove lib/tags/tags.js
+  * Remove notificiation on topic-commented, closes #1080
+  * Fix error on remove date
+  * Fix #1066, clear closign add closes datepicker
+  * Fix cache cleaning of Store.findAll
+
+1.0.0 / 2015-10-23
+==================
+
+  * [forum] - Fix showing create new topic on own forum #1091
+  * add settings/forums link on user-badge
+  * clear topicStore before loading forum homepage
+  * remove unused variables
+  * remove unused variables
+  * preload forum homepage before rendering
+  * fix forums/new form styles
+  * fix newsfeed margin
+  * [translations:es] - Add missing translations for forum form
+  * Merge pull request #1094 from DemocracyOS/fix-forums-list-update
+  * Merge pull request #1092 from DemocracyOS/fix-forum-admin-link
+  * fix forums list reloading Closes #1090
+  * Merge pull request #1093 from DemocracyOS/fix/forum-api
+  * [forum-api] - Fix finding forums by ids and names
+  * fix styles
+  * add cover image on forums homepage
+  * add cover when user is not logged in
+  * add create button when all forums where deleted Closes #1089
+  * fix create a forum button on settings/forum
+  * add forums/admin link on settings/forums
+  * Merge pull request #1086 from DemocracyOS/add/new-homepage
+  * [homepage] - Add -createdAt sorting and title in Spanish
+  * add forums/admin link on settings/forums
+  * Fix deleting a forum and validating summary < 300 characters
+  * add this.switchOn and this.switchOff on base view
+  * Merge pull request #1085 from DemocracyOS/fix/uncapitalize-urls
+  * add homepage title
+  * fix homepage pagination button
+  * add pagination of forums on homepage
+  * [routing] - Add 301 redirect to lowercased version of that URL if uppercase characters are present. Close #1084
+  * fix forum admin
+  * [docs] - Revert deploy docs
+  * [docs] - Add deploy docs
+  * sort translation files
+  * add pagination on forum-api
+  * fix js styles
+  * always populate owner when fetching forum
+  * fix forum config bar responsiveness
+  * add styleings to forum lists on homepage
+  * use view/mixins on newsfeed
+  * fix selectors
+  * normalize forum-card name
+  * [homepage] - New basic homepage listing forums #1079
+  * [docs] - Fix markdown bug
+  * Add development guide
+  * [feed] - Remove all Feed references #1079
+  * Fixed admin link. Closes #1075
+  * Release 0.19.3
+  * allow to access /forgot when visibility=hidden
+  * Fixed Deploy to Heroku button link. Closes #1062
+  * Update Deploy to Heroku link
+  * Update README.md to include Deploy to Heroku button
+  * Release 0.19.2
+  * Release 0.19.1
+  * [whitelist] - Update max whitelists shown per page (5000)
+  * Rebase
+  * Merge pull request #684 from solde9/fix/smooth-scrolling
+  * Rearranged CodeClimate badge
+  * Added codeclimate badge
+  * Merge pull request #1007 from DemocracyOS/add/show-email-config
+  * dont allow to show emails on public instances
+  * Merge pull request #1009 from DemocracyOS/fix/facebook-login
+  * [facebook-strategy] Added profileFields key to Passport's Facebook strategy constructor, as seen in https://github.com/jaredhanson/passport-facebook/issues/129#issuecomment-124039674. Fixes empty email issue on login.
+  * [comments] - Smooth scroll: Wrap common functionality #659
+  * show a message to the user on facebook login error Closes #1001
+  * [comments] - Modify smooth scroll #659
+  * add publicEmails config
+  * dont allow to register fb users without email Closes #1001
+  * [comments] - add textarea.focus() #659
+  * [comments-edit] - Add smooth-scrolling #659
+  * [comments-replies] - scroll only if element is outside the viewport #684
+  * [comments-view] - scroll only if element is outside the viewport #684
+  * [is-in-viewport] - Add isElementInViewport function #684
+  * [comments-replies] - Add smooth-scrolling while opening the form #659
+  * [comments-view] - Add smooth-scrolling while opening the form #659
+  * Merge pull request #1000 from jacobmiller/patch-1
+  * rm vot-it
+  * Merge pull request #972 from galiumodorat/feature/Polish-translation
+  * added Polish translation
+  * Release 0.19.0
+  * Add greek translation credit
+  * add greek laguage name
+  * add greek translations
+  * add test option
+  * add test option
+  * fix dos-translate async processing
+  * fix dos-translate directory pointing
+  * fix dos-translate library
+  * Release 0.18.0
+  * Merge pull request #962 from fabriciodisalvo/patch-1
+  * Added missing line for 'Chinese (Trad)' language
+  * Added missing line for 'Chinese (Trad)' language
+  * Update en.json
+  * Update supported.js
+  * Update zh_TW.json
+  * Create zh_TW.json
+  * add gitter link on CONTRIBUTING
+  * Update license year
+  * bump notifier-client dep version
+  * Merge pull request #942 from fonorobert/update/accented-chars-in-names
+  * add new accented chars to regex, closes #941
+  * rename config.showResults to config.alwaysShowTopicResults
+  * add local config reference to component.json
+  * remove console.log statement
+  * Release 0.17.6
+  * update notifier-client to 0.3.0
+  * fix wait for laws.loaded before rendering homepage
+  * Fix homepage first law shown
+  * Merge pull request #938 from DemocracyOS/fix-law-show
+  * law page depend on laws bus, not on sidebar Closes #898
+  * remove duplicated config key
+  * Merge pull request #931 from DemocracyOS/fix-mobile-menu-icon
+  * use headerFontColor on mobile menu icon Closes #930
+  * add showResults config key and check it in proposal-options, closes #926
+  * fix t() invoke on proposal-options.js
+  * add .eslintrc file
+  * Merge pull request #924 from a0viedo/patch-2
+  * Merge pull request #925 from a0viedo/patch-3
+  * added license in package.json
+  * using relative links in readme
+  * Release 0.17.5
+  * Fix async of logout Closes #921
+  * fix user token loading
+  * Merge pull request #920 from DemocracyOS/fix-forgot-route
+  * fix user verification
+  * allow public access to /forgot routes Closes #919
+  * Add email normalization Closes #689
+  * Revert "added japanese"
+  * removed console print statements
+  * removed extra line added
+  * changed tabs to spaces
+  * Add error handler for incorrect current password
+  * fixed bug where JSON.parse was being called on non-JSON data
+  * undid data additions
+  * added japanese
+
+0.19.3 / 2015-09-28
+===================
+
+  * Allow access to /forgot when config.visibility is 'hidden'
+  * Include Deploy to Heroku button on README.md
+
+0.19.2 / 2015-09-14
+===================
+
+  * Add showing a message to the user on facebook login error Closes #1001
+  * Add codeclimate badge
+  * Add profileFields key to Passport's Facebook strategy constructor, as seen in https://github.com/jaredhanson/passport-facebook/issues/129#issuecomment-124039674. Fixes empty email issue on login.
+  * Add publicEmails config
+  * Add not allowing to register fb users without email Closes #1001
+  * Add textarea.focus() on comments #659
+  * Add scroll only if element is outside the viewport in comment replies #684
+  * Add isElementInViewport function #684
+  * Add not allowing to show emails on public instances
+  * Added Polish translation
+  * Update CodeClimate badge
+  * Update smooth scroll #659
+  * Remove vot-it reference
+
+0.19.1 / 2015-09-14
+===================
+
+  * Update max whitelists shown per page (5000)
+
+0.19.0 / 2015-07-06
+==================
+
+ * Add Greek translation
+ * Add Chinese (traditional) translation credit
+
+0.18.0 / 2015-07-02
+==================
+
+ * add support for Chinese (Traditional) language
+ * add gitter link on CONTRIBUTING.md
+ * add new accented chars to regex, closes #941
+ * add config setting to always show voting results. Closes #926
+
+0.17.6 / 2015-06-16
+===================
+
+  * Update notifier-client version to 0.3.0
+  * Fix homepage first law shown #898
+  * Use config.headerFontColor on mobile menu icon #930
+  * Add license in package.json
+  * Use relative links in readme
+
+0.17.5 / 2015-06-12
+===================
+
+  * Fix UI refresh on logout #921
+  * Fix forgot password when VISIBILITY is 'hidden' #920
+  * Add email normalization #689
+  * Add ALLOW_EMAIL_ALIASES configuration #689
+  * Add error handler for incorrect current password #714
+
+0.17.4 / 2015-06-03
+===================
+
+  * Fixed bug that didn't ñet signup STAFF members #882
+  * Remove DEPLOYMENT_DOMAIN config #873
+  * Refresh token when is older than 1 day #874
+  * Delete incompatible token cookies #871
+  * Implemented httpOnly cookie option and a signout endpoint #846.
+  * Added support for ':' character in URLs #834
+
+0.17.3 / 2015-05-27
+===================
+
+  * Fix emebed videos on https #859
+  * Normalize usage of avatar on user model #854
+  * Fixed overflow on remove confirmation box #850
+  * Default translations 'en' <- 'config.locale' <- 'user.locale' #828
+  * Set user locale on signup Closes #828
+
+0.17.2 / 2015-05-26
+===================
+
+  * Update DemocracyOS/side-comments version
+  * Fix Law summary html filter #839
+  * Set default value null for learnMoreUrl #837
+  * Fix logout bug. Sometimes it just didnt work #811
+
+0.17.1 / 2015-05-19
+===================
+
+  * Add headerContrast configuration #795
+  * Dont remove stylings on law summary #810
+  * Fix side comments #807 #759
+
+0.17.0 / 2015-05-18
+===================
+
+  * Consolidate TLS/SSL configuration #822
+  * Add fallback on missing translation keys with default locale #808
+  * Add facebook login/signup form #815
+  * Remove privatePort config key #788
+
+0.16.2 / 2015-05-12
+===================
+
+  * Fix variable redefinition that causes app to crash in HTTPS mode #803
+
+0.16.1 / 2015-05-12
+===================
+
+  * Fix users whitelist configuration #806
+
+0.16.0 / 2015-05-08
+===================
+
+  * Improvements on spanish translations #767
+  * Add Hungarian translations #793
+  * Improvements on french translations #784
+  * Now the user can change the app language from settings page #630
+  * Improvements on Portuguese translations #779
+  * Add App visivility configuration #741
+
+0.15.0 / 2015-04-28
+==================
+
+  * Refactor app configuration #762
+  * Remove bootstrap.js and dependencies #757
+  * Add some parameterizable styles for header #730
+  * Add users whitelist #722
+  * Update store JWT in cookie at signin #735
+
+0.14.0 / 2015-03-19
+==================
+
+ * Add quill support for video and image embedding over https
+ * Update gravatar requests to go through https
+ * Bump tj/debug version to 2.1.3 since it prevented built
+ * Add external settings page. Closes #712
+
+0.13.0 / 2015-03-17
+===================
+
+  * Add IP address as domains
+  * Fix admin responsiveness. Closes #691
+  * Fix buttons position. Closes #708
+
+0.12.15 / 2015-03-16
+====================
+
+  * Fix domains in jwt. #706
+
+0.12.14 / 2015-03-16
+====================
+
+  * Clear cookie after getting the domain in jwt. #706
+
+0.12.13 / 2015-03-16
+====================
+
+  * Fix exporting top level subdomain for jwt. Closes #706
+
+0.12.12 / 2015-03-15
+====================
+
+  * Add create tag link if no tags are found before creating any law. Closes #707
+
+0.12.11 / 2015-03-15
+====================
+
+  * [jwt] - Update jwt component to look like hub's
+
+0.12.10 / 2015-03-13
+==================
+
+ * Add reponsive logo for mobile #699
+ * Add create my first topic button for staff members Closes #703
+ * Fix new law button on admin
+ * Fix new tag button on admin
+
+0.12.9 / 2015-03-12
+==================
+
+ * Make '_target' attr conditional to 'homeLink' setting on header org link
+ * Revert "Fix organization link to open on same tab"
+ * Fix logo link on header Closes #701
+ * Fix organization link to open on same tab
+
+0.12.8 / 2015-03-11
+==================
+
+ * add deploymentId on feeds
+
+0.12.7 / 2015-03-10
+==================
+
+ * update headerBackgroundColor to match hub's
+
+0.12.6 / 2015-03-10
+==================
+
+ * update dockerfile description
+ * expose client config on layout/index.jade for deployments where the config is part of the release and cannot be built
+ * fix header user-badge height #699
+
+0.12.5 / 2015-03-10
+==================
+
+ * fix usage of CORS_DOMAINS env variable
+
+0.12.4 / 2015-03-10
+===================
+
+  * Fix corsDomains should be a string
+
+0.12.3 / 2015-03-10
+==================
+
+ * update client config build logging
+
+0.12.2 / 2015-03-10
+==================
+
+ * disable new topic notifications being true by default
+ * update default favicon file path
+
+0.12.1 / 2015-03-09
+==================
+
+ * externalize `db` module to democracyos-db repo
+ * Add bug report template to `CONTRIBUTING.md`
+
+0.12.0 / 2015-03-09
+==================
+
+ * make fallback PORT value equal to the one in sample.json
+ * remove multicore option
+ * fix usage of mongodb for replicasets
+ * bump mongoose to 3.8.24
+ * check if user found after decoding JWT token
+ * fix typo in tag error handling function name
+
+0.11.4 / 2015-03-08
+===================
+
+  * Add redirect to external signin and signup on backend
+  * Fix calling next() no an error decoding jwt so it continues but without loading the user into the request
+
+0.11.3 / 2015-03-07
+===================
+
+  * Remove 404 page to avoid problem on issue #690
+  * Fix auth pages, saving a cookie supporting all subdomains if necessary (does not apply for localhost)
+
+0.11.2 / 2015-03-07
+===================
+
+  * Fix signup and signin external urls
+
+0.11.1 / 2015-03-06
+===================
+
+  * Send notification to notifier when a law is commented
+  * Add notifier notification
+  * Store jwt in cookies to work out between hub and DemocracyOS
+
+0.11.0 / 2015-03-04
+==================
+
+ * Add hiding 'Read more' link text when topic has got only one paragraph contained in a single <div> element #438
+ * Fix usage of mongodb connections to replica sets
+ * Add checking for * CORS wildcard
+ * Remove Dockerfile from .dockerignore
+ * Update usage of mongodb by adding the db module
+ * Add CORS support. CORS_DOMAINS env variables holds a whitelist of domains
+ * Fix bad legacy text rendering #438
+ * Hide clauses Add button for new laws and laws that have not clauses #675
+ * Fix bad rendering on clauses with manually entered HTML #438
+ * Fix responsive wrapping in clauses #438
+ * Embed video responsively #438
+ * Add video tooltip #438
+ * Add Bullet button to toolbar #438
+ * Fix side-commented empty lines #438
+ * Add richtext editor for editing `law`s #438
+
+0.10.14 / 2015-02-26
+====================
+
+  * Add missing translations Closes #671
+  * Add instanceUrl and law.id to data sent to notifier #673
+  * Add debugging configurations Closes #653
+  * Add debug on Procfile and move running instructions to postinstall script on package.json file #465
+  * Add unknown closing date translation Closes #655
+  * Add missing keys Close #476
+  * Add initial docker-related files
+  * Add translation lib #643
+  * Add in-app editing of side comments
+  * Fix no comments msg when comment deleted Closes #662
+  * Fix some portuguese translations
+  * Fix combo filer visibility Closes #553
+  * Fix build to process.exit(1) on error during build #465
+  * Fix re-load of user when already logged Closes #652 #376
+  * Fix bin file permissions #643
+  * Fix error after login Closes #376
+  * Fix login, use response data, dont fetch again user #376
+  * Remove useless keys on en language #476
+  * Remove unnecesary setting DEBUG on Procfile #465
+  * Refactor citizen.optional middleware #376
+  * Refactor db-api user public interface
+
+0.10.13 / 2015-02-15
+==================
+
+ * Update all translations for full i18n support.
+
+0.10.12 / 2015-02-15
+==================
+
+ * Update Dutch translation (thanks @Dandandan).
+
+0.10.11 / 2015-02-14
+==================
+
+ * Add link to admin panel on dropdown. Closes #635
+ * Minor tweaks for Ukrainian and Russian translations
+
+0.10.10 / 2015-02-13
+====================
+
+  * Add translitarate when normalizing. Closes #642
+
+0.10.9 / 2015-02-11
+==================
+
+ * Fix jump when scrolling headroom. Closes #637
+ * Fix saving a `law` with no `tag` on it. Closes #624
+
+0.10.8 / 2015-02-10
+===================
+
+  * Fix `timeago` interval to be 1s #631
+
+0.10.7 / 2015-02-10
+===================
+
+  * Remove bus emitting events to call timeago.update(). Update timeago update interval #631
+  * Bump DemocracyOS/side-comments version to 0.0.13 #631
+  * Fix hour formatting in law admin. Closes #625
+  * Fix duplicate entry in changelog
+
+0.10.6 / 2015-02-07
+==================
+
+ * Fix error when clicking on show replies when not logged in. Fixes #632
+ * Fix usage of COMMENTS_PER_PAGE in env.js so 0 is always default
+ * Fixed paging limit in side-comments. Closes #623
+ * Don't allow validated users to request resend validation email. Closes #604
+ * Fixed separation between commenter and timestamp. Closes #620
+ * When posting a new comment, timestamp shows immediately Closes #619
+ * Remove setting timeago.interval since default is good enough (30 secs)
+ * Add wrapper for multiple local-storage options. Closes #582
+ * Make multiple CPU core usage optional via config. Closes #611
+
+0.10.5 / 2015-02-05
+==================
+
+ * Update contributor acknowledgements
+ * Bump version of DemocracyOS/side-comments. Fixes #615
+ * Set timeago update interval to 30 secs (default) #615
+ * Changed express.get by config to get token secret. Closes #613
+
+0.10.4 / 2015-02-01
+==================
+
+ * Fix handling of errors on formview. Fixes #610
+ * Make 'new-topic' notifications true by default
+
+0.10.3 / 2015-01-31
+==================
+
+ * Fix Display side-comments button only on paragraph mouse-over for paragraphs with no comments. Closes #606
+ * Fix tag icons go glitchy when tag names are shorter than 3 characters. Closes #607
+
+0.10.2 / 2015-01-30
+==================
+
+ * Add swedish translation and credits
+ * Changed 'forgot password' error description #602
+ * Redirect to Resend validation token page if nonvalidated email is submitted. Closes #602.
+ * Forgot password form xplanation now hides when form is submitted. Closes #594.
+ * 'You must login' message placed over voting buttons. Closes #592.
+ * Fixed signin after signup token validation. Closes #595.
+ * Put 'signin required' message over argument on up/downvoting. Closes #593.
+ * Fixed settings responsive styles. Closes #591
+ * Move demo link above the image in README.md
+ * Add Russian translation credits
+
+0.10.1 / 2015-01-25
+==================
+
+ * Add Russian language
+
+0.10.0 / 2015-01-25
+==================
+
+ * Update configuration defaults mechanism
+ * Bump 'merge-util' server-side dep to version 0.3.1 and fix handling of config merge in env.js
+ * Fix usage of config setting for external signin/signup URLs
+ * Update CONTRIBUTORS.md
+ * Bump 'merge-util' server-side dep to version 0.3.1 and fix handling of config merge in env.js
+ * Fix usage of config setting for external signin/signup URLs
+ * Support SSL via configuration. Closes #98 #587
+ * Fixed race condition. Related to #98.
+ * Add bin/dos-ssl script for self-signed SSL certificates #98.
+ * Scroll and focus on textarea when clicking on New Argument button. Closes #555.
+ * Added restrict middleware to update and delete operations #282 #580
+ * Fixed misuse of dom.addClass method. Closes #580.
+ * Rebase from development
+ * Implemented JSON Web Tokens (JWT) authentication middleware #578
+ * Added config parameter to disable signin/signup. Closes #573.
+ * Add Galician translation
+ * Add Ukrainian translation
+ * Rename MongoDB collection citizens to users
+ * Rename db-api/citizen.js to user.js
+ * Use mongoUsersUrl or fallback to mongoUrl if the key doesn't exists in the config #559
+ * Remove user-model module and export User model in lib/models #559
+ * Update comments' and replies' author to get populated by the User model #559
+ * Deprecated MONGO_HQ env var name in favor of MONGO_URL. Addendum to #525
+ * Fix code to meet conventions
+ * Fix read more participants. Closes #565
+ * Add mongoUsersUrl to env config file #559
+ * Add missing translations for #560 #478
+ * Basic wrapper for notifier-client #560
+ * Update payload for 'law-published' notification. Closes #561
+ * Added Gitter badge to README.md
+ * Update error handling on response override to match refactored approach in FormView
+ * Update re-send validation email view. Closes #478
+ * Updates law filter model without fetch from server. Related to #460.
+ * Changed the way voting badge is added to the sidebar. Closes #460.
+ * CSS to Stylus where missing #215.
+ * Replace vote up/down on comment card by comment-vote. Closes #471
+ * Expose unvote calls  #471
+ * Introduce comment vote view.  #471
+ * Refactored several views to extend from View and FormView #282
+ * Fixed onvote event binding. Closes #406.
+
+0.9.0a / 2015-01-16
+==================
+
+ * Fix side-comments. Fixes #572
+
 0.9.0 / 2015-01-06
 ==================
 
@@ -313,12 +932,12 @@
  * Fix facebook and twitter cards, escaping HTML characters
  * Fix open and closed count as they were counting drafts if you were signed in as admin. Closes #342
 
-0.7.1 / 2014-05-30 
+0.7.1 / 2014-05-30
 ==================
 
  * Remove 404 not found page
 
-0.7.0 / 2014-05-29 
+0.7.0 / 2014-05-29
 ==================
 
  * Add 404 not found page
@@ -336,7 +955,7 @@
  * Fix transportation tag image issue
  * See migrating to 0.7.x
 
-0.6.7 / 2014-05-16 
+0.6.7 / 2014-05-16
 ==================
 
  * Comments are marked as spam when they exceed a config parameter or, if not set, when they have more spam reports than score (upvotes minus downvotes)
@@ -356,12 +975,12 @@
 
  * Remove unneeded remotes from root `component.json`
 
-0.6.3 / 2014-05-12 
+0.6.3 / 2014-05-12
 ==================
 
  * Fix build failure based on remotes. Change remotes order.
 
-0.6.2 / 2014-05-09 
+0.6.2 / 2014-05-09
 ==================
 
  * Fix comments paging and sorting
@@ -394,7 +1013,7 @@
 
  * Fix 'voted' check after sign-in. Fixes #326
 
-0.4.10 / 2014-04-03 
+0.4.10 / 2014-04-03
 ==================
 
  * Refresh sidebar after casting vote
@@ -411,7 +1030,7 @@
  * Update article template and config so alert is optional.
  * Update default fixtures
  * Change default locale to 'en'
- * Update header background color
+ * Update headerBackgroundColor
  * Add list alphabetically sorting. Closes #299
  * Merge pull request #302 from Magui1984/development
  * Create fr.json
@@ -432,17 +1051,17 @@
  * Fix law min-height for voted badge. Closes #294
  * Update `sample.json`
 
-0.4.8 / 2014-03-31 
+0.4.8 / 2014-03-31
 ==================
 
  * Add published laws RSS feed
 
-0.4.7 / 2014-03-20 
+0.4.7 / 2014-03-20
 ==================
 
  * Add `closingAt` law attribute on admin
 
-0.4.6 / 2014-03-18 
+0.4.6 / 2014-03-18
 ==================
 
  * Fix comments at law view rendering bumping slifszyc/paragraphs to 0.2.0 version

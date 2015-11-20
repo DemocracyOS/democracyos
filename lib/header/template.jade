@@ -1,23 +1,29 @@
 #header-container
   a(href='#', id='toggleButton')
-    span.bar-icon
-    span.bar-icon
-    span.bar-icon
+    - var headerFontColor = config.headerFontColor || '#fff';
+    span.bar-icon(style='background-color: #{headerFontColor}')
+    span.bar-icon(style='background-color: #{headerFontColor}')
+    span.bar-icon(style='background-color: #{headerFontColor}')
 
-  h1#logo
-    a(href='/')
-      img(src=config['logo']).logo
-      span.logo-link= t('header.logo')
+    h1#logo
+      a(href=config.homeLink || '/')
+        - var mobileLogo = !!config.logoMobile
+        - var classes = mobileLogo ? 'hidden-xs' : ''
+        img(src=config.logo, class=classes).logo-image
+        - if (mobileLogo)
+          img(src=config.logoMobile).logo-image.visible-xs-inline-block
+        //- span.logo-link=t('common.app-name')
 
   .user-nav.btn-group
     .user
-    a(href='/signin').login.pull-right.anonymous-citizen
+    - var color = config.headerFontColor;
+    - var style = color ? 'color: ' + color : '';
+    a(href='/signin', style=style).login.pull-right.anonymous-user
       i.icon-signin
       span= t('header.signin')
-    a(href='/signup').login.pull-right.anonymous-citizen
+    a(href='/signup', style=style).login.pull-right.anonymous-user
       i.icon-user
       span= t('header.signup')
-    a.login.pull-left(href=config['organization url'], target='_blank')
-      span= config['organization name']
-    //- a.login.pull-left(href='#', id='feedback')
-    //-   span= t('header.feedback')
+    - var target = config.homeLink ? {} : { 'target': '_blank'};
+    a.login.pull-left(href=config.organizationUrl, style=style)&attributes(target)
+      span= config.organizationName
