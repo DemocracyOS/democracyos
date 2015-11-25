@@ -1,7 +1,6 @@
 [
 {
     "topicId": "103-D-13"
-  , "tag" : "Cultura"
   , "officialTitle": ""
   , "mediaTitle": "Sale Rauch entra Walsh"
   , "source": "https://s3.amazonaws.com/pdr-app/103-D-13.pdf"
@@ -28,7 +27,6 @@
 },
 {
     "topicId": "0530-13"
-  , "tag" : "Cultura"
   , "officialTitle": ""
   , "mediaTitle": "Penas para los atentados contra el Patrimonio Cultural"
   , "source": "https://s3.amazonaws.com/pdr-app/0530-13.pdf"
@@ -60,7 +58,6 @@
 },
 {
     "topicId": "2813-D-13"
-  , "tag" : "Planeamiento Urbano"
   , "officialTitle": ""
   , "mediaTitle": "Parque de Recreación nº1 y Planta de recuperación de residuos sólidos"
   , "source": "https://s3.amazonaws.com/pdr-app/2813-D-13.pdf"
@@ -127,7 +124,6 @@
 },
 {
     "topicId": "1030-D-13"
-  , "tag" : "Defensa de Consumidores y Usuarios"
   , "officialTitle": "Exhibición  y publicicad de precios en la Ciudad Autónoma de Buenos Aires"
   , "mediaTitle": "Precios a la vista"
   , "source": "https://s3.amazonaws.com/pdr-app/1030-D-13.pdf"
@@ -344,7 +340,6 @@
 },
 {
     "topicId": "265-D-12"
-  , "tag" : "Justicia"
   , "officialTitle": ""
   , "mediaTitle": "Baños para todos"
   , "source": "https://s3.amazonaws.com/pdr-app/265-D-12.pdf"
@@ -370,7 +365,6 @@
 },
 {
     "topicId": "0546-13"
-  , "tag" : "Cultura"
   , "officialTitle": "Autorizar el emplazamiento de un monumento a la memoria del Tte. Gral. Juan Domingo Perón."
   , "mediaTitle": "Monumento a J. D. Perón"
   , "source": "https://s3.amazonaws.com/pdr-app/0546-13.pdf"
@@ -396,7 +390,6 @@
 },
 {
     "topicId": "0547-13"
-  , "tag" : "Cultura"
   , "officialTitle": "Declarar \"Personalidad destacada de la Cultura\" a Horacio Fontova."
   , "mediaTitle": "\"El Negro\" Fontova, Personalidad de la Cultura"
   , "source": "https://s3.amazonaws.com/pdr-app/0547-13.pdf"
@@ -417,7 +410,6 @@
 },
 {
     "topicId": "361-D-12"
-  , "tag" : "Planeamiento Urbano"
   , "officialTitle": "Centros comerciales a cielo abierto."
   , "mediaTitle": "Planes para centros comerciales a cielo abierto"
   , "source": "https://s3.amazonaws.com/pdr-app/361-D-12.pdf"
@@ -493,7 +485,6 @@
 },
 {
     "topicId": "656-D-13"
-  , "tag" : "Cultura"
   , "officialTitle": "Declarar \"Sitio histórico\" y catalogar con nivel de protección al inmueble ubicado en la calle Wenceslao Villafañe nº 1.342."
   , "mediaTitle": "La escuela de Bellas Artes Manuel Belgrano, \"Sitio Histórico\""
   , "source": "https://s3.amazonaws.com/pdr-app/656-D-13.pdf"
@@ -529,7 +520,6 @@
 },
 {
     "topicId": "898-D-13"
-  , "tag" : "Planeamiento Urbano"
   , "officialTitle": "Obligatoriedad en las instalaciones sanitarias de los edificios nuevos, públicos y privados de incluir solamente inodoros con mecanismo de descarga de doble pulsador o similar."
   , "mediaTitle": "Sanitarios con menos desperdicio de agua"
   , "source": "https://s3.amazonaws.com/pdr-app/898-D-13.pdf"
