@@ -4,8 +4,7 @@ mixin clause(c)
   - if (i > 0) classes.push('hide')
   .clause.commentable-section(class=classes, data-section-id=c.id)!=c.text
 
-- if (clauses.length)
-  - each c, i in clauses
-    +clause(c)
-  - if (clauses.length > 1)
-    a.read-more(href="#")= t('common.read-more')
+- each c, i in clauses
+  +clause(c)
+- if (clauses.length > 1)
+  a.read-more(href="#")= t('common.read-more')
