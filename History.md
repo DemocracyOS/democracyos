@@ -1,4 +1,11 @@
 
+1.0.4 / 2015-11-26
+==================
+
+  * Fix build error #1153
+  * Fix signin redirect #1139
+  * Update Galician translations #1151 (@dalareo)
+
 1.0.3 / 2015-11-18
 ==================
 
