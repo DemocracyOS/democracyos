@@ -162,10 +162,12 @@
     "yargs": "3.9.1"
   },
   "devDependencies": {
-    "nomnom": "^1.8.1",
     "arr-diff": "^1.0.1",
+    "google-translate": "^1.0.0",
+    "gulp-jasmine": "^2.2.1",
     "json-file-plus": "^3.0.0",
-    "google-translate": "^1.0.0"
+    "nomnom": "^1.8.1",
+    "supertest": "^1.1.0"
   },
   "main": "pdr",
   "engines": {
