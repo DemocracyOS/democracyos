@@ -20,5 +20,6 @@ li(data-id=item.id, class=active ? 'active' : '')
         = item.participants.length + ' ' + t('proposal-article.participant.' + cardinality)
       if item.closingAt
         - var closed = item.closingAt && +new Date(item.closingAt) < Date.now()
+        br
         span.time-ago-label= (closed ? t('common.closed') : t('common.close')) + ' '
         span.meta-item.meta-timeago.ago(data-time=item.closingAt.toString())
