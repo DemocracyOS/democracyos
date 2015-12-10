@@ -34,22 +34,26 @@ mixin message (notification)
 .notifications-page
   h1=t('notifications.title')
   table.table.table-hover
-    - each notification in notifications
-      - var glyphicon = ''
-      case notification.type
-        when 'reply'
-          - glyphicon = 'glyphicon-comment'
-        when 'topic'
-          - glyphicon = 'glyphicon-exclamation-sign'
-        when 'upvote'
-          - glyphicon = 'glyphicon-chevron-up'
-        when 'downvote'
-          - glyphicon = 'glyphicon-chevron-down'
-      tr(data-url=notification.url)
-        td.text-center
-          i.glyphicon(class=glyphicon)
-        td(colspan=notification.relatedUser ? 1 : 2)
-          +message(notification)
-          p.small.ago(data-time=notification.createdAt.toString())
-        - if (notification.relatedUser)
-          td: img(src=notification.relatedUser.avatar)
+    - if (notifications.length)
+      - each notification in notifications
+        - var glyphicon = ''
+        case notification.type
+          when 'reply'
+            - glyphicon = 'glyphicon-comment'
+          when 'topic'
+            - glyphicon = 'glyphicon-exclamation-sign'
+          when 'upvote'
+            - glyphicon = 'glyphicon-chevron-up'
+          when 'downvote'
+            - glyphicon = 'glyphicon-chevron-down'
+        tr(data-url=notification.url)
+          td.text-center
+            i.glyphicon(class=glyphicon)
+          td(colspan=notification.relatedUser ? 1 : 2)
+            +message(notification)
+            p.small.ago(data-time=notification.createdAt.toString())
+          - if (notification.relatedUser)
+            td: img(src=notification.relatedUser.avatar)
+    - else
+      .notifications-empty
+        p=t('notifications.empty')

@@ -217,6 +217,7 @@
   "notifications.upvote.verb": "upvoted your comment",
   "notifications.downvote.verb": "downvoted your comment",
   "notifications.on": "on",
+  "notifications.empty": "You don't have notifications",
   "password": "Password",
   "password.new": "New Password",
   "password.repeat": "Repeat Password",

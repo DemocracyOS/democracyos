@@ -216,6 +216,7 @@
   "notifications.upvote.verb": "votó a favor tu argumento",
   "notifications.downvote.verb": "votó en contra tu argumento",
   "notifications.on": "en",
+  "notifications.empty": "No hay notificaciones",
   "password": "Contraseña",
   "password.new": "Nueva contraseña",
   "password.repeat": "Repetir contraseña",
