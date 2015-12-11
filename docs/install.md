@@ -99,6 +99,19 @@ If something goes wrong you can always go back to a clean slate running `make cl
 * On Ubuntu 14/13/lower, install the package `node-legacy` for NodeJS.
 * Check [this guide](https://github.com/DemocracyOS/app/wiki/Running-as-a-service) on how to run DemocracyOS as a service.
 
+## Running unit tests
+
+To run unit tests simply run
+```
+npm test
+```
+
+A running MongoDB instance is required to perform tests. By default, the `DemocracyOS-test` database is used and all its data is wiped on each run. If you want to override the database, just run the above command prefixing `MONGO_URL=<database uri>`. For example:
+
+```
+MONGO_URL=mongodb://localhost/other-db npm test
+```
+
 ## Loading sample data
 
 In order for you to see a fully working deployment, you *will* need some sample data. This can be achieved by either of these approaches:
