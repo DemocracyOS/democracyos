@@ -59,7 +59,7 @@ git commit -a -m"adding somefile.txt"
 
 When you think your code is ready, prepare for pushing the code by first getting the changes from the main repo:
 ```
-git pull --rebase upstream development
+git pull --rebase upstream master
 ```
 (You may need to solve any conflicts from the rebase at this point)
 
@@ -78,7 +78,7 @@ Main contributors will review your code and possibly ask for changes before your
 * We flag the issues to community participation as [help wanted](https://github.com/DemocracyOS/app/labels/help%20wanted), try to prioritize these.
 * Do not make a pull request withouth having run the app on your own. This means, you have to at least [smoke test](http://en.wikipedia.org/wiki/Smoke_testing_(software))  what you did. If you can include some tests with your PR, all the better.
 * Try not to pollute your pull request with unintended changes. Keep them simple and small. Unrelated commits will prevent us from merging.
-* Pull requests should always be against the `development` branch, never against `master`.
+* Pull requests should always be against the `master` branch.
 * All pull requests must comply with the project's coding styles explained here.
 
 ### Coding style
