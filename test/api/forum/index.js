@@ -4,8 +4,6 @@ var app = require('lib/boot');
 var users = require('test/assets/users.json');
 var forums = require('test/assets/forums.json');
 var fixtures = require('test/utils');
-var mongoose = require('mongoose');
-var config = require('lib/config');
 
 /**
  * Global variables and helper functions to handle data and permissions
@@ -110,9 +108,6 @@ describe('/api/forum/:id/permission', function () {
       fixtures.users.wipe()
     ])
     .then(done)
-    // The process won't exit if process.exit is not called.
-    // Maybe because there is a server listening for connections.
-    .then(() => process.exit(0))
   })
 
 });
