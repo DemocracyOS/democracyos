@@ -15,15 +15,11 @@ Please refer to the [Installation](http://docs.democracyos.org/install.html) wik
 ## Current DemocracyOS deployments
 
 * [DemocracyOS - PDR](http://dos.partidodelared.org): The Net Party's official deployment of DemocracyOS.
-* [DEMOS](http://demos.legislatura.gov.ar): Buenos Aires City Congress opens up for citizen collaboration in legislation drafting.
-* [Datos Abiertos México](http://politica.datos.gob.mx): Mexican government's official deployment Open Data Policy.
 * [EuVoto](http://euvoto.org/): Brazilian initiative by the Open Knowledge Foundation Brasil to discuss legislation in the city of Sao Paulo.
 * [Loi Renseignement](http://pjlr.democracyos.eu/): First deployment by DemocracyOS France to discuss the Loi Renseignement.
 * [Evoks](http://evoks.hu/): Hungarian project by Atlatzo.hu for discussing social issues.
-* [Barcelona en Comu](http://participa.confluenciacodietic.cat/): Barcelona en Comu's participatory decision-making platform.
 * [PAMI](http://debatics.pami.org.ar/): The largest healthcare program for elderly peolpe opens its technical decisions.
-* [Cambridge City's Councillor Nadeem Mazen](http://nadeemmazen.democracyos.com/): Councillor Nadeem Mazen's official DemocracyOS.
-* [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/): Official deployment of DemocracyOS Ukraine.
+* [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/law/557ba8ca29e8180300c88c48): Official deployment of DemocracyOS Ukraine.
 
 ## Contributing
 
