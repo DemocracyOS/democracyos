@@ -183,6 +183,7 @@
     "start": "NODE_PATH=. node index.js",
     "build": "gulp build",
     "watch": "gulp watch",
-    "clean": "gulp clean"
+    "clean": "gulp clean",
+    "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
   }
 }
