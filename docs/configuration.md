@@ -396,18 +396,6 @@ When `true` will enable a route under `/rss` that can be used as a RSS Feed (XML
 
 Number specifying how many comments will be listed before a "Show more" button is shown. 0 will get all comments from the backend.
 
-#### **clientDebug**
-* env: `CLIENT_DEBUG`
-* default: ""
-
-Namespace (string) used by [visionmedia/debug](https://github.com/visionmedia/debug) to show debugging messages on the browser
-
-#### **clientDebug**
-* env: `CLIENT_DEBUG`
-* default: ""
-
-Namespace (string) used by [visionmedia/debug](https://github.com/visionmedia/debug) to show debugging messages on the browser
-
 #### **feedsLimit**
 * env: `FEEDS_LIMIT`
 * default: 10
