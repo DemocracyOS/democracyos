@@ -1,20 +1,18 @@
 - var prepend = forum ? ('/' + forum.name) : ''
 
 #tags-wrapper
-  .tags-admin
-    .row.well.well-lg
-      .col-xs-12.col-md-2
-        a.btn.btn-success.btn-block.new(href='#{prepend}/admin/tags/create')
-          span.glyphicon.glyphicon-plus
-          = ' ' + t('admin-tags.list.add-tag')
-      .col-xs-12.col-md-7.col-md-offset-3
-        .input-group.input-group-md
-          span.input-group-addon
-            i.glyphicon.glyphicon-search
-          input.form-control.search(type='text', placeholder='#{t("admin-tags.list.search.placeholder")}', autofocus)
-      .col-md-3
-    .row
-      .list.list-group
-        - each tag in tags
-          a.list-group-item(href="#{prepend}/admin/tags/" + tag.id)
-            span.tag-title=tag.name
+  .well.well-lg.clearfix
+    .col-xs-12.col-md-2
+      a.btn.btn-success.btn-block.new(href='#{prepend}/admin/tags/create')
+        span.glyphicon.glyphicon-plus
+        = ' ' + t('admin-tags.list.add-tag')
+    .col-xs-12.col-md-7.col-md-offset-3
+      .input-group.input-group-md
+        span.input-group-addon
+          i.glyphicon.glyphicon-search
+        input.form-control.search(type='text', placeholder='#{t("admin-tags.list.search.placeholder")}', autofocus)
+    .col-md-3
+  .list.list-group
+    - each tag in tags
+      a.list-group-item(href="#{prepend}/admin/tags/" + tag.id)
+        span.tag-title=tag.name
