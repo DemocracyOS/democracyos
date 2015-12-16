@@ -6,39 +6,29 @@ require('lib/models')(mongoose.connection)
 var User = require('lib/models').User
 var Forum = require('lib/models').Forum
 
-/** Just a decorator that returns a promise that executes functions in parallel */
-
-function parallel (fns) {
-  return new Promise(function (resolve, reject) {
-    Promise.all(fns)
-    .then(resolve)
-    .catch(reject)
-  })
-}
-
 function createUser (user) {
-  return new Promise (function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     log('Creating user %s %s', user.firstName, user.lastName)
-    var u = new User(user);
+    var u = new User(user)
     u.save(function (err, doc) {
       log('Saving user %s %s', user.firstName, user.lastName)
       if (err) {
         log('Error saving user %s %s: %s', user.firstName, user.lastName, err)
-        return reject(err);
+        return reject(err)
       }
 
       log('User %s %s saved successfully', user.firstName, user.lastName)
-      resolve(doc);
+      resolve(doc)
     })
   })
 }
 
 function createUsers (users) {
-  return parallel(users.map(createUser))
+  return Promise.all(users.map(createUser))
 }
 
 function wipeUsers () {
-  return new Promise (function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     log('Removing all users')
     User.remove({}, function (err) {
       if (err) {
@@ -53,7 +43,7 @@ function wipeUsers () {
 }
 
 function createForum (forum) {
-  return new Promise (function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     log('Creating forum %s', forum.name)
     var f = new Forum(forum)
     f.save(function (err, doc) {
@@ -68,11 +58,11 @@ function createForum (forum) {
 }
 
 function createForums (forums) {
-  return parallel(forums.map(createForum))
+  return Promise.all(forums.map(createForum))
 }
 
 function wipeForums () {
-  return new Promise (function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     log('Removing all forums')
     Forum.remove({}, function (err) {
       if (err) {
