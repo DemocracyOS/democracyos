@@ -65,11 +65,12 @@ color2 = #999
       background-color #f5f5f5
 
     .actions
-      a
+      & > *
+        cursor pointer
         color inherit
 
-        & + a
-          margin-left .8em
+      & > * + *
+        margin-left .8em
 
       .btn-remove
         color #d95e59
@@ -89,9 +90,13 @@ color2 = #999
     padding 0 12px !important
     text-transform uppercase
 
-  .actions
-    margin-bottom 1em
-    text-align right
+  .heading
+    .actions
+      position relative
+      top -.3em
+      margin-bottom 1em
+      text-align right
+      float right
 
 #forum-delete-modal
   .confirmation-actions
