@@ -63,7 +63,7 @@ function populate () {
  * Tests
  */
 
-describe('/api/forum/:id/permission', function () {
+describe('/api/forum/:id/permissions', function () {
 
   beforeAll(function (done) {
     populate()

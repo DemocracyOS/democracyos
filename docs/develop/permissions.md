@@ -35,10 +35,10 @@ For each forum, permission granting and revoking is handled by the API endpoints
 
 The `forum` API endpoint set has three methods that handles per-forum permission operations. In `lib/forum-api/index.js` you'll find:
 - `GET /api/forum/:id/permissions`: Delivers a list of roles the users that belongs to each role.
-- `POST /api/forum/:id/permission`: Adds a new role-user pair to the `permissions` property of the forum. In the payload, it expects a JSON object with two properties:
+- `POST /api/forum/:id/permissions`: Adds a new role-user pair to the `permissions` property of the forum. In the payload, it expects a JSON object with two properties:
 	- `user`: the affected user's ID
 	- `role`: the role name (`'admin'` or `'collaborator'`)
-- `DELETE /api/forum/:id/permission`: Deletes a role-user pais from the `permissions` property for the forum. In the payload it expects a JSON object with a `user` and a `role` as explained above.
+- `DELETE /api/forum/:id/permissions`: Deletes a role-user pais from the `permissions` property for the forum. In the payload it expects a JSON object with a `user` and a `role` as explained above.
 
 # Hooks
 
