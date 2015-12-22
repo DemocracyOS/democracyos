@@ -8,6 +8,7 @@
   "admin-sidebar.topics.create": "Create",
   "admin-sidebar.topics.list": "List",
   "admin-sidebar.topics.title": "Topics",
+  "admin-sidebar.permissions.title": "Permissions",
   "admin-sidebar.whitelists.title": "Enabled users",
   "admin-tags-form.button.submit": "Save",
   "admin-tags-form.label.image": "Image",

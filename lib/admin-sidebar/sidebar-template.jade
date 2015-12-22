@@ -1,5 +1,6 @@
 ul.admin-menu.nav.nav-pills.nav-stacked
   li: a(href="#{forumUrl}/admin/topics" data-section='topics')=t('admin-sidebar.topics.title')
+  li: a(href="#{forumUrl}/admin/permissions" data-section='permissions')=t('admin-sidebar.permissions.title')
   - if (user.staff)
     li: a(href="#{forumUrl}/admin/tags" data-section='tags')=t('admin-sidebar.tags.title')
   - if (config.usersWhitelist)
