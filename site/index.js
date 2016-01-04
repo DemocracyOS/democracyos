@@ -3,6 +3,7 @@
  */
 
 import express from 'express'
+import models from 'lib/models'
 
 const app = express()
 
@@ -12,6 +13,21 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => res.send('GET /'))
+app.get('/', (req, res) => {
+  const HTML = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>DemocracyOS</title>
+      </head>
+      <body>
+        <div id="react-view"></div>
+        <script type="application/javascript" src="/bundle.js"></script>
+      </body>
+    </html>`
+  
+  res.end(HTML)
+})
 
 export default app

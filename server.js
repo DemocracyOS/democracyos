@@ -8,8 +8,7 @@ import config from 'config'
 import debug from 'debug'
 import express from 'express'
 import site from 'site'
-import mongoose from 'mongoose'
-import { needsMigration } from './migroose'
+import { connect as modelsConnect } from 'lib/models'
 
 const app = express()
 const log = debug('democracyos')
@@ -19,34 +18,15 @@ app
   .use('/api', api)
   .use('/', site)
 
-function start() {
-  app.listen(PORT, (err) => {
-    if (err) return log(`❌ Failed to start DemocracyOS due to error: ${err}`)
-    log(`🚀 App started at port ${PORT}`)
+
+modelsConnect
+  .then(() => {
+    app.listen(PORT, (err) => {
+      if (err) return log(`❌ Failed to start DemocracyOS due to error: ${err}`)
+      log(`🚀 App started at port ${PORT}`)
+    })
   })
-}
-
-mongoose.connect(config.mongoUrl, function(err) {
-  if (err) {
-    throw err;
-  }
-
-  needsMigration((err, migrationRequired) => {
-    if (err) {
-      console.error(err);
-    }
-
-    else if (migrationRequired) {
-      console.log('Database migration required'.red);
-      console.log('Ensure you backup your database first.');
-      console.log('');
-      console.log(
-        'Run the following command: ' + 'npm run migrate'.yellow
-      );
-
-      return process.exit();
-    }
-
-    start();
-  });
-})
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })

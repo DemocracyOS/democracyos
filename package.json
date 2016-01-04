@@ -55,8 +55,7 @@
     "lint": "standard",
     "start": "DEBUG=democracyos* NODE_PATH=. babel-node index.js",
     "build": "babel index.js -d dist",
-    "serve": "node dist/index.js",
-    "migrate": "migroose"
+    "serve": "node dist/index.js"
   },
   "dependencies": {
     "babel-cli": "^6.3.17",
@@ -68,8 +67,6 @@
     "democracyos-config": "^0.1.0",
     "enforce-node-path": "^1.0.0",
     "express": "^4.13.3",
-    "migroose": "^0.5.1",
-    "migroose-cli": "^0.1.0",
     "mongoose": "^4.3.4",
     "nodemon": "^1.8.1"
   },
