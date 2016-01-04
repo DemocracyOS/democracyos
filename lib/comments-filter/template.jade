@@ -1,9 +1,0 @@
-.comments-filter
-  button.btn.btn-default(type='button')
-    span= t('comments.ordered-by') + ': '
-    strong= t(label)
-    span.caret
-  ul.dropdown-list
-    - each sort, key in sorts
-      li(data-sort=key)
-        a(href='#')= t(sort.label)
