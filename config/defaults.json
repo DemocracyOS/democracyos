@@ -1,0 +1,4 @@
+{
+  "publicPort": 3000,
+  "mongoUrl": "mongodb://localhost/DemocracyOS-dev"
+}
