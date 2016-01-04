@@ -3,6 +3,9 @@
  */
 
 import express from 'express'
+import * as models from 'lib/models'
+
+console.log(models)
 
 const app = express()
 

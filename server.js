@@ -4,6 +4,7 @@
 
 import api from 'api'
 import 'colors'
+import config from 'config'
 import debug from 'debug'
 import express from 'express'
 import site from 'site'
@@ -12,7 +13,7 @@ import { needsMigration } from './migroose'
 
 const app = express()
 const log = debug('democracyos')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || config.publicPort
 
 app
   .use('/api', api)
@@ -20,12 +21,12 @@ app
 
 function start() {
   app.listen(PORT, (err) => {
-  if (err) return log(`❌ Failed to start DemocracyOS due to error: ${err}`)
-  log(`🚀 App started at port ${PORT}`)
+    if (err) return log(`❌ Failed to start DemocracyOS due to error: ${err}`)
+    log(`🚀 App started at port ${PORT}`)
   })
 }
 
-mongoose.connect('mongodb://localhost/DemocracyOS-dev', function(err) {
+mongoose.connect(config.mongoUrl, function(err) {
   if (err) {
     throw err;
   }
