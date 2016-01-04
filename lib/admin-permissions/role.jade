@@ -1,0 +1,11 @@
+.admin-permissions-role
+  h2= t('admin-permissions.roles.' + role + '.title')
+
+  .admin-permissions-users.clearfix
+    each user in users
+      .admin-permissions-user
+        img(src=user.avatar)
+        p= user.displayName
+
+  btn.btn.btn-default(type='button')
+    = t('admin-permissions.roles.' + role + '.add')
