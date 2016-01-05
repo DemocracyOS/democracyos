@@ -4,12 +4,14 @@ import debug from 'debug'
 import express from 'express'
 import site from 'site'
 import { ready as modelsReady } from 'lib/models'
+import nowww from 'nowww'
 
 const app = express()
 const log = debug('democracyos')
 const PORT = process.env.PORT || config.publicPort
 
 app
+  .use(nowww())
   .use('/api', api)
   .use('/', site)
 
