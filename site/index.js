@@ -1,5 +1,4 @@
 import express from 'express'
-import models from 'lib/models'
 
 const app = express()
 

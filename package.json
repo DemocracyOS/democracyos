@@ -67,7 +67,10 @@
     "enforce-node-path": "^1.0.0",
     "express": "^4.13.3",
     "mongoose": "^4.3.4",
-    "nodemon": "^1.8.1"
+    "mongoose-gravatar": "^0.3.0",
+    "mongoose-validators": "^0.1.0",
+    "nodemon": "^1.8.1",
+    "passport-local-mongoose": "^3.1.0"
   },
   "devDependencies": {
     "standard": "^5.4.1"

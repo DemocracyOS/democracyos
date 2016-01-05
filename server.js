@@ -13,7 +13,6 @@ app
   .use('/api', api)
   .use('/', site)
 
-
 modelsReady()
   .then(() => {
     app.listen(PORT, (err) => {

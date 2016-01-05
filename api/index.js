@@ -1,7 +1,19 @@
-import express from 'express'
+import { Router } from 'express'
+import pckg from 'package.json'
+import topicApi from './topic-api'
 
-const app = express()
+const app = new Router()
 
-app.get('/', (req, res) => res.send('GET /api'))
+/**
+ * API version
+ */
+
+app.get('/', (req, res) => res.send(`DemocracyOS v${pckg.version}`))
+
+/**
+ * Topic API
+ */
+
+app.use('/topic', topicApi)
 
 export default app
