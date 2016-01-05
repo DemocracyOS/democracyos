@@ -1,7 +1,3 @@
-/**
- * Module Dependencies
- */
-
 import express from 'express'
 import models from 'lib/models'
 

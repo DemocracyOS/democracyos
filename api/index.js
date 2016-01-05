@@ -1,7 +1,3 @@
-/**
- * Module Dependencies
- */
-
 import { Router } from 'express'
 
 const api = new Router()
