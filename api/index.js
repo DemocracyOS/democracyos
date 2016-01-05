@@ -1,7 +1,7 @@
-import { Router } from 'express'
+import express from 'express'
 
-const api = new Router()
+const app = express()
 
-api.get('/', (req, res) => res.send('GET /api'))
+app.get('/', (req, res) => res.send('GET /api'))
 
-export default api
+export default app
