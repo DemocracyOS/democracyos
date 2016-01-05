@@ -1,5 +1,4 @@
 import api from 'api'
-import 'colors'
 import config from 'config'
 import debug from 'debug'
 import express from 'express'
