@@ -1,8 +1,12 @@
 import { Router } from 'express'
 import pckg from 'package.json'
 import topicApi from './topic-api'
+import parser from 'body-parser'
 
 const app = new Router()
+
+app.use(parser.urlencoded({ extended: true }));
+app.use(parser.json());
 
 /**
  * API version
