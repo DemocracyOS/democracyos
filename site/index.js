@@ -1,28 +1,14 @@
 import express from 'express'
+import ReactEngine from 'lib/express-react-engine'
+import home from './home/server'
 
 const app = express()
 
-// IE header
-app.use((req, res, next) => {
-  res.setHeader('X-UA-Compatible', 'IE=Edge,chrome=1')
-  next()
-})
+app.engine('.js', ReactEngine({defaultLayout: 'layout'}))
 
-app.get('/', (req, res) => {
-  const HTML = `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>DemocracyOS</title>
-      </head>
-      <body>
-        <div id="react-view"></div>
-        <script type="application/javascript" src="/bundle.js"></script>
-      </body>
-    </html>`
-  
-  res.end(HTML)
-})
+app.set('view engine', '.js')
+app.set('views', __dirname)
+
+app.use('/', home)
 
 export default app

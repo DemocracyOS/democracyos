@@ -1,3 +1,2 @@
-var nodepath = require('enforce-node-path')
-nodepath(__dirname)
+require('enforce-node-path')(__dirname)
 require('./server')

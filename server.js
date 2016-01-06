@@ -18,7 +18,7 @@ app
   .use(nowww())
   .use(logger)
   .use('/api', api)
-  .use('/', site)
+  .use(site)
 
 modelsReady()
   .then(() => {
