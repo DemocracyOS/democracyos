@@ -4,14 +4,19 @@ import debug from 'debug'
 import express from 'express'
 import site from 'site'
 import { ready as modelsReady } from 'lib/models'
+import logger from 'lib/logger'
 import nowww from 'nowww'
+import mongoose from 'mongoose'
 
 const app = express()
 const log = debug('democracyos')
 const PORT = process.env.PORT || config.publicPort
 
+mongoose.Promise = global.Promise
+
 app
   .use(nowww())
+  .use(logger)
   .use('/api', api)
   .use('/', site)
 
