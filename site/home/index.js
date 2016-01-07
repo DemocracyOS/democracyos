@@ -1,7 +1,11 @@
 import React from 'react'
 
-export default class HomeView extends React.Component {
+export default class Home extends React.Component {
   render () {
-    return <p>Hello, youre at Home!</p>
+    return <p>Hello, {this.props.name}</p>
   }
+}
+
+Home.propTypes = {
+  name: React.PropTypes.string.isRequired
 }
