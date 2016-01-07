@@ -2,6 +2,7 @@
   "404.back-to-democracyos": "Go back to DemocracyOS",
   "404.go-back-to": "go back to",
   "404.not-exists": "This page does not exist",
+  "admin-permissions.remove": "Remove",
   "admin-permissions.roles.admins.add": "Add Admin",
   "admin-permissions.roles.admins.title": "Administrators",
   "admin-permissions.roles.collaborators.add": "Add Collaborator",
