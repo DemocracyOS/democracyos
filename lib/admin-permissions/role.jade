@@ -5,7 +5,7 @@
     each user in users
       .admin-permissions-user.clearfix
         img(src=user.avatar)
-        p= user.displayName
+        p(title=user.displayName)= user.displayName
         button.btn.btn-danger(type='button')= t('admin-permissions.remove')
 
   button.btn.btn-default(type='button')

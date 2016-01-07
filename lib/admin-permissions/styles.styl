@@ -8,22 +8,26 @@
 
 .admin-permissions-user
   display flex
-  flex-wrap wrap
   align-items center
   align-content center
+  white-space nowrap
   margin-bottom .5em
   padding .5em
   font-size 1em
   border-radius 2px
-  background-color #f9f9f9
+  transition background-color .05s .05s
+
+  &:hover
+    background-color #f9f9f9
 
   img
     width 2.1em
+    border-radius 2px
 
   p
     flex-grow 2
     margin 0 .5em
     font-weight bold
-
-  .btn
-    float right
+    text-overflow ellipsis
+    overflow hidden
+    cursor default
