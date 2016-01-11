@@ -1,0 +1,21 @@
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, .4);
+  z-index: 10;
+  background-color: #fff;
+}
+
+.dropdown .item.active {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.dropdown .item:hover {
+  background-color: rgba(0, 0, 0, .05);
+}
+
+.dropdown .item + .dropdown .item {
+  border-top: 1px solid rgba(0, 0, 0, .2);
+}

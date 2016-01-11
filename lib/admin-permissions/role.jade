@@ -1,5 +1,6 @@
 .admin-permissions-role
-  h2= t('admin-permissions.roles.' + role + '.title')
+  .title(data-title)
+    h2= t('admin-permissions.roles.' + role + '.title')
 
   .admin-permissions-users
     each user in users
@@ -7,6 +8,3 @@
         img(src=user.avatar)
         p(title=user.displayName)= user.displayName
         button.btn.btn-danger(type='button')= t('admin-permissions.remove')
-
-  button.btn.btn-default(type='button')
-    = t('admin-permissions.roles.' + role + '.add')
