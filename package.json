@@ -120,6 +120,7 @@
     "jadeify": "^4.2.0",
     "jsdom": "6.3.0",
     "jwt-simple": "0.2.0",
+    "keyboardevent-key-polyfill": "^1.0.1",
     "locale": "0.0.20",
     "markdownify": "0.1.0",
     "marked": "^0.3.5",
