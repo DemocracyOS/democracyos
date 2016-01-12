@@ -3,7 +3,7 @@
   "404.go-back-to": "go back to",
   "404.not-exists": "This page does not exist",
   "add-user-input.placeholder": "Add a Person",
-  "admin-permissions.remove": "Remove",
+  "admin-permissions.revoke": "Revoke",
   "admin-permissions.roles.admins.title": "Administrators",
   "admin-permissions.roles.collaborators.title": "Collaborators",
   "admin-sidebar.tags.create": "Create",
