@@ -8,11 +8,7 @@
       a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
 
 
-  article.proposal.commentable-container
-    //- .meta-information
-    //-   a.meta-item.meta-location(href="#") Buenos Aires, Argentina
-    //-   small.meta-item.meta-timeago 10 days left
-
+  article.proposal
     .entry-tag(style="border-color: #{proposal.tag.color}")
 
       img(src=tagImages[proposal.tag.image].url, style="fill: white;")
@@ -47,8 +43,8 @@
         - var clauses = proposal.clauses
         each clause, i in clauses
           - var classes = ['clause']
-          - classes.push(clause.empty ? 'hide' : 'commentable-section')
-          !=toHTML(clause, { className: classes, iframeResponsive: true })
+          - if (clause.empty) classes.push('hide')
+          != toHTML(clause, { className: classes, iframeResponsive: true })
 
     //- Article source
     - if (proposal.source)
