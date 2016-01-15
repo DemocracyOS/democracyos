@@ -20,9 +20,9 @@ A good approach to a bug report is being very clear on how to reproduce it. Foll
 > 1. Run app with `make`
 > 2. Navigate to `/route`
 > 3. Click on `button` and see error in `console` output
-> 
+>
 > Results: What is the actual result that makes it a bug? (e.g: Misaligned text in header, see attached snapshot, etc.)
-> 
+>
 > Expected results: What should it look like? (e.g.: text in header should be aligned with dropdowns, etc.)
 
 
@@ -46,7 +46,7 @@ git remote add upstream git@github.com:DemocracyOS/app.git
 Create a new branch for the changes you are going to contribute, with a relevant name. Some examples:
 ```
 git checkout -b feature/some-new-stuff
-git checkout -b fix/some-bug 
+git checkout -b fix/some-bug
 git checkout -b remove/some-file
 ```
 
@@ -108,14 +108,4 @@ In general terms, we agree with almost everything said in this [blog post about 
 
 #### Javascript
 
-* Two spaces for indentation, never tabs.
-* `var` everything, never comma first.
-* Single quotes only, never double quotes (opposite to HTML/Jade).
-* Avoid trailing whitespace. Blank lines should not have any space.
-* Inline documentation for new methods, class members, etc.
-* One space between conditionals/functions, and their parenthesis and curly braces
-  * `if (..) {`
-  * `for (..) {`
-  * `while (..) {`
-  * `function (err) {`
-* Always `'string' === type(el)` instead of `type(el) === 'string'`
+Follow [feross/standard](https://github.com/feross/standard).
