@@ -9,124 +9,124 @@
   , "body": "Establishes principles, guarantees, rights and obligations related to the use of the Internet in Brazil.<br><br>THE NATIONAL CONGRESS decrees:<br><br><br>CHAPTER I<br>PRELIMINAR PROVISIONS"
   , "clauses": [
       {
-          "clauseName": "1"
-        , "order": 0
-        , "text": "This law establishes principles, guarantees, rights and obligations concerning the use of the Internet in Brazil, and provides guidelines about this subject for the jurisdictions of the Federal Union, States, Cities and the Federal District of Brasilia."
+        "position": 0
+        , "markup": "<div>This law establishes principles, guarantees, rights and obligations concerning the use of the Internet in Brazil, and provides guidelines about this subject for the jurisdictions of the Federal Union, States, Cities and the Federal District of Brasilia.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "2"
-        , "order": 1
-        , "text": "Internet regulation in Brazil shall be grounded on:<br>I< – the recognition of the international nature of the Internet<br>II – human rights and the exercise of citizenship in the digital environment<br>III – the values of plurality and diversity<br>IV – openness and collaboration<br>V – free enterprise, free competition, and consumer protection<br>"
+        "position": 1
+        , "markup": "<div>Internet regulation in Brazil shall be grounded on:<br>I< – the recognition of the international nature of the Internet<br>II – human rights and the exercise of citizenship in the digital environment<br>III – the values of plurality and diversity<br>IV – openness and collaboration<br>V – free enterprise, free competition, and consumer protection<br></div>"
+        , "empty": false
       },
       {
-          "clauseName": "3"
-        , "order": 2
-        , "text": "Internet regulation in Brazil shall have the following principles:<br>I – safeguarding freedom of speech, communication, and manifestation of thought, in the terms of the Constitution;<br>II – the protection of privacy;<br>III – the protection of personal data, in accordance to the law;<br>IV – the preservation and safeguarding of net neutrality, in compliance with further regulation;<br>V – preservation of the stability, security and functionality of the network, by means of technical practices compatible with international standards, as well as the incentive for the use of best practices;<br>VI – liability of agents in correspondence to their activities, in accordance to the law; and<br>VII – the preservation of the participatory nature of the Internet.<br><br>Sole Paragraph. The principles defined by this law do not exclude others set forth by the national legal system related to the matter, or by the international treaties signed by the Federative Republic of Brazil."
+        "position": 2
+        , "markup": "<div>Internet regulation in Brazil shall have the following principles:<br>I – safeguarding freedom of speech, communication, and manifestation of thought, in the terms of the Constitution;<br>II – the protection of privacy;<br>III – the protection of personal data, in accordance to the law;<br>IV – the preservation and safeguarding of net neutrality, in compliance with further regulation;<br>V – preservation of the stability, security and functionality of the network, by means of technical practices compatible with international standards, as well as the incentive for the use of best practices;<br>VI – liability of agents in correspondence to their activities, in accordance to the law; and<br>VII – the preservation of the participatory nature of the Internet.<br><br>Sole Paragraph. The principles defined by this law do not exclude others set forth by the national legal system related to the matter, or by the international treaties signed by the Federative Republic of Brazil.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "4"
-        , "order": 3
-        , "text": "Internet regulation in Brazil shall have the following objectives:<br>I – to promote of the right of accessing the Internet to all citizens;<br>II – to promote access to information, knowledge and participation in cultural activities and public affairs;<br>III – to promote innovation and encourage the dissemination of new technologies and models of use and access; and<br>IV – to promote compliance with the open technological standards that allow communication, accessibility and interoperability between applications and databases."
+        "position": 3
+        , "markup": "<div>Internet regulation in Brazil shall have the following objectives:<br>I – to promote of the right of accessing the Internet to all citizens;<br>II – to promote access to information, knowledge and participation in cultural activities and public affairs;<br>III – to promote innovation and encourage the dissemination of new technologies and models of use and access; and<br>IV – to promote compliance with the open technological standards that allow communication, accessibility and interoperability between applications and databases.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "5"
-        , "order": 4
-        , "text": "For the purposes of this law, the following definitions apply:<br>I - Internet: the system constituted by logical protocols, globally scaled for public and unrestricted use, allowing the communication of data between terminals through different networks;<br>II - terminal: a computer or any device that connects to the Internet;<br>III - autonomous system administrator: the individual or the legal entity that administrates Internet Protocols address blocks – specific IPs and their autonomous system routing, duly registered in the Regional Internet Registry responsible for the registries and distributions of IP addresses geographically related to the Country;<br>IV – IP address: the code assigned to a network terminal with the objective of allowing its identification, defined according to international standards;<br>V – Internet connection: the authorization for a terminal to send and receive data packages over the Internet, through the attribution and authentication of an IP address;<br>VI – connection logs: the information referring to the date and the time of the beginning and end of an Internet connection, its duration and the IP address used by the terminal for sending and receiving data packages;<br>VII – Internet applications: the group of functionalities that can be accessed by a terminal connected to the Internet; and<br>VIII – Internet application access logs: the information regarding the date and time of use, from a determined IP address, of a specific Internet."
+        "position": 4
+        , "markup": "<div>For the purposes of this law, the following definitions apply:<br>I - Internet: the system constituted by logical protocols, globally scaled for public and unrestricted use, allowing the communication of data between terminals through different networks;<br>II - terminal: a computer or any device that connects to the Internet;<br>III - autonomous system administrator: the individual or the legal entity that administrates Internet Protocols address blocks – specific IPs and their autonomous system routing, duly registered in the Regional Internet Registry responsible for the registries and distributions of IP addresses geographically related to the Country;<br>IV – IP address: the code assigned to a network terminal with the objective of allowing its identification, defined according to international standards;<br>V – Internet connection: the authorization for a terminal to send and receive data packages over the Internet, through the attribution and authentication of an IP address;<br>VI – connection logs: the information referring to the date and the time of the beginning and end of an Internet connection, its duration and the IP address used by the terminal for sending and receiving data packages;<br>VII – Internet applications: the group of functionalities that can be accessed by a terminal connected to the Internet; and<br>VIII – Internet application access logs: the information regarding the date and time of use, from a determined IP address, of a specific Internet.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "6"
-        , "order": 5
-        , "text": "This law shall be construed taking into account not only the principles, objectives and directives established herein, but also the nature of the Internet, its particular uses and customs, and its role in the promotion of human, economic, social, and cultural development.<br><br><br>CHAPTER II<br>ON THE RIGHTS AND GUARANTEES OF USERS<br>"
+        "position": 5
+        , "markup": "<div>This law shall be construed taking into account not only the principles, objectives and directives established herein, but also the nature of the Internet, its particular uses and customs, and its role in the promotion of human, economic, social, and cultural development.<br><br><br>CHAPTER II<br>ON THE RIGHTS AND GUARANTEES OF USERS<br></div>"
+        , "empty": false
       },
       {
-          "clauseName": "7"
-        , "order": 6
-        , "text": "Access to the Internet is essential for the exercise of citizenship, and the following rights are secured to its users:<br>I – the non-violation and secrecy of communications on the Internet, except under judicial order, in the hypotheses and form established by law, for criminal investigations or the gathering of evidence for criminal procedures;<br>II – the non suspension of Internet connections, except for debts directly related to their use;<br>III – the maintenance of the contracted quality of Internet connections, with observance of article 9;<br>IV – clarity and thoroughness of information in contracts for Internet services, with explicit mention of the applicable regimes for data protection, connection logs and Internet application access logs, as well as to network management practices that can affect the quality of the offered services; and<br>V – the non-disclosure, to third parties, of connection logs and Internet application access logs, except if the user’s consent is obtained, or in the circumstances determined by law."
+        "position": 6
+        , "markup": "<div>Access to the Internet is essential for the exercise of citizenship, and the following rights are secured to its users:<br>I – the non-violation and secrecy of communications on the Internet, except under judicial order, in the hypotheses and form established by law, for criminal investigations or the gathering of evidence for criminal procedures;<br>II – the non suspension of Internet connections, except for debts directly related to their use;<br>III – the maintenance of the contracted quality of Internet connections, with observance of article 9;<br>IV – clarity and thoroughness of information in contracts for Internet services, with explicit mention of the applicable regimes for data protection, connection logs and Internet application access logs, as well as to network management practices that can affect the quality of the offered services; and<br>V – the non-disclosure, to third parties, of connection logs and Internet application access logs, except if the user’s consent is obtained, or in the circumstances determined by law.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "8"
-        , "order": 7
-        , "text": "The preservation of the right to privacy and freedom of expression in communications is a condition for the full exercise of the right to Internet access.<br><br><br>CHAPTER III<br>ON THE PROVISION OF INTERNET CONNECTION AND APPLICATIONS<br><br>SECTION I<br>On data traffic"
+        "position": 7
+        , "markup": "<div>The preservation of the right to privacy and freedom of expression in communications is a condition for the full exercise of the right to Internet access.<br><br><br>CHAPTER III<br>ON THE PROVISION OF INTERNET CONNECTION AND APPLICATIONS<br><br>SECTION I<br>On data traffic</div>"
+        , "empty": false
       },
       {
-          "clauseName": "9"
-        , "order": 8
-        , "text": "The party responsible for the transmission, switching or routing of data has the obligation of granting equal treatment to every data package, with no distinction by content, origin and destination, service, terminal or application; any traffic discrimination or degradation that does not arise out of the technical requirements necessary to the adequate provision of services is prohibited, in accordance to further regulation.<br><br>Sole Paragraph. In the provision of Internet connection services, it is prohibited to monitor, filter, analyze or supervise the content of data packages, except in the circumstances allowed by the law.<br><br>SECTION II<br>On data records<br>"
+        "position": 8
+        , "markup": "<div>The party responsible for the transmission, switching or routing of data has the obligation of granting equal treatment to every data package, with no distinction by content, origin and destination, service, terminal or application; any traffic discrimination or degradation that does not arise out of the technical requirements necessary to the adequate provision of services is prohibited, in accordance to further regulation.<br><br>Sole Paragraph. In the provision of Internet connection services, it is prohibited to monitor, filter, analyze or supervise the content of data packages, except in the circumstances allowed by the law.<br><br>SECTION II<br>On data records<br></div>"
+        , "empty": false
       },
       {
-          "clauseName": "10"
-        , "order": 9
-        , "text": "The storage and disclosure of the connection logs and Internet application access logs regulated by this law must preserve intimacy, private life, the reputation and image of the parties directly or indirectly involved.<br>§1º The Internet service provider responsible for the storage of logs will only be constrained to disclose the information that allows the identification of the user under a judicial order, in the terms set by Section IV of this Chapter.<br>§2º Procedures for security and secrecy must be clearly informed by the Internet service provider responsible for the connection services, and must comply with standards defined in further regulation.<br>§3º The obligation of secrecy established by article 10 subjects violators to the civil, criminal, and administrative sanctions established by the law.<br><br>Subsection I<br>On the storage of connection logs "
+        "position": 9
+        , "markup": "<div>The storage and disclosure of the connection logs and Internet application access logs regulated by this law must preserve intimacy, private life, the reputation and image of the parties directly or indirectly involved.<br>§1º The Internet service provider responsible for the storage of logs will only be constrained to disclose the information that allows the identification of the user under a judicial order, in the terms set by Section IV of this Chapter.<br>§2º Procedures for security and secrecy must be clearly informed by the Internet service provider responsible for the connection services, and must comply with standards defined in further regulation.<br>§3º The obligation of secrecy established by article 10 subjects violators to the civil, criminal, and administrative sanctions established by the law.<br><br>Subsection I<br>On the storage of connection logs </div>"
+        , "empty": false
       },
       {
-          "clauseName": "11"
-        , "order": 10
-        , "text": "In the provision of Internet connection services, the administrator of the corresponding autonomous system has the obligation to maintain the connection logs confidentially, in a secured and controlled environment, for a period of one year, in the terms of further regulation.<br>§1º The responsibility for the storage of connection registries must not be transferred to third parties.<br>§2º The police and administrative authorities may require, ad cautelam, the storage of connection logs for a longer period than the one established in this law.<br>§3º In the hypothesis of §2º, the requesting authority will have the period of sixty days, counted from the requirement, to request for judicial order to access the logs mentioned in article 11.<br>§4º The Internet service provider responsible for the storage of the logs must keep secrecy of §2º requests, which will lose their efficacy in case the judicial order is not granted, or if their access was not petitioned within the period of time established by §3º.<br><br>Subsection II<br>On the storage of Internet application access logs"
+        "position": 10
+        , "markup": "<div>In the provision of Internet connection services, the administrator of the corresponding autonomous system has the obligation to maintain the connection logs confidentially, in a secured and controlled environment, for a period of one year, in the terms of further regulation.<br>§1º The responsibility for the storage of connection registries must not be transferred to third parties.<br>§2º The police and administrative authorities may require, ad cautelam, the storage of connection logs for a longer period than the one established in this law.<br>§3º In the hypothesis of §2º, the requesting authority will have the period of sixty days, counted from the requirement, to request for judicial order to access the logs mentioned in article 11.<br>§4º The Internet service provider responsible for the storage of the logs must keep secrecy of §2º requests, which will lose their efficacy in case the judicial order is not granted, or if their access was not petitioned within the period of time established by §3º.<br><br>Subsection II<br>On the storage of Internet application access logs</div>"
+        , "empty": false
       },
       {
-          "clauseName": "12"
-        , "order": 11
-        , "text": "In the provision of Internet connections, gratuitous or paid, it is prohibited to store Internet application access logs."
+        "position": 11
+        , "markup": "<div>In the provision of Internet connections, gratuitous or paid, it is prohibited to store Internet application access logs.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "13"
-        , "order": 12
-        , "text": "In the provision of Internet application services, it is permitted to store the user access logs, as long as article 7 is respected.<br>§1º The decision not to store Internet application access logs does not ensue liability for harm arising from the use of these services by third parties.<br>§2º A judicial order can determine, during a given period, the storage of Internet application access logs, as long they relate to specific facts within a determined time frame; the disclosure of the these logs shall follow the conditions set by Section IV of this Chapter.<br>§3º In observance of §2º, police or administrative authorities may require, ad cautelam, the storage of Internet application access logs, following the procedure and terms of §3º and §4º of Article 11.<br><br><br>Section III<br>On the liability for damage caused by content generated by third parties"
+        "position": 12
+        , "markup": "<div>In the provision of Internet application services, it is permitted to store the user access logs, as long as article 7 is respected.<br>§1º The decision not to store Internet application access logs does not ensue liability for harm arising from the use of these services by third parties.<br>§2º A judicial order can determine, during a given period, the storage of Internet application access logs, as long they relate to specific facts within a determined time frame; the disclosure of the these logs shall follow the conditions set by Section IV of this Chapter.<br>§3º In observance of §2º, police or administrative authorities may require, ad cautelam, the storage of Internet application access logs, following the procedure and terms of §3º and §4º of Article 11.<br><br><br>Section III<br>On the liability for damage caused by content generated by third parties</div>"
+        , "empty": false
       },
       {
-          "clauseName": "14"
-        , "order": 13
-        , "text": "Internet connection providers shall not be responsible for damage arising from content generated by third parties."
+        "position": 13
+        , "markup": "<div>Internet connection providers shall not be responsible for damage arising from content generated by third parties.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "15"
-        , "order": 14
-        , "text": "Except otherwise established by law, Internet application providers can only be responsible for the damages caused by content generated by third parties if, after receiving a specific judicial order, they do not take action to, in the context of their services and under the established time frame, make unavailable the infringing content.<br><br>Sole Paragraph. The judicial order must contain a clear and specific identification of the infringing content, allowing for the correct localization of the material, under penalty of losing validity.<br><br>SECTION V<br>On the judicial request for logs"
+        "position": 14
+        , "markup": "<div>Except otherwise established by law, Internet application providers can only be responsible for the damages caused by content generated by third parties if, after receiving a specific judicial order, they do not take action to, in the context of their services and under the established time frame, make unavailable the infringing content.<br><br>Sole Paragraph. The judicial order must contain a clear and specific identification of the infringing content, allowing for the correct localization of the material, under penalty of losing validity.<br><br>SECTION V<br>On the judicial request for logs</div>"
+        , "empty": false
       },
       {
-          "clauseName": "17"
-        , "order": 15
-        , "text": "Interested parties may, for the purpose of gathering evidence in civil and criminal proceedings, of either accidental or autonomous nature, request a judge to order the party responsible for storing Internet service access logs, or connection logs, to disclose these logs.<br><br>Sole Paragraph. Without prejudice of other legal requirements, the application shall contain, under penalty of not being admissible:<br>I –solid evidence of the occurrence of an illegal act;<br>II – a motivated justification for the utility of accessing the requested logs, for the purposes of investigation or the gathering of evidence;<br>III - the period that the logs refer to."
+        "position": 15
+        , "markup": "<div>Interested parties may, for the purpose of gathering evidence in civil and criminal proceedings, of either accidental or autonomous nature, request a judge to order the party responsible for storing Internet service access logs, or connection logs, to disclose these logs.<br><br>Sole Paragraph. Without prejudice of other legal requirements, the application shall contain, under penalty of not being admissible:<br>I –solid evidence of the occurrence of an illegal act;<br>II – a motivated justification for the utility of accessing the requested logs, for the purposes of investigation or the gathering of evidence;<br>III - the period that the logs refer to.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "18"
-        , "order": 16
-        , "text": "It is the obligation of judges to take the measures necessary to guarantee the secrecy of the information received, and the preservation of the intimacy, private life, honor and image of Internet users. Judges are capable, for that purpose, to constitute the information as secret, including with respect to requests for the storage of logs.<br><br><br>CHAPTER IV<br>ON THE ROLE OF PUBLIC AUTHORITIES"
+        "position": 16
+        , "markup": "<div>It is the obligation of judges to take the measures necessary to guarantee the secrecy of the information received, and the preservation of the intimacy, private life, honor and image of Internet users. Judges are capable, for that purpose, to constitute the information as secret, including with respect to requests for the storage of logs.<br><br><br>CHAPTER IV<br>ON THE ROLE OF PUBLIC AUTHORITIES</div>"
+        , "empty": false
       },
       {
-          "clauseName": "19"
-        , "order": 17
-        , "text": "The Federal Union, States, Cities and Federal District of Brasilia shall be guided by the following directives in the development of the Internet in Brazil:<br>I – the establishment of transparent, collaborative, and democratic mechanisms of governance, with the participation of the various sectors of society;<br>II – the promotion of interoperable technology for e-government services in the different levels of the Federation, in order to allow the exchange of information and streamlining of procedures;<br>III – the promotion of interoperability between different systems and terminals, especially among different levels of the Federation and several sectors of society;<br>IV – the preferential adoption of open and free technologies, standards and formats;<br>V – the disclosure and dissemination of public data and information in an open and structured manner;<br>VI – the optimization of network infrastructure, the promotion of technical quality, innovation, and the dissemination of Internet applications, without impairing the open, neutral and participatory nature of the Internet;<br>VII – the development of initiatives and education programs concerning the use of the Internet;<br>VIII – the promotion of culture and citizenship; and<br>IX – the provision of public services for citizens in integrated, efficient and simplified fashion, through multiple communication channels."
+        "position": 17
+        , "markup": "<div>The Federal Union, States, Cities and Federal District of Brasilia shall be guided by the following directives in the development of the Internet in Brazil:<br>I – the establishment of transparent, collaborative, and democratic mechanisms of governance, with the participation of the various sectors of society;<br>II – the promotion of interoperable technology for e-government services in the different levels of the Federation, in order to allow the exchange of information and streamlining of procedures;<br>III – the promotion of interoperability between different systems and terminals, especially among different levels of the Federation and several sectors of society;<br>IV – the preferential adoption of open and free technologies, standards and formats;<br>V – the disclosure and dissemination of public data and information in an open and structured manner;<br>VI – the optimization of network infrastructure, the promotion of technical quality, innovation, and the dissemination of Internet applications, without impairing the open, neutral and participatory nature of the Internet;<br>VII – the development of initiatives and education programs concerning the use of the Internet;<br>VIII – the promotion of culture and citizenship; and<br>IX – the provision of public services for citizens in integrated, efficient and simplified fashion, through multiple communication channels.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "20"
-        , "order": 18
-        , "text": "Government Internet sites and portals shall strive for:<br>I – the compatibility of e-government services with the various terminals, operating systems and applications used to access them;<br>II – accessibility for all interested parties, regardless of their physical, motor, cognitive, cultural, and social skills, provided that confidentiality issues and legal and administrative regulations are respected;<br>III – compatibility with both human reading and automated processing of information;<br>IV – ease of use of electronic government services; and<br>V – the strengthening of social participation in public policy."
+        "position": 18
+        , "markup": "<div>Government Internet sites and portals shall strive for:<br>I – the compatibility of e-government services with the various terminals, operating systems and applications used to access them;<br>II – accessibility for all interested parties, regardless of their physical, motor, cognitive, cultural, and social skills, provided that confidentiality issues and legal and administrative regulations are respected;<br>III – compatibility with both human reading and automated processing of information;<br>IV – ease of use of electronic government services; and<br>V – the strengthening of social participation in public policy.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "21"
-        , "order": 19
-        , "text": "The fulfillment of the constitutional obligation of the State in providing education, at all levels of teaching, includes capacity building, integrated to other educational practices, for the safe, conscious and responsible use of the Internet as a tool for the exercise of citizenship, the promotion of culture, and technological development."
+        "position": 19
+        , "markup": "<div>The fulfillment of the constitutional obligation of the State in providing education, at all levels of teaching, includes capacity building, integrated to other educational practices, for the safe, conscious and responsible use of the Internet as a tool for the exercise of citizenship, the promotion of culture, and technological development.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "22"
-        , "order": 20
-        , "text": "Public initiatives to promote digital literacy and the use of Internet as a social tool must:<br>I – promote the digital inclusion;<br>II – seek to reduce inequality in the access to information and communication technologies and their use, especially between different regions of the Country; and<br>III – foster the production and circulation of national content."
+        "position": 20
+        , "markup": "<div>Public initiatives to promote digital literacy and the use of Internet as a social tool must:<br>I – promote the digital inclusion;<br>II – seek to reduce inequality in the access to information and communication technologies and their use, especially between different regions of the Country; and<br>III – foster the production and circulation of national content.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "23"
-        , "order": 21
-        , "text": "The State must periodically formulate and promote research, as well as set objectives, strategies, plans and schedules regarding the use and development of the Internet in the country.<br><br><br>CHAPTER V<br>FINAL PROVISIONS"
+        "position": 21
+        , "markup": "<div>The State must periodically formulate and promote research, as well as set objectives, strategies, plans and schedules regarding the use and development of the Internet in the country.<br><br><br>CHAPTER V<br>FINAL PROVISIONS</div>"
+        , "empty": false
       },
       {
-          "clauseName": "24"
-        , "order": 22
-        , "text": "The protection of interests and rights established at this law may be exercised in court, individually and collectively, in the terms of the law."
+        "position": 22
+        , "markup": "<div>The protection of interests and rights established at this law may be exercised in court, individually and collectively, in the terms of the law.</div>"
+        , "empty": false
       },
       {
-          "clauseName": "25"
-        , "order": 23
-        , "text": "This Law shall enter into force sixty days after its publication."
+        "position": 23
+        , "markup": "<div>This Law shall enter into force sixty days after its publication.</div>"
+        , "empty": false
       }
     ]
 }
