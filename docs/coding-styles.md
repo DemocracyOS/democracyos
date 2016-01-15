@@ -23,7 +23,7 @@ Commits should try to be as simple (atomic) as possible, but not simpler. Meanin
   * `for (..) {`
   * `while (..) {`
   * `function (err) {`
-* Use [Yoda conditions](https://en.wikipedia.org/wiki/Yoda_conditions), always `'string' === typeof el` instead of `typeof el === 'string'`.
+* For more info, we use [feross/standard](https://github.com/feross/standard).
 
 ## Stylesheets
 
