@@ -46,5 +46,5 @@ Commits should try to be as simple (atomic) as possible, but not simpler. Meanin
 * Entry points:
   + **Server side JS:** `index.js`. _(e.g. `/lib/db-api/index.js`)_
   + **Client side JS:** `${module-name}.js`. _(e.g. `/lib/sidebar/sidebar.js`)_
-  + **Client side CSS:** `styles.styl`. _(e.g. `/lib/sidebar/styles.js`)_
+  + **Client side CSS:** `styles.styl`. _(e.g. `/lib/sidebar/styles.styl`)_
   + Main `HTML` template file is `template.jade`. _(e.g. `/lib/sidebar/template.jade`)_
