@@ -79,10 +79,10 @@ describe('/api/forum/:id/permissions', function () {
       .set('Cookie', 'token=' + token)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
-      .send({'role': 'admins', user: userId })
+      .send({'role': 'admin', user: userId })
       .expect(function (res) {
         expect(res.body.error).to.be.undefined();
-        expect(res.body.permissions.admins).to.contain(userId);
+        expect(res.body.permissions.find(p => p.user === userId)).to.be.ok;
       })
       .expect(200, done);
   });
@@ -94,10 +94,10 @@ describe('/api/forum/:id/permissions', function () {
       .set('Cookie', 'token=' + token)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
-      .send({'role': 'admins', user: userId })
+      .send({'role': 'admin', user: userId })
       .expect(function (res) {
         expect(res.body.error).to.be.undefined();
-        expect(res.body.permissions.admins).to.not.contain(userId);
+        expect(res.body.permissions.find(p => p.user === userId)).to.not.be.ok;
       })
       .expect(200, done);
   });
