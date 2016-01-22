@@ -1,3 +1,15 @@
 .admin-permissions
   .loader.view-loader
+  h2= t('admin-permissions.visibility.title')
+  .checkbox
+    label
+      input(type="checkbox", name="private", checked=forum.private)
+      = t('admin-permissions.private.title')
+      p.help-block= t('admin-permissions.private.description')
+  .checkbox
+    label
+      input(type="checkbox", name="closed", checked=forum.closed)
+      = t('admin-permissions.closed.title')
+      p.help-block= t('admin-permissions.closed.description')
+  h2= t('admin-permissions.roles.title')
   .admin-permissions-lists
