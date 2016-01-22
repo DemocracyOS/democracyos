@@ -1,4 +1,5 @@
 .admin-permissions-user(data-user=user.id)
   img(src=user.avatar)
   p(title=user.displayName)= user.displayName
-  button.btn.btn-danger(type='button', data-revoke=user.id)= t('admin-permissions.revoke')
+  - if (canRevoke)
+    button.btn.btn-danger(type='button', data-revoke=user.id)= t('admin-permissions.revoke')
