@@ -1,7 +1,7 @@
 - var logged = user.logged()
 
 .comments
-  - if (logged)
+  - if (canComment)
     .inner-container.my-comments
       h4=t('comments.your.arguments')
       ul.media-list.my-comments-list
