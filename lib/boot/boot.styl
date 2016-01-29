@@ -115,18 +115,29 @@ label
 
 .alert
   color white
-  font-weight bold
-  border 0
+  border 1px solid
   border-radius border_radius
+  font-size .9em
+
   &.alert-info
-    background-color #3498db
+    color darken(#3498db, 50%)
+    border-color #3498db
+    background-color lighten(#3498db, 70%)
+
   &.alert-success
-    background-color #27ae60
+    color darken(#27ae60, 50%)
+    border-color #27ae60
+    background-color lighten(#27ae60, 70%)
+
   &.alert-warning
-    background-color #f1c40f
-  &.alert-block
-    background-color #bebec5
-    color white
+    color darken(#f1c40f, 50%)
+    border-color #f1c40f
+    background-color lighten(#f1c40f, 70%)
+
+  &.alert-danger
+    color darken(#d9534f, 50%)
+    border-color #d9534f
+    background-color lighten(#d9534f, 70%)
 
 .system-alert
   margin-top 20px
