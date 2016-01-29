@@ -8,35 +8,36 @@
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
 - var voted = user && ~census.indexOf(user.id)
 
-.inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
+.inner-container.commentable-container
 
   .proposal-options
     .vote-box
       div#voting-error.alert.alert-warning.hide #{t('proposal-options.error.voting')}.
-      .meta-data(class= !!user.id ? '' : 'hide')
-        - if(~positives.indexOf(user.id))
-          include vote-positive
-        - else if (~negatives.indexOf(user.id))
-          include vote-negative
-        - else if (~neutrals.indexOf(user.id))
-          include vote-neutral
+      - if (canVote)
+        .meta-data(class= !!user.id ? '' : 'hide')
+          - if(~positives.indexOf(user.id))
+            include vote-positive
+          - else if (~negatives.indexOf(user.id))
+            include vote-negative
+          - else if (~neutrals.indexOf(user.id))
+            include vote-neutral
 
-        a.meta-item.change-vote(href="#", class= voted && !closed ? '' : 'hide')
-          i.icon-refresh
-          small #{t('proposal-options.change-vote')}.
+          a.meta-item.change-vote(href="#", class= voted && !closed ? '' : 'hide')
+            i.icon-refresh
+            small #{t('proposal-options.change-vote')}.
 
-      .vote-options(class= voted || closed ? 'hide' : '')
-        h5= t('proposal-options.vote')
-        .direct-vote
-          a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
-            i.flaticon.solid.thumbs-up-1
-            span= t('proposal-options.yea')
-          a.vote-option.vote-abstain(href="#", data-proposal=proposal.id)
-            i.flaticon.solid.pause
-            span= t('proposal-options.abstain')
-          a.vote-option.vote-no(href="#", data-proposal=proposal.id)
-            i.flaticon.solid.thumbs-up-1
-            span= t('proposal-options.nay')
+        .vote-options(class= voted || closed ? 'hide' : '')
+          h5= t('proposal-options.vote')
+          .direct-vote
+            a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
+              i.flaticon.solid.thumbs-up-1
+              span= t('proposal-options.yea')
+            a.vote-option.vote-abstain(href="#", data-proposal=proposal.id)
+              i.flaticon.solid.pause
+              span= t('proposal-options.abstain')
+            a.vote-option.vote-no(href="#", data-proposal=proposal.id)
+              i.flaticon.solid.thumbs-up-1
+              span= t('proposal-options.nay')
 
         - if (!user.id)
           p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in') + '. '
