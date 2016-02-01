@@ -8,7 +8,7 @@ li.media.comment-item(class=classes)
     img.avatar(src=avatar, title=comment.author.displayName)
 
   .media-body
-    h5.media-heading(title=comment.author.displayName)
+    h4.media-heading(title=comment.author.displayName)
       | #{comment.author.fullName}
       small.ago(data-time=comment.createdAt.toString())
       - if (comment.editedAt)
@@ -46,7 +46,7 @@ li.media.comment-item(class=classes)
             span.reply-counter= repliesCounter > 0 ? repliesCounter : ''
           a.comment-action.comment-reply.pull-right(href='#', title=t('comments.reply-to-argument'))
             i.icon-reply
-      span.error
+      .error.alert.alert-warning(data-error)
       .oncomment.loginrequired
         =t('comments.sign-in-required-to-vote-comments')
         |.

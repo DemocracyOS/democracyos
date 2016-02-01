@@ -124,7 +124,7 @@
   "comments.reply": "Respuesta",
   "comments.reply-cannot-be-empty": "La respuesta no puede estar vacía",
   "comments.reply-to-argument": "Responde a este argumento",
-  "comments.score.not-allowed": "No puedes votar tu propio argumento",
+  "comments.score.not-allowed": "No tienes permisos para votar este argumento.",
   "comments.send": "Enviar",
   "comments.sign-in-required": "Debés estar registrado para poder argumentar aquí",
   "comments.sign-in-required-to-vote-comments": "Debés estar registrado para poder calificar argumentos",

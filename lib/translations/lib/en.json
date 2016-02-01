@@ -147,7 +147,7 @@
   "comments.reply": "Reply",
   "comments.reply-cannot-be-empty": "Reply cannot be empty",
   "comments.reply-to-argument": "Reply to this argument",
-  "comments.score.not-allowed": "You're not allowed to qualify your own argument",
+  "comments.score.not-allowed": "You're not allowed to qualify this argument",
   "comments.send": "Send",
   "comments.sign-in-required": "You must be signed in to argue here",
   "comments.sign-in-required-to-vote-comments": "You must be signed in to up/downvote arguments",
