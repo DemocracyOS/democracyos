@@ -1,4 +1,5 @@
 {
+  "privileges-alert.not-allowed": "This is a Closed Democracy, to be allowed to participate the owner should give you permissions.",
   "404.back-to-democracyos": "Go back to DemocracyOS",
   "404.go-back-to": "go back to",
   "404.not-exists": "This page does not exist",
