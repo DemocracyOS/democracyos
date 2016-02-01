@@ -7,7 +7,7 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
     img(src=reply.author.avatar).avatar
 
   .media-body
-    h4.media-heading
+    h5.media-heading
       - if (own || user.staff)
         .actions
           a.comment-action.link-remove.btn-reply-remove(href="#", title=t('comment-card.remove-argument'))
@@ -15,7 +15,7 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
           - if (own)
             a.comment-action.link-edit.btn-reply-edit(href="#", title=t('comments.edit.argument'))
               i.icon-pencil
-      | #{reply.author.fullName}
+      = reply.author.fullName
       small.ago(data-time=(reply.createdAt ? reply.createdAt.toString() : new Date()))
       - if (reply.editedAt)
         small.edited · #{t('comments.edited')}
