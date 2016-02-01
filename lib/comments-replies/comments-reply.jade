@@ -7,7 +7,7 @@ li.media.reply-item(data-id=reply.id, data-comment-id=comment.id)
     img(src=reply.author.avatar).avatar
 
   .media-body
-    h5.media-heading
+    h4.media-heading
       - if (own || user.staff)
         .actions
           a.comment-action.link-remove.btn-reply-remove(href="#", title=t('comment-card.remove-argument'))
