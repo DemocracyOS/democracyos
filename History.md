@@ -1,4 +1,13 @@
 
+1.1.0 / 2016-02-03
+==================
+
+  * Fix topic-publish notification
+  * Fix fixtures #1178
+  * Add circumflex accents for user names #1184
+  * Fix scrollbar overlaps the header
+  * Add in-app notifications page #1126
+
 1.0.6 / 2015-12-04
 ==================
 
