@@ -86,7 +86,7 @@ To solve it without being root (that is always a bad idea), you can change the `
 
 1. Configure your [environment variables](https://github.com/DemocracyOS/app/wiki/Environment-variables) for production; specifically, set `NODE_ENV` to `production`
 2. Set your MongoDB instance to run as a service.
-3. Make sure to correctly configure the [Notifier](notifier) for production environments.
+3. Make sure to correctly configure the [Notifier](configuration.md#embebed-notifier-server) for production environments.
 4. From the project's root path, you need to run `make` or:
   1. `npm install` to install node dependencies.
   2. `npm run build && npm run start` to build assets and run the app. _Don't run as `sudo`._
