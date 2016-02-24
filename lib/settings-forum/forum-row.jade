@@ -4,10 +4,14 @@
       a.url(href=forum.url): strong= forum.title
     a.url(href=forum.url)= forum.url
   .actions.pull-right
-    a(href='#{forum.url}admin')
-      i.glyphicon.glyphicon-cog
-    span.btn-remove
-      i.glyphicon.glyphicon-trash
+    a(href=forum.url)
+      i.glyphicon.glyphicon-eye-open
+    - if (forum.privileges.canChangeTopics)
+      a(href='#{forum.url}admin')
+        i.glyphicon.glyphicon-cog
+    - if (forum.privileges.canDelete)
+      span.btn-remove
+        i.glyphicon.glyphicon-trash
   .status.creating
     .loader-wrapper: .loader
     p= t('forum.status.creating')
