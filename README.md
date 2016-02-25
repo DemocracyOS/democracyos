@@ -18,7 +18,7 @@ Please refer to the [Installation](http://docs.democracyos.org/install.html) wik
 * [EuVoto](http://euvoto.org/): Brazilian initiative by the Open Knowledge Foundation Brasil to discuss legislation in the city of Sao Paulo.
 * [Loi Renseignement](http://pjlr.democracyos.eu/): First deployment by DemocracyOS France to discuss the Loi Renseignement.
 * [Evoks](http://evoks.hu/): Hungarian project by Atlatzo.hu for discussing social issues.
-* [PAMI](http://debatics.pami.org.ar/): The largest healthcare program for elderly peolpe opens its technical decisions.
+* [PAMI](http://debatics.pami.org.ar/): The largest healthcare program for elderly people opens its technical decisions.
 * [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/law/557ba8ca29e8180300c88c48): Official deployment of DemocracyOS Ukraine.
 
 ## Contributing
