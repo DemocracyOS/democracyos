@@ -7,7 +7,7 @@
     a(href=forum.url)
       i.glyphicon.glyphicon-eye-open
     - if (forum.privileges.canChangeTopics)
-      a(href='#{forum.url}admin')
+      a(href='#{forum.url}/admin')
         i.glyphicon.glyphicon-cog
     - if (forum.privileges.canDelete)
       span.btn-remove

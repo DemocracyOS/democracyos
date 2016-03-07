@@ -56,8 +56,10 @@ html(lang='en')
       include includes/placeholders
       //- General Site javascript
       script.
-        window.config=!{JSON.stringify(client)};
-        window.translations=!{JSON.stringify(translations)};
+        window.config = !{JSON.stringify(client)};
+        window.config.locale = '#{locale}';
+        window.config.defaultForum = '#{defaultForum}';
+        window.translations = !{JSON.stringify(translations)};
       - if (config.segmentKey)
         include includes/segment
       script(src='/app.js')
