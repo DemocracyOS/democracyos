@@ -1,4 +1,10 @@
 
+1.1.2 / 2016-03-28
+==================
+
+  * Fix dependecy azer/strip with striptags #1197
+  * Add IMPLEMENTATIONS.md file #1191
+
 1.1.1 / 2016-03-02
 ==================
 
