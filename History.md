@@ -1,4 +1,9 @@
 
+1.1.3 / 2016-03-30
+==================
+
+  * Don't show Forums settings when the app is on singleForum mode #1198
+
 1.1.2 / 2016-03-28
 ==================
 
