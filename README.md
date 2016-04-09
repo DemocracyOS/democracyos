@@ -20,6 +20,7 @@ Please refer to the [Installation](http://docs.democracyos.org/install.html) wik
 * [Evoks](http://evoks.hu/): Hungarian project by Atlatzo.hu for discussing social issues.
 * [PAMI](http://debatics.pami.org.ar/): The largest healthcare program for elderly people opens its technical decisions.
 * [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/law/557ba8ca29e8180300c88c48): Official deployment of DemocracyOS Ukraine.
+* [Paris](https://crm.paris.fr/2016/): Official deployment of DemocracyOS in Paris (France) by city's mayor Anne Hidalgo.
 
 ## Contributing
 
