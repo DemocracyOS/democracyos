@@ -1,4 +1,21 @@
 
+1.1.3 / 2016-03-30
+==================
+
+  * Don't show Forums settings when the app is on singleForum mode #1198
+
+1.1.2 / 2016-03-28
+==================
+
+  * Fix dependecy azer/strip with striptags #1197
+  * Add IMPLEMENTATIONS.md file #1191
+
+1.1.1 / 2016-03-02
+==================
+
+  * Update notifier version
+  * Update README.md
+
 1.1.0 / 2016-02-03
 ==================
 
