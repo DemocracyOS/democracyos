@@ -29,6 +29,7 @@
         "clientID": "",
         "clientSecret": "",
         "gitlabURL": "https://gitlab.com"
+    }
   },
   "https": {
     "serverKey": "server.key",
