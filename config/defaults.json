@@ -23,7 +23,11 @@
       "clientID": "",
       "clientSecret": "",
       "permissions": [ "email" ]
-    }
+    },
+    "gitlab": {
+        "clientID": "",
+        "clientSecret": "",
+        "gitlabURL": "https://gitlab.com"
   },
   "https": {
     "serverKey": "server.key",
