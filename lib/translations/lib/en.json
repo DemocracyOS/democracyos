@@ -308,6 +308,7 @@
   "signin.login": "Login",
   "signin.login-to": "Login to",
   "signin.login-with-facebook": "Login with Facebook",
+  "signin.login-with-gitlab": "Login with Gitlab",
   "signin.signup": "Signup",
   "signup.accepting": "By signing up you are accepting our",
   "signup.being-redirected": "You're being redirected in 5 seconds",
