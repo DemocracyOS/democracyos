@@ -1,0 +1,59 @@
+.auth-facebook-form-page
+  header
+    &.app-header
+      .user-nav
+        a[href="/signin"]
+          display none
+        a[href="/signup"]
+          display none
+
+.facebook-auth-form
+  text-align center
+
+  p
+    margin-bottom 7px
+
+  a
+    display inline-block
+    border-bottom-width 1px
+    border-bottom-style solid
+    border-bottom-color transparent
+    font-weight normal
+    font-size 12px
+    line-height 1
+
+    &:hover
+      border-bottom-color #66adea
+      text-decoration none
+
+  .btn-gitlab
+    display inline-block
+    position relative
+    margin 20px 0 50px
+    max-width 100%
+    font-weight 600
+    color #fff
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+    background #554488
+    padding 0 1em
+    vertival-align middle
+    height 40px
+    line-height 34px
+    border-radius 4px
+    border-color #fff
+    border-style solid
+    transition all 0.25s ease-in
+
+    &:hover
+      background #403366
+
+  .btn-gitlab-icon
+    background-image url('/images/gitlabLogo.png')
+    display inline-block
+    background-size 100% 100%
+    width 18px
+    height 18px
+    vertical-align sub
+    margin-right 8px

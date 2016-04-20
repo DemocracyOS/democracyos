@@ -1,0 +1,14 @@
+.facebook-auth-form.inner-container.small-container
+  .title-page
+    .circle
+      i.icon-signin
+    h1= t('signin.login-to') + ' ' + t('common.app-name')
+  form(action="/auth/gitlab", method="get", role="form")
+    button.btn-gitlab(type="submit")
+      span.btn-gitlab-icon
+      = t('signin.login-with-gitlab')
+
+    - if (config.termsOfService)
+      p: a(href="/help/terms-of-service")= t('help.tos.title')
+    - if (config.privacyPolicy)
+      p: a(href="/help/privacy-policy")= t('help.pp.title')
