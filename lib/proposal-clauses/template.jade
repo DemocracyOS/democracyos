@@ -1,8 +1,7 @@
 mixin clause(c)
   - var classes = c.centered ? ['text-center'] : []
-  //- var text = (c.clauseName ? c.clauseName + ': ' : '') + c.text
   - if (i > 0) classes.push('hide')
-  .clause.commentable-section(class=classes, data-section-id=c.id)!=c.text
+  .clause(class=classes, data-section-id=c.id)!= c.text
 
 - each c, i in clauses
   +clause(c)
