@@ -5,7 +5,7 @@
     h1= t('signin.login-to') + ' ' + t('common.app-name')
   form(action="/auth/gitlab", method="get", role="form")
     button.btn-gitlab(type="submit")
-      span.gitlab-icon
+      span.btn-gitlab-icon
       = t('signin.login-with-gitlab')
 
     - if (config.termsOfService)
