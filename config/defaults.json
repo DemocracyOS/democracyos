@@ -13,6 +13,7 @@
   "staff": [],
   "allowEmailAliases": true,
   "facebookSignin": false,
+  "googleSignin": false,
   "publicEmails": false,
   "auth": {
     "basic": {
@@ -23,7 +24,13 @@
       "clientID": "",
       "clientSecret": "",
       "permissions": [ "email" ]
+    },
+    "google": {
+      "clientID": "",
+      "clientSecret": "",
+      "permissions": [ "profile", "email" ]
     }
+
   },
   "https": {
     "serverKey": "server.key",
@@ -69,6 +76,7 @@
     "headerBackgroundColor",
     "headerFontColor",
     "facebookSignin",
+    "googleSignin",
     "visibility",
     "usersWhitelist",
     "multiForum",

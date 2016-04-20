@@ -1,0 +1,14 @@
+.google-auth-form.inner-container.small-container
+  .title-page
+    .circle
+      i.icon-signin
+    h1= t('signin.login-to') + ' ' + t('common.app-name')
+  form(action="/auth/google", method="get", role="form")
+    button.btn-google(type="submit")
+      span.flaticon.social.google-plus
+      = t('signin.login-with-google')
+
+    - if (config.termsOfService)
+      p: a(href="/help/terms-of-service")= t('help.tos.title')
+    - if (config.privacyPolicy)
+      p: a(href="/help/privacy-policy")= t('help.pp.title')
