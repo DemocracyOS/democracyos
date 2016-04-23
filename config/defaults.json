@@ -109,6 +109,7 @@
   "visibility": "visible",
   "usersWhitelist": false,
   "multiForum": false,
+  "defaultForum": "",
   "tweetText": "",
   "forceSafeImageURLs": true,
   "segmentKey": "",
