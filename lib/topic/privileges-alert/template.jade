@@ -2,5 +2,5 @@
   .inner-container
     - if (visibility === 'closed' && !privileges.canVoteAndComment)
       .alert.alert-warning.with-icon
-        i.alert-icon.glyphicon.glyphicon-lock
+        i.alert-icon.glyphicon.glyphicon-ban-circle
         = t('privileges-alert.not-allowed')
