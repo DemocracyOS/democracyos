@@ -1,4 +1,4 @@
-var log = require('debug')('democracyos:test:assets')
+var log = require('debug')('democracyos:test:utils')
 var mongoose = require('mongoose')
 
 // This requires an active Mongoose connection to work

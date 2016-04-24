@@ -1,9 +1,10 @@
 /*eslint-env jasmine*/
-var request = require('supertest');
-var app = require('lib/boot');
-var users = require('test/assets/users.json');
-var forums = require('test/assets/forums.json');
-var fixtures = require('test/utils');
+
+var request = require('supertest')
+var app = require('lib/boot')
+var users = require('test/assets/users.json')
+var forums = require('test/assets/forums.json')
+var fixtures = require('test/utils')
 
 /**
  * Global variables and helper functions to handle data and permissions
@@ -14,17 +15,15 @@ var userId
 var token
 
 function signin (email) {
-  return new Promise(function (ok, error) {
+  return new Promise(function (resolve, reject) {
     request(app)
     .post('/signin')
     .send({ email: email, password: '123456' })
     .expect(200)
     .end(function (err, res) {
-      if (err) {
-        return error(err)
-      }
+      if (err) return reject(err)
       token = getUserToken(res)
-      ok(res)
+      resolve(res)
     })
   })
 }
@@ -46,10 +45,10 @@ function getUserToken (res) {
  */
 
 function populate () {
-  return new Promise (function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     fixtures.users.create(users)
-    .then(u => fixtures.forums.create(forums.map(f => Object.assign(f, { owner: u[0].id }))))
-    .then(forums => {
+    .then((u) => fixtures.forums.create(forums.map((f) => Object.assign(f, { owner: u[0].id }))))
+    .then((forums) => {
       forumId = forums[0].id.toString()
       userId = forums[0].owner.toString()
       Promise.resolve()
@@ -64,7 +63,6 @@ function populate () {
  */
 
 describe('/api/forum/:id/permissions', function () {
-
   beforeAll(function (done) {
     populate()
       .then(signin('testuser1@example.com'))
@@ -73,34 +71,34 @@ describe('/api/forum/:id/permissions', function () {
 
   // with owner permissions
   it('as owner, should grant admin permission to other user', function (done) {
-    var path = '/api/forum/' + forumId + '/permission';
+    var path = '/api/forum/' + forumId + '/permission'
     request(app)
       .post(path)
       .set('Cookie', 'token=' + token)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
-      .send({'role': 'admin', user: userId })
+      .send({'role': 'admin', user: userId})
       .expect(function (res) {
-        expect(res.body.error).to.be.undefined();
-        expect(res.body.permissions.find(p => p.user === userId)).to.be.ok;
+        expect(res.body.error).to.be.undefined()
+        expect(res.body.permissions.find((p) => p.user === userId)).to.be.ok
       })
-      .expect(200, done);
-  });
+      .expect(200, done)
+  })
 
   it('as owner, should decline admin permission to other user', function (done) {
-    var path = '/api/forum/' + forumId + '/permission';
+    var path = '/api/forum/' + forumId + '/permission'
     request(app)
       .del(path)
       .set('Cookie', 'token=' + token)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
-      .send({'role': 'admin', user: userId })
+      .send({'role': 'admin', user: userId})
       .expect(function (res) {
-        expect(res.body.error).to.be.undefined();
-        expect(res.body.permissions.find(p => p.user === userId)).to.not.be.ok;
+        expect(res.body.error).to.be.undefined()
+        expect(res.body.permissions.find((p) => p.user === userId)).to.not.be.ok
       })
-      .expect(200, done);
-  });
+      .expect(200, done)
+  })
 
   afterAll(function (done) {
     Promise.all([
@@ -109,6 +107,4 @@ describe('/api/forum/:id/permissions', function () {
     ])
     .then(done)
   })
-
-});
-
+})
