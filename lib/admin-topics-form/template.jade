@@ -14,6 +14,8 @@
         h1= t(form.title)
       form.form-horizontal(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
         input(type='hidden', name='_topic_id_', value=topic.id)
+        - if (forum)
+          input(type='hidden', name='forum', value=forum.id)
         ul.form-messages
         .form-group
           label= t('admin-topics-form.label.mediaTitle')
