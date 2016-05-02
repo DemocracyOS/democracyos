@@ -28,7 +28,8 @@
     "gitlab": {
         "clientID": "",
         "clientSecret": "",
-        "gitlabURL": "https://gitlab.com"
+        "gitlabURL": "https://gitlab.com",
+        "autoSignin": false
     }
   },
   "https": {
