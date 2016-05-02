@@ -138,6 +138,7 @@
     "page": "1.6.4",
     "passport": "~0.1.17",
     "passport-facebook": "2.0.x",
+    "passport-gitlab": "^0.5.0",
     "passport-local": "~0.1.6",
     "passport-local-mongoose": "~0.2.4",
     "qs": "2.4.1",

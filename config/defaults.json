@@ -13,6 +13,7 @@
   "staff": [],
   "allowEmailAliases": true,
   "facebookSignin": false,
+  "gitlabSignin": false,
   "publicEmails": false,
   "auth": {
     "basic": {
@@ -23,6 +24,12 @@
       "clientID": "",
       "clientSecret": "",
       "permissions": [ "email" ]
+    },
+    "gitlab": {
+        "clientID": "",
+        "clientSecret": "",
+        "gitlabURL": "https://gitlab.com",
+        "autoSignin": false
     }
   },
   "https": {
@@ -69,6 +76,7 @@
     "headerBackgroundColor",
     "headerFontColor",
     "facebookSignin",
+    "gitlabSignin",
     "visibility",
     "usersWhitelist",
     "multiForum",
