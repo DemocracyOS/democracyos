@@ -16,7 +16,6 @@
   "gitlabSignin": false,
   "publicEmails": false,
   "auth": {
-    "autoSignin": false,
     "basic": {
       "username": "",
       "password": ""
@@ -29,7 +28,8 @@
     "gitlab": {
         "clientID": "",
         "clientSecret": "",
-        "gitlabURL": "https://gitlab.com"
+        "gitlabURL": "https://gitlab.com",
+        "autoSignin": false
     }
   },
   "https": {
