@@ -16,7 +16,7 @@
   "gitlabSignin": false,
   "publicEmails": false,
   "auth": {
-    "autoLogin": false,
+    "autoSignin": false,
     "basic": {
       "username": "",
       "password": ""
