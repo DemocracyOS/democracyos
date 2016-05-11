@@ -24,9 +24,13 @@ packages:
 	@echo "Installing dependencies..."
 	@npm install
 
+docker:
+	@echo "Starting DemocracyoOS docker development environment..."
+	@docker-compose up app
+
 clean:
 	@echo "Removing dependencies, components and built assets..."
 	@rm -rf node_modules components public
 	@echo "Done.\n"
 
-.PHONY: clean
+.PHONY: clean docker
