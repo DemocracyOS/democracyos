@@ -1,4 +1,5 @@
-.user-badge
+.user-badge,
+.notifications-badge
   position relative
 
   &.active
@@ -44,11 +45,13 @@
         background #2c3e50
         color white
 
-  .profile
+  .profile,
+  .notifications
     img
       width 32px
       border-radius 100px
-    span.name
+    span.name,
+    span.bell
       display inline
       margin-left 10px
       font-weight bold
@@ -57,5 +60,12 @@
       padding-top 4px
       padding-right 12px
       max-width 150px
+
+    span.bell
+      margin 0
+      padding-right 0
+      font-size 15px
+      &:before
+        transform s("rotate(%s)", -25deg)
     .caret
       margin-top -3px

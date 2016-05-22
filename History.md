@@ -1,4 +1,56 @@
 
+1.1.5 / 2016-05-18
+==================
+
+  * Fix forum delete modal#1210
+  * Fixed polish translations
+  * fix social links #1199
+  * Fix facebook authentication #1204
+
+1.1.4 / 2016-04-13
+==================
+
+  * Update mLab MongoDB Env var (#1203)
+  * Update README.md (#1201)
+
+1.1.3 / 2016-03-30
+==================
+
+  * Don't show Forums settings when the app is on singleForum mode #1198
+
+1.1.2 / 2016-03-28
+==================
+
+  * Fix dependecy azer/strip with striptags #1197
+  * Add IMPLEMENTATIONS.md file #1191
+
+1.1.1 / 2016-03-02
+==================
+
+  * Update notifier version
+  * Update README.md
+
+1.1.0 / 2016-02-03
+==================
+
+  * Fix topic-publish notification
+  * Fix fixtures #1178
+  * Add circumflex accents for user names #1184
+  * Fix scrollbar overlaps the header
+  * Add in-app notifications page #1126
+
+1.0.6 / 2015-12-04
+==================
+
+  * Fix reply edit form #1161
+  * Fixed a few Romanian words
+  * Update Dockerfile
+
+1.0.5 / 2015-11-30
+==================
+
+  * Specify all css dependencies on package.json #1133
+
 1.0.4 / 2015-11-26
 ==================
 

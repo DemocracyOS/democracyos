@@ -40,4 +40,4 @@ _Supports real browsers and IE10+._
 
 ## Let us know!
 
-if you are launching live instances of DemocracyOS don't forget to email Mair Williams (mair [at] democracyos.org) so we can help you with communication from our networks. It's also easier for us to let you know about new features and progress if we know who's running the instances.
+if you are launching live instances of DemocracyOS don't forget to email Matías Lescano (matias [at] democracyos.org) so we can help you with communication from our networks. It's also easier for us to let you know about new features and progress if we know who's running the instances.

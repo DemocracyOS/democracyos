@@ -74,5 +74,5 @@
     //- Article share links
     - var text = config.tweetText || proposal.mediaTitle
     .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/topic/#{proposal.id}").flaticon.social.facebook
-      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.twitter
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}#{proposal.url}").flaticon.social.facebook
+      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}#{proposal.url}").flaticon.social.twitter

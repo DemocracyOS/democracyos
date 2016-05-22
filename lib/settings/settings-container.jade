@@ -8,5 +8,6 @@
           li: a(href="/settings/password")= t('password')
         li: a(href="/settings/sessions", style="display: none;")= t('settings.sessions')
         li: a(href="/settings/notifications")= t('settings.notifications')
-        li: a(href="/settings/forums")= t('settings.sidebar.forums')
+        - if (config.multiForum)
+          li: a(href="/settings/forums")= t('settings.sidebar.forums')
     .settings-content

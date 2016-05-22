@@ -134,7 +134,7 @@ function connect (fn) {
  */
 function models(fn) {
   write("Register mongoose models.");
-  var except = ['index.js'];
+  var except = ['index.js', 'forum-reserved-names.js'];
   var files = dir(resolve('./lib/models/'));
   files && files.forEach(function(f) {
     if (~except.indexOf(f)) return;

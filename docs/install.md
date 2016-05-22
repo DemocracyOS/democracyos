@@ -35,11 +35,12 @@ Running on **Windows** environment is not currently supported. If you happen to 
 
 - [Fork](http://help.github.com/articles/fork-a-repo) or download this repository.
 - `cd` to the project's location
-- Create the default configuration file running `node ./bin/dos-install --config`, or head to the [Configuration](configuration.md) guide for further customizations.
 - Make sure MongoDB is running and reachable as configured in `config/development.json`. (Default values should work)
-- Set the environment variable `NODE_PATH` with value: `.`.
-- From the root path of the project, run `make` to download all the necessary dependencies and run the local server.
-- For users behind corporate proxy, its recommended to clone the project using `https:` instead of `git:` url.
+- Run `make`
+- Boom! DemocracyOS should be running on port 3000.
+
+> Please refer to the [Configuration](configuration.md) section to customize settings
+
 
 ## Running
 
@@ -85,7 +86,7 @@ To solve it without being root (that is always a bad idea), you can change the `
 
 1. Configure your [environment variables](https://github.com/DemocracyOS/app/wiki/Environment-variables) for production; specifically, set `NODE_ENV` to `production`
 2. Set your MongoDB instance to run as a service.
-3. Make sure to correctly configure the [Notifier](notifier) for production environments.
+3. Make sure to correctly configure the [Notifier](configuration.md#embebed-notifier-server) for production environments.
 4. From the project's root path, you need to run `make` or:
   1. `npm install` to install node dependencies.
   2. `npm run build && npm run start` to build assets and run the app. _Don't run as `sudo`._
