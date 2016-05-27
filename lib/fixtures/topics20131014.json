@@ -1,7 +1,6 @@
 [
 {
     "topicId": "0095/12"
-  , "tag" : "Defensa de los Consumidores y Usuarios"
   , "officialTitle": ""
   , "mediaTitle": "Comercios con accesibilidad física para todos"
   , "source": "https://s3.amazonaws.com/pdr-app/0095-12.doc"
@@ -28,7 +27,6 @@
 },
 {
     "topicId": "0151/13"
-  , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
   , "mediaTitle": "Plan integral de ciclovías"
   , "source": "https://s3.amazonaws.com/pdr-app/0151-13.doc"
@@ -59,7 +57,6 @@
 },
 {
     "topicId": "0203/12"
-  , "tag" : "Cultura"  
   , "officialTitle": ""
   , "mediaTitle": "Declarar Ciudadano Ilustre al actor, director y maestro escénico, Osvaldo Bonet"
   , "source": "https://s3.amazonaws.com/pdr-app/0203-12.doc"
@@ -80,7 +77,6 @@
 },
 {
     "topicId": "0204/12"
-  , "tag" : "Cultura"    
   , "officialTitle": ""
   , "mediaTitle": "Declarar Ciudadano Ilustre al Dr. Sergio Gabriel Torres"
   , "source": "https://s3.amazonaws.com/pdr-app/0204-12.doc"
@@ -100,7 +96,6 @@
 },
 {
     "topicId": "0205/12"
-  , "tag" : "Cultura"  
   , "officialTitle": ""
   , "mediaTitle": "Declarar Ciudadana Ilustre a la Sra. Iris Scaccheri"
   , "source": "https://s3.amazonaws.com/pdr-app/0205-12.doc"
@@ -121,7 +116,6 @@
 },
 {
     "topicId": "0234/12"
-  , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Advertencias sobre alimentos procesados"
   , "source": "https://s3.amazonaws.com/pdr-app/0234-12.doc"
@@ -172,7 +166,6 @@
 },
 {
     "topicId": "0419/12"
-  , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Tu tiempo de espera en locales comerciales"
   , "source": "https://s3.amazonaws.com/pdr-app/0419-12.doc"
@@ -212,7 +205,6 @@
 },
 {
     "topicId": "0522/12"
-  , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Modificación ley publicidad Juegos de Azar"
   , "source": "https://s3.amazonaws.com/pdr-app/0522-12.doc"
@@ -237,7 +229,6 @@
 },
 {
     "topicId": "0589/12"
-  , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
   , "mediaTitle": "Semáforos más inteligentes"
   , "source": "https://s3.amazonaws.com/pdr-app/0589-12.doc"
@@ -262,7 +253,6 @@
 },
 {
     "topicId": "0648/12"
-  , "tag" : "Protección y Uso del Espacio Público"  
   , "officialTitle": ""
   , "mediaTitle": "Concesiones de Bares/Kioscos en parques"
   , "source": "https://s3.amazonaws.com/pdr-app/0648-12.doc"
@@ -367,7 +357,6 @@
 },
 {
     "topicId": "0720/12"
-  , "tag" : "Tránsito y Transporte"  
   , "officialTitle": ""
   , "mediaTitle": "Ahora le toca a las bicicletas con motor"
   , "source": "https://s3.amazonaws.com/pdr-app/0720-12.doc"
@@ -437,7 +426,6 @@
 },
 {
     "topicId": "0786/12"
-  , "tag" : "Cultura"  
   , "officialTitle": ""
   , "mediaTitle": "Clemente Onelli será calle"
   , "source": "https://s3.amazonaws.com/pdr-app/0786-12.doc"
@@ -457,7 +445,6 @@
 },
 {
     "topicId": "0798/12"
-  , "tag" : "Seguridad"  
   , "officialTitle": ""
   , "mediaTitle": "Nuevo plan de evacuación y simulacro en casos de explosión e incendio"
   , "source": "https://s3.amazonaws.com/pdr-app/0798-12.doc"
@@ -582,7 +569,6 @@
 },
 {
     "topicId": "0807/12"
-  , "tag" : "Defensa de los Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Una oficina de empresa de telefonía móvil por comuna"
   , "source": "https://s3.amazonaws.com/pdr-app/0807-12.doc"
@@ -617,7 +603,6 @@
 },
 {
     "topicId": "0216/13"
-  , "tag" : "Justicia"  
   , "officialTitle": ""
   , "mediaTitle": "Cambios en la forma de designación de las cabezas Ministerio Público"
   , "source": "https://s3.amazonaws.com/pdr-app/0216-13.doc"
@@ -667,7 +652,6 @@
 },
 {
     "topicId": "0163/13"
-  , "tag" : "Planeamiento Urbano"  
   , "officialTitle": "Creación de un nuevo barrio en la ciudad"
   , "source": "https://s3.amazonaws.com/pdr-app/0163-13.doc"
   , "mediaTitle": "Transferir al Instituto de la Vivienda tierras en Nueva Pompeya para construir viviendas sociales y la creación del 'Barrio Ribera Iguazú'"
@@ -722,7 +706,6 @@
 },
 {
     "topicId": "0268/13"
-  , "tag" : "Protección y Uso del Espacio Público "  
   , "officialTitle": ""
   , "mediaTitle": "La defensa del peatón frente al TC en la CABA"
   , "source": "https://s3.amazonaws.com/pdr-app/0268-13.doc"
@@ -742,7 +725,6 @@
 },
 {
     "topicId": "0340/12"
-  , "tag" : "Presupuesto, Hacienda, Administración Financiera y Política Tributaria"  
   , "officialTitle": ""
   , "mediaTitle": "Vendemos el edificio de la calle Bartolomé Mitre 1247/49/51/55"
   , "source": "https://s3.amazonaws.com/pdr-app/0340-12.doc"
@@ -777,7 +759,6 @@
 },
 {
     "topicId": "0416/12"
-  , "tag" : "Defensa de Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Envíos gratis para embarazadas, jubilados y personas con necesidades especiales"
   , "source": "https://s3.amazonaws.com/pdr-app/0416-12.doc"
@@ -797,7 +778,6 @@
 },
 {
     "topicId": "0906/12"
-  , "tag" : "Defensa de Consumidores y Usuarios"  
   , "officialTitle": ""
   , "mediaTitle": "Cajero automático honesto"
   , "source": "https://s3.amazonaws.com/pdr-app/0906-12.doc"
