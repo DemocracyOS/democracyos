@@ -44,7 +44,8 @@
       &:hover
         background #2c3e50
         color white
-
+    .admin-link
+      display none
   .profile,
   .notifications
     img
@@ -69,3 +70,6 @@
         transform s("rotate(%s)", -25deg)
     .caret
       margin-top -3px
+.user-wrapper.can-change-forum
+  .admin-link
+    display block
