@@ -160,6 +160,8 @@
   "forum.form.title.placeholder": "El título para tu democracia",
   "forum.form.url.label": "URL de la democracia",
   "forum.form.url.unavailable": "La URL no está disponible",
+  "forum.form.location.label": "Ubicación",
+  "forum.form.location.placeholder": "De dónde es tu comunidad",
   "forum.status.creating": "Creando democracia...",
   "forum.status.destroying": "Eliminando...",
   "forum.status.error": "Ha habido un error en esta democracia, por favor intente más tarde.",
