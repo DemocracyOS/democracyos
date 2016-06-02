@@ -1,0 +1,44 @@
+.view-loader
+  display none
+  position absolute
+  left 0
+  top 0
+  width 100%
+  height 100%
+  font-size 10px
+  z-index 10
+  background-color rgba(#fff, .9)
+
+  &.active
+    display block
+
+  &::after
+    content ''
+    position absolute
+    left 50%
+    top 50%
+    margin-left -5em
+    margin-top -5em
+    width 10em
+    height 10em
+    border .2em solid rgba(#666, 0.2)
+    border-left .2em solid #666
+    border-radius 50%
+    -webkit-transform s('translateZ(0)')
+    -ms-transform s('translateZ(0)')
+    transform s('translateZ(0)')
+    animation rotateit 1.1s infinite
+
+@css {
+  @keyframes rotateit {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}
+

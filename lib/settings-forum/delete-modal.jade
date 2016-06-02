@@ -1,13 +1,13 @@
 .content#forum-delete-modal
   form(method='delete', autovalidate)
-    .title=t('settings-forums.delete.confirmation.title')
-      a(href='#').close.cancel
-        | &times;
+    a.close.cancel(href='#') &times;
+    .title
+      h3= t('settings-forums.delete.confirmation.title')
     .body
-      p=t('settings-forums.delete.confirmation.body')
-      p!=t('settings-forums.delete.confirmation.instructions', { domain: forum.name })
+      p= t('settings-forums.delete.confirmation.body')
+      p!= t('settings-forums.delete.confirmation.instructions', {domain: forum.name})
       .form-group
         input.forum-name.form-control(type='text', name='forum', validate='equals:'+forum.name)
       .form-messages.hide
     .confirmation-actions
-      button.btn-block.btn-danger.ok.main(disabled=true)=t('settings-forums.delete.confirmation.button-confirm')
+      button.btn-block.btn.btn-danger.ok.main(disabled=true)=t('settings-forums.delete.confirmation.button-confirm')

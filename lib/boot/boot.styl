@@ -27,12 +27,16 @@ body
   font-size 16px
   line-height 1.4
   font-family 'Open Sans', sans-serif
+  cursor default
 
 h1,
 h2,
 h3,
+h4,
+h5,
 p
   color inherit
+  cursor inherit
 
 p
   font-weight 400
@@ -44,24 +48,36 @@ p
 
 h1,
 h2,
-h3
+h3,
+h4,
+h5
   line-height 1.1
   font-weight 700
 
 h1
-  font-size 2.6em
+  font-size 2.7em
   margin-top 1em
   margin-bottom .5em
 
 h2
-  font-size 1.75em
+  font-size 2.1em
   margin-top 1.2em
   margin-bottom .8em
 
 h3
+  font-size 1.5em
+  margin-top 1.375em
+  margin-bottom 1.375em
+
+h4
   font-size 1em
   margin-top 1.375em
   margin-bottom 1.375em
+
+h4
+  font-size .9em
+  margin-top 1.375em
+  margin-bottom 1em
 
 a
   color #3d699e
@@ -106,18 +122,39 @@ label
 
 .alert
   color white
-  font-weight bold
-  border 0
+  border 1px solid
   border-radius border_radius
+  font-size .9em
+
+  &.with-icon
+    position relative
+    padding-left 3em
+
+    .alert-icon
+      position absolute
+      margin-right .5em
+      top 1.2em
+      left 1.3em
+
   &.alert-info
-    background-color #3498db
+    color darken(#3498db, 50%)
+    border-color #3498db
+    background-color lighten(#3498db, 70%)
+
   &.alert-success
-    background-color #27ae60
+    color darken(#27ae60, 50%)
+    border-color #27ae60
+    background-color lighten(#27ae60, 70%)
+
   &.alert-warning
-    background-color #f1c40f
-  &.alert-block
-    background-color #bebec5
-    color white
+    color darken(#f1c40f, 50%)
+    border-color #f1c40f
+    background-color lighten(#f1c40f, 70%)
+
+  &.alert-danger
+    color darken(#d9534f, 50%)
+    border-color #d9534f
+    background-color lighten(#d9534f, 70%)
 
 .system-alert
   margin-top 20px
@@ -163,6 +200,9 @@ label
     font-size 12px
     letter-spacing 1px
     text-transform uppercase
+
+.nav-pills > li > a
+  border-radius 2px
 
 /* Site Content Container
 -------------------------------------------------- */

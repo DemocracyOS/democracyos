@@ -122,7 +122,6 @@
   "comments.reply": "Vastaus",
   "comments.reply-cannot-be-empty": "Vastaa ei voi olla tyhjä",
   "comments.reply-to-argument": "Vastauksena tähän väitteeseen",
-  "comments.score.not-allowed": "Et saa äänestää oman argumentti",
   "comments.send": "Lähetä",
   "comments.sign-in-required": "Sinun täytyy kirjautua sisään",
   "comments.sign-in-required-to-vote-comments": "Sinun täytyy olla kirjautunut sisään äänestää perustelut",

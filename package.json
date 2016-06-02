@@ -55,6 +55,7 @@
     "async": "^1.3.0",
     "babelify": "^6.0.2",
     "batch": "~0.5.2",
+    "bean": "^1.0.15",
     "bowser": "0.7.2",
     "brfs": "1.4.0",
     "browserify": "^9.0.8",
@@ -119,6 +120,7 @@
     "jadeify": "^4.2.0",
     "jsdom": "6.3.0",
     "jwt-simple": "0.2.0",
+    "keyboardevent-key-polyfill": "^1.0.1",
     "locale": "0.0.20",
     "markdownify": "0.1.0",
     "marked": "^0.3.5",
@@ -162,10 +164,12 @@
     "yargs": "3.9.1"
   },
   "devDependencies": {
-    "nomnom": "^1.8.1",
     "arr-diff": "^1.0.1",
+    "google-translate": "^1.0.0",
+    "gulp-jasmine": "^2.2.1",
     "json-file-plus": "^3.0.0",
-    "google-translate": "^1.0.0"
+    "nomnom": "^1.8.1",
+    "supertest": "^1.1.0"
   },
   "main": "pdr",
   "engines": {
@@ -181,6 +185,7 @@
     "start": "NODE_PATH=. node index.js",
     "build": "gulp build",
     "watch": "gulp watch",
-    "clean": "gulp clean"
+    "clean": "gulp clean",
+    "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
   }
 }

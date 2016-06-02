@@ -36,6 +36,7 @@ Running on **Windows** environment is not currently supported. If you happen to 
 - [Fork](http://help.github.com/articles/fork-a-repo) or download this repository.
 - `cd` to the project's location
 - Make sure MongoDB is running and reachable as configured in `config/development.json`. (Default values should work)
+- Set up your [configuration](configuration.md), and add your email as [staff](configuration.md#-staff-) to be able to initialize your app.
 - Run `make`
 - Boom! DemocracyOS should be running on port 3000.
 
@@ -98,6 +99,19 @@ If something goes wrong you can always go back to a clean slate running `make cl
 * Check [this very detailed guide](https://github.com/okfn-brasil/democracyos/wiki/Install) if you're on Ubuntu 10 LTS.
 * On Ubuntu 14/13/lower, install the package `node-legacy` for NodeJS.
 * Check [this guide](https://github.com/DemocracyOS/app/wiki/Running-as-a-service) on how to run DemocracyOS as a service.
+
+## Running unit tests
+
+To run unit tests simply run
+```
+npm test
+```
+
+A running MongoDB instance is required to perform tests. By default, the `DemocracyOS-test` database is used and all its data is wiped on each run. If you want to override the database, just run the above command prefixing `MONGO_URL=<database uri>`. For example:
+
+```
+MONGO_URL=mongodb://localhost/other-db npm test
+```
 
 ## Loading sample data
 

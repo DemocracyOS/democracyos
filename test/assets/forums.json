@@ -1,0 +1,5 @@
+[
+  {"name":"abc","title":"ABC","owner":{"$oid":"5669bf6cfad2b0fb3e961f61"},"summary":"This is a test forum","createdAt":{"$date":"2015-12-10T18:29:00.246Z"},"permissions":{"collaborators":[],"admins":[]},"closed":false,"private": false},
+  {"name":"def","title":"DEF","owner":{"$oid":"5669bf6cfad2b0fb3e961f61"},"summary":"This is a test forum","createdAt":{"$date":"2015-12-10T18:29:00.246Z"},"permissions":{"collaborators":[],"admins":[]},"closed":false,"private": true},
+  {"name":"ghi","title":"GHI","owner":{"$oid":"5669bf6cfad2b0fb3e961f61"},"summary":"This is a test forum","createdAt":{"$date":"2015-12-10T18:29:00.246Z"},"permissions":{"collaborators":[],"admins":[]},"closed":true,"private": true}
+]

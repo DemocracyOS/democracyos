@@ -67,6 +67,8 @@ git add somefile.txt
 git commit -a -m"adding somefile.txt"
 ```
 
+Write your unit tests and check all tests pass by running `npm test`.
+
 When you think your code is ready, prepare for pushing the code by first getting the changes from the main repo:
 
 ```
