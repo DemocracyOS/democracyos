@@ -4,75 +4,75 @@
  * Module dependencies.
  */
 
-var program = require('commander');
-var fs = require('fs');
-var dir = fs.readdirSync;
-var read = fs.readFileSync;
-var exists = fs.existsSync;
-var path = require('path');
-var resolve = path.resolve;
-var parse = JSON.parse;
-var mongoose = require('mongoose');
-var prompt = require('co-prompt');
-var confirm = prompt.confirm;
+var program = require('commander')
+var fs = require('fs')
+var dir = fs.readdirSync
+var read = fs.readFileSync
+var exists = fs.existsSync
+var path = require('path')
+var resolve = path.resolve
+var parse = JSON.parse
+var mongoose = require('mongoose')
+var prompt = require('co-prompt')
+var confirm = prompt.confirm
 
 // Little hack to include `NODE_PATH=.`
-require('node-path')(module, [resolve('.')]);
+require('node-path')(module, [resolve('.')])
 
 program
-  .option('-u, --user <name>', "MongoDB username.")
-  .option('-p, --password <password>', "MongoDB password.")
-  .option('-h, --host <name>', "MongoDB host. [localhost]", String, "localhost")
-  .option('-p, --port <port>', "MongoDB port. [27017]", Number, 27017)
-  .option('-d, --database <name>', "MongoDB database name.", String, "DemocracyOS-dev")
-  .option('-U, --url <url>', "MongoDB URL. (mongodb://user:pass@localhost:27017/DemocracyOS)");
+  .option('-u, --user <name>', 'MongoDB username.')
+  .option('-p, --password <password>', 'MongoDB password.')
+  .option('-h, --host <name>', 'MongoDB host. [localhost]', String, 'localhost')
+  .option('-p, --port <port>', 'MongoDB port. [27017]', Number, 27017)
+  .option('-d, --database <name>', 'MongoDB database name.', String, 'DemocracyOS-dev')
+  .option('-U, --url <url>', 'MongoDB URL. (mongodb://user:pass@localhost:27017/DemocracyOS)')
 
 program
   .command('load <model> <source>')
   .description("Loads model's collection from .json source path.")
-  .action(function(model, source) {
-    var mPath = resolve('./lib/models/' + model.toLowerCase() + '.js');
-    var sPath = resolve(source);
+  .action(function (model, source) {
+    var mPath = resolve('./lib/models/' + model.toLowerCase() + '.js')
+    var sPath = resolve(source)
 
-    if (!exists(mPath)) return write('Invalid api "' + model + '"');
-    if (!exists(sPath)) return write('Invalid source "' + source + '"');
+    if (!exists(mPath)) return write('Invalid api "' + model + '"')
+    if (!exists(sPath)) return write('Invalid source "' + source + '"')
 
-    var data = parse(read(sPath));
-    if (!data.length) return write("No data in file.");
+    var data = parse(read(sPath))
+    if (!data.length) return write('No data in file.')
 
-    connect(function() {
-      models();
-      var api = require('lib/db-api');
-      var c = data.length;
-      data.forEach(function(doc) {
-        api[model.toLowerCase()].create(doc, function(err) {
-          if (err) return error("Error %s while saving %j", err, doc);
-          console.log("Saved %j", doc);
-          if (0 === --c) disconnect(exit);
-        });
-      });
-    });
-  });
+    connect(function () {
+      models()
+      var api = require('lib/db-api')
+      var c = data.length
+      data.forEach(function (doc) {
+        api[model.toLowerCase()].create(doc, function (err) {
+          if (err) return error('Error %s while saving %j', err, doc)
+          console.log('Saved %j', doc)
+          if (--c === 0) disconnect(exit)
+        })
+      })
+    })
+  })
 
 program
   .command('drop')
-  .description("Fully drop database.")
-  .action(function() {
-    confirm('This will delete all your data. Continue?\n')(function(err, ok) {
-      if (err) return error('Whoops, %s', err);
-      if (!ok) return write('There you go! =)');
+  .description('Fully drop database.')
+  .action(function () {
+    confirm('This will delete all your data. Continue?\n')(function (err, ok) {
+      if (err) return error('Whoops, %s', err)
+      if (!ok) return write('There you go! =)')
 
-      connect(function() {
+      connect(function () {
         mongoose.connection.db.dropDatabase(function (err) {
-          if (err) return error('Whoops, %s', err);
-          console.log('Database dropped.');
-          disconnect(exit);
-        });
-      });
-    });
-  });
+          if (err) return error('Whoops, %s', err)
+          console.log('Database dropped.')
+          disconnect(exit)
+        })
+      })
+    })
+  })
 
-program.parse(process.argv);
+program.parse(process.argv)
 
 /**
  * Write `msg` to stdout
@@ -83,8 +83,8 @@ program.parse(process.argv);
  */
 
 function write (msg) {
-  process.stdout.write(msg);
-  process.stdout.write('\n');
+  process.stdout.write(msg)
+  process.stdout.write('\n')
 }
 
 /**
@@ -96,8 +96,8 @@ function write (msg) {
  */
 
 function error () {
-  console.log.apply(console, arguments);
-  process.exit(1);
+  console.log.apply(console, arguments)
+  process.exit(1)
 }
 
 /**
@@ -108,7 +108,7 @@ function error () {
  */
 
 function exit () {
-  process.exit(0);
+  process.exit(0)
 }
 
 /**
@@ -121,9 +121,9 @@ function exit () {
  */
 
 function connect (fn) {
-  write("Connecting to " + mongoURL());
-  fn = fn || function() {};
-  mongoose.connect(mongoURL(), fn);
+  write('Connecting to ' + mongoURL())
+  fn = fn || function () {}
+  mongoose.connect(mongoURL(), fn)
 }
 
 /**
@@ -132,15 +132,15 @@ function connect (fn) {
  * @param {Function} fn
  * @requires path.
  */
-function models(fn) {
-  write("Register mongoose models.");
-  var except = ['index.js', 'forum-reserved-names.js'];
-  var files = dir(resolve('./lib/models/'));
-  files && files.forEach(function(f) {
-    if (~except.indexOf(f)) return;
-    require(resolve('./lib/models/' + f ))(mongoose);
-  });
-  fn && fn();
+function models (fn) {
+  write('Register mongoose models.')
+  var except = ['index.js', 'forum-reserved-names.js']
+  var files = dir(resolve('./lib/models/'))
+  files && files.forEach(function (f) {
+    if (~except.indexOf(f)) return
+    require(resolve('./lib/models/' + f))(mongoose)
+  })
+  fn && fn()
 }
 
 /**
@@ -153,10 +153,10 @@ function models(fn) {
  */
 
 function disconnect (fn) {
-  write("Disconnecting from " + mongoURL());
-  if (!mongoose.connections.length) return console.log("Not connected to DB!");
-  fn = fn || function() {};
-  mongoose.disconnect(fn);
+  write('Disconnecting from ' + mongoURL())
+  if (!mongoose.connections.length) return console.log('Not connected to DB!')
+  fn = fn || function () {}
+  mongoose.disconnect(fn)
 }
 
 /**
@@ -167,11 +167,11 @@ function disconnect (fn) {
  */
 
 function mongoURL () {
-  return program.url || "mongodb://"
-    + (program.user ? program.user + ":" + program.password + "@" : "")
-    + program.host
-    + ":"
-    + program.port
-    + "/"
-    + program.database;
+  return program.url || 'mongodb://' +
+  (program.user ? program.user + ':' + program.password + '@' : '') +
+  program.host +
+  ':' +
+  program.port +
+  '/' +
+  program.database
 }

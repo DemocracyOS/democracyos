@@ -9,9 +9,13 @@ var opts = {
   https: config.https
 }
 
-if (module === require.main){
+if (module === require.main) {
   server(opts, function (err) {
-    if (err) return log(err), process.exit(1)
+    if (err) {
+      log(err)
+      process.exit(1)
+      return
+    }
 
     log('DemocracyOS server running...')
   })
