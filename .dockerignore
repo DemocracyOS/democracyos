@@ -3,7 +3,17 @@
 .env
 .DS_Store
 .dockerignore
+docker
+docs
+node_modules
 
 config/*.json
+!config/defaults.json
+
+# Docs
+*.md
 
 Procfile
+
+# Never leave out the license
+!LICENSE.txt
