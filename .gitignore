@@ -7,7 +7,6 @@
 *.pid
 *.seed
 *.sublime-*
-.env
 .idea/*
 .npmrc
 .tmp

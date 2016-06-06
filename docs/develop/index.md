@@ -7,28 +7,38 @@ DemocracyOS development guide
 
 We'll be using version `^1.0.0` of DemocracyOS.
 
+There are several ways for developing DemocracyOS. The most straightforward way is by leveraging [`Docker`](https://www.docker.com), since this will save you the need for configuring your environment for running and building natively. For more on running our dockerised development environment jump to the [Running the app](http://docs.democracyos.org/develop/#running-the-app) section.
+
+Alternatively, configure your local environment as follows:
+
 # Stack
 
-#### Node.js and NPM
-You need [Node.js v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) or greater to run DemocracyOS.
+#### Node.js and npm
+You need [Node.js v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) or greater to run DemocracyOS, but we always try to keep up with their latest release, so feel free to try newer `node` versions.
 
 There are many options out there to get it installed:
 
-* [Official site](https://nodejs.org/en/download/): both Node.js and NPM come bundled with this installation.
+* [Official site](https://nodejs.org/en/download/): both Node.js and npm come bundled with this installation.
 
-* [NVM](https://github.com/creationix/nvm): Node Version Manager - Simple bash script to manage multiple active node.js versions
+* [nvm](https://github.com/creationix/nvm): Node Version Manager - Simple bash script to manage multiple active node.js versions
 
 * [tj/n](https://github.com/tj/n): another -yet simpler- node version manager
 
 
 #### MongoDB
 
-We also support the [latest version](http://blog.mongodb.org/post/130823293808/mongodb-319-is-released) of [MongoDB](https://www.mongodb.org/).
+We support the [latest supported version](https://www.mongodb.com/support-policy) of [`MongoDB`](https://www.mongodb.org/).
 
-So [download](https://www.mongodb.org/downloads) the version for your system and follow the installation instructions to get it running.
+So [download](https://www.mongodb.com/download-center) the version for your system and follow the installation instructions to get it running.
+
+Alternatively, you may want to run `MongoDB` in a `Docker` container. If so, just do:
+
+`docker run -p 27017:27017 --name mongodb mongo`
+
+After your container is up and running, [update your configuration](http://docs.democracyos.org/develop/#configuration) so your can access the container properly.
 
 ```
-Note: we are planning on using Docker for both development and production so start developing on a new machine is easy as pie and we can run the app with the same environment that in production.
+Note: this manual usage of a MongoDB container if using docker-compose.
 ```
 
 #### Browserify
@@ -37,7 +47,8 @@ We use [Browserify](http://browserify.org) to bundle all our client side code, b
 
 #### Operating System
 
-We currently don't support Windows, so if you're running it please install VirtualBox with a Linux distribution. We prefer Ubuntu as we know DemocracyOS runs on it.
+DemocracyOS runs properly on `OS/X` and plenty of `Linux` distros, especially `Debian`-based ones.
+We currently don't support `Windows` for running natively, so if you're running `Windows` please rely on `Docker` as described in the [Running the app section](http://docs.democracyos.org/develop/#running-the-app), or use another form of virtualisation (e.g.: `Vagrant`, `VirtualBox`, etc.).
 
 # Configuration
 
@@ -73,13 +84,34 @@ As you can see, we match camelCase and nested objects with underscores, and we i
 
 # Running the app
 
-DemocracyOS can be run in many ways, but we prefer just using `make` on the project root folder.
+DemocracyOS can be run in many ways, but we prefer either of these two approaches:
 
-Another way can be running `gulp bws` for development, that will wait for changes on the project files to rebuild every time. For that, we must have `gulp` installed:
+#### Native
+
+Just use `make` on the project root folder; that will run the app.
+
+For more intensive development, you might want to use `gulp bws` for development, that will wait for changes on the project files to rebuild every time. For that, we must have `gulp` installed:
 
 ```
 npm install -g gulp
 ```
+
+#### Docker containers
+
+You can run your development environment inside a [`Docker`](https://www.docker.com) container pretty easily, and it will save you from installing anything on your development machine besides `Docker` itself.
+
+First, you must have the latest version of [`Docker Engine`](https://www.docker.com/products/docker-engine) and [Docker Compose](https://www.docker.com/products/docker-compose) available in your machine.
+If you're either a `Windows` or `OS/X` user, using the [`Docker Toolbox`](https://www.docker.com/products/overview#/docker_toolbox) is recommended as you may have to rely on [`Docker Machine`](https://www.docker.com/products/docker-machine) unless you get the [native `docker` apps currently on open beta](https://beta.docker.com/).
+
+Regardless of how you got `Docker`, running the app is completely straightforward:
+
+`$ make docker`
+
+And that's it. If you don't have `make` available, this also works:
+
+`$ docker-compose up app`
+
+Every change to the files you make on your local files will get mirrored inside your development container. If you're wondering how it is that this works, see this ✨[thorough explanation](http://giphy.com/gifs/VHngktboAlxHW/fullscreen)✨.
 
 # Models
 
