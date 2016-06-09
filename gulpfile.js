@@ -1,1 +1,1 @@
-require('./lib/build');
+require('./lib/build')

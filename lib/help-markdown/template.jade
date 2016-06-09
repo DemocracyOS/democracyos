@@ -8,19 +8,19 @@
       - example += t('markdown.emphasis.example.2') + '\n\n'
       - example += t('markdown.emphasis.example.3')
       - var emphasisExample = '```\n' + example + '\n```'
-      .example-code!= marked(emphasisExample)
+      .example-code!= dosMarkdown(emphasisExample)
       .example
         p
           strong= t('markdown.will.become')
-        != marked(t('markdown.emphasis.example.1'))
-        != marked(t('markdown.emphasis.example.2'))
-        != marked(t('markdown.emphasis.example.3'))
+        != dosMarkdown(t('markdown.emphasis.example.1'))
+        != dosMarkdown(t('markdown.emphasis.example.2'))
+        != dosMarkdown(t('markdown.emphasis.example.3'))
     section
       h4= t('markdown.url-autolinking.title')
       p= t('markdown.url-autolinking.text')
       - example = t('markdown.url-autolinking.example')
       - var urlAutolinkingExample = '```\n' + example + '```\n'
-      .example-code!= marked(urlAutolinkingExample)
+      .example-code!= dosMarkdown(urlAutolinkingExample)
       .example
         p
           strong= t('markdown.will.become')
@@ -29,7 +29,7 @@
       p= t('markdown.url-autolinking.text.3')
       - example = t('markdown.url-autolinking.example2')
       - var urlAutolinkingExample2 = '```\n' + example + '```\n'
-      .example-code!= marked(urlAutolinkingExample2)
+      .example-code!= dosMarkdown(urlAutolinkingExample2)
       .example
         p
           strong= t('markdown.will.become')
@@ -42,7 +42,7 @@
       - example += t('markdown.linebreaks.example.3')
       - example += t('markdown.linebreaks.example.4')
       - var linbreaksExample = '```\n' + example + '```\n'
-      .example-code!= marked(linbreaksExample)
+      .example-code!= dosMarkdown(linbreaksExample)
       .example
         p
           strong= t('markdown.will.become')
