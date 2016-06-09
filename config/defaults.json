@@ -95,7 +95,7 @@
   "learnMoreUrl": "",
   "googleAnalyticsTrackingId": "",
   "rssEnabled": true,
-  "commentsPerPage": 0,
+  "commentsPerPage": 100,
   "spamLimit": 5,
   "frequentlyAskedQuestions": false,
   "termsOfService": false,
