@@ -157,6 +157,7 @@
     "trim-html": "0.1.7",
     "truncate": "1.0.4",
     "type-component": "0.0.1",
+    "valid-url": "^1.0.9",
     "verigy": "2.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
