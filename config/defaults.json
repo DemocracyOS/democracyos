@@ -41,7 +41,8 @@
       "auth": {
         "user": "",
         "pass": ""
-      }
+      },
+      "nodemailer": {}
     }
   },
   "client": [
