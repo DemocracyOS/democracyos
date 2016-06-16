@@ -118,6 +118,12 @@ If this option is set to `true`, the application will be in a "hub" state and an
 
 _**DISCLAIMER:** This option is in ALPHA state, expect a lot a changes not far away._
 
+#### **defaultForum**
+* env: `DEFAULT_FORUM`
+* default: `""`
+
+Optional value for setting an existent forum's name of a multiforum database for using it as a singleForum.
+
 #### **client**
 * env: `CLIENT`
 * default: `[ ... ]`
@@ -203,6 +209,11 @@ User for the [notifier](https://github.com/DemocracyOS/notifier) transport.
 * env: `NOTIFICATIONS_MAILER_AUTH_PASS`
 
 Password for the [notifier](https://github.com/DemocracyOS/notifier) transport.
+
+#### **notifications.mailer.nodemailer**
+* env: `NOTIFICATIONS_MAILER_NODEMAILER`
+
+Optional object that will override any nodemailer options for creating a transport.
 
 
 ### External Notifier Server
