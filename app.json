@@ -27,7 +27,7 @@
       "generator": "secret"
     },
     "STAFF": {
-      "description": "Comma separated emails listed here will have access to /admin"
+      "description": "Email of the Administrator of the App, this user will be able to do the first setup."
     },
     "ORGANIZATION_NAME": {
       "description": "Title of the app to be shown on the right side of the header"
@@ -36,7 +36,7 @@
       "description": "Link to take the user when clicks on organizationName"
     },
     "HOST": {
-      "description": "Public accessible URL to your app. For example: foo-democracyos.herokuapp.com"
+      "description": "Public accessible URL to your app. For example: 'heroku-app-name.herokuapp.com'."
     }
   }
 }
