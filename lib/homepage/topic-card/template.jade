@@ -1,0 +1,10 @@
+a(href=topic.url).topic-container
+  .topic-card
+    - if (topic.coverUrl)
+      .pic(style='background-image:url(' + topic.coverUrl + ')')
+    - else 
+      .no-pic
+    .title=topic.mediaTitle
+    //- p.participando
+    //-   strong=topic.participants.length
+    //-   | participantes

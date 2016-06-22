@@ -1,0 +1,9 @@
+.homepage
+  if topics && topics.length
+    .topics-copy#compromisos
+      h2=forum.title
+      p=forum.summary
+
+    .topics-container.container
+      each topic in topics
+        include ./topic-card/template
