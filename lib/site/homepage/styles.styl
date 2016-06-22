@@ -4,17 +4,45 @@
   color #333
   font-weight 500
 
-.browser-page
-  .create-first-topic
-    margin 50px auto
-    width 65%
-    padding-top .8em
-    padding-bottom .6em
-    border-radius 3px
-    text-transform none
-    font-size 1em
+.create-first-topic
+  margin 50px auto
+  width 65%
+  padding-top .8em
+  padding-bottom .6em
+  border-radius 3px
+  text-transform none
+  font-size 1em
 
-@media only screen and (max-width: 700px)
+.homepage
+  &.already-showed
+    .cover
+      display none
+
+  .topics-copy
+    margin 0 auto 30px
+    padding 45px 10px 0
+    max-width 525px
+    text-align center
+
+    h2
+      margin 0 auto 18px
+      font-size 32px
+      font-weight 700
+
+    p
+      margin 0 auto
+
+  .topics-container
+    display flex
+    flex-wrap wrap
+    justify-content center
+    padding-left 0
+    padding-right 0
+
+  @import './topic-card/styles'
+
+@media only screen and (max-width: 991px)
   .no-topics,
   .create-first-topic
     width 90%
+
