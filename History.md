@@ -1,4 +1,10 @@
 
+1.2.0 / 2016-06-22
+==================
+
+  * Add Docker for development #1078
+  * Add per-forum permission model #1169
+
 1.1.5 / 2016-05-18
 ==================
 
