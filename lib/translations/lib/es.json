@@ -306,6 +306,7 @@
   "signin.error.email-not-valid": "La dirección de correo electrónico no ha sido validada. A cada usuario se le envía un correo electrónico de bienvenida al momento de registrarse. El siguiente paso es abrir el correo electrónico que te hemos enviado (no te olvides de la carpeta 'Correo no deseado') y hacer clic en el enlace provisto. Cliquea <a href='/signup/resend-validation-email'>aquí</a> si necesitás que te reenviemos el correo electrónico de bienvenida",
   "signin.login": "Iniciar sesión",
   "signin.login-to": "Ingresar a",
+  "signin.login": "Ingresar",
   "signin.login-with-facebook": "Entrar con Facebook",
   "signin.signup": "Registrarse",
   "signup.accepting": "Registrándote estás aceptando nuestros",
