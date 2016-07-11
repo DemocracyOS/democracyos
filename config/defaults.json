@@ -133,5 +133,6 @@
     "uk",
     "zh_TW"
   ],
-  "enforceLocale": false
+  "enforceLocale": false,
+  "restrictForumCreation" : false
 }
