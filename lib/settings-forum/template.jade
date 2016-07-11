@@ -1,8 +1,9 @@
 #forums-wrapper.hide
   .forums-settings
     .heading
-      .actions
-        a.btn.btn-default(href='/forums/new')
-          = t('newsfeed.call-to-action.start-a-forum')
+      - if(user.privileges.canCreate)
+        .actions
+          a.btn.btn-default(href='/forums/new')
+            = t('newsfeed.call-to-action.start-a-forum')
       h1= t('settings.sidebar.forums')
     .forums

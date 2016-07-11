@@ -1,11 +1,11 @@
 .forum-info
-  - if (forum)
+  - if (forum.length && user.privileges.canManage)
     .content.manage
       p
         a(href='/settings/forums')
           = t('newsfeed.call-to-action.manage-forums')
           i.glyphicon.glyphicon-menu-right
-  - else
+  - else if (user.privileges.canCreate)
     .cover
       .content
         h1= t('newsfeed.welcome.title')
