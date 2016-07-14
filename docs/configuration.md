@@ -209,14 +209,14 @@ Token of the Notifier server.
 
 ### Facebook Login
 
-Values needed to setup facebook login. For a complete guide on how to setup facebook login go to [Facebook Setup]().
+Values needed to setup facebook login. For a complete guide on how to setup facebook login go to [Facebook Setup](https://github.com/DemocracyOS/democracyos/wiki/Facebook-Signin-Signup).
 
-#### **auth.facebook.username**
+#### **auth.facebook.clientID**
 * env: `AUTH_FACEBOOK_CLIENT_ID`
 
 App ID of your facebook app.
 
-#### **auth.facebook.password**
+#### **auth.facebook.clientSecret**
 * env: `AUTH_FACEBOOK_CLIENT_SECRET`
 
 App Secret of your facebook app.
