@@ -331,7 +331,7 @@
   "signup.validation-email-resent": "El correo electrónico de validación ha sido reenviado.",
   "signup.welcome": "¡Felicitaciones, {name}!",
   "signup.whitelist.email": "Este correo electrónico {email} no está permitido por el administrador",
-  "signup.with-email": "Registración con correo electrónico",
+  "signup.with-email": "Registro con correo electrónico",
   "signup.your-firstname": "Tu nombre",
   "signup.your-lastname": "Tu apellido",
   "sorts.closing-soon": "Próximos a cerrar",
