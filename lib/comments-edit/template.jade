@@ -1,7 +1,0 @@
-.comment-edit
-  form.comment-edit-form(method='put', action='/api/comment/#{comment.id}', autosubmit='autosubmit', autovalidate='autovalidate')
-    p
-      textarea(name='text', rows='4', validate='required max-length:4096', tabindex='1')= comment.text
-    input.btn.form-submit.pull-right(type='submit', value=t('common.edit'), tabindex='2')
-    input.btn.btn-cancel.pull-right(type='button', value=t('common.cancel'), tabindex='3')
-    span.help-text.form-messages
