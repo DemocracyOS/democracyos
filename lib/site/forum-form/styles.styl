@@ -1,0 +1,117 @@
+.forum-new-form
+  .forum-top
+    margin -15px -15px 15px
+    padding 15px 15px 0
+
+  .forum-title
+    margin 0 0 5px
+    font-size 25px
+    line-height 38px
+    font-weight 400
+
+  .forum-desc
+    font-size 14px
+    color #666
+
+  .forum-subtitle
+    display inline-block
+    padding 0 0 3px
+    border-bottom 2px solid black
+    color black
+    font-size 16px
+    font-weight 700
+    line-height 1.5
+    margin 15px 0
+
+  fieldset
+    margin-top 1px
+    margin-bottom 1px
+    padding 10px
+    background-color whitesmoke
+    font-size 14px
+
+    &:last-of-type
+      margin-bottom 30px
+
+  label
+    display inline-block
+    float left
+    margin-bottom 5px
+    margin-top 0
+    padding-top 0
+    padding-bottom 0
+    font-size 14px
+    font-weight 400
+
+    @media (min-width: 700px)
+      margin-top 12px
+
+  .form-group,
+  .input-group
+    span.error
+      top 15px
+      right 8px
+
+  input[type="text"],
+  .input-group
+    width 100%
+
+    @media (min-width: 700px)
+      width 60%
+      float right
+
+  input[type="text"]
+    display block
+    height 42px
+    margin-top 0px
+    margin-bottom 0px
+    padding 8px 12px
+    border 1px solid #dedede
+    border-radius 3px
+    background-color white
+    color black
+
+  .input-group
+    input[type="text"]
+      width 100%
+
+      &:first-child
+        border-top-right-radius 0
+        border-bottom-right-radius 0
+
+    .input-group-addon
+      border-color #dedede
+      background-color #fafafa
+
+      & + input[type="text"]
+        border-top-left-radius 0
+        border-bottom-left-radius 0
+
+  .form-group
+    margin 0
+
+    &.title
+      @media screen and (max-width: 700px)
+        .error
+          top 40px
+    &.summary
+      span.error
+        display block
+        float right
+        clear both
+        position relative
+        top 0
+        right 0
+        margin 1em 0 0
+
+  .subdomain
+    .input-group-addon
+      .mobile
+        display none
+
+      @media screen and (max-width: 450px)
+        .desktop
+          display none
+
+        .mobile
+          display inline
