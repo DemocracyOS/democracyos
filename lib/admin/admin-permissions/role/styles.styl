@@ -1,0 +1,56 @@
+.admin-permissions-role
+  margin-bottom 3em
+
+  .add-permission
+    clear both
+
+  .title
+    display flex
+    flex-wrap wrap
+    align-items center
+    align-content center
+    margin 2em 0 1em
+
+  h3,
+  .add-user-input
+    margin 0
+
+  h3
+    flex-grow 2
+    margin-right 1em
+    line-height 1.6
+    text-overflow ellipsis
+    overflow hidden
+    cursor default
+
+  .add-user-input
+    max-width 320px
+
+.admin-permissions-user
+  display flex
+  align-items center
+  align-content center
+  white-space nowrap
+  margin-bottom .5em
+  padding .5em
+  font-size 1em
+  border-radius 2px
+  transition background-color .05s .05s
+
+  &.revoking
+    opacity .5
+
+  &:hover
+    background-color #f9f9f9
+
+  img
+    width 2.1em
+    border-radius 2px
+
+  p
+    flex-grow 2
+    margin 0 .5em
+    font-weight bold
+    text-overflow ellipsis
+    overflow hidden
+    cursor default
