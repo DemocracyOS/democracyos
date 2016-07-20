@@ -1,9 +1,0 @@
-ul.admin-menu.nav.nav-pills.nav-stacked
-  - if (forum.privileges.canChangeTopics)
-    li: a(href="#{forum.url}/admin/topics" data-section='topics')=t('admin-sidebar.topics.title')
-  - if (forum.privileges.canEdit)
-    li: a(href="#{forum.url}/admin/permissions" data-section='permissions')=t('admin-sidebar.permissions.title')
-  - if (user.staff)
-    li: a(href="#{forum.url}/admin/tags" data-section='tags')=t('admin-sidebar.tags.title')
-  - if (config.usersWhitelist)
-    li: a(href="/admin/users" data-section='users')=t('admin-sidebar.whitelists.title')
