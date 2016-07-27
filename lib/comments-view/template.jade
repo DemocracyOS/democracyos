@@ -31,6 +31,8 @@
         =t('comments.new.argument')
 
   .inner-container.all-comments
-    h4=t('comments.arguments')
+    h4
+      span(comments-count)
+      =t('comments.arguments')
     ul.media-list.comments-list
     btn.btn.btn-primary.btn-block.load-comments.hide=t('comments.load-more')
