@@ -1,6 +1,18 @@
 - var logged = user.logged()
 
 .comments
+  - if (!logged)
+    .inner-container
+      .alert.alert-info.with-icon
+        i.alert-icon.glyphicon.glyphicon-comment
+        = t('comments.sign-in-required')
+        | .&nbsp;
+        a(href="/signin")= t('signin.login')
+        | &nbsp;#{t('common.or')}&nbsp;
+        - var signupUrl = '/signup?reference=' + reference
+        a(href=signupUrl)= t('signin.signup')
+        | .
+
   - if (canComment)
     .inner-container.my-comments
       h4=t('comments.your.arguments')
@@ -18,15 +30,8 @@
         i.icon-plus
         =t('comments.new.argument')
   .inner-container.all-comments
-    h4=t('comments.arguments')
+    h4
+      span(comments-count)
+      =t('comments.arguments')
     ul.media-list.comments-list
     btn.btn.btn-primary.btn-block.load-comments.hide=t('comments.load-more')
-    - if (!logged)
-      .box
-        p.text-mute= t('comments.sign-in-required')
-          | .&nbsp;
-          a(href="/signin")= t('signin.login')
-          | &nbsp;#{t('common.or')}&nbsp;
-          - var signupUrl = '/signup?reference=' + reference
-          a(href=signupUrl)= t('signin.signup')
-          | .
