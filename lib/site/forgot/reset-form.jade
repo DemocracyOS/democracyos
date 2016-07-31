@@ -4,7 +4,7 @@
       .circle
         i.icon-signin
       h1= t('forgot.reset')
-    form.form(action="/forgot/reset", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
+    form.form(action="/api/forgot/reset", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       input(type='hidden', name='token', value=token)
       ul.form-messages
       .form-group

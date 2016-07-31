@@ -6,7 +6,7 @@
       h1= t('forgot.question')
     p.explanation-message #{t('forgot.explanation')}.
     p.success-message.text-info.hide #{t('forgot.mail.sent')}.
-    form(action="/forgot", method="post", autosubmit='autosubmit', autovalidate='autovalidate')
+    form(action="/api/forgot", method="post", autosubmit='autosubmit', autovalidate='autovalidate')
       ul.form-messages
       .form-group
         label= t('signup.email')
