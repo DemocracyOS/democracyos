@@ -9,7 +9,7 @@
       span.name.ellipsis(style=color ? 'color: #{color}' : '')=user.firstName
       span.caret
     ul.dropdown-list
-      - if (config.multiForum && user.privileges.canManage)
+      - if (config.multiForum && user.privileges && user.privileges.canManage)
         li: a(href='/settings/forums')= t('header.forums')
       - else
         li.admin-link: a(href='/admin')= t('header.admin')

@@ -1,5 +1,5 @@
 .forum-info
-  - if (forum && forum.length && user.privileges.canManage)
+  - if (forum && forum.length && user.privileges && user.privileges.canManage)
     .content.manage
       p
         a(href='/settings/forums')
