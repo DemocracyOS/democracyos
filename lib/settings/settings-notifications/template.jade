@@ -4,7 +4,7 @@
       .circle
         i.icon-lock
       h1=t('settings.notifications.title')
-    form.form(action="/settings/notifications", method="post", role="form", autosubmit='autosubmit')
+    form.form(action="/api/settings/notifications", method="post", role="form", autosubmit='autosubmit')
       ul.form-messages
       .form-group
         label #{t('settings.notificatinos.get-email-when')}

@@ -4,7 +4,7 @@
       .circle
         i.icon-user
       h1= t('settings.profile')
-    form.form(action="/settings/profile", method="post", role="form", autocomplete="off", autovalidate='autovalidate', autosubmit='autosubmit')
+    form.form(action="/api/settings/profile", method="post", role="form", autocomplete="off", autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-messages
       .form-group
         label #{t('settings.first-name')}
