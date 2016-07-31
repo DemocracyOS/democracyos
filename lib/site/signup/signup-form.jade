@@ -4,7 +4,7 @@
       .circle
         i.icon-user
       h1= t('signup.with-email')
-    form.form(action='/signup', method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
+    form.form(action='/api/signup', method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       - if (reference)
         input(type='hidden', name='reference', value=reference)
       ul.form-errors
