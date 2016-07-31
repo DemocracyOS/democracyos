@@ -5,7 +5,7 @@
         i.icon-signin
       h1= t('signin.login')
 
-    form.form(action="/signin", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
+    form.form(action="/api/signin", method="post", role="form", autovalidate='autovalidate', autosubmit='autosubmit')
       ul.form-errors
       .form-group
         label= t('signup.email')

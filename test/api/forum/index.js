@@ -17,7 +17,7 @@ var token
 function signin (email) {
   return new Promise(function (resolve, reject) {
     request(app)
-    .post('/signin')
+    .post('/api/signin')
     .send({ email: email, password: '123456' })
     .expect(200)
     .end(function (err, res) {
