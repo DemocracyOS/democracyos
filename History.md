@@ -1,4 +1,10 @@
 
+1.3.0 / 2016-08-01
+==================
+
+  * Add multiple bundles for different sections #1264
+  * Reorganize all the folders in submodules
+
 1.2.0 / 2016-06-22
 ==================
 
