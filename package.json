@@ -169,12 +169,14 @@
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
+    "bootstrap": "^4.0.0-alpha.3",
     "google-translate": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
     "nomnom": "^1.8.1",
+    "simple-line-icons": "^2.3.2",
     "supertest": "^1.1.0"
   },
   "main": "pdr",
