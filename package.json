@@ -176,12 +176,15 @@
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
+    "babel-preset-react": "^6.11.1",
     "bootstrap": "^4.0.0-alpha.3",
     "google-translate": "^1.0.0",
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
     "nomnom": "^1.8.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
     "simple-line-icons": "^2.3.2",
     "supertest": "^1.1.0"
   },
