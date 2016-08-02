@@ -36,19 +36,19 @@ mixin message (notification)
   table.table.table-hover
     - if (notifications.length)
       - each notification in notifications
-        - var glyphicon = ''
+        - var iconClass = ''
         case notification.type
           when 'reply'
-            - glyphicon = 'glyphicon-comment'
+            - iconClass = 'icon-bubble'
           when 'topic'
-            - glyphicon = 'glyphicon-exclamation-sign'
+            - iconClass = 'icon-exclamation'
           when 'upvote'
-            - glyphicon = 'glyphicon-chevron-up'
+            - iconClass = 'icon-arrow-up'
           when 'downvote'
-            - glyphicon = 'glyphicon-chevron-down'
+            - iconClass = 'icon-arrow-down'
         tr(data-url=notification.url)
           td.text-center
-            i.glyphicon(class=glyphicon)
+            i(class=iconClass)
           td(colspan=notification.relatedUser ? 1 : 2)
             +message(notification)
             p.small.ago(data-time=notification.createdAt.toString())
