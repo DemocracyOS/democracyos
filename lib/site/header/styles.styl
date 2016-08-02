@@ -1,0 +1,114 @@
+@import './user-badge/styles'
+
+/* Vars
+-------------------------------------------------- */
+header_height = 60px
+spacing = 20px
+
+/* Header
+-------------------------------------------------- */
+header.app-header, aside.nav-proposal, .site-content, .site-content.loading-lock
+  position fixed
+
+.site-content.content-pinned
+aside.nav-proposal.content-pinned
+  transition transform 200ms linear
+  padding-top 0
+
+.site-content
+  z-index 1
+  overflow-y scroll
+  background white
+
+#content.site-content
+  overflow-y auto
+
+header.app-header
+  z-index 20
+  top 0
+  left 0
+  right 0
+  height header_height
+  background #64476e
+  color white
+  padding-left spacing
+  font-weight bold
+  text-transform uppercase
+  font-size 12px
+
+  &.with-contrast
+    box-shadow 0 2px 2px #d5d5d5
+
+  #toggleButton
+    width 26px
+    height 44px
+    position absolute
+    left spacing
+    padding 10px 0
+    display none
+    .bar-icon
+      height 3px
+      margin-bottom 5px
+      display block
+
+  a
+     color white
+     &:hover
+       color white
+
+  h1
+    display inline-block
+    width 300px
+    font-size 12px
+    margin-top 12px
+    .logo
+      height 40px
+      display inline-block
+      margin-right 10px
+      margin-top -2px
+
+  img.logo-image
+    height 28px
+    margin-top 5px
+    display inline-block
+
+  .user-nav
+    display inline-block
+    float right
+    list-style none
+    margin-right spacing
+    position absolute
+    right 0
+    top 0px
+
+    .user
+      float right
+
+    .login
+      padding 6px 12px
+      display inline-block
+      margin-top 15px
+      line-height 1.8
+
+      i
+        display none
+        font-size 20px
+      &:hover
+        text-decoration none
+
+vendors(prop, args, fn = null)
+  val = fn == null ? args : fn + '(' + args + ')'
+  -moz-{prop} val
+  -webkit-{prop} val
+  -o-{prop} val
+  -ms-{prop} val
+  {prop} val
+
+.headroom
+  vendors(transition, all 200ms linear)
+
+.headroom--pinned
+  vendors(transform, 0%, translateY)
+
+.headroom--unpinned
+  vendors(transform, -100%, translateY)
