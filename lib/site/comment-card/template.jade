@@ -23,7 +23,7 @@ li.media.comment-item(class=classes)
         - var spamTitle = flags ?  t('comment-card.not-spam') : t('comment-card.report-spam')
         - if (canComment)
           a.comment-action.link-report.flag(href="#", title=spamTitle, class=flags ? 'selected' : '')
-            i.glyphicon.glyphicon-flag
+            i.icon-flag
             span.count=comment.flags.length ? comment.flags.length : ''
     .comment-body
       .comment-text!=markdown(comment.text)

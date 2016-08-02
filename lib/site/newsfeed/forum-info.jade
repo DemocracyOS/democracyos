@@ -4,7 +4,7 @@
       p
         a(href='/settings/forums')
           = t('newsfeed.call-to-action.manage-forums')
-          i.glyphicon.glyphicon-menu-right
+          i.icon-arrow-right
   - else if (user.privileges.canCreate)
     .cover
       .content
@@ -12,4 +12,4 @@
         p= t('newsfeed.welcome.body')
         a.btn.btn-default(href="/forums/new")
           = t('newsfeed.call-to-action.start-a-forum')
-          i.glyphicon.glyphicon-chevron-right
+          i.icon-arrow-right
