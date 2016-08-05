@@ -190,9 +190,9 @@
   },
   "scripts": {
     "start": "NODE_PATH=. node index.js",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "clean": "gulp clean",
+    "build": "NODE_PATH=. gulp build",
+    "watch": "NODE_PATH=. gulp watch",
+    "clean": "NODE_PATH=. gulp clean",
     "heroku-postbuild": "gulp build --minify",
     "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
   }
