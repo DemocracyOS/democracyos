@@ -31,6 +31,10 @@
     "port": 443,
     "redirect": "normal"
   },
+  "certbot": {
+    "key": "",
+    "token": ""
+  },
   "notifications": {
     "url": "",
     "token": "",

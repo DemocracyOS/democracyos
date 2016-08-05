@@ -171,6 +171,19 @@ Proxy redirection type to be used when redirecting the user from `HTTP` to `HTTP
 * `azure`: Redirection to HTTPS compatible with Windows Azure. Do NOT use outside Windows Azure; this can be easily spoofed outside their environment.
 * `no-redirect`: The redirection is not handled. Meant to be used on development only.
 
+### Let's Encrypt
+
+Values needed to be able to validate a certificate generated using Let's Encrypt's Certbot service. To use it, setup the following configuration options and follow [this](https://github.com/DemocracyOS/express-certbot-endpoint) instructions.
+
+#### **cerbot.key**
+* env: `CERTBOT_KEY`
+
+Certbot key needed when manually generating the certificate, should be something like `hvBj5jK2o3B6IpFhdrc8Q1OR6UeIl63_xXxXxXxXxXx`
+
+#### **cerbot.token**
+* env: `CERTBOT_TOKEN`
+
+Certbot token needed when manually generating the certificate, should be something like `msbwzok5NNPLg2BjLBIGVali8utyXrc95xXxXxXxXxX`
 
 ### Embebed Notifier Server
 
