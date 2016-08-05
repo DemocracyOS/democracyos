@@ -11,6 +11,8 @@ WORKDIR /usr/src
 
 RUN npm install --quiet --unsafe-perm
 
+ENV NODE_PATH=.
+
 EXPOSE 3000
 
 CMD ["./node_modules/.bin/gulp", "bws"]
