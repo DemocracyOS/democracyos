@@ -1,0 +1,70 @@
+li
+  &.active
+    a
+      color black
+      background #fff
+      .item-tag
+        img.hexagon
+          opacity 1
+
+    span.title
+      color inherit
+
+  a.voted
+    min-height 75px
+
+  a
+    display flex
+    color inherit
+    min-height 60px
+    padding 10px 20px
+    &:hover
+      background #fff
+  .item-tag
+    color white
+    position relative
+    img.hexagon
+      width 40px
+      height 40px
+      opacity .2
+      z-index 99
+      // polygon
+      //  fill #BDC3C7
+    img.tag-img
+      width 20px
+      height 20px
+      position absolute
+      z-index 100
+      width 30px
+      left 5px
+      top 8px
+  
+  .item-text
+    padding-left 10px
+
+    .item-badges
+      position absolute
+      left spacing + 7
+      top spacing + 34
+      color white
+
+      img
+        width 16px
+        height 12px
+        position absolute
+        z-index 100
+        left 5px
+        top 2px
+
+    span.title
+      font-size 15px
+      line-height 19px
+      font-weight 700
+      display block
+      margin-bottom 0px
+      color #666
+
+    span.created-by
+      font-size 11px
+      opacity .5
+      font-weight normal
