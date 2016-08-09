@@ -32,34 +32,18 @@ html(lang='en')
       include includes/remove-hash
 
   body
-    block body
-      #snap-content.snap-content
-        //- Start of `Page Content`
-        - var color = config.headerBackgroundColor;
-        - var headerClassName = config.headerContrast ? 'with-contrast' : '';
-        header.app-header(style=color ? 'background-color: #{color};' : '', class=headerClassName)
-        section#content.site-content
-          block content
-        section#browser.site-content
-          section.app-content
+    #root
 
-      aside.nav-proposal
-
-
-      //- End of `Page Content`
-      //- ======================
-      //- Start of `Javascripts`
-
-      //- Core 3rd parties libs
-      include includes/placeholders
-      //- General Site javascript
-      script.
-        window.config = !{JSON.stringify(client)};
-        window.config.locale = '#{locale}';
-        window.config.defaultForum = '#{defaultForum}';
-        window.translations = !{JSON.stringify(translations)};
-      - if (config.segmentKey)
-        include includes/segment
-      script(src='/site.js')
-      //- End of `Javascripts`
+    //- Core 3rd parties libs
+    include includes/placeholders
+    //- General Site javascript
+    script.
+      window.config = !{JSON.stringify(client)};
+      window.config.locale = '#{locale}';
+      window.config.defaultForum = '#{defaultForum}';
+      window.translations = !{JSON.stringify(translations)};
+    - if (config.segmentKey)
+      include includes/segment
+    script(src='/site.js')
+    //- End of `Javascripts`
   include includes/fonts
