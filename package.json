@@ -179,6 +179,7 @@
     "nomnom": "^1.8.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-router": "^2.6.1",
     "simple-line-icons": "^2.3.2",
     "supertest": "^1.1.0"
   },
