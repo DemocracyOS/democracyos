@@ -1,6 +1,6 @@
 ## Contributing to DemocracyOS
 
-If you have a question about DemocracyOS (not a bug report) please post it to our [mailing list](http://groups.google.com/group/democracyos-app).
+If you have a question about DemocracyOS (not a bug report) please post it to our [Gitter Channel](https://gitter.im/DemocracyOS/democracyos).
 
 
 ### Reporting bugs / Requesting features
@@ -17,7 +17,7 @@ Share as much information as possible. Include operating system and version, bro
 
 A good approach to a bug report is being very clear on how to reproduce it. Following this template might help (kudos to [@bastianhell](https://github.com/bastianhell):
 
-> 1. Run app with `make`
+> 1. Run app with `DEBUG='democracyos*' npm run start`
 > 2. Navigate to `/route`
 > 3. Click on `button` and see error in `console` output
 > 
@@ -30,31 +30,31 @@ A good approach to a bug report is being very clear on how to reproduce it. Foll
 
 To contribute code, start by forking our repo on github. You'll get something like this:
 ```
-https://github.com/user/app
+https://github.com/user/democracyos
 ```
 
 Then clone your fork:
 ```
-git clone git@github.com:user/app && cd app/
+git clone git@github.com:user/democracyos && cd democracyos/
 ```
 
 Add the official repo as a remote, to track changes:
 ```
-git remote add upstream git@github.com:DemocracyOS/app.git
+git remote add upstream git@github.com:DemocracyOS/democracyos.git
 ```
 
 Create a new branch for the changes you are going to contribute, with a relevant name. Some examples:
 ```
-git checkout -b feature/some-new-stuff
-git checkout -b fix/some-bug 
-git checkout -b remove/some-file
+git checkout -b feature-some-new-stuff
+git checkout -b fix-some-bug 
+git checkout -b remove-some-file
 ```
 
 Hack your changes: (you don't need to actually run this)
 ```
 vim somefile.txt
 git add somefile.txt
-git commit -a -m"adding somefile.txt"
+git commit -a -m "add somefile.txt"
 ```
 
 When you think your code is ready, prepare for pushing the code by first getting the changes from the main repo:
@@ -65,18 +65,18 @@ git pull --rebase upstream master
 
 After that you can push the changes to your fork, by doing:
 ```
-git push origin feature/some-new-stuff
-git push origin fix/some-bug
+git push origin feature-some-new-stuff
+git push origin fix-some-bug
 ```
 
-Finally go to `https://github.com/DemocracyOS/app` in the browser and issue a new pull request. Github normally recognizes you have pending changes in a new branch and will suggest creating the pull request.
+Finally go to `https://github.com/DemocracyOS/democracyos` in the browser and issue a new pull request. Github normally recognizes you have pending changes in a new branch and will suggest creating the pull request.
 
 Main contributors will review your code and possibly ask for changes before your code is pulled in to the main repository. We appreciate your time and efforts!
 
 #### General guidelines
 
-* We flag the issues to community participation as [help wanted](https://github.com/DemocracyOS/app/labels/help%20wanted), try to prioritize these.
-* Do not make a pull request withouth having run the app on your own. This means, you have to at least [smoke test](http://en.wikipedia.org/wiki/Smoke_testing_(software))  what you did. If you can include some tests with your PR, all the better.
+* We flag the issues to community participation as [help wanted](https://github.com/DemocracyOS/democracyos/labels/help%20wanted), try to prioritize these.
+* Do not make a pull request withouth having run the app on your own. This means, you have to at least [smoke test](http://en.wikipedia.org/wiki/Smoke_testing_(software)) what you did. If you can include some tests with your PR, all the better.
 * Try not to pollute your pull request with unintended changes. Keep them simple and small. Unrelated commits will prevent us from merging.
 * Pull requests should always be against the `master` branch.
 * All pull requests must comply with the project's coding styles explained here.
@@ -94,7 +94,6 @@ In general terms, we agree with almost everything said in this [blog post about 
 * Double quotes only, never single quotes.
 * Avoid trailing whitespace. Blank lines should not have any space.
 * Use CDNs and HTTPS for third-party JS when possible. We don't use protocol-relative URLs in this case because they break when viewing the page locally via file://.
-* Only use third-party JS when there is no [component](https://github.com/component/component/wiki/Components) available for it.
 
 #### Stylesheets
 
@@ -118,4 +117,3 @@ In general terms, we agree with almost everything said in this [blog post about 
   * `for (..) {`
   * `while (..) {`
   * `function (err) {`
-* Always `'string' === type(el)` instead of `type(el) === 'string'`
