@@ -65,7 +65,7 @@
         - each link in proposal.links
           p
             span.glyphicon.glyphicon-share
-            a(target="_blank", href=link.url)=link.text
+            a(target="_blank", href=link.url, data-topic-link)=link.text
 
     //- Article participants
     .participants(class=proposal.votable ? '' : 'hide')
