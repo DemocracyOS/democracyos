@@ -22,6 +22,8 @@
     "sendgrid:starter"
   ],
   "env": {
+    "HTTPS_REDIRECT": "reverse-proxy",
+    "PROTOCOL": "https",
     "JWT_SECRET": {
       "description": "A secret key for verifying the integrity of signed cookies",
       "generator": "secret"
