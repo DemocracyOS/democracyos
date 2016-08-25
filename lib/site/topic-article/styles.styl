@@ -1,17 +1,18 @@
-border_radius = 2px
+.topic-article-wrapper>*
+  max-width 700px
+  width 90%
 
 .topic-article-wrapper
-  padding 0 20px
-  height 100%
   overflow auto
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex 1
-  margin 0 auto
-  max-width 750px
-  width 80%
   @import './header/styles'
   @import './content/styles'
   @import './footer/styles'
   @import './decision-maker/styles'
+  @import './participants/styles'
 
 .embed-container
   position relative
@@ -29,3 +30,6 @@ border_radius = 2px
     width 100%
     height 100%
     border none
+// @media screen and (max-width: 700px)
+//   .topic-article-wrapper>*
+//     
