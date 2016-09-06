@@ -10,6 +10,7 @@
 .idea/*
 .npmrc
 .tmp
+.project
 config*.json
 lib-cov
 logs
