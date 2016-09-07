@@ -1,20 +1,32 @@
-.no-topics
-  margin 90px auto
-  width 70%
-  color #333
-  font-weight 500
-
-.browser-page
-  .create-first-topic
-    margin 50px auto
-    width 65%
-    padding-top .8em
-    padding-bottom .6em
-    border-radius 3px
-    text-transform none
-    font-size 1em
-
-@media only screen and (max-width: 700px)
-  .no-topics,
-  .create-first-topic
-    width 90%
+#home-multiforum
+  background #f0f0f0
+  .forum-info
+    width 100%
+    display flex
+    align-items center
+    flex-direction column
+    .content
+      a
+        float right
+        margin-top 20px
+        span
+          font-size 13px
+          margin-left 10px
+  .cover
+    padding-top 30px
+    min-height 300px
+    font-size 16px
+    color #f9f9f9
+    background-size cover
+    background-repeat no-repeat
+    background-position center top
+    background-image unquote("url('https://democracyosorg.s3.amazonaws.com/cover-hands.jpg')")
+  #forum-list
+    min-width 600px
+    .msg-empty
+      text-align center
+      background #e4e4e4
+      padding 40px 0
+      color #808080
+      font-size 17px
+@import './forum-card/styles'
