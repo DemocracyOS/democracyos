@@ -173,6 +173,7 @@
     "arr-diff": "^1.0.1",
     "babel-preset-react": "^6.11.1",
     "bootstrap": "^4.0.0-alpha.3",
+    "geopattern": "^1.2.3",
     "google-translate": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-jasmine": "^2.2.1",
