@@ -1,4 +1,6 @@
 {
+  "privileges-alert.not-can-view": "Esta es una Democracia Secreta, necesitas permiso para participar.",
+  "privileges-alert.not-can-vote-and-comment": "Esta es una Democracia restringida, necesitas permiso para participar.",
   "404.back-to-democracyos": "vuelve a DemocracyOS",
   "404.go-back-to": "vuelve a",
   "404.not-exists": "Esta página no existe",
