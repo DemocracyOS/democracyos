@@ -7,16 +7,22 @@ border_radius = 3px
   margin 30px 0
   position relative
   .overlay-vote
+    position absolute
+    left 0
+    top 0
+    height 100%
+    width 100%
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
     background-color rgba(249, 249, 249, 0.9)
     font-weight bold
-    height 100%
-    left 0
-    padding-top 35px
-    position absolute
     text-align center
-    top 0
-    width 100%
-
+    span.icon-lock
+      font-size 20px
+    span.text
+      max-width 500px
   .vote-options
     .proxy-vote
       display inline-block
