@@ -1,4 +1,10 @@
 
+1.4.0 / 2016-08-05
+==================
+
+  * Add Let's Ecnrypt tool for free certificates generation #1278
+  * Remove jQuery from site and settings modules :D
+
 1.3.0 / 2016-08-01
 ==================
 

@@ -37,6 +37,18 @@
     },
     "HOST": {
       "description": "Public accessible URL to your app. For example: 'heroku-app-name.herokuapp.com'."
+    },
+    "PROTOCOL": {
+      "value": "https",
+      "description": "Set protocol to https:. Heroku supports this by default. Normally you shouldn't change it."
+    },
+    "HTTPS_REDIRECT": {
+      "value": "reverse-proxy",
+      "description": "This option forces the redirection from http: to https:. Normally you shouldn't change it."
+    },
+    "DEBUG": {
+      "value": "democracyos*",
+      "description": "Recommended default value for server logging, to see it run `heroku logs --tail` on your terminal."
     }
   }
 }

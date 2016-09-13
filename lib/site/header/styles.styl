@@ -20,18 +20,18 @@ aside.nav-proposal.content-pinned
   overflow-y auto
 
 header.app-header
-  position relative
-  z-index 20
+  position static
   top 0
   left 0
   right 0
-  height header_height
   background #64476e
   color white
   padding-left spacing
   font-weight bold
   text-transform uppercase
   font-size 12px
+  height header_height
+  width 100%
 
   &.with-contrast
     box-shadow 0 2px 2px #d5d5d5
@@ -70,7 +70,7 @@ header.app-header
 
   img.logo-mobile
     display none
-  
+
   img.logo-desk
     display inline-block
   .user-nav
