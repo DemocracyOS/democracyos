@@ -1,4 +1,10 @@
 
+1.4.1 / 2016-09-14
+==================
+
+  * Fix Italian translations, thanks to @GillesChamp #1289
+  * Fix build command - validate default export was duplicated
+
 1.4.0 / 2016-08-05
 ==================
 
