@@ -1,13 +1,17 @@
 @font-face {
-  font-family: 'simple-line-icons';
-  src: url('/Simple-Line-Icons.eot?v=2.3.2');
-  src: url('/Simple-Line-Icons.eot?v=2.3.2#iefix') format('embedded-opentype'), url('/Simple-Line-Icons.woff2?v=2.3.2') format('woff2'), url('/Simple-Line-Icons.ttf?v=2.3.2') format('truetype'), url('/Simple-Line-Icons.woff?v=2.3.2') format('woff'), url('/Simple-Line-Icons.svg?v=2.3.2#simple-line-icons') format('svg');
+  font-family: "simple-line-icons";
+  src: url("/Simple-Line-Icons.eot?v=2.3.2");
+  src: url("/Simple-Line-Icons.eot?v=2.3.2#iefix") format("embedded-opentype"),
+  url("/Simple-Line-Icons.woff2?v=2.3.2") format("woff2"),
+  url("/Simple-Line-Icons.ttf") format("truetype"),
+  url("/Simple-Line-Icons.woff") format("woff"),
+  url("/Simple-Line-Icons.svg#simple-line-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 /*
  Use the following CSS code if you want to have a class per icon.
- Instead of a list of all class selectors, you can use the generic [class*="icon-"] selector, but it's slower:
+ Instead of a list of all class selectors, you can use the generic [class*="icon-"] selector, but it"s slower:
 */
 .icon-user,
 .icon-people,
@@ -195,7 +199,7 @@
 .icon-social-stumbleupon,
 .icon-social-youtube,
 .icon-social-dropbox {
-  font-family: 'simple-line-icons';
+  font-family: "simple-line-icons";
   speak: none;
   font-style: normal;
   font-weight: normal;
