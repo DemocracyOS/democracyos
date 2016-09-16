@@ -49,6 +49,7 @@ header.app-header
       height 3px
       margin-bottom 5px
       display block
+      background #fff
 
   a
      color white
@@ -77,6 +78,7 @@ header.app-header
   .user-nav
     position static
     display flex
+    align-items center
     float none
     margin 0
     @import './anon-user/styles'
@@ -101,19 +103,20 @@ vendors(prop, args, fn = null)
 
 @media screen and (max-width: 700px)
   header.app-header
-    padding-left: 0
     #toggleButton
-      display: block
+      display block
+    .org-url
+      display none
     h1#logo
-      text-align: center
-      width: auto
-      display: block
+      width 100%
+      position absolute
+      left 0
     img.logo
-      margin: auto
-      margin-top: -2px
+      margin auto
+      margin-top -2px
     img.logo-mobile
       display inline-block
     img.logo-desk
       display none
     .logo-link
-      display: none
+      display none
