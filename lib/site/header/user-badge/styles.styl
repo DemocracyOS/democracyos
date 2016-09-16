@@ -1,90 +1,100 @@
 .user
+  display flex
   .user-wrapper.can-change-forum
     .admin-link
       display block
-  .user-wrapper
-    display flex
-    .user-badge,
-    .notifications-badge
-      position relative
+  .user-badge,
+  .notifications-badge
+    position relative
 
-      &.active
-        .btn
-          background rgba(0,0,0,.1)
-        .dropdown-list
-          display block
-
+    &.active
       .btn
-        color white
-        height 60px
-        border-radius 0
-        background none
-        padding 13px 12px
-        .caret
-          margin-left 6px
-
+        background rgba(0,0,0,.1)
       .dropdown-list
+        display block
+
+    .btn
+      color white
+      height 60px
+      border-radius 0
+      background none
+      padding 13px 12px
+      .caret
+        margin-left 6px
+        margin-top 0!important
+
+    .dropdown-list
+      display none
+      position fixed
+      right 20px
+      z-index 1000
+      padding 5px 0
+      width auto
+      font-size 14px
+      list-style none
+      border 1px solid rgba(#000,.15)
+      box-shadow 1px 1px 4px -1px rgba(#000, .175)
+      background-color #f9f9f9
+
+      a
+        display block
+        clear both
+        padding 10px 20px
+        line-height 1.5
+        color black
+        text-transform none
+        font-weight bold
+        text-decoration none
+
+        &:hover
+          background #2c3e50
+          color white
+      .admin-link
         display none
-        position fixed
-        right 20px
-        z-index 1000
-        padding 5px 0
-        width auto
-        font-size 14px
-        list-style none
-        border 1px solid rgba(#000,.15)
-        box-shadow 1px 1px 4px -1px rgba(#000, .175)
-        background-color #f9f9f9
+      .notifications-li
+        display none
+    .profile,
+    .notifications
+      img
+        width 32px
+        border-radius 100px
+      span.name,
+      span.bell
+        display inline
+        margin-left 10px
+        font-weight bold
+        font-size 12px
+        line-height 37px
+        padding-top 4px
+        padding-right 12px
+        max-width 150px
 
-        a
-          display block
-          clear both
-          padding 10px 20px
-          line-height 1.5
-          color black
-          text-transform none
-          font-weight bold
-          text-decoration none
-
-          &:hover
-            background #2c3e50
-            color white
-        .admin-link
-          display none
-      .profile,
-      .notifications
-        img
-          width 32px
-          border-radius 100px
-        span.name,
-        span.bell
-          display inline
-          margin-left 10px
-          font-weight bold
-          font-size 12px
-          line-height 37px
-          padding-top 4px
-          padding-right 12px
-          max-width 150px
-
-        span.bell
-          margin 0
-          padding-right 0
-          font-size 15px
-          &:before
-            transform s("rotate(%s)", -25deg)
-        .caret
-          margin-top -3px
+      span.bell
+        margin 0
+        padding-right 0
+        font-size 15px
+        &:before
+          transform s("rotate(%s)", -25deg)
+      .caret
+        margin-top -3px
 @media screen and (max-width: 700px)
   .caret
     display: none
   .btn
     border: 0
-  .profile span.name
-    display: none
+  .profile
+    .name
+      display: none!important
+    .caret
+      display none!important
   .login
     margin-left: 10px
     span
       display: none
     i
       display: inline-block
+  .notifications-badge
+    display none
+  .dropdown-list
+    .notifications-li
+      display block!important
