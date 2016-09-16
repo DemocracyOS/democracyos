@@ -6,3 +6,14 @@
   background #f0f0f0
   @import './filter/styles'
   @import './list/styles'
+
+@media screen and (max-width: 700px)
+  #sidebar
+    position absolute
+    height 100%
+    z-index 9
+    width 300px
+    transform unquote("translate3d(-100%, 0, 0)")
+    transition: all 300ms ease-in-out
+  #sidebar.active
+    transform unquote("translate3d(0, 0, 0)")
