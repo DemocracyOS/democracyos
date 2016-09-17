@@ -199,6 +199,7 @@
   "header.settings": "Settings",
   "header.signin": "Login",
   "header.signup": "Signup",
+  "header.insecure-warning": "Warning: You are using an insecure version of democracyos. See the docs for details on implementing SSL.",
   "help.faq.title": "FAQ",
   "help.glossary.title": "Glossary",
   "help.markdown.title": "Formatting help",

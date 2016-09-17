@@ -28,13 +28,22 @@ header.app-header
   top 0
   left 0
   right 0
-  height header_height
   background #64476e
   color white
-  padding-left spacing
   font-weight bold
   text-transform uppercase
   font-size 12px
+
+  #header-container
+    height header_height
+    padding-left spacing
+
+  .ssl-warning
+    padding spacing
+    background-color #c0392b
+    width 100%
+    position fixed
+    bottom 0
 
   &.with-contrast
     box-shadow 0 2px 2px #d5d5d5
