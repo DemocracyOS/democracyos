@@ -184,7 +184,8 @@
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
     "nomnom": "^1.8.1",
-    "supertest": "^1.1.0"
+    "supertest": "^1.1.0",
+    "xo": "^0.16.0"
   },
   "main": "pdr",
   "engines": {
@@ -198,5 +199,20 @@
     "clean": "NODE_PATH=. gulp clean",
     "heroku-postbuild": "NODE_PATH=. gulp build --minify",
     "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
+  },
+  "xo": {
+    "space": 2,
+    "semicolon": false,
+    "env": [
+      "node",
+      "es6",
+      "browser"
+    ],
+    "rules": {
+      "babel/arrow-parens": 0,
+      "import/no-extraneous-dependencies": 0,
+      "curly": ["error", "multi-line"],
+      "space-before-function-paren": ["error", "always"]
+    }
   }
 }
