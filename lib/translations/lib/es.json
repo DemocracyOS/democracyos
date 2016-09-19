@@ -170,6 +170,7 @@
   "header.settings": "Configuración",
   "header.signin": "Ingresar",
   "header.signup": "Registrarse",
+  "header.insecure-warning": "Atención: Estás usando una version insegura de DemocracyOS. Lee la documentación para mas detalles de como implementar SSL.",
   "help.faq.title": "Preguntas frecuentes",
   "help.glossary.title": "Glosario",
   "help.markdown.title": "Ayuda de edición",
