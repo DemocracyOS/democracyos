@@ -1,0 +1,53 @@
+#resend-form
+  max-width 450px
+  width 90%
+#resend-message
+  max-width 590px
+  width 90%
+#validating-message
+  .circle
+    position relative
+    .loader
+      position absolute
+      left 17px
+      top 17px
+      border-radius 100%
+      width boxSize * 1px
+      height boxSize * 1px
+      box-shadow boxSize*1px boxSize*1px color2,
+        boxSize*-1px boxSize*1px color,
+        boxSize*-1px boxSize*-1px color2,
+        boxSize*1px boxSize*-1px color
+      animation spin ease infinite 4s
+      transition-property opacity
+
+    @-webkit-keyframes spin {
+      0%,
+      100% {
+          box-shadow: boxSize*1px boxSize*1px color2,
+          boxSize*-1px boxSize*1px color,
+          boxSize*-1px boxSize*-1px color2,
+          boxSize*1px boxSize*-1px color
+      }
+
+      25% {
+          box-shadow: boxSize*-1px boxSize*1px color,
+          boxSize*-1px boxSize*-1px color2,
+          boxSize*1px boxSize*-1px color,
+          boxSize*1px boxSize*1px color2
+      }
+
+      50% {
+          box-shadow: boxSize*-1px boxSize*-1px color2,
+          boxSize*1px boxSize*-1px color,
+          boxSize*1px boxSize*1px color2,
+          boxSize*-1px boxSize*1px color
+      }
+
+      75% {
+          box-shadow: boxSize*1px boxSize*-1px color,
+          boxSize*1px boxSize*1px color2,
+          boxSize*-1px boxSize*1px color,
+          boxSize*-1px boxSize*-1px color2
+      }
+    }
