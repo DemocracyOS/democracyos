@@ -364,6 +364,7 @@
   "signup.retype-password": "Re-type password",
   "signup.user-already-validated": "This user already validated the email address",
   "signup.validation-email-resent": "The validation email was resent.",
+  "signup.validating": "Validating account.",
   "signup.welcome": "Welcome, {name}!",
   "signup.whitelist.email": "Email {email} is not allowed by admin",
   "signup.with-email": "Signup with email",
