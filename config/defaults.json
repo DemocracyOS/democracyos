@@ -1,6 +1,7 @@
 {
   "locale": "en",
   "protocol": "http",
+  "warnHTTP": true,
   "host": "localhost",
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
@@ -79,7 +80,8 @@
     "tweetText",
     "segmentKey",
     "spamLimit",
-    "availableLocales"
+    "availableLocales",
+    "warnHTTP"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
