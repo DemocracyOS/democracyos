@@ -1,4 +1,9 @@
 
+1.4.2 / 2016-09-19
+==================
+
+  * Add insecure warning message to pages, Thanks @dkaoster! #1285
+
 1.4.1 / 2016-09-14
 ==================
 
