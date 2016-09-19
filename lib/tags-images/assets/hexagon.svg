@@ -1,0 +1,22 @@
+<svg 
+    viewBox="0 0 126 144"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+    class="hexagon" >
+    <title>Hexagon</title>
+    <g 
+      id="Page-1"
+      stroke="none"
+      stroke-width="1"
+      fill="none"
+      fill-rule="evenodd"
+      sketch:type="MSPage" >
+      <polygon 
+        id="Polygon-1"
+        fill="#091A33"
+        d="M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0" sketch:type="MSShapeGroup" points="63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 " >
+      </polygon>
+    </g>
+  </svg>
