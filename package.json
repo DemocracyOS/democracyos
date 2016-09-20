@@ -109,7 +109,6 @@
     "democracyos-wrap": "~0.0.2",
     "domify": "^1.3.3",
     "errorhandler": "1.4.3",
-    "eslint": "0.22.1",
     "express": "4.14.0",
     "express-certbot-endpoint": "~1.0.0",
     "express-sslify": "0.1.1",
@@ -184,6 +183,9 @@
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
+    "eslint": "^3.5.0",
+    "eslint-config-xo-react": "^0.9.0",
+    "eslint-plugin-react": "^6.3.0",
     "google-translate": "^1.0.0",
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
@@ -206,18 +208,29 @@
     "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
   },
   "xo": {
-    "space": 2,
-    "semicolon": false,
+    "extends": "xo-react",
     "env": [
       "node",
       "es6",
       "browser"
     ],
+    "space": 2,
+    "semicolon": false,
     "rules": {
       "babel/arrow-parens": 0,
       "import/no-extraneous-dependencies": 0,
-      "curly": ["error", "multi-line"],
-      "space-before-function-paren": ["error", "always"]
+      "curly": [
+        "error",
+        "multi-line"
+      ],
+      "space-before-function-paren": [
+        "error",
+        "always"
+      ],
+      "jsx-quotes": [
+        "error",
+        "prefer-single"
+      ]
     }
   }
 }
