@@ -219,6 +219,10 @@
         "error",
         "multi-line"
       ],
+      "object-curly-spacing": [
+        "error",
+        "never"
+      ],
       "space-before-function-paren": [
         "error",
         "always"
