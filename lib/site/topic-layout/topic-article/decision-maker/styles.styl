@@ -5,6 +5,8 @@ border_radius = 3px
 -------------------------------------------------- */
 .proposal-options
   position relative
+  .alert
+    margin 20px 0 10px
   .overlay-vote
     position absolute
     left 0
@@ -65,8 +67,19 @@ border_radius = 3px
 
       &.delegate-vote
         background-color #3498db
-
-
+  .change-vote
+    font-size 16px
+    color black
+    font-weight bold
+    margin-bottom 10px
+    display block
+    i
+      margin-right 7px
+      position relative;
+      top 2px
+      font-size 13px
+    &:hover
+      text-decoration none
   .vote-box, .results-box
     background white
     padding 20px 0
@@ -80,16 +93,6 @@ border_radius = 3px
       color: black
     .meta-data
       margin-bottom 20px
-    .change-vote
-      font-size 16px
-      color black
-      font-weight bold
-      i
-        margin-right 7px
-        position relative;
-        top 2px
-      &:hover
-        text-decoration none
     .secret-results
       margin-right 6px
     .secret-results:before
