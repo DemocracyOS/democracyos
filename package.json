@@ -230,6 +230,24 @@
       "jsx-quotes": [
         "error",
         "prefer-single"
+      ],
+      "react/prop-types": 0,
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/jsx-closing-bracket-location": [
+        "error",
+        {"selfClosing": "after-props"}
+      ],
+      "react/jsx-space-before-closing": [
+        "error",
+        "always"
       ]
     }
   }
