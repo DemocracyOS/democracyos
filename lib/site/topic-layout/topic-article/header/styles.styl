@@ -1,51 +1,38 @@
 header
   margin-top 20px
+  position relative
   h1
     margin-top 0
 
   .entry-tag
-    font-weight bold
-    font-size 11px
-    text-transform uppercase
-    text-align center
     position absolute
-    left -140px
-    width 100px
-    top 44px
-
-    img
-      width 40px
-      height 40px
-      left 30px
-      top 20px
-      position absolute
-
-    .hexagon
+    top 50px
+    transform unquote("translate3d(-150%,0,0)")
+    .tag-image-wrapper
+      position relative
       width 80px
-      height 80px
+      display flex
+      justify-content center
+      align-items center
+      .tag-image
+        z-index 1
+        position relative
+        width 34px
+        height 34px
+      .hexagon
+        position absolute
+        left 0
+        top -18px
+        z-index 0
+        width 80px
+        max-width none
+        height 80px
+    h4
+      text-align center
+      margin 35px 0 0 0
+      text-transform uppercase
+      font-size 11px
 
-    @media screen and (max-width: 1100px)
-      position: static
-      width: auto
-      padding-bottom: 10px
-      margin-bottom: 20px
-      text-align: left
-      border-bottom: 4px solid rgba(#000, .8)
-
-      svg.hexagon
-        left: 0
-        position: absolute
-        display: none
-      img
-        z-index: 100
-        left: 20px
-        display: none
-
-      span
-        font-size: 14px
-        margin-left: 0
-        padding-top: 10px
-        display: inline-block
 
   h2.author
     color #666
@@ -58,8 +45,9 @@ header
     color #666
     font-size 16px
 
-    .icon-time
+    .icon-clock
       margin-right 6px
+      font-size 13px
 
     .meta-timeago,
     .meta-timeago-label
@@ -69,3 +57,7 @@ header
       display inline-block
       margin-right 10px
       border-radius 0
+
+@media screen and (max-width: 1157px)
+  .entry-tag
+    display none
