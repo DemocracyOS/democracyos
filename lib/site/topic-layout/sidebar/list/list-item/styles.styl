@@ -1,18 +1,13 @@
-li
-  &.active
-    a
-      color black
-      background #fff
-      .item-tag
-        img.hexagon
-          opacity 1
-
-    span.title
-      color inherit
-
+li.sidebar-link
   a.voted
     min-height 75px
-
+  a.active
+    background #fff
+    span.title
+      color #444
+    .item-tag
+      img.hexagon
+        opacity 1
   a
     display flex
     color inherit
@@ -28,8 +23,6 @@ li
       height 40px
       opacity .2
       z-index 99
-      // polygon
-      //  fill #BDC3C7
     img.tag-img
       width 20px
       height 20px
@@ -38,7 +31,7 @@ li
       width 30px
       left 5px
       top 8px
-  
+
   .item-text
     padding-left 10px
     position relative
