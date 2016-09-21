@@ -1,4 +1,10 @@
 
+1.4.4 / 2016-09-21
+==================
+
+  * Add a random jwtSecret when not configured
+  * Sanitize HTML from comments #1304
+
 1.4.3 / 2016-09-20
 ==================
 
