@@ -1,18 +1,25 @@
-.topic-article-wrapper>*
-  max-width 600px
-  width 90%
-
 .topic-article-wrapper
   overflow auto
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex 1
+
+  @media screen and (max-width 700px)
+    .topic-overlay
+      background rgba(0,0,0,0.5)
+      position fixed
+      top 0
+      right 0
+      width 100%
+      height 100%
+      z-index 1
+
   @import './header/styles'
   @import './content/styles'
   @import './footer/styles'
   @import './decision-maker/styles'
   @import './participants/styles'
+
+.topic-article-content
+  max-width 600px
+  margin 0 auto
 
 .embed-container
   position relative
@@ -30,13 +37,3 @@
     width 100%
     height 100%
     border none
-@media screen and (max-width: 700px)
-  .topic-article-wrapper
-    .topic-overlay
-      background rgba(0,0,0,0.5)
-      position fixed
-      top 0
-      right 0
-      width 100%
-      height 100%
-      z-index 1
