@@ -31,14 +31,23 @@ To run it on **Windows** you must use [Docker](https://www.docker.io/). In the [
 
 ## Install
 
-### Unix and OS/X
+### Unix and OS/X with default settings
 
-- [Fork](http://help.github.com/articles/fork-a-repo) or download this repository.
+-  [git-clone](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html) or download
+[this repository](https://github.com/DemocracyOS/democracyos). The
+recommended directory to host DemocracyOS on your system is ```/opt```.
 - `cd` to the project's location
-- Make sure MongoDB is running and reachable as configured in `config/development.json`. (Default values should work)
-- Set up your [configuration](configuration.md), and add your email as [staff](configuration.md#-staff-) to be able to initialize your app.
+- Make sure MongoDB is running and reachable as configured in `config/defaults.json`.
+- For the moment, keep the defaults settings. They work for a basic case. You will change
+the [configuration file](http://docs.democracyos.org/configuration.html) content latter
+accordingly your needs.
+- DemocracyOS build requires **python2**. Check what python version your system is running with
+this command: ```$ python -V```. If output indicates you are running python 3,
+run: ```$ npm config set python python2.7```(change python version accordingly to your installed version).
+
+Your ```.npmrc``` file have now this line: ```python=/usr/bin/python2.7```.
 - Run `make`
-- Boom! DemocracyOS should be running on port 3000.
+- Boom! DemocracyOS should be running on ```http://localhost:3000```.
 
 > Please refer to the [Configuration](configuration.md) section to customize settings
 
@@ -53,7 +62,86 @@ make run
 
 Take a look at the [Makefile](https://github.com/DemocracyOS/app/blob/master/Makefile) for more information about the possible tasks you can run.
 
-You can check the current DemocracyOS version going to `http://localhost:3000/api`
+### Start/stop DemocracyOS service with systemd
+
+ - Edit the following files:
+
+```
+/etc/systemd/system/democracyos.service
+-------------------------------------
+[Unit]
+Description=democracyos Service
+Wants=mongodb.service
+After=mongodb.service
+
+[Service]
+User=democracyos
+EnvironmentFile=/etc/democracyos.conf
+ExecStart=/usr/bin/gulp --cwd /opt/democracyos
+
+[Install]
+WantedBy=default.target
+```
+_**NOTE**_:
+In the Execstart line, change your democracy directory location accordingly
+```
+/etc/democracyos.conf
+---------------------
+GITHUB_USERNAME=<Your Github username>
+GITHUB_PASSWORD=<Your github password>
+NODE_PATH=.
+STAFF='your email address'
+```
+
+
+- Create democracyos user
+
+We want to create a system user without home directory and shell access.
+```
+useradd -r -s /usr/bin/nologin democracyos
+```
+
+- chown democracyos directory
+
+We want to run democracyOS service as a simple user. To achieve this, democracyos user shall be able to read/write/execute the democracyOS directory.
+
+```
+# chown -R democracyos:wheel /opt/democracyos
+```
+
+- Start the service
+
+Start democracyOS service with this command:
+
+```
+# systemctl start democracyos.service
+```
+
+- Verify the service is running
+
+```
+$ systemctl status democracyos.service
+.....................................
+● democracyos.service - democracyos Service
+   Loaded: loaded (/etc/systemd/system/democracyos.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sun 2016-09-25 15:42:17 CEST; 16min ago
+ Main PID: 8025 (gulp)
+   CGroup: /system.slice/democracyos.service
+           ├─8025 gulp                                                              
+           └─8035 node index.js
+
+Sep 25 15:43:09 hortensia gulp[8025]: Sun, 25 Sep 2016 13:43:09 GMT democracyos:notifier initializing agenda...
+Sep 25 15:43:09 hortensia gulp[8025]: Sun, 25 Sep 2016 13:43:09 GMT democracyos:notifier agenda initialized.
+Sep 25 15:43:09 hortensia gulp[8025]: Sun, 25 Sep 2016 13:43:09 GMT democracyos:server Embedded notifications service started
+Sep 25 15:43:09 hortensia gulp[8025]: Sun, 25 Sep 2016 13:43:09 GMT democracyos:root DemocracyOS server running...
+```
+
+- Enable the service at boot
+
+```
+# systemctl enable democracyos
+```
+
 
 ### Using SSL
 
