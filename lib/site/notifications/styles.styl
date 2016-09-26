@@ -11,21 +11,24 @@
     p
       margin 0
       color #555
-// @media only screen and (max-width: 600px)
-//   max-width 100%
-//   padding 0 10px
-
-  
-// table
-//   tr
-//     cursor pointer
-//   td
-//     vertical-align middle !important
-
-//   img
-//     max-height 40px
-//     max-width 40px
-//     border-radius 50%
-
-//   .small
-//     font-size 75%
+  .notification-link
+    display flex
+    align-items center
+    color #555
+    padding 20px 0
+    border-top 1px solid #ccc
+    .notification-content
+      flex 1
+      span
+        margin-right 5px
+      p.ago
+        margin 0
+    .verb, .on
+      font-weight 100
+    .notification-icon
+      font-size 20px
+      margin-right 20px
+    img
+      border-radius 50%
+      width 30px
+      height 30px
