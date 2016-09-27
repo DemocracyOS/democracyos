@@ -7,7 +7,6 @@
   @import './footer/styles'
   @import './decision-maker/styles'
   @import './participants/styles'
-
 .topic-overlay
   position fixed
   top 0
@@ -51,3 +50,54 @@
     width 100%
     button
       margin-top 20px
+
+boxSize = 15
+color = #333
+color2 = #999
+.loader-wrapper
+  position relative
+  flex 1
+  .loader
+    position absolute
+    left 50%
+    top 50%
+    border-radius 100%
+    width boxSize * 1px
+    height boxSize * 1px
+    box-shadow boxSize*1px boxSize*1px color2,
+    boxSize*-1px boxSize*1px color,
+    boxSize*-1px boxSize*-1px color2,
+    boxSize*1px boxSize*-1px color
+    animation spin ease infinite 4s
+    transition-property opacity
+
+    @-webkit-keyframes spin {
+      0%,
+      100% {
+        box-shadow: boxSize*1px boxSize*1px color2,
+        boxSize*-1px boxSize*1px color,
+        boxSize*-1px boxSize*-1px color2,
+        boxSize*1px boxSize*-1px color
+      }
+
+      25% {
+        box-shadow: boxSize*-1px boxSize*1px color,
+        boxSize*-1px boxSize*-1px color2,
+        boxSize*1px boxSize*-1px color,
+        boxSize*1px boxSize*1px color2
+      }
+
+      50% {
+        box-shadow: boxSize*-1px boxSize*-1px color2,
+        boxSize*1px boxSize*-1px color,
+        boxSize*1px boxSize*1px color2,
+        boxSize*-1px boxSize*1px color
+      }
+
+      75% {
+        box-shadow: boxSize*1px boxSize*-1px color,
+        boxSize*1px boxSize*1px color2,
+        boxSize*-1px boxSize*1px color,
+        boxSize*-1px boxSize*-1px color2
+      }
+    }
