@@ -51,53 +51,53 @@
     button
       margin-top 20px
 
-boxSize = 15
-color = #333
-color2 = #999
+topicBoxSize = 6
+topicColor = #333
+topicColor2 = #999
 .loader-wrapper
   position relative
   flex 1
-  .loader
+  .topic-loader
     position absolute
     left 50%
     top 50%
     border-radius 100%
-    width boxSize * 1px
-    height boxSize * 1px
-    box-shadow boxSize*1px boxSize*1px color2,
-    boxSize*-1px boxSize*1px color,
-    boxSize*-1px boxSize*-1px color2,
-    boxSize*1px boxSize*-1px color
-    animation spin ease infinite 4s
+    width topicBoxSize * 1px
+    height topicBoxSize * 1px
+    box-shadow topicBoxSize*1px topicBoxSize*1px topicColor2,
+    topicBoxSize*-1px topicBoxSize*1px topicColor,
+    topicBoxSize*-1px topicBoxSize*-1px topicColor2,
+    topicBoxSize*1px topicBoxSize*-1px topicColor
+    animation topic-loader-spin ease infinite 4s
     transition-property opacity
 
-    @-webkit-keyframes spin {
+    @-webkit-keyframes topic-loader-spin {
       0%,
       100% {
-        box-shadow: boxSize*1px boxSize*1px color2,
-        boxSize*-1px boxSize*1px color,
-        boxSize*-1px boxSize*-1px color2,
-        boxSize*1px boxSize*-1px color
+        box-shadow: topicBoxSize*1px topicBoxSize*1px topicColor2,
+        topicBoxSize*-1px topicBoxSize*1px topicColor,
+        topicBoxSize*-1px topicBoxSize*-1px topicColor2,
+        topicBoxSize*1px topicBoxSize*-1px topicColor
       }
 
       25% {
-        box-shadow: boxSize*-1px boxSize*1px color,
-        boxSize*-1px boxSize*-1px color2,
-        boxSize*1px boxSize*-1px color,
-        boxSize*1px boxSize*1px color2
+        box-shadow: topicBoxSize*-1px topicBoxSize*1px topicColor,
+        topicBoxSize*-1px topicBoxSize*-1px topicColor2,
+        topicBoxSize*1px topicBoxSize*-1px topicColor,
+        topicBoxSize*1px topicBoxSize*1px topicColor2
       }
 
       50% {
-        box-shadow: boxSize*-1px boxSize*-1px color2,
-        boxSize*1px boxSize*-1px color,
-        boxSize*1px boxSize*1px color2,
-        boxSize*-1px boxSize*1px color
+        box-shadow: topicBoxSize*-1px topicBoxSize*-1px topicColor2,
+        topicBoxSize*1px topicBoxSize*-1px topicColor,
+        topicBoxSize*1px topicBoxSize*1px topicColor2,
+        topicBoxSize*-1px topicBoxSize*1px topicColor
       }
 
       75% {
-        box-shadow: boxSize*1px boxSize*-1px color,
-        boxSize*1px boxSize*1px color2,
-        boxSize*-1px boxSize*1px color,
-        boxSize*-1px boxSize*-1px color2
+        box-shadow: topicBoxSize*1px topicBoxSize*-1px topicColor,
+        topicBoxSize*1px topicBoxSize*1px topicColor2,
+        topicBoxSize*-1px topicBoxSize*1px topicColor,
+        topicBoxSize*-1px topicBoxSize*-1px topicColor2
       }
     }
