@@ -40,7 +40,6 @@ border_radius = 3px
       padding 14px
       line-height 1.1
       -webkit-transition all 0.3s ease
-
       .flaticon
         display inline-block
         margin-right 14px
@@ -59,14 +58,24 @@ border_radius = 3px
           transform s("rotate(%s)", 180deg)
           -ms-transform s("rotate(%s)", 180deg) /* IE 9 */
           -webkit-transform s("rotate(%s)", 180deg)
-
       &.vote-abstain
         background-color #666
         &:hover
           background-color darken(#666666, 40%)
-
       &.delegate-vote
         background-color #3498db
+
+    @media screen and (max-width: 800px) and (min-width: 700px)
+      .vote-option
+        display block
+        width 100%
+        margin 10px 0 0 0
+    @media screen and (max-width: 530px)
+      .vote-option
+        display block
+        width 100%
+        margin 10px 0 0 0
+
   .change-vote
     font-size 16px
     color black
