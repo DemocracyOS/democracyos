@@ -1,4 +1,10 @@
 
+1.4.5 / 2016-09-29
+==================
+
+  * Fix export on validate
+  * Update jwtSecret clarification for production on docs
+
 1.4.4 / 2016-09-21
 ==================
 
