@@ -66,6 +66,7 @@
   "admin-topics-form.message.validation.source-invalid": "Fuente debe ser una dirección de internet (URL) válida",
   "admin-topics-form.message.validation.source-required": "Fuente requerida",
   "admin-topics-form.message.validation.topicId-required": "Identificación oficial requerida",
+  "admin-topics-form.placeholder.cover": "http://repositorio-de-imagenes.com/tu_imagen.jpg",
   "admin-topics-form.placeholder.source": "http://fuente-de-temas.org/url-oficial/",
   "admin-topics-form.title.create": "Nuevo tema",
   "admin-topics-form.title.edit": "Edición de tema",
