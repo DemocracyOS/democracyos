@@ -29,6 +29,9 @@
           label= t('admin-topics-form.label.topicId')
           input.form-control(type='text', id="topicId", name='topicId', tabindex=3, placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
         .form-group
+          label= t('admin-topics-form.label.cover') + ' URL'
+          input.form-control(type='text', id="coverUrl", name='coverUrl', tabindex=5, placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
+        .form-group
           label= t('admin-topics-form.label.author')
           input.form-control(type='text', id="topicAuthor", name='topicAuthor', tabindex=4, placeholder='John Doe', value=topic.author, validate='author')
         .form-group
