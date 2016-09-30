@@ -89,6 +89,7 @@
   "admin-topics-form.message.validation.source-invalid": "Source must be a valid URL",
   "admin-topics-form.message.validation.source-required": "Source required",
   "admin-topics-form.message.validation.topicId-required": "Official Id required",
+  "admin-topics-form.placeholder.cover": "http://images-repository.com/your_image.jpg",
   "admin-topics-form.placeholder.source": "http://topics-source.org/official-url/",
   "admin-topics-form.title.create": "Create topic",
   "admin-topics-form.title.edit": "Edit topic",
