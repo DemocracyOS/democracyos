@@ -27,4 +27,9 @@ main.container
             .form-group.clearfix.summary
               input(type='text', name='summary', placeholder= t('forum.form.summary.placeholder'), maxlength=300, validate='max-length:300')
 
+          fieldset
+            label= t('forum.form.cover')
+            .form-group.clearfix.summary
+              input(type='text', name='cover', placeholder= t('admin-topics-form.placeholder.cover'), validate='url')
+
         button.btn.btn-block.btn-primary.btn-lg= t('forum.form.create.submit')
