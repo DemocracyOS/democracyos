@@ -4,5 +4,6 @@ html
     meta(property='og:type', content='website')
     meta(property='og:url', content='#{baseUrl}/topic/#{topic.id}')
     meta(property='og:image', content='#{config.socialshare.image}')
+    meta(property='og:image', content=topic.coverUrl ? topic.coverUrl : config.socialshare.image)
     meta(property='og:site_name', content='#{config.socialshare.siteName}')
     meta(property='og:description', content=strip(topic.body))
