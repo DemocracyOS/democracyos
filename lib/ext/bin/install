@@ -22,7 +22,7 @@ directoryExists(EXT_PATH, function (err, exists) {
     process.exit(0)
   }
 
-  console.log('· Installing dependencies on /ext folder')
+  console.log('> Installing dependencies on /ext folder')
 
   const install = cp.spawn('npm', ['i'], {
     env: process.env,
@@ -32,9 +32,9 @@ directoryExists(EXT_PATH, function (err, exists) {
 
   install.on('close', (code) => {
     if (code === 0) {
-      console.log('· All dependencies of /ext folder installed correctly')
+      console.log('> All dependencies of /ext folder installed successfully.')
     } else {
-      console.log('· There was an error installing dependencies on /ext folder')
+      console.log('> There was an error installing dependencies on /ext folder.')
     }
   })
 })
