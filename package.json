@@ -3,6 +3,7 @@
   "version": "1.4.5",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "homepage": "http://www.democracyos.org/",
+  "license" : "GPL-3.0",
   "keywords": [
     "democracy",
     "democracyos",
