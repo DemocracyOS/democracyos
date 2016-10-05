@@ -171,7 +171,6 @@
   "devDependencies": {
     "arr-diff": "^1.0.1",
     "google-translate": "^1.0.0",
-    "gulp": "^3.9.1",
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
