@@ -191,7 +191,7 @@
     "supertest": "^1.1.0",
     "xo": "^0.16.0"
   },
-  "main": "pdr",
+  "main": "index.js",
   "engines": {
     "node": "4.0.0",
     "npm": "2.14.2"
