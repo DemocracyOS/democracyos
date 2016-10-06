@@ -1,12 +1,17 @@
 #help-container
-  display flex
-  justify-content center
   flex 1
+
+  @media (min-width: 750px)
+    display flex
+    justify-content center
+
   .article-container
     flex 2
     overflow auto
-    padding-left 70px
+    padding 0 30px
+
     .article-content
       max-width 730px
+
   @import './sidebar/styles'
   @import './md-guide/styles'
