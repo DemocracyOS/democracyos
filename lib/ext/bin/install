@@ -41,7 +41,7 @@ directoryExists(EXT_PATH, function (err, exists) {
 
 function directoryExists (dir, cb) {
   fs.stat(dir, function (err) {
-    if (err && err.errno === 34) {
+    if (err && (err.errno === 34 || err.errno === -2)) {
       cb(null, false)
     } else if (err) {
       cb(err)
