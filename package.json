@@ -140,7 +140,6 @@
     "mongoose": "3.8.24",
     "mongoose-gravatar": "0.3.0",
     "mongoose-validators": "^0.1.0",
-    "mongoose-voting": "0.1.1",
     "mout": "^0.11.0",
     "nanomodal": "5.1.1",
     "native-promise-only": "^0.8.0-a",
