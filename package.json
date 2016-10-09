@@ -148,7 +148,6 @@
     "passport-facebook": "2.0.x",
     "passport-local": "~0.1.6",
     "passport-local-mongoose": "~0.2.4",
-    "qs": "2.4.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-remarkable": "^1.1.1",
