@@ -67,7 +67,6 @@
     "browserify": "^9.0.8",
     "bus": "0.1.0",
     "bootstrap": "^4.0.0-alpha.3",
-    "change-case": "^2.3.0",
     "chart.js": "1.0.2",
     "co-prompt": "~1.0.0",
     "commander": "~2.0.0",
