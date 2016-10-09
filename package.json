@@ -65,7 +65,6 @@
     "bean": "^1.0.15",
     "body-parser": "1.15.2",
     "bowser": "0.7.2",
-    "brfs": "1.4.0",
     "browserify": "^9.0.8",
     "bus": "0.1.0",
     "bootstrap": "^4.0.0-alpha.3",
