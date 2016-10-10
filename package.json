@@ -243,7 +243,8 @@
       "react/jsx-closing-bracket-location": [
         "error",
         {
-          "selfClosing": "after-props"
+          "selfClosing": "after-props",
+          "nonEmpty": "after-props"
         }
       ],
       "react/jsx-space-before-closing": [
