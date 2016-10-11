@@ -122,7 +122,7 @@ _**DISCLAIMER:** This option is in ALPHA state, expect a lot a changes not far a
 * env: `CLIENT`
 * default: `[ ... ]`
 
-Config options to be sended to the client, and usable from `/lib/config/config.js`. In most cases, this shouldn't be edited.
+Config options to be sended to the client, and usable from `/lib/config.js`. In most cases, this shouldn't be edited.
 
 #### **forceSafeImageURLs**
 * env: `FORCE_SAFE_IMAGE_URLS`
