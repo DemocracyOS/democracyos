@@ -128,7 +128,7 @@ Optional value for setting an existent forum's name of a multiforum database for
 * env: `CLIENT`
 * default: `[ ... ]`
 
-Config options to be sended to the client, and usable from `/lib/config/config.js`. In most cases, this shouldn't be edited.
+Config options to be sended to the client, and usable from `/lib/config.js`. In most cases, this shouldn't be edited.
 
 #### **forceSafeImageURLs**
 * env: `FORCE_SAFE_IMAGE_URLS`
