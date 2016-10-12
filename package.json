@@ -228,7 +228,7 @@
     },
     "rules": {
       "strict": 0,
-      "babel/arrow-parens": 0,
+      "arrow-parens": [2, "always"],
       "import/no-extraneous-dependencies": 0,
       "import/order": [
         "error",
