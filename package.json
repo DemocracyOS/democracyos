@@ -58,6 +58,7 @@
   "dependencies": {
     "assert": "1.3.0",
     "async": "^1.3.0",
+    "babel-plugin-syntax-class-properties": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.16.0",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.11.1",
@@ -181,8 +182,10 @@
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
+    "babel-eslint": "^7.0.0",
     "eslint": "^3.5.0",
     "eslint-config-xo-react": "^0.9.0",
+    "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-react": "^6.3.0",
     "google-translate": "^1.0.0",
     "gulp-jasmine": "^2.2.1",
@@ -208,6 +211,7 @@
   },
   "xo": {
     "extends": "xo-react",
+    "parser": "babel-eslint",
     "env": [
       "node",
       "es6",
@@ -215,7 +219,17 @@
     ],
     "space": 2,
     "semicolon": false,
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": [
+            "."
+          ]
+        }
+      }
+    },
     "rules": {
+      "strict": 0,
       "babel/arrow-parens": 0,
       "import/no-extraneous-dependencies": 0,
       "curly": [
