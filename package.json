@@ -230,6 +230,19 @@
       "strict": 0,
       "babel/arrow-parens": 0,
       "import/no-extraneous-dependencies": 0,
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index"
+          ]
+        }
+      ],
       "curly": [
         "error",
         "multi-line"
