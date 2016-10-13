@@ -7,6 +7,9 @@
   .notifications-badge
     position relative
 
+    a
+      color inherit!important
+
     &.active
       .btn
         background rgba(0,0,0,.1)
@@ -34,21 +37,19 @@
       list-style none
       border 1px solid rgba(#000,.15)
       box-shadow 1px 1px 4px -1px rgba(#000, .175)
-      background-color #f9f9f9
 
       a
         display block
         clear both
         padding 10px 20px
         line-height 1.5
-        color black
         text-transform none
         font-weight bold
         text-decoration none
-
+        color inherit
         &:hover
           background #2c3e50
-          color white
+          color white!important
       .admin-link
         display none
       .notifications-li
