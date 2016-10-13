@@ -175,6 +175,7 @@
     "verigy": "2.0.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "~3.7.0",
+    "whatwg-fetch": "^1.0.0",
     "xss": "0.2.2",
     "yargs": "3.9.1"
   },
@@ -230,6 +231,7 @@
       "strict": 0,
       "arrow-parens": [2, "always"],
       "import/no-extraneous-dependencies": 0,
+      "import/no-unassigned-import": 0,
       "import/order": [
         "error",
         {
