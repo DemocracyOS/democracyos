@@ -73,6 +73,7 @@
     "settingsUrl",
     "headerLinks",
     "homeLink",
+    "headerContrast",
     "headerBackgroundColor",
     "headerFontColor",
     "facebookSignin",
