@@ -77,6 +77,10 @@ header.app-header
     margin 0
     @import './anon-user/styles'
     @import './user-badge/styles'
+    a
+      height 100%
+      display flex!important
+      align-items center
 
 vendors(prop, args, fn = null)
   val = fn == null ? args : fn + '(' + args + ')'
