@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
+  "browser": {
+    "lib/config" : "lib/config/config"
+  },
   "license": "GPL-3.0"
 }
