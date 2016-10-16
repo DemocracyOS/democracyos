@@ -2,7 +2,7 @@
   .topics-admin
     .well.well-lg.clearfix
       .col-md-2.col-xs-12
-        a.btn.btn-success.btn-block.new(href='#{forum.url}/admin/topics/create')
+        a.btn.btn-success.btn-block.new(href=urlBuilder.for('admin.topics.create'))
           span.glyphicon.glyphicon-plus
           = ' ' + t('admin-topics.list.add-topic')
       .col-md-7.col-xs-12.text-center
@@ -19,7 +19,7 @@
             span.glyphicon.glyphicon-font
     .list.list-group.col-xs-12
       - each topic in topics
-        a.list-group-item(href="#{forum.url}/admin/topics/" + topic.id, data-topicid=topic.id)
+        a.list-group-item(href=urlBuilder.for('admin.topics.id', {id: topic.id}), data-topicid=topic.id)
           button.btn.btn-default.pull-right.delete-topic
             span.glyphicon.glyphicon-trash
           h4.topic-title=topic.mediaTitle
