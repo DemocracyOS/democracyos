@@ -3,7 +3,7 @@
     if (user.staff)
       p.alert.alert-danger.text-center!=t('admin-topics-form.alert.no-tags')
       p.text-center
-        a.btn.btn-lg.btn-primary.create-tag(href=urlBuilder.for('admin.tags.create'))=t('admin-tags-form.title.create')
+        a.btn.btn-lg.btn-primary.create-tag(href=urlBuilder.for('admin.tags.create', {forum: forum.name}))=t('admin-tags-form.title.create')
     else
       p.alert.alert-danger.text-center=t('admin-topics-form.alert.no-tags.no-staff')
   - else
