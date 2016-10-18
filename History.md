@@ -1,4 +1,12 @@
 
+1.5.0 / 2016-10-18
+==================
+
+  * Add config.notifications.nodemailer config option
+  * Update democracyos-notifier version
+  * Update version of democracyos-config
+  * Add availableLocales on embedded notifier config
+
 1.4.5 / 2016-09-29
 ==================
 
