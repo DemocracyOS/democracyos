@@ -46,9 +46,9 @@
       "auth": {
         "user": "",
         "pass": ""
-      },
-      "nodemailer": {}
-    }
+      }
+    },
+    "nodemailer": {}
   },
   "client": [
     "protocol",
