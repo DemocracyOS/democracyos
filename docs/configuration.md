@@ -210,10 +210,10 @@ User for the [notifier](https://github.com/DemocracyOS/notifier) transport.
 
 Password for the [notifier](https://github.com/DemocracyOS/notifier) transport.
 
-#### **notifications.mailer.nodemailer**
-* env: `NOTIFICATIONS_MAILER_NODEMAILER`
+#### **notifications.nodemailer**
+* env: `NOTIFICATIONS_NODEMAILER`
 
-Optional object that will override any nodemailer options for creating a transport.
+Optional object that will override any nodemailer options for creating a mailerTransport.
 
 
 ### External Notifier Server
