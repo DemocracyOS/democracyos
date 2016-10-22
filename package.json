@@ -91,7 +91,7 @@
     "democracyos-config": "^1.1.0",
     "democracyos-confirmation": "^0.0.5",
     "democracyos-datepicker": "^1.0.3",
-    "democracyos-db": "0.0.1",
+    "democracyos-db": "1.0.0",
     "democracyos-emitter": "^0.0.7",
     "democracyos-ga": "^1.2.0",
     "democracyos-headroom.js": "^0.7.0",
@@ -139,7 +139,7 @@
     "merge": "^1.2.0",
     "mkdirp": "^0.5.0",
     "moment": "2.15.1",
-    "mongoose": "3.8.24",
+    "mongoose": "4.6.4",
     "mongoose-gravatar": "0.3.0",
     "mongoose-validators": "^0.1.0",
     "mout": "^0.11.0",
@@ -236,6 +236,12 @@
         2,
         "always"
       ],
+      "curly": [
+        "error",
+        "multi-line"
+      ],
+      "func-names": 0,
+      "no-implicit-coercion": 0,
       "import/no-extraneous-dependencies": 0,
       "import/no-unassigned-import": 0,
       "import/order": [
@@ -250,10 +256,6 @@
             "index"
           ]
         }
-      ],
-      "curly": [
-        "error",
-        "multi-line"
       ],
       "object-curly-spacing": [
         "error",
