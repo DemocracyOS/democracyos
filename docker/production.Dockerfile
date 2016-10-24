@@ -10,12 +10,13 @@ WORKDIR /usr/src
 
 RUN npm install --quiet --production
 
-RUN npm install --quiet --only=development
-
 COPY [".", "/usr/src/"]
+
+RUN npm run build -- --minify
+
+ENV NODE_ENV=production \
+    NODE_PATH=.
 
 EXPOSE 3000
 
-ENV NODE_PATH=.
-
-CMD ["./node_modules/.bin/gulp", "bws"]
+CMD ["node", "index.js"]
