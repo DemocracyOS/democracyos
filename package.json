@@ -89,7 +89,7 @@
     "democracyos-config": "^1.1.0",
     "democracyos-confirmation": "^0.0.5",
     "democracyos-datepicker": "^1.0.3",
-    "democracyos-db": "0.0.1",
+    "democracyos-db": "1.0.0",
     "democracyos-emitter": "^0.0.7",
     "democracyos-ga": "^1.2.0",
     "democracyos-headroom.js": "^0.7.0",
@@ -113,7 +113,6 @@
     "fs-extra": "^0.30.0",
     "geopattern": "^1.2.3",
     "get-form-data": "1.2.2",
-    "geopattern": "^1.2.3",
     "gulp": "^3.9.1",
     "gulp-add-src": "0.2.0",
     "gulp-concat-css": "2.2.0",
@@ -136,8 +135,8 @@
     "marked": "^0.3.5",
     "merge": "^1.2.0",
     "mkdirp": "^0.5.0",
-    "moment": "2.9.0",
-    "mongoose": "3.8.24",
+    "moment": "2.15.1",
+    "mongoose": "4.6.4",
     "mongoose-gravatar": "0.3.0",
     "mongoose-validators": "^0.1.0",
     "mout": "^0.11.0",
@@ -153,6 +152,7 @@
     "passport-local-mongoose": "~0.2.4",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-refetch": "^1.0.0-beta.10",
     "react-remarkable": "^1.1.1",
     "react-router": "^2.6.1",
     "removed": "0.0.5",
@@ -161,7 +161,6 @@
     "stringify": "3.1.0",
     "striptags": "^2.1.1",
     "stylus": "0.52.4",
-    "simple-line-icons": "^2.3.2",
     "superagent": "^1.2.0",
     "t-component": "^1.0.0",
     "through2-concurrent": "1.0.0",
@@ -229,7 +228,16 @@
     },
     "rules": {
       "strict": 0,
-      "arrow-parens": [2, "always"],
+      "arrow-parens": [
+        2,
+        "always"
+      ],
+      "curly": [
+        "error",
+        "multi-line"
+      ],
+      "func-names": 0,
+      "no-implicit-coercion": 0,
       "import/no-extraneous-dependencies": 0,
       "import/no-unassigned-import": 0,
       "import/order": [
@@ -245,10 +253,6 @@
           ]
         }
       ],
-      "curly": [
-        "error",
-        "multi-line"
-      ],
       "object-curly-spacing": [
         "error",
         "never"
@@ -262,6 +266,7 @@
         "prefer-single"
       ],
       "react/prop-types": 0,
+      "react/no-danger": 0,
       "react/jsx-filename-extension": [
         "error",
         {
@@ -285,6 +290,6 @@
     }
   },
   "browser": {
-    "lib/config" : "lib/config/config"
+    "lib/config": "lib/config/config"
   }
 }
