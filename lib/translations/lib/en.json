@@ -128,6 +128,8 @@
   "comment-card.show": "show",
   "comment-vote.downvote": "Downvote",
   "comment-vote.upvote": "Upvote",
+  "comments.create.placeholder": "Write an argument...",
+  "comments.create.publish": "Publish",
   "comments.argument-limited": "Argument is limited to 4096 characters",
   "comments.arguments": "Arguments",
   "comments.arguments.confirm-remove": "Do you want to remove this reply?",
