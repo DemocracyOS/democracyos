@@ -1,100 +1,59 @@
-.user
-  display flex
-  .user-badge
-    .admin-link
-      display block!important
-  .user-badge,
-  .notifications-badge
-    position relative
-
-    &.active
-      .btn
-        background rgba(0,0,0,.1)
-      .dropdown-list
-        display block
-
-    .btn
-      color inherit
-      height 100%
-      border-radius 0
-      background none
-      padding 0 12px
-      .caret
-        margin-left 6px
-        margin-top 0!important
-
+.user-badge
+  position relative
+  &.active
+    button
+      background rgba(0,0,0,.1)
     .dropdown-list
-      display none
-      position fixed
-      right 20px
-      z-index 1000
-      padding 5px 0
-      width auto
-      font-size 14px
-      list-style none
-      border 1px solid rgba(#000,.15)
-      box-shadow 1px 1px 4px -1px rgba(#000, .175)
-      color #000
-      background-color #f9f9f9
+      display block
 
-      a
-        display block
-        clear both
-        padding 10px 20px
-        line-height 1.5
-        text-transform none
-        font-weight bold
-        text-decoration none
-        color inherit
-        &:hover
-          background #2c3e50
-          color white!important
-      .admin-link
-        display none
-      .notifications-li
-        display none
-    .profile,
-    .notifications
-      img
-        width 32px
-        border-radius 100px
-      span.name,
-      span.bell
-        display inline
-        margin-left 10px
-        font-weight bold
-        font-size 12px
-        line-height 37px
-        padding-top 4px
-        padding-right 12px
-        max-width 150px
-
-      span.bell
-        margin 0
-        padding 0
-        font-size inherit
-        &:before
-          transform s("rotate(%s)", -25deg)
-      .caret
-        margin-top -3px
-@media screen and (max-width: 700px)
-  .caret
-    display: none
-  .btn
-    border: 0
-  .profile
+  button
+    color inherit
+    background none
+    border none
+    height 54px
+    margin -.5rem 0
+    cursor pointer
     .name
-      display: none!important
+      font-weight bold
     .caret
-      display none!important
-  .login
-    margin-left: 10px
-    span
-      display: none
-    i
-      display: inline-block
-  .notifications-badge
-    display none
+      margin-left 6px
+      position relative
+      right 0
+    img
+      width 32px
+      border-radius 100px
+      margin -.5rem 5px -.5rem 0
+
   .dropdown-list
-    .notifications-li
-      display block!important
+    display none
+    position fixed
+    top 54px
+    right 15px
+    z-index 1000
+    padding 0
+    width auto
+    font-size 14px
+    list-style none
+    border 1px solid rgba(#000,.15)
+    box-shadow 1px 1px 4px -1px rgba(#000, .175)
+    color #000
+    background-color #f9f9f9
+    a
+      display block
+      clear both
+      padding 10px 20px
+      line-height 1.5
+      text-transform none
+      font-weight bold
+      text-decoration none
+      color inherit
+      &:hover
+        background #2c3e50
+        color white!important
+
+@media screen and (max-width: 572px)
+  .user-badge
+    float none!important
+    button
+      img
+        margin -.5rem 0!important
