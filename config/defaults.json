@@ -12,8 +12,8 @@
   "settingsUrl": "",
   "staff": [],
   "allowEmailAliases": true,
-  "facebookSignin": false,
-  "googleSignin": false,
+  "facebookSignin": true,
+  "googleSignin": true,
   "publicEmails": false,
   "auth": {
     "basic": {
@@ -21,13 +21,13 @@
       "password": ""
     },
     "facebook": {
-      "clientID": "",
-      "clientSecret": "",
+      "clientID": "236751753344732",
+      "clientSecret": "0e6cd576e54ec9ae28532211c1dad606",
       "permissions": [ "email" ]
     },
     "google": {
-      "clientID": "",
-      "clientSecret": "",
+      "clientID": "75109900093-2dkcmmat967spd774a0nlss57thg31ud.apps.googleusercontent.com",
+      "clientSecret": "2NHgXpGxdGIrEpND6ILn5P2O",
       "permissions": [ "profile", "email" ]
     }
 
