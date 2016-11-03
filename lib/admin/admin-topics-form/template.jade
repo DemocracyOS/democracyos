@@ -57,12 +57,13 @@
             - closingAt = new Date(topic.closingAt)
             - var closingAtTime = moment(closingAt).format('H:mm')
             - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
-          .input-group
-            input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
-            span.input-group-addon.clear-closingAt
-              i.glyphicon.glyphicon-remove
-          .input-group
-            input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
+          div
+            .input-group
+              input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
+              span.input-group-addon.clear-closingAt
+                i.glyphicon.glyphicon-remove
+            .input-group
+              input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
         .form-group
           label=t('admin-topics-form.label.resources')
           .topic-links
