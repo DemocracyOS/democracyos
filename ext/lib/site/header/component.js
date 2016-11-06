@@ -12,7 +12,6 @@ class Header extends Component {
     super(props)
 
     this.state = {
-      user: null,
       userForm: null,
       showToggleSidebar: null,
       showSidebar: null
@@ -89,11 +88,11 @@ class Header extends Component {
             </h1>
 
             <ul className='user-nav nav navbar-nav float-xs-right'>
-              {this.props.userFetch.fulfilled && (
-                <UserBadge user={this.props.userFetch.value} />
+              {this.props.user.state.fulfilled && (
+                <UserBadge />
               )}
 
-              {this.props.userFetch.rejected && (
+              {this.props.user.state.rejected && (
                 <AnonUser form={this.state.userForm} />
               )}
             </ul>
