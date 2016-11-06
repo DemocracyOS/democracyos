@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import * as HomeForum from 'lib/site/home-forum/component'
-import HomePresupuesto from 'ext/lib/home-presupuesto/component'
+import HomePresupuesto from 'ext/lib/site/home-presupuesto/component'
 
 const HomeForumOriginal = HomeForum.default
 
