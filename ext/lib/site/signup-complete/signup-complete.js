@@ -4,13 +4,11 @@ import 'lib/boot/routes'
 import router from 'lib/site/boot/router'
 import SignupComplete from './component'
 
-const root = router.props.children.props
+const site = router.find((route) => route.key === 'lib-site')
 
-root.childRoutes = root.childRoutes || []
-
-root.childRoutes.push(
-  {
-    path: 'signup/complete',
-    component: SignupComplete
-  }
+site.props.children.unshift(
+  <Route
+    key='ext-signup-complete'
+    path='/signup/complete'
+    component={SignupComplete} />
 )
