@@ -1,0 +1,75 @@
+.ext-site-header
+  color: #525252
+
+.ext-site-header-prefix
+  height: 30px
+  background-color: #1DAEEC
+  a
+    color: #fff
+    height: 100%
+    display: inline-flex
+    width: auto
+    align-items: center
+    padding: 0 5px
+    margin-left: -5px
+    &:hover
+      color: #fff
+      background: rgba(255,255,255,0.1)
+
+.ext-site-header-main
+
+  border-bottom: 2px solid #F59231
+
+  & > .container-simple
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 100px
+
+  .current-date,
+  .user-nav
+    width: unquote("calc(50% - 360px)")
+
+  .current-date
+    display: none
+    font-size: .8em
+    color: #565656
+
+    @media (min-width: 992px)
+      display: block
+
+    span
+      display: block
+
+  .logo
+    margin: 0
+
+    img
+      max-width: 360px
+
+  .user-nav
+    @import '../../../../lib/site/header/user-badge/styles'
+
+    .user
+      justify-content: flex-end
+
+      .user-badge .dropdown-list
+        position: absolute
+        right: 0
+    .user-badge
+      margin-left: 8px
+      button
+        margin: 0
+      .dropdown-list
+        position: absolute
+        top: 100px
+        right: 0
+    .nav-link
+      height: 100%!important
+      display: flex !important
+      align-items: center
+      justify-content: flex-end
+      font-weight: 400
+      color: inherit
+      text-decoration: none

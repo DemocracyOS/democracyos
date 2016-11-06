@@ -1,0 +1,8 @@
+{
+  "js": {
+    "site.js": "./ext/lib/site/boot/boot.js"
+  },
+  "css": {
+    "site.css": "./ext/lib/site/boot/index.styl"
+  }
+}
