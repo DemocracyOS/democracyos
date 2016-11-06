@@ -1,0 +1,17 @@
+{
+  "name": "rosariociudad-democracyos",
+  "version": "0.0.1",
+  "description": "Municipalidad de la Ciudad de Rosario.",
+  "main": "lib/boot",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "license": "GPL-3.0",
+  "dependencies": {
+    "module-alias": "1.0.10"
+  },
+  "browser": {
+    "lib/config": "lib/config/config"
+  }
+}

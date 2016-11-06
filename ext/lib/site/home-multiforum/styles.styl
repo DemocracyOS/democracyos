@@ -1,0 +1,128 @@
+.ext-home-cover
+  display: flex
+  align-items: center
+  min-height: 70vh
+  padding: 15px 0
+  color: #fff
+  text-align: center
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: top center
+  background-image: unquote("url('/ext/lib/site/home-multiforum/bg-cover.jpg')")
+
+  @media all and (min-width: 960px)
+    background-image: unquote("url('/ext/lib/site/home-multiforum/bg-cover@2x.jpg')")
+
+  h2
+    font-size: 2em
+    margin: 0 0 1em
+
+  h1
+    font-size: 3em
+    margin: 0 0 1em
+
+  .call-to-action
+    background: #00adef
+    color: #fff
+
+.intro
+  background-image: unquote("url('/ext/lib/site/home-multiforum/city@3x.png')")
+  background-repeat: no-repeat
+  background-position: bottom
+  background-size: contain
+  padding: 0 0 180px
+  .light-text
+    margin-top 100px
+    padding: 0
+    list-style: none
+    color: #a5a7a9
+    h4
+      font-size: 20px
+      margin: 20px 0
+      font-weight: 600
+  .globos
+    background-image: unquote("url('/ext/lib/site/home-multiforum/globos-text.png')")
+    background-size: 80%
+    background-repeat: no-repeat
+    background-position: right
+
+.info
+  background: #00adef
+  color: #fff
+  margin-top: -20px
+  padding: 120px 0 100px
+  h2
+    font-size: 39px
+    margin: 25px 0
+  p
+    font-size: 19px
+  .en-curso
+    background: #f7941d
+    padding: 6px 10px
+    font-size: 19px
+  .proyectos-stats
+    margin: 0
+    padding: 5px 0px 10px
+    list-style: none
+    display: flex
+    li
+      text-align: center
+      span
+        display: block
+      .num
+        font-size: 43px
+        font-weight: 600
+  .ver-mas
+    font-size: 18px
+    color: #00adef
+    font-weight: bold
+
+  .linea-tiempo
+    display: flex
+    justify-content: center
+    ul
+      padding: 0
+      margin: 0
+      list-style: none
+      li
+        border-left: 7px solid #fff
+        padding: 40px 17px 30px
+        position: relative
+        &::before
+          content: " "
+          width: 22px
+          height: 22px
+          background: #fff
+          position: absolute
+          border-radius: 50%
+          left: -15px
+          top: -1px
+        h4
+          background: #525252
+          display: inline
+          padding: 5px 10px
+          font-weight: 100
+          position: absolute
+          margin-left: 15px
+          top: -29px;
+          left: 20px;
+          font-size: 19px
+          &::before
+            content: " "
+            width: 0
+            height: 0
+            top: 6px
+            left: -7px
+            border-style: solid
+            position: absolute
+            border-width: 7px 7px 7px 0
+            border-color: transparent #525252 transparent transparent
+        span
+          display: block
+        &:last-child
+          border-left: none
+          margin-left: 7px
+          h4
+            background: #f7941d
+            &::before
+              border-color: transparent #f7941d transparent transparent
