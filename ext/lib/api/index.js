@@ -4,7 +4,7 @@ const validate = require('lib/api-v2/validate')
 
 const app = module.exports = express()
 
-app.use('/api', require('./participatory-budget'))
+app.use('/ext/api', require('./participatory-budget'))
 
 app.use(function validationErrorHandler (err, req, res, next) {
   if (!(err instanceof validate.SchemaValidationError)) return next(err)
