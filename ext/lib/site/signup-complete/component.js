@@ -118,7 +118,7 @@ export default class SignupComplete extends Component {
               required />
           </div>
           <div className='form-group'>
-            <label>Sexo</label>
+            <label>Género</label>
             <div className='form-check'>
               <label className='form-check-label'>
                 <input
