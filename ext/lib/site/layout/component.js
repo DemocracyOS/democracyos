@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {browserHistory} from 'react-router'
+import user from 'lib/site/user/user'
 import userConnector from 'lib/site/connectors/user'
 import * as Layout from 'lib/site/layout/component'
 
@@ -10,8 +11,16 @@ class LayoutOverride extends Component {
     super(props)
 
     this.state = {
-      askedCompleteProfile: false
+      askedCompleteProfile: props.location.pathname === '/signup/complete'
     }
+  }
+
+  componentWillMount () {
+    user.onChange(this.handleUserStateChange)
+  }
+
+  componentWillUnmount () {
+    user.offChange(this.handleUserStateChange)
   }
 
   componentWillReceiveProps (nextProps) {
@@ -24,7 +33,15 @@ class LayoutOverride extends Component {
           browserHistory.push('/signup/complete')
         }
       }
+    } else if (user.state.pending || user.state.rejected) {
+      browserHistory.push('/')
     }
+  }
+
+  handleUserStateChange = () => {
+    this.setState({
+      askedCompleteProfile: this.props.location.pathname === '/signup/complete'
+    })
   }
 
   render () {
