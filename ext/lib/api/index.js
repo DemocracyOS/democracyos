@@ -27,8 +27,10 @@ app.use(function apiError (err, req, res) {
   const code = err.code || 'SERVER_ERROR'
   const message = err.message || 'Server Error.'
 
+  const method = (req.method || 'GET').toUpperCase()
+
   if (status === 500) {
-    log(`ERROR ${req.method.toUpperCase()} ${req.url}`, err)
+    log(`ERROR ${method} ${req.url}`, err)
   }
 
   res.json(status, {
