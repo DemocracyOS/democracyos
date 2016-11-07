@@ -1,0 +1,46 @@
+.tweets-box
+  display: flex
+  flex-wrap: wrap
+  .tweet-box-lg
+    flex: 2
+    &::before
+      content: ""
+      display: block
+      padding-top: 50%
+  .tweet-box-sm
+    background: unquote("url('/ext/lib/site/home-multiforum/tw-icon.png')")
+    flex 1
+    &::before
+      content: ""
+      display: block
+      padding-top: 100%
+  .tweet-box
+    position: relative
+    .tweet-content
+      position:  absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      background-size: cover
+      background-position: center
+    .tw-link
+      background: unquote("url('/ext/lib/site/home-multiforum/tw-icon.png')")
+    .fb-link
+      background: unquote("url('/ext/lib/site/home-multiforum/fb-icon.png')")
+    .yt-link
+      background: unquote("url('/ext/lib/site/home-multiforum/yt-icon.png')")
+  .tweets-logo
+    background: #e9eaee
+    span
+      display: block
+    .rosario
+      color: #00adef
+    .cerca
+      color: #f7941d
+  .tweets-links
+    background: #00adef
+    flex-order 4
+    .tweet-content
+      display flex
+      justify-content: center

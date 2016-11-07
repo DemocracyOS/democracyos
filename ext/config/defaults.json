@@ -1,4 +1,8 @@
 {
+  "twitterConsumerKey": "",
+  "twitterConsumerSecret": "",
+  "twitterAccessKey": "",
+  "twitterAccessSecret": "",
   "participatoryBudget": {
     "secret": "",
     "statusEndpoint": "",

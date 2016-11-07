@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router'
+import TweetsFeed from '../tweets-feed/component'
 
 export default function HomeMultiforumOverride (props) {
   return (
@@ -91,6 +92,7 @@ export default function HomeMultiforumOverride (props) {
           </div>
         </div>
       </div>
+      <TweetsFeed />
     </div>
   )
 }
