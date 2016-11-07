@@ -4,11 +4,20 @@ import { connect } from 'react-refetch'
 class TweetsFeed extends Component {
   render () {
     const { tweetsFetch } = this.props
-    let tweets = null
+    let tweets = []
     if (tweetsFetch.fulfilled) {
       tweets = tweetsFetch.value.results.tweets
     }
-    console.log(tweets)
+    if (tweets.length < 6) {
+      for (var i = 0; i < (9 - tweets.length); i++) {
+        tweets.push({
+          entities: {
+            media: [{media_url: null}]
+          }
+        })
+      }
+    }
+
     return (
       <div className='tweets-box'>
         <div className='tweet-box tweet-box-lg tweets-logo'>
@@ -34,19 +43,28 @@ class TweetsFeed extends Component {
           </div>
         </div>
         {
-          tweets &&
           tweets.map((twt, key) => {
-            console.log(typeof twt.entities.media)
-            if (typeof twt.entities.media === 'undefined') return null
+            const imageUrl = twt.entities.media[0].media_url || ''
             return (
               <div
                 key={key}
-                className='tweet-box tweet-box-sm'
+                className={
+                  'tweet-box tweet-box-sm' +
+                  (
+                    twt.entities.media[0].media_url
+                      ? ''
+                      : ' placeholder'
+                  )
+                }
+                style={{
+                  order: (key > 3) ? (key + 3) : (key + 2)
+                }}
                 >
+                  <div className='tweet-bird'></div>
                   <div
                     className='tweet-content'
                     style={{
-                      backgroundImage: 'url(' + twt.entities.media[0].media_url + ')'
+                      backgroundImage: 'url(' + imageUrl + ')'
                     }}>
                   </div>
               </div>

@@ -3,13 +3,19 @@
   flex-wrap: wrap
   .tweet-box-lg
     flex: 2
+    min-width: 288px
     &::before
       content: ""
       display: block
       padding-top: 50%
+    .tweet-content
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
   .tweet-box-sm
-    background: unquote("url('/ext/lib/site/home-multiforum/tw-icon.png')")
     flex 1
+    min-width: 288px
     &::before
       content: ""
       display: block
@@ -24,23 +30,56 @@
       right: 0
       background-size: cover
       background-position: center
+    .tweet-bird
+      z-index: 9
+      width: 30px
+      height: 30px
+      position: absolute
+      top: 0
+      left: 0
+      margin: 16px
+      background-size: contain!important
+      background-repeat: no-repeat!important
+      background: unquote("url('/ext/lib/site/home-multiforum/tw-icon.png')")
     .tw-link
       background: unquote("url('/ext/lib/site/home-multiforum/tw-icon.png')")
     .fb-link
       background: unquote("url('/ext/lib/site/home-multiforum/fb-icon.png')")
     .yt-link
       background: unquote("url('/ext/lib/site/home-multiforum/yt-icon.png')")
+    &.placeholder
+      background-color: #e0e0e0
+      .tweet-bird
+        width: 100%
+        height: 100%
+        background-position: center
+        background-size: 100px!important
+        margin: 0
   .tweets-logo
+    order: 1
     background: #e9eaee
     span
-      display: block
+      text-transform: uppercase
+      font-size: 50px
+      line-height: 45px
     .rosario
       color: #00adef
     .cerca
       color: #f7941d
   .tweets-links
+    order: 6
     background: #00adef
-    flex-order 4
     .tweet-content
       display flex
       justify-content: center
+      &>div
+        color: #fff
+        font-size: 26px
+        font-weight: 500
+        margin: 10px 0
+        padding-left: 40px
+        background-repeat: no-repeat
+        background-position: left center
+        background-size: 30px auto
+        &>span
+          font-weight: 100
