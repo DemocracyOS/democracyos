@@ -1,6 +1,7 @@
 {
   "participatoryBudget": {
     "secret": "",
-    "endpoint": ""
+    "statusEndpoint": "",
+    "votingEndpoint": ""
   }
 }
