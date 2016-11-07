@@ -1,3 +1,6 @@
 {
-  "participatoryBudgetSecret": ""
+  "participatoryBudget": {
+    "secret": "",
+    "endpoint": ""
+  }
 }
