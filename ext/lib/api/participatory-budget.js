@@ -96,7 +96,7 @@ function validateUserCompleteProfile (req, res, next) {
     status: 400,
     error: {
       code: 'MISSING_VOTING_PROFILE',
-      message: 'Falta completar el perfile de votación.'
+      message: 'Falta completar el perfil de votación.'
     }
   })
 },
@@ -124,8 +124,8 @@ function getParticipatoryBudgetStatus (req, res) {
   request
     .get(config.participatoryBudget.statusEndpoint)
     .query({token: token})
-    .end(function statusEndpointCall (err, res) {
-      if (err || !res.ok) {
+    .end(function statusEndpointCall (err, response) {
+      if (err || !response.ok) {
         log('ERROR /api/participatory-budget/status status endpoint call', err)
         return res.json(500, {
           status: 500,
@@ -135,9 +135,22 @@ function getParticipatoryBudgetStatus (req, res) {
         })
       }
 
-      res.json(200, {
-        status: 200,
-        results: res.body
-      })
+      try {
+        const body = JSON.parse(response.text)
+
+        res.json(200, {
+          status: 200,
+          results: body
+        })
+      } catch (err) {
+        log('ERROR /api/participatory-budget/status status endpoint body parsing', err)
+        
+        res.json(500, {
+          status: 500,
+          error: {
+            code: 'SERVER_ERROR'
+          }
+        })
+      }
     })
 })
