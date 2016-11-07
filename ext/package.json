@@ -9,7 +9,8 @@
   "private": true,
   "license": "GPL-3.0",
   "dependencies": {
-    "module-alias": "1.0.10"
+    "module-alias": "1.0.10",
+    "tweeter": "0.0.4"
   },
   "browser": {
     "lib/config": "lib/config/config"
