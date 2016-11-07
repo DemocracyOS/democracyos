@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express')
+const url = require('url')
 const debug = require('debug')
 const jwt = require('jwt-simple')
 const request = require('superagent')
@@ -82,15 +83,28 @@ function parseToken (req, res, next) {
   }
 }
 
+function userCanVote (user) {
+  return !!(
+    user &&
+    user.extra &&
+    user.extra.cod_doc &&
+    user.extra.nro_doc &&
+    user.extra.sexo
+  )
+}
+
+function getUserVotingToken (user) {
+  return jwt.encode({
+    cod_doc: user.extra.cod_doc,
+    nro_doc: user.extra.nro_doc,
+    sexo: user.extra.sexo
+  }, config.participatoryBudget.secret)
+}
+
 app.get('/participatory-budget/status',
 middlewares.users.restrict,
-function validateUserCompleteProfile (req, res, next) {
-  if (
-    req.user.extra &&
-    req.user.extra.cod_doc &&
-    req.user.extra.nro_doc &&
-    req.user.extra.sexo
-  ) return next()
+function validateUserCanVoteMiddleware (req, res, next) {
+  if (userCanVote(req.user)) return next()
 
   res.json(400, {
     status: 400,
@@ -106,11 +120,7 @@ function getParticipatoryBudgetStatus (req, res) {
   let token
 
   try {
-    token = jwt.encode({
-      cod_doc: req.user.extra.cod_doc,
-      nro_doc: req.user.extra.nro_doc,
-      sexo: req.user.extra.sexo
-    }, config.participatoryBudget.secret)
+    token = getUserVotingToken(req.user)
   } catch (err) {
     log('ERROR /api/participatory-budget/status encoding token', err)
     return res.json(500, {
@@ -144,7 +154,7 @@ function getParticipatoryBudgetStatus (req, res) {
         })
       } catch (err) {
         log('ERROR /api/participatory-budget/status status endpoint body parsing', err)
-        
+
         res.json(500, {
           status: 500,
           error: {
@@ -153,4 +163,32 @@ function getParticipatoryBudgetStatus (req, res) {
         })
       }
     })
+})
+
+app.get('/participatory-budget/vote',
+middlewares.users.restrict,
+function validateUserCanVoteMiddleware (req, res, next) {
+  if (userCanVote(req.user)) return next()
+  res.redirect('/')
+},
+function getParticipatoryBudgetStatus (req, res) {
+  log('GET /api/participatory-budget/status')
+
+  try {
+    const token = getUserVotingToken(req.user)
+    const endpoint = url.parse(config.participatoryBudget.votingEndpoint, true)
+
+    endpoint.query.token = token
+
+    res.redirect(url.format({
+      protocol: endpoint.protocol,
+      host: endpoint.host,
+      pathname: endpoint.pathname,
+      query: endpoint.query,
+      hash: endpoint.hash
+    }))
+  } catch (err) {
+    log('ERROR /api/participatory-budget/vote encoding token', err)
+    return res.redirect('/500')
+  }
 })
