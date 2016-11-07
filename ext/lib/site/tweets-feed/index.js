@@ -13,12 +13,19 @@ var client = new Twitter({
 
 app.get('/tweets', function (req, res) {
   client.get(
+// -----------------------------------------
     'lists/statuses',
     {
-      owner_screen_name: 'munirosario',
+      owner_screen_name: config.ownerScreenName,
       include_rts: false,
-      slug: 'cuentas-institucionales'
+      slug: config.slug
     },
+// -----------------------------------------
+    // 'search/tweets',
+    // {
+    //   q: 'popular filter:media'
+    // },
+// -----------------------------------------
     function (err, tweets, response) {
       if (err) {
         return res.json({

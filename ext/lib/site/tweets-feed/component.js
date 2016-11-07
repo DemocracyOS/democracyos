@@ -9,7 +9,8 @@ class TweetsFeed extends Component {
       tweets = tweetsFetch.value.results.tweets
     }
     if (tweets.length < 6) {
-      for (var i = 0; i < (9 - tweets.length); i++) {
+      const placeholderCount = 6 - tweets.length
+      for (var i = 0; i < placeholderCount; i++) {
         tweets.push({
           entities: {
             media: [{media_url: null}]
