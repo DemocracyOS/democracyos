@@ -3,6 +3,8 @@
   "twitterConsumerSecret": "",
   "twitterAccessKey": "",
   "twitterAccessSecret": "",
+  "ownerScreenName": "",
+  "slug": "",
   "participatoryBudget": {
     "secret": "",
     "statusEndpoint": "",
