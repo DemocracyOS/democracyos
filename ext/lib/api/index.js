@@ -1,6 +1,9 @@
+const debug = require('debug')
 const express = require('express')
 const middlewares = require('lib/api-v2/middlewares')
 const validate = require('lib/api-v2/validate')
+
+const log = debug('democracyos:ext:api')
 
 const app = module.exports = express()
 
@@ -15,6 +18,24 @@ app.use(function validationErrorHandler (err, req, res, next) {
       code: 'INVALID_REQUEST_PARAMS',
       message: err.message || 'Invalid request parameters.',
       info: err.errors
+    }
+  })
+})
+
+app.use(function apiError (err, req, res) {
+  const status = err.status || 500
+  const code = err.code || 'SERVER_ERROR'
+  const message = err.message || 'Server Error.'
+
+  if (status === 500) {
+    log(`ERROR ${req.method.toUpperCase()} ${req.url}`, err)
+  }
+
+  res.json(status, {
+    status: status,
+    error: {
+      code: code,
+      message: message
     }
   })
 })
