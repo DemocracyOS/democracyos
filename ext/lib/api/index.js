@@ -22,7 +22,7 @@ app.use(function validationErrorHandler (err, req, res, next) {
   })
 })
 
-app.use(function apiError (err, req, res) {
+app.use(function apiError (err, req, res, next) {
   const status = err.status || 500
   const code = err.code || 'SERVER_ERROR'
   const message = err.message || 'Server Error.'
