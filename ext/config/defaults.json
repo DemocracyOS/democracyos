@@ -2,9 +2,9 @@
   "ext": {
     "twitter": {
       "consumerKey": "",
-      "twitterConsumerSecret": "",
-      "twitterAccessKey": "",
-      "twitterAccessSecret": "",
+      "consumerSecret": "",
+      "accessKey": "",
+      "accessSecret": "",
       "ownerScreenName": "",
       "slug": ""
     },
