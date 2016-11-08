@@ -22,31 +22,38 @@ class HomePresupuesto extends Component {
     }
   }
 
+  handleFilterChange = (evt) => {
+    const btn = evt.target
+    this.setState({
+      distrito: btn.getAttribute('data-name')
+    })
+  }
+
   render () {
     return (
       <div className='ext-home-presupuesto'>
         <div className='cover'>
           <div className='container'>
+            {this.props.user.state.fulfilled && <VotingModule />}
             <h1>Votá los proyectos<br/>que querés ver en tu barrio</h1>
             <label>Elegí tu distrito para ver los proyectos:</label>
             <div className='distrito-filter'>
               {distritos.map((d) => {
-                const btnStyle = d.name === this.state.distrito ?
-                  'btn-primary' :
-                  'btn-outline-primary'
+                const active = d.name === this.state.distrito && 'active'
                 return (
                   <button
                     type='button'
                     key={d.name}
-                    className={`btn ${btnStyle}`}>
-                    Centro
+                    data-name={d.name}
+                    onClick={this.handleFilterChange}
+                    className={`btn btn-lg btn-outline-primary ${active}`}>
+                    {d.title}
                   </button>
                 )
               })}
             </div>
           </div>
         </div>
-        {this.props.user.state.fulfilled && <VotingModule />}
       </div>
     )
   }
