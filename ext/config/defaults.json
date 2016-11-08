@@ -1,13 +1,17 @@
 {
-  "twitterConsumerKey": "",
-  "twitterConsumerSecret": "",
-  "twitterAccessKey": "",
-  "twitterAccessSecret": "",
-  "ownerScreenName": "",
-  "slug": "",
-  "participatoryBudget": {
-    "secret": "",
-    "statusEndpoint": "",
-    "votingEndpoint": ""
+  "ext": {
+    "twitter": {
+      "consumerKey": "",
+      "twitterConsumerSecret": "",
+      "twitterAccessKey": "",
+      "twitterAccessSecret": "",
+      "ownerScreenName": "",
+      "slug": ""
+    },
+    "participatoryBudget": {
+      "secret": "",
+      "statusEndpoint": "",
+      "votingEndpoint": ""
+    }
   }
 }

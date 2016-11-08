@@ -66,7 +66,7 @@ function parseToken (req, res, next) {
   }
 
   try {
-    var data = jwt.decode(token, config.participatoryBudget.secret)
+    var data = jwt.decode(token, config.ext.participatoryBudget.secret)
     req.data = data
     next()
   } catch (decodeErr) {
@@ -92,7 +92,7 @@ function getUserVotingToken (user) {
     cod_doc: user.extra.cod_doc,
     nro_doc: user.extra.nro_doc,
     sexo: user.extra.sexo
-  }, config.participatoryBudget.secret)
+  }, config.ext.participatoryBudget.secret)
 }
 
 app.get('/participatory-budget/status',
@@ -117,7 +117,7 @@ function getParticipatoryBudgetStatus (req, res, next) {
   }
 
   request
-    .get(config.participatoryBudget.statusEndpoint)
+    .get(config.ext.participatoryBudget.statusEndpoint)
     .query({token: token})
     .end(function statusEndpointCall (err, response) {
       if (err || !response.ok) return next(err)
@@ -146,7 +146,7 @@ function getParticipatoryBudgetStatus (req, res) {
 
   try {
     const token = getUserVotingToken(req.user)
-    const endpoint = url.parse(config.participatoryBudget.votingEndpoint, true)
+    const endpoint = url.parse(config.ext.participatoryBudget.votingEndpoint, true)
 
     endpoint.query.token = token
 
