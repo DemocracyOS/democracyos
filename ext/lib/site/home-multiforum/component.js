@@ -48,19 +48,22 @@ export default function HomeMultiforumOverride (props) {
             <div className='col-md-6'>
               <span className='en-curso'>En curso (votado en 2015)</span>
               <h2>Presupuesto Participativo 2016</h2>
-              <p>Vecinos de todos los distritos priorizaron los proyectos para nuestra ciudad.</p>
+              <p>Vecinos y vecinas de toda los distritos priorizaron nuevos proyectos para nuestra ciudad. Aquí podés conocer los resultados de la votación!</p>
               <ul className='proyectos-stats'>
                 <li>
-                  <span className='num'>345</span>
-                  <p>Proyectos votados</p>
+                  <span className='img'></span>
+                  <span className='num'>582</span>
+                  <p>Proyectos<br />presentados</p>
                 </li>
                 <li>
-                  <span className='num'>217</span>
-                  <p>Proyectos ejecutados</p>
+                  <span className='img'></span>
+                  <span className='num'>19 millones</span>
+                  <p>Presupueso<br />asignado</p>
                 </li>
                 <li>
-                  <span className='num'>19.347</span>
-                  <p>Cantidad de participantes</p>
+                  <span className='img'></span>
+                  <span className='num'>218</span>
+                  <p>Proyectos<br />elegidos</p>
                 </li>
               </ul>
               <Link
