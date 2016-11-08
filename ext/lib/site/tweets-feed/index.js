@@ -1,17 +1,30 @@
+'use strict'
+
 const express = require('express')
 const Twitter = require('tweeter')
 const config = require('ext/lib/config')
 
 const app = module.exports = express()
 
-var client = new Twitter({
-  consumer_key: config.twitterConsumerKey,
-  consumer_secret: config.twitterConsumerSecret,
-  access_token_key: config.twitterAccessKey,
-  access_token_secret: config.twitterAccessSecret
-})
+let client
 
-app.get('/tweets', function (req, res) {
+if (config.twitterConsumerKey) {
+  client = new Twitter({
+    consumer_key: config.twitterConsumerKey,
+    consumer_secret: config.twitterConsumerSecret,
+    access_token_key: config.twitterAccessKey,
+    access_token_secret: config.twitterAccessSecret
+  })
+}
+
+app.get('/tweets', function (req, res, next) {
+  if (!client) {
+    const err = new Error('Twitter account is not configured in this server.')
+    err.code = 'TWITTER_NOT_CONFIGURED'
+    err.status = 500
+    return next(err)
+  }
+
   client.get(
 // -----------------------------------------
     'lists/statuses',
