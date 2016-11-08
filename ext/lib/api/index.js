@@ -10,6 +10,7 @@ const app = module.exports = express()
 app.use('/ext/api', require('./participatory-budget'))
 
 app.use(function validationErrorHandler (err, req, res, next) {
+  if (res.headersSent) return next(err)
   if (!(err instanceof validate.SchemaValidationError)) return next(err)
 
   res.json(400, {
@@ -23,6 +24,8 @@ app.use(function validationErrorHandler (err, req, res, next) {
 })
 
 app.use(function apiError (err, req, res, next) {
+  if (res.headersSent) return next(err)
+
   const status = err.status || 500
   const code = err.code || 'SERVER_ERROR'
   const message = err.message || 'Server Error.'
