@@ -10,10 +10,10 @@ let client
 
 if (config.ext.twitter.consumerKey) {
   client = new Twitter({
-    consumer_key: config.ext.twitter.consumerKey,
-    consumer_secret: config.ext.twitter.consumerSecret,
-    access_token_key: config.ext.twitter.accessKey,
-    access_token_secret: config.ext.twitter.accessSecret
+    consumerKey: config.ext.twitter.consumerKey,
+    consumerSecret: config.ext.twitter.consumerSecret,
+    accessTokenKey: config.ext.twitter.accessKey,
+    accessTokenSecret: config.ext.twitter.accessSecret
   })
 }
 
