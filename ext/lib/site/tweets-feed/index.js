@@ -1,5 +1,5 @@
 const express = require('express')
-const Twitter = require('twitter')
+const Twitter = require('tweeter')
 const config = require('ext/lib/config')
 
 const app = module.exports = express()
