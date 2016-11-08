@@ -8,12 +8,12 @@ const app = module.exports = express()
 
 let client
 
-if (config.twitterConsumerKey) {
+if (config.ext.twitter.consumerKey) {
   client = new Twitter({
-    consumer_key: config.twitterConsumerKey,
-    consumer_secret: config.twitterConsumerSecret,
-    access_token_key: config.twitterAccessKey,
-    access_token_secret: config.twitterAccessSecret
+    consumer_key: config.ext.twitter.consumerKey,
+    consumer_secret: config.ext.twitter.consumerSecret,
+    access_token_key: config.ext.twitter.accessKey,
+    access_token_secret: config.ext.twitter.accessSecret
   })
 }
 
@@ -29,9 +29,9 @@ app.get('/tweets', function (req, res, next) {
 // -----------------------------------------
     'lists/statuses',
     {
-      owner_screen_name: config.ownerScreenName,
+      owner_screen_name: config.ext.twitter.ownerScreenName,
       include_rts: false,
-      slug: config.slug
+      slug: config.ext.twitter.slug
     },
 // -----------------------------------------
     // 'search/tweets',
