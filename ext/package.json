@@ -10,6 +10,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "module-alias": "1.0.10",
+    "string.prototype.padstart": "3.0.0",
     "tweeter": "0.0.4"
   },
   "browser": {

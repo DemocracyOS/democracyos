@@ -1,0 +1,69 @@
+.topic-card
+  display: block
+  display: flex
+  flex-direction: column
+  z-index: 0
+  position relative
+  margin 15px
+  width 260px
+  box-shadow 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)
+  color inherit
+  cursor pointer
+  background-color #fff
+  transition all .3s unquote('cubic-bezier(.25,.8,.25,1)')
+
+  // &:hover
+  //   box-shadow 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23)
+
+  .number
+    z-index: 10
+    position: absolute
+    right: 0
+    top: 14px
+    padding: 7px 16px
+    line-height: 1
+    color: #fff
+    font-size: 21px
+    font-weight: 500
+    background-color: #00adef
+
+  .topic-card-cover
+    position relative
+    width 100%
+    border-bottom: 4px solid #00adef
+    background-size cover
+    background-color #efefef
+
+    &:after
+      content ''
+      display block
+      padding-top 50%
+
+  .topic-info
+    flex-grow: 2
+    display: flex
+    flex-direction: column
+    padding: 15px
+
+  .title
+    margin: 0 0 20px
+    color: #444
+    font-weight: 400
+    line-height: 1.1
+    font-size: 18px
+
+  .description
+    flex-grow: 2
+    margin: 0 0 20px
+    color: #444
+    font-weight: 300
+    line-height: 1.25
+    font-size: 16px
+
+  .budget
+    align-self: flex-end
+    margin: 0
+    color: #00adef
+    font-weight: 900
+    line-height: 1
+    font-size: 24px
