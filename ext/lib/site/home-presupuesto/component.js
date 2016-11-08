@@ -4,10 +4,48 @@ import t from 't-component'
 import user from 'lib/site/user/user'
 import userConnector from 'lib/site/connectors/user'
 
+const distritos = [
+  {title: 'Centro', name: 'centro'},
+  {title: 'Norte', name: 'norte'},
+  {title: 'Noroeste', name: 'noroeste'},
+  {title: 'Oeste', name: 'oeste'},
+  {title: 'Sudoeste', name: 'sudoeste'},
+  {title: 'Sur', name: 'sur'}
+]
+
 class HomePresupuesto extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      distrito: 'centro'
+    }
+  }
+
   render () {
     return (
-      <div>
+      <div className='ext-home-presupuesto'>
+        <div className='cover'>
+          <div className='container'>
+            <h1>Votá los proyectos<br/>que querés ver en tu barrio</h1>
+            <label>Elegí tu distrito para ver los proyectos:</label>
+            <div className='distrito-filter'>
+              {distritos.map((d) => {
+                const btnStyle = d.name === this.state.distrito ?
+                  'btn-primary' :
+                  'btn-outline-primary'
+                return (
+                  <button
+                    type='button'
+                    key={d.name}
+                    className={`btn ${btnStyle}`}>
+                    Centro
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        </div>
         {this.props.user.state.fulfilled && <VotingModule />}
       </div>
     )
