@@ -39,16 +39,14 @@ function getParticipatoryBudgetProfile (req, res) {
   }).exec(function (err, user) {
     if (err) {
       log('Error finding user: ', err)
-      return res.status(500).end()
+      return next(err)
     }
 
     if (!user) {
-      return res.json(404, {
-        status: 404,
-        error: {
-          code: 'USER_NOT_FOUND'
-        }
-      })
+      const err = new Error('User not found.')
+      err.code = 'USER_NOT_FOUND'
+      err.status = 404
+      return next(err)
     }
 
     log('Serving profile of cod_doc: %s', req.query.cod_doc)
@@ -61,25 +59,21 @@ function parseToken (req, res, next) {
   var token = req.query.token || req.body.token
 
   if (!token) {
-    return res.json(400, {
-      status: 400,
-      error: {
-        code: 'MISSING_TOKEN'
-      }
-    })
+    const err = new Error('Invalid token.')
+    err.code = 'MISSING_TOKEN'
+    err.status = 400
+    return next(err)
   }
 
   try {
     var data = jwt.decode(token, config.participatoryBudget.secret)
     req.data = data
     next()
-  } catch (e) {
-    res.json(400, {
-      status: 400,
-      error: {
-        code: 'INVALID_TOKEN'
-      }
-    })
+  } catch (decodeErr) {
+    const err = new Error('Invalid token.')
+    err.code = 'INVALID_TOKEN'
+    err.status = 400
+    next(err)
   }
 }
 
@@ -106,13 +100,10 @@ middlewares.users.restrict,
 function validateUserCanVoteMiddleware (req, res, next) {
   if (userCanVote(req.user)) return next()
 
-  res.json(400, {
-    status: 400,
-    error: {
-      code: 'MISSING_VOTING_PROFILE',
-      message: 'Falta completar el perfil de votación.'
-    }
-  })
+  const err = new Error('Falta completar el perfil de votación.')
+  err.code = 'MISSING_VOTING_PROFILE'
+  err.status = 400
+  next(err)
 },
 function getParticipatoryBudgetStatus (req, res) {
   log('GET /api/participatory-budget/status')
@@ -122,28 +113,14 @@ function getParticipatoryBudgetStatus (req, res) {
   try {
     token = getUserVotingToken(req.user)
   } catch (err) {
-    log('ERROR /api/participatory-budget/status encoding token', err)
-    return res.json(500, {
-      status: 500,
-      error: {
-        code: 'SERVER_ERROR'
-      }
-    })
+    return next(err)
   }
 
   request
     .get(config.participatoryBudget.statusEndpoint)
     .query({token: token})
     .end(function statusEndpointCall (err, response) {
-      if (err || !response.ok) {
-        log('ERROR /api/participatory-budget/status status endpoint call', err)
-        return res.json(500, {
-          status: 500,
-          error: {
-            code: 'SERVER_ERROR'
-          }
-        })
-      }
+      if (err || !response.ok) return next(err)
 
       try {
         const body = JSON.parse(response.text)
@@ -153,14 +130,7 @@ function getParticipatoryBudgetStatus (req, res) {
           results: body
         })
       } catch (err) {
-        log('ERROR /api/participatory-budget/status status endpoint body parsing', err)
-
-        res.json(500, {
-          status: 500,
-          error: {
-            code: 'SERVER_ERROR'
-          }
-        })
+        next(err)
       }
     })
 })
