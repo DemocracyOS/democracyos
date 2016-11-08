@@ -29,7 +29,7 @@ const exposeProfile = utils.expose([
 
 app.get('/participatory-budget/profile',
 parseToken,
-function getParticipatoryBudgetProfile (req, res) {
+function getParticipatoryBudgetProfile (req, res, next) {
   log('GET /api/participatory-budget/profile')
 
   User.findOne({
@@ -105,7 +105,7 @@ function validateUserCanVoteMiddleware (req, res, next) {
   err.status = 400
   next(err)
 },
-function getParticipatoryBudgetStatus (req, res) {
+function getParticipatoryBudgetStatus (req, res, next) {
   log('GET /api/participatory-budget/status')
 
   let token
