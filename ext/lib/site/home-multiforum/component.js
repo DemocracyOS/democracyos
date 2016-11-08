@@ -7,10 +7,10 @@ export default function HomeMultiforumOverride (props) {
     <div>
       <div className='ext-home-cover'>
         <div className='container'>
-          <h2>Presupuesto 2017</h2>
-          <h1>Debate las propuestas<br/>que se votarán en Noviembre</h1>
+          <h2>Presupuesto Participativo 2017</h2>
+          <h1>En noviembre se votan los proyectos<br/>que van a cambiar tu barrio</h1>
           <Link to='/presupuesto' className='btn call-to-action btn-lg'>
-            Quiero decidir
+            Conocer los proyectos
           </Link>
         </div>
       </div>
@@ -47,8 +47,8 @@ export default function HomeMultiforumOverride (props) {
           <div className='row'>
             <div className='col-md-6'>
               <span className='en-curso'>En curso (votado en 2015)</span>
-              <h2>Presupuesto 2016</h2>
-              <p>Vecinos y vecinas de toda los distritos priorizaron nuevos proyectos para nuestra ciudad. Aquí podés conocer los resultados de la votación!</p>
+              <h2>Presupuesto Participativo 2016</h2>
+              <p>Vecinos de todos los distritos priorizaron los proyectos para nuestra ciudad.</p>
               <ul className='proyectos-stats'>
                 <li>
                   <span className='num'>345</span>
@@ -63,7 +63,12 @@ export default function HomeMultiforumOverride (props) {
                   <p>Cantidad de participantes</p>
                 </li>
               </ul>
-              <button className='btn ver-mas'>Ver más resultados</button>
+              <Link
+                to='
+http://www.rosario.gob.ar/web/gobierno/presupuestos/presupuesto-participativo'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='btn ver-mas'>Ver más resultados</Link>
             </div>
             <div className='col-md-6 linea-tiempo'>
               <ul>

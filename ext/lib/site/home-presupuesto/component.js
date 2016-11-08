@@ -69,8 +69,8 @@ class HomePresupuesto extends Component {
         <div className='cover'>
           <div className='container'>
             {this.props.user.state.fulfilled && <VotingModule />}
-            <h1>Votá los proyectos<br/>que querés ver en tu barrio</h1>
-            <label>Elegí tu distrito para ver los proyectos:</label>
+            <h1>Votá los proyectos<br/>que querés para tu barrio</h1>
+            <label>Elegí tu distrito para ver los proyectos</label>
             <DistritoFilter
               active={this.state.distrito}
               onChange={this.handleDistritoFilterChange} />
