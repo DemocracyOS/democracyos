@@ -54,29 +54,49 @@
   h2
     font-size: 39px
     margin: 25px 0
+    font-weight: 500
   p
     font-size: 19px
+    font-weight: 100
   .en-curso
     background: #f7941d
     padding: 6px 10px
     font-size: 19px
   .proyectos-stats
     margin: 0
-    padding: 5px 0px 10px
+    padding: 5px 0 10px 0
     list-style: none
-    display: flex
     li
       text-align: center
+      display: inline-block
+      margin-right: 50px
+      .img
+        height: 74px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: auto 50px
+        padding-bottom: 5px
       span
         display: block
       .num
-        font-size: 43px
+        font-size: 26px
         font-weight: 600
+      p
+        font-size: 15px
+    li:nth-child(1)
+      .img
+        background-image: unquote("url('/ext/lib/site/home-multiforum/icon-1@3x.png')")
+    li:nth-child(2)
+      .img
+        background-image: unquote("url('/ext/lib/site/home-multiforum/icon-2@3x.png')")
+    li:nth-child(3)
+      .img
+        background-size: auto 70px
+        background-image: unquote("url('/ext/lib/site/home-multiforum/icon-3@3x.png')")
   .ver-mas
-    font-size: 18px
     color: #00adef
     font-weight: bold
-
+    background: #f3f3f3
   .linea-tiempo
     display: flex
     justify-content: center
@@ -112,7 +132,7 @@
             width: 0
             height: 0
             top: 6px
-            left: -7px
+            left: -6px
             border-style: solid
             position: absolute
             border-width: 7px 7px 7px 0
