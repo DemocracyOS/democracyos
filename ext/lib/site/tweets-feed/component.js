@@ -23,8 +23,7 @@ class TweetsFeed extends Component {
       <div className='tweets-box'>
         <div className='tweet-box tweet-box-lg tweets-logo'>
           <div className='tweet-content'>
-            <span className='rosario'>Rosario</span>
-            <span className='cerca'>Cerca</span>
+            <span>#YoVotoPorMiBarrio</span>
           </div>
         </div>
         <div className='tweet-box tweet-box-lg tweets-links'>
@@ -33,19 +32,19 @@ class TweetsFeed extends Component {
               href='https://twitter.com/MuniRosario'
               target='_blank'
               className='tw-link'>
-            @MuniRosario <span>|  273 K</span>
+            @MuniRosario
             </a>
             <a
               href='https://facebook.com/MunicipalidadRosario'
               target='_blank'
               className='fb-link'>
-            @MunicipalidadRosario <span>|  70 K</span>
+            /MunicipalidadRosario
             </a>
             <a
               href='https://youtube.com/MuniRosario'
               target='_blank'
               className='yt-link'>
-            @MuniRosario <span>|  1.512 K</span>
+            MuniRosario
             </a>
           </div>
         </div>
