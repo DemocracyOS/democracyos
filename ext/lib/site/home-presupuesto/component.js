@@ -22,6 +22,7 @@ class HomePresupuesto extends Component {
     super(props)
 
     this.state = {
+      loading: true,
       distrito: distritos[0].name,
       forum: null,
       topics: null
@@ -34,20 +35,27 @@ class HomePresupuesto extends Component {
 
   fetchTopics = () => {
     this.setState({
-      forum: null,
-      topics: null
+      loading: true
     })
 
     forumStore
       .findOneByName('presupuesto')
       .then((forum) => {
-        topicStore.findAll({forum: forum.id})
+        return topicStore.findAll({forum: forum.id})
           .then((topics) => {
             this.setState({
+              loading: false,
               forum,
               topics
             })
           })
+      }).catch((err) => {
+        console.error(err)
+        this.setState({
+          loading: false,
+          forum: null,
+          topics: null
+        })
       })
   }
 
@@ -70,6 +78,7 @@ class HomePresupuesto extends Component {
         </div>
         {this.state.topics && (
           <div className='topics-container'>
+            {this.state.loading && <div className='loader'></div>}
             {this.state.topics.map((topic) => {
               return <TopicCard key={topic.id} topic={topic} />
             })}
