@@ -29,38 +29,47 @@ class TweetsFeed extends Component {
         </div>
         <div className='tweet-box tweet-box-lg tweets-links'>
           <div className='tweet-content'>
-            <div
-            className='tw-link'>
+            <a
+              href='https://twitter.com/MuniRosario'
+              target='_blank'
+              className='tw-link'>
             @MuniRosario <span>|  273 K</span>
-            </div>
-            <div
-            className='fb-link'>
+            </a>
+            <a
+              href='https://facebook.com/MunicipalidadRosario'
+              target='_blank'
+              className='fb-link'>
             @MunicipalidadRosario <span>|  70 K</span>
-            </div>
-            <div
-            className='yt-link'>
+            </a>
+            <a
+              href='https://youtube.com/MuniRosario'
+              target='_blank'
+              className='yt-link'>
             @MuniRosario <span>|  1.512 K</span>
-            </div>
+            </a>
           </div>
         </div>
         {
           tweets.map((twt, key) => {
+            const isPlaceholder = !twt.entities.media[0].media_url
             const imageUrl = twt.entities.media[0].media_url || ''
             return (
-              <div
+              <a
                 key={key}
                 className={
                   'tweet-box tweet-box-sm' +
                   (
-                    twt.entities.media[0].media_url
-                      ? ''
-                      : ' placeholder'
+                    isPlaceholder
+                      ? ' placeholder'
+                      : ''
                   )
                 }
-                style={{
-                  order: (key > 3) ? (key + 3) : (key + 2)
-                }}
-                >
+                target='_blank'
+                href={
+                   isPlaceholder
+                    ? '#'
+                    : 'http://' + twt.entities.media[0].display_url
+                  }>
                   <div className='tweet-bird'></div>
                   <div
                     className='tweet-content'
@@ -68,7 +77,7 @@ class TweetsFeed extends Component {
                       backgroundImage: 'url(' + imageUrl + ')'
                     }}>
                   </div>
-              </div>
+              </a>
             )
           })
         }
