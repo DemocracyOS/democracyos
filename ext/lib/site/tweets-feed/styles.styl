@@ -3,7 +3,7 @@
   flex-wrap: wrap
   .tweet-box-lg
     flex: 2
-    min-width: 288px
+    min-width: 350px
     &::before
       content: ""
       display: block
@@ -55,6 +55,33 @@
         background-position: center
         background-size: 100px!important
         margin: 0
+    &:nth-child(1)
+      order: 1
+    &:nth-child(2)
+      order: 6
+    &:nth-child(3)
+      order: 2
+    &:nth-child(4)
+      order: 3
+    &:nth-child(5)
+      order: 4
+    &:nth-child(6)
+      order: 5
+    &:nth-child(7)
+      order: 7
+    &:nth-child(8)
+      order: 8
+    @media (max-width: 1222px)
+      &:nth-child(7)
+        display: none
+      &:nth-child(8)
+        display: none
+    @media (max-width: 930px)
+      &:nth-child(8)
+        display: block
+    @media (max-width: 830px)
+      &:nth-child(8)
+        display: none
   .tweets-logo
     order: 1
     background: #e9eaee
@@ -75,7 +102,7 @@
       display flex
       justify-content: center
       width: 330px
-      &>div
+      &>a
         color: #fff
         font-size: 20px
         font-weight: 500
