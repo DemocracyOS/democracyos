@@ -25,7 +25,7 @@ export default function TopicCard (props) {
 }
 
 function prettyNumber (number) {
-  return `# ${padStart(number, 3, '0')}`
+  return `#${padStart(number, 3, '0')}`
 }
 
 function prettyPrice (number) {
