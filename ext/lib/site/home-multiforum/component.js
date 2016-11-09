@@ -101,6 +101,20 @@ http://www.rosario.gob.ar/web/gobierno/presupuestos/presupuesto-participativo'
         </div>
       </div>
       <TweetsFeed />
+      <footer className='container-fluid'>
+        <div className='disclaimer'>
+          <p>
+            Desarrollado con software libre por la Municipalidad de Rosario y DemocracyOS
+          </p>
+          <Link to='help'>Términos y condiciones</Link>
+          <span className='spacer'>|</span>
+          <Link to='help'>Contacto</Link>
+        </div>
+        <div className='footer-logos'>
+          <a href='#' className='democracy'></a>
+          <a href='#' className='rosario'></a>
+        </div>
+      </footer>
     </div>
   )
 }
