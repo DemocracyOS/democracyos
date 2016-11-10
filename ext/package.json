@@ -11,7 +11,7 @@
   "dependencies": {
     "module-alias": "1.0.10",
     "string.prototype.padstart": "3.0.0",
-    "tweeter": "0.0.4"
+    "twitter": "^1.4.0"
   },
   "browser": {
     "lib/config": "lib/config/config"
