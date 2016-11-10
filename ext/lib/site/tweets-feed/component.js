@@ -2,8 +2,16 @@ import React, {Component} from 'react'
 import { connect } from 'react-refetch'
 
 class TweetsFeed extends Component {
-  render () {
-    const { tweetsFetch } = this.props
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      tweets: []
+    }
+  }
+
+  componentWillReceiveProps (props) {
+    const { tweetsFetch } = props
     let tweets = []
     if (tweetsFetch.fulfilled) {
       tweets = tweetsFetch.value.results.tweets
@@ -18,6 +26,10 @@ class TweetsFeed extends Component {
         })
       }
     }
+    this.setState({tweets})
+  }
+
+  render () {
 
     return (
       <div className='tweets-box'>
@@ -49,7 +61,7 @@ class TweetsFeed extends Component {
           </div>
         </div>
         {
-          tweets.map((twt, key) => {
+          this.state.tweets.map((twt, key) => {
             const isPlaceholder = !twt.entities.media[0].media_url
             const imageUrl = twt.entities.media[0].media_url || ''
             return (
