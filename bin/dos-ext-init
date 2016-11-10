@@ -8,7 +8,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-const ROOT_FOLDER = path.resolve(__dirname, '..', '..', '..')
+const ROOT_FOLDER = path.resolve(__dirname, '..')
 const TEMPLATE_FOLDER = path.resolve(ROOT_FOLDER, 'lib', 'ext', 'template')
 const DEST_FOLDER = path.resolve(ROOT_FOLDER, 'ext')
 
