@@ -26,6 +26,8 @@
     align-items: center
     justify-content: space-between
     height: 100px
+    @media (max-width: 500px)
+      height: 50px
 
   .current-date
     display: none
@@ -40,10 +42,10 @@
 
   .logo
     margin: 0
-
     img
       max-width: 360px
-
+      @media (max-width: 500px)
+        max-width: 200px
   .user-nav
     @import '../../../../lib/site/header/user-badge/styles'
 
