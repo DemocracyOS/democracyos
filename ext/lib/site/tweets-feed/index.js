@@ -21,7 +21,6 @@ let twCache = []
 let twExpires = Date.now()
 
 function twGet () {
-  console.log('twExpires > Date.now()', twExpires > Date.now(), twExpires, Date.now())
   return (twExpires > Date.now())
     ? Promise.resolve(twCache)
     : twFetch()
@@ -42,9 +41,8 @@ function twFetch () {
           .filter(tw => tw.entities.hasOwnProperty('media'))
           .filter((tw, i) => i < 6)
 
-        console.log('get tweets ', tweetsValid.length)
         twCache = tweetsValid
-        twExpires = Date.now() + 20
+        twExpires = Date.now() + 5 * 60 * 1000
         resolve(tweetsValid)
       }
     )
