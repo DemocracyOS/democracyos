@@ -9,7 +9,7 @@ const fs = require('fs')
 const path = require('path')
 const cp = require('child_process')
 
-const ROOT_FOLDER = path.resolve(__dirname, '..', '..', '..')
+const ROOT_FOLDER = path.resolve(__dirname, '..')
 const EXT_PATH = path.resolve(ROOT_FOLDER, 'ext')
 
 directoryExists(EXT_PATH, function (err, exists) {
@@ -18,13 +18,13 @@ directoryExists(EXT_PATH, function (err, exists) {
     process.exit(1)
   }
 
-  if (!exists) {
-    process.exit(0)
-  }
+  if (!exists) process.exit(0)
 
   console.log('> Installing dependencies on /ext folder')
 
-  const install = cp.spawn('npm', ['i'], {
+  const args = ['install'].concat(process.argv.splice(2))
+
+  const install = cp.spawn('npm', args, {
     env: process.env,
     cwd: EXT_PATH,
     stdio: 'inherit'

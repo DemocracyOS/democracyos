@@ -204,7 +204,7 @@
     "npm": "2.14.2"
   },
   "scripts": {
-    "preinstall": "node lib/ext/bin/install",
+    "preinstall": "bin/dos-ext-install",
     "start": "NODE_PATH=. node index.js",
     "build": "NODE_PATH=. gulp build",
     "watch": "NODE_PATH=. gulp watch",

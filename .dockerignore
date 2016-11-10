@@ -6,6 +6,7 @@
 docker
 docs
 node_modules
+public
 
 config/*.json
 !config/defaults.json
