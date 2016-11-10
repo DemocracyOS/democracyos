@@ -1,6 +1,5 @@
 const debug = require('debug')
 const express = require('express')
-const middlewares = require('lib/api-v2/middlewares')
 const validate = require('lib/api-v2/validate')
 
 const log = debug('democracyos:ext:api')
@@ -30,7 +29,7 @@ app.use(function apiError (err, req, res, next) {
   const code = err.code || 'SERVER_ERROR'
   const message = err.message || 'Server Error.'
 
-  const method = (req.method || 'GET').toUpperCase()
+  const method = (req.method || 'GET').toUpperCase()
 
   if (status === 500) {
     log(`ERROR ${method} ${req.url}`, err)
