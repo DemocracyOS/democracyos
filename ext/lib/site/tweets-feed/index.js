@@ -17,6 +17,40 @@ if (config.ext.twitter.consumerKey) {
   })
 }
 
+let twCache = []
+let twExpires = Date.now()
+
+function twGet () {
+  console.log('twExpires > Date.now()', twExpires > Date.now(), twExpires, Date.now())
+  return (twExpires > Date.now())
+    ? Promise.resolve(twCache)
+    : twFetch()
+}
+
+function twFetch () {
+  return new Promise((resolve, reject) => {
+    client.get(
+      'lists/statuses',
+      {
+        owner_screen_name: config.ext.twitter.ownerScreenName,
+        include_rts: false,
+        slug: config.ext.twitter.slug
+      },
+      function (error, tweets, response) {
+        if (error) reject(error)
+        let tweetsValid = tweets
+          .filter(tw => tw.entities.hasOwnProperty('media'))
+          .filter((tw, i) => i < 6)
+
+        console.log('get tweets ', tweetsValid.length)
+        twCache = tweetsValid
+        twExpires = Date.now() + 20
+        resolve(tweetsValid)
+      }
+    )
+  })
+}
+
 app.get('/tweets', function (req, res, next) {
   if (!client) {
     const err = new Error('Twitter account is not configured in this server.')
@@ -25,36 +59,19 @@ app.get('/tweets', function (req, res, next) {
     return next(err)
   }
 
-  client.get(
-// -----------------------------------------
-    'lists/statuses',
-    {
-      owner_screen_name: config.ext.twitter.ownerScreenName,
-      include_rts: false,
-      slug: config.ext.twitter.slug
-    },
-// -----------------------------------------
-    // 'search/tweets',
-    // {
-    //   q: 'popular filter:media'
-    // },
-// -----------------------------------------
-    function (err, tweets, response) {
-      if (err) {
-        return res.json({
-          status: 500,
-          error: err
-        })
-      }
-      console.log(tweets.length)
+  twGet()
+    .then(function (tweets) {
       res.json({
         status: 200,
         results: {
           tweets: tweets
-            .filter(tw => tw.entities.hasOwnProperty('media'))
-            .filter((tw, i) => i < 6)
         }
       })
-    }
-  )
+    })
+    .catch(function (err) {
+      return res.json({
+        status: 500,
+        error: err
+      })
+    })
 })
