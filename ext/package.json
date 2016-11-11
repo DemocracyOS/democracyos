@@ -10,6 +10,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "module-alias": "1.0.10",
+    "rosariociudad-bootstrap": "^1.0.3",
     "string.prototype.padstart": "3.0.0",
     "twitter": "^1.4.0"
   },
