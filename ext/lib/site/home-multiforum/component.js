@@ -4,7 +4,7 @@ import TweetsFeed from '../tweets-feed/component'
 
 export default function HomeMultiforumOverride (props) {
   return (
-    <div>
+    <div className='ext-home-multiforum'>
       <div className='ext-home-cover'>
         <div className='container'>
           <h2>Presupuesto Participativo 2017</h2>
