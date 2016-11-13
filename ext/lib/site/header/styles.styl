@@ -19,7 +19,6 @@
       background: rgba(255,255,255,0.1)
 
 .ext-site-header-main
-
   border-bottom: 2px solid #F59231
 
   & > .container-simple
@@ -48,23 +47,25 @@
       max-width: 360px
       @media (max-width: 500px)
         max-width: 200px
+
   .user-nav
     @import '../../../../lib/site/header/user-badge/styles'
 
     .user
       justify-content: flex-end
 
-      .user-badge .dropdown-list
-        position: absolute
-        right: 0
     .user-badge
+      position: relative
       margin-left: 8px
+
       button
         margin: 0
+
       .dropdown-list
         position: absolute
-        top: 100px
+        top: 100%
         right: 0
+
     .nav-link
       height: 100%!important
       display: flex !important

@@ -20,14 +20,14 @@ class Header extends Component {
 
   componentWillMount () {
     bus.on('user-form:load', this.onLoadUserForm)
-    bus.on('sidebar:enable', this.showToggleSidebarChange)
-    bus.on('sidebar:show', this.showSidebarChange)
+    // bus.on('sidebar:enable', this.showToggleSidebarChange)
+    // bus.on('sidebar:show', this.showSidebarChange)
   }
 
   componentWillUnmount () {
     bus.off('user-form:load', this.onLoadUserForm)
-    bus.off('sidebar:enable', this.showToggleSidebarChange)
-    bus.off('sidebar:show', this.showSidebarChange)
+    // bus.off('sidebar:enable', this.showToggleSidebarChange)
+    // bus.off('sidebar:show', this.showSidebarChange)
   }
 
   onLoadUserForm = (formName) => {
