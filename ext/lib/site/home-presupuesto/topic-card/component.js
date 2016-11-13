@@ -1,15 +1,17 @@
 import React from 'react'
 import padStart from 'string.prototype.padstart'
+import {Link} from 'react-router'
 
 export default function TopicCard (props) {
   const {topic} = props
 
   return (
-    <div className='topic-card'>
+    <Link className='topic-card' to={topic.url}>
       {topic.extra && topic.extra.number && (
         <div className='number'>{prettyNumber(topic.extra.number)}</div>
       )}
-      <div className='topic-card-cover'
+      <div
+        className='topic-card-cover'
         style={{backgroundImage: `url(${topic.coverUrl})`}} />
       <div className='topic-info'>
         <h1 className='title'>{topic.mediaTitle}</h1>
@@ -20,7 +22,7 @@ export default function TopicCard (props) {
           <p className='budget'>{prettyPrice(topic.extra.budget)}</p>
         )}
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -36,11 +38,9 @@ function prettyDecimals (number) {
   if (typeof number === 'number') number = String(number)
   if (typeof number !== 'string') return ''
 
-  return (number
-    .split('')
-    .reverse()
-    .join('')
-    .match(/[0-9]{1,3}/g) || [])
+  number = number.split('').reverse().join('').match(/[0-9]{1,3}/g)
+
+  return (number || [])
     .join('.')
     .split('')
     .reverse()
