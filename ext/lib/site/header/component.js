@@ -55,7 +55,7 @@ class Header extends Component {
 
   render () {
     return (
-      <header className='ext-site-header'>
+      <header className='navbar navbar-fixed-top ext-site-header'>
         <div className='ext-site-header-prefix'>
           <div className='container-simple'>
             <Link to='http://rosario.gob.ar'>
