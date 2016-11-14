@@ -17,27 +17,16 @@ export default function HomeMultiforumOverride (props) {
       <div className='intro'>
         <div className='container'>
           <div className='row'>
-            <div className='col-md-5'>
-              <ul className='light-text'>
-                <li>
-                  <h4>Ideas</h4>
-                  <p>Ciudadanas y ciudadanos de cada distrito desarrollaron propuestas que pueden.</p>
-                </li>
-                <li>
-                  <h4>Proyectos</h4>
-                  <p>Ciudadanas y ciudadanos de cada distrito desarrollaron propuestas que pueden convertirse en parte de la planificación de la ciudad.</p>
-                </li>
-                <li>
-                  <h4>Votación</h4>
-                  <p>Ciudadanas y ciudadanos de cada distrito desarrollaron propuestas que pueden.</p>
-                </li>
-                <li>
-                  <h4>Financiamiento</h4>
-                  <p>Ciudadanas y ciudadanos de cada distrito desarrollaron propuestas que pueden convertirse en parte de la planificación de la ciudad.</p>
-                </li>
-              </ul>
+            <div className='col-md-6'>
+              <p className='light-text'>Del 18 al 28 de noviembre podés elegir un proyecto para tu barrio y uno para tu distrito.</p>
+              <p className='light-text'>Y hasta el 29 de noviembre tenés tiempo para votar en el Presupuesto Participativo Joven.</p>
+              <p className='light-text'>El presupuesto total es de 207 millones que se dividirá en proyectos para tu barrio y proyectos para jóvenes.</p>
+              <p className='light-text'>Los proyectos surgen de las reuniones de Consejos Barriales, fueron presentados por los consejeros electos y trabajados con los equipos del distrito.</p>
             </div>
-            <div className='col-md-7 hidden-sm-down globos'>
+            <div className='col-md-6 video-container'>
+              <div className='video'>
+                <iframe src='https://www.youtube.com/embed/3E0WLh37_r8'></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -67,11 +56,12 @@ export default function HomeMultiforumOverride (props) {
                 </li>
               </ul>
               <Link
-                to='
-http://www.rosario.gob.ar/web/gobierno/presupuestos/presupuesto-participativo'
+                to='http://www.rosario.gob.ar/web/gobierno/presupuestos/presupuesto-participativo'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='btn ver-mas'>Ver más resultados</Link>
+                className='btn ver-mas'>
+                Ver más resultados
+              </Link>
             </div>
             <div className='col-md-6 linea-tiempo'>
               <ul>

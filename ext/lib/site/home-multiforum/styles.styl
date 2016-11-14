@@ -31,29 +31,36 @@
     background-repeat: no-repeat
     background-position: bottom
     background-size: contain
-    padding: 0 0 180px
+    padding: 50px 0 200px
+    .col-md-6
+      padding-top: 50px
     .light-text
-      margin-top 100px
-      padding: 0
-      list-style: none
       color: #a5a7a9
-      h4
-        font-size: 20px
-        margin: 20px 0
-        font-weight: 600
-    .globos
-      background-image: unquote("url('/ext/lib/site/home-multiforum/globos-text.png')")
-      background-size: 80%
-      background-repeat: no-repeat
-      background-position: right
-
+    .video-container
+      display: flex
+      align-items: center
+      justify-content: center
+      .video
+        width: 100%
+        max-width: 450px
+        position: relative
+        &::before
+          content: ""
+          display: block
+          padding-top: 56.25%
+        iframe
+          border: none
+          position: absolute
+          top: 0
+          width: 100%
+          height: 100%
   .info
     background: #00adef
     color: #fff
     margin-top: -20px
     padding: 50px 0
     .col-md-6
-      padding-top: 50px
+      padding-top: 50
     h2
       font-size: 39px
       margin: 25px 0
