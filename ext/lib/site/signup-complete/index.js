@@ -1,6 +1,7 @@
 const express = require('express')
 const middlewares = require('lib/api-v2/middlewares')
 const validate = require('lib/api-v2/validate')
+const User = require('lib/models').User
 
 const app = module.exports = express()
 
@@ -29,24 +30,78 @@ validate({
 }, {
   filter: true
 }),
-function postSignupComplete (req, res) {
-  const currentExtra = req.user.extra || {}
+function postSignupCompleteParseData (req, res, next) {
+  const user = req.user
 
-  const data = {
-    cod_doc: currentExtra.cod_doc || req.body.cod_doc,
-    sexo: currentExtra.sexo || req.body.sexo,
-    nro_doc: currentExtra.nro_doc || Number(req.body.nro_doc)
+  user.extra = user.extra || {}
+
+  const data = req.extraData = {
+    cod_doc: req.body.cod_doc,
+    sexo: req.body.sexo,
+    nro_doc: Number(req.body.nro_doc)
   }
 
-  req.user.extra = data
+  const modifying = Object.keys(data).find((key) => {
+    return user.extra[key] && user.extra[key] !== data[key]
+  })
+
+  if (modifying) {
+    res.json(400, {
+      status: 400,
+      error: {
+        code: 'CANT_MODIFY_EXTRA_DATA',
+        message: 'Extra data of user profile cant be modified.'
+      }
+    })
+  } else {
+    next()
+  }
+},
+function postSignupCompleteCheckDocDuplication (req, res, next) {
+  User
+    .find({
+      _id: {$ne: req.user._id},
+      'extra.cod_doc': req.extraData.cod_doc,
+      'extra.sexo': req.extraData.sexo,
+      'extra.nro_doc': req.extraData.nro_doc
+    })
+    .count()
+    .exec()
+    .then(function (count) {
+      if (count === 0) return next()
+
+      res.json(400, {
+        status: 400,
+        error: {
+          code: 'DUPLICATED_VOTING_DATA',
+          message: 'Ya hay otra persona registrada con los mismos datos.'
+        }
+      })
+    })
+    .catch(function (err) {
+      console.error(err)
+
+      res.json(500, {
+        status: 500,
+        error: {
+          code: 'SERVER_ERROR',
+          message: 'Server Error'
+        }
+      })
+    })
+},
+function postSignupComplete (req, res) {
+  Object.assign(req.user.extra, req.extraData)
 
   req.user.save(function (err, user) {
     if (err) {
+      console.error(err)
+
       return res.json(500, {
         status: 500,
         error: {
           code: 'SERVER_ERROR',
-          message: err.message || 'Server Error'
+          message: 'Server Error'
         }
       })
     }
@@ -54,7 +109,7 @@ function postSignupComplete (req, res) {
     res.json(200, {
       status: 200,
       results: {
-        extra: data
+        extra: req.extraData
       }
     })
   })
