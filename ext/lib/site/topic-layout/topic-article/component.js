@@ -69,6 +69,9 @@ class TopicArticle extends Component {
           } : null}>
           <div className='header-content'>
             <h1>{topic.mediaTitle}</h1>
+            {topic.extra && topic.extra.description && (
+              <p>{topic.extra.description}</p>
+            )}
           </div>
         </header>
         <div className='proyecto-main container'>

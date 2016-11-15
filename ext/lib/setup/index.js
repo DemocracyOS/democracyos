@@ -1,14 +1,17 @@
 const topicApi = require('lib/api/topic')
 const userApi = require('lib/db-api/user')
 
-topicApi.topicListKeys.push(
+const topicExtraFields = [
   'extra',
   'extra.numero',
   'extra.distrito',
   'extra.area',
-  'extra.resumen',
+  'extra.description',
   'extra.monto'
-)
+]
+
+topicApi.topicListKeys.push.apply(topicApi.topicListKeys, topicExtraFields)
+topicApi.topicKeys.push.apply(topicApi.topicKeys, topicExtraFields)
 
 userApi.expose.confidential.keys.push(
   'extra',
