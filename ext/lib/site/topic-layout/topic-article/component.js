@@ -6,6 +6,7 @@ import urlBuilder from 'lib/url-builder'
 import userConnector from 'lib/site/connectors/user'
 import Content from 'ext/lib/site/topic-layout/topic-article/content/component'
 import Comments from 'lib/site/topic-layout/topic-article/comments/component'
+import VotingModule from '../../voting-module/component'
 
 class TopicArticle extends Component {
   constructor (props) {
@@ -58,6 +59,7 @@ class TopicArticle extends Component {
 
     return (
       <div className='proyecto-container'>
+        <VotingModule />
         {
           this.state.showSidebar &&
             <div onClick={hideSidebar} className='topic-overlay' />
