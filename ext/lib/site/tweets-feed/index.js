@@ -36,8 +36,9 @@ function twFetch () {
         slug: config.ext.twitter.slug
       },
       function (error, tweets, response) {
-        if (error) reject(error)
-        let tweetsValid = tweets
+        if (error) return reject(error)
+
+        let tweetsValid = tweets || []
           .filter(tw => tw.entities.hasOwnProperty('media'))
           .filter((tw, i) => i < 6)
 
@@ -59,7 +60,7 @@ app.get('/tweets', function (req, res, next) {
 
   twGet()
     .then(function (tweets) {
-      res.json({
+      res.json(200, {
         status: 200,
         results: {
           tweets: tweets
@@ -67,7 +68,7 @@ app.get('/tweets', function (req, res, next) {
       })
     })
     .catch(function (err) {
-      return res.json({
+      return res.json(500, {
         status: 500,
         error: err
       })
