@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router'
 import bus from 'bus'
 import t from 't-component'
 import urlBuilder from 'lib/url-builder'
 import userConnector from 'lib/site/connectors/user'
-import Content from 'ext/site/topic-layout/topic-article/content/component'
+import Content from 'ext/lib/site/topic-layout/topic-article/content/component'
 import Comments from 'lib/site/topic-layout/topic-article/comments/component'
 
 class TopicArticle extends Component {
@@ -56,18 +57,39 @@ class TopicArticle extends Component {
     }
 
     return (
-      <div className='topic-article-wrapper'>
+      <div className='proyecto-container'>
         {
           this.state.showSidebar &&
             <div onClick={hideSidebar} className='topic-overlay' />
         }
         <header>
-          <h1>{topic.mediaTitle}</h1>
-          Autor: {topic.author}
+          <div className='header-content'>
+            <h1>{topic.mediaTitle}</h1>
+            Autor: {topic.author}
+          </div>
         </header>
-        {
-          topic.clauses && <Content clauses={topic.clauses} />
-        }
+        <div className='proyecto-main container'>
+          <div className='row'>
+            <div className='proyecto-content col-md-8'>
+              <Link className='volver' to='presupuesto'>&lt; Ver todos los proyectos</Link>
+              {
+                topic.clauses && <Content clauses={topic.clauses} />
+              }
+              <p className='preguntas'>¿Qué te parece este proyecto?¿Deseás que sea parte de tu barrio?</p>
+            </div>
+            <div className='proyecto-share col-md-4'>
+              <div>
+                <span className='hashtag'>#YoVotoPorMiBarrio</span>
+                <span>Compartí con tus vecinos<br />este proyecto</span>
+                <div className='social-links'>
+                  <a href='#' className='fb'></a>
+                  <a href='#' className='tw'></a>
+                  <a href='#' className='msj'></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {
           !user.state.pending && <Comments forum={forum} topic={topic} />
         }

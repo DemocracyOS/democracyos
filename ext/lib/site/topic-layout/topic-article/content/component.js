@@ -16,11 +16,9 @@ export default class Content extends Component {
     }
 
     return (
-      <div className='entry-content topic-article-content'>
-        <div
-          className='clauses'
-          dangerouslySetInnerHTML={createClauses(this.props.clauses)}>
-        </div>
+      <div
+        className='clauses'
+        dangerouslySetInnerHTML={createClauses(this.props.clauses)}>
       </div>
     )
   }
