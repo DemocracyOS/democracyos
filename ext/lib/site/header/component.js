@@ -66,8 +66,8 @@ class Header extends Component {
         <div className='ext-site-header-main'>
           <div className='container-simple'>
             <div className='current-date'>
-              <span>{moment().format('dddd D')}</span>
-              <span>{moment().format('MMMM YYYY')}</span>
+              <span>{capitalizeFirstLetter(moment().format('dddd D'))}</span>
+              <span>{capitalizeFirstLetter(moment().format('MMMM YYYY'))}</span>
             </div>
 
             {this.state.showToggleSidebar && (
@@ -104,3 +104,8 @@ class Header extends Component {
 }
 
 export default userConnector(Header)
+
+function capitalizeFirstLetter(string) {
+  if (!string) return ''
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
