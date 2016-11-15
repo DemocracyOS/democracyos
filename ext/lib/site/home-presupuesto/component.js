@@ -42,6 +42,16 @@ class HomePresupuesto extends Component {
       .then((forum) => {
         return topicStore.findAll({forum: forum.id})
           .then((topics) => {
+            topics = topics.sort((a, b) => {
+              if (!(a.extra && a.extra.number)) return -1
+              if (!(b.extra && b.extra.number)) return 1
+              return a.extra.number > b.extra.number ?
+                1 :
+                a.extra.number < b.extra.number ?
+                -1 :
+                0
+            })
+
             this.setState({
               loading: false,
               forum,
