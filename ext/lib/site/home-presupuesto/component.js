@@ -126,7 +126,7 @@ function DistritoFilter (props) {
   return (
     <div className='distrito-filter'>
       {distritos.map((d) => {
-        const isActive = d.name === active ? ' active' : ''
+        const isActive = d.name === active.name ? ' active' : ''
         return (
           <button
             type='button'
