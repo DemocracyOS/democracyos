@@ -38,7 +38,7 @@ function twFetch () {
       function (error, tweets, response) {
         if (error) return reject(error)
 
-        let tweetsValid = tweets || []
+        let tweetsValid = (tweets || [])
           .filter(tw => tw.entities.hasOwnProperty('media'))
           .filter((tw, i) => i < 6)
 
