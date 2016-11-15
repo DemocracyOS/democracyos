@@ -21,7 +21,6 @@
     display: flex
     align-items: center
     min-height: 500px
-    margin-bottom: 60px
     padding: 15px 0
     color: #fff
     text-align: center
@@ -63,7 +62,18 @@
         border-color: #00adef
 
   .topics-section
-    padding: 90px 0 45px
+    padding: 50px 0 45px
+
+    .topics-section-container
+      margin-left: auto
+      margin-right: auto
+      padding-left: 15px
+      padding-right: 15px
+
+      for i in (2..8)
+        width = (i * 290px)
+        @media (min-width: width)
+          max-width: width
 
     &.distrito
       background-color: #E7EBEE
@@ -72,3 +82,4 @@
       margin-top: 0
       font-size: 24px
       font-weight: 400
+      color: #4F5353

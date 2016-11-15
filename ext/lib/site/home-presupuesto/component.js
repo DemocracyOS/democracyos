@@ -89,7 +89,9 @@ class HomePresupuesto extends Component {
         </div>
         {this.state.topicsAreas && this.state.topicsAreas.length > 0 && (
           <div className='topics-section areas'>
-            <h2 className='container'>Distrito {this.state.distrito.title} | Proyectos para tu barrio</h2>
+            <h2 className='topics-section-container'>
+              Distrito {this.state.distrito.title} | Proyectos para tu barrio
+            </h2>
             <div className='topics-container areas'>
               {this.state.loading && <div className='loader'></div>}
               {this.state.topicsAreas.map((topic) => {
@@ -100,7 +102,9 @@ class HomePresupuesto extends Component {
         )}
         {this.state.topicsDistrito && this.state.topicsDistrito.length > 0 && (
           <div className='topics-section distrito'>
-            <h2 className='container'>Distrito {this.state.distrito.title} | Proyectos para tu distrito</h2>
+            <h2 className='topics-section-container'>
+              Distrito {this.state.distrito.title} | Proyectos para tu distrito
+            </h2>
             <div className='topics-container'>
               {this.state.loading && <div className='loader'></div>}
               {this.state.topicsDistrito.map((topic) => {
