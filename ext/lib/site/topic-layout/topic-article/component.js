@@ -5,7 +5,7 @@ import t from 't-component'
 import urlBuilder from 'lib/url-builder'
 import userConnector from 'lib/site/connectors/user'
 import Content from 'ext/lib/site/topic-layout/topic-article/content/component'
-import Comments from 'lib/site/topic-layout/topic-article/comments/component'
+import Comments from 'ext/lib/site/topic-layout/topic-article/comments/component'
 
 class TopicArticle extends Component {
   constructor (props) {
