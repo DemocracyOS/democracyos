@@ -35,9 +35,7 @@ class HomePresupuesto extends Component {
   }
 
   fetchTopics = () => {
-    this.setState({
-      loading: true
-    })
+    this.setState({loading: true})
 
     forumStore
       .findOneByName('presupuesto')
