@@ -9,8 +9,8 @@ var striptags = require('striptags')
 var urlBuilder = require('lib/url-builder')
 var log = require('debug')('democracyos:facebook-card')
 
-app.get('facebook-card/' + urlBuilder.for('site.topic'), function (req, res, next) {
-  log('Facebook Request /topic/%s', req.params.id)
+app.get('/facebook-card' + urlBuilder.for('site.topic'), function (req, res, next) {
+  log('Ext Facebook Request /topic/%s', req.params.id)
   api.topic.get(req.params.id, function (err, topicDoc) {
     if (err) return _handleError(err, req, res)
     log('Serving Facebook topic %s', topicDoc.id)
@@ -26,8 +26,8 @@ app.get('facebook-card/' + urlBuilder.for('site.topic'), function (req, res, nex
   })
 })
 
-app.get('facebook-card/*', function (req, res, next) {
-  log('Facebook Request generic page')
+app.get('/facebook-card/*', function (req, res, next) {
+  log('Ext Facebook Request generic page')
   var baseUrl = url.format({
     protocol: config.protocol, hostname: config.host, port: config.publicPort
   })
