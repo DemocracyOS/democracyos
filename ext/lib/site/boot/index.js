@@ -6,3 +6,4 @@ require('../layout')
 
 app.use(require('../signup-complete'))
 app.use(require('../tweets-feed'))
+app.use(require('../facebook-card'))
