@@ -8,10 +8,12 @@
       "ownerScreenName": "",
       "slug": ""
     },
+    "participatoryBudgetEnabled": false,
     "participatoryBudget": {
       "secret": "",
       "statusEndpoint": "",
       "votingEndpoint": ""
-    }
+    },
+    "client": ["participatoryBudgetEnabled"]
   }
 }
