@@ -23,9 +23,10 @@ class HomePresupuesto extends Component {
 
     this.state = {
       loading: true,
-      distrito: distritos[0].name,
+      distrito: distritos[0],
       forum: null,
-      topics: null
+      topicsAreas: null,
+      topicsDistrito: null
     }
   }
 
@@ -46,7 +47,16 @@ class HomePresupuesto extends Component {
             this.setState({
               loading: false,
               forum,
-              topics
+              topicsAreas: topics.filter((t) => {
+                if (!t.extra) return false
+                return t.extra.distrito === this.state.distrito.name &&
+                  t.extra.area !== '0'
+              }),
+              topicsDistrito: topics.filter((t) => {
+                if (!t.extra) return false
+                return t.extra.distrito === this.state.distrito.name &&
+                  (!t.extra.area || t.extra.area === '0')
+              })
             })
           })
       }).catch((err) => {
@@ -54,7 +64,8 @@ class HomePresupuesto extends Component {
         this.setState({
           loading: false,
           forum: null,
-          topics: null
+          topicsAreas: null,
+          topicsDistrito: null
         })
       })
   }
@@ -76,12 +87,26 @@ class HomePresupuesto extends Component {
               onChange={this.handleDistritoFilterChange} />
           </div>
         </div>
-        {this.state.topics && (
-          <div className='topics-container'>
-            {this.state.loading && <div className='loader'></div>}
-            {this.state.topics.map((topic) => {
-              return <TopicCard key={topic.id} topic={topic} />
-            })}
+        {this.state.topicsAreas && this.state.topicsAreas.length > 0 && (
+          <div className='topics-section areas'>
+            <h2 className='container'>Distrito {this.state.distrito.title} | Proyectos para tu barrio</h2>
+            <div className='topics-container areas'>
+              {this.state.loading && <div className='loader'></div>}
+              {this.state.topicsAreas.map((topic) => {
+                return <TopicCard key={topic.id} topic={topic} />
+              })}
+            </div>
+          </div>
+        )}
+        {this.state.topicsDistrito && this.state.topicsDistrito.length > 0 && (
+          <div className='topics-section distrito'>
+            <h2 className='container'>Distrito {this.state.distrito.title} | Proyectos para tu distrito</h2>
+            <div className='topics-container'>
+              {this.state.loading && <div className='loader'></div>}
+              {this.state.topicsDistrito.map((topic) => {
+                return <TopicCard key={topic.id} topic={topic} />
+              })}
+            </div>
           </div>
         )}
       </div>
@@ -94,10 +119,6 @@ export default userConnector(HomePresupuesto)
 function DistritoFilter (props) {
   const {active, onChange} = props
 
-  function handleFilterChange (evt) {
-    onChange(evt.target.getAttribute('data-name'))
-  }
-
   return (
     <div className='distrito-filter'>
       {distritos.map((d) => {
@@ -107,7 +128,7 @@ function DistritoFilter (props) {
             type='button'
             key={d.name}
             data-name={d.name}
-            onClick={handleFilterChange}
+            onClick={onChange.bind(null, d)}
             className={`btn btn-lg btn-outline-primary${isActive}`}>
             {d.title}
           </button>
