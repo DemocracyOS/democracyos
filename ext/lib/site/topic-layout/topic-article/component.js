@@ -75,7 +75,6 @@ class TopicArticle extends Component {
               {
                 topic.clauses && <Content clauses={topic.clauses} />
               }
-              <p className='preguntas'>¿Qué te parece este proyecto?¿Deseás que sea parte de tu barrio?</p>
             </div>
             <div className='proyecto-share col-md-4'>
               <div>
