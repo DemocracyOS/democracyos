@@ -62,7 +62,9 @@ class TopicArticle extends Component {
           this.state.showSidebar &&
             <div onClick={hideSidebar} className='topic-overlay' />
         }
-        <header className='proyecto-container-header'>
+        <header className='proyecto-container-header' style={topic.coverUrl ? {
+            backgroundImage: `url(${topic.coverUrl})`
+          } : null}>
           <div className='header-content'>
             <h1>{topic.mediaTitle}</h1>
             Autor: {topic.author}
