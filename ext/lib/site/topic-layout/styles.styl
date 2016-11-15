@@ -1,8 +1,11 @@
 #topic-wrapper
   width: 100%
+
+  @import './topic-article/styles'
+
   .proyecto-container
     width: 100%
-    header
+    .proyecto-container-header
       height: 500px
       background-image: unquote("url('/ext/lib/site/topic-layout/bg-video@3x.png')")
       background-size: cover
@@ -62,18 +65,18 @@
         a.msj
           background-image: unquote("url('/ext/lib/site/topic-layout/icon-mail@3x.png')")
           margin-left: 10px
-  .topic-comments
-    background-color: #e9eaee
-    padding: 50px 0
-    position: relative
-    .topic-comments-title
-      font-size: 24px
-      margin: 0
-      display: inline-block
-      color: #525252
-      font-weight: 500
-    .needs-login
-      float: right
-      color: #525252
-      a
-        color: #00adef
+  // .topic-comments
+  //   background-color: #e9eaee
+  //   padding: 50px 0
+  //   position: relative
+  //   .topic-comments-title
+  //     font-size: 24px
+  //     margin: 0
+  //     display: inline-block
+  //     color: #525252
+  //     font-weight: 500
+  //   .needs-login
+  //     float: right
+  //     color: #525252
+  //     a
+  //       color: #00adef
