@@ -67,7 +67,6 @@ class TopicArticle extends Component {
           } : null}>
           <div className='header-content'>
             <h1>{topic.mediaTitle}</h1>
-            Autor: {topic.author}
           </div>
         </header>
         <div className='proyecto-main container'>
