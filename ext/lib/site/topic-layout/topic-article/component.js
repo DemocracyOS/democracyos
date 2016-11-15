@@ -74,7 +74,7 @@ class TopicArticle extends Component {
         <div className='proyecto-main container'>
           <div className='row'>
             <div className='proyecto-content col-md-8'>
-              <Link className='volver' to='presupuesto'>&lt; Ver todos los proyectos</Link>
+              <Link className='volver' to='/presupuesto'>&lt; Ver todos los proyectos</Link>
               {
                 topic.clauses && <Content clauses={topic.clauses} />
               }
