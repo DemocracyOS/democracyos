@@ -29,7 +29,7 @@ function (req, res, next) {
       res.render(resolve(__dirname, 'topic.jade'), {
         topic: topic,
         baseUrl: baseUrl,
-        url: urlBuilder.for('site.topic', {
+        url: baseUrl + urlBuilder.for('site.topic', {
           id: topic._id,
           forum: topic.forum.name
         }),
