@@ -1,8 +1,16 @@
+- var description = topic.extra && topic.extra.description ? topic.extra.description : config.socialshare.description
+
+- var title = config.socialshare.siteName
+- if (topic.mediaTitle) title = topic.mediaTitle
+- if (topic.mediaTitle && topic.extra && topic.extra.number && topic.extra.distrito) title = `Distrito ${topic.extra.distrito} #${topic.extra.number} ${topic.mediaTitle}`
+
+- var image = topic.coverUrl ? topic.coverUrl : config.socialshare.image
+
 html
   head
-    meta(property='og:title', content=topic.mediaTitle ? topic.extra.numero ? topic.extra.numero + topic.mediaTitle : topic.mediaTitle : config.socialshare.siteName)
+    meta(property='og:title', content=title)
     meta(property='og:type', content='website')
-    meta(property='og:url', content='#{baseUrl}/topic/#{topic.id}')
-    meta(property='og:image', content=topic.coverUrl ? topic.coverUrl : config.socialshare.image)
+    meta(property='og:url', content=url)
+    meta(property='og:image', content=image)
     meta(property='og:site_name', content='#{config.socialshare.siteName}')
-    meta(property='og:description', content=topic.extra.description ? topic.extra.description : config.socialshare.description)
+    meta(property='og:description', content=description)
