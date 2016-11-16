@@ -1,17 +1,15 @@
-.topic-comments-form
+.reply-comments-form
   position: relative
   display: flex
   flex-wrap: wrap
-  margin-bottom: 30px
-  padding: 15px
+  margin: 0 -15px -5px
+  padding: 10px
+  border-top: 1px solid #e7e7e7
   z-index: 0
-  box-shadow:
-    0 1px 3px rgba(0,0,0,.12),
-    0 1px 2px rgba(0,0,0,.24)
   background-color: #fff
 
   &.focused
-    .comments-create
+    .reply-create
       width: 100%
 
   .loader
@@ -25,8 +23,8 @@
 
   .avatar
     margin-right: 10px
-    width: 1.875em
-    height: 1.875em
+    width: 1.4em
+    height: 1.4em
 
   .name
     flex-grow: 2
@@ -36,7 +34,7 @@
     font-weight: bold
     transition: all .3s
 
-  .comments-create
+  .reply-create
     flex-grow: 2
     resize: none
     margin: 0

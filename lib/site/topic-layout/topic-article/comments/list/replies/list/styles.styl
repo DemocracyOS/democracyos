@@ -1,13 +1,11 @@
 .replies-list
-  padding-bottom: 30px
+  border-top: 1px solid #e6e6e6
+  padding: 20px 0 30px
 
 .replies-list-item
-  margin-bottom: 15px
-  padding: 15px 15px 5px
-  box-shadow:
-    0 1px 3px rgba(0,0,0,.12),
-    0 1px 2px rgba(0,0,0,.24)
+  padding: 0 10px
   background-color: #fff
+  border-left: 3px solid #ccc
 
   .meta
     display: flex
@@ -19,23 +17,17 @@
 
   .avatar
     margin-right: 10px
-    width: 1.875em
-    height: 1.875em
+    width: 1.4em
+    height: 1.4em
 
   .name
-    flex-grow: 2
-    margin: 0
     font-size: .8em
     font-weight: bold
 
-  .created-at
-    font-size: .7em
-    color: #666
-    line-height: .8em
-
   .text
-    margin-bottom: 15px
+    margin: 0
     font-size: .875em
+    display: inline-block
 
     h1,
     h2,
@@ -51,13 +43,12 @@
   .actions
     display: flex
     justify-content: space-between
-    padding-bottom: 5px
-    .reply
-      padding: 0
-      i
-        display: inline-block
-        transform: unquote("rotate(180deg)")
-        color: #999
+    margin-top: 10px
+    padding-bottom: 20px
+    .created-at
+      font-size: .7em
+      color: #666
+      line-height: 1.8em
     button
       cursor: pointer
       border: 0
@@ -73,8 +64,9 @@
         small
           text-transform: lowercase
           color: #999
-
     .votes
+      button
+        font-size: 14px
       .upvote
         &.active,
         &:hover
@@ -90,3 +82,7 @@
       .reply
         i
           color: rgba(0,0,0,0.8)
+
+  &:last-child
+    .actions
+      padding-bottom: 0
