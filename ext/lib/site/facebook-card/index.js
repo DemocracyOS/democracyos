@@ -3,19 +3,14 @@ const app = module.exports = express()
 const api = require('lib/api-v2/db-api')
 const config = require('lib/config')
 const path = require('path')
-const url = require('url')
+const utils = require('lib/utils')
 const resolve = path.resolve
 const striptags = require('striptags')
 const urlBuilder = require('lib/url-builder')
 
 const log = require('debug')('democracyos:facebook-card')
 
-
-const baseUrl = url.format({
-  protocol: config.protocol,
-  hostname: config.host,
-  port: config.publicPort
-})
+const baseUrl = utils.buildUrl(config)
 
 app.get('/facebook-card' + urlBuilder.for('site.topic'),
 function (req, res, next) {
@@ -38,23 +33,6 @@ function (req, res, next) {
       })
     })
     .catch(_handleError)
-
-  // api.topic.get(req.params.id, function (err, topicDoc) {
-  //   if (err) return _handleError(err, req, res)
-  //
-  //   log('Serving Facebook topic %s', topicDoc.id)
-  //
-  //   var baseUrl = url.format({
-  //     protocol: config.protocol, hostname: config.host, port: config.publicPort
-  //   })
-  //
-  //   res.render(resolve(__dirname, 'topic.jade'), {
-  //     topic: topicDoc,
-  //     baseUrl: baseUrl,
-  //     config: config,
-  //     strip: striptags
-  //   })
-  // })
 })
 
 app.get('/facebook-card/*', function (req, res, next) {
