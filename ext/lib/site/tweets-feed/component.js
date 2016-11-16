@@ -21,7 +21,7 @@ class TweetsFeed extends Component {
       for (var i = 0; i < placeholderCount; i++) {
         tweets.push({
           entities: {
-            media: [{media_url: null}]
+            media: [{media_url_https: null}]
           }
         })
       }
@@ -62,8 +62,8 @@ class TweetsFeed extends Component {
         </div>
         {
           this.state.tweets.map((twt, key) => {
-            const isPlaceholder = !twt.entities.media[0].media_url
-            const imageUrl = twt.entities.media[0].media_url || ''
+            const isPlaceholder = !twt.entities.media[0].media_url_https
+            const imageUrl = twt.entities.media[0].media_url_https || ''
             return (
               <a
                 key={key}
