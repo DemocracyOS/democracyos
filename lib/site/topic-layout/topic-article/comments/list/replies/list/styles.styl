@@ -28,7 +28,7 @@
     font-weight: bold
 
   .text
-    margin: 0
+    margin: 0 0 20px
     font-size: .875em
     display: inline-block
 
@@ -43,49 +43,6 @@
       font-size: inherit
       line-height: 1.6
 
-  .actions
-    display: flex
-    justify-content: space-between
-    margin-top: 10px
-    padding-bottom: 20px
-    .created-at
-      font-size: .7em
-      color: #666
-      line-height: 1.8em
-    button
-      cursor: pointer
-      border: 0
-      background: transparent
-    .votes, .replies-score
-      .score
-        margin-right: .5em
-        font-size: 1em
-
-        span
-          font-weight: bold
-
-        small
-          text-transform: lowercase
-          color: #999
-    .votes
-      button
-        font-size: 14px
-      .upvote
-        &.active,
-        &:hover
-          color: #A4CB53
-
-      .downvote
-        &.active,
-        &:hover
-          color: #D95E59
-
-  &:hover
-    .actions
-      .reply
-        i
-          color: rgba(0,0,0,0.8)
-
   &:last-child
-    .actions
-      padding-bottom: 0
+    .text
+      margin-bottom: 0
