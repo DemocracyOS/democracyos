@@ -29,22 +29,22 @@ function twGet () {
 function twFetch () {
   return new Promise((resolve, reject) => {
     client.get(
-      'lists/statuses',
+      'collections/entries',
       {
-        owner_screen_name: config.ext.twitter.ownerScreenName,
-        include_rts: false,
-        slug: config.ext.twitter.slug
+        id: config.ext.twitter.timelineId
       },
       function (error, tweets, response) {
         if (error) return reject(error)
+        const tweetsArray = tweets.objects.tweets
+          ? Object.keys(tweets.objects.tweets)
+            .map(tw => tweets.objects.tweets[tw])
+            .filter(tw => tw.entities.hasOwnProperty('media'))
+            .filter((tw, i) => i < 6)
+          : []
 
-        let tweetsValid = (tweets || [])
-          .filter(tw => tw.entities.hasOwnProperty('media'))
-          .filter((tw, i) => i < 6)
-
-        twCache = tweetsValid
+        twCache = tweetsArray
         twExpires = Date.now() + 5 * 60 * 1000
-        resolve(tweetsValid)
+        resolve(tweetsArray)
       }
     )
   })
@@ -68,6 +68,7 @@ app.get('/tweets', function (req, res, next) {
       })
     })
     .catch(function (err) {
+      console.log(err)
       return res.json(500, {
         status: 500,
         error: err

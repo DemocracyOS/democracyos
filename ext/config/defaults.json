@@ -5,8 +5,7 @@
       "consumerSecret": "",
       "accessKey": "",
       "accessSecret": "",
-      "ownerScreenName": "",
-      "slug": ""
+      "timelineId": ""
     },
     "participatoryBudgetEnabled": false,
     "participatoryBudget": {
