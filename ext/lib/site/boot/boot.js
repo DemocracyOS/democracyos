@@ -1,4 +1,5 @@
 import '../user/user'
 import './overrides'
 import '../signup-complete/signup-complete'
+import '../static-pages/static-pages'
 import 'lib/site/boot/boot'
