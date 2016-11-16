@@ -41,7 +41,7 @@ export default class SignupComplete extends Component {
         extra: this.state.data
       }))
 
-      browserHistory.push('/')
+      browserHistory.push('/presupuesto')
     }).catch((err) => {
       this.setState({
         error: 'Hubo un error guardando la información, intente de nuevo por favor.',
@@ -110,7 +110,6 @@ export default class SignupComplete extends Component {
               type='text'
               name='nro_doc'
               id='nro_doc'
-              placeholder='22.333.444'
               maxLength='10'
               onChange={this.handleInputNumberChange}
               value={prettyNumber(this.state.data.nro_doc) || ''}

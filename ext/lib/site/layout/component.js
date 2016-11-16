@@ -30,7 +30,10 @@ class LayoutOverride extends Component {
       if (user.state.fulfilled && !user.profileIsComplete()) {
         if (!this.state.askedCompleteProfile) {
           this.setState({askedCompleteProfile: true})
-          browserHistory.push('/signup/complete')
+          browserHistory.push({
+            pathname: '/signup/complete',
+            query: {ref: location.pathname}
+          })
         }
       }
     } else if (user.state.pending || user.state.rejected) {
