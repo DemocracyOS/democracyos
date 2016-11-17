@@ -15,6 +15,9 @@
   &:hover
     box-shadow 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23)
 
+    .social-links
+      opacity: 1
+
   .number
     z-index: 10
     position: absolute
@@ -39,6 +42,7 @@
       display block
       padding-top 50%
 
+
   .topic-info
     flex-grow: 2
     display: flex
@@ -60,10 +64,26 @@
     line-height: 1.25
     font-size: 16px
 
-  .budget
+  .topic-card-footer
+    text-align: right
     align-self: flex-end
+    width: 100%
+
+  .budget
     margin: 0
     color: #00adef
     font-weight: 900
     line-height: 1
     font-size: 24px
+
+  .social-links
+    opacity: 0
+    transition: all .3s linear
+    position: absolute
+    left: 15px
+    bottom: 15px
+    font-size: 20px
+
+    span
+      margin-right: 7px
+      color: #999

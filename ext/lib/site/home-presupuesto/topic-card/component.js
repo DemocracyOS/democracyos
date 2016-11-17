@@ -5,6 +5,8 @@ import {Link} from 'react-router'
 export default function TopicCard (props) {
   const {topic} = props
 
+  const topicUrl = `${location.origin}${topic.url}`
+
   return (
     <Link className='topic-card' to={topic.url}>
       {topic.extra && topic.extra.number && (
@@ -18,9 +20,25 @@ export default function TopicCard (props) {
         {topic.extra && topic.extra.description && (
           <p className='description'>{topic.extra.description}</p>
         )}
-        {topic.extra && topic.extra.budget && (
-          <p className='budget'>{prettyPrice(topic.extra.budget)}</p>
-        )}
+        <div className='topic-card-footer'>
+          <div className='social-links'>
+            <span
+              onClick={handleLinkClick}
+              target='_blank'
+              href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(topicUrl)}`}>
+              <i className='icon-social-facebook' />
+            </span>
+            <span
+              onClick={handleLinkClick}
+              target='_blank'
+              href={`http://twitter.com/home?status=Quiero este proyecto para mi barrio @RParticipa ${topicUrl}`}>
+              <i className='icon-social-twitter' />
+            </span>
+          </div>
+          {topic.extra && topic.extra.budget && (
+            <p className='budget'>{prettyPrice(topic.extra.budget)}</p>
+          )}
+        </div>
       </div>
     </Link>
   )
@@ -45,4 +63,10 @@ function prettyDecimals (number) {
     .split('')
     .reverse()
     .join('')
+}
+
+function handleLinkClick (evt) {
+  const link = evt.currentTarget
+  evt.preventDefault()
+  window.open(link.getAttribute('href'), '_blank');
 }
