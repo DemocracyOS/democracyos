@@ -91,8 +91,9 @@ class TopicArticle extends Component {
                     className='fb'
                     target='_blank'
                     href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`}></a>
-                  <a href='#' className='tw'></a>
-                  <a href='#' className='msj'></a>
+                  <a
+                    href={`http://twitter.com/home?status=Quiero este proyecto para mi barrio @RParticipa ${location.origin}${topic.url}`}
+                    className='tw'></a>
                 </div>
               </div>
             </div>
