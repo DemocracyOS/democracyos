@@ -43,9 +43,22 @@ export default class SignupComplete extends Component {
 
       browserHistory.push('/presupuesto')
     }).catch((err) => {
-      this.setState({
-        error: 'Hubo un error guardando la información, intente de nuevo por favor.',
-        loading: false
+      err.res.json().then((body) => {
+        if (!body) throw err
+
+        if (body.error && body.error.code === 'DUPLICATED_VOTING_DATA') {
+          this.setState({
+            error: 'Ya hay otra persona registrada con los mismos datos. Si cree que es un inconveniente comuníquese con nosotros a participa@rosario.gob.ar',
+            loading: false
+          })
+        } else {
+          throw err
+        }
+      }).catch((err) => {
+        this.setState({
+          error: 'Hubo un error guardando la información, intente de nuevo por favor.',
+          loading: false
+        })
       })
     })
   }
@@ -82,7 +95,9 @@ export default class SignupComplete extends Component {
         <form role='form' onSubmit={this.handleSuccess} method='POST'>
           {this.state.error && (
             <div className='alert alert-danger error' role='alert'>
-              {t('modals.error.default')}
+              <span dangerouslySetInnerHTML={{
+                  __html: this.state.error
+              }}></span>
             </div>
           )}
           <div className='form-group'>
