@@ -41,20 +41,23 @@ class TweetsFeed extends Component {
         <div className='tweet-box tweet-box-lg tweets-links'>
           <div className='tweet-content'>
             <a
-              href='https://twitter.com/MuniRosario'
+              href='https://twitter.com/RParticipa'
               target='_blank'
+              rel='noopener noreferrer'
               className='tw-link'>
-            @MuniRosario
+            @RParticipa
             </a>
             <a
-              href='https://facebook.com/MunicipalidadRosario'
+              href='https://facebook.com/RosarioParticipa'
               target='_blank'
+              rel='noopener noreferrer'
               className='fb-link'>
-            /MunicipalidadRosario
+            /RosarioParticipa
             </a>
             <a
               href='https://youtube.com/MuniRosario'
               target='_blank'
+              rel='noopener noreferrer'
               className='yt-link'>
             MuniRosario
             </a>
