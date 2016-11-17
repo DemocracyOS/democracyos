@@ -13,6 +13,7 @@
       "statusEndpoint": "",
       "votingEndpoint": ""
     },
-    "client": ["participatoryBudgetEnabled"]
+    "homeVideos": [],
+    "client": ["participatoryBudgetEnabled", "homeVideos"]
   }
 }

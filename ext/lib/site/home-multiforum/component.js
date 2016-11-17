@@ -5,7 +5,7 @@ import TweetsFeed from '../tweets-feed/component'
 
 export default function HomeMultiforumOverride (props) {
   const videos = config.ext.homeVideos
-  const randomVideo = videos[Math.floor(Math.random() * videos.length)]
+  const randomVideoSrc = videos[Math.floor(Math.random() * videos.length)]
 
   return (
     <div className='ext-home-multiforum'>
@@ -19,7 +19,7 @@ export default function HomeMultiforumOverride (props) {
               loop
               poster='/ext/lib/site/home-multiforum/bg-cover.jpg'
               id='bgvid'>
-              <source src='https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-02.mp4' type='video/mp4' />
+              <source src={randomVideoSrc} type='video/mp4' />
             </video>
           </div>
         </div>
