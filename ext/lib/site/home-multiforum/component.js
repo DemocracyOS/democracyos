@@ -24,7 +24,7 @@ export default function HomeMultiforumOverride (props) {
               <p className='light-text'>Los proyectos surgen de las reuniones de Consejos Barriales, fueron presentados por los consejeros electos y trabajados con los equipos del distrito.</p>
               <Link
                 to='/s/terminos-y-condiciones'
-                className='btn btn-primary'>
+                className='btn btn-primary mas-info'>
                 Más información
               </Link>
             </div>
