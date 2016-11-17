@@ -10,8 +10,8 @@ import TopicCard from './topic-card/component'
 
 const distritos = [
   {title: 'Centro', name: 'centro'},
-  {title: 'Norte', name: 'norte'},
   {title: 'Noroeste', name: 'noroeste'},
+  {title: 'Norte', name: 'norte'},
   {title: 'Oeste', name: 'oeste'},
   {title: 'Sudoeste', name: 'sudoeste'},
   {title: 'Sur', name: 'sur'}
@@ -33,10 +33,13 @@ class HomePresupuesto extends Component {
   }
 
   componentDidMount () {
-    this.fetchForums()
+    this.setState({loading: true}, this.fetchForums)
   }
 
+  _fetchingForums = false
   fetchForums = () => {
+    if (this._fetchingForums) return
+    this._fetchingForums = true
     this.setState({loading: true})
 
     Promise.all([
@@ -44,12 +47,13 @@ class HomePresupuesto extends Component {
       forumStore.findOneByName('presupuesto-joven')
     ])
       .then(([forum, forumJoven]) => {
+        this._fetchingForums = false
         this.setState({
           forum,
           forumJoven
-        })
-        this.fetchTopics()
+        }, this.fetchTopics)
       }).catch((err) => {
+        this._fetchingForums = false
         console.error(err)
         this.setState({
           loading: false,
@@ -59,7 +63,11 @@ class HomePresupuesto extends Component {
       })
   }
 
+  _fetchingTopics = false
   fetchTopics = () => {
+    if (this._fetchingTopics) return
+    this._fetchingTopics = true
+
     this.setState({loading: true})
 
     Promise.all([
@@ -67,6 +75,8 @@ class HomePresupuesto extends Component {
       topicStore.findAll({forum: this.state.forumJoven.id})
     ])
       .then(([topics, topicsJoven]) => {
+        this._fetchingTopics = false
+
         topics = sortTopicsByExtraNumber(topics)
         topicsJoven = sortTopicsByExtraNumber(topicsJoven)
 
@@ -89,6 +99,7 @@ class HomePresupuesto extends Component {
         })
       })
       .catch((err) => {
+        this._fetchingTopics = false
         console.error(err)
         this.setState({
           loading: false,
@@ -100,7 +111,7 @@ class HomePresupuesto extends Component {
   }
 
   handleDistritoFilterChange = (distrito) => {
-    this.setState({distrito}, this.fetchTopics)
+    this.setState({distrito}, this.fetchForums)
   }
 
   render () {
