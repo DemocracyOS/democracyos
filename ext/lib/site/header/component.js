@@ -57,11 +57,9 @@ class Header extends Component {
     return (
       <header className='navbar navbar-fixed-top ext-site-header'>
         <div className='ext-site-header-prefix'>
-          <div className='container-simple'>
-            <Link to='http://rosario.gob.ar'>
-              Rosario =
-            </Link>
-          </div>
+          <a href='http://rosario.gob.ar' rel='noopener noreferrer'>
+            <img src='/ext/lib/site/header/rosarioigual.png' />
+          </a>
         </div>
         <div className='ext-site-header-main'>
           <div className='container-simple'>
