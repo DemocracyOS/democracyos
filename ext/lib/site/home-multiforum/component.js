@@ -96,9 +96,9 @@ export default function HomeMultiforumOverride (props) {
           <p>
             Desarrollado con software libre por la Municipalidad de Rosario y DemocracyOS
           </p>
-          <Link to='help'>Términos y condiciones</Link>
+          <Link to='/s/terminos-y-condiciones'>Términos y condiciones</Link>
           <span className='spacer'>|</span>
-          <Link to='help'>Contacto</Link>
+          <a href='mailto:participa@rosario.gob.ar'>Contacto</a>
         </div>
         <div className='footer-logos'>
           <a href='#' className='democracy'></a>
