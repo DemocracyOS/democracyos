@@ -38,11 +38,14 @@ class VotingModule extends Component {
         loading: false,
         error: null,
         message: (
-          <Link
-            to={{pathname: '/signin', query: {ref: location.pathname}}}
-            className='btn btn-lg btn-block btn-primary'>
-            Ingresar y Votar
-          </Link>
+          <div className='voting-action' role='alert'>
+            <Link
+              to={{pathname: '/signin', query: {ref: location.pathname}}}
+              className='btn btn-lg btn-outline-secondary'>
+              Ingresar y Votar
+            </Link>
+            <p>¡Tenés tiempo hasta el 28 de noviembre!</p>
+          </div>
         )
       })
     }
@@ -52,11 +55,14 @@ class VotingModule extends Component {
         loading: false,
         error: null,
         message: (
-          <Link
-            to={{pathname: '/signup/complete', query: {ref: location.pathname}}}
-            className='btn btn-lg btn-block btn-primary'>
-            Votar
-          </Link>
+          <div className='voting-action' role='alert'>
+            <Link
+              to={{pathname: '/signup/complete', query: {ref: location.pathname}}}
+              className='btn btn-lg btn-outline-secondary'>
+              Quiero Votar
+            </Link>
+            <p>¡Tenés tiempo hasta el 28 de noviembre!</p>
+          </div>
         )
       })
     }
