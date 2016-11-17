@@ -42,22 +42,22 @@ export default function HomeMultiforumOverride (props) {
             <div className='col-md-6'>
               <span className='en-curso'>En curso (votado en 2015)</span>
               <h2>Presupuesto Participativo 2016</h2>
-              <p>Vecinos y vecinas de toda los distritos priorizaron nuevos proyectos para nuestra ciudad. Aquí podés conocer los resultados de la votación!</p>
+              <p>El año pasado, vecinos de todos los distritos priorizaron los proyectos para nuestra ciudad.</p>
               <ul className='proyectos-stats'>
                 <li>
                   <span className='img'></span>
-                  <span className='num'>582</span>
+                  <span className='num'>302</span>
                   <p>Proyectos<br />presentados</p>
                 </li>
                 <li>
                   <span className='img'></span>
-                  <span className='num'>19 millones</span>
+                  <span className='num'>150 millones</span>
                   <p>Presupueso<br />asignado</p>
                 </li>
                 <li>
                   <span className='img'></span>
-                  <span className='num'>218</span>
-                  <p>Proyectos<br />elegidos</p>
+                  <span className='num'>176</span>
+                  <p>Proyectos<br />votados</p>
                 </li>
               </ul>
               <Link
@@ -71,21 +71,24 @@ export default function HomeMultiforumOverride (props) {
             <div className='col-md-6 linea-tiempo'>
               <ul>
                 <li>
-                  <h4>Marzo 2015</h4>
-                  <span>- Presentación de las propuestas</span>
-                  <span>- Inicio de la votación</span>
+                  <h4>Marzo - Abril 2015</h4>
+                  <span>- Reuniones de vecinos en todos los barrios</span>
+                  <span>- Elección de Consejeros</span>
+                  <span>- Formación de los Consejos Participativos</span>
                 </li>
                 <li>
-                  <h4>Junio 2015</h4>
-                  <span>- Presentación de las propuestas</span>
-                  <span>- Inicio de la votación</span>
+                  <h4>Mayo - Octubre 2015</h4>
+                  <span>- Elaboración de proyectos en los Consejos Participativos</span>
                 </li>
                 <li>
-                  <h4>Octubre 2015</h4>
-                  <span>- Presentación de las propuestas</span>
-                  <span>- Inicio de la votación</span>
+                  <h4>Noviembre 2015</h4>
+                  <span>- Presentación y votación de los proyectos</span>
                 </li>
-
+                <li>
+                  <h4>Diciembre 2015</h4>
+                  <span>- Presentación de balance de ejecución de lo votado en 2014</span>
+                  <span>- Presentación de los proyectos elegidos por los vecinos</span>
+                </li>
                 <li>
                   <h4>2016</h4>
                   <span>- Ejecución del presupuesto</span>
