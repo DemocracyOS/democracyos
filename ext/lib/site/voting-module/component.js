@@ -95,17 +95,7 @@ class VotingModule extends Component {
           </Link>
         )
       } else if (codigo === 2) {
-        msg = (
-          <div className='voting-success' role='alert'>
-            <h1>¡Gracias por tu Voto!</h1>
-            <span>Compartilo con tus vecinos</span>
-            <div className='social-links'>
-              <a href='#' className='fb'></a>
-              <a href='#' className='tw'></a>
-              <a href='#' className='msj'></a>
-            </div>
-          </div>
-        )
+        msg = <VotingSuccess />
       } else if (codigo === 3) {
         msg = (
           <div className='alert alert-info' role='alert'>
@@ -156,3 +146,24 @@ class VotingModule extends Component {
 }
 
 export default userConnector(VotingModule)
+
+function VotingSuccess () {
+  return (
+    <div className='voting-success' role='alert'>
+      <h1>¡Gracias por tu Voto!</h1>
+      <span>Compartilo con tus vecinos</span>
+      <div className='social-links'>
+        <a
+          target='_blank'
+          href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://participa.rosario.gob.ar/presupuesto')}`}>
+          <i className='icon-social-facebook' />
+        </a>
+        <a
+          target='_blank'
+          href={`http://twitter.com/home?status=${encodeURIComponent('Yo ya voté en el Presupuesto Participativo 2017 @RParticipa #YoVotoPorMiBarrio https://participa.rosario.gob.ar/presupuesto')}`}>
+          <i className='icon-social-twitter' />
+        </a>
+      </div>
+    </div>
+  )
+}

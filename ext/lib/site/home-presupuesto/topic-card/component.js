@@ -31,7 +31,7 @@ export default function TopicCard (props) {
             <span
               onClick={handleLinkClick}
               target='_blank'
-              href={`http://twitter.com/home?status=Quiero este proyecto para mi barrio @RParticipa ${topicUrl}`}>
+              href={`http://twitter.com/home?status=Quiero este proyecto para mi barrio #YoVotoPorMiBarrio @RParticipa ${topicUrl}`}>
               <i className='icon-social-twitter' />
             </span>
           </div>
