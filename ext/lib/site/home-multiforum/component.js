@@ -1,17 +1,26 @@
 import React from 'react'
 import {Link} from 'react-router'
+import config from 'lib/config'
 import TweetsFeed from '../tweets-feed/component'
 
 export default function HomeMultiforumOverride (props) {
   const videos = config.ext.homeVideos
-  const randomVideo = videos[Math.floor(Math.random()*videos.length)]
+  const randomVideo = videos[Math.floor(Math.random() * videos.length)]
 
   return (
     <div className='ext-home-multiforum'>
       <div className='ext-home-cover'>
-        <div className="banner">
-          <div className="video">
-            <iframe src='https://www.youtube.com/embed/j-4NvQnCCC8'></iframe>
+        <div className='banner'>
+          <div className='video'>
+            <video
+              playsInline
+              autoPlay
+              muted
+              loop
+              poster='/ext/lib/site/home-multiforum/bg-cover.jpg'
+              id='bgvid'>
+              <source src='https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-02.mp4' type='video/mp4' />
+            </video>
           </div>
         </div>
         <div className='container'>
