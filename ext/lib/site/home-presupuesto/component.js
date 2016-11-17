@@ -149,7 +149,7 @@ class HomePresupuesto extends Component {
         {this.state.topicsJoven && this.state.topicsJoven.length > 0 && (
           <div className='topics-section pp-joven'>
             <h2 className='topics-section-container'>
-              <span>Distrito Centro | Proyectos jóvenes</span><br />
+              <span>Distrito {this.state.distrito.title} | Proyectos jóvenes</span><br />
               <sub></sub>
             </h2>
             <div className='topics-container'>
