@@ -104,6 +104,10 @@ class HomePresupuesto extends Component {
   }
 
   render () {
+    // <a href='#' className='find-district-link'>
+    //   <i className='icon-location-pin'></i>
+    //   <span>¿Cuál es mi distrito?</span>
+    // </a>
     return (
       <div className='ext-home-presupuesto'>
         <VotingModule />
@@ -114,10 +118,6 @@ class HomePresupuesto extends Component {
             <DistritoFilter
               active={this.state.distrito}
               onChange={this.handleDistritoFilterChange} />
-            <a href='#' className='find-district-link'>
-              <i className='icon-location-pin'></i>
-              <span>¿Cuál es mi distrito?</span>
-            </a>
           </div>
         </div>
         {this.state.topicsAreas && this.state.topicsAreas.length > 0 && (
