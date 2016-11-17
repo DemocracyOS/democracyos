@@ -17,7 +17,7 @@ export default function HomeMultiforumOverride (props) {
               autoPlay
               muted
               loop
-              poster='/ext/lib/site/home-multiforum/bg-cover.jpg'
+              poster='/ext/lib/site/home-multiforum/bg-cover.png'
               id='bgvid'>
               <source src={randomVideoSrc} type='video/mp4' />
             </video>
