@@ -7,6 +7,8 @@ export default function TopicCard (props) {
 
   const topicUrl = `${location.origin}${topic.url}`
 
+  const twitterDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
+
   return (
     <Link className='topic-card' to={topic.url}>
       {topic.extra && topic.extra.number && (
@@ -25,13 +27,13 @@ export default function TopicCard (props) {
             <span
               onClick={handleLinkClick}
               target='_blank'
-              href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(topicUrl)}`}>
+              href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(topicUrl)}&t=${encodeURIComponent('Mirá el proyecto que quiero para mi barrio #YoVotoPorMiBarrio')}`}>
               <i className='icon-social-facebook' />
             </span>
             <span
               onClick={handleLinkClick}
               target='_blank'
-              href={`http://twitter.com/home?status=Quiero este proyecto para mi barrio #YoVotoPorMiBarrio @RParticipa ${topicUrl}`}>
+              href={`http://twitter.com/home?status=${twitterDesc}`}>
               <i className='icon-social-twitter' />
             </span>
           </div>

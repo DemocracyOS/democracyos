@@ -19,7 +19,7 @@ export default function HomeMultiforumOverride (props) {
           <div className='row'>
             <div className='col-md-6'>
               <p className='light-text'>Del 18 al 28 de noviembre podés elegir un proyecto para tu barrio y uno para tu distrito.</p>
-              <p className='light-text'>Y hasta el 29 de noviembre tenés tiempo para votar en el Presupuesto Participativo Joven.</p>
+              <p className='light-text'>Y hasta el 28 de noviembre tenés tiempo para votar en el Presupuesto Participativo Joven.</p>
               <p className='light-text'>El presupuesto total es de 207 millones que se dividirá en proyectos para tu barrio y proyectos para jóvenes.</p>
               <p className='light-text'>Los proyectos surgen de las reuniones de Consejos Barriales, fueron presentados por los consejeros electos y trabajados con los equipos del distrito.</p>
               <Link
@@ -51,7 +51,7 @@ export default function HomeMultiforumOverride (props) {
                 </li>
                 <li>
                   <span className='img'></span>
-                  <span className='num'>150 millones</span>
+                  <span className='num'>155 millones</span>
                   <p>Presupueso<br />asignado</p>
                 </li>
                 <li>

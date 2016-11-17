@@ -57,7 +57,9 @@ class TopicArticle extends Component {
       neutral: topic.abstentions || []
     }
 
-    const twitterDesc = encodeURIComponent(`Quiero este proyecto para mi barrio #YoVotoPorMiBarrio @RParticipa ${location.origin}${topic.url}`)
+    const topicUrl = `${location.origin}${topic.url}`
+
+    const twitterDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
 
     return (
       <div className='proyecto-container'>
@@ -92,7 +94,7 @@ class TopicArticle extends Component {
                   <a
                     className='fb'
                     target='_blank'
-                    href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`}></a>
+                    href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}&t=${encodeURIComponent('Mirá el proyecto que quiero para mi barrio #YoVotoPorMiBarrio')}`}></a>
                   <a
                     target='_blank'
                     href={`http://twitter.com/home?status=${twitterDesc}`}
