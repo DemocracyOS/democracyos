@@ -22,6 +22,11 @@ export default function HomeMultiforumOverride (props) {
               <p className='light-text'>Y hasta el 29 de noviembre tenés tiempo para votar en el Presupuesto Participativo Joven.</p>
               <p className='light-text'>El presupuesto total es de 207 millones que se dividirá en proyectos para tu barrio y proyectos para jóvenes.</p>
               <p className='light-text'>Los proyectos surgen de las reuniones de Consejos Barriales, fueron presentados por los consejeros electos y trabajados con los equipos del distrito.</p>
+              <Link
+                to='/s/terminos-y-condiciones'
+                className='btn btn-primary'>
+                Más información
+              </Link>
             </div>
             <div className='col-md-6 video-container'>
               <div className='video'>
