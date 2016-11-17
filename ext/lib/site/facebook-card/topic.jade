@@ -1,8 +1,8 @@
 - var description = topic.extra && topic.extra.description ? topic.extra.description : config.socialshare.description
 
 - var title = config.socialshare.siteName
-- if (topic.mediaTitle) title = topic.mediaTitle
-- if (topic.mediaTitle && topic.extra && topic.extra.number && topic.extra.distrito) title = `Distrito ${topic.extra.distrito} #${topic.extra.number} ${topic.mediaTitle}`
+- if (topic.mediaTitle) title = `${config.socialshare.siteName} | ${topic.mediaTitle}`
+- if (topic.mediaTitle && topic.extra && topic.extra.number && topic.extra.distrito) title = `${config.socialshare.siteName} | Distrito ${topic.extra.distrito} | #${topic.extra.number} | ${topic.mediaTitle}`
 
 - var image = topic.coverUrl ? topic.coverUrl : config.socialshare.image
 
@@ -11,6 +11,7 @@ html
     meta(property='og:title', content=title)
     meta(property='og:type', content='website')
     meta(property='og:url', content=url)
+    meta(property='og:image', content=config.socialshare.image)
     meta(property='og:image', content=image)
-    meta(property='og:site_name', content='#{config.socialshare.siteName}')
+    meta(property='og:site_name', content=config.socialshare.siteName)
     meta(property='og:description', content=description)

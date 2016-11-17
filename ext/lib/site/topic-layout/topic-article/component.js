@@ -87,7 +87,10 @@ class TopicArticle extends Component {
                 <span className='hashtag'>#YoVotoPorMiBarrio</span>
                 <span>Compartí con tus vecinos<br />este proyecto</span>
                 <div className='social-links'>
-                  <a href='#' className='fb'></a>
+                  <a
+                    className='fb'
+                    target='_blank'
+                    href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`}></a>
                   <a href='#' className='tw'></a>
                   <a href='#' className='msj'></a>
                 </div>
