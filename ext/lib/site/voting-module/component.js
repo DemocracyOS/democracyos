@@ -109,7 +109,7 @@ class VotingModule extends Component {
       } else if (codigo === 3) {
         msg = (
           <div className='alert alert-info' role='alert'>
-            Lo sentimos, tus datos no se encuentran en el padrón de votantes habilitados. Podés dirigirte a tu Centro Municipal de Distrito o consultar a: <a href='mailto:yoparticipo@rosario.gob.ar'>yoparticipo@rosario.gob.ar</a>.
+            Lo sentimos, tus datos no se encuentran en el padrón de votantes habilitados. Podés dirigirte a tu Centro Municipal de Distrito o consultar a: <a href='mailto:participa@rosario.gob.ar'>participa@rosario.gob.ar</a>.
           </div>
         )
       } else {
