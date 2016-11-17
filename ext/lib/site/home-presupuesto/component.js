@@ -25,55 +25,76 @@ class HomePresupuesto extends Component {
       loading: true,
       distrito: distritos[0],
       forum: null,
+      forumJoven: null,
       topicsAreas: null,
-      topicsDistrito: null
+      topicsDistrito: null,
+      topicsJoven: null
     }
   }
 
-  componentWillMount () {
-    this.fetchTopics()
+  componentDidMount () {
+    this.fetchForums()
   }
 
-  fetchTopics = () => {
+  fetchForums = () => {
     this.setState({loading: true})
 
-    forumStore
-      .findOneByName('presupuesto')
-      .then((forum) => {
-        return topicStore.findAll({forum: forum.id})
-          .then((topics) => {
-            topics = topics.sort((a, b) => {
-              if (!(a.extra && a.extra.number)) return -1
-              if (!(b.extra && b.extra.number)) return 1
-              return a.extra.number > b.extra.number ?
-                1 :
-                a.extra.number < b.extra.number ?
-                -1 :
-                0
-            })
-
-            this.setState({
-              loading: false,
-              forum,
-              topicsAreas: topics.filter((t) => {
-                if (!t.extra) return false
-                return t.extra.distrito === this.state.distrito.name &&
-                  t.extra.area !== '0'
-              }),
-              topicsDistrito: topics.filter((t) => {
-                if (!t.extra) return false
-                return t.extra.distrito === this.state.distrito.name &&
-                  (!t.extra.area || t.extra.area === '0')
-              })
-            })
-          })
+    Promise.all([
+      forumStore.findOneByName('presupuesto'),
+      forumStore.findOneByName('presupuesto-joven')
+    ])
+      .then(([forum, forumJoven]) => {
+        this.setState({
+          forum,
+          forumJoven
+        })
+        this.fetchTopics()
       }).catch((err) => {
         console.error(err)
         this.setState({
           loading: false,
           forum: null,
+          forumJoven: null
+        })
+      })
+  }
+
+  fetchTopics = () => {
+    this.setState({loading: true})
+
+    Promise.all([
+      topicStore.findAll({forum: this.state.forum.id}),
+      topicStore.findAll({forum: this.state.forumJoven.id})
+    ])
+      .then(([topics, topicsJoven]) => {
+        topics = sortTopicsByExtraNumber(topics)
+        topicsJoven = sortTopicsByExtraNumber(topicsJoven)
+
+        this.setState({
+          loading: false,
+          topicsAreas: topics.filter((t) => {
+            if (!t.extra) return false
+            return t.extra.distrito === this.state.distrito.name &&
+              t.extra.area !== '0'
+          }),
+          topicsDistrito: topics.filter((t) => {
+            if (!t.extra) return false
+            return t.extra.distrito === this.state.distrito.name &&
+              (!t.extra.area || t.extra.area === '0')
+          }),
+          topicsJoven: topicsJoven.filter((t) => {
+            if (!t.extra) return false
+            return t.extra.distrito === this.state.distrito.name
+          })
+        })
+      })
+      .catch((err) => {
+        console.error(err)
+        this.setState({
+          loading: false,
           topicsAreas: null,
-          topicsDistrito: null
+          topicsDistrito: null,
+          topicsJoven: null
         })
       })
   }
@@ -125,6 +146,20 @@ class HomePresupuesto extends Component {
             </div>
           </div>
         )}
+        {this.state.topicsJoven && this.state.topicsJoven.length > 0 && (
+          <div className='topics-section pp-joven'>
+            <h2 className='topics-section-container'>
+              <span>Distrito Centro | Proyectos jóvenes</span><br />
+              <sub></sub>
+            </h2>
+            <div className='topics-container'>
+              {this.state.loading && <div className='loader'></div>}
+              {this.state.topicsJoven.map((topic) => {
+                return <TopicCard key={topic.id} topic={topic} />
+              })}
+            </div>
+          </div>
+        )}
       </div>
     )
   }
@@ -152,4 +187,16 @@ function DistritoFilter (props) {
       })}
     </div>
   )
+}
+
+function sortTopicsByExtraNumber (topics) {
+  return topics.sort((a, b) => {
+    if (!(a.extra && a.extra.number)) return -1
+    if (!(b.extra && b.extra.number)) return 1
+    return a.extra.number > b.extra.number ?
+      1 :
+      a.extra.number < b.extra.number ?
+      -1 :
+      0
+  })
 }
