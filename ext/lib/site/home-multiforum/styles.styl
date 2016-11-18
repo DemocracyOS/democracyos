@@ -59,16 +59,26 @@
         z-index: -1
 
   .intro
-    background-image: unquote("url('/ext/lib/site/home-multiforum/city@3x.png')")
-    background-repeat: no-repeat
-    background-position: bottom
-    background-size: contain
     padding: 0 0 200px
+    background-image: unquote("url('/ext/lib/site/home-multiforum/city@3x.png')")
+    background-repeat: repeat-x
+    background-position: bottom
+    background-size: auto 200px
+
     .col-md-6
       padding-top: 50px
+      padding-bottom: 50px
+
     .light-text
       color: #757575
       font-size: 1.1em
+
+      strong
+        color: #F59231
+
+      &:last-of-type
+        margin-bottom: 1.5rem
+
     .mas-info
       margin-bottom: 20px
     .video-container
@@ -78,7 +88,6 @@
       padding-top: 0
       .video
         width: 100%
-        max-width: 450px
         position: relative
         &::before
           content: ""
