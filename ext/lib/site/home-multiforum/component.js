@@ -3,26 +3,48 @@ import {Link} from 'react-router'
 import config from 'lib/config'
 import TweetsFeed from '../tweets-feed/component'
 
+const videos = [
+  {
+    video: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-01.mp4',
+    image: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-01.jpg'
+  }, {
+    video: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-02.mp4',
+    image: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-02.jpg'
+  }, {
+    video: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-03.mp4',
+    image: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-03.jpg'
+  }, {
+    video: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-04.mp4',
+    image: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-04.jpg'
+  }, {
+    video: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-05.mp4',
+    image: 'https://s3-sa-east-1.amazonaws.com/rosariociudad-democracyos/rosario-05.jpg'
+  }
+]
+
 export default function HomeMultiforumOverride (props) {
-  const videos = config.ext.homeVideos
-  const randomVideoSrc = videos[Math.floor(Math.random() * videos.length)]
+  const video = videos[Math.floor(Math.random() * videos.length)]
 
   return (
     <div className='ext-home-multiforum'>
-      <div className='ext-home-cover'>
-        <div className='banner'>
-          <div className='video'>
-            <video
-              playsInline
-              autoPlay
-              muted
-              loop
-              poster='/ext/lib/site/home-multiforum/bg-cover.png'
-              id='bgvid'>
-              <source src={randomVideoSrc} type='video/mp4' />
-            </video>
+      <div className='ext-home-cover' style={{
+          backgroundImage: `url("${video.image}")`
+        }}>
+        {window.innerWidth >= 768 && (
+          <div className='banner'>
+            <div className='video'>
+              <video
+                playsInline
+                autoPlay
+                muted
+                loop
+                poster={video.image}
+                id='bgvid'>
+                <source src={video.video} type='video/mp4' />
+              </video>
+            </div>
           </div>
-        </div>
+        )}
         <div className='container'>
           <h2>Presupuesto Participativo 2017</h2>
           <h1>Votá los proyectos que van<br /> a cambiar tu barrio</h1>
@@ -47,7 +69,9 @@ export default function HomeMultiforumOverride (props) {
             </div>
             <div className='col-md-6 video-container'>
               <div className='video'>
-                <iframe src='https://www.youtube.com/embed/j-4NvQnCCC8'></iframe>
+                <iframe
+                  sandbox='allow-scripts allow-same-origin'
+                  src='https://www.youtube.com/embed/j-4NvQnCCC8'></iframe>
               </div>
             </div>
           </div>
