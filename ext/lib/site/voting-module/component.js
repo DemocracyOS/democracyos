@@ -30,7 +30,6 @@ class VotingModule extends Component {
   }
 
   componentWillReceiveProps (props) {
-    return this.setState({message: <VotingSuccess />})
     if (props.user.state.pending) {
       return this.setState({loading: true})
     }
