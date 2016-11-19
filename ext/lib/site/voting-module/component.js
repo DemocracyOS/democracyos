@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router'
 import user from 'lib/site/user/user'
 import userConnector from 'lib/site/connectors/user'
+import {SharerFacebook} from 'ext/lib/site/sharer'
 
 /*
 
@@ -29,6 +30,7 @@ class VotingModule extends Component {
   }
 
   componentWillReceiveProps (props) {
+    return this.setState({message: <VotingSuccess />})
     if (props.user.state.pending) {
       return this.setState({loading: true})
     }
@@ -156,17 +158,19 @@ export default userConnector(VotingModule)
 function VotingSuccess () {
   return (
     <div className='voting-success' role='alert'>
-      <h1>¡Gracias por tu Voto!</h1>
-      <span>Compartilo con tus vecinos</span>
+      <div className='text'>
+        <h1>¡Gracias por tu Voto!</h1>
+        <span>Compartilo con tus vecinos</span>
+      </div>
       <div className='social-links'>
+        <SharerFacebook
+          params={{
+            picture: 'https://cldup.com/quswAMk9Ns.png',
+            link: 'https://participa.rosario.gob.ar/presupuesto'
+          }} />
         <a
           target='_blank'
-          href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://participa.rosario.gob.ar/presupuesto')}`}>
-          <i className='icon-social-facebook' />
-        </a>
-        <a
-          target='_blank'
-          href={`http://twitter.com/home?status=${encodeURIComponent('Yo ya voté en el Presupuesto Participativo 2017 @RParticipa #YoVotoPorMiBarrio https://participa.rosario.gob.ar/presupuesto')}`}>
+          href={`http://twitter.com/home?status=${encodeURIComponent('Ya voté en el Presupuesto Participativo. Entrá a participa.rosario.gob.ar y sumate a mejorar tu lugar #YoVotoPorMiBarrio @RParticipa https://participa.rosario.gob.ar/presupuesto')}`}>
           <i className='icon-social-twitter' />
         </a>
       </div>

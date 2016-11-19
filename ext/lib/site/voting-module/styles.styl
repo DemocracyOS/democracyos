@@ -32,21 +32,32 @@
   .voting-success
     color: #fff
     display: flex
-    flex-direction: column
+    flex-direction: row
+    justify-content: center
+    flex-wrap: wrap
     align-items: center
     width: 100%
-    padding: 30px 0
+    padding: 1.5em 0
     text-align: center
     background-color: #294b68
 
-    h1
-      font-size: 24px
-      margin: 0 0 15px
+    .social-links,
+    .text
+      margin: 0 7px
 
     .social-links
       padding: 1em 0 0
 
-    a
-      margin: 20px 5px 0
+    h1
+      font-size: 1.5em
+      margin: 0 0 .4em
+
+    a,
+    .sharer
+      padding: .1em .22em 0
       font-size: 1.8em
       color: #fff
+      transition: background-color .3s
+
+      &:hover
+        background-color: rgba(#fff, .2)

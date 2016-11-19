@@ -1,6 +1,7 @@
 import React from 'react'
 import padStart from 'string.prototype.padstart'
 import {Link} from 'react-router'
+import {SharerFacebook} from 'ext/lib/site/sharer'
 
 export default function TopicCard (props) {
   const {topic} = props
@@ -24,12 +25,9 @@ export default function TopicCard (props) {
         )}
         <div className='topic-card-footer'>
           <div className='social-links'>
-            <span
-              onClick={handleLinkClick}
-              target='_blank'
-              href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(topicUrl)}&t=${encodeURIComponent('Mirá el proyecto que quiero para mi barrio #YoVotoPorMiBarrio')}`}>
-              <i className='icon-social-facebook' />
-            </span>
+            <SharerFacebook
+              className='fb'
+              params={{picture: topic.coverUrl, link: topic.url}} />
             <span
               onClick={handleLinkClick}
               target='_blank'

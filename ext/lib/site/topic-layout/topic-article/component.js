@@ -7,6 +7,7 @@ import userConnector from 'lib/site/connectors/user'
 import Content from 'ext/lib/site/topic-layout/topic-article/content/component'
 import Comments from 'lib/site/topic-layout/topic-article/comments/component'
 import VotingModule from '../../voting-module/component'
+import {SharerFacebook} from 'ext/lib/site/sharer'
 
 class TopicArticle extends Component {
   constructor (props) {
@@ -91,10 +92,9 @@ class TopicArticle extends Component {
                 <span className='hashtag'>#YoVotoPorMiBarrio</span>
                 <span>Compartí con tus vecinos<br />este proyecto</span>
                 <div className='social-links'>
-                  <a
+                  <SharerFacebook
                     className='fb'
-                    target='_blank'
-                    href={`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}&t=${encodeURIComponent('Mirá el proyecto que quiero para mi barrio #YoVotoPorMiBarrio')}`}></a>
+                    params={{picture: topic.coverUrl, link: location.href}} />
                   <a
                     target='_blank'
                     href={`http://twitter.com/home?status=${twitterDesc}`}
