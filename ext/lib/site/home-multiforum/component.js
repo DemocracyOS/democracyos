@@ -93,7 +93,7 @@ export default function HomeMultiforumOverride (props) {
                 <li>
                   <span className='img'></span>
                   <span className='num'>155 millones</span>
-                  <p>Presupueso<br />asignado</p>
+                  <p>Presupuesto<br />asignado</p>
                 </li>
                 <li>
                   <span className='img'></span>
