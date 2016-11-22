@@ -1,0 +1,28 @@
+{
+  "comments.arguments": "Comentarios",
+  "comments.arguments.reply": "Responder a este comentario",
+
+  "comment-card.flagged-as-spam": "Este comentario fue reportado como abuso",
+  "comment-card.remove-argument": "Borrar comentario",
+  "comments.argument-limited": "El comentario no puede exceder los 4096 caracteres",
+  "comments.arguments.confirm-remove": "¿Deseas eliminar este comentario?",
+  "comments.cannot-be-empty": "El comentario no puede estar vacío",
+  "comments.cannot-remove": "¡El comentario tiene respuestas, no puede ser borrado!",
+  "comments.create.placeholder": "Escribir un comentario...",
+  "comments.deleted-arguments": "Comentarios eliminados",
+  "comments.edit.argument": "Editar comentario",
+  "comments.load-more": "Leer más comentarios",
+  "comments.my.arguments": "¿Cuál es tu comentario?",
+  "comments.new.argument": "Agregar comentario",
+  "comments.no-comments": "Ningún usuario ha comentado todavía",
+  "comments.no-user-comments": "No hay comentarios de otros usuarios todavía.",
+  "comments.not-yours": "¡Ese comentario no es tuyo!",
+  "comments.removed": "El comentario fue eliminado",
+  "comments.reply-to-argument": "Responde a este comentario",
+  "comments.score.not-allowed": "No tienes permisos para votar este comentario.",
+  "comments.send": "Enviar",
+  "comments.sign-in-required": "Debés estar registrado para poder comentar aquí",
+  "comments.sign-in-required-to-vote-comments": "Debés estar registrado para poder calificar comentarios",
+  "comments.your-argument": "Tu comentario",
+  "comments.your.arguments": "Tus comentarios"
+}
