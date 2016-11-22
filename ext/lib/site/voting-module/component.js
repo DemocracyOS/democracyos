@@ -3,6 +3,7 @@ import {Link} from 'react-router'
 import user from 'lib/site/user/user'
 import userConnector from 'lib/site/connectors/user'
 import {SharerFacebook} from 'ext/lib/site/sharer'
+import fetchStatus from './fetch-status'
 
 /*
 
@@ -70,19 +71,7 @@ class VotingModule extends Component {
 
     this.setState({loading: true})
 
-    fetch('/ext/api/participatory-budget/status', {
-      credentials: 'same-origin',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => {
-      if (res.status >= 200 && res.status < 300) return res.json()
-
-      const err = new Error(res.statusText)
-      err.res = res
-      throw err
-    }).then((body) => {
+    fetchStatus().then((body) => {
       const codigo = body.results.codigo_mensaje
 
       if (!codigo) {
@@ -110,7 +99,6 @@ class VotingModule extends Component {
           </div>
         )
       } else {
-        console.log(body)
         msg = (
           <Link
             to='/ext/api/participatory-budget/vote'
@@ -125,8 +113,7 @@ class VotingModule extends Component {
         error: null,
         message: msg
       })
-    }).catch((err) => {
-      console.error(err)
+    }).catch(() => {
       this.setState({
         loading: false,
         message: null,
