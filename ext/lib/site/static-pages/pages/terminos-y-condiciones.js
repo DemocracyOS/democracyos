@@ -16,7 +16,7 @@ export default function Page () {
       <h2 id='acerca'><a href='#acerca'>Acerca de este sitio</a></h2>
 
       <p><strong>Rosario Participa</strong> es un nuevo canal de diálogo y deliberación entre los los ciudadanos de Rosario y el gobierno municipal. Tiene como objetivos promover la participación ciudadana y fortalecer la democracia en la ciudad.</p>
-      <p className='lead'>Podés <strong>proponer</strong> tus ideas para el desarrollo de la ciudad, <strong>participar</strong> de consultas y desafíos planteados por el Municipio, <strong>votar</strong> en el Presupuesto Participativo y <strong>conocer</strong> las iniciativas de Voluntariado Social de la ciudad.</p>
+      <p>Podés <strong>proponer</strong> tus ideas para el desarrollo de la ciudad, <strong>participar</strong> de consultas y desafíos planteados por el Municipio, <strong>votar</strong> en el Presupuesto Participativo y <strong>conocer</strong> las iniciativas de Voluntariado Social de la ciudad.</p>
 
       <h3>Tecnología</h3>
 
@@ -43,7 +43,7 @@ export default function Page () {
 
       <p>Rosario Participa permite la votación de los proyecto propuestos por Presupuesto Participativo (PP) y Presupuesto Participativo Joven (PP Joven).  La edad mínima para votar en el PP Joven es de 13 años, y en el PP pueden votar mayores de 16.</p>
       <p>Para poder votar online es imprescindible indicar una cuenta de correo electrónico o bien identificarse con una cuenta de Facebook (ver inscripción a la plataforma web).  En caso de indicar una cuenta de correo electrónico se le envía un link para confirmar y validar el voto efectuado (no serán válidos los votos que no reciban su confirmación).</p>
-      <p className='lead'>Cada persona puede votar una única vez (si opta por el voto online queda excluida la posibilidad de hacerlo presencialmente y viceversa).</p>
+      <p>Cada persona puede votar una única vez (si opta por el voto online queda excluida la posibilidad de hacerlo presencialmente y viceversa).</p>
       <p>Debe elegirse en qué distrito se desea participar sin que sea obligatorio que coincida con el domicilio del votante. Se pueden votar proyectos de un solo distrito.<br />En la votación debe elegirse un proyecto a nivel distrital y otro para un un área barrial determinada. En total el usuario elige dos proyectos.<br />Los proyectos que resultaran electos son los que más votos obtengan sumando los de la modalidad presencial y online, hasta agotar el monto comprometido para cada distrito.</p>
       <p>La información proporcionada por el votante (documento y sexo) será validada con el padrón electoral 2015. Para el caso del PP Joven, el registro está conformado por la totalidad de los alumnos matriculados en el año 2016 en alguna escuela secundaria o técnica (pública o privada) de la ciudad de Rosario. Quienes no figuren en estos registros no podrán votar en la modalidad online, aunque podrán hacerlo en forma presencial.</p>
 
