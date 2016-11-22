@@ -3,8 +3,8 @@ extends ../../../../lib/site/layout/index.jade
 block fonts
   link(href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,900|Noto+Serif:100,400,700&subset=latin-ext', rel='stylesheet', type='text/css')
 
-- if (config.ext.facebookTrackingId)
-  append scripts
+append scripts
+  - if (config.ext.facebookTrackingId)
     script.
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
