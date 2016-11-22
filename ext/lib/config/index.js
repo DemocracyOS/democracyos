@@ -7,6 +7,8 @@ const extConfig = module.exports = democracyosConfig({
   path: path.join(__dirname, '..', '..', 'config')
 })
 
+config.ext = extConfig.ext
+
 clientConfig.ext = clientConfig.ext || {}
 
 extConfig.ext.client.forEach((k) => {
