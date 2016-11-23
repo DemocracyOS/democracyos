@@ -14,10 +14,10 @@ COPY [".", "/usr/src/"]
 
 RUN bin/dos-ext-install --quiet --production
 
-RUN npm run build -- --minify
-
 ENV NODE_ENV=production \
     NODE_PATH=.
+
+RUN npm run build -- --minify
 
 EXPOSE 3000
 
