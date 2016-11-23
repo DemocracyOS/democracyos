@@ -29,12 +29,13 @@ class HomePresupuesto extends Component {
       forumJoven: null,
       topicsAreas: null,
       topicsDistrito: null,
-      topicsJoven: null
+      topicsJoven: null,
+      scrollAfterFetch: false
     }
   }
 
   componentDidMount () {
-    this.setState({loading: true}, this.fetchForums)
+    this.setState({loading: true, scrollAfterFetch: false}, this.fetchForums)
   }
 
   _fetchingForums = false
@@ -97,6 +98,8 @@ class HomePresupuesto extends Component {
             if (!t.extra) return false
             return t.extra.distrito === this.state.distrito.name
           })
+        }, () => {
+          if (this.state.scrollAfterFetch) jump('.topics-section')
         })
       })
       .catch((err) => {
@@ -112,8 +115,7 @@ class HomePresupuesto extends Component {
   }
 
   handleDistritoFilterChange = (distrito) => {
-    this.setState({distrito}, this.fetchForums)
-    jump('.topics-section')
+    this.setState({distrito, scrollAfterFetch: true}, this.fetchForums)
   }
 
   render () {
