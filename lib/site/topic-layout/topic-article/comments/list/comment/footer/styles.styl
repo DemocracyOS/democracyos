@@ -1,0 +1,37 @@
+.actions
+  display: flex
+  justify-content: space-between
+  padding-bottom: 5px
+  .reply
+    padding: 0
+    i
+      display: inline-block
+      transform: unquote("rotate(180deg)")
+      color: #999
+
+  .votes, .replies-score
+    .score
+      margin-right: .5em
+      font-size: 1em
+
+      span
+        font-weight: bold
+
+      small
+        text-transform: lowercase
+        color: #999
+    button
+      cursor: pointer
+      border: 0
+      background: transparent
+
+  .votes
+    .upvote
+      &.active,
+      &:hover
+        color: #A4CB53
+
+    .downvote
+      &.active,
+      &:hover
+        color: #D95E59
