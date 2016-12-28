@@ -16,7 +16,7 @@ For practical reasons we only accept issues that are bug reports or feature requ
 
 You'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix available.
 
-### Help us help you
+### Help us to help you
 
 Share as much information as possible. Include operating system and version, browser and version, version of DemocracyOS. Also include steps to reproduce the bug and any logs from browser and/or process whenever possible.
 
@@ -90,7 +90,7 @@ Main contributors will review your code and possibly ask for changes before your
 ### General guidelines
 
 * We flag the issues to community participation as [help wanted](https://github.com/DemocracyOS/app/labels/help%20wanted), try to prioritize these.
-* Do not make a pull request withouth having run the app on your own. This means, you have to at least [smoke test](http://en.wikipedia.org/wiki/Smoke_testing_(software))  what you did. If you can include some tests with your PR, all the better.
+* Do not make a pull request withouth having run the app on your own. This means, you have to at least [smoke test](http://en.wikipedia.org/wiki/Smoke_testing_(software))  what you did. If you can include some tests with your PR, the better.
 * Try not to pollute your pull request with unintended changes. Keep them simple and small. Unrelated commits will prevent us from merging.
 * Pull requests should always be against the `development` branch, never against `master`.
 * All pull requests must comply with the project's [Coding Styles](coding-styles.md).
