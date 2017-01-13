@@ -159,6 +159,7 @@
     "passport-local-mongoose": "~0.2.4",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-outside-event": "~1.2.4",
     "react-refetch": "^1.0.0-beta.10",
     "react-remarkable": "^1.1.1",
     "react-router": "^2.6.1",
