@@ -2,9 +2,15 @@ nav.navbar
   padding-right: 15px
   padding-left: 15px
   .navbar-brand
+    &.logo-mobile
+      display: block
+    &.logo-desktop
+      display: none
     img
       height 30px
   .nav-link
+    &.org-link
+      display: none
     text-transform uppercase
     color inherit
     font-size 12px
@@ -37,5 +43,18 @@ nav.navbar
 @media screen and (max-width: 700px)
   #toggleButton
     display block!important
+
+@media screen and (min-width: 400px)
+  nav.navbar
+    .navbar-brand
+      &.logo-mobile
+        display: none
+      &.logo-desktop
+        display: block
+@media screen and (min-width: 700px)
+  nav.navbar
+      .nav-link
+        &.org-link
+          display: block
 
 @import './user-badge/styles'
