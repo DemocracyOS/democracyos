@@ -21,8 +21,18 @@ nav.navbar
     color inherit
     padding .5rem 0
     margin-right 10px
+    outline: none
     .icon-menu
       font-size 22px
+    &:hover
+      cursor: pointer
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 50px
+      height: 100%
 
 @media screen and (max-width: 700px)
   #toggleButton
