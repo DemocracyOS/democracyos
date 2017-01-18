@@ -1,11 +1,11 @@
 .user-wrapper
+  - var color = config.headerFontColor
   .notifications-badge.pull-left.hidden-xs
-    a.btn.notifications(href='/notifications')
+    a.btn.notifications(href='/notifications', style=color ? 'color: #{color}' : '')
       span.icon-bell.bell
   .user-badge.pull-right
     a.btn.profile
       img(src=user.profilePicture())
-      - var color = config.headerFontColor
       span.name.ellipsis(style=color ? 'color: #{color}' : '')=user.firstName
       span.caret
     ul.dropdown-list
