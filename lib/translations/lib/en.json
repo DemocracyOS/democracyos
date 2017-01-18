@@ -5,6 +5,8 @@
   "404.go-back-to": "go back to",
   "404.not-exists": "This page does not exist",
   "add-user-input.placeholder": "Add a Person",
+  "admin-sidebar.comments.title": "Comments",
+  "admin-comments.dowload-as-csv": "Download all as .csv",
   "admin-permissions.revoke": "Revoke",
   "admin-permissions.revoke.confirm.text": "Are you sure you want to rovoke '{role}' permissions to '{user}'?",
   "admin-permissions.visibility.title": "Visibility",
