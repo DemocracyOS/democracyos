@@ -6,6 +6,6 @@ ul.admin-menu.nav.nav-pills.nav-stacked
   - if (user.staff)
     li: a(href=urlBuilder.for('admin.tags', {forum: forum.name}) data-section='tags')=t('admin-sidebar.tags.title')
   - if (forum.privileges.canChangeTopics)
-    li: a(href=urlBuilder.for('admin.comments.csv', {forum: forum.name}) data-section='comments')=t('admin-sidebar.comments.title')
+    li: a(href=urlBuilder.for('admin.comments', {forum: forum.name}) data-section='comments')=t('admin-sidebar.comments.title')
   - if (config.usersWhitelist)
     li: a(href="/admin/users" data-section='users')=t('admin-sidebar.whitelists.title')
