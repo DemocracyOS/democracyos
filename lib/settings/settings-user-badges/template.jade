@@ -1,0 +1,16 @@
+#user-badges-wrapper.hide
+  .password-settings
+    .heading
+      .circle
+        i.icon-lock
+      h1= t('settings.user-badges')
+    div
+      ul.form-messages
+      .form-group.user-search
+      .form-group
+        .user-card
+          .picture
+          p.name
+        label #{t('settings.badge')}
+        input.form-control(type='text', name='badge', tabindex=2, placeholder=t(''), value='', validate='required')
+      .form-group: button#submit-badge.btn.btn-success.btn-block.btn-lg(tabindex=4)=t('settings.save')
