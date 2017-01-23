@@ -303,6 +303,8 @@
   "settings.successfuly-updated": "Tu perfil se actualizó exitosamente",
   "settings.user-badges": "Etiquetas de usuarios",
   "settings.badge": "Etiqueta",
+  "settings.badge.not-empty": "La etiqueta no puede estar vacía",
+  "settings.badge.success": "La etiqueta se guardó exitosamente",
   "settings.title": "Ajustes",
   "side-comments.cancel": "Cancelar",
   "side-comments.confirmation.title": "Eliminar comentario",
