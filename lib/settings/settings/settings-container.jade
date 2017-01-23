@@ -10,4 +10,6 @@
         li: a(href="/settings/notifications")= t('settings.notifications')
         - if (config.multiForum && user.privileges && user.privileges.canManage)
           li: a(href="/settings/forums")= t('settings.sidebar.forums')
+        - if (user.staff)
+          li: a(href="/settings/user-badges")= t('settings.user-badges')
     .settings-content
