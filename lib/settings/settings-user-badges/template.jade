@@ -12,5 +12,5 @@
           .picture
           p.name
         label #{t('settings.badge')}
-        input.form-control(type='text', name='badge', tabindex=2, placeholder=t(''), value='', validate='required')
+        input.form-control(type='text', name='badge', tabindex=2, placeholder=t(''), value='', validate='required', maxlength=50)
       .form-group: button#submit-badge.btn.btn-success.btn-block.btn-lg(tabindex=4)=t('settings.save')
