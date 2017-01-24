@@ -1,10 +1,9 @@
 .meta
   display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  align-items: flex-start
-  align-content: center
   margin-bottom: 15px
+  align-items: center
+  &.has-badge
+    align-items: flex-start
 
 .avatar
   margin-right: 10px
@@ -12,17 +11,18 @@
   height: 1.875em
 
 .name
-  flex-grow: 0
+  flex: 1
   margin: 0 10px 0 0
   font-size: .8em
   font-weight: bold
+  overflow: hidden
 
 .created-at
-  font-size: .7em
+  font-size: 10px
+  font-weight: 100
   color: #666
-  line-height: .8em
-  flex: 1
-  margin-top: 3px
+  display: inline-block
+  margin: 3px 0 0 10px
 
 .options
   position: relative
@@ -66,5 +66,4 @@
       white-space: nowrap
 
       &:hover
-        background: rgba(0,0,0,0.8)
-        color: #fff
+        background-color: #e5e5e5
