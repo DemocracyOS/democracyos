@@ -131,6 +131,7 @@
     "jade": "^1.11.0",
     "jadeify": "^4.2.0",
     "jsdom": "6.3.0",
+    "json-2-csv": "^2.1.0",
     "jwt-simple": "0.3.0",
     "keyboardevent-key-polyfill": "^1.0.1",
     "locale": "0.0.20",
