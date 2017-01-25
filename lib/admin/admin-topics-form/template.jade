@@ -17,7 +17,7 @@
         ul.form-messages
         .form-group
           label= t('admin-topics-form.label.mediaTitle')
-          input.form-control(type='text', id="mediaTitle", name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
+          input.form-control(type='text', maxlength='200', id="mediaTitle", name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
         .form-group
           label= t('admin-topics-form.label.tag')
           select.form-control(name='tag', validate='required')
@@ -25,25 +25,25 @@
               option(selected= topic.tag ? tag.hash === topic.tag.hash : false, value=tag.hash)= tag.name
         .form-group
           label= t('admin-topics-form.label.topicId')
-          input.form-control(type='text', id="topicId", name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
+          input.form-control(type='text', maxlength='200', id="topicId", name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
         .form-group
           label= t('admin-topics-form.label.cover') + ' URL'
-          input.form-control(type='text', id="coverUrl", name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
+          input.form-control(type='text', maxlength='254', id="coverUrl", name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.author')
-          input.form-control(type='text', id="topicAuthor", name='topicAuthor', placeholder='John Doe', value=topic.author, validate='author')
+          input.form-control(type='text', maxlength='100', id="topicAuthor", name='topicAuthor', placeholder='John Doe', value=topic.author, validate='author')
         .form-group
           label= t('admin-topics-form.label.author') + ' URL'
-          input.form-control(type='text', id="authorUrl", name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
+          input.form-control(type='text', maxlength='254', id="authorUrl", name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.votable')
           .votable-toggle
         .form-group.hide
           label= t('admin-topics-form.label.clause-truncation-text')
-          input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
+          input.form-control(type='text', maxlength='50', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
         .form-group
           label= t('admin-topics-form.label.source')
-          input.form-control(type='url', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
+          input.form-control(type='text', maxlength='200', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
         .form-group
           label= t('admin-topics-form.label.summary')
           textarea.form-control(name='body')= topic.body
@@ -61,7 +61,7 @@
               span.input-group-addon.clear-closingAt
                 i.glyphicon.glyphicon-remove
             .input-group
-              input.form-control(name='closingAtTime', value=closingAtTime, placeholder='hh:mm', validate='time')
+              input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
         .form-group
           label=t('admin-topics-form.label.resources')
           .topic-links
