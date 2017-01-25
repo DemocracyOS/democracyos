@@ -27,7 +27,7 @@ Commits should try to be as simple (atomic) as possible, but not simpler. Meanin
 
 ## Stylesheets
 
-* See [.stylintrc](/.stylintrc) file. More info: https://rosspatton.github.io/stylint/
+* See [.stylintrc](/.stylintrc) file. More info: https://rosspatton.github.io/stylint1-0/
 * For module specific styles, comply with `#unique-template-top-node-selector .my-generic-css-update { ... }`
 * `.classes` and `#ids` should only be used to reference from `CSS` files. If you want to use some element from `JS` use `data-*` to always be sure where the element is referenced from.
 * For multiple, comma-separated selectors, place each selector on its own line.
