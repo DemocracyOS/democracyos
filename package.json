@@ -199,8 +199,8 @@
   },
   "main": "index.js",
   "engines": {
-    "node": "4.0.0",
-    "npm": "2.14.2"
+    "node": "6.x.x",
+    "npm": "3.x.x"
   },
   "scripts": {
     "preinstall": "bin/dos-ext-install",
