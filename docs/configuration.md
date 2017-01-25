@@ -29,7 +29,7 @@ Environment Variables also can be used to override options (recommended for `pro
 * Var names should be `CONSTANT_CASE`.
   * e.g.: `mongoUrl` => `MONGO_URL`
   * Scoped variables e.g.: `notifications.url` => `NOTIFICATIONS_URL`
-* `Arrays`s should be strings separated by commas.
+* `Arrays` should be strings separated by commas.
   * e.g.: `"staff": ["mail@eg.com", "a@c.m"]` => `STAFF="mail@eg.com,a@c.m"`
 * `Boolean` values should be `true` or `false`.
   * e.g.: `"rssEnabled": false` => `RSS_ENABLED="false"`
@@ -48,7 +48,7 @@ Default language. The app will be in this language for the user, unless it has a
 * env: `AVAILABLE_LOCALES`
 * default: `[ ... ]`
 
-Enabled languages. This are all the languages the user can select on the `/settings` page.
+Enabled languages. These are all the languages the user can select on the `/settings` page.
 
 #### **protocol**
 * env: `PROTOCOL`
@@ -95,7 +95,7 @@ Users with emails listed here will have access to `/admin`, and will be able to 
 * env: `ALLOW_EMAIL_ALIASES`
 * default: `true`
 
-When this is `true`, the user will be able to register several times with the same email using alias like the [ones from Gmail](https://support.google.com/mail/answer/12096). Uses [Verigy](https://www.npmjs.com/package/verigy) module.
+When this is `true`, the user will be able to register several times with the same email using alias like the [ones from Gmail](https://support.google.com/mail/answer/22370). Uses [Verigy](https://www.npmjs.com/package/verigy) module.
 
 #### **visibility**
 * env: `VISIBILITY`
