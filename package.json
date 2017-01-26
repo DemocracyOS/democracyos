@@ -90,7 +90,6 @@
     "democracyos-config": "^1.1.0",
     "democracyos-confirmation": "^0.0.5",
     "democracyos-datepicker": "^1.0.3",
-    "democracyos-db": "1.0.0",
     "democracyos-emitter": "^0.0.7",
     "democracyos-ga": "^1.2.0",
     "democracyos-headroom.js": "^0.7.0",
