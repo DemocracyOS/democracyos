@@ -3,9 +3,6 @@
 var path = require('path')
 var resolve = path.resolve
 
-// Little hack to include `NODE_PATH=.`
-require('node-path')(module, [resolve('.')])
-
 var program = require('commander')
 program
   .option('-k --keyfile [serverKey]', 'Specifies the name of the generated key file (default: ssl/server.key)', 'ssl/server.key')

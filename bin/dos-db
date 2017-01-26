@@ -16,9 +16,6 @@ var mongoose = require('mongoose')
 var prompt = require('co-prompt')
 var confirm = prompt.confirm
 
-// Little hack to include `NODE_PATH=.`
-require('node-path')(module, [resolve('.')])
-
 program
   .option('-u, --user <name>', 'MongoDB username.')
   .option('-p, --password <password>', 'MongoDB password.')
