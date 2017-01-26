@@ -8,11 +8,11 @@
       ul.form-messages
       .form-group
         label #{t('settings.current-password')}
-        input.form-control(type='password', name='current_password', tabindex=1, placeholder=t(''), value='', validate='required min-length:6')
+        input.form-control(type='password', name='current_password', tabindex=1, maxlength=200, placeholder=t(''), value='', validate='required min-length:6')
       .form-group
         label #{t('password.new')}
-        input.form-control(type='password', name='password', tabindex=2, placeholder=t(''), value='', validate='required min-length:6')
+        input.form-control(type='password', name='password', tabindex=2, maxlength=200, placeholder=t(''), value='', validate='required min-length:6')
       .form-group
         label= t('settings.confirm-password')
-        input.form-control(type='password', name='confirm_password', tabindex=3, placeholder=t(''), value='', validate='required same:password')
+        input.form-control(type='password', name='confirm_password', tabindex=3, maxlength=200, placeholder=t(''), value='', validate='required same:password')
       .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=4)=t('settings.save')
