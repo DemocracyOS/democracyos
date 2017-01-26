@@ -147,7 +147,6 @@
     "mout": "^0.11.0",
     "nanomodal": "5.1.1",
     "native-promise-only": "^0.8.0-a",
-    "node-path": "0.0.3",
     "notifier-client": "^1.0.0-rc2",
     "nowww": "~1.1.2",
     "page": "1.6.4",
