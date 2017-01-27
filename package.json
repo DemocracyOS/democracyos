@@ -182,18 +182,12 @@
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
-    "babel-eslint": "^7.0.0",
-    "eslint": "^3.5.0",
-    "eslint-config-xo-react": "^0.9.0",
-    "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-react": "^6.3.0",
     "google-translate": "^1.0.0",
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
     "nomnom": "^1.8.1",
-    "supertest": "^1.1.0",
-    "xo": "^0.16.0"
+    "supertest": "^1.1.0"
   },
   "main": "index.js",
   "engines": {
