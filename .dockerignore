@@ -3,10 +3,16 @@
 .env
 .DS_Store
 .dockerignore
+.eslint*
+.stylintrc
+app.json
 docker
+docker-compose.yml
 docs
+Makefile
 node_modules
 public
+Procfile
 
 config/*.json
 !config/defaults.json
@@ -14,7 +20,5 @@ config/*.json
 # Docs
 *.md
 
-Procfile
-
 # Never leave out the license
-!LICENSE.txt
+!LICENSE
