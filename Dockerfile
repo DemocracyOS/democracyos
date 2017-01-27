@@ -1,4 +1,4 @@
-FROM node:argon
+FROM node:6
 
 MAINTAINER Guido Vilariño <guido@democracyos.org>
 
@@ -21,4 +21,4 @@ RUN npm run build -- --minify
 
 EXPOSE 3000
 
-CMD ["node", "index.js"]
+CMD ["node", "."]
