@@ -33,7 +33,7 @@
     ],
     "curly": [
       "error",
-      "multi",
+      "multi-line",
       "consistent"
     ],
     "import/no-extraneous-dependencies": 0,
