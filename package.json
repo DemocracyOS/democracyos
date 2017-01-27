@@ -181,18 +181,12 @@
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
-    "babel-eslint": "^7.0.0",
-    "eslint": "^3.5.0",
-    "eslint-config-xo-react": "^0.9.0",
-    "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-react": "^6.3.0",
     "google-translate": "^1.0.0",
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
     "nomnom": "^1.8.1",
-    "supertest": "^1.1.0",
-    "xo": "^0.16.0"
+    "supertest": "^1.1.0"
   },
   "main": "index.js",
   "engines": {
@@ -207,88 +201,6 @@
     "clean": "NODE_PATH=. gulp clean",
     "heroku-postbuild": "NODE_PATH=. gulp build --minify",
     "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
-  },
-  "xo": {
-    "extends": "xo-react",
-    "parser": "babel-eslint",
-    "env": [
-      "node",
-      "es6",
-      "browser"
-    ],
-    "space": 2,
-    "semicolon": false,
-    "settings": {
-      "import/resolver": {
-        "node": {
-          "paths": [
-            "."
-          ]
-        }
-      }
-    },
-    "rules": {
-      "strict": 0,
-      "arrow-parens": [
-        2,
-        "always"
-      ],
-      "curly": [
-        "error",
-        "multi-line"
-      ],
-      "func-names": 0,
-      "no-implicit-coercion": 0,
-      "import/no-extraneous-dependencies": 0,
-      "import/no-unassigned-import": 0,
-      "import/order": [
-        "error",
-        {
-          "groups": [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index"
-          ]
-        }
-      ],
-      "object-curly-spacing": [
-        "error",
-        "never"
-      ],
-      "space-before-function-paren": [
-        "error",
-        "always"
-      ],
-      "jsx-quotes": [
-        "error",
-        "prefer-single"
-      ],
-      "react/prop-types": 0,
-      "react/no-danger": 0,
-      "react/jsx-filename-extension": [
-        "error",
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "react/jsx-closing-bracket-location": [
-        "error",
-        {
-          "selfClosing": "after-props",
-          "nonEmpty": "after-props"
-        }
-      ],
-      "react/jsx-space-before-closing": [
-        "error",
-        "always"
-      ]
-    }
   },
   "browser": {
     "lib/config": "lib/config/config"
