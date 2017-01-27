@@ -7,18 +7,8 @@ spacing = 20px
 
 /* Header
 -------------------------------------------------- */
-header.app-header, .site-content, .site-content.loading-lock
-  position fixed
-
-.site-content
-  z-index 1
-  overflow-y scroll
-  background white
-
-#content.site-content
-  overflow-y auto
-
 header.app-header
+  position fixed
   z-index 20
   top 0
   left 0
@@ -85,6 +75,31 @@ header.app-header
         font-size 20px
       &:hover
         text-decoration none
+
+  @media screen and (max-width: 700px)
+    padding-left: 0
+    h1#logo
+      text-align: center
+      width: auto
+      display: block
+    img.logo
+      margin: auto
+      margin-top: -2px
+    .logo-link
+      display: none
+    .user-nav
+      .caret
+        display: none
+      .btn
+        border: 0
+      .profile span.name
+        display: none
+      .login
+        margin-left: 10px
+        span
+          display: none
+        i
+          display: inline-block
 
 vendors(prop, args, fn = null)
   val = fn == null ? args : fn + '(' + args + ')'
