@@ -25,7 +25,6 @@ html
 
 body
   color rgba(#000, .8)
-  overflow hidden
   font-size 16px
   line-height 1.4
   font-family 'Open Sans', sans-serif
@@ -164,12 +163,6 @@ label
   top 50%
   margin-top -1px
 
-.inner-container
-  padding-left 20px
-  padding-right 20px
-  margin auto
-  max-width content_width
-
 .small-container
   max-width 300px
   padding-left 10px
@@ -203,15 +196,9 @@ label
 
 /* Site Content Container
 -------------------------------------------------- */
-section.site-content
+.site-content
   margin-top header_height
-  top 0
-  left nav_proposal_width
-  right 0
-  bottom 0
-  &#content
-    z-index 12
-    left 0
+  background-color #fff
 
 /* Signin page
 -------------------------------------------------- */
@@ -309,5 +296,3 @@ span.error
   overflow hidden
   text-overflow ellipsis
   white-space nowrap
-
-@import './boot-responsive'
