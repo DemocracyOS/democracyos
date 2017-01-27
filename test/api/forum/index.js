@@ -1,4 +1,4 @@
-/*eslint-env jasmine*/
+/* eslint-env jasmine */
 
 var request = require('supertest')
 var app = require('lib/boot')
@@ -77,7 +77,7 @@ describe('/api/forum/:id/permissions', function () {
       .set('Cookie', 'token=' + token)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
-      .send({'role': 'admin', user: userId})
+      .send({ 'role': 'admin', user: userId })
       .expect(function (res) {
         expect(res.body.error).to.be.undefined()
         expect(res.body.permissions.find((p) => p.user === userId)).to.be.ok
@@ -92,7 +92,7 @@ describe('/api/forum/:id/permissions', function () {
       .set('Cookie', 'token=' + token)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
-      .send({'role': 'admin', user: userId})
+      .send({ 'role': 'admin', user: userId })
       .expect(function (res) {
         expect(res.body.error).to.be.undefined()
         expect(res.body.permissions.find((p) => p.user === userId)).to.not.be.ok
