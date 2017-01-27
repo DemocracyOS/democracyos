@@ -1,0 +1,64 @@
+toggle_size=30px
+
+.toggle
+  position relative
+  display inline-block
+  overflow hidden
+  height toggle_size
+  width 75px
+  border-radius toggle_size
+  -webkit-transition background .2s ease-in, color .2s ease-in
+  transition background .2s ease-in, color .2s ease-in
+  -webkit-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
+  cursor pointer
+  font-size .875em
+
+  &.on
+    color white
+    background #51394a
+    .toggle-switch
+      margin-left -30px
+  &.off
+    color #bbb
+    background #eaeaea
+  label.toggle-on-label,
+  label.toggle-off-label
+    position absolute
+    height toggle_size
+    font 300 1em/toggle_size "Helvetica Neue", Helvetica, sans-serif
+    text-align center
+    -webkit-transition -webkit-transform .2s ease-in
+    transition transform .2s ease-in
+    cursor pointer
+  label.toggle-on-label
+    right toggle_size
+    left 0
+  label.toggle-off-label
+    right 0
+    left toggle_size
+  .toggle-switch
+    position absolute
+    left 0
+    top 0
+    height toggle_size
+    width toggle_size
+    border-radius toggle_size
+    background-color white
+    background-color rgba(255, 255, 255, 0.98)
+    -webkit-background-clip padding-box
+    background-clip padding-box
+    border 2px solid transparent
+    -webkit-box-sizing border-box
+    -moz-box-sizing border-box
+    box-sizing border-box
+    -webkit-transition left .2s ease-in, margin .2s ease-in
+    transition left .2s ease-in, margin .2s ease-in
+
+  + label
+    display inline-block !important
+    height toggle_size
+    line-height toggle_size
+    margin-left 12px
