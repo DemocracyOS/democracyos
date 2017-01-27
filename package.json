@@ -74,7 +74,6 @@
     "co-prompt": "~1.0.0",
     "commander": "~2.0.0",
     "component-closest": "0.1.4",
-    "component-cookie": "^1.1.1",
     "component-dom": "1.0.8",
     "component-spin": "0.1.1",
     "compression": "1.6.2",
