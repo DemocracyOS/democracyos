@@ -1,51 +1,10 @@
-doctype html5
-html(lang=locale)
-  head
-    block head
-      //-
-      //-   Basic Page Needs
-      //-   ==================================================
-      title= config.organizationName
+extends ../../layout/index.jade
 
-      meta(charset='utf-8')
-      meta(name='description', content=config.socialshare.siteDescription)
-
-      //-
-      //-   Mobile Specific Metas
-      //-   ==================================================
-      meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
-
-      //-
-      //-   CSS
-      //-   ==================================================
-      
-      block styles
-        include includes/styles
-
-      //- HTML5 shim, for IE6-8 support of HTML5 elements
-      script(src='https://cdn.polyfill.io/v2/polyfill.min.js')
-
-      link(rel='icon', type='image/x-icon', href=config.favicon)
-
-  body
-    #root
-    
-    block body
-    
-    //- General Site javascript
-    script.
-      window.config = !{JSON.stringify(client)}
-      window.config.locale = '#{locale}'
-      window.config.defaultForum = '#{defaultForum}'
-      window.translations = !{JSON.stringify(translations)}
-      
-    block scripts
-      script(src='/site.js')
-      
-    - if (config.segmentKey)
-      include includes/segment
-    
-    include includes/analytics
-    
-    block fonts
-      include includes/fonts
+block styles
+  link(rel='stylesheet', href='/site.css')
+  
+block content
+  #root
+  
+block scripts
+  script(src='/site.js')
