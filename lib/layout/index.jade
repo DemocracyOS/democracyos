@@ -1,55 +1,47 @@
 doctype html5
 html(lang=locale)
   head
-    block head
-      //-
-      //-   Basic Page Needs
-      //-   ==================================================
-      title= config.organizationName
+    //-
+    //-   Basic Page Needs
+    //-   ==================================================
+    title= config.organizationName
 
-      meta(charset='utf-8')
-      meta(name='description', content=config.socialshare.siteDescription)
+    meta(charset='utf-8')
+    meta(name='description', content=config.socialshare.siteDescription)
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
+    
+    //-
+    //-   Styles
+    //-   ==================================================
+    block styles
 
-      //-
-      //-   Mobile Specific Metas
-      //-   ==================================================
-      meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
+    //- HTML5 shim, for IE6-8 support of HTML5 elements
+    script(src='https://cdn.polyfill.io/v1/polyfill.min.js')
 
-      //-
-      //-   CSS
-      //-   ==================================================
-
-      include includes/styles
-
-      //- HTML5 shim, for IE6-8 support of HTML5 elements
-      script(src="https://cdn.polyfill.io/v1/polyfill.min.js")
-
-      link(rel="icon", type="image/x-icon", href=config.favicon)
+    link(rel='icon', type='image/x-icon', href=config.favicon)
 
   body
-    block body
-      //- Start of `Page Content`
-      - var color = config.headerBackgroundColor;
-      - var headerClassName = config.headerContrast ? 'with-contrast' : '';
-      header.app-header(style=color ? 'background-color: #{color};' : '', class=headerClassName)
-      section#content.site-content
-        block content
+    //-
+    //-   Content
+    //-   ==================================================
+    block content
 
-
-      //- End of `Page Content`
-      //- ======================
-      //- Start of `Javascripts`
-
-      //- Core 3rd parties libs
-      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-      //- General Site javascript
-      script.
-        window.config = !{JSON.stringify(client)};
-        window.config.locale = '#{locale}';
-        window.config.defaultForum = '#{defaultForum}';
-        window.translations = !{JSON.stringify(translations)};
-      - if (config.segmentKey)
-        include includes/segment
-      script(src='/app.js')
-      //- End of `Javascripts`
-  include includes/fonts
+    script.
+      window.config = !{JSON.stringify(client)};
+      window.config.locale = '#{locale}';
+      window.config.defaultForum = '#{defaultForum}';
+      window.translations = !{JSON.stringify(translations)};
+      
+    - if (config.segmentKey)
+      include includes/segment
+    
+    //-
+    //-   Scripts
+    //-   ==================================================
+    block scripts
+    
+    //-
+    //-   Overrideable default Fonts
+    //-   ==================================================
+    block fonts
+      include includes/fonts
