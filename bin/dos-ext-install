@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+/**
+ * Command line script to install dependencies of /ext
+ * To be able to install dependencies on a fork without polluting DemocracyOS
+ */
+
+const fs = require('fs')
+const path = require('path')
+const cp = require('child_process')
+
+const ROOT_FOLDER = path.resolve(__dirname, '..')
+const EXT_PATH = path.resolve(ROOT_FOLDER, 'ext')
+
+directoryExists(EXT_PATH, function (err, exists) {
+  if (err) {
+    console.error(err)
+    process.exit(1)
+  }
+
+  if (!exists) process.exit(0)
+
+  console.log('> Installing dependencies on /ext folder')
+
+  const args = ['install'].concat(process.argv.splice(2))
+
+  const install = cp.spawn('npm', args, {
+    env: process.env,
+    cwd: EXT_PATH,
+    stdio: 'inherit'
+  })
+
+  install.on('close', (code) => {
+    if (code === 0) {
+      console.log('> All dependencies of /ext folder installed successfully.')
+    } else {
+      console.log('> There was an error installing dependencies on /ext folder.')
+    }
+  })
+})
+
+function directoryExists (dir, cb) {
+  fs.stat(dir, function (err) {
+    if (err && (err.errno === 34 || err.errno === -2)) {
+      cb(null, false)
+    } else if (err) {
+      cb(err)
+    } else {
+      cb(null, true)
+    }
+  })
+}

@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+/**
+ * Command line script to initialize /ext folder.
+ * Intended to be used on forks, for an easier extension of DemocracyOS
+ */
+
+const fs = require('fs-extra')
+const path = require('path')
+
+const ROOT_FOLDER = path.resolve(__dirname, '..')
+const TEMPLATE_FOLDER = path.resolve(ROOT_FOLDER, 'lib', 'ext', 'template')
+const DEST_FOLDER = path.resolve(ROOT_FOLDER, 'ext')
+
+fs.copy(TEMPLATE_FOLDER, DEST_FOLDER, function (err) {
+  if (err) {
+    console.error(err)
+    process.exit(1)
+  }
+
+  console.log('/ext folder inited')
+  process.exit(0)
+})

@@ -1,0 +1,14 @@
+{
+  "name": "ext",
+  "version": "0.0.1",
+  "description": "Extension folder of a DemocracyOS fork.",
+  "main": "lib/boot",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "browser": {
+    "lib/config" : "lib/config/config"
+  },
+  "license": "GPL-3.0"
+}

@@ -1,0 +1,234 @@
+.ext-home-multiforum
+  .ext-home-cover
+    display: flex
+    align-items: center
+    min-height: 70vh
+    padding: 15px 0
+    color: #fff
+    text-align: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    position: relative
+    z-index: 0
+
+    h2
+      font-size: 2em
+      margin: 0 0 1em
+      text-shadow: 2px 2px 4px rgba(81,81,81,0.8)
+
+    h1
+      font-size: 3em
+      margin: 0 0 1em
+      text-shadow: 2px 2px 4px rgba(81,81,81,0.8)
+
+    .call-to-action
+      background: #00adef
+      color: #fff
+
+    .container
+      z-index: 10
+
+    .banner
+      display: none
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      align-items: center
+      justify-content: center
+      pointer-events: none
+      z-index: 5
+
+      @media screen and (min-width: 768px)
+        display: flex
+
+    .video
+      width: 100%
+      position: relative
+      height: 100%
+      overflow: hidden
+      display: flex
+      justify-content: center
+      align-items: center
+
+      video
+        width: 100%
+        min-width: 1000px
+        z-index: -1
+
+  .intro
+    padding: 0 0 200px
+    background-image: unquote("url('/ext/lib/site/home-multiforum/city@3x.png')")
+    background-repeat: repeat-x
+    background-position: bottom
+    background-size: auto 200px
+
+    .col-md-6
+      padding-top: 50px
+      padding-bottom: 50px
+
+    .light-text
+      color: #757575
+      font-size: 1.1em
+
+      strong
+        color: #F59231
+
+      &:last-of-type
+        margin-bottom: 1.5rem
+
+    .mas-info
+      margin-bottom: 20px
+    .video-container
+      display: flex
+      align-items: center
+      justify-content: center
+      padding-top: 0
+      .video
+        width: 100%
+        position: relative
+        &::before
+          content: ""
+          display: block
+          padding-top: 56.25%
+        iframe
+          border: none
+          position: absolute
+          top: 0
+          width: 100%
+          height: 100%
+  .info
+    background: #00adef
+    color: #fff
+    margin-top: -20px
+    padding: 50px 0
+    .col-md-6
+      padding-top: 50
+    h2
+      font-size: 39px
+      margin: 25px 0
+      font-weight: 500
+    p
+      font-size: 19px
+      font-weight: 100
+    .en-curso
+      background: #f7941d
+      padding: 6px 10px
+      font-size: 19px
+    .proyectos-stats
+      margin: 0
+      padding: 5px 0 10px 0
+      list-style: none
+      li
+        text-align: center
+        display: inline-block
+        margin-right: 50px
+        .img
+          height: 74px
+          background-repeat: no-repeat
+          background-position: center
+          background-size: auto 50px
+          padding-bottom: 5px
+        span
+          display: block
+        .num
+          font-size: 26px
+          font-weight: 600
+        p
+          font-size: 15px
+      li:nth-child(1)
+        .img
+          background-image: unquote("url('/ext/lib/site/home-multiforum/icon-1@3x.png')")
+      li:nth-child(2)
+        .img
+          background-image: unquote("url('/ext/lib/site/home-multiforum/icon-2@3x.png')")
+      li:nth-child(3)
+        .img
+          background-size: auto 70px
+          background-image: unquote("url('/ext/lib/site/home-multiforum/icon-3@3x.png')")
+    .ver-mas
+      color: #00adef
+      font-weight: bold
+      background: #f3f3f3
+    .linea-tiempo
+      display: flex
+      justify-content: center
+      ul
+        padding: 0
+        margin: 0
+        list-style: none
+        li
+          border-left: 7px solid #fff
+          padding: 40px 17px 30px
+          position: relative
+          &::before
+            content: " "
+            width: 22px
+            height: 22px
+            background: #fff
+            position: absolute
+            border-radius: 50%
+            left: -15px
+            top: -1px
+          h4
+            background: #525252
+            display: inline
+            padding: 5px 10px
+            font-weight: 100
+            position: absolute
+            margin-left: 15px
+            top: -29px;
+            left: 20px;
+            font-size: 19px
+            &::before
+              content: " "
+              width: 0
+              height: 0
+              top: 6px
+              left: -6px
+              border-style: solid
+              position: absolute
+              border-width: 7px 7px 7px 0
+              border-color: transparent #525252 transparent transparent
+          span
+            display: block
+          &:last-child
+            border-left: none
+            margin-left: 7px
+            h4
+              background: #f7941d
+              &::before
+                border-color: transparent #f7941d transparent transparent
+  footer
+    background: #a5a7a9
+    display: inline-block
+    width: 100%
+    padding-top: 30px
+    padding-bottom: 20px
+    .disclaimer
+      float: left
+      margin-top: -10px
+      &>*
+        margin: 0
+        font-size: 15px
+        font-weight: 100
+        color: #fff
+      .spacer
+        margin: 0 10px
+    .footer-logos
+      float: right
+      display: flex
+      a
+        display: inline-block
+        background-repeat: no-repeat
+        background-size: auto 28px!important
+        height: 30px
+        margin-left: 20px
+      .democracy
+        width: 160px
+        background: unquote("url('/ext/lib/site/home-multiforum/democracy-logo.png')")
+      .rosario
+        width: 130px
+        background: unquote("url('/ext/lib/site/home-multiforum/rosario-logo.png')")

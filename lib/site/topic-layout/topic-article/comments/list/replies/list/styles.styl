@@ -1,0 +1,48 @@
+.replies-list
+  border-top: 1px solid #e6e6e6
+  padding: 20px 0 30px
+  &.no-replies
+    border-top: none
+    padding: 0
+
+.replies-list-item
+  padding: 0 10px
+  background-color: #fff
+  border-left: 3px solid #ccc
+
+  .meta
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    align-content: center
+    margin-bottom: 15px
+
+  .avatar
+    margin-right: 10px
+    width: 1.4em
+    height: 1.4em
+
+  .name
+    font-size: .8em
+    font-weight: bold
+
+  .text
+    margin: 0 0 20px
+    font-size: .875em
+    display: inline-block
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p
+      margin: 0
+      font-size: inherit
+      line-height: 1.6
+
+  &:last-child
+    .text
+      margin-bottom: 0

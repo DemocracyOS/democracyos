@@ -1,0 +1,20 @@
+{
+  "ext": {
+    "twitter": {
+      "consumerKey": "",
+      "consumerSecret": "",
+      "accessKey": "",
+      "accessSecret": "",
+      "timelineId": ""
+    },
+    "participatoryBudgetEnabled": false,
+    "participatoryBudget": {
+      "secret": "",
+      "statusEndpoint": "",
+      "votingEndpoint": ""
+    },
+    "homeVideos": [],
+    "client": ["participatoryBudgetEnabled", "homeVideos"],
+    "facebookTrackingId": ""
+  }
+}

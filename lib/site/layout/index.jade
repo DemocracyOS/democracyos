@@ -1,5 +1,5 @@
 doctype html5
-html(lang='en')
+html(lang='#{locale}')
   head
     block head
       //-
@@ -18,49 +18,39 @@ html(lang='en')
       //-
       //-   CSS
       //-   ==================================================
-
-      include includes/styles
+      
+      block styles
+        include includes/styles
 
       //- HTML5 shim, for IE6-8 support of HTML5 elements
-      script(src="https://cdn.polyfill.io/v1/polyfill.min.js")
+      script(src='https://cdn.polyfill.io/v2/polyfill.min.js')
 
-      link(rel="icon", type="image/x-icon", href=config.favicon)
+      link(rel='icon', type='image/x-icon', href=config.favicon)
 
       script.
-        var csrfToken = '#{csrfToken}';
+        var csrfToken = '#{csrfToken}'
 
       include includes/remove-hash
 
   body
+    #root
+    
     block body
-      #snap-content.snap-content
-        //- Start of `Page Content`
-        - var color = config.headerBackgroundColor;
-        - var headerClassName = config.headerContrast ? 'with-contrast' : '';
-        header.app-header(style=color ? 'background-color: #{color};' : '', class=headerClassName)
-        section#content.site-content
-          block content
-        section#browser.site-content
-          section.app-content
-
-      .snap-drawers
-        aside.nav-proposal
-
-
-      //- End of `Page Content`
-      //- ======================
-      //- Start of `Javascripts`
-
-      //- Core 3rd parties libs
-      include includes/placeholders
-      //- General Site javascript
-      script.
-        window.config = !{JSON.stringify(client)};
-        window.config.locale = '#{locale}';
-        window.config.defaultForum = '#{defaultForum}';
-        window.translations = !{JSON.stringify(translations)};
-      - if (config.segmentKey)
-        include includes/segment
+    
+    //- General Site javascript
+    script.
+      window.config = !{JSON.stringify(client)}
+      window.config.locale = '#{locale}'
+      window.config.defaultForum = '#{defaultForum}'
+      window.translations = !{JSON.stringify(translations)}
+      
+    block scripts
       script(src='/site.js')
-      //- End of `Javascripts`
-  include includes/fonts
+      
+    - if (config.segmentKey)
+      include includes/segment
+    
+    include includes/analytics
+    
+    block fonts
+      include includes/fonts

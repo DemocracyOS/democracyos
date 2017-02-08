@@ -1,0 +1,54 @@
+.ext-signup-complete
+  position: relative
+  margin: 0 auto
+  padding: 0 15px
+  max-width: 380px
+
+  .loader
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 10
+    background-color: rgba(#fff, .3)
+
+
+  input:disabled,
+  select:disabled,
+  textarea:disabled
+    color: #aaa
+
+  form
+    margin-bottom: .5em
+
+  .title
+    margin-bottom: .4em
+
+  input[type="radio"]
+    margin-right: .5em
+
+  .form-select-wrapper
+    position: relative
+
+    select
+      cursor: pointer
+
+    i
+      pointer-events: none
+
+      &::before
+        position: absolute
+        right: .8em
+        top: 1.2em
+        font-size: .8em
+
+  .btn
+    &[type="submit"]
+      margin-top: .5em
+
+    [class*="icon-"]
+      font-size: .6em
+
+  .text-right
+    text-align: right

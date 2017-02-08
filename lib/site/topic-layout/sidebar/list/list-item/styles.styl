@@ -1,0 +1,54 @@
+li.sidebar-link
+  a.active
+    background #fff
+    span.title
+      color #444
+    .item-tag
+      img.hexagon
+        opacity 1
+  a
+    display flex
+    color inherit
+    min-height 60px
+    padding 10px 20px
+    &:hover
+      background #fff
+  .item-tag
+    color white
+    position relative
+    img.hexagon
+      width 40px
+      height 40px
+      opacity .2
+      z-index 99
+    img.tag-img
+      width 20px
+      height 20px
+      position absolute
+      z-index 100
+      width 30px
+      left 5px
+      top 8px
+
+  .item-text
+    padding-left 10px
+    position relative
+    flex 1
+
+    .title
+      font-size 15px
+      line-height 19px
+      font-weight 700
+      display block
+      margin-bottom 0px
+      color #666
+
+      i
+        font-size .7em
+        margin-left 0.4em
+        color #27ae60
+
+    span.created-by
+      font-size 11px
+      opacity .5
+      font-weight normal
