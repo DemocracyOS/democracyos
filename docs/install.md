@@ -36,6 +36,7 @@ To run it on **Windows** you must use [Docker](https://www.docker.io/). In the [
 - [Fork](http://help.github.com/articles/fork-a-repo) or download this repository.
 - `cd` to the project's location
 - Make sure MongoDB is running and reachable as configured in `config/development.json`. (Default values should work)
+- Run `make packages`
 - Set up your [configuration](configuration.md), and add your email as [staff](configuration.md#-staff-) to be able to initialize your app.
 - Run `make`
 - Boom! DemocracyOS should be running on port 3000.
