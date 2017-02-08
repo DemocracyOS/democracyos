@@ -1,0 +1,99 @@
+.sidebar-filter
+  padding 20px 20px 10px
+
+  .btn-group
+    width 100%
+
+  .btn-default
+    font-size 12px
+    color #444
+    text-align left
+    overflow hidden
+    background-color #e5e5e5
+
+    &.active
+      color #fff
+      background-color #666
+
+    .caret
+      color inherit
+
+  .dropdown-menu
+    width 100%
+    border-radius border_radius
+
+    li
+      display block
+      width 100%
+
+    a
+      display block
+      padding 6px 14px
+      white-space normal
+      font-weight bold
+      text-transform uppercase
+      font-size 12px
+
+      &:hover
+        background #f1f1f1
+        color #333
+
+  .sidebar-filter-status
+    margin-bottom 10px
+    display flex
+
+    button
+      flex 1
+      text-align center!important
+      padding 8px 0
+
+  .sidebar-filter-sort
+    position relative
+    margin-bottom 10px
+
+    .dropdown-list
+      z-index 1000
+      display block
+      position absolute
+      top 100%
+      left 0
+      margin 2px 0 0
+      padding 5px 0
+      border 1px solid rgba(0,0,0,.15)
+      border-radius 3px
+      min-width 160px
+      width 100%
+      font-size 14px
+      text-align left
+      list-style none
+      box-shadow 0 6px 12px rgba(0,0,0,.175)
+      background-color #fff
+
+      li
+        &.active span,
+        &:active span
+          color #fff
+          background-color #337ab7
+
+      span
+        display block
+        padding 7px 14px 4px
+        white-space normal
+        font-weight bold
+        text-transform uppercase
+        font-size 12px
+        line-height 1.8
+        color #333
+        text-decoration none
+        cursor pointer
+
+        &:hover
+          background-color rgba(#f1f1f1, .7)
+
+  .sidebar-filter-hide-voted
+    label
+      font-weight bold
+      text-transform uppercase
+      font-size 12px
+      color #666
+      margin-left 5px

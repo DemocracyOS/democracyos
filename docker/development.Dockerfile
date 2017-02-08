@@ -14,6 +14,10 @@ RUN npm install --quiet --only=development
 
 COPY [".", "/usr/src/"]
 
+ENV NODE_PATH=.
+
+ENV NODE_PATH=.
+
 EXPOSE 3000
 
 ENV NODE_PATH=.

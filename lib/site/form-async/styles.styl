@@ -1,0 +1,65 @@
+boxSize = 6
+color = #333
+color2 = #999
+
+form
+  .form-errors
+    margin 0 0 15px 0
+    background #ffc5c5
+    color #961010
+    padding 10px 20px
+    li
+      list-style none
+      font-size 14px
+      line-height 21px
+  .title-page i
+    margin-right 3px
+
+  .loader-btn
+    position relative
+    color #fff
+    cursor auto
+    .loader
+      position absolute
+      left 50%
+      top 50%
+      border-radius 100%
+      width boxSize * 1px
+      height boxSize * 1px
+      box-shadow boxSize*1px boxSize*1px color2,
+        boxSize*-1px boxSize*1px color,
+        boxSize*-1px boxSize*-1px color2,
+        boxSize*1px boxSize*-1px color
+      animation spin ease infinite 4s
+      transition-property opacity
+
+    @-webkit-keyframes spin {
+      0%,
+      100% {
+          box-shadow: boxSize*1px boxSize*1px color2,
+          boxSize*-1px boxSize*1px color,
+          boxSize*-1px boxSize*-1px color2,
+          boxSize*1px boxSize*-1px color
+      }
+
+      25% {
+          box-shadow: boxSize*-1px boxSize*1px color,
+          boxSize*-1px boxSize*-1px color2,
+          boxSize*1px boxSize*-1px color,
+          boxSize*1px boxSize*1px color2
+      }
+
+      50% {
+          box-shadow: boxSize*-1px boxSize*-1px color2,
+          boxSize*1px boxSize*-1px color,
+          boxSize*1px boxSize*1px color2,
+          boxSize*-1px boxSize*1px color
+      }
+
+      75% {
+          box-shadow: boxSize*1px boxSize*-1px color,
+          boxSize*1px boxSize*1px color2,
+          boxSize*-1px boxSize*1px color,
+          boxSize*-1px boxSize*-1px color2
+      }
+    }

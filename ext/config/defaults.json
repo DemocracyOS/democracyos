@@ -1,0 +1,17 @@
+{
+  "ext": {
+    "twitter": {
+      "consumerKey": "",
+      "consumerSecret": "",
+      "accessKey": "",
+      "accessSecret": "",
+      "ownerScreenName": "",
+      "slug": ""
+    },
+    "participatoryBudget": {
+      "secret": "",
+      "statusEndpoint": "",
+      "votingEndpoint": ""
+    }
+  }
+}

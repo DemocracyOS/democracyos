@@ -1,0 +1,29 @@
+nav.navbar
+  .navbar-brand
+    img
+      height 30px
+  .nav-link
+    text-transform uppercase
+    color inherit
+    font-size 12px
+    padding-top .7rem
+    padding-bottom .7rem
+    span.icon-bell
+      font-size 16px
+      font-weight bold
+  #toggleButton
+    display none
+    float left
+    background none
+    border none
+    color inherit
+    padding .5rem 0
+    margin-right 10px
+    .icon-menu
+      font-size 22px
+
+@media screen and (max-width: 700px)
+  #toggleButton
+    display block!important
+
+@import './user-badge/styles'

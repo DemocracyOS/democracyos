@@ -1,0 +1,132 @@
+/* Vars
+-------------------------------------------------- */
+border_radius = 3px
+/* Topic options view
+-------------------------------------------------- */
+.proposal-options
+  position relative
+  margin-bottom 2em
+  .alert
+    margin 20px 0 10px
+  .overlay-vote
+    position absolute
+    left 0
+    top 0
+    height 100%
+    width 100%
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    background-color rgba(#fff, .9)
+    font-weight bold
+    text-align center
+    span.icon-lock
+      font-size 20px
+    span.text
+      max-width 320px
+  .vote-options
+    .proxy-vote
+      display inline-block
+    .vote-option
+      display inline-block
+      width 30%
+      font-size 14px
+      text-align center
+      margin-right 5%
+      color white
+      text-transform uppercase
+      font-weight bold
+      border-radius border_radius
+      padding 14px
+      line-height 1.1
+      -webkit-transition all 0.3s ease
+      i
+        display inline-block
+        margin-right 8px
+      span
+        display inline-block
+      &.vote-yes
+        background-color #a4cb53
+        &:hover
+          background-color darken(#a4cb53, 40%)
+      &.vote-no
+        background-color #d95e59
+        margin-right 0
+        &:hover
+          background-color darken(#d95e59, 40%)
+      &.vote-abstain
+        background-color #666
+        &:hover
+          background-color darken(#666666, 40%)
+      &.delegate-vote
+        background-color #3498db
+
+    @media screen and (max-width: 800px) and (min-width: 700px)
+      .vote-option
+        display block
+        width 100%
+        margin 10px 0 0 0
+    @media screen and (max-width: 530px)
+      .vote-option
+        display block
+        width 100%
+        margin 10px 0 0 0
+
+  .change-vote
+    background none
+    border none
+    font-size 16px
+    color black
+    font-weight bold
+    margin-bottom 10px
+    display block
+    i
+      margin-right 7px
+      position relative;
+      top 2px
+      font-size 13px
+    &:hover
+      text-decoration none
+  .vote-box, .results-box
+    background white
+    padding 20px 0
+    h5
+      text-transform uppercase
+      margin-top 0
+    .delegation-box
+      display inline-block
+  .vote-box
+    #voting-error
+      color: black
+    .meta-data
+      margin-bottom 20px
+    .secret-results
+      margin-right 6px
+    .secret-results:before
+      content " - "
+
+  .toggle-results
+    span
+      margin-right 5px
+
+  .results-box
+    box-sizing border-box
+    width 100%
+    margin 0
+    h5
+      margin-bottom 0
+    .percent
+      font-size 30px
+    .votes
+      margin-left 10px
+    .votes-results
+      margin-bottom 20px
+    .results-summary
+      font-weight bold
+    .vote-yes, .vote-yes h5
+      color #a4cb53
+    .vote-abstain, .vote-abstain h5
+      color #666666
+    .vote-no, .vote-no h5
+      color #d95e59

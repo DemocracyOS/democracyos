@@ -1,0 +1,105 @@
+boxSize = 6
+color = #333
+color2 = #999
+
+#home-multiforum
+  background #f0f0f0
+  .forum-info
+    width 100%
+    display flex
+    align-items center
+    flex-direction column
+    .content
+      a
+        float right
+        margin-top 20px
+        span
+          font-size 14px
+          margin-left 10px
+          top 1px
+          position relative
+  .admin
+    position relative
+    top 20px
+    max-width 600px
+    width 90%
+    text-align right
+    color #666
+    font-weight 100
+    span
+      font-size 11px
+      margin-left 10px
+      position relative
+
+  .cover
+    padding-top 30px
+    min-height 300px
+    font-size 16px
+    color #f9f9f9
+    background-size cover
+    background-repeat no-repeat
+    background-position center top
+    background-image unquote("url('https://democracyosorg.s3.amazonaws.com/cover-hands.jpg')")
+  #forum-list
+    max-width 600px
+    width 90%
+    .msg-empty
+      text-align center
+      background #e4e4e4
+      padding 40px 0
+      color #808080
+      font-size 17px
+    .load-more
+      margin-bottom 20px
+      .btn
+        color #333
+        font-size 14px
+      .loader-btn
+        position relative
+        color #fff
+        cursor auto
+        .loader
+          position absolute
+          left 50%
+          top 50%
+          border-radius 100%
+          width boxSize * 1px
+          height boxSize * 1px
+          box-shadow boxSize*1px boxSize*1px color2,
+            boxSize*-1px boxSize*1px color,
+            boxSize*-1px boxSize*-1px color2,
+            boxSize*1px boxSize*-1px color
+          animation spin ease infinite 4s
+          transition-property opacity
+
+        @-webkit-keyframes spin {
+          0%,
+          100% {
+              box-shadow: boxSize*1px boxSize*1px color2,
+              boxSize*-1px boxSize*1px color,
+              boxSize*-1px boxSize*-1px color2,
+              boxSize*1px boxSize*-1px color
+          }
+
+          25% {
+              box-shadow: boxSize*-1px boxSize*1px color,
+              boxSize*-1px boxSize*-1px color2,
+              boxSize*1px boxSize*-1px color,
+              boxSize*1px boxSize*1px color2
+          }
+
+          50% {
+              box-shadow: boxSize*-1px boxSize*-1px color2,
+              boxSize*1px boxSize*-1px color,
+              boxSize*1px boxSize*1px color2,
+              boxSize*-1px boxSize*1px color
+          }
+
+          75% {
+              box-shadow: boxSize*1px boxSize*-1px color,
+              boxSize*1px boxSize*1px color2,
+              boxSize*-1px boxSize*1px color,
+              boxSize*-1px boxSize*-1px color2
+          }
+        }
+@import './forum-card/styles'

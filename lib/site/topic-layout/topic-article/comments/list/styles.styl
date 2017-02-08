@@ -1,0 +1,75 @@
+.comments-list
+  padding-bottom: 30px
+
+.comments-list-item
+  margin-bottom: 15px
+  padding: 15px 15px 10px
+  box-shadow:
+    0 1px 3px rgba(0,0,0,.12),
+    0 1px 2px rgba(0,0,0,.24)
+  background-color: #fff
+
+  .meta
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    align-content: center
+    margin-bottom: 15px
+
+  .avatar
+    margin-right: 10px
+    width: 1.875em
+    height: 1.875em
+
+  .name
+    flex-grow: 2
+    margin: 0
+    font-size: .8em
+    font-weight: bold
+
+  .created-at
+    font-size: .7em
+    color: #666
+    line-height: .8em
+
+  .text
+    margin-bottom: 15px
+    font-size: .875em
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p
+      margin: 0
+      font-size: inherit
+      line-height: 1.6
+
+  .votes
+    .score
+      margin-right: .5em
+      font-size: 1em
+
+      span
+        font-weight: bold
+
+      small
+        color: #999
+
+    button
+      cursor: pointer
+      border: 0
+      background: transparent
+
+    .upvote
+      &.active,
+      &:hover
+        color: #A4CB53
+
+    .downvote
+      &.active,
+      &:hover
+        color: #D95E59

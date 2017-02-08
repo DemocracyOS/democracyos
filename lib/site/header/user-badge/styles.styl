@@ -1,0 +1,59 @@
+.user-badge
+  position relative
+  &.active
+    button
+      background rgba(0,0,0,.1)
+    .dropdown-list
+      display block
+
+  button
+    color inherit
+    background none
+    border none
+    height 54px
+    margin -.5rem 0
+    cursor pointer
+    .name
+      font-weight bold
+    .caret
+      margin-left 6px
+      position relative
+      right 0
+    img
+      width 32px
+      border-radius 100px
+      margin -.5rem 5px -.5rem 0
+
+  .dropdown-list
+    display none
+    position fixed
+    top 54px
+    right 15px
+    z-index 1000
+    padding 0
+    width auto
+    font-size 14px
+    list-style none
+    border 1px solid rgba(#000,.15)
+    box-shadow 1px 1px 4px -1px rgba(#000, .175)
+    color #000
+    background-color #f9f9f9
+    a
+      display block
+      clear both
+      padding 10px 20px
+      line-height 1.5
+      text-transform none
+      font-weight bold
+      text-decoration none
+      color inherit
+      &:hover
+        background #2c3e50
+        color white!important
+
+@media screen and (max-width: 572px)
+  .user-badge
+    float none!important
+    button
+      img
+        margin -.5rem 0!important
