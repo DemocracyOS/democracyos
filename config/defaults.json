@@ -79,6 +79,7 @@
     "visibility",
     "usersWhitelist",
     "multiForum",
+    "restrictForumCreation",
     "tweetText",
     "segmentKey",
     "spamLimit",
