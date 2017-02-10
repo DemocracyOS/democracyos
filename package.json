@@ -171,7 +171,8 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "~3.7.0",
     "xss": "0.2.2",
-    "yargs": "3.9.1"
+    "yargs": "3.9.1",
+    "snyk": "^1.25.0"
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
@@ -193,6 +194,9 @@
     "watch": "gulp watch",
     "clean": "gulp clean",
     "heroku-postbuild": "gulp build --minify",
-    "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
-  }
+    "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
