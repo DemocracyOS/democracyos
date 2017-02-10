@@ -143,5 +143,6 @@
     "uk",
     "zh_TW"
   ],
-  "enforceLocale": false
+  "enforceLocale": false,
+  "deletableComments": false
 }
