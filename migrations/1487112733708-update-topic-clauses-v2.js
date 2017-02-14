@@ -1,7 +1,6 @@
 'use strict'
 
 var jsdom = require('jsdom').jsdom;
-var log = require('debug')('democracyos:migrations:topic')
 var api = require('lib/db-api')
 
 require('lib/models')()
@@ -22,13 +21,13 @@ function getDOM (str) {
 function migrateV2 (topic, cb) {
   var html = topic._doc.summary
   var document = getDOM(html)
-  log('topic.summary: ' + html)
+  console.log('topic.summary: ' + html)
   var divs = document.getElementsByTagName('div')
   for (var i in divs) {
     if (divs.hasOwnProperty(i)) {
       var div = divs[i]
       var markup = div.outerHTML
-      log('topic.clauses[' + i + ']: ' + markup)
+      console.log('topic.clauses[' + i + ']: ' + markup)
       // TODO: Detect <br /> and set empty to true
       var doc = {
         markup: markup,
@@ -39,11 +38,11 @@ function migrateV2 (topic, cb) {
 
       // The newly created clause ID
       var clauseId = topic.clauses[topic.clauses.length - 1]._id.toString()
-      log('topic.clauses[' + i + '].id: ' + clauseId)
+      console.log('topic.clauses[' + i + '].id: ' + clauseId)
 
       // Now update its side-comments
       var reference = topic._id + '-' + (+i)
-      log('Getting comments for ' + 'summary' + ' referenced to ' + reference)
+      console.log('Getting comments for ' + 'summary' + ' referenced to ' + reference)
 
       var query = {
         context: 'summary',
@@ -57,34 +56,49 @@ function migrateV2 (topic, cb) {
 
       api.comment.update(query, data, function (err) {
         if (err) {
-          log('Error saving comment: ' + err.toString())
+          console.log('Error saving comment: ' + err.toString())
         }
-        log('comment.save() => OK!')
+        console.log('comment.save() => OK!')
       })
     }
   }
 
   topic.save(function (err) {
     if (err) {
-      log('Error saving topic: ' + err.toString())
+      console.log('Error saving topic: ' + err.toString())
       return cb(err)
     }
-    log('Topic saved!')
+    console.log('Topic saved!')
     return cb(null, topic)
   })
 }
 
-exports.up = function(next) {
-  console.log('topic v2 to v3 start')
-  log('topic v2 to v3 start')
-  Topic.find({}, function(error, topics) {
-    topics.forEach(function(topic) {
-      if(topic.guessVersion() === 2) return migrateV2(topic, function(err){
-        if(err) log('error at migrate topic v1 to v2 ' + topic.id)
-      })
+exports.up = function(done) {
+  console.log('topic clause v2 update start')
+  Topic.find({}, function(err, topics) {
+    if(err) {
+      console.log('get all topics fail ', err.message)
+      return
+    }
+
+
+    Promise.all(topics.map(function(topic) {
+      if(topic.guessVersion() === 2)
+      return new Promise(function(resolve, reject){
+          migrateV2(topic, function(err){
+            if(err) return reject('error at migrate topic v1 to v2 ' + topic.id)
+            resolve()
+          })
+        })
+      } else {
+        return Promise.resolve()
+      }
+    }))
+    .then(done)
+    .catch(function(err){
+      console.log('topic add owner failed', err)
     })
   })
-  next();
 };
 
 exports.down = function(next) {

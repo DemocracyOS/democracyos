@@ -1,6 +1,5 @@
 'use strict'
 
-var log = require('debug')('democracyos:migrations:topic')
 var api = require('lib/db-api')
 require('lib/models')()
 
@@ -14,10 +13,10 @@ const Topic = require('lib/models').Topic
  */
 
 function migrateV1V2 (topic, cb) {
-  log('Starting migration from v1')
+  console.log('Starting migration from v1')
   var data = {}
   data.clauses = topic.clauses.map(function (clause) {
-    log('Migrating clause %s', clause._id.toString())
+    console.log('Migrating clause %s', clause._id.toString())
     return {
       id: clause._id,
       markup: '<div>' + clause._doc.text + '</div>',
@@ -26,7 +25,7 @@ function migrateV1V2 (topic, cb) {
     }
   })
 
-  log('Migrating summary')
+  console.log('Migrating summary')
   data.clauses.push({
     markup: '<div>' + topic._doc.summary + '</div>',
     position: -1,
@@ -34,13 +33,13 @@ function migrateV1V2 (topic, cb) {
   })
 
   topic.set(data)
-  log('Saving topic')
+  console.log('Saving topic')
   topic.save(function (err) {
     if (err) {
-      log('An error occurred while saving topic: %s', err)
+      console.log('An error occurred while saving topic: %s', err)
       return cb(err)
     }
-    log('Topic saved, updating side comments...')
+    console.log('Topic saved, updating side comments...')
     return updateSideComments(topic, cb)
   })
 
@@ -64,13 +63,13 @@ function migrateV1V2 (topic, cb) {
         topicId: topic._id
       }
 
-      log('Updating %j with %j', query, data)
+      console.log('Updating %j with %j', query, data)
 
       api.comment.update(query, data, function (err) {
         if (err) {
-          log('Error saving comment: ' + err.toString())
+          console.log('Error saving comment: ' + err.toString())
         }
-        log('comment.save() => OK!')
+        console.log('comment.save() => OK!')
       })
     }
 
@@ -78,17 +77,32 @@ function migrateV1V2 (topic, cb) {
   }
 }
 
-exports.up = function(next) {
-  log('topic v1 to v2 start')
+exports.up = function(done) {
+  console.log('topic clause v1 update start')
   Topic.find({}, function(err, topics) {
-    if(err) return log('get all topics to migrate v1 to v2 fail ', err.message)
-    topics.forEach(function(topic) {
-      if(topic.guessVersion() === 1) return migrateV1V2(topic, function(err){
-        if(err) log('error at migrate topic v1 to v2 ' + topic.id)
-      })
+    if(err) {
+      console.log('get all topics fail ', err.message)
+      return
+    }
+
+
+    Promise.all(topics.map(function(topic) {
+      if(topic.guessVersion() === 1)
+        return new Promise(function(resolve, reject){
+          migrateV1V2(topic, function(err){
+            if(err) return reject('error at migrate topic v1 to v2 ' + topic.id)
+            resolve()
+          })
+        })
+      } else {
+        return Promise.resolve()
+      }
+    }))
+    .then(done)
+    .catch(function(err){
+      console.log('topic add owner failed', err)
     })
   })
-  next();
 };
 
 exports.down = function(next) {
