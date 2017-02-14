@@ -1,18 +1,19 @@
 'use strict'
 
 var log = require('debug')('democracyos:migrations:topic')
+var api = require('lib/db-api')
 require('lib/models')()
 
 const Topic = require('lib/models').Topic
 
 /**
- * Performs a topic migration supposing it has v1 structure.
+ * Performs a topic migration to v2 supposing it has v1 structure.
  * @param topic The topic mongoose document
  * @param cb A callback function with two params: err and topic, that represents the migrated topic
  * @api private
  */
 
-function migrateV1 (topic, cb) {
+function migrateV1V2 (topic, cb) {
   log('Starting migration from v1')
   var data = {}
   data.clauses = topic.clauses.map(function (clause) {
@@ -80,9 +81,9 @@ function migrateV1 (topic, cb) {
 exports.up = function(next) {
   log('topic v1 to v2 start')
   Topic.find({}, function(err, topics) {
-    if(err) return log('get all topics to migrate fail')
+    if(err) return log('get all topics to migrate v1 to v2 fail ', err.message)
     topics.forEach(function(topic) {
-      if(topic.guessVersion() === 1) return migrateV1(topic, function(err){
+      if(topic.guessVersion() === 1) return migrateV1V2(topic, function(err){
         if(err) log('error at migrate topic v1 to v2 ' + topic.id)
       })
     })
@@ -91,5 +92,5 @@ exports.up = function(next) {
 };
 
 exports.down = function(next) {
-  next();
+  throw new Error('topic: v2 to v1 not implemented')
 };

@@ -1,10 +1,17 @@
 'use strict'
 
+var jsdom = require('jsdom').jsdom;
 var log = require('debug')('democracyos:migrations:topic')
-require('lib/models')()
+var api = require('lib/db-api')
 
+require('lib/models')()
 const Topic = require('lib/models').Topic
 
+function getDOM (str) {
+  var dom = jsdom(str);
+  return dom.documentElement;
+
+}
 /**
  * Performs a topic migration supposing it has v1 structure.
  * @param topic The topic mongoose document
@@ -81,5 +88,5 @@ exports.up = function(next) {
 };
 
 exports.down = function(next) {
-  next();
+  throw new Error('topic: v3 to v2 not implemented')
 };
