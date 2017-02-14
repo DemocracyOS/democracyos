@@ -4,6 +4,7 @@ var log = require('debug')('democracyos:migrations:topic')
 require('lib/models')()
 
 const Topic = require('lib/models').Topic
+
 /**
  * Performs a topic migration supposing it has v1 structure.
  * @param topic The topic mongoose document
