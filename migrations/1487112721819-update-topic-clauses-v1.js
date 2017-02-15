@@ -1,8 +1,7 @@
 'use strict'
 
-var api = require('lib/db-api')
 require('lib/models')()
-
+var api = require('lib/db-api')
 const Topic = require('lib/models').Topic
 
 /**
@@ -12,11 +11,10 @@ const Topic = require('lib/models').Topic
  * @api private
  */
 
-function migrateV1V2 (topic, cb) {
-  console.log('Starting migration from v1')
+function migrateV1 (topic, cb) {
+  console.log('Migrating topic ' + topic.id + ' clause v1')
   var data = {}
   data.clauses = topic.clauses.map(function (clause) {
-    console.log('Migrating clause %s', clause._id.toString())
     return {
       id: clause._id,
       markup: '<div>' + clause._doc.text + '</div>',
@@ -25,7 +23,6 @@ function migrateV1V2 (topic, cb) {
     }
   })
 
-  console.log('Migrating summary')
   data.clauses.push({
     markup: '<div>' + topic._doc.summary + '</div>',
     position: -1,
@@ -33,19 +30,16 @@ function migrateV1V2 (topic, cb) {
   })
 
   topic.set(data)
-  console.log('Saving topic')
   topic.save(function (err) {
     if (err) {
       console.log('An error occurred while saving topic: %s', err)
       return cb(err)
     }
-    console.log('Topic saved, updating side comments...')
     return updateSideComments(topic, cb)
   })
 
   function updateSideComments (topic, cb) {
-    for (var i = 0; i < topic.clauses.length; i++) {
-      var clause = topic.clauses[i]
+    Promise.all(topic.clauses.map(function (clause) {
       var context = (clause.position === -1) ? 'summary' : 'clause'
       var reference
       if (context === 'summary') {
@@ -63,34 +57,30 @@ function migrateV1V2 (topic, cb) {
         topicId: topic._id
       }
 
-      console.log('Updating %j with %j', query, data)
-
       api.comment.update(query, data, function (err) {
         if (err) {
           console.log('Error saving comment: ' + err.toString())
         }
-        console.log('comment.save() => OK!')
       })
-    }
-
-    return cb(null, topic)
+    }))
+    .then(() => { cb(null) })
+    .catch((err) => console.log(err))
   }
 }
 
-exports.up = function(done) {
+exports.up = function (done) {
   console.log('topic clause v1 update start')
-  Topic.find({}, function(err, topics) {
-    if(err) {
+  Topic.find({}, function (err, topics) {
+    if (err) {
       console.log('get all topics fail ', err.message)
       return
     }
 
-
-    Promise.all(topics.map(function(topic) {
-      if(topic.guessVersion() === 1)
-        return new Promise(function(resolve, reject){
-          migrateV1V2(topic, function(err){
-            if(err) return reject('error at migrate topic v1 to v2 ' + topic.id)
+    Promise.all(topics.map(function (topic) {
+      if (topic.guessVersion() === 1) {
+        return new Promise(function (resolve, reject) {
+          migrateV1(topic, function (err) {
+            if (err) return reject('error at migrate topic v1 to v2 ' + topic.id)
             resolve()
           })
         })
@@ -98,13 +88,18 @@ exports.up = function(done) {
         return Promise.resolve()
       }
     }))
-    .then(done)
-    .catch(function(err){
-      console.log('topic add owner failed', err)
+    .then(function () {
+      console.log('topic clauses v1 update success')
+      done()
+    })
+    .catch(function (err) {
+      console.log('topic clauses v1 update failed', err)
+      done()
     })
   })
-};
+}
 
-exports.down = function(next) {
-  throw new Error('topic: v2 to v1 not implemented')
-};
+exports.down = function (done) {
+  console.log('topic clauses v1 update down migration not implemented')
+  done()
+}
