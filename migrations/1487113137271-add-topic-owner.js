@@ -42,7 +42,7 @@ exports.up = function up (done) {
     }
   })
   .then(function (results) {
-    console.log('remove topics owner from ' + results.filter((v) => v).length + ' topics succeded')
+    console.log('add topics owner from ' + results.filter((v) => v).length + ' topics succeded')
     done()
   })
   .catch(function (err) {
