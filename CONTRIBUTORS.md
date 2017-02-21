@@ -5,9 +5,8 @@
 #### Development
 
 * [Guido Vilariño](http://twitter.com/gvilarino)
-* [Sacha Lifszyc](https://twitter.com/slifszyc)
-* [José María Fresco](https://github.com/jfresco)
 * [Matías Lescano](https://github.com/mjlescano)
+* [Francisco Pensa](https://github.com/franciclo)
 
 ### Past contributors
 
@@ -21,6 +20,8 @@
 * [Oscar Guindzberg](https://github.com/oscarguindzberg)
 * [Pablo Moyano](https://github.com/ultraklon)
 * [Mariano Vicente](https://github.com/vmariano)
+* [Sacha Lifszyc](https://twitter.com/slifszyc)
+* [José María Fresco](https://github.com/jfresco)
 
 #### QA
 
