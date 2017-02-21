@@ -17,9 +17,8 @@ function mapMigrate (model, fn) {
 }
 
 exports.up = function up (done) {
-  console.log('add topic owner')
   mapMigrate(Topic, function (topic) {
-    if (!topic.hasOwnProperty('owner')) {
+    if (!topic.owner) {
       return new Promise(function (resolve, reject) {
         Forum
         .where({ _id: topic.forum })
@@ -52,27 +51,18 @@ exports.up = function up (done) {
 }
 
 exports.down = function down (done) {
-  console.log('remove topic owner')
   mapMigrate(Topic, function (topic) {
-    if (!topic.hasOwnProperty('owner')) {
+    if (topic.owner) {
       return new Promise(function (resolve, reject) {
-        Forum
-          .where({ _id: topic.forum })
-          .findOne(function (err, forum) {
-            if (err) return reject('get forum ' + topic.forum + ' error')
-            if (!forum) {
-              console.log('no forum with id ', topic.forum)
-              return resolve(0)
-            }
-
-            if (!topic.owner) return resolve()
-
-            topic.owner = ''
-
-            topic.save(function (err) {
-              if (err) return reject('save topic ' + topic._id)
-              return resolve(1)
-            })
+        var topicDoc = topic._doc //Object.assign({}, topic._doc)
+        delete topicDoc.owner
+        Topic.collection.findOneAndReplace({ _id: topicDoc._id }, topicDoc)
+          .then(function (r) {
+            resolve(1)
+          })
+          .catch(function (err) {
+            console.log(err)
+            reject('modify topic ' + topic._id + ' failed')
           })
       })
     } else {
