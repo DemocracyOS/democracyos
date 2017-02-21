@@ -5,16 +5,10 @@ require('lib/models')()
 var api = require('lib/db-api')
 const Topic = require('lib/models').Topic
 
-function mapMigrate (model, fn) {
-  return new Promise(function (resolve, reject) {
-    model.find({}, function (err, items) {
-      if (err) {
-        console.log(err.message)
-        return reject('get all ' + model.modelName + 's to migrate failed ')
-      }
-      Promise.all(items.map(fn)).then(resolve).catch(reject)
-    })
-  })
+function mapPromises (fn) {
+  return function (array) {
+    return Promise.all(array.map(fn))
+  }
 }
 
 function guessVersion (topic) {
@@ -180,40 +174,42 @@ function migrateV2 (topic, cb) {
 }
 
 exports.up = function (done) {
-  console.log('update topic clauses start')
   var clausesVersionsAcc = { 1: 0, 2: 0, 3: 0 }
-  mapMigrate(Topic, function (topic) {
-    var versionTopic = guessVersion(topic)
-    clausesVersionsAcc[versionTopic]++
-    if (versionTopic === 1) {
-      return new Promise(function (resolve, reject) {
-        migrateV1(topic, function (err) {
-          if (err) return reject('error at migrate topic clauses v1 to v3 ' + topic.id)
-          resolve(1)
+  Topic
+    .find({})
+    .exec()
+    .then(mapPromises(function (topic) {
+      var versionTopic = guessVersion(topic)
+      clausesVersionsAcc[versionTopic]++
+      if (versionTopic === 1) {
+        return new Promise(function (resolve, reject) {
+          migrateV1(topic, function (err) {
+            if (err) return reject('error at migrate topic clauses v1 to v3 ' + topic.id)
+            resolve(1)
+          })
         })
-      })
-    } else if (versionTopic === 2) {
-      return new Promise(function (resolve, reject) {
-        migrateV2(topic, function (err) {
-          if (err) return reject('error at migrate topic clauses v2 to v3 ' + topic.id)
-          resolve(1)
+      } else if (versionTopic === 2) {
+        return new Promise(function (resolve, reject) {
+          migrateV2(topic, function (err) {
+            if (err) return reject('error at migrate topic clauses v2 to v3 ' + topic.id)
+            resolve(1)
+          })
         })
-      })
-    } else {
-      return Promise.resolve(0)
-    }
-  })
-  .then(function (results) {
-    console.log('v1: ' + clausesVersionsAcc[1])
-    console.log('v2: ' + clausesVersionsAcc[2])
-    console.log('v3: ' + clausesVersionsAcc[3])
-    console.log('update clauses from ' + results.filter((v) => v).length + ' topics succeded')
-    done()
-  })
-  .catch(function (err) {
-    console.log('update topic clauses fail ', err)
-    done()
-  })
+      } else {
+        return Promise.resolve(0)
+      }
+    }))
+    .then(function (results) {
+      console.log('v1: ' + clausesVersionsAcc[1])
+      console.log('v2: ' + clausesVersionsAcc[2])
+      console.log('v3: ' + clausesVersionsAcc[3])
+      console.log('update clauses from ' + results.filter((v) => v).length + ' topics succeded')
+      done()
+    })
+    .catch(function (err) {
+      console.log('update topic clauses fail ', err)
+      done()
+    })
 }
 
 exports.down = function (done) {
