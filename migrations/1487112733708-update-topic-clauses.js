@@ -208,7 +208,6 @@ exports.up = function (done) {
     })
     .catch(function (err) {
       console.log('update topic clauses fail ', err)
-      done()
     })
 }
 
