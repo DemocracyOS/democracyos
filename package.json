@@ -146,6 +146,7 @@
     "native-promise-only": "^0.8.0-a",
     "notifier-client": "^1.0.0-rc2",
     "nowww": "~1.1.2",
+    "object-map": "~1.0.2",
     "page": "1.6.4",
     "passport": "~0.1.17",
     "passport-facebook": "2.0.x",
