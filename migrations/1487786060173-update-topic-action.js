@@ -1,5 +1,6 @@
 'use strict'
 
+var ObjectID = require('mongodb').ObjectID
 require('lib/models')()
 const Topic = require('lib/models').Topic
 const dbReady = require('lib/models').ready()
@@ -24,6 +25,7 @@ exports.up = function up (done) {
       if (topic.votes) {
         action.voteResults = topic.votes
       }
+      action._id = new ObjectID()
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
         $unset: { votes: '', votable: '' },
         $set: {
