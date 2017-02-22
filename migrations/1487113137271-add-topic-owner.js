@@ -2,6 +2,7 @@
 
 require('lib/models')()
 const Topic = require('lib/models').Topic
+const dbReady = require('lib/models').ready()
 
 function mapPromises (fn) {
   return function (array) {
@@ -10,10 +11,13 @@ function mapPromises (fn) {
 }
 
 exports.up = function up (done) {
-  Topic
-    .find({})
-    .populate('forum')
-    .exec()
+  dbReady
+    .then(function () {
+      return Topic
+        .find({})
+        .populate('forum')
+        .exec()
+    })
     .then(mapPromises(function (topic) {
       if (topic.owner) return Promise.resolve(0)
       topic.owner = topic.forum.owner
@@ -24,16 +28,18 @@ exports.up = function up (done) {
       done()
     })
     .catch(function (err) {
-      console.log('topic add owner failed at ', err)
-      done()
+      console.log('add topics owner failed at ', err)
     })
 }
 
 exports.down = function down (done) {
-  Topic
-    .find({})
-    .populate('forum')
-    .exec()
+  dbReady
+    .then(function () {
+      return Topic
+        .find({})
+        .populate('forum')
+        .exec()
+    })
     .then(mapPromises(function (topic) {
       if (!topic.owner) return Promise.resolve(0)
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, { $unset: { owner: '' } })
@@ -43,7 +49,6 @@ exports.down = function down (done) {
       done()
     })
     .catch(function (err) {
-      console.log('topics remove owner failed at', err)
-      done()
+      console.log('remove topic owner failed at', err)
     })
 }
