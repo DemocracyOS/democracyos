@@ -383,6 +383,7 @@
   "sorts.newest-first": "Newest first",
   "sorts.oldest-first": "Oldest first",
   "sorts.recently-updated": "Recently updated",
+  "sorts.by-title-asc": "By title A -> Z",
   "validators.checked": "Required checked field",
   "validators.input.not-exists": "{name} element does not exists",
   "validators.invalid": "Invalid",
