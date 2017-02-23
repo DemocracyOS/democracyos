@@ -3,7 +3,7 @@
 .topic-link(data-link=link._id)
   .link-row
     .link-group.link-id
-      input.form-control(type='text', name='links[#{link._id}][text]', value=link.text, validate='required', placeholder=t('admin-topics-form.clause.label.text'))
+      input.form-control(type='text', name='links[#{link._id}][text]', value=link.text, placeholder=t('admin-topics-form.clause.label.text'))
     .link-group.link-url
       input.form-control(type='text', name='links[#{link._id}][url]', validate='url', value=link.url, placeholder=t('admin-topics-form.url'))
     .link-group.link-commands
