@@ -189,6 +189,7 @@
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
+    "migrate-mongoose": "^3.2.2",
     "nomnom": "^1.8.1",
     "supertest": "^1.1.0"
   },
