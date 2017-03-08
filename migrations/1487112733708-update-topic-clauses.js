@@ -4,9 +4,7 @@ require('lib/models')()
 const Topic = require('lib/models').Topic
 
 function mapPromises (fn) {
-  return function (array) {
-    return Promise.all(array.map(fn))
-  }
+  return (array) => Promise.all(array.map(fn))
 }
 
 function guessVersion (topic) {
@@ -64,6 +62,7 @@ function migrateV1 (topic, cb) {
   })
 
   topic.set(data)
+
   topic.save(function (err) {
     if (err) {
       console.log('An error occurred while saving topic: %s', err)

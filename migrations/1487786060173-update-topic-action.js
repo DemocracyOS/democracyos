@@ -1,18 +1,14 @@
-'use strict'
-
-var ObjectID = require('mongodb').ObjectID
+const ObjectID = require('mongodb').ObjectID
 require('lib/models')()
 const Topic = require('lib/models').Topic
-const dbReady = require('lib/models').ready()
+const dbReady = require('lib/models').ready
 
 function mapPromises (fn) {
-  return function (array) {
-    return Promise.all(array.map(fn))
-  }
+  return (array) => Promise.all(array.map(fn))
 }
 
 exports.up = function up (done) {
-  dbReady
+  dbReady()
     .then(function () {
       return Topic.collection
         .find({})
@@ -43,7 +39,7 @@ exports.up = function up (done) {
 }
 
 exports.down = function down (done) {
-  dbReady
+  dbReady()
     .then(function () {
       return Topic.collection
         .find({})
