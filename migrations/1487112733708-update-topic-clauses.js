@@ -1,8 +1,6 @@
-'use strict'
-
-var jsdom = require('jsdom').jsdom
+const jsdom = require('jsdom').jsdom
+const api = require('lib/db-api')
 require('lib/models')()
-var api = require('lib/db-api')
 const Topic = require('lib/models').Topic
 
 function mapPromises (fn) {
@@ -12,7 +10,7 @@ function mapPromises (fn) {
 }
 
 function guessVersion (topic) {
-  var migratedClauses = topic.clauses.filter(function (clause) {
+  const migratedClauses = topic.clauses.filter(function (clause) {
     return !!clause.markup
   })
 
@@ -22,7 +20,8 @@ function guessVersion (topic) {
   }
 
   // Handle the case when a v1 topic has summary but no clauses
-  if (topic._doc.summary && topic._doc.summary.toLowerCase().substring(0, 4) !== '<div') {
+  if (topic._doc.summary &&
+    topic._doc.summary.toLowerCase().substring(0, 4) !== '<div') {
     return 1
   }
 
@@ -49,18 +48,17 @@ function guessVersion (topic) {
  */
 
 function migrateV1 (topic, cb) {
-  var data = {}
-  data.clauses = topic.clauses.map(function (clause) {
-    return {
-      id: clause._id,
-      markup: '<div>' + clause._doc.text + '</div>',
-      position: clause._doc.order,
-      empty: false
-    }
-  })
+  const data = {}
+
+  data.clauses = topic.clauses.map((clause) => ({
+    id: clause._id,
+    markup: `<div>${clause._doc.text}</div>`,
+    position: clause._doc.order,
+    empty: false
+  }))
 
   data.clauses.push({
-    markup: '<div>' + topic._doc.summary + '</div>',
+    markup: `<div>${topic._doc.summary}</div>`,
     position: -1,
     empty: false
   })
@@ -71,32 +69,34 @@ function migrateV1 (topic, cb) {
       console.log('An error occurred while saving topic: %s', err)
       return cb(err)
     }
+
     return updateSideComments(topic, cb)
   })
 
   function updateSideComments (topic, cb) {
     Promise.all(topic.clauses.map(function (clause) {
-      var context = (clause.position === -1) ? 'summary' : 'clause'
-      var reference
+      const context = (clause.position === -1) ? 'summary' : 'clause'
+
+      let reference
       if (context === 'summary') {
         reference = topic._id.toString() + '-0'
       } else {
         reference = clause._id.toString()
       }
-      var query = {
+
+      const query = {
         context: context,
         reference: reference
       }
-      var data = {
+
+      const data = {
         reference: clause._id,
         context: 'paragraph',
         topicId: topic._id
       }
 
       api.comment.update(query, data, function (err) {
-        if (err) {
-          console.log('Error saving comment: ' + err.toString())
-        }
+        if (err) console.log('Error saving comment: ' + err.toString())
       })
     }))
     .then(() => { cb(null) })
@@ -117,33 +117,35 @@ function getDOM (str) {
  */
 
 function migrateV2 (topic, cb) {
-  var html = topic._doc.summary
-  var document = getDOM(html)
-  var divs = document.getElementsByTagName('div')
-  var commentsUpdates = []
+  const html = topic._doc.summary
+  const document = getDOM(html)
+  const divs = document.getElementsByTagName('div')
+  const commentsUpdates = []
+
   for (var i in divs) {
     if (divs.hasOwnProperty(i)) {
-      var div = divs[i]
-      var markup = div.outerHTML
-      // TODO: Detect <br /> and set empty to true
-      var doc = {
+      const markup = divs[i].outerHTML
+
+      const doc = {
         markup: markup,
         position: i,
         empty: false
       }
+
       topic.clauses.push(doc)
 
       // The newly created clause ID
-      var clauseId = topic.clauses[topic.clauses.length - 1]._id.toString()
+      const clauseId = topic.clauses[topic.clauses.length - 1]._id.toString()
 
       // Now update its side-comments
-      var reference = topic._id + '-' + (+i)
+      const reference = `${topic._id}-${parseInt(i)}`
 
-      var query = {
+      const query = {
         context: 'summary',
         reference: reference
       }
-      var data = {
+
+      const data = {
         reference: clauseId,
         context: 'paragraph',
         topicId: topic._id
@@ -153,8 +155,8 @@ function migrateV2 (topic, cb) {
         api.comment.update(query, data, function (err) {
           if (err) {
             console.log('Error saving comment: ' + err.toString())
-            return resolve()
           }
+
           resolve()
         })
       }))
@@ -168,23 +170,29 @@ function migrateV2 (topic, cb) {
           console.log('Error saving topic: ' + err.toString())
           return cb(err)
         }
+
         return cb(null, topic)
       })
     })
+    .catch((err) => console.log(err))
 }
 
 exports.up = function (done) {
-  var clausesVersionsAcc = { 1: 0, 2: 0, 3: 0 }
+  const clausesVersionsAcc = { 1: 0, 2: 0, 3: 0 }
+
   Topic
     .find({})
     .exec()
     .then(mapPromises(function (topic) {
       var versionTopic = guessVersion(topic)
       clausesVersionsAcc[versionTopic]++
+
       if (versionTopic === 1) {
         return new Promise(function (resolve, reject) {
           migrateV1(topic, function (err) {
-            if (err) return reject('error at migrate topic clauses v1 to v3 ' + topic.id)
+            if (err) {
+              return reject('error at migrate topic clauses v1 to v3 ' + topic.id)
+            }
             resolve(1)
           })
         })
@@ -212,6 +220,6 @@ exports.up = function (done) {
 }
 
 exports.down = function (done) {
-  console.log('update topic clauses down migration is not implemented')
+  throw new Error('update topic clauses down migration is not implemented')
   done()
 }
