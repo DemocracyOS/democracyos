@@ -1,17 +1,14 @@
-'use strict'
-
 require('lib/models')()
+
 const Topic = require('lib/models').Topic
-const dbReady = require('lib/models').ready()
+const modelsReady = require('lib/models').ready
 
 function mapPromises (fn) {
-  return function (array) {
-    return Promise.all(array.map(fn))
-  }
+  return (array) => Promise.all(array.map(fn))
 }
 
 exports.up = function up (done) {
-  dbReady
+  modelsReady()
     .then(function () {
       return Topic
         .find({})
@@ -33,7 +30,7 @@ exports.up = function up (done) {
 }
 
 exports.down = function down (done) {
-  dbReady
+  modelsReady()
     .then(function () {
       return Topic
         .find({})
