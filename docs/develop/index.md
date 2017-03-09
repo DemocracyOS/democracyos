@@ -113,6 +113,11 @@ And that's it. If you don't have `make` available, this also works:
 
 Every change to the files you make on your local files will get mirrored inside your development container. If you're wondering how it is that this works, see this ✨[thorough explanation](http://giphy.com/gifs/VHngktboAlxHW/fullscreen)✨.
 
+# Folder structure
+
+We group the code that belongs to specific parts of the app in three folders (site, admin and settings) that generates three separated bundles when served to the user, the respective folders are `/lib/site`, `/lib/admin` and `/lib/settings`
+The rest of the code that are generic or are not specific of a bundle are located directly in `/lib`
+
 # Models
 
 All our data is stored in MongoDB and to connect with it we use [mongoose](http://mongoosejs.com/), an elegant mongodb object modeling for node.js.
@@ -153,7 +158,7 @@ So it can be accessed on the client on the URL: `/api/modelName`.
 
 ### Server Side
 
-If you want to add a new route to DemocracyOS, first thing to do is to create a new module under `lib/site` for it and expose an `app` (an `express` instance) that requires `lib/site/layout`. For example:
+If you want to add a new route to DemocracyOS, first thing to do is to create a new module under the corresponding bundle folder (for example: `lib/site`) for it and expose an `app` (an `express` instance) that requires `lib/site/layout`. For example:
 
 In `lib/site/mypage/index.js`
 ```
@@ -174,6 +179,8 @@ app.use(require('lib/site/mypage'));
 
 ### Client Side
 
+This applies to `/lib/site` only because we are currently migrating the other bundles to react, if you are working with parts in admin or settings check for the [DEPRECATED] section below.
+
 For client side routing, we use [react-router 2.6.1](https://reacttraining.com/react-router/), a client-side router that integrates with react's composability.
 
 You should create a new route on `lib/site/boot/router.js` and include the following lines:
@@ -192,7 +199,6 @@ export default class YourPage extends Component {
     return <div>Your page here</div>
   }
 }
-
 ```
 
 # Stores
@@ -222,3 +228,104 @@ That store comes already bundled with methods like:
 Store uses [Promises](http://babeljs.io/docs/learn-es2015/) to make async calls, caching the promises on a private variable called `_fetches`.
 
 To see a full example of a customized store, you can see `lib/stores/topic-store/topic-store.js`.
+
+
+# [DEPRECATED]
+
+### Client Side routing
+
+For client side routing, we use [page.js](https://github.com/visionmedia/page.js), a micro client-side router inspired by the Express router.
+
+You should create a new file on the corresponding bundle folder (eg.: `lib/admin/mypage/mypage.js`) and include the following lines:
+
+```
+import page from 'page';
+
+page('/mypage', (ctx, next) => {
+  // your page logic goes here
+});
+```
+
+If you are creating a page for displaying content (and not topics) you should first empty and then render everything inside the `#content` element. You can do that simply with [component-dom](https://github.com/component/dom):
+
+```
+import o from 'component-dom';
+import page from 'page';
+import MyPageView from './view';
+
+page('/mypage', (ctx, next) => {
+  let myPage = new MyPageView();
+
+  let el = o('#content');
+  myPage.appendTo(el[0]);
+});
+```
+
+Which leads us to... views.
+
+### Views
+
+To create new views (the HTML that you will show to the end user) start by creating a new file inside `lib/admin/mypage` called `view.js`.
+
+We have our own `View` library under `lib/view/view.js` which provides you with methods for:
+
+* `constructor`: pass a template and locals for that template
+* `switchOn`: function called when the template is rendered in the DOM
+* `switchOff`: function called when the template is removed from the DOM
+* `appendTo`: appends the created element inside the passed element
+* `bind`: used to bind event handlers
+* others that you can see on `lib/view/view.js`
+
+You shouldn't be touching this file but instead you should extend your own views from it:
+
+```
+import View from '../view/view.js';
+import template from './template.jade';
+
+export default class MyView extends View {
+
+  constructor (topic) {
+    super(template, { topic });
+  }
+}
+```
+
+### Templates
+
+On the previous example, we used a template. This file is written in [jade](http://jade-lang.com/) format and it should have one and only one container element. If you write something like:
+
+```
+.topic-container
+  .topic-body
+    // ...
+.comments
+  .comment-form
+    // ...
+```
+
+You have two root containers (`topic-container` and `.comments`) and you will run into problems with that. Templates can be passed in data on the `locals` objects: on the view when you call `super(template, locals)`.
+
+### Middlewares
+
+You will probably need the data on your pages, for that you can create a custom [middleware](https://github.com/visionmedia/page.js#routing) function.
+
+To keep things organized we have created some modules like `lib/middlewares/topic-middlewares/topic-middlewares.js`.
+
+Under the routes that need data, you should include these middlewares and probably you will be using a store for making those calls.
+
+When the data is ready, then you should call `next` on that middleware, for example:
+
+```
+export function findMyModel(ctx, next) {
+  myModelStore
+    .findOne(ctx.params.id)
+    .then(model => {
+      ctx.model = model;
+      next();
+    })
+    .catch(err => {
+      if (404 !== err.status) throw err;
+      log(`Unable to load model for ${ctx.params.id}`);
+    });
+}
+```

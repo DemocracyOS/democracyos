@@ -31,6 +31,7 @@ And, if you want to have DemocracyOS up and running on production, read one of t
  * [Browserify](http://browserify.org/) for client side bundles.
  * [Stylus](https://learnboost.github.io/stylus/) for css styles.
  * [React](https://facebook.github.io/react/) for components.
+ * [Jade](http://jade-lang.com/) for templating [DEPRECATED].
  * [MongoDB](http://www.mongodb.org/downloads) for storing data.
  * [Mongoose](http://mongoosejs.com/) for modeling application data.
 
