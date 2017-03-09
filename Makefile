@@ -10,15 +10,13 @@ ifndef NODE_ENV
   NODE_ENV="development"
 endif
 
-GULP="./node_modules/.bin/gulp"
-
 run: build
 	@echo "Launching..."
-	@$(GULP) serve
+	@DEBUG=$(DEBUG) npm run start
 
 build: packages
 	@echo "Building..."
-	@$(GULP) build
+	@npm run build
 
 packages:
 	@echo "Installing dependencies..."
@@ -30,7 +28,7 @@ docker:
 
 clean:
 	@echo "Removing dependencies, components and built assets..."
-	@rm -rf node_modules components public
+	@rm -rf node_modules public
 	@echo "Done.\n"
 
 .PHONY: clean docker
