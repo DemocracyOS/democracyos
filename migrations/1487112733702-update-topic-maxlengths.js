@@ -63,7 +63,7 @@ exports.up = function up (done) {
     )
     .then(function (results) {
       const total = results.filter((v) => !!v).length
-      console.log(`update topics maxlength from ${total} users succeded.`)
+      console.log(`update topics maxlength from ${total} topics succeded.`)
       done()
     })
     .catch(function (err) {
