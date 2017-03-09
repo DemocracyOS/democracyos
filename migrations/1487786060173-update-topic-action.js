@@ -1,5 +1,6 @@
-const ObjectID = require('mongodb').ObjectID
 require('lib/models')()
+
+const ObjectID = require('mongodb').ObjectID
 const Topic = require('lib/models').Topic
 const dbReady = require('lib/models').ready
 
@@ -9,18 +10,14 @@ function mapPromises (fn) {
 
 exports.up = function up (done) {
   dbReady()
-    .then(function () {
-      return Topic.collection
-        .find({})
-        .toArray()
-    })
+    .then(() => Topic.collection.find({}).toArray())
     .then(mapPromises(function (topic) {
-      if (!topic.votes) return Promise.resolve(0)
-      var action = {}
+      if (!topic.votes) return false
+
+      const action = {}
       action.method = topic.votable ? 'vote' : ''
-      if (topic.votes) {
-        action.voteResults = topic.votes
-      }
+      if (topic.votes) action.voteResults = topic.votes
+
       action._id = new ObjectID()
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
         $unset: { votes: '', votable: '' },
@@ -30,11 +27,13 @@ exports.up = function up (done) {
       })
     }))
     .then(function (results) {
-      console.log('update topics action from ' + results.filter((v) => !!v).length + ' topics succeded')
+      const total = results.filter((v) => !!v).length
+      console.log(`update topics action from ${total} topics succeded.`)
       done()
     })
     .catch(function (err) {
       console.log('update topics action failed at ', err)
+      done(err)
     })
 }
 
@@ -46,20 +45,23 @@ exports.down = function down (done) {
         .toArray()
     })
     .then(mapPromises(function (topic) {
-      if (!topic.action) return Promise.resolve(0)
+      if (!topic.action) return false
+
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
         $unset: { action: '' },
         $set: {
-          votable: !!topic.action.voteResults,
+          votable: topic.action.method === 'vote',
           votes: topic.action.voteResults
         }
       })
     }))
     .then(function (results) {
-      console.log('update topics action from ' + results.filter((v) => v).length + ' topics succeded')
+      const total = results.filter((v) => !!v).length
+      console.log(`update topics action from ${total} topics succeded.`)
       done()
     })
     .catch(function (err) {
       console.log('update topics action failed at', err)
+      done(err)
     })
 }
