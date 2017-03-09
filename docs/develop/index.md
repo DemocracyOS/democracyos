@@ -113,9 +113,9 @@ And that's it. If you don't have `make` available, this also works:
 
 Every change to the files you make on your local files will get mirrored inside your development container. If you're wondering how it is that this works, see this ✨[thorough explanation](http://giphy.com/gifs/VHngktboAlxHW/fullscreen)✨.
 
-# Folder structure
+# Folders structure
 
-We group the code that belongs to specific parts of the app in three folders (site, admin and settings) that generates three separated bundles when served to the user, the respective folders are `/lib/site`, `/lib/admin` and `/lib/settings`
+We group the code that belongs to specific parts of the app in three folders (site, admin and settings) that will generate specific front end bundle for each part, the respective folders are `/lib/site`, `/lib/admin` and `/lib/settings`
 The rest of the code that are generic or are not specific of a bundle are located directly in `/lib`
 
 # Models
@@ -144,12 +144,12 @@ You can take a look at the current `db-api`s we have under that directory to see
 
 # Web API
 
-We expose those calls from the database api via a restful api. Each `model` have a different file that follows the convention `lib/${modelName}-api/index.js`, for example: `lib/topic-api/index.js`.
+We expose those calls from the database api via a restful api. Each `model` have a different file that follows the convention `lib/api/${modelName}/index.js`, for example: `lib/api/topic/index.js`.
 
-These modules are added to the app on `lib/boot/index.js` and you should add them like:
+These modules are added to the app on `lib/api/boot/index.js` and you should add them like:
 
 ```
-app.use('/api', require('lib/${modelName}-api'));
+app.use('/api', require('lib/api/${modelName}'));
 ```
 
 So it can be accessed on the client on the URL: `/api/modelName`.
