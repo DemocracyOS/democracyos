@@ -12,11 +12,13 @@ However, a forum owner could want to restrict the participation to a closed grou
 - a forum can be *restricted*, where everyone can see the topics but some people can comment and vote;
 - a forum can be *secret*, where nobody can see the topics or vote unless they are authorized by the owner or an admin.
 
-We distinguish three roles on a forum:
+We distinguish five roles on a forum:
 - The *Owner* is unique, and cannot be changed. It's free to change everything regarding this forum.
 - *Administrators* can give permissions to other users, edit forum settings, and manage the content (create and edit topics, etc).
 - *Collaborators* can add, edit and delete topics on this forum.
+- *Authors* can add topics but can't publish them, can only edit own not published topics.
 - *Participants* can comment and vote this forum if it's Restricted or Private.
+- *Moderator* can delete comments if allowed through config.
 
 This article is intended to provide you, as a developer, guidelines to understand and extend the permissions approach.
 
@@ -31,4 +33,4 @@ This permission model is represented in the forum model, since we are only apply
 
 # Middlewares
 
-Some API operations are permission-aware, so when a user tries to perform any of it, the privileges should be checked. It is done by using Express middlewares that are implemented in `lib/forum-middlewares/index.js` and `lib/forum-api/index.js`.
+Some API operations are permission-aware, so when a user tries to perform any of it, the privileges should be checked. It is done by using Express middlewares that are implemented in `lib/middlewares/forum-middlewares/index.js`.
