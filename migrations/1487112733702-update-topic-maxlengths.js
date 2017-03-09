@@ -25,7 +25,7 @@ exports.up = function up (done) {
         let authorUrlInvalid = topic.authorUrl && topic.authorUrl.length > 250
         let sourceInvalid = topic.source && topic.source.length > 250
         let coverUrlInvalid = topic.coverUrl && topic.coverUrl.length > 250
-        let linksInvalid = topic.links && topic.links.map(link => link.url.length > 250).filter(urlInvalid => urlInvalid)
+        let linksInvalid = topic.links && topic.links.map(link => link.url && link.url.length > 250).filter(urlInvalid => urlInvalid)
 
         if(
           !mediaTitleInvalid &&
@@ -43,7 +43,11 @@ exports.up = function up (done) {
         let authorUrl = authorUrlInvalid ? topic.authorUrl.slice(0, 250) : topic.authorUrl
         let source = sourceInvalid ? topic.source.slice(0, 250) : topic.source
         let coverUrl = coverUrlInvalid ? topic.coverUrl.slice(0, 250) : topic.coverUrl
-        let links = linksInvalid ? topic.links.map(link => { link.url = link.url.slice(0, 250), return link }) : topic.links
+        let links = linksInvalid ? topic.links.map(link => {
+            if (!link.url) return link
+            link.url = link.url.slice(0, 250)
+            return link
+          }) : topic.links
 
         return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
           $set: {
