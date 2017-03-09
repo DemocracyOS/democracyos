@@ -43,10 +43,10 @@ exports.up = function up (done) {
 
         return User.collection.findOneAndUpdate({ _id: user._id }, {
           $set: {
-            firstName: firstName
-            lastName: lastName
-            username: username
-            email: email
+            firstName: firstName,
+            lastName: lastName,
+            username: username,
+            email: email,
             badge: badge
           }
         })
