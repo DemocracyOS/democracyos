@@ -16,16 +16,18 @@ exports.up = function up (done) {
         .exec()
     })
     .then(mapPromises(function (topic) {
-      if (topic.owner) return Promise.resolve(0)
+      if (topic.owner) return false
       topic.owner = topic.forum.owner
       return topic.save()
     }))
     .then(function (results) {
-      console.log('add topics owner from ' + results.filter((v) => !!v).length + ' topics succeded')
+      const total = results.filter((v) => !!v).length
+      console.log(`add topics owner from ${total} topics succeded.`)
       done()
     })
     .catch(function (err) {
-      console.log('add topics owner failed at ', err)
+      console.error('add topics owner failed at ', err)
+      done(err)
     })
 }
 
@@ -38,14 +40,21 @@ exports.down = function down (done) {
         .exec()
     })
     .then(mapPromises(function (topic) {
-      if (!topic.owner) return Promise.resolve(0)
-      return Topic.collection.findOneAndUpdate({ _id: topic._id }, { $unset: { owner: '' } })
+      if (!topic.owner) return false
+
+      return Topic.collection.findOneAndUpdate({
+        _id: topic._id
+      }, {
+        $unset: { owner: '' }
+      })
     }))
     .then(function (results) {
-      console.log('remove topic owner from ' + results.filter((v) => v).length + ' topics succeded')
+      const total = results.filter((v) => !!v).length
+      console.log(`remove topic owner from ${total} topics succeded.`)
       done()
     })
     .catch(function (err) {
       console.log('remove topic owner failed at', err)
+      done(err)
     })
 }
