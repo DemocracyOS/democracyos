@@ -179,7 +179,7 @@ app.use(require('lib/site/mypage'));
 
 ### Client Side
 
-This applies to `/lib/site` only because we are currently migrating the other bundles to react, if you are working with parts in admin or settings check for the [DEPRECATED] section below.
+This applies to `/lib/site` only because we are currently migrating the other bundles to React, if you are working on `lib/admin` or `lib/settings` check for the [DEPRECATED](#DEPRECATED) section below.
 
 For client side routing, we use [react-router 2.6.1](https://reacttraining.com/react-router/), a client-side router that integrates with react's composability.
 
@@ -230,7 +230,7 @@ Store uses [Promises](http://babeljs.io/docs/learn-es2015/) to make async calls,
 To see a full example of a customized store, you can see `lib/stores/topic-store/topic-store.js`.
 
 
-# [DEPRECATED]
+# DEPRECATED
 
 ### Client Side routing
 
