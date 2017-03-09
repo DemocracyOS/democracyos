@@ -25,7 +25,7 @@ exports.up = function up (done) {
         let authorUrlInvalid = topic.authorUrl && topic.authorUrl.length > 250
         let sourceInvalid = topic.source && topic.source.length > 250
         let coverUrlInvalid = topic.coverUrl && topic.coverUrl.length > 250
-        let linksInvalid = topic.links && topic.links.map(link => link.url && link.url.length > 250).filter(urlInvalid => urlInvalid)
+        let linksInvalid = topic.links && topic.links.map(link => link.url && link.url.length > 250).filter(urlInvalid => urlInvalid).length > 0
 
         if(
           !mediaTitleInvalid &&
@@ -33,7 +33,7 @@ exports.up = function up (done) {
           !authorUrlInvalid &&
           !sourceInvalid &&
           !coverUrlInvalid &&
-          linksInvalid.length === 0
+          !linksInvalid
         ) {
           return Promise.resolve()
         }
