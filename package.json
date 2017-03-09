@@ -203,8 +203,9 @@
     "build": "NODE_PATH=. gulp build",
     "watch": "NODE_PATH=. gulp watch",
     "clean": "NODE_PATH=. gulp clean",
-    "heroku-postbuild": "NODE_PATH=. gulp build --minify",
-    "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test"
+    "migrate": "NODE_PATH=. bin/dos-migrate",
+    "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test",
+    "heroku-postbuild": "NODE_PATH=. gulp build --minify"
   },
   "browser": {
     "lib/config": "lib/config/config"
