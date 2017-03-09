@@ -174,16 +174,12 @@ app.use(require('lib/mypage'));
 
 ### Client Side
 
-For client side routing, we use [page.js](https://github.com/visionmedia/page.js), a micro client-side router inspired by the Express router.
+For client side routing, we use [react-router 2.6.1](https://reacttraining.com/react-router/), a client-side router that integrates with react's composability.
 
-You should create a new file on `lib/mypage/mypage.js` and include the following lines:
+You should create a new route on `lib/site/boot/router.js` and include the following lines:
 
 ```
-import page from 'page';
-
-page('/mypage', (ctx, next) => {
-  // your page logic goes here
-});
+<Route path='my-route' component={MyComponent} />
 ```
 
 If you are creating a page for displaying content (and not topics) you should first empty and then render everything inside the `#content` element. You can do that simply with [component-dom](https://github.com/component/dom):
