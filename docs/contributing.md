@@ -5,7 +5,7 @@ position: 4
 
 # Contributing to DemocracyOS
 
-If you have a question about DemocracyOS (not a bug report) please post it to our [mailing list](http://groups.google.com/group/democracyos-app) or on [Gitter](https://gitter.im/DemocracyOS/app).
+If you have a question about DemocracyOS (not a bug report) please post it on [Gitter](https://gitter.im/DemocracyOS/app).
 
 
 ## Reporting bugs / Requesting features
