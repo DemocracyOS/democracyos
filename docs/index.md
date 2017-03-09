@@ -11,11 +11,9 @@ Welcome to the Documentation site. Here you'll find information on how to instal
 
 ## Support
 
-Go to the [DemocracyOS Mailing List](https://groups.google.com/forum/#!forum/democracyos-app) for questions about DemocracyOS exclusively.
+If you want to talk to us or discuss something technical use the [Gitter Room](https://gitter.im/DemocracyOS/app).
 
 On the project's [Issues](https://github.com/DemocracyOS/app/issues) file any bug report or feature requests.
-
-And use the [Gitter Room](https://gitter.im/DemocracyOS/app) if you want to ask or discuss something technical.
 
 ## Getting Started
 
@@ -32,7 +30,7 @@ And, if you want to have DemocracyOS up and running on production, read one of t
  * [Babel.js](https://babeljs.io/) for all the ES2015 magic on client side.
  * [Browserify](http://browserify.org/) for client side bundles.
  * [Stylus](https://learnboost.github.io/stylus/) for css styles.
- * [Jade](http://jade-lang.com/) for templating.
+ * [React](https://facebook.github.io/react/) for components.
  * [MongoDB](http://www.mongodb.org/downloads) for storing data.
  * [Mongoose](http://mongoosejs.com/) for modeling application data.
 
