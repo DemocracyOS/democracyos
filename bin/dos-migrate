@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+const Migrator = require('migrate-mongoose')
+const config = require('../lib/config')
+
+const migrator = new Migrator({
+  dbConnectionUri: config.mongoUrl,
+  autosync: true,
+  cli: true
+})
+
+process.on('SIGINT', () => {
+  migrator.close().then(() => {
+    process.exit(0)
+  })
+})
+
+process.on('exit', () => {
+  migrator.close()
+})
+
+migrator.run()
+  .then(() => { process.exit(0) })
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })

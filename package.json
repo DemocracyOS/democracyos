@@ -204,6 +204,7 @@
     "build": "NODE_PATH=. gulp build",
     "watch": "NODE_PATH=. gulp watch",
     "clean": "NODE_PATH=. gulp clean",
+    "migrate": "NODE_PATH=. bin/dos-migrate",
     "heroku-postbuild": "NODE_PATH=. gulp build --minify",
     "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test",
     "snyk-protect": "snyk protect",
