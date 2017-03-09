@@ -153,9 +153,9 @@ So it can be accessed on the client on the URL: `/api/modelName`.
 
 ### Server Side
 
-If you want to add a new route to DemocracyOS, first thing to do is to create a new module under `lib` for it and expose an `app` (an `express` instance) that requires `lib/layout`. For example:
+If you want to add a new route to DemocracyOS, first thing to do is to create a new module under `lib/site` for it and expose an `app` (an `express` instance) that requires `lib/site/layout`. For example:
 
-In `lib/mypage/index.js`
+In `lib/site/mypage/index.js`
 ```
 /**
  * Module dependencies.
@@ -164,12 +164,12 @@ In `lib/mypage/index.js`
 var express = require('express');
 var app = module.exports = express();
 
-app.get('/mypage', require('lib/layout'));
+app.get('/mypage', require('lib/site/layout'));
 ```
 
-And at the bottom of `lib/boot/index.js`
+And at the bottom of `lib/site/boot/index.js`
 ```
-app.use(require('lib/mypage'));
+app.use(require('lib/site/mypage'));
 ```
 
 ### Client Side
