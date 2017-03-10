@@ -3,9 +3,7 @@ require('lib/models')()
 const User = require('lib/models').User
 const dbReady = require('lib/models').ready
 
-function mapPromises (fn) {
-  return (array) => Promise.all(array.map(fn))
-}
+const mapPromises = (fn) => (array) => Promise.all(array.map(fn))
 
 exports.up = function up (done) {
   // firstName 100
@@ -25,7 +23,7 @@ exports.up = function up (done) {
         let emailInvalid = user.email && user.email.length > 200
         let badgeInvalid = user.badge && user.badge.length > 50
 
-        if(
+        if (
           !firstNameInvalid &&
           !lastNameInvalid &&
           !usernameInvalid &&
