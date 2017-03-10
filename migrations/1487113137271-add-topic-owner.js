@@ -11,19 +11,22 @@ exports.up = function up (done) {
   modelsReady()
     .then(() => Topic.collection.find({}).toArray())
     .then(mapPromises(function (topic) {
-      if (topic.owner) return false
-      let owner
-      if (!topic.forum) {
-        const staff = User.findOne({ email: config.staff[0] }).then((user) => user)
-        if (!staff) throw new Error('Cant assign owner')
-        owner = staff
-      }
-
-      owner = Forum.collection.findOne({ _id: topic.forum }).then((forum) => forum.owner)
-
-      return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
+      if (topic.owner) return Promise.resolve(0)
+      const updateOwner = (owner) => Topic.collection.findOneAndUpdate({ _id: topic._id }, {
         $set: {
           owner: owner
+        }
+      })
+
+      return Forum.collection.findOne({ _id: topic.forum }).then((forum) => {
+        if (forum && forum.owner) {
+          return updateOwner(forum.owner)
+        } else {
+          return User.findOne({ email: config.staff[0] })
+            .then((staff) => {
+              if (!staff) throw new Error('Cant assign owner')
+              return updateOwner(staff)
+            })
         }
       })
     }))
@@ -40,14 +43,9 @@ exports.up = function up (done) {
 
 exports.down = function down (done) {
   modelsReady()
-    .then(function () {
-      return Topic
-        .find({})
-        .populate('forum')
-        .exec()
-    })
+    .then(() => Topic.collection.find({}).toArray())
     .then(mapPromises(function (topic) {
-      if (!topic.owner) return false
+      if (!topic.owner) return Promise.resolve(0)
 
       return Topic.collection.findOneAndUpdate({
         _id: topic._id
