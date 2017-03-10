@@ -1,11 +1,12 @@
 const jsdom = require('jsdom').jsdom
 const api = require('lib/db-api')
-require('lib/models')()
-const Topic = require('lib/models').Topic
 
-function mapPromises (fn) {
-  return (array) => Promise.all(array.map(fn))
-}
+require('lib/models')()
+
+const Topic = require('lib/models').Topic
+const dbReady = require('lib/models').ready
+
+const mapPromises = (fn) => (array) => Promise.all(array.map(fn))
 
 function guessVersion (topic) {
   const migratedClauses = topic.clauses.filter(function (clause) {
@@ -18,7 +19,7 @@ function guessVersion (topic) {
   }
 
   // Handle the case when a v1 topic has summary but no clauses
-  if (topic._doc.summary &&
+  if (topic._doc && topic._doc.summary &&
     topic._doc.summary.toLowerCase().substring(0, 4) !== '<div') {
     return 1
   }
@@ -29,7 +30,7 @@ function guessVersion (topic) {
   } else if (topic.clauses[0] && topic.clauses[0]._doc && topic._doc.clauses[0]._doc.markup) {
     // Topic %s is v3 (wrote with a rich text editor in DemocracyOS 1.0) or already migrated
     return 3
-  } else if (topic._doc.summary) {
+  } else if (topic._doc && topic._doc.summary) {
     // Topic %s is v2 (wrote with a rich text editor)
     return 2
   } else {
@@ -45,7 +46,7 @@ function guessVersion (topic) {
  * @api private
  */
 
-function migrateV1 (topic, cb) {
+function migrateV1 (topic) {
   const data = {}
 
   data.clauses = topic.clauses.map((clause) => ({
@@ -56,24 +57,18 @@ function migrateV1 (topic, cb) {
   }))
 
   data.clauses.push({
-    markup: `<div>${topic._doc.summary}</div>`,
+    markup: `<div>${topic._doc && topic._doc.summary}</div>`,
     position: -1,
     empty: false
   })
 
-  topic.set(data)
-
-  topic.save(function (err) {
-    if (err) {
-      console.log('An error occurred while saving topic: %s', err)
-      return cb(err)
-    }
-
-    return updateSideComments(topic, cb)
-  })
-
-  function updateSideComments (topic, cb) {
-    Promise.all(topic.clauses.map(function (clause) {
+  return Promise.all([
+    Topic.collection.findOneAndUpdate({ _id: topic._id }, {
+      $set: {
+        clauses: data.clauses
+      }
+    }),
+    mapPromises(function (clause) {
       const context = (clause.position === -1) ? 'summary' : 'clause'
 
       let reference
@@ -94,16 +89,21 @@ function migrateV1 (topic, cb) {
         topicId: topic._id
       }
 
-      api.comment.update(query, data, function (err) {
-        if (err) console.log('Error saving comment: ' + err.toString())
+      return new Promise(function (resolve, reject) {
+        api.comment.update(query, data, function (err) {
+          if (err) {
+            console.log('Error saving comment: ' + err.toString())
+          }
+
+          resolve()
+        })
       })
-    }))
-    .then(() => { cb(null) })
-    .catch((err) => console.log(err))
-  }
+    })(topic.clauses)
+  ])
 }
 
 function getDOM (str) {
+  if (!str) return undefined
   var dom = jsdom(str)
   return dom.documentElement
 }
@@ -115,26 +115,27 @@ function getDOM (str) {
  * @api private
  */
 
-function migrateV2 (topic, cb) {
-  const html = topic._doc.summary
+function migrateV2 (topic) {
+  const html = topic._doc && topic._doc.summary
   const document = getDOM(html)
+  if (!document) throw Error('Bad topic _doc')
   const divs = document.getElementsByTagName('div')
   const commentsUpdates = []
+  let clauses = topic.clauses
 
   for (var i in divs) {
     if (divs.hasOwnProperty(i)) {
       const markup = divs[i].outerHTML
-
       const doc = {
         markup: markup,
         position: i,
         empty: false
       }
 
-      topic.clauses.push(doc)
+      clauses.push(doc)
 
       // The newly created clause ID
-      const clauseId = topic.clauses[topic.clauses.length - 1]._id.toString()
+      const clauseId = clauses[clauses.length - 1]._id.toString()
 
       // Now update its side-comments
       const reference = `${topic._id}-${parseInt(i)}`
@@ -162,63 +163,50 @@ function migrateV2 (topic, cb) {
     }
   }
 
-  Promise.all(commentsUpdates)
+  return Promise.all(commentsUpdates)
     .then(function () {
-      topic.save(function (err) {
-        if (err) {
-          console.log('Error saving topic: ' + err.toString())
-          return cb(err)
+      return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
+        $set: {
+          clauses: clauses
         }
-
-        return cb(null, topic)
       })
     })
-    .catch((err) => console.log(err))
 }
 
 exports.up = function (done) {
   const clausesVersionsAcc = { 1: 0, 2: 0, 3: 0 }
 
-  Topic
-    .find({})
-    .exec()
-    .then(mapPromises(function (topic) {
-      var versionTopic = guessVersion(topic)
-      clausesVersionsAcc[versionTopic]++
+  dbReady()
+    .then(() => Topic.collection
+      .find({})
+      .toArray()
+      .then(mapPromises(function (topic) {
+        var versionTopic = guessVersion(topic)
+        clausesVersionsAcc[versionTopic]++
 
-      if (versionTopic === 1) {
-        return new Promise(function (resolve, reject) {
-          migrateV1(topic, function (err) {
-            if (err) {
-              return reject('error at migrate topic clauses v1 to v3 ' + topic.id)
-            }
-            resolve(1)
-          })
-        })
-      } else if (versionTopic === 2) {
-        return new Promise(function (resolve, reject) {
-          migrateV2(topic, function (err) {
-            if (err) return reject('error at migrate topic clauses v2 to v3 ' + topic.id)
-            resolve(1)
-          })
-        })
-      } else {
-        return Promise.resolve(0)
-      }
-    }))
-    .then(function (results) {
-      console.log('v1: ' + clausesVersionsAcc[1])
-      console.log('v2: ' + clausesVersionsAcc[2])
-      console.log('v3: ' + clausesVersionsAcc[3])
-      console.log('update clauses from ' + results.filter((v) => v).length + ' topics succeded')
-      done()
-    })
+        if (versionTopic === 1) {
+          return migrateV1(topic)
+        } else if (versionTopic === 2) {
+          return migrateV2(topic)
+        } else {
+          return Promise.resolve(0)
+        }
+      }))
+      .then(function (results) {
+        console.log('v1: ' + clausesVersionsAcc[1])
+        console.log('v2: ' + clausesVersionsAcc[2])
+        console.log('v3: ' + clausesVersionsAcc[3])
+        console.log('update clauses from ' + results.filter((v) => v).length + ' topics succeded')
+        done()
+      })
+    )
     .catch(function (err) {
-      console.log('update topic clauses fail ', err)
+      console.log('update topics clauses failed at ', err)
+      throw new Error('update topics clauses failed')
     })
 }
 
 exports.down = function (done) {
-  throw new Error('update topic clauses down migration is not implemented')
+  console.log('update topic clauses down migration is not implemented')
   done()
 }

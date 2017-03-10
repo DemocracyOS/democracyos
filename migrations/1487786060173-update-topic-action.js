@@ -4,9 +4,7 @@ const ObjectID = require('mongodb').ObjectID
 const Topic = require('lib/models').Topic
 const dbReady = require('lib/models').ready
 
-function mapPromises (fn) {
-  return (array) => Promise.all(array.map(fn))
-}
+const mapPromises = (fn) => (array) => Promise.all(array.map(fn))
 
 exports.up = function up (done) {
   dbReady()
