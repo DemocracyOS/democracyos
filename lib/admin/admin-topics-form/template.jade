@@ -37,13 +37,13 @@
           input.form-control(type='text', maxlength='254', id="authorUrl", name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.action')
-          select.form-control.method-input(name='method')
+          select.form-control.method-input(name='actionMethod', value=topic.action.method)
             option(value='')= t('admin-topics-form.action.none')
             option(value='vote')= t('admin-topics-form.action.vote')
             option(value='poll')= t('admin-topics-form.action.poll')
         .form-group.poll-options.hide
           label= t('admin-topics-form.label.poll-options')
-          input.form-control.tags-input(type='tags')
+          input.form-control.tags-input(type='tags', name='pollOptions', value=topic.action.pollOptions)
         
         .form-group.hide
           label= t('admin-topics-form.label.clause-truncation-text')
