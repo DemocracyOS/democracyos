@@ -15,6 +15,7 @@
   "allowEmailAliases": true,
   "facebookSignin": false,
   "publicEmails": false,
+  "moderatorEnabled": false,
   "auth": {
     "basic": {
       "username": "",
@@ -66,6 +67,7 @@
     "commentsPerPage",
     "frequentlyAskedQuestions",
     "termsOfService",
+    "moderatorEnabled",
     "privacyPolicy",
     "glossary",
     "signinUrl",
@@ -143,6 +145,5 @@
     "uk",
     "zh_TW"
   ],
-  "enforceLocale": false,
-  "deletableComments": false
+  "enforceLocale": false
 }
