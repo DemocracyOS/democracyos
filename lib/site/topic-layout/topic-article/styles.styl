@@ -5,8 +5,27 @@
   @import './content/styles'
   @import './footer/styles'
   @import './vote/styles'
+  @import './poll/styles'
   @import './participants/styles'
   @import './comments/styles'
+
+  .share-links
+    margin-bottom 20px
+    a
+      background #666
+      padding 10px
+      margin-right 10px
+      border-radius border_radius
+      color white
+      display inline-block
+      line-height 10px
+      -webkit-transition all 0.3s ease
+      &:hover
+        text-decoration none
+      &.facebook:hover
+        background #3b5998
+      &.twitter:hover
+        background #3498db
 
   hr
     font-size 15px
