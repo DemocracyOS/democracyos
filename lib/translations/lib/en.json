@@ -34,7 +34,7 @@
   "admin-permissions.roles.author.description": "Author can create and edit topics but not publish them, nor edit published ones.",
   "admin-permissions.roles.moderator.title": "Moderators",
   "admin-permissions.roles.moderator.name": "Moderator",
-  "admin-permissions.roles.moderator.description": "Moderators can delete comments.",
+  "admin-permissions.roles.moderator.description": "Moderators can delete any comment on this forum.",
   "admin-sidebar.tags.create": "Create",
   "admin-sidebar.tags.list": "List",
   "admin-sidebar.tags.title": "Tags",
