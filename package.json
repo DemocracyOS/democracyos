@@ -71,6 +71,7 @@
     "browserify": "^9.0.8",
     "bus": "0.1.0",
     "chart.js": "1.0.2",
+    "check-node-version": "~2.0.1",
     "co-prompt": "~1.0.0",
     "commander": "~2.0.0",
     "component-closest": "0.1.4",
@@ -197,7 +198,7 @@
   "main": "index.js",
   "engines": {
     "node": "6.x.x",
-    "npm": "3.x.x"
+    "npm": ">=3.0.0 <5.0.0"
   },
   "scripts": {
     "preinstall": "bin/dos-ext-install",
