@@ -139,6 +139,7 @@
     "merge": "^1.2.0",
     "mkdirp": "^0.5.0",
     "moment": "2.15.1",
+    "mongodb": "~2.2.25",
     "mongoose": "4.6.4",
     "mongoose-connection-ready": "^1.0.1",
     "mongoose-gravatar": "0.3.0",
