@@ -1,9 +1,11 @@
-var config = require('lib/config')
-var server = require('lib/server')
-var log = require('debug')('democracyos:root')
+const debug = require('debug')
+const config = require('lib/config')
+const server = require('lib/server')
+
+const log = debug('democracyos:root')
 
 // Basic server configuration
-var opts = {
+const opts = {
   port: process.env.PORT || config.publicPort,
   protocol: config.protocol,
   https: config.https
