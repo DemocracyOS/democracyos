@@ -175,14 +175,14 @@
     "verigy": "2.0.1",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "~3.7.0",
-    "whatwg-fetch": "^1.0.0",
-    "xss": "0.2.2",
+    "whatwg-fetch": "~2.0.3",
+    "xss": "0.3.3",
     "yargs": "3.9.1"
   },
   "devDependencies": {
     "arr-diff": "^1.0.1",
-    "eslint": "~3.17.1",
-    "eslint-config-democracyos": "~1.0.0",
+    "eslint": "~3.18.0",
+    "eslint-config-democracyos": "~1.1.0",
     "google-translate": "^1.0.0",
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
