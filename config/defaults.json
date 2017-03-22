@@ -16,6 +16,7 @@
   "facebookSignin": false,
   "publicEmails": false,
   "moderatorEnabled": false,
+  "checkNodeVersion": true,
   "auth": {
     "basic": {
       "username": "",
