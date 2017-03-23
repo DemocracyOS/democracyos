@@ -93,6 +93,7 @@
   "admin-topics-form.action.vote": "Vote",
   "admin-topics-form.action.poll": "Poll",
   "admin-topics-form.link.confirmation.title": "Link removal",
+  "admin-topics-form.message.cant-edit-action": "Voting started, can't modify the action",
   "admin-topics-form.message.add-clause-forbidden": "Topic must be saved to start adding clauses",
   "admin-topics-form.message.add-link-forbidden": "Topic must be saved before adding links",
   "admin-topics-form.message.onsuccess": "Topic successfuly saved",
