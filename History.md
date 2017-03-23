@@ -1,4 +1,12 @@
 
+1.6.0 / 2017-03-23
+==================
+
+  * Add snyk.io service
+  * Clarify installation steps order
+  * Update Express to v4
+  * Update Dockerfile location to root folder
+
 1.5.2 / 2016-10-24
 ==================
 
