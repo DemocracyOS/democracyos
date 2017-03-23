@@ -66,7 +66,6 @@
   "admin-topics-form.action.vote": "Voto",
   "admin-topics-form.action.poll": "Encuesta",
   "admin-topics-form.link.confirmation.title": "Eliminar enlace",
-  "admin-topics-form.message.cant-edit-action": "La votación está en marcha, por lo tanto no es posible modificar las opciones de votación.",
   "admin-topics-form.message.add-clause-forbidden": "El tema debe guardarse antes de agregar enlaces",
   "admin-topics-form.message.add-link-forbidden": "Tema debe guardarse antes de la adición de enlaces",
   "admin-topics-form.message.onsuccess": "Tema guardado exitosamente",
