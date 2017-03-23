@@ -1,0 +1,62 @@
+.poll-wrapper
+  margin-bottom: 20px
+  position: relative
+  .results-bar
+    background-color: blue
+    position: absolute;
+  button
+    width: 100%
+    position: relative
+    margin: 5px 0
+    border: 1px solid #d4d4d4
+    outline: none
+    &:hover
+      background: #f0f0f0
+    &.show-results
+      cursor: inherit
+      text-align: left
+      &:hover
+        background: #f5f5f5
+      &.winner
+        .results-bar
+          background-color: #7cace5
+        .poll-option-label, .poll-results
+          font-weight: bold
+      .results-bar
+        background-color: #d4d4d4
+        position: absolute
+        height: 100%
+        top: 0
+        left: 0
+        border-radius: 2px
+        z-index: 0
+    .poll-option-label
+      z-index: 1
+      position: relative
+    .poll-results
+      position: absolute
+      right: 10px
+      z-index: 1
+    .icon-check
+      z-index: 1
+      position: absolute
+      top: 10px
+      margin-left: 10px
+  .overlay-vote
+    position absolute
+    z-index: 2
+    left 0
+    top 0
+    height 100%
+    width 100%
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    background-color rgba(#fff, .9)
+    font-weight bold
+    text-align center
+    span.icon-lock
+      font-size 20px
+    span.text
+      max-width 320px

@@ -125,3 +125,16 @@
 
   td
     padding 2px
+.tags-input, .tags-input input
+  width 100%!important
+.poll-options
+  position: relative
+  .poll-disabled
+    width: 100%
+    height: unquote("calc(100% - 31px)")
+    background: rgba(219, 219, 219, 0.42)
+    position: absolute
+    top: 30px
+    border-radius: 4px
+    cursor: not-allowed
+@import '../../node_modules/tags-input/tags-input.css'
