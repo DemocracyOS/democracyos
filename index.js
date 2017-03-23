@@ -3,6 +3,7 @@ const config = require('lib/config')
 const server = require('lib/server')
 const checkNodeVersion = require('lib/check-node-version')
 const migrations = require('lib/migrations')
+const models = require('lib/models')()
 
 const log = debug('democracyos:root')
 
@@ -15,6 +16,7 @@ const opts = {
 
 if (module === require.main) {
   checkNodeVersion()
+    .then(models.ready())
     .then(migrations.ready())
     .then(() => {
       server(opts, function (err) {
