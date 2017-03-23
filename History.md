@@ -1,4 +1,19 @@
 
+2.0.0 / 2017-03-23
+==================
+
+  * Update ALL dependencies
+  * Add node and npm version checker on startup
+  * Add DB migrations
+  * Add Api v2 and progressively deprecate /lib/api
+  * Add React + React Router on /lib/site ✨
+  * Add Topic privileges by user
+  * Update Comments forms UI
+  * Add multi-auth (FB + Email)
+  * Add user-badge editable by Staff members
+  * Add Bootstrap v4 #1268
+  * Add /ext folder functionality
+
 1.6.0 / 2017-03-23
 ==================
 
