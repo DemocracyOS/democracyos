@@ -1,5 +1,3 @@
-- var tabindex = 1
-
 #tag-wrapper
   .tag-admin
     .heading
@@ -10,13 +8,15 @@
       ul.form-messages
       .form-group
         label= t('admin-tags-form.label.name')
-        input.form-control(type='text', maxlength='50', id="name", name='name', tabindex=tabindex++, placeholder=t('admin-tags-form.placeholder.name'), value=tag.name, validate='required')
+        input.form-control(type='text', maxlength='50', id="name", name='name', placeholder=t('admin-tags-form.placeholder.name'), value=tag.name, validate='required')
       .form-group
         label= t('admin-tags-form.label.image')
-        ul.tag-images
+        .tag-images
           - each image in images
-            li.tag-image
-              input.form-control(type='radio', name='image', tabindex=tabindex++, value=image.name, checked= tag.image === image.name, validate='any:image')
-              .tag-image-fill
-                img(src=image.url)
-      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=tabindex++)=t('admin-tags-form.button.submit')
+            - const id = `tag-image-${image.name}`
+            .tag-image(style=`background-image: url('${image.url}')`)
+              input(type='radio', name='image', value=image.name, checked= tag.image === image.name, validate='any:image', id=id)
+              label(for=id)
+      .form-group
+        button.btn.btn-success.btn-block.btn-lg
+          = t('admin-tags-form.button.submit')
