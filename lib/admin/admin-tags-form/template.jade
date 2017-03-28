@@ -13,8 +13,8 @@
         label= t('admin-tags-form.label.image')
         .tag-images
           - each image in images
-            - const id = `tag-image-${image.name}`
-            .tag-image(style=`background-image: url('${image.url}')`)
+            - const id = 'tag-image-' + image.name
+            .tag-image(style='background-image: url(' + image.url + ')')
               input(type='radio', name='image', value=image.name, checked= tag.image === image.name, validate='any:image', id=id)
               label(for=id)
       .form-group
