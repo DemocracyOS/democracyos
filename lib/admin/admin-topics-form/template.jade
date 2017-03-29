@@ -10,14 +10,14 @@
     h2= t(form.title)
     include commands
     .topic-admin
-      form(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+      form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
         input(type='hidden', name='_topic_id_', value=topic.id)
         - if (forum)
           input(type='hidden', name='forum', value=forum.id)
         ul.form-messages
         .form-group
           label= t('admin-topics-form.label.mediaTitle')
-          input.form-control(type='text', maxlength='200', id="mediaTitle", name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
+          input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
         .form-group
           label= t('admin-topics-form.label.tag')
           select.form-control(name='tag', validate='required')
@@ -25,29 +25,34 @@
               option(selected= topic.tag ? tag.hash === topic.tag.hash : false, value=tag.hash)= tag.name
         .form-group
           label= t('admin-topics-form.label.topicId')
-          input.form-control(type='text', maxlength='200', id="topicId", name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
+          input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
         .form-group
           label= t('admin-topics-form.label.cover') + ' URL'
-          input.form-control(type='text', maxlength='254', id="coverUrl", name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
+          input.form-control(type='text', maxlength='254', id='coverUrl', name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.author')
-          input.form-control(type='text', maxlength='100', id="topicAuthor", name='topicAuthor', placeholder='John Doe', value=topic.author, validate='author')
+          input.form-control(type='text', maxlength='100', id='topicAuthor', name='topicAuthor', placeholder='John Doe', value=topic.author, validate='author')
         .form-group
           label= t('admin-topics-form.label.author') + ' URL'
-          input.form-control(type='text', maxlength='254', id="authorUrl", name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
+          input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.action')
-          - if (topic.participants && topic.participants.length)
-            p.alert.alert-warning= t('admin-topics-form.message.cant-edit-action')
-          select.form-control.method-input(name='actionMethod', value=topic.action ? topic.action.method : '', disabled=topic.participants && topic.participants.length>0)
+          select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '')
             option(value='')= t('admin-topics-form.action.none')
             option(value='vote')= t('admin-topics-form.action.vote')
             option(value='poll')= t('admin-topics-form.action.poll')
         .form-group.poll-options.hide
+          - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
+          - var pollOptions = topic.action && topic.action.pollOptions
           label= t('admin-topics-form.label.poll-options')
-          - if (topic.participants && topic.participants.length)
-            .poll-disabled
-          input.form-control.tags-input(type='tags', name='pollOptions', value=topic.action ? topic.action.pollOptions : '')
+          - if (pollOpened)
+            p.alert.alert-warning
+              = t('admin-topics-form.message.cant-edit-action')
+            input.form-control(type='text', value=pollOptions.join(', '), disabled)
+              
+          - if (!pollOpened)
+            input.form-control.tags-input(type='tags', name='action.pollOptions', value=pollOptions)
+
         .form-group.hide
           label= t('admin-topics-form.label.clause-truncation-text')
           input.form-control(type='text', maxlength='50', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
