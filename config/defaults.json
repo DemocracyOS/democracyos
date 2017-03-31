@@ -4,7 +4,7 @@
   "warnHTTP": true,
   "host": "localhost",
   "publicPort": 3000,
-  "mongoUrl": "mongodb://localhost/democracyos-staging",
+  "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "mongoUsersUrl": "",
   "jwtSecret": "thisisthemostawesomesecrettokenevernotseenthenotispurposedly",
   "corsDomains": [],
