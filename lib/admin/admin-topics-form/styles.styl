@@ -57,7 +57,6 @@
         min-height 180px
 
       a.add-link
-        margin 15px 0px
         background #16a085
 
       .add-link-forbidden
@@ -76,34 +75,20 @@
       width 100%
 
       .link-row
-        display block
         position relative
-        float left
         width 100%
-        margin 0px
-        padding 10px 0px
+        margin 0
+        padding 0 0 20px
 
         .link-group
-          display block
+          display inline-block
           position relative
-          float left
-          width 45%
-          margin 0px
-          padding 0px
+          width 49%
+          margin 0
+          padding 0
 
-          label
-          input
-            width 95%
-            float left
-
-          &.link-commands
-            width 10%
-            a
-              padding 0
-              margin-top 4px
-
-              span
-                color lightgray
+          & + .link-group
+            margin-left: 2%
 
       h4
         margin-top 0
@@ -129,5 +114,5 @@
   width 100%!important
 .poll-options
   position: relative
-  
+
 @import '../../node_modules/tags-input/tags-input.css'

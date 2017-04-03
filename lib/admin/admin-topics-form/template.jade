@@ -11,9 +11,6 @@
     include commands
     .topic-admin
       form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
-        input(type='hidden', name='_topic_id_', value=topic.id)
-        - if (forum)
-          input(type='hidden', name='forum', value=forum.id)
         ul.form-messages
         .form-group
           label= t('admin-topics-form.label.mediaTitle')
@@ -22,7 +19,7 @@
           label= t('admin-topics-form.label.tag')
           select.form-control(name='tag', validate='required')
             - each tag in tags
-              option(selected= topic.tag ? tag.hash === topic.tag.hash : false, value=tag.hash)= tag.name
+              option(selected= topic.tag ? tag.id === topic.tag.id : false, value=tag.id)= tag.name
         .form-group
           label= t('admin-topics-form.label.topicId')
           input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
@@ -31,7 +28,7 @@
           input.form-control(type='text', maxlength='254', id='coverUrl', name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.author')
-          input.form-control(type='text', maxlength='100', id='topicAuthor', name='topicAuthor', placeholder='John Doe', value=topic.author, validate='author')
+          input.form-control(type='text', maxlength='100', id='author', name='author', placeholder='John Doe', value=topic.author, validate='author')
         .form-group
           label= t('admin-topics-form.label.author') + ' URL'
           input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
@@ -53,9 +50,6 @@
           - if (!pollOpened)
             input.form-control.tags-input(type='tags', name='action.pollOptions', value=pollOptions)
 
-        .form-group.hide
-          label= t('admin-topics-form.label.clause-truncation-text')
-          input.form-control(type='text', maxlength='50', name='bodyTruncationText', placeholder=t('common.read-more'), value=topic.bodyTruncationText)
         .form-group
           label= t('admin-topics-form.label.source')
           input.form-control(type='text', maxlength='200', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
@@ -85,7 +79,7 @@
                 include link
           div
             a.add-link.btn.btn-info(href='#')
-              = t('admin-topics-form.button.add-link')
+              = '+ ' + t('admin-topics-form.button.add-link')
           span.add-link-forbidden.hide
             = t('admin-topics-form.message.add-link-forbidden')
         input.btn.btn-success.hide(type='submit', value=t('admin-topics-form.button.submit'))
