@@ -36,8 +36,6 @@
   "admin-topics-form.button.submit": "Guardar",
   "admin-topics-form.clause.button.delete": "Eliminar",
   "admin-topics-form.clause.confirmation.body": "Esta acción eliminará la información de manera permanente. ¿Desea continuar?",
-  "admin-topics-form.clause.confirmation.cancel": "Cancelar",
-  "admin-topics-form.clause.confirmation.ok": "Eliminar",
   "admin-topics-form.clause.confirmation.title": "Eliminar artículo",
   "admin-topics-form.clause.heading": "Artículo",
   "admin-topics-form.clause.label.clauseName": "Nombre de artículo",

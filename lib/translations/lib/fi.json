@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Tallenna",
   "admin-topics-form.clause.button.delete": "Poista",
   "admin-topics-form.clause.confirmation.body": "Tämä poistaa kaiken tiedon pysyvästi. Haluatko jatkaa?",
-  "admin-topics-form.clause.confirmation.cancel": "Peruuta",
-  "admin-topics-form.clause.confirmation.ok": "Poista",
   "admin-topics-form.clause.confirmation.title": "Ehdon poisto",
   "admin-topics-form.clause.heading": "Ehto",
   "admin-topics-form.clause.label.clauseName": "Ehdon Etunimi",

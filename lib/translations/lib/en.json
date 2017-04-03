@@ -63,8 +63,6 @@
   "admin-topics-form.button.submit": "Save",
   "admin-topics-form.clause.button.delete": "Delete",
   "admin-topics-form.clause.confirmation.body": "This action will erase data permanently. Would you like to proceed?",
-  "admin-topics-form.clause.confirmation.cancel": "Cancel",
-  "admin-topics-form.clause.confirmation.ok": "Delete",
   "admin-topics-form.clause.confirmation.title": "Clause removal",
   "admin-topics-form.clause.heading": "Clause",
   "admin-topics-form.clause.label.clauseName": "Clause name",

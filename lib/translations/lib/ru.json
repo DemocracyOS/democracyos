@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Сохранить",
   "admin-topics-form.clause.button.delete": "Удалить",
   "admin-topics-form.clause.confirmation.body": "Все данные будут удалены навсегда, продолжить?",
-  "admin-topics-form.clause.confirmation.cancel": "Отменить",
-  "admin-topics-form.clause.confirmation.ok": "Удалить",
   "admin-topics-form.clause.confirmation.title": "Удаление статьи",
   "admin-topics-form.clause.heading": "Поправка",
   "admin-topics-form.clause.label.clauseName": "Автор",

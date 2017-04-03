@@ -82,8 +82,6 @@
     "admin-topics-form.button.submit": "Ruaj",
     "admin-topics-form.clause.button.delete": "Fshij",
     "admin-topics-form.clause.confirmation.body": "Ky veprim do të fshihet të dhënat e përgjithmonë. Do të ju pëlqen për të vazhduar?",
-    "admin-topics-form.clause.confirmation.cancel": "Anuloj",
-    "admin-topics-form.clause.confirmation.ok": "Fshij",
     "admin-topics-form.clause.confirmation.title": "Heqjen Klauzolë",
     "admin-topics-form.clause.heading": "Klauzolë",
     "admin-topics-form.clause.label.clauseName": "Emri Klauzolë",

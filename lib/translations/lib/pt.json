@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Salvar",
   "admin-topics-form.clause.button.delete": "Apagar",
   "admin-topics-form.clause.confirmation.body": "Esta ação irá apagar dados pernamentemente. Você deseja prosseguir?",
-  "admin-topics-form.clause.confirmation.cancel": "Cancelar",
-  "admin-topics-form.clause.confirmation.ok": "Apagar",
   "admin-topics-form.clause.confirmation.title": "Remoção do artigo",
   "admin-topics-form.clause.heading": "Artigo",
   "admin-topics-form.clause.label.clauseName": "Nome da cláusula",

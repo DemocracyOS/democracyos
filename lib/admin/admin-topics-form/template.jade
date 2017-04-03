@@ -11,6 +11,8 @@
     include commands
     .topic-admin
       form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+        - if (form.forum)
+          input(type='hidden', name='forum', value=form.forum)
         ul.form-messages
         .form-group
           label= t('admin-topics-form.label.mediaTitle')
@@ -74,13 +76,15 @@
         .form-group
           label=t('admin-topics-form.label.resources')
           .topic-links
+            - // create a disabled link to force array value
+            input(type='hidden', name='links[][_id]', disabled)
+            input(type='hidden', name='links[][text]', disabled)
+            input(type='hidden', name='links[][url]', disabled)
             - if (topic.links && topic.links.length)
               - each link, id in topic.links
                 include link
           div
             a.add-link.btn.btn-info(href='#')
               = '+ ' + t('admin-topics-form.button.add-link')
-          span.add-link-forbidden.hide
-            = t('admin-topics-form.message.add-link-forbidden')
         input.btn.btn-success.hide(type='submit', value=t('admin-topics-form.button.submit'))
     include commands

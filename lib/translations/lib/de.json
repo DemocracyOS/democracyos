@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Speichern",
   "admin-topics-form.clause.button.delete": "Löschen",
   "admin-topics-form.clause.confirmation.body": "Durch diesen Schritt werden Daten unwiderruflich gelöscht. Möchtest du fortfahren?",
-  "admin-topics-form.clause.confirmation.cancel": "Abbrechen",
-  "admin-topics-form.clause.confirmation.ok": "Löschen",
   "admin-topics-form.clause.confirmation.title": "Artikel löschen",
   "admin-topics-form.clause.heading": "Artikel",
   "admin-topics-form.clause.label.clauseName": "Artikel Name",
