@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Sauvegarder",
   "admin-topics-form.clause.button.delete": "Supprimer",
   "admin-topics-form.clause.confirmation.body": "Cette action supprimera l'information de façon permanente. Voulez-vous continuer ?",
-  "admin-topics-form.clause.confirmation.cancel": "Annuler",
-  "admin-topics-form.clause.confirmation.ok": "Supprimer",
   "admin-topics-form.clause.confirmation.title": "Supprimer l'article",
   "admin-topics-form.clause.heading": "Article",
   "admin-topics-form.clause.label.clauseName": "Nom d'article",

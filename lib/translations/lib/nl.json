@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Opslaan",
   "admin-topics-form.clause.button.delete": "Verwijderen",
   "admin-topics-form.clause.confirmation.body": "Het verwijderen is definitief. Weet je zeker dat je deze bepaling wilt verwijderen?",
-  "admin-topics-form.clause.confirmation.cancel": "Annuleren",
-  "admin-topics-form.clause.confirmation.ok": "Verwijderen",
   "admin-topics-form.clause.confirmation.title": "Verwijder bepaling",
   "admin-topics-form.clause.heading": "Bepaling",
   "admin-topics-form.clause.label.clauseName": "Naam bepaling",

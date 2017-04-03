@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Spara",
   "admin-topics-form.clause.button.delete": "Ta bort",
   "admin-topics-form.clause.confirmation.body": "Detta kommer ta bort information permanent. Är du säker att du vill fortsätta?",
-  "admin-topics-form.clause.confirmation.cancel": "Avbryt",
-  "admin-topics-form.clause.confirmation.ok": "Ta bort",
   "admin-topics-form.clause.confirmation.title": "Klausulborttagning",
   "admin-topics-form.clause.heading": "Klausul",
   "admin-topics-form.clause.label.clauseName": "Klausulbenämning",

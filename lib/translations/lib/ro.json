@@ -29,8 +29,6 @@
   "admin-topics-form.button.submit": "Salveaza",
   "admin-topics-form.clause.button.delete": "Șterge",
   "admin-topics-form.clause.confirmation.body": "Această acțiune va șterge datele permanent. Dorești să continui?",
-  "admin-topics-form.clause.confirmation.cancel": "Anulează",
-  "admin-topics-form.clause.confirmation.ok": "Șterge",
   "admin-topics-form.clause.confirmation.title": "Ștergere clauză",
   "admin-topics-form.clause.heading": "Articol",
   "admin-topics-form.clause.label.clauseName": "Nume articol",

@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Mentés",
   "admin-topics-form.clause.button.delete": "Törlés",
   "admin-topics-form.clause.confirmation.body": "Ezzel a művelettel véglegesen törlöd az adatokat. Folytatod?",
-  "admin-topics-form.clause.confirmation.cancel": "Mégsem",
-  "admin-topics-form.clause.confirmation.ok": "Törlés",
   "admin-topics-form.clause.confirmation.title": "Kiegészítés eltávolítása",
   "admin-topics-form.clause.heading": "Kiegészítés",
   "admin-topics-form.clause.label.clauseName": "Kiegészítés elnevezése",

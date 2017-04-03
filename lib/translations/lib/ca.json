@@ -28,8 +28,6 @@
   "admin-topics-form.button.submit": "Guardar",
   "admin-topics-form.clause.button.delete": "Esborrar",
   "admin-topics-form.clause.confirmation.body": "Aquesta acció esborrarà les dades permanentment. Voleu continuar?",
-  "admin-topics-form.clause.confirmation.cancel": "Cancel",
-  "admin-topics-form.clause.confirmation.ok": "Delete",
   "admin-topics-form.clause.confirmation.title": "Esborrar Clàusula",
   "admin-topics-form.clause.heading": "clàusula",
   "admin-topics-form.clause.label.clauseName": "clàusula nom",
