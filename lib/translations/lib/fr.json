@@ -80,7 +80,6 @@
   "admin-whitelists-form.value.placeholder": "Adresses de courriel séparées par une virgule ou une seule adresse",
   "admin-whitelists.list.add-whitelist": "Ajouter",
   "admin-whitelists.list.search.placeholder": "Rechercher une règle...",
-  "article.unknown-closing-date": "Date de fermeture inconnue",
   "comment-card.flagged-as-spam": "Cet argument a été reporté comme contenu indésirable.",
   "comment-card.not-spam": "Ceci n'est pas du contenu indésirable",
   "comment-card.remove-argument": "Retirer l'argument",

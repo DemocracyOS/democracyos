@@ -80,7 +80,6 @@
   "admin-whitelists-form.value.placeholder": "Pilkulla erotettuna sähköposteja tai vain yksi sähköpostiosoite",
   "admin-whitelists.list.add-whitelist": "lisätä",
   "admin-whitelists.list.search.placeholder": "Etsi sääntö...",
-  "article.unknown-closing-date": "Tuntematon päätöspäivä",
   "comment-card.flagged-as-spam": "Tämä argumentti on merkitty roskapostiksi.",
   "comment-card.not-spam": "Tämä ei ole roskaposti",
   "comment-card.remove-argument": "Poista argumentti",

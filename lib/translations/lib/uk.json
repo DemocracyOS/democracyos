@@ -80,7 +80,6 @@
   "admin-whitelists-form.value.placeholder": "Розділених комами електронну пошту або просто одне повідомлення",
   "admin-whitelists.list.add-whitelist": "додавати",
   "admin-whitelists.list.search.placeholder": "Пошук правило ...",
-  "article.unknown-closing-date": "Невідома дата закриття",
   "comment-card.flagged-as-spam": "Цей аргумент був позначений як спам.",
   "comment-card.not-spam": "Не спам",
   "comment-card.remove-argument": "Видалити аргумент",

@@ -30,7 +30,6 @@
   "admin-whitelists-form.value.placeholder": "Adresy e-mail oddzielone przecinkami lub tylko jeden adres",
   "admin-whitelists.list.add-whitelist": "Dodaj",
   "admin-whitelists.list.search.placeholder": "Szukaj reguły...",
-  "article.unknown-closing-date": "Nieznana data zamknięcia",
   "comment-card.flagged-as-spam": "Ten argument został zaznaczony jako spam.",
   "comment-card.not-spam": "To nie jest spam",
   "comment-card.remove-argument": "Usuń argument",

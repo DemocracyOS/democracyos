@@ -123,7 +123,6 @@
   "admin-whitelists-form.value.placeholder": "Comma separated emails or just one email",
   "admin-whitelists.list.add-whitelist": "Add",
   "admin-whitelists.list.search.placeholder": "Search a whitelist...",
-  "article.unknown-closing-date": "Unknown closing date",
   "comment-card.flagged-as-spam": "This argument has been flagged as spam.",
   "comment-card.not-spam": "Not Spam",
   "comment-card.remove-argument": "Remove argument",

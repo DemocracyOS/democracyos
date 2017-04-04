@@ -95,7 +95,6 @@
   "admin-whitelists-form.value.placeholder": "Correos electrónicos separados por coma o sólo un correo electrónico",
   "admin-whitelists.list.add-whitelist": "Agregar",
   "admin-whitelists.list.search.placeholder": "Buscar una regla...",
-  "article.unknown-closing-date": "Fecha de cierre desconocida",
   "comment-card.flagged-as-spam": "Este argumento fue reportado como abuso.",
   "comment-card.not-spam": "Esto no es abuso",
   "comment-card.remove-argument": "Borrar argumento",

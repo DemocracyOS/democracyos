@@ -80,7 +80,6 @@
   "admin-whitelists-form.value.placeholder": "Разделенных запятыми электронную почту или просто одно сообщение",
   "admin-whitelists.list.add-whitelist": "добавлять",
   "admin-whitelists.list.search.placeholder": "Поиск правило...",
-  "article.unknown-closing-date": "Неизвестная дата закрытия",
   "comment-card.flagged-as-spam": "Этот аргумент был отмечен как спам.",
   "comment-card.not-spam": "Не спам",
   "comment-card.remove-argument": "Удалить аргумент",

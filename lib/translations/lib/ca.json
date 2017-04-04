@@ -80,7 +80,6 @@
   "admin-whitelists-form.value.placeholder": "Comma correus electrònics o només un correu electrònic separat",
   "admin-whitelists.list.add-whitelist": "Afegir",
   "admin-whitelists.list.search.placeholder": "Cerca una regla...",
-  "article.unknown-closing-date": "Data de tancament desconeguda",
   "comment-card.flagged-as-spam": "Aquest argument ha estat reportat com abús.",
   "comment-card.not-spam": "Això no és cap abús",
   "comment-card.remove-argument": "Traieu argument",

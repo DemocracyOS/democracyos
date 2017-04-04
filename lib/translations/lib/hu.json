@@ -80,7 +80,6 @@
   "admin-whitelists-form.value.placeholder": "Egy e-mail cím vagy vesszővel elválasztott e-mail címek",
   "admin-whitelists.list.add-whitelist": "Új",
   "admin-whitelists.list.search.placeholder": "Engedélyezett lista keresése",
-  "article.unknown-closing-date": "Ismeretlen záródátum",
   "comment-card.flagged-as-spam": "Ez az érv spamként lett megjelölve.",
   "comment-card.not-spam": "Nem spam.",
   "comment-card.remove-argument": "Érv eltávolítása",

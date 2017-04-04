@@ -27,14 +27,12 @@
           - if (topic.author)
             span.glyphicon.glyphicon-user
             span.text=topic.author
-          span.glyphicon.glyphicon-time
           - if (topic.closingAt)
             - var date = new Date(topic.closingAt)
             - var relative = moment(date).fromNow()
             - var when = (date < Date.now()) ? 'past' : 'future'
+            span.glyphicon.glyphicon-time
             span.text=t('admin-topics.list.close.' + when) + ' ' + relative
-          - else
-            span.text=t('article.unknown-closing-date')
           span.glyphicon.glyphicon-tag
           span.text.topic-id=topic.tag.name
           span.topic-date.hide=topic.createdAt
