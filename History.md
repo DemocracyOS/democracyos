@@ -1,4 +1,13 @@
 
+2.1.0 / 2017-04-03
+==================
+
+  * Add Polls as an alternative to voting #1382
+  * Add Topic PUT and POST on APIv2
+  * Fix cmd+click on user badge items
+  * Fix unknown closing date message
+  * Fix moment config on admin and settings
+
 2.0.4 / 2017-03-27
 ==================
 
