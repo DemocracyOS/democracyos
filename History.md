@@ -1,4 +1,12 @@
 
+2.1.1 / 2017-04-05
+==================
+
+  * Fix topic update with polls
+  * Fix poll ownVote rendering
+  * Remove topicStore restriction to vote and poll on unlaoded items
+  * Update react routes definition without JSX
+
 2.1.0 / 2017-04-03
 ==================
 
