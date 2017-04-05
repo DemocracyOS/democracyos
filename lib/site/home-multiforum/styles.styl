@@ -4,6 +4,7 @@ color2 = #999
 
 #home-multiforum
   background #f0f0f0
+  min-height 100vh
   .forum-info
     width 100%
     display flex
@@ -43,6 +44,8 @@ color2 = #999
   #forum-list
     max-width 600px
     width 90%
+    .forum-card-container
+      margin-top 20px
     .msg-empty
       text-align center
       background #e4e4e4
@@ -102,4 +105,7 @@ color2 = #999
               boxSize*-1px boxSize*-1px color2
           }
         }
+
 @import './forum-card/styles'
+@import './search-results/styles'
+@import './search-bar/styles'
