@@ -1,36 +1,21 @@
-leftMargin=4%
-#forum-search-card
-  width 100%
-  background-color #f0f0f0
+.forum-search-card
+  width: 100%
+  color: inherit
+  border: 0
+  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)
+  transition: all .3s unquote('cubic-bezier(.25,.8,.25,1)')
 
-  hr	
-    padding 3px
-    width 100%
-    margin 0
-    color #3a3a3a
-    cursor default !important
-  h3
-    padding 0 leftMargin
-    font-size 1.1em
-    margin 12px 0 4px 0
-    color #3a3a3a
-  h4
-    font-size 1em
-    margin 0 0 9px 0
-    padding 0 leftMargin
-    color #595959
-  p
-    line-height 110%
-    font-size 0.9em
-    margin 0 0 11px 0
-    padding 0 6.75% 0 leftMargin
-    color #4f4f4f
+  &:hover
+    color: inherit
+    box-shadow: 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23)
 
-    span
-      padding 0
-      display block
-      width 100%
-      line-height 0
-      margin 1px 0
-      color #f0f0f0
-      border-top 1px dotted #a9a9a9
+  .card-title
+    margin: 0 0 .3em
+    line-height: 1.2
+
+  .card-subtitle
+    color: #666
+    margin: 0 0 .7em
+
+  .card-text
+    font-size: .8em
