@@ -1,4 +1,10 @@
 
+2.2.2 / 2017-04-07
+==================
+
+  * Update password digest algorithm from sha1 to sha256
+  * Update Passport.js to 0.3.2
+
 2.2.1 / 2017-04-05
 ==================
 
