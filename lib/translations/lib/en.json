@@ -340,6 +340,7 @@
   "signin.action.signup": "Signup now",
   "signin.dont-have-account": "Don't have an account?",
   "signin.error.email-not-valid": "The email address for this user is not validated. We send users a welcome email when they sign up. Please check your email (remember to check your spam folder too) and click on the link supplied on the email. Click <a href='/signup/resend-validation-email'>here</a> if you need the welcome email to be resent",
+  "signin.errors.must-reset-password": "Sorry, but you have to reset your password to be able to login.",
   "signin.error.using-facebook": "The email address is being used to login with Facebook",
   "signin.errors.too-many-attempts": "Account is currently locked. Try again later",
   "signin.errors.attempt-too-soon": "Account locked due to too many failed login attempts",
