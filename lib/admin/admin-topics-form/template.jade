@@ -10,6 +10,9 @@
         label= t('admin-topics-form.label.mediaTitle')
         input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
       .form-group
+        label= t('admin-topics-form.label.tags')
+        input.form-control.tags-input(type='tags', name='tags')
+      .form-group
         label= t('admin-topics-form.label.topicId')
         input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
       .form-group
