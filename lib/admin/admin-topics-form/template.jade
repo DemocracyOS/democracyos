@@ -1,90 +1,80 @@
 #topic-wrapper
-  - if (tags.length == 0)
-    if (user.staff)
-      p.alert.alert-danger.text-center!=t('admin-topics-form.alert.no-tags')
-      p.text-center
-        a.btn.btn-lg.btn-primary.create-tag(href=urlBuilder.for('admin.tags.create', {forum: forum.name}))=t('admin-tags-form.title.create')
-    else
-      p.alert.alert-danger.text-center=t('admin-topics-form.alert.no-tags.no-staff')
-  - else
-    h2= t(form.title)
-    include commands
-    .topic-admin
-      form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
-        - if (form.forum)
-          input(type='hidden', name='forum', value=form.forum)
-        ul.form-messages
-        .form-group
-          label= t('admin-topics-form.label.mediaTitle')
-          input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
-        .form-group
-          label= t('admin-topics-form.label.tag')
-          select.form-control(name='tag', validate='required')
-            - each tag in tags
-              option(selected= topic.tag ? tag.id === topic.tag.id : false, value=tag.id)= tag.name
-        .form-group
-          label= t('admin-topics-form.label.topicId')
-          input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
-        .form-group
-          label= t('admin-topics-form.label.cover') + ' URL'
-          input.form-control(type='text', maxlength='254', id='coverUrl', name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
-        .form-group
-          label= t('admin-topics-form.label.author')
-          input.form-control(type='text', maxlength='100', id='author', name='author', placeholder='John Doe', value=topic.author, validate='author')
-        .form-group
-          label= t('admin-topics-form.label.author') + ' URL'
-          input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
-        .form-group
-          label= t('admin-topics-form.label.action')
-          select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '')
-            option(value='')= t('admin-topics-form.action.none')
-            option(value='vote')= t('admin-topics-form.action.vote')
-            option(value='poll')= t('admin-topics-form.action.poll')
-        .form-group.poll-options.hide
-          - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
-          - var pollOptions = topic.action && topic.action.pollOptions
-          label= t('admin-topics-form.label.poll-options')
-          - if (pollOpened)
-            p.alert.alert-warning
-              = t('admin-topics-form.message.cant-edit-action')
-            input.form-control(type='text', value=pollOptions.join(', '), disabled)
-              
-          - if (!pollOpened)
-            input.form-control.tags-input(type='tags', name='action.pollOptions', value=pollOptions)
+  h2= t(form.title)
+  include commands
+  .topic-admin
+    form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+      - if (form.forum)
+        input(type='hidden', name='forum', value=form.forum)
+      ul.form-messages
+      .form-group
+        label= t('admin-topics-form.label.mediaTitle')
+        input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
+      .form-group
+        label= t('admin-topics-form.label.tags')
+        input.form-control.tags-input(type='tags', name='tags')
+      .form-group
+        label= t('admin-topics-form.label.topicId')
+        input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
+      .form-group
+        label= t('admin-topics-form.label.cover') + ' URL'
+        input.form-control(type='text', maxlength='254', id='coverUrl', name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
+      .form-group
+        label= t('admin-topics-form.label.author')
+        input.form-control(type='text', maxlength='100', id='author', name='author', placeholder='John Doe', value=topic.author, validate='author')
+      .form-group
+        label= t('admin-topics-form.label.author') + ' URL'
+        input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
+      .form-group
+        label= t('admin-topics-form.label.action')
+        select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '')
+          option(value='')= t('admin-topics-form.action.none')
+          option(value='vote')= t('admin-topics-form.action.vote')
+          option(value='poll')= t('admin-topics-form.action.poll')
+      .form-group.poll-options.hide
+        - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
+        - var pollOptions = topic.action && topic.action.pollOptions
+        label= t('admin-topics-form.label.poll-options')
+        - if (pollOpened)
+          p.alert.alert-warning
+            = t('admin-topics-form.message.cant-edit-action')
+          input.form-control(type='text', value=pollOptions.join(', '), disabled)
+            
+        - if (!pollOpened)
+          input.form-control.tags-input(type='tags', name='action.pollOptions', value=pollOptions)
 
-        .form-group
-          label= t('admin-topics-form.label.source')
-          input.form-control(type='text', maxlength='200', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
-        .form-group
-          label= t('admin-topics-form.label.summary')
-          textarea.form-control(name='body')= topic.body
-        .form-group.closingAt
-          label= t('admin-topics-form.label.closingAt')
-          - var closingAt = ''
-          - var closingAtTime = ''
-          - if (topic.closingAt)
-            - closingAt = new Date(topic.closingAt)
-            - var closingAtTime = moment(closingAt).format('H:mm')
-            - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
-          div
-            .input-group
-              input.form-control(name='closingAt', readonly=true, value=closingAt)
-              span.input-group-addon.clear-closingAt
-                i.glyphicon.glyphicon-remove
-            .input-group
-              input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
-        .form-group
-          label=t('admin-topics-form.label.resources')
-          .topic-links
-            - // create a disabled link to force array value
-            input(type='hidden', name='links[][_id]', disabled)
-            input(type='hidden', name='links[][text]', disabled)
-            input(type='hidden', name='links[][url]', disabled)
-            - if (topic.links && topic.links.length)
-              - each link, id in topic.links
-                include link
-          div
-            a.add-link.btn.btn-info(href='#')
-              = '+ ' + t('admin-topics-form.button.add-link')
-        input.btn.btn-success.hide(type='submit', value=t('admin-topics-form.button.submit'))
-    include commands
+      .form-group
+        label= t('admin-topics-form.label.source')
+        input.form-control(type='text', maxlength='200', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
+      .form-group
+        label= t('admin-topics-form.label.summary')
+        textarea.form-control(name='body')= topic.body
+      .form-group.closingAt
+        label= t('admin-topics-form.label.closingAt')
+        - var closingAt = ''
+        - var closingAtTime = ''
+        - if (topic.closingAt)
+          - closingAt = new Date(topic.closingAt)
+          - var closingAtTime = moment(closingAt).format('H:mm')
+          - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
+        div
+          .input-group
+            input.form-control(name='closingAt', readonly=true, value=closingAt)
+            span.input-group-addon.clear-closingAt
+              i.glyphicon.glyphicon-remove
+          .input-group
+            input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
+      .form-group
+        label=t('admin-topics-form.label.resources')
+        .topic-links
+          - // create a disabled link to force array value
+          input(type='hidden', name='links[][_id]', disabled)
+          input(type='hidden', name='links[][text]', disabled)
+          input(type='hidden', name='links[][url]', disabled)
+          - if (topic.links && topic.links.length)
+            - each link, id in topic.links
+              include link
+        div
+          a.add-link.btn.btn-info(href='#')
+            = '+ ' + t('admin-topics-form.button.add-link')
+      input.btn.btn-success.hide(type='submit', value=t('admin-topics-form.button.submit'))
+  include commands

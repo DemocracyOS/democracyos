@@ -80,7 +80,7 @@
   "admin-topics-form.label.resources": "Resources",
   "admin-topics-form.label.source": "Source",
   "admin-topics-form.label.summary": "Content",
-  "admin-topics-form.label.tag": "Tag",
+  "admin-topics-form.label.tags": "Tags",
   "admin-topics-form.label.cover": "Image",
   "admin-topics-form.label.topicId": "Official Id",
   "admin-topics-form.label.votable": "Votable",
