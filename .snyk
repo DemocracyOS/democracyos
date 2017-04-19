@@ -8,3 +8,55 @@ patch:
         patched: '2017-02-10T14:39:51.125Z'
     - markdownify > marked:
         patched: '2017-02-10T14:39:51.125Z'
+  'npm:minimatch:20160620':
+    - gulp-add-src > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - gulp-add-src > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-confirmation > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-datepicker > democracyos-popover > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-confirmation > dialog-component > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-tip > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-datepicker > democracyos-popover > democracyos-tip > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-toggle > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-confirmation > dialog-component > overlay-component > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-quill > stringify > html-minifier > cli > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - gulp-add-src > vinyl-fs > glob-stream > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+    - gulp-add-src > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2017-04-19T13:08:05.712Z'
+  'npm:uglify-js:20151024':
+    - democracyos-quill > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - jade > transformers > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-confirmation > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-datepicker > democracyos-popover > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-confirmation > dialog-component > overlay-component > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-tip > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-datepicker > democracyos-popover > democracyos-tip > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-toggle > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
+    - democracyos-confirmation > dialog-component > stringify > html-minifier > uglify-js:
+        patched: '2017-04-19T13:08:05.712Z'
