@@ -23,6 +23,9 @@
             - each tag in tags
               option(selected= topic.tag ? tag.id === topic.tag.id : false, value=tag.id)= tag.name
         .form-group
+          label= t('admin-topics-form.label.tags')
+          input.form-control.tags-input(type='tags', name='tags', value=topic.tags.join(', '))
+        .form-group
           label= t('admin-topics-form.label.topicId')
           input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
         .form-group
