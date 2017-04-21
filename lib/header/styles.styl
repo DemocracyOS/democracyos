@@ -1,112 +1,101 @@
-@import './user-badge/styles'
+/**
+ * Header
+ *
+ * Sorry for float's and ugly stuff, we need to be sure to show the
+ * header almost on any browser
+ */
 
-/* Vars
--------------------------------------------------- */
-header_height = 60px
-spacing = 20px
-
-/* Header
--------------------------------------------------- */
-header.app-header
-  position fixed
-  z-index 20
-  top 0
-  left 0
-  right 0
-  height header_height
-  padding-left spacing
-  background #64476e
-  color white
-  font-weight bold
-  text-transform uppercase
-  font-size 12px
+.header
+  position: fixed
+  right: 0
+  left: 0
+  top: 0
+  height: 54px
+  padding-right: 7px
+  padding-left: 7px
+  z-index: 1030
 
   &.with-contrast
-    box-shadow 0 2px 2px #d5d5d5
+    box-shadow: 0 -1px 8px rgba(#d5d5d5, .8)
 
-  a
-     color white
-     &:hover
-       color white
+  .logo
+    float: left
+    margin-top: 12px
+    padding: 0 7px
 
-  h1
-    display inline-block
-    width 300px
-    font-size 12px
-    margin-top 12px
-    .logo
-      height 40px
-      display inline-block
-      margin-right 10px
-      margin-top -2px
-
-  img.logo-image
-    height 28px
-    margin-top 5px
-    display inline-block
-
-  .user-nav
-    display inline-block
-    float right
-    list-style none
-    margin-right spacing
-    position absolute
-    right 0
-    top 0px
-
-    .user
-      float right
-
-    .login
-      padding 6px 12px
-      display inline-block
-      margin-top 15px
-      line-height 1.8
-
-      i
-        display none
-        font-size 20px
-      &:hover
-        text-decoration none
-
-  @media screen and (max-width: 700px)
-    padding-left: 0
-    h1#logo
-      text-align: center
-      width: auto
+    &.logo-mobile
       display: block
-    img.logo
-      margin: auto
-      margin-top: -2px
-    .logo-link
+
+    &.logo-desktop
       display: none
-    .user-nav
-      .caret
+
+    img
+      height 30px
+
+    @media screen and (min-width: 560px)
+      &.logo-mobile
         display: none
-      .btn
-        border: 0
-      .profile span.name
-        display: none
-      .login
-        margin-left: 10px
-        span
-          display: none
-        i
-          display: inline-block
 
-vendors(prop, args, fn = null)
-  val = fn == null ? args : fn + '(' + args + ')'
-  -moz-{prop} val
-  -webkit-{prop} val
-  -o-{prop} val
-  -ms-{prop} val
-  {prop} val
+      &.logo-desktop
+        display: block
 
-.headroom
-  vendors(transition, all 200ms linear)
+  .header-items
+    height: 100%
+    text-align: right
 
-.headroom--pinned
-  vendors(transform, 0%, translateY)
+  .header-item
+    display: inline-block
+    height: 100%
+    vertical-align: top
 
-.headroom--unpinned
-  vendors(transform, -100%, translateY)
+  .header-link
+    display: inline-block
+    padding-left: 7px
+    padding-right: 7px
+    line-height: 54px
+    text-transform uppercase
+    color inherit
+    font-size 13px
+
+    [class*="icon-"]
+      font-size 16px
+      font-weight bold
+      line-height inherit
+
+  .notifications-link
+    .header-link
+      padding-left: 14px
+      padding-right: 14px
+
+  .org-link
+    display: none
+
+    @media screen and (min-width: 700px)
+      display: inline-block
+
+  #toggleButton
+    display block
+    float left
+    background none
+    border none
+    color inherit
+    padding .5rem 0
+    margin-right 10px
+    outline: none
+    position: relative
+    .icon-menu
+      font-size 22px
+    &:hover
+      cursor: pointer
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: -10px
+      width: 40px
+      height: 100%
+
+    @media screen and (min-width: 700px)
+      display none
+
+@import './user-badge/styles'

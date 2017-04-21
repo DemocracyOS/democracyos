@@ -13,10 +13,6 @@ block styles
   link(rel='stylesheet', href='/settings.css')
   
 block content
-  //- Start of `Page Content`
-  - var color = config.headerBackgroundColor;
-  - var headerClassName = config.headerContrast ? 'with-contrast' : '';
-  header.app-header(style=color ? 'background-color: #{color};' : '', class=headerClassName)
   section#content.site-content
   
 block scripts

@@ -1,34 +1,49 @@
-.user-badge,
-.notifications-badge
+.user-badge
   position relative
 
   &.active
-    .btn
+    button
       background rgba(0,0,0,.1)
     .dropdown-list
       display block
 
-  .btn
-    color white
-    height 60px
-    border-radius 0
+  button
+    color inherit
     background none
-    padding 13px 12px
+    border none
+    cursor pointer
+    padding 0
+    height 54px
+
+    .name
+      font-weight bold
+
     .caret
       margin-left 6px
+      position relative
+      right 0
+      top 0
+      color inherit
+
+    img
+      width 32px
+      border-radius 100px
+      margin -.5rem 5px -.5rem 0
 
   .dropdown-list
     display none
     position absolute
+    top 100%
     right 0
     z-index 1000
-    padding 5px 0
-    min-width 160px
+    padding 0
     width auto
     font-size 14px
+    white-space nowrap
     list-style none
     border 1px solid rgba(#000,.15)
     box-shadow 1px 1px 4px -1px rgba(#000, .175)
+    color #000
     background-color #f9f9f9
 
     a
@@ -36,40 +51,11 @@
       clear both
       padding 10px 20px
       line-height 1.5
-      color black
       text-transform none
       font-weight bold
       text-decoration none
+      color inherit
 
       &:hover
         background #2c3e50
         color white
-    .admin-link
-      display none
-  .profile,
-  .notifications
-    img
-      width 32px
-      border-radius 100px
-    span.name,
-    span.bell
-      display inline
-      margin-left 10px
-      font-weight bold
-      font-size 12px
-      line-height 37px
-      padding-top 4px
-      padding-right 12px
-      max-width 150px
-
-    span.bell
-      margin 0
-      padding-right 0
-      font-size 15px
-      &:before
-        transform s("rotate(%s)", -25deg)
-    .caret
-      margin-top -3px
-.user-wrapper.can-change-forum
-  .admin-link
-    display block
