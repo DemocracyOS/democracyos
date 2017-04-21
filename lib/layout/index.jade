@@ -34,6 +34,9 @@ html(lang=locale)
       
     - if (config.segmentKey)
       include includes/segment
+      
+    - if (config.env !== 'development' && config.warnHTTP && config.protocol !== 'https')
+      include includes/ssl-warning
     
     //-
     //-   Scripts
