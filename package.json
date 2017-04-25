@@ -133,6 +133,7 @@
     "keyboardevent-key-polyfill": "^1.0.1",
     "locale": "~0.1.0",
     "location-origin": "^1.1.4",
+    "lodash.memoize": "~4.1.2",
     "markdownify": "0.1.0",
     "marked": "^0.3.5",
     "merge": "^1.2.0",
