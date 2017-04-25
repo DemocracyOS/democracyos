@@ -24,7 +24,7 @@
               option(selected= topic.tag ? tag.id === topic.tag.id : false, value=tag.id)= tag.name
         .form-group
           label= t('admin-topics-form.label.tags')
-          input.form-control.tags-input(type='tags', name='tags', value=topic.tags ? topic.tags.join(', ') : '')
+          div.tags-autocomplete
         .form-group
           label= t('admin-topics-form.label.topicId')
           input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
@@ -53,7 +53,7 @@
             input.form-control(type='text', value=pollOptions.join(', '), disabled)
               
           - if (!pollOpened)
-            input.form-control.tags-input(type='tags', name='action.pollOptions', value=pollOptions)
+            input.form-control(type='tags', name='action.pollOptions', value=pollOptions)
 
         .form-group
           label= t('admin-topics-form.label.source')

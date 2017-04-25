@@ -109,6 +109,7 @@
     "fb-signed-parser": "0.0.3",
     "form-parse": "0.1.0",
     "fs-extra": "~2.1.2",
+    "fuse.js": "^2.6.2",
     "geopattern": "^1.2.3",
     "get-form-data": "~1.2.5",
     "gulp": "^3.9.1",
