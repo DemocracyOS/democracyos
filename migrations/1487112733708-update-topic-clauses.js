@@ -1,9 +1,9 @@
 const jsdom = require('jsdom').jsdom
-const api = require('lib/db-api')
 
 require('lib/models')()
 
 const Topic = require('lib/models').Topic
+const Comment = require('lib/models').Comment
 const dbReady = require('lib/models').ready
 
 const mapPromises = (fn) => (array) => Promise.all(array.map(fn))
@@ -90,7 +90,7 @@ function migrateV1 (topic) {
       }
 
       return new Promise(function (resolve, reject) {
-        api.comment.update(query, data, function (err) {
+        Comment.update(query, data, { multi: true }, function (err) {
           if (err) {
             console.log('Error saving comment: ' + err.toString())
           }
@@ -152,7 +152,7 @@ function migrateV2 (topic) {
       }
 
       commentsUpdates.push(new Promise(function (resolve, reject) {
-        api.comment.update(query, data, function (err) {
+        Comment.update(query, data, { multi: true }, function (err) {
           if (err) {
             console.log('Error saving comment: ' + err.toString())
           }
