@@ -1,4 +1,15 @@
 
+2.3.0 / 2017-04-26
+==================
+
+  * Add Tags on Topics #1396
+  * Fix coverUrl svg error on topic edit
+  * Update es translations for privileges
+  * Fix homeLink on header
+  * Fix facebook-card share
+  * Fix card cover url
+  * Add react header everywhere
+
 2.2.3 / 2017-04-21
 ==================
 
