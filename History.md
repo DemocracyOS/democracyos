@@ -1,4 +1,12 @@
 
+2.3.1 / 2017-04-26
+==================
+
+  * Fix empty tag value
+  * Fix visibility wildcard for admin Close #1392
+  * Fix visibility middleware on /api
+  * Remove legacy comments api and db-api
+
 2.3.0 / 2017-04-26
 ==================
 
