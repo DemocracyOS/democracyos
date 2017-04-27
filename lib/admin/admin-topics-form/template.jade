@@ -20,8 +20,10 @@
         .form-group
           label= t('admin-topics-form.label.tag')
           select.form-control(name='tag', validate='required')
+            - var topicTag = typeof topic.tag === 'string' ? topic.tag : topic.tag.id
             - each tag in tags
-              option(selected= topic.tag ? tag.id === topic.tag.id : false, value=tag.id)= tag.name
+              option(selected=tag.id === topicTag, value=tag.id)
+                = tag.name
         .form-group
           label= t('admin-topics-form.label.tags')
           div.tags-autocomplete
