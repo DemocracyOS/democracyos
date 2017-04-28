@@ -27,6 +27,10 @@
         .form-group
           label= t('admin-topics-form.label.tags')
           div.tags-autocomplete
+        - if (forum.topicsCustomAttrs.length > 0)
+          fieldset.custom-attrs-wrapper
+            legend= t('admin-topics-form.label.custom-attrs')
+            div(data-custom-attributes)
         .form-group
           label= t('admin-topics-form.label.topicId')
           input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
