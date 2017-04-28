@@ -83,6 +83,7 @@
   "admin-topics-form.label.clause-truncation-text": "Texto para leer articulado",
   "admin-topics-form.label.closingAt": "Fecha de cierre",
   "admin-topics-form.label.cover": "Imagen",
+  "admin-topics-form.label.custom-attrs": "Atributos",
   "admin-topics-form.label.mediaTitle": "Título",
   "admin-topics-form.label.poll-options": "Opciones de la encuesta",
   "admin-topics-form.label.resources": "Recursos",
