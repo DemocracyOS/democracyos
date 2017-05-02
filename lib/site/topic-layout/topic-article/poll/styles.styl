@@ -4,22 +4,24 @@
   .results-bar
     background-color: blue
     position: absolute;
-  button
+  .poll-btn
     width: 100%
     position: relative
     margin: 5px 0
-    border: 1px solid #d4d4d4
+    padding-left: 30px
+    border: none
     outline: none
-    &:hover
-      background: #f0f0f0
+    background: transparent
+    text-align: left
+    &:active
+      outline: none
+      box-shadow: none
     &.show-results
       cursor: inherit
       text-align: left
-      &:hover
-        background: #f5f5f5
       &.winner
         .results-bar
-          background-color: #7cace5
+          background-color: #c1ddff
         .poll-option-label, .poll-results
           font-weight: bold
       .results-bar
@@ -39,9 +41,23 @@
       z-index: 1
     .icon-check
       z-index: 1
+      font-size: 21px
+      background: #19CF86
+      &::before
+        position: absolute
+        top: -2px
+        left: -2px
+        color: #fff
+    .circle
+      width: 20px
+      height: 20px
+      border: 1px solid #8899A6
+      padding: 5px
+      display: block
+      border-radius: 50%
       position: absolute
-      top: 10px
-      margin-left: 10px
+      left: 5px
+      top: 9px
   .overlay-vote
     position absolute
     z-index: 2
