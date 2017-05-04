@@ -1,4 +1,13 @@
 
+2.4.0 / 2017-05-04
+==================
+
+  * fix admin whitelists view export #1394
+  * Fix package.json & .snyk to reduce vulnerabilities #1390
+  * Update polls styles and UI #1408
+  * Update topic api find and findAll endpoints to api-v2
+  * Add custom attributes for Topics #1406
+
 2.3.2 / 2017-04-26
 ==================
 
