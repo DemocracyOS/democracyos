@@ -3,7 +3,7 @@
   position: relative
   .results-bar
     background-color: blue
-    position: absolute;
+    position: absolute
   .poll-btn
     width: 100%
     position: relative
@@ -16,13 +16,17 @@
     &:active
       outline: none
       box-shadow: none
+    &.not-show-results
+      .circle
+        border: 1px solid #8899A6
     &.show-results
       cursor: inherit
       text-align: left
       &.winner
         .results-bar
           background-color: #c1ddff
-        .poll-option-label, .poll-results
+        .poll-option-label,
+        .poll-results
           font-weight: bold
       .results-bar
         background-color: #d4d4d4
@@ -46,15 +50,15 @@
       &::before
         position: absolute
         top: -2px
-        left: -2px
+        left: -1px
         color: #fff
     .circle
       width: 20px
       height: 20px
-      border: 1px solid #8899A6
       padding: 5px
       display: block
       border-radius: 50%
+      border: 1px solid transparent
       position: absolute
       left: 5px
       top: 9px
