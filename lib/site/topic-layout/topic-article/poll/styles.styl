@@ -5,7 +5,7 @@
     background-color: blue
     position: absolute
   .poll-options
-    margin-bottom: .4em
+    margin-bottom: .6em
   .poll-btn
     width: 100%
     position: relative
@@ -31,13 +31,15 @@
         .poll-results
           font-weight: bold
       .results-bar
-        background-color: #d4d4d4
         position: absolute
         height: 100%
+        width: 0%
         top: 0
         left: 0
         border-radius: 2px
         z-index: 0
+        transition: width 350ms ease-out
+        background-color: #d4d4d4
     .poll-option-label
       z-index: 1
       position: relative
