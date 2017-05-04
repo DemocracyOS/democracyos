@@ -3,33 +3,43 @@
   position: relative
   .results-bar
     background-color: blue
-    position: absolute;
-  button
+    position: absolute
+  .poll-options
+    margin-bottom: .6em
+  .poll-btn
     width: 100%
     position: relative
-    margin: 5px 0
-    border: 1px solid #d4d4d4
+    margin: 0 0 .4em
+    padding-left: 30px
+    border: none
     outline: none
-    &:hover
-      background: #f0f0f0
+    background: transparent
+    text-align: left
+    &:active
+      outline: none
+      box-shadow: none
+    &.not-show-results
+      .circle
+        border: 1px solid #8899A6
     &.show-results
       cursor: inherit
       text-align: left
-      &:hover
-        background: #f5f5f5
       &.winner
         .results-bar
-          background-color: #7cace5
-        .poll-option-label, .poll-results
+          background-color: #c1ddff
+        .poll-option-label,
+        .poll-results
           font-weight: bold
       .results-bar
-        background-color: #d4d4d4
         position: absolute
         height: 100%
+        width: 0%
         top: 0
         left: 0
         border-radius: 2px
         z-index: 0
+        transition: width 350ms ease-out
+        background-color: #d4d4d4
     .poll-option-label
       z-index: 1
       position: relative
@@ -39,9 +49,23 @@
       z-index: 1
     .icon-check
       z-index: 1
+      font-size: 21px
+      background: #19CF86
+      &::before
+        position: absolute
+        top: -2px
+        left: -1px
+        color: #fff
+    .circle
+      width: 20px
+      height: 20px
+      padding: 5px
+      display: block
+      border-radius: 50%
+      border: 1px solid transparent
       position: absolute
-      top: 10px
-      margin-left: 10px
+      left: 5px
+      top: 9px
   .overlay-vote
     position absolute
     z-index: 2
