@@ -1,11 +1,22 @@
-.poll-wrapper
-  margin-bottom: 20px
+.topics-poll
   position: relative
+  margin-bottom: 20px
+  z-index: 0
+
   .results-bar
-    background-color: blue
     position: absolute
+    height: 100%
+    width: 0%
+    top: 0
+    left: 0
+    border-radius: 2px
+    z-index: 0
+    transition: width 350ms ease-out
+    background-color: #d4d4d4
+
   .poll-options
     margin-bottom: .6em
+
   .poll-btn
     width: 100%
     position: relative
@@ -15,6 +26,7 @@
     outline: none
     background: transparent
     text-align: left
+
     &:active,
     &:focus
       outline: none
@@ -24,43 +36,41 @@
     &.not-show-results
       .circle
         border: 1px solid #8899A6
+
     &.show-results
       cursor: inherit
       text-align: left
       padding-right: 4em
+
       &.winner
         .results-bar
           background-color: #c1ddff
+
         .poll-option-label,
         .poll-results
           font-weight: bold
-      .results-bar
-        position: absolute
-        height: 100%
-        width: 0%
-        top: 0
-        left: 0
-        border-radius: 2px
-        z-index: 0
-        transition: width 350ms ease-out
-        background-color: #d4d4d4
+
     .poll-option-label
       z-index: 1
       position: relative
       white-space: initial
+
     .poll-results
       position: absolute
       right: 10px
       z-index: 1
+
     .icon-check
       z-index: 1
       font-size: 21px
       background: #19CF86
+
       &::before
         position: absolute
         top: -2px
         left: -1px
         color: #fff
+
     .circle
       width: 20px
       height: 20px
@@ -71,6 +81,7 @@
       position: absolute
       left: 5px
       top: 9px
+
   .overlay-vote
     position absolute
     z-index: 2
@@ -85,7 +96,9 @@
     background-color rgba(#fff, .9)
     font-weight bold
     text-align center
+
     span.icon-lock
       font-size 20px
+
     span.text
       max-width 320px
