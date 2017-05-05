@@ -10,9 +10,11 @@ export default ({ forum, topic }) => {
 
   return (
     <div className='topic-card'>
-      <div
-        className='topic-card-cover'
-        style={{ backgroundImage: `url(${topic.coverUrl})` }} />
+      {topic.coverUrl && (
+        <div
+          className='topic-card-cover'
+          style={{ backgroundImage: `url(${topic.coverUrl})` }} />
+      )}
       <div className='topic-info'>
         <h1 className='title'>
           <Link to={topic.url}>{topic.mediaTitle}</Link>
