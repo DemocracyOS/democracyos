@@ -50,7 +50,7 @@ class Header extends Component {
 
             {this.props.user.state.rejected && (
               <Link to='/signin' className='btn btn-primary btn-sm'>
-                Participá
+                Ingresar
               </Link>
             )}
           </div>
