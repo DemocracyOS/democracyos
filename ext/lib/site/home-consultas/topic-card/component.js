@@ -18,7 +18,7 @@ export default function TopicCard (props) {
         style={{ backgroundImage: `url(${topic.coverUrl})` }} />
       <div className='topic-info'>
         <h1 className='title'>
-          {topic.mediaTitle}<Link to={topic.url}>Más info</Link>
+          <Link to={topic.url}>{topic.mediaTitle}</Link>
         </h1>
         {topic.action.method && topic.action.method === 'poll' && (
           <Poll
