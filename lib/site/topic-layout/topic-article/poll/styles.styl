@@ -10,20 +10,24 @@
     width: 100%
     position: relative
     margin: 0 0 .4em
-    padding-left: 30px
+    padding-left: 2.1em
     border: none
     outline: none
     background: transparent
     text-align: left
-    &:active
+    &:active,
+    &:focus
       outline: none
       box-shadow: none
+      text-decoration: underline
+
     &.not-show-results
       .circle
         border: 1px solid #8899A6
     &.show-results
       cursor: inherit
       text-align: left
+      padding-right: 4em
       &.winner
         .results-bar
           background-color: #c1ddff
@@ -43,6 +47,7 @@
     .poll-option-label
       z-index: 1
       position: relative
+      white-space: initial
     .poll-results
       position: absolute
       right: 10px
