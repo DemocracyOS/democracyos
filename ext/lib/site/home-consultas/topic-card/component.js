@@ -5,14 +5,11 @@ import Timeago from 'lib/site/timeago'
 import Poll from 'lib/site/topic-layout/topic-article/poll/component'
 // import { SharerFacebook } from 'ext/lib/site/sharer'
 
-export default function TopicCard (props) {
-  const { forum, topic } = props
-
-  const classNames = ['topic-card']
+export default ({ forum, topic }) => {
   const votes = topic.action.pollResults.length
 
   return (
-    <div className={classNames.join(' ')} >
+    <div className='topic-card'>
       <div
         className='topic-card-cover'
         style={{ backgroundImage: `url(${topic.coverUrl})` }} />
@@ -34,9 +31,16 @@ export default function TopicCard (props) {
               <div className='closing-at'>
                 <span className='icon-clock' />
                 {' '}
-                <span>{topic.closed ? 'Cerrado' : 'Cierra'}</span>
-                {' '}
-                <Timeago date={topic.closingAt} />
+                {topic.closed && (
+                  <span>
+                    Cerró el {moment(topic.createdAt).format('D/M/YY')}
+                  </span>
+                )}
+                {!topic.closed && (
+                  <span>
+                    Cierra <Timeago date={topic.closingAt} />
+                  </span>
+                )}
               </div>
             )}
             {!topic.closingAt && (
