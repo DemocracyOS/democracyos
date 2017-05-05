@@ -7,18 +7,25 @@ import Footer from '../footer/component'
 import TopicCard from './topic-card/component'
 
 const filters = {
-
+  new: {
+    text: 'Más Nuevas',
+    filter: (topic) => topic.open && !topic.currentUser.action.polled,
+    emptyMsg: '¡Ya participaste en todas las consultas!'
+  },
   all: {
     text: 'Todas',
-    filter: (topic) => topic
+    filter: () => true,
+    emptyMsg: 'No se encontraron consultas.'
   },
   open: {
     text: 'Abiertas',
-    filter: (topic) => topic.open
+    filter: (topic) => topic.open,
+    emptyMsg: 'Ya finalizaron todas las consultas, te vamos a avisar cuando se publiquen nuevas.'
   },
   closed: {
-    text: 'Cerradas',
-    filter: (topic) => topic.closed
+    text: 'Finalizadas',
+    filter: (topic) => topic.closed,
+    emptyMsg: 'No se encontraron consultas finalizadas.'
   }
 }
 
@@ -33,7 +40,7 @@ class HomeConsultas extends Component {
     this.state = {
       forum: null,
       topics: null,
-      filter: 'all'
+      filter: 'new'
     }
   }
 
@@ -44,9 +51,18 @@ class HomeConsultas extends Component {
         topicStore.findAll({ forum: forum.id })
       ]))
       .then(([forum, topics]) => {
+        let filterKey = this.state.filter
+        let filtered = filter(filterKey, topics)
+
+        if (filterKey === 'new' && filtered.length === 0) {
+          filterKey = 'all'
+          filtered = filter(filterKey, topics)
+        }
+
         this.setState({
           forum,
-          topics: filter(this.state.filter, topics)
+          filter: filterKey,
+          topics: filtered
         })
 
         bus.on('topic-store:update:all', this.fetchTopics)
@@ -95,6 +111,13 @@ class HomeConsultas extends Component {
           <Filter
             onChange={this.handleFilterChange}
             active={this.state.filter} />
+          {topics && topics.length === 0 && (
+            <div className='empty-msg'>
+              <div className='alert alert-success' role='alert'>
+                {filters[this.state.filter].emptyMsg}
+              </div>
+            </div>
+          )}
         </div>
         {topics && topics.length > 0 && (
           <div className='topics-section'>
