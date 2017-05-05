@@ -27,5 +27,6 @@
   "comments.sign-in-required-to-vote-comments": "Debés estar registrado para poder calificar comentarios",
   "comments.sign-in-required": "Debés estar registrado para participar",
   "comments.your-argument": "Tu comentario",
-  "comments.your.arguments": "Tus comentarios"
+  "comments.your.arguments": "Tus comentarios",
+  "proposal-options.must-be-signed-in": "Debés estar registrado para participar"
 }
