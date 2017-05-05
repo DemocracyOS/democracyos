@@ -1,65 +1,8 @@
-.topic-card
-  @import '../../../../lib/site/topic-layout/topic-article/poll/styles'
+.desafios-topic-card
+  width: 350px
 
-  display: block
-  display: flex
-  flex-direction: column
-  z-index: 0
-  position relative
-  margin 15px
-  width 350px
-  box-shadow 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)
-  color inherit
-  background-color #fff
-  transition all .3s unquote('cubic-bezier(.25,.8,.25,1)')
-
-  .topic-card-cover
-    position relative
-    width 100%
-    border-bottom: 4px solid #00adef
-    background-size cover
-    background-color #efefef
-    min-height: 135px
-
-    &:after
-      content ''
-      display block
-      padding-top 50%
-
-    &:before
-      content '#001'
-      background: #3dacf1
-      color: #fff
-      font-size: 17px
-      font-weight: 400
-      position: absolute
-      padding: 5px 15px
-      top: 15px
-      right: -2px
-
-  .topic-info
-    flex-grow: 2
-    display: flex
-    flex-direction: column
-    padding: 15px
-
-  .title
-    margin: 0 0 110px
-    color: #444
-    font-size: 1.5em
-    font-weight: 400
-    line-height: 1.1
-
-    a
-      padding-left: .3em
-      font-size: .7em
-      font-weight: 400
-      color: #00adef
-
-      &:hover
-        color: #3dacf1
-        text-decoration: underline
-
+  .topic-card-title
+    margin-bottom: 110px
 
   .topic-card-footer-container
     width: 100%

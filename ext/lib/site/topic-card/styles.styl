@@ -1,0 +1,62 @@
+.ext-topic-card
+  display: block
+  display: flex
+  flex-direction: column
+  z-index: 0
+  position: relative
+  margin: 15px
+  width: 350px
+  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)
+  color: inherit
+  transition: all .3s unquote('cubic-bezier(.25,.8,.25,1)')
+  background-color: #fff
+
+  &:hover
+    box-shadow 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23)
+
+  .topic-card-cover
+    display: block
+    position: relative
+    width: 100%
+    background-size: cover
+    background-color: #efefef
+
+    &:after
+      content ''
+      display block
+      padding-top 50%
+
+  .topic-card-info
+    border-top: 4px solid #00adef
+    flex-grow: 2
+    display: flex
+    flex-direction: column
+    padding: 15px
+
+  .topic-card-title
+    margin: 0 0 .8em
+    color: #444
+    font-size: 1.5em
+    font-weight: 400
+    line-height: 1.3
+
+    a
+      font-weight: inherit
+      color: inherit
+
+      &:hover
+        text-decoration: none
+
+  .topic-card-description
+    margin: 0 0 1.2em
+    color: #444
+    font-weight: 300
+    line-height: 1.25
+    font-size: 1em
+
+    a
+      font-weight: inherit
+      color: inherit
+
+      &:hover
+        text-decoration: none

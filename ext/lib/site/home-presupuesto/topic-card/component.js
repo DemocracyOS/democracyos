@@ -10,9 +10,7 @@ const distritos = (function () {
   return c
 })()
 
-export default function TopicCard (props) {
-  const { topic, forum } = props
-
+export default ({ topic, forum }) => {
   const topicUrl = `${window.location.origin}${topic.url}`
 
   let state
@@ -26,7 +24,7 @@ export default function TopicCard (props) {
 
   const twitterDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
 
-  const classNames = ['topic-card']
+  const classNames = ['ext-topic-card', 'presupuesto-topic-card']
 
   if (topic.extra && typeof topic.extra.votes === 'number') {
     classNames.push('has-votes')
@@ -35,15 +33,16 @@ export default function TopicCard (props) {
   if (topic.attrs && topic.attrs.winner) classNames.push('is-winner')
 
   return (
-    <Link
-      className={classNames.join(' ')}
-      to={topic.url}>
+    <div className={classNames.join(' ')}>
       {topic.attrs && topic.attrs.state && (
         <div className='state'>{state}</div>
       )}
-      <div
-        className='topic-card-cover'
-        style={{ backgroundImage: `url(${topic.coverUrl})` }} />
+      {topic.coverUrl && (
+        <Link
+          to={topic.url}
+          className='topic-card-cover'
+          style={{ backgroundImage: `url(${topic.coverUrl})` }} />
+      )}
       {topic.extra && typeof topic.extra.votes === 'number' && (
         <div className='topic-results'>
           <h2>{prettyDecimals(topic.extra.votes)} Votos</h2>
@@ -52,7 +51,7 @@ export default function TopicCard (props) {
           </p>
         </div>
       )}
-      <div className='topic-info'>
+      <div className='topic-card-info'>
         <div className='topic-location'>
           <i className='icon-location-pin' />
           <span>{topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}`}</span>
@@ -63,9 +62,13 @@ export default function TopicCard (props) {
             </span>
           )}
         </div>
-        <h1 className='title'>{topic.mediaTitle}</h1>
+        <h1 className='topic-card-title'>
+          <Link to={topic.url}>{topic.mediaTitle}</Link>
+        </h1>
         {topic.attrs && topic.attrs.description && (
-          <p className='description'>{topic.attrs.description}</p>
+          <p className='topic-card-description'>
+            <Link to={topic.url}>{topic.attrs.description}</Link>
+          </p>
         )}
         <div className='topic-card-footer'>
           <div className='social-links'>
@@ -84,7 +87,7 @@ export default function TopicCard (props) {
           )}
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
 

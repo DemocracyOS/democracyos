@@ -9,14 +9,15 @@ export default ({ forum, topic }) => {
   const votes = topic.action.pollResults.length
 
   return (
-    <div className='topic-card'>
+    <div className='ext-topic-card consultas-topic-card'>
       {topic.coverUrl && (
-        <div
+        <Link
+          to={topic.url}
           className='topic-card-cover'
           style={{ backgroundImage: `url(${topic.coverUrl})` }} />
       )}
-      <div className='topic-info'>
-        <h1 className='title'>
+      <div className='topic-card-info'>
+        <h1 className='topic-card-title'>
           <Link to={topic.url}>{topic.mediaTitle}</Link>
         </h1>
         {topic.action.method && topic.action.method === 'poll' && (
