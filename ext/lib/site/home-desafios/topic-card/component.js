@@ -13,19 +13,14 @@ export default ({ topic }) => (
       <h1 className='topic-card-title'>
         <Link to={topic.url}>{topic.mediaTitle}</Link>
       </h1>
-      <div className='topic-card-footer-container'>
-        <div className='topic-card-footer'>
-          <div className='comments'>
-            <Link to={topic.url}>
-              <span>
-                {topic.comments ? topic.comments.length : 0}
-              </span>
-              {' '}
-              <span>Comentarios</span>
-            </Link>
-          </div>
-        </div>
+    </div>
+    <div className='topic-card-footer'>
+      <div className='participants'>
+        {` ${topic.participants.length} participante${topic.participants.length !== 1 ? 's' : ''}`}
       </div>
+      <Link to={topic.url} className='btn btn-block btn-primary'>
+        Sumarme
+      </Link>
     </div>
   </div>
 )
