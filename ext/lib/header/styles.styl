@@ -1,0 +1,169 @@
+.ext-header
+  padding: 0
+  color: #525252
+  background-color: #fff
+
+.ext-header-prefix
+  height: 29px
+  background-color: #1DAEEC
+
+  img
+    padding: 10px 15px
+    max-width: 120px
+    height: 35px
+
+  @media (max-width: 500px)
+    display: none
+
+  a
+    color: #fff
+    height: 100%
+    display: inline-flex
+    width: auto
+    align-items: center
+    padding: 0 5px
+    margin-left: -5px
+
+    &:hover
+      color: #fff
+      background: rgba(#fff, .1)
+
+.ext-header-sub
+  padding: 1px 0
+  color: #58595B
+  text-align: center
+  background: #f6f6f6
+  background-color: #E9E9EB
+
+  &.mobile
+    display: block
+    .navigation
+      a
+        display: block
+        border-right: none
+
+  .toggle-submenu-btn
+    display: block
+    padding: 3px 15px 8px
+    margin: 0
+    float: none
+    background-color: transparent
+    background-image: none
+    border: 1px solid transparent
+    border-radius: 4px
+    position: relative
+    max-width: 55px
+    cursor: pointer
+
+    @media (min-width: 631px)
+      display: none
+
+    .bar-icon
+      background-color: #58595B
+      margin-top: 4px
+      display: block
+      width: 22px
+      height: 2px
+      border-radius: 1px
+
+  a
+    position: relative
+    display: inline-block
+    padding: 5px 15px
+    font-weight: 400
+    font-size: 16px
+    cursor: pointer
+    color: #58595B
+
+    &:last-child
+      border: none
+
+    &:hover
+      color: #00acec
+      background-color: #fff
+
+    @media (min-width: 631px)
+      padding: 5px 25px
+      margin-right: 1px
+
+      &:after
+        content: ''
+        z-index: 10
+        position: absolute
+        right: -1px
+        top: 5px
+        width: 1px
+        height: 22px
+        background-color: #A7A8AC
+
+      &:last-child:after
+        content: none
+
+.ext-header-main
+  border-bottom: 3px solid #F59231
+
+  .container-simple
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 100px
+
+    @media (max-width: 500px)
+      height: 50px
+
+    h1
+      z-index: 0
+
+  .current-date
+    display: none
+    font-size: .8em
+    color: #565656
+
+    @media (min-width: 992px)
+      display: block
+
+    span
+      display: block
+
+  .logo
+    display: inline-block
+    text-align: center
+    left: 0
+    margin: 0
+
+    img
+      max-width: 360px
+
+      @media (max-width: 500px)
+        max-width: 200px
+
+  .user-nav
+    @import '../../../../lib/header/user-badge/styles'
+
+    .user
+      justify-content: flex-end
+
+    .user-badge
+      position: relative
+      margin-left: 8px
+
+      &.active button
+        background: none
+
+      button
+        margin: 0
+
+      .dropdown-list
+        position: absolute
+        top: 100%
+        right: 0
+
+    .nav-link
+      height: 100% !important
+      display: flex !important
+      align-items: center
+      justify-content: flex-end
+      font-weight: 400
+      color: inherit
+      text-decoration: none

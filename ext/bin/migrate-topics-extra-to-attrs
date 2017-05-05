@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+const models = require('lib/models')()
+
+const Topic = models.Topic
+
+Topic.find({
+  extra: { $ne: null }
+}).exec()
+  .then((topics) => Promise.all(topics.map((topic) => {
+    if (topic.extra.hasOwnProperty('number')) {
+      topic.set('attrs.number', topic.extra.number)
+      topic.set('extra.number', undefined)
+    }
+
+    if (topic.extra.hasOwnProperty('description')) {
+      topic.set('attrs.description', topic.extra.description)
+      topic.set('extra.description', undefined)
+    }
+
+    if (topic.extra.hasOwnProperty('budget')) {
+      topic.set('attrs.budget', topic.extra.budget)
+      topic.set('extra.budget', undefined)
+    }
+
+    if (topic.extra.hasOwnProperty('distrito')) {
+      topic.set('attrs.district', topic.extra.distrito)
+      topic.set('extra.distrito', undefined)
+    }
+
+    if (topic.extra.hasOwnProperty('area')) {
+      topic.set('attrs.area', topic.extra.area)
+      topic.set('extra.area', undefined)
+    }
+
+    if (topic.extra.hasOwnProperty('votes')) {
+      topic.set('attrs.votes', topic.extra.votes)
+      topic.set('extra.votes', undefined)
+    }
+
+    return topic.isModified() ? topic.save() : topic
+  })))
+  .then((topics) => {
+    console.log('Done!', `Migrated ${topics.length} Topics.`)
+    process.exit(0)
+  })
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })

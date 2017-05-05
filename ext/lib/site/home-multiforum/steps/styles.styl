@@ -1,0 +1,82 @@
+.ext-home-steps
+  margin-bottom: 70px
+
+  h2
+    font-weight: 400
+    text-align: center
+    width: 100%
+    margin: 60px 0
+    font-size: 2.5em
+    color: #32a7d3
+    letter-spacing: 1px
+
+  .participa-steps
+    width: 100%
+    display: block
+    padding: 0 15px
+
+    @media screen and (min-width: 940px)
+      display: flex
+      justify-content: space-between
+
+  .p-step
+    display: block
+    position: relative
+    margin-bottom: 40px
+    margin-left: auto
+    margin-right: auto
+    width: 230px
+
+    @media screen and (min-width: 940px)
+      margin-right: 40px
+      
+      &:first-child
+        margin-left: 0
+
+    &::before
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 20px 0 20px 40px
+      border-color: transparent transparent transparent #d8d8d8
+      position: absolute
+      right: -60px
+      top: 100px
+
+      @media screen and (min-width: 940px)
+        content: ""
+
+    &:last-child::before
+        content: none
+
+    .p-text
+      font-size: 22px
+      margin-top: 16px
+      line-height: 28px
+      letter-spacing: 1px
+      text-align: center
+      color: #818181
+
+    div
+      position: relative
+
+      .num
+        color: white
+        background: #3ba4ce
+        padding: 8px 23px
+        border-radius: 50%
+        font-size: 40px
+        position: absolute
+        top: 10px
+        left: 7px
+      p
+        border-radius: 50%
+        border: 5px solid #f7f7f7
+        color: #818181
+        font-size: 40px
+        font-weight: 100
+        width: 225px
+        height: 225px
+        display: flex
+        align-items: center
+        justify-content: center

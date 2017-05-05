@@ -1,0 +1,18 @@
+{
+  "extends": ["democracyos"],
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "../"
+        ]
+      }
+    }
+  },
+
+  "rules": {
+    "node/no-unpublished-require": 0,
+    "node/no-missing-require": 0
+  }
+}

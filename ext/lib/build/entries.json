@@ -1,0 +1,12 @@
+{
+  "js": {
+    "admin.js": "./ext/lib/admin/boot/boot.js",
+    "site.js": "./ext/lib/site/boot/boot.js",
+    "settings.js": "./ext/lib/settings/boot/boot.js"
+  },
+  "css": {
+    "admin.css": "./ext/lib/admin/boot/boot.styl",
+    "site.css": "./ext/lib/site/boot/boot.styl",
+    "settings.css": "./ext/lib/settings/boot/boot.styl"
+  }
+}

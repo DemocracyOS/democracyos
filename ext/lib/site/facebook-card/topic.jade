@@ -1,0 +1,17 @@
+- var description = topic.attrs && topic.attrs.description ? topic.attrs.description : config.socialshare.description
+
+- var title = config.socialshare.siteName
+- if (topic.mediaTitle) title = `${config.socialshare.siteName} | ${topic.mediaTitle}`
+- if (topic.mediaTitle && topic.attrs && topic.attrs.number && topic.attrs.district) title = `${config.socialshare.siteName} | Distrito ${topic.attrs.district} | #${topic.attrs.number} | ${topic.mediaTitle}`
+
+- var image = topic.coverUrl ? topic.coverUrl : config.socialshare.image
+
+html
+  head
+    meta(property='og:title', content=title)
+    meta(property='og:type', content='website')
+    meta(property='og:url', content=url)
+    meta(property='og:image', content=config.socialshare.image)
+    meta(property='og:image', content=image)
+    meta(property='og:site_name', content=config.socialshare.siteName)
+    meta(property='og:description', content=description)

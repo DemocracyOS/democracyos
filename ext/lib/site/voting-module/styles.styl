@@ -1,0 +1,99 @@
+.ext-voting-module
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  width: 100vw
+  z-index: 10
+
+  .alert
+    margin: 0
+
+  .btn-close
+    position: absolute
+    top: 0
+    right: 0
+    padding: 1em
+    cursor: pointer
+    transition: background-color .3s
+
+    &:hover
+      background-color: rgba(#fff, .2)
+
+  .voting-action
+    color: #fff
+    width: 100%
+    padding: 30px 15px
+    text-align: center
+    background-color: #294b68
+
+    @media all and (max-width: 375px)
+      font-size: .8em
+
+    p
+      display: inline-block
+      margin-left: 1em
+      margin-right: 1em
+      font-weight: 600
+      font-size: 1.1em
+
+    .btn
+      white-space: normal
+      color: #fff
+      border-color: #fff
+
+      &:hover,
+      &:active
+        color: #294b68
+        background-color: #fff
+
+    .icon-camrecorder
+      position: relative
+      top: 2px
+      margin-right: .7em
+      color: #f59231
+
+  .voting-success
+    display: flex
+    flex-direction: row
+    justify-content: center
+    flex-wrap: wrap
+    align-items: center
+    position: relative
+    color: #fff
+    width: 100%
+    padding: 1.5em 0 0
+    text-align: center
+    background-color: #294b68
+
+    .social-links,
+    .text
+      margin: 0 7px
+
+    .social-links
+      padding: 1em 0 0
+
+    h1
+      font-size: 1.5em
+      margin: 0 0 .4em
+
+    a,
+    .sharer
+      padding: .1em .22em 0
+      font-size: 1.8em
+      color: #fff
+      transition: background-color .3s
+
+      &:hover
+        background-color: rgba(#fff, .2)
+
+    .survey
+      display: block
+      margin: .7em 0 0
+      padding: .5em 0
+      width: 100%
+      font-size: 16px
+
+      p
+        margin: 0
+        font-size: 13px

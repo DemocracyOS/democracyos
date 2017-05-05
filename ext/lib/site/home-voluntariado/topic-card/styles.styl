@@ -1,0 +1,109 @@
+.topic-card
+  @import '../../../../lib/site/topic-layout/topic-article/poll/styles'
+  display: flex
+  flex-direction: column
+  z-index: 0
+  position relative
+  margin 15px
+  width 360px
+  box-shadow 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)
+  color inherit
+  background-color #fff
+  transition all .3s unquote('cubic-bezier(.25,.8,.25,1)')
+  border-radius: 5px
+
+  .topic-tags
+    padding: 10px 10px 20px
+    margin-bottom: -20px
+    overflow-x: scroll
+    span
+      font-size: 16px
+      margin-right: 10px
+      color: #888888
+      &.primary-tag
+        color: #3dacf1
+        font-weight: 500
+
+  .topic-card-cover
+    position relative
+    width 100%
+    border-bottom: 4px solid #bbbbbb
+    background-size cover
+    background-color #efefef
+
+    &:after
+      content ''
+      display block
+      padding-top 50%
+
+  .topic-location
+    color: #767676
+    font-size: 13px
+    margin-bottom: 0.8em
+
+    i
+      margin-right: .5em
+
+  .title
+    margin: 0 0 20px
+    color: #858585
+    font-weight: 500
+    line-height: 1.1
+    font-size: 25px
+    a
+      padding-left: .3em
+      font-size: .7em
+      font-weight: 400
+      color: #00adef
+
+      &:hover
+        color: #3dacf1
+        text-decoration: underline
+
+  .description
+    flex-grow: 2
+    margin: 0 0 20px
+    color: #444
+    font-weight: 300
+    line-height: 1.25
+    font-size: 16px
+
+  .topic-info
+    flex-grow: 2
+    display: flex
+    flex-direction: column
+    padding: 15px
+
+
+
+  .topic-card-footer-container
+    width: 100%
+    align-self: flex-end
+
+  .topic-card-footer
+    display: flex
+    flex-wrap: wrap
+    font-size: .9em
+    padding-top: .8em
+    width: 100%
+    color: #a5a9aa
+
+    .comments
+      margin-right: 0
+      margin-left: auto
+      font-weight: 500
+      a
+        text-transform: uppercase
+        color: #00adef
+        &:hover
+          color: #3dacf1
+
+  .social-links
+    position: absolute
+    left: 15px
+    bottom: 15px
+    font-size: 20px
+
+    span
+      margin-right: 7px
+      color: #999

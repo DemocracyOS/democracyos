@@ -1,0 +1,8 @@
+[
+  {"title": "Centro", "name": "centro"},
+  {"title": "Noroeste", "name": "noroeste"},
+  {"title": "Norte", "name": "norte"},
+  {"title": "Oeste", "name": "oeste"},
+  {"title": "Sudoeste", "name": "sudoeste"},
+  {"title": "Sur", "name": "sur"}
+]

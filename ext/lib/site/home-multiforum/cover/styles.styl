@@ -1,0 +1,110 @@
+.ext-home-cover
+  z-index: 0
+  display: flex
+  position: relative
+  padding: 2.5em 0
+  align-items: center
+  color: #fff
+  font-size: .8em
+  text-align: center
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+
+  @media screen and (min-height: 600px)
+    padding-top: 7.5em
+    padding-bottom: 2.5em
+
+  @media screen and (min-width: 768px)
+    font-size: 1em
+
+  .container
+    z-index: 10
+    max-width: 720px
+
+  h1
+    font-size: 3em
+    margin: 0 0 .4em
+    text-shadow: 2px 2px 4px rgba(81, 81, 81, .8)
+
+  h2
+    display: none
+    margin: 0 0 1.3em
+    font-size: 1.8em
+    font-weight: 400
+    text-shadow: 2px 2px 4px rgba(81, 81, 81, .8)
+
+    @media screen and (min-height: 500px)
+      display: block
+
+  .btn
+    padding-left: 2em
+    padding-right: 2em
+
+  .follow-arrow
+    display: none
+    margin-top: 4em
+    text-align: center
+
+    @media screen and (min-height: 600px)
+      display: block
+      margin-top: 4em
+
+    .icon-arrow-down
+      display: inline-block
+      font-size: 2em
+      cursor: pointer
+      color: inherit
+      animation-name: bounce
+      animation-duration: 2s
+      animation-delay: 2s
+      animation-iteration-count: infinite
+
+  .banner
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    align-items: center
+    justify-content: center
+    pointer-events: none
+    z-index: 5
+
+    @media screen and (min-width: 768px)
+      display: flex
+
+  .video
+    width: 100%
+    position: relative
+    height: 100%
+    overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
+
+    video
+      width: 100%
+      min-width: 1000px
+      z-index: -1
+
+@css {
+  @-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+
+  @-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+}

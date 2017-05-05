@@ -1,0 +1,128 @@
+.topic-card
+  display: block
+  display: flex
+  flex-direction: column
+  z-index: 0
+  position relative
+  margin 15px
+  width 260px
+  box-shadow 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24)
+  color inherit
+  cursor pointer
+  background-color #fff
+  transition all .3s unquote('cubic-bezier(.25,.8,.25,1)')
+
+  &:hover
+    box-shadow 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23)
+
+  &.has-votes
+    .budget
+      color: #A5A9AA
+      font-weight: 400
+
+  &.is-winner
+    .topic-results
+      color: #F39431
+      border-bottom-color: #F39431
+
+    .state
+      background-color: #F39431
+
+    .topic-card-cover
+      border-bottom-color: #F39431
+
+  .state
+    z-index: 10
+    position: absolute
+    right: 0
+    top: 14px
+    padding: 7px 16px
+    line-height: 1
+    color: #fff
+    font-size: 21px
+    font-weight: 500
+    background-color: #00adef
+
+  .topic-card-cover
+    position relative
+    width 100%
+    border-bottom: 4px solid #00adef
+    background-size cover
+    background-color #efefef
+
+    &:after
+      content ''
+      display block
+      padding-top 50%
+
+  .topic-results
+    padding: 12px 15px 9px
+    color: #00adef
+    border-bottom: 1px solid #00adef
+
+    h2,
+    p
+      margin: 0
+      color: inherit
+      text-transform: uppercase
+      font-weight: 600
+
+    h2
+      font-size: 20px
+
+    p
+      font-size: 14px
+
+  .topic-info
+    flex-grow: 2
+    display: flex
+    flex-direction: column
+    padding: 15px
+
+  .topic-location
+    color: #a5a9aa
+    font-size: 13px
+    margin-bottom: 0.8em
+
+    i
+      margin-right: .5em
+
+  .number
+    float: right
+
+  .title
+    margin: 0 0 10px
+    color: #444
+    font-weight: 400
+    line-height: 1.1
+    font-size: 18px
+
+  .description
+    flex-grow: 2
+    margin: 0 0 20px
+    color: #444
+    font-weight: 300
+    line-height: 1.25
+    font-size: 16px
+
+  .topic-card-footer
+    text-align: right
+    align-self: flex-end
+    width: 100%
+
+  .budget
+    margin: 0
+    color: #00adef
+    font-weight: 900
+    line-height: 1
+    font-size: 24px
+
+  .social-links
+    position: absolute
+    left: 15px
+    bottom: 15px
+    font-size: 20px
+
+    span
+      margin-right: 7px
+      color: #999
