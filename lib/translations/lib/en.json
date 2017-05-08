@@ -31,6 +31,8 @@
   "admin-permissions.visibility.private.title": "Secret",
   "admin-permissions.visibility.public.description": "Anyone can see the content and will be able to participate.",
   "admin-permissions.visibility.public.title": "Open for All",
+  "admin-permissions.visibility.collaborative.description": "Anyone can see and create content and also will be able to participate.",
+  "admin-permissions.visibility.collaborative.title": "Collaborative",
   "admin-permissions.visibility.title": "Visibility",
   "admin-sidebar.comments.title": "Comments",
   "admin-sidebar.permissions.title": "Privileges",
