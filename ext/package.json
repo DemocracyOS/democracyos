@@ -9,6 +9,7 @@
   "private": true,
   "license": "GPL-3.0",
   "dependencies": {
+    "classnames": "~2.2.5",
     "jump.js": "~1.0.2",
     "lodash.debounce": "~4.0.8",
     "module-alias": "1.0.10",

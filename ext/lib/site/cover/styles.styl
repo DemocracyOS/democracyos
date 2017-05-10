@@ -1,0 +1,48 @@
+.ext-site-cover
+  padding: 3em 0
+  color: #fff
+  text-align: center
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+  background-color: #fafafa
+
+  .ext-site-cover-isologo
+    margin: 0 auto 1em
+    width: 8em
+    border-radius: 50%
+    box-shadow: 2px 2px 4px rgba(81, 81, 81, .4)
+    background-size: 75%
+    background-color: #3dacf1
+    background-repeat: no-repeat
+    background-position: center center
+
+    &:after
+      content: ' '
+      display: block
+      padding-top: 100%
+
+  h1
+    margin: 0 0
+    font-size: 3em
+    text-shadow: 2px 2px 4px rgba(81, 81, 81, .8)
+
+  p
+    margin: 0
+    max-width: 560px
+    font-size: 1.5em
+    line-height: 1.2
+    font-weight: 400
+    text-shadow: 2px 2px 4px rgba(81, 81, 81, .8)
+
+  @media (min-width: 768px)
+    text-align: left
+
+    & > .container
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: center
+
+    .ext-site-cover-isologo
+      margin: 0 1em 0 0

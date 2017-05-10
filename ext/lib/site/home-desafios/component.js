@@ -3,6 +3,7 @@ import bus from 'bus'
 import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
+import Cover from '../cover'
 import TopicCard from './topic-card/component'
 
 class HomeDesafios extends Component {
@@ -57,13 +58,11 @@ class HomeDesafios extends Component {
 
     return (
       <div className='ext-home-desafios'>
-        <div className='cover'>
-          <div className='container'>
-            <div className='isologo desafios' />
-            <h1>Desafíos</h1>
-            <p>Tenemos desafíos como comunidad y podemos resolverlos juntos.</p>
-          </div>
-        </div>
+        <Cover
+          background='/ext/lib/site/boot/bg-home-forum.jpg'
+          logo='/ext/lib/site/home-multiforum/desafio-icono.png'
+          title='Desafíos'
+          description='Tenemos desafíos como comunidad y podemos resolverlos juntos.' />
         {topics && topics.length > 0 && (
           <div className='topics-section'>
             <div className='topics-container'>

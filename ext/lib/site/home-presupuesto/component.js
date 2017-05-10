@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import jump from 'jump.js'
 import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
+import Cover from '../cover'
 import TopicCard from './topic-card/component'
 import distritos from './distritos.json'
 
@@ -19,8 +19,7 @@ class HomePresupuesto extends Component {
       forumJoven: null,
       topicsAreas: null,
       topicsDistrito: null,
-      topicsJoven: null,
-      scrollAfterFetch: false
+      topicsJoven: null
     }
   }
 
@@ -34,7 +33,7 @@ class HomePresupuesto extends Component {
   }
 
   componentDidMount () {
-    this.setState({ loading: true, scrollAfterFetch: false }, this.fetchForums)
+    this.setState({ loading: true }, this.fetchForums)
   }
 
   _fetchingForums = false
@@ -97,14 +96,6 @@ class HomePresupuesto extends Component {
             if (!t.attrs) return false
             return t.attrs.district === this.state.distrito.name
           })
-        }, () => {
-          if (this.state.scrollAfterFetch) {
-            const header = document.querySelector('.ext-header')
-            jump('.topics-section', {
-              duration: 750,
-              offset: -(header && header.clientHeight ? header.clientHeight : 100)
-            })
-          }
         })
       })
       .catch((err) => {
@@ -122,7 +113,7 @@ class HomePresupuesto extends Component {
   handleDistritoFilterChange = (distrito) => {
     distritoCurrent = distrito.name
     window.history.pushState(null, null, `#${distrito.name}`)
-    this.setState({ distrito, scrollAfterFetch: true }, this.fetchForums)
+    this.setState({ distrito }, this.fetchForums)
   }
 
   render () {
@@ -132,18 +123,22 @@ class HomePresupuesto extends Component {
     // </a>
     return (
       <div className='ext-home-presupuesto'>
-        <div className='cover'>
-          <div className='container'>
-            <h1>Estos son los proyectos<br />que van a cambiar tu barrio</h1>
-            <label>Elegí tu distrito</label>
-            <DistritoFilter
-              active={this.state.distrito}
-              onChange={this.handleDistritoFilterChange} />
-          </div>
+        <Cover
+          background='/ext/lib/site/boot/bg-home-forum.jpg'
+          logo='/ext/lib/site/home-multiforum/voluntariado-icono.png'
+          title='Presupuesto Participativo'
+          description='Estos son los proyectos que van a cambiar tu barrio' />
+        <div className='topics-section-container distrito-filter-wrapper'>
+          <h2 className='topics-section-title'>
+            Elegí tu distrito:
+          </h2>
+          <DistritoFilter
+            active={this.state.distrito}
+            onChange={this.handleDistritoFilterChange} />
         </div>
         {this.state.topicsAreas && this.state.topicsAreas.length > 0 && (
           <div className='topics-section areas'>
-            <h2 className='topics-section-container'>
+            <h2 className='topics-section-container topics-section-title'>
               Distrito {this.state.distrito.title} | Proyectos para tu barrio
             </h2>
             <div className='topics-container areas'>
@@ -156,7 +151,7 @@ class HomePresupuesto extends Component {
         )}
         {this.state.topicsDistrito && this.state.topicsDistrito.length > 0 && (
           <div className='topics-section distrito'>
-            <h2 className='topics-section-container'>
+            <h2 className='topics-section-container topics-section-title'>
               Distrito {this.state.distrito.title} | Proyectos para tu distrito
             </h2>
             <div className='topics-container'>
@@ -169,7 +164,7 @@ class HomePresupuesto extends Component {
         )}
         {this.state.topicsJoven && this.state.topicsJoven.length > 0 && (
           <div className='topics-section pp-joven'>
-            <h2 className='topics-section-container'>
+            <h2 className='topics-section-container topics-section-title'>
               <span>Distrito {this.state.distrito.title} | Proyectos jóvenes</span><br />
               <sub />
             </h2>
@@ -200,8 +195,8 @@ function DistritoFilter (props) {
             type='button'
             key={d.name}
             data-name={d.name}
-            onClick={onChange.bind(null, d)}
-            className={`btn btn-lg btn-outline-primary${isActive}`}>
+            onClick={() => onChange(d)}
+            className={`btn btn-md btn-outline-primary${isActive}`}>
             {d.title}
           </button>
         )

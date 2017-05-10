@@ -4,6 +4,7 @@ import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
 import Footer from '../footer/component'
+import Cover from '../cover'
 import TopicCard from './topic-card/component'
 
 const filters = {
@@ -100,13 +101,11 @@ class HomeConsultas extends Component {
 
     return (
       <div className='ext-home-consultas'>
-        <div className='cover'>
-          <div className='container'>
-            <div className='isologo consultas' />
-            <h1>Consultas</h1>
-            <p>La Municipalidad quiere conocer tu opinión sobre<br />diferentes temáticas de nuestra Ciudad.</p>
-          </div>
-        </div>
+        <Cover
+          background='/ext/lib/site/boot/bg-home-forum.jpg'
+          logo='/ext/lib/site/home-multiforum/consulta-icono.png'
+          title='Consultas'
+          description='La Municipalidad quiere conocer tu opinión sobre diferentes temáticas de nuestra Ciudad.' />
         <div className='container'>
           <Filter
             onChange={this.handleFilterChange}
