@@ -7,14 +7,13 @@
       "accessSecret": "",
       "timelineId": ""
     },
-    "participatoryBudgetEnabled": false,
     "participatoryBudget": {
       "secret": "",
       "statusEndpoint": "",
       "votingEndpoint": ""
     },
     "homeVideos": [],
-    "client": ["participatoryBudgetEnabled", "homeVideos"],
+    "client": ["homeVideos"],
     "facebookTrackingId": ""
   }
 }
