@@ -12,8 +12,6 @@
       "statusEndpoint": "",
       "votingEndpoint": ""
     },
-    "homeVideos": [],
-    "client": ["homeVideos"],
     "facebookTrackingId": ""
   }
 }
