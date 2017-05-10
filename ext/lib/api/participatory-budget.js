@@ -1,7 +1,5 @@
-'use strict'
-
-const express = require('express')
 const url = require('url')
+const express = require('express')
 const debug = require('debug')
 const jwt = require('jwt-simple')
 const request = require('superagent')
@@ -13,18 +11,6 @@ const middlewares = require('lib/api-v2/middlewares')
 const log = debug('democracyos:ext:api:participatory-budget')
 
 const app = module.exports = express()
-
-const exposeProfile = utils.expose([
-  'id',
-  'firstName',
-  'lastName',
-  'fullName',
-  'email',
-  'avatar',
-  'extra.cod_doc',
-  'extra.nro_doc',
-  'extra.sexo'
-])
 
 app.get('/participatory-budget/profile',
 parseToken,
@@ -76,24 +62,6 @@ function parseToken (req, res, next) {
   }
 }
 
-function userCanVote (user) {
-  return !!(
-    user &&
-    user.extra &&
-    user.extra.cod_doc &&
-    user.extra.nro_doc &&
-    user.extra.sexo
-  )
-}
-
-function getUserVotingToken (user) {
-  return jwt.encode({
-    cod_doc: user.extra.cod_doc,
-    nro_doc: user.extra.nro_doc,
-    sexo: user.extra.sexo
-  }, config.ext.participatoryBudget.secret)
-}
-
 app.get('/participatory-budget/status',
 middlewares.users.restrict,
 function validateUserCanVoteMiddleware (req, res, next) {
@@ -117,7 +85,7 @@ function getParticipatoryBudgetStatus (req, res, next) {
 
   request
     .get(config.ext.participatoryBudget.statusEndpoint)
-    .query({token: token})
+    .query({ token: token })
     .end(function statusEndpointCall (err, response) {
       if (err || !response.ok) return next(err)
 
@@ -141,7 +109,7 @@ function validateUserCanVoteMiddleware (req, res, next) {
   res.redirect('/')
 },
 function getParticipatoryBudgetStatus (req, res) {
-  log('GET /api/participatory-budget/status')
+  log('GET /api/participatory-budget/vote')
 
   try {
     const token = getUserVotingToken(req.user)
@@ -161,3 +129,38 @@ function getParticipatoryBudgetStatus (req, res) {
     return res.redirect('/500')
   }
 })
+
+function userCanVote (user) {
+  return !!(
+    user &&
+    user.extra &&
+    user.extra.cod_doc &&
+    user.extra.nro_doc &&
+    user.extra.sexo
+  )
+}
+
+const exposeProfileAttributes = utils.expose([
+  'id',
+  'firstName',
+  'lastName',
+  'fullName',
+  'email',
+  'avatar',
+  'extra.cod_doc',
+  'extra.nro_doc',
+  'extra.sexo'
+])
+
+function exposeProfile (user) {
+  const json = exposeProfileAttributes(user)
+
+  Object.assign(json, json.extra)
+  delete json.extra
+
+  return json
+}
+
+function getUserVotingToken (user) {
+  return jwt.encode(exposeProfile(user), config.ext.participatoryBudget.secret)
+}
