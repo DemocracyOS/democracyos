@@ -12,6 +12,6 @@
     .col-sm-4
       a.btn.btn-primary.btn-block.auto-save
         span=t('admin-topics-form.button.make-public')
-  .col-sm-4(class=!topic.id && forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'hide' : '')
+  .col-sm-4(class=topic.id && topic.privileges.canEdit ? '' : 'hide')
     a.btn.btn-success.btn-block.save
       span=t('admin-topics-form.button.submit')
