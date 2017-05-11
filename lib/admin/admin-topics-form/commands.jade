@@ -8,6 +8,10 @@
       span=t('admin-topics-form.button.make-private')
     a.btn.btn-primary.btn-block.make-public(class=topic.draft && topic.id && forum.privileges && forum.privileges.canPublishTopics ? '' : 'hide')
       span=t('admin-topics-form.button.make-public')
-  .col-sm-4
+  - if (!topic.id && forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics)
+    .col-sm-4
+      a.btn.btn-primary.btn-block.auto-save
+        span=t('admin-topics-form.button.make-public')
+  .col-sm-4(class=!topic.id && forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'hide' : '')
     a.btn.btn-success.btn-block.save
       span=t('admin-topics-form.button.submit')

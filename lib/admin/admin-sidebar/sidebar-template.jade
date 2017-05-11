@@ -1,4 +1,4 @@
-ul.admin-menu.nav.nav-pills.nav-stacked(class=forum.visibility === 'collaborative' && forum.privileges.canChangeTopics ? 'hide' : '')
+ul.admin-menu.nav.nav-pills.nav-stacked(class=forum.visibility === 'collaborative' && forum.privileges.canChangeTopics ? '' : 'hide')
   - if (forum.privileges.canCreateTopics)
     li: a(href=urlBuilder.for('admin.topics', {forum: forum.name}) data-section='topics')=t('admin-sidebar.topics.title')
   - if (forum.privileges.canEdit)
