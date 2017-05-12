@@ -84,6 +84,7 @@ class Header extends Component {
 const Navigation = ({ onClick }) => (
   <div className='navigation'>
     <Link onClick={onClick} to='/consultas'>Consultas</Link>
+    <Link onClick={onClick} to='/ideas'>Ideas</Link>
     <Link onClick={onClick} to='/desafios'>Desafíos</Link>
     <Link onClick={onClick} to='/presupuesto'>Presupuesto participativo</Link>
     <Link onClick={onClick} to='/voluntariado'>Voluntariado Social</Link>
