@@ -1,13 +1,22 @@
 #topic-wrapper(class=forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'collaborative' : '')
   - if (tags.length == 0)
     if (user.staff)
-      p.alert.alert-danger.text-center!=t('admin-topics-form.alert.no-tags')
+      p.alert.alert-danger.text-center
+        != t('admin-topics-form.alert.no-tags')
       p.text-center
-        a.btn.btn-lg.btn-primary.create-tag(href=urlBuilder.for('admin.tags.create', {forum: forum.name}))=t('admin-tags-form.title.create')
+        a.btn.btn-lg.btn-primary.create-tag(href=urlBuilder.for('admin.tags.create', {forum: forum.name}))
+          = t('admin-tags-form.title.create')
     else
-      p.alert.alert-danger.text-center=t('admin-topics-form.alert.no-tags.no-staff')
+      p.alert.alert-danger.text-center
+        = t('admin-topics-form.alert.no-tags.no-staff')
   - else
-    h2= t(form.title)
+    h2
+      = t(form.title)
+      - if (form.type === 'edit')
+        a(class='btn btn-link btn-md', href=topic.url, target='_blank')
+          = t('admin-topics-form.title.preview')
+          | &nbsp;
+          i.icon-eye
     include commands
     .topic-admin
       form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')

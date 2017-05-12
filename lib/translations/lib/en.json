@@ -106,6 +106,7 @@
   "admin-topics-form.placeholder.source": "http://topics-source.org/official-url/",
   "admin-topics-form.title.create": "Create topic",
   "admin-topics-form.title.edit": "Edit topic",
+  "admin-topics-form.title.preview": "View",
   "admin-topics-form.url": "URL",
   "admin-topics.list.add-topic": "New",
   "admin-topics.list.close.future": "Closing",

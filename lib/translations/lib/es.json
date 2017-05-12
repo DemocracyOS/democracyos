@@ -110,6 +110,7 @@
   "admin-topics-form.placeholder.source": "http://fuente-de-temas.org/url-oficial/",
   "admin-topics-form.title.create": "Nuevo tema",
   "admin-topics-form.title.edit": "Edición de tema",
+  "admin-topics-form.title.preview": "Ver",
   "admin-topics-form.url": "URL",
   "admin-topics.list.add-topic": "Nuevo",
   "admin-topics.list.close.future": "Cierre",
