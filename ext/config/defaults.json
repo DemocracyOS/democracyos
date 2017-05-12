@@ -12,6 +12,7 @@
       "statusEndpoint": "",
       "votingEndpoint": ""
     },
-    "facebookTrackingId": ""
+    "facebookTrackingId": "",
+    "client": []
   }
 }
