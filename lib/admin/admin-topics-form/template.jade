@@ -60,6 +60,7 @@
             option(value='')= t('admin-topics-form.action.none')
             option(value='vote')= t('admin-topics-form.action.vote')
             option(value='poll')= t('admin-topics-form.action.poll')
+            option(value='cause')= t('admin-topics-form.action.cause')
         .form-group.poll-options.hide
           - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
           - var pollOptions = topic.action && topic.action.pollOptions
