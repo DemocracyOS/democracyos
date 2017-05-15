@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-refetch'
 
 class TweetsFeed extends Component {
@@ -12,25 +12,14 @@ class TweetsFeed extends Component {
 
   componentWillReceiveProps (props) {
     const { tweetsFetch } = props
-    let tweets = []
-    if (tweetsFetch.fulfilled) {
-      tweets = tweetsFetch.value.results.tweets
-    }
-    if (tweets.length < 6) {
-      const placeholderCount = 6 - tweets.length
-      for (var i = 0; i < placeholderCount; i++) {
-        tweets.push({
-          entities: {
-            media: [{media_url_https: null}]
-          }
-        })
-      }
-    }
-    this.setState({tweets})
+    const tweets = tweetsFetch.fulfilled ? tweetsFetch.value : []
+
+    while (tweets.length < 6) tweets.push(null)
+
+    this.setState({ tweets })
   }
 
   render () {
-
     return (
       <div className='tweets-box'>
         <div className='tweet-box tweet-box-lg tweets-logo'>
@@ -45,63 +34,60 @@ class TweetsFeed extends Component {
               target='_blank'
               rel='noopener noreferrer'
               className='tw-link'>
-            @RParticipa
+              @RParticipa
             </a>
             <a
               href='https://facebook.com/RosarioParticipa'
               target='_blank'
               rel='noopener noreferrer'
               className='fb-link'>
-            /RosarioParticipa
+              /RosarioParticipa
             </a>
             <a
               href='https://youtube.com/MuniRosario'
               target='_blank'
               rel='noopener noreferrer'
               className='yt-link'>
-            MuniRosario
+              MuniRosario
             </a>
           </div>
         </div>
-        {
-          this.state.tweets.map((twt, key) => {
-            const isPlaceholder = !twt.entities.media[0].media_url_https
-            const imageUrl = twt.entities.media[0].media_url_https || ''
-            return (
-              <a
-                key={key}
-                className={
-                  'tweet-box tweet-box-sm' +
-                  (
-                    isPlaceholder
-                      ? ' placeholder'
-                      : ''
-                  )
-                }
-                target='_blank'
-                href={
-                   isPlaceholder
-                    ? '#'
-                    : 'http://' + twt.entities.media[0].display_url
-                  }>
-                  <div className='tweet-bird'></div>
-                  <div
-                    className='tweet-content'
-                    style={{
-                      backgroundImage: 'url(' + imageUrl + ')'
-                    }}>
-                  </div>
-              </a>
-            )
-          })
-        }
+        {this.state.tweets.map((twt, key) => {
+          return (
+            <a
+              key={key}
+              className={`tweet-box tweet-box-sm${twt ? '' : ' placeholder'}`}
+              target='_blank'
+              title={twt && twt.text}
+              href={twt ? twt.url : '#'}>
+              <div className='tweet-bird' />
+              <div
+                className='tweet-content'
+                style={twt && ({ backgroundImage: `url(${twt.image})` })} />
+            </a>
+          )
+        })}
       </div>
     )
   }
 }
 
-export default connect(props => {
+export default connect((props) => {
   return {
-    tweetsFetch: '/tweets'
+    tweetsFetch: {
+      url: '/tweets',
+      then: (res) => ({
+        value: res.results.tweets.map((twt) => {
+          const media = twt.entities.media && twt.entities.media[0]
+          if (!media || !media.url) return false
+
+          return {
+            url: media.url,
+            image: media.media_url_https,
+            text: twt.text
+          }
+        }).filter((twt) => twt)
+      })
+    }
   }
 })(TweetsFeed)
