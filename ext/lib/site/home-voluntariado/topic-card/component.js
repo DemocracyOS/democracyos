@@ -13,6 +13,13 @@ export default ({ topic }) => (
       <h1 className='topic-card-title'>
         <Link to={topic.url}>{topic.mediaTitle}</Link>
       </h1>
+      {topic.tags && topic.tags.length > 0 && (
+        <div className='topic-card-tags'>
+          {topic.tags.slice(0, 12).map((tag) => (
+            <span key={tag} className='badge badge-default'>{tag}</span>
+          ))}
+        </div>
+      )}
       {/*
       {topic.attrs && topic.attrs.description && (
         <p className='topic-card-description'>

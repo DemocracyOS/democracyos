@@ -15,8 +15,6 @@ class HomeVoluntariados extends Component {
       forum: null,
       allTopics: null,
       topics: null,
-      distritoActive: 'ALL',
-      distritos: ['ALL'],
       tagActive: 'ALL',
       tags: ['ALL']
     }
@@ -29,13 +27,6 @@ class HomeVoluntariados extends Component {
         topicStore.findAll({ forum: forum.id })
       ]))
       .then(([forum, topics]) => {
-        const distritos = topics
-          .map((topic) => topic.attrs.district)
-          .reduce((distritosAcc, distrito) => {
-            if (!~distritosAcc.indexOf(distrito)) distritosAcc.push(distrito)
-            return distritosAcc
-          }, [])
-
         const tags = topics
           .map((topic) => topic.tags)
           .reduce((tagsAcc, tags) => {
@@ -50,7 +41,6 @@ class HomeVoluntariados extends Component {
         this.setState({
           forum,
           allTopics: topics,
-          distritos,
           tags
         }, this.updateTopics)
 
@@ -75,21 +65,12 @@ class HomeVoluntariados extends Component {
     this.setState({ tagActive: e.target.value }, this.updateTopics)
   }
 
-  distritoFilterChange = (e) => {
-    this.setState({ distritoActive: e.target.value }, this.updateTopics)
-  }
-
   updateTopics = () => {
     const topics = this.state.allTopics
       .filter((topic) => {
-        return (
-          this.state.distritoActive === 'ALL' ||
-          topic.attrs.district === this.state.distritoActive
-        ) && (
-          this.state.tagActive === 'ALL' ||
-          ~topic.tags.indexOf(this.state.tagActive)
-        )
+        return this.state.tagActive === 'ALL' || ~topic.tags.indexOf(this.state.tagActive)
       })
+
     this.setState({ topics })
   }
 
@@ -104,27 +85,12 @@ class HomeVoluntariados extends Component {
           title='Voluntariado social'
           description='Las organizaciones sociales son parte central de la vida en nuestra ciudad. ¡Conocelas!' />
         <h2 className='filter'>
-          Ver las organizaciones
-          {/*
-          <select onChange={this.distritoFilterChange}>
-            <option>todos los distritos</option>
-            {
-              this.state.distritos.length > 0 &&
-              this.state.distritos.map((distrito, i) => (
-                <option key={i} value={distrito}>Distrito {distrito}</option>
-              ))
-            }
-          </select>
-          */}
-          que trabajan sobre
+          Ver las organizaciones que trabajan sobre
           <select onChange={this.tagsFilterChange}>
             <option>todos los temas</option>
-            {
-              this.state.tags.length > 0 &&
-              this.state.tags.map((tag, i) => (
-                <option key={i} value={tag}>{tag}</option>
-              ))
-            }
+            {this.state.tags.length > 0 && this.state.tags.map((tag) => (
+              <option key={tag} value={tag}>{tag}</option>
+            ))}
           </select>
         </h2>
         {topics && topics.length > 0 && (
