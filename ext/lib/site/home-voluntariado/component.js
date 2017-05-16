@@ -103,11 +103,9 @@ class HomeVoluntariados extends Component {
           logo='/ext/lib/site/home-multiforum/voluntariado-icono.png'
           title='Voluntariado social'
           description='Las organizaciones sociales son parte central de la vida en nuestra ciudad. ¡Conocelas!' />
-        <div className='container'>
-          <p className='sub-sub-title'>Conocelas y sumate como voluntario o <a href='#'>Sumá tu ONG</a>.</p>
-        </div>
         <h2 className='filter'>
-          Ver las organizaciones en
+          Ver las organizaciones
+          {/*
           <select onChange={this.distritoFilterChange}>
             <option>todos los distritos</option>
             {
@@ -117,6 +115,7 @@ class HomeVoluntariados extends Component {
               ))
             }
           </select>
+          */}
           que trabajan sobre
           <select onChange={this.tagsFilterChange}>
             <option>todos los temas</option>
@@ -137,6 +136,13 @@ class HomeVoluntariados extends Component {
             </div>
           </div>
         )}
+        <div className='jumbotron add-ong'>
+          <div className='container'>
+            <h1 className='display-4'>¿Sos una ONG?</h1>
+            <p className='lead'>Si queres sumar tu ONG a este listado para poder contactarte con nuevos voluntarios, completá el siguiente formulario.</p>
+            <a className='btn btn-primary btn-lg' href='#'>Sumar mi ONG</a>
+          </div>
+        </div>
         {topics && <Footer />}
       </div>
     )
