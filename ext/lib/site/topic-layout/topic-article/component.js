@@ -5,7 +5,11 @@ import urlBuilder from 'lib/url-builder'
 import userConnector from 'lib/site/connectors/user'
 import Content from 'ext/lib/site/topic-layout/topic-article/content/component'
 import Comments from 'lib/site/topic-layout/topic-article/comments/component'
-import { SharerFacebook } from 'ext/lib/site/sharer'
+import Vote from 'lib/site/topic-layout/topic-article/vote/component'
+import Poll from 'lib/site/topic-layout/topic-article/poll/component'
+import Cause from 'lib/site/topic-layout/topic-article/cause/component'
+import PresupuestoShare from './presupuesto-share/component'
+import CommonShare from './common-share/component'
 
 class TopicArticle extends Component {
   constructor (props) {
@@ -38,11 +42,7 @@ class TopicArticle extends Component {
 
   render () {
     const { topic, forum, user } = this.props
-
-    const topicUrl = `${window.location.origin}${topic.url}`
-
-    const twitterDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
-
+    console.log(topic, forum)
     return (
       <div className='proyecto-container'>
         {this.state.showSidebar && (
@@ -62,26 +62,34 @@ class TopicArticle extends Component {
               <div className='row'>
                 <div className='col-12'>
                   {topic.clauses && <Content clauses={topic.clauses} />}
+
+                  {
+                    topic.action.method && topic.action.method === 'poll' && (
+                      <Poll
+                        topic={topic}
+                        canVoteAndComment={forum.privileges.canVoteAndComment} />
+                    )
+                  }
+                  {
+                    topic.action.method && topic.action.method === 'cause' && (
+                      <Cause
+                        topic={topic}
+                        canVoteAndComment={forum.privileges.canVoteAndComment} />
+                    )
+                  }
+
                 </div>
               </div>
             </div>
-            <div className='proyecto-share col-md-4'>
-              <div>
-                <span className='hashtag'>#YoVotoPorMiBarrio</span>
-                <span>Compartí con tus vecinos<br />este proyecto</span>
-                <div className='social-links'>
-                  <SharerFacebook
-                    className='fb'
-                    params={{
-                      picture: topic.coverUrl,
-                      link: window.location.href
-                    }} />
-                  <a
-                    target='_blank'
-                    href={`http://twitter.com/home?status=${twitterDesc}`}
-                    className='tw' />
-                </div>
-              </div>
+            <div className='col-md-4'>
+              {
+                forum.name === 'presupuesto'
+                  ? <PresupuestoShare
+                    topic={topic} />
+                  : <CommonShare
+                    topic={topic}
+                    type={forum.name} />
+              }
             </div>
           </div>
         </div>
@@ -101,7 +109,7 @@ function hideSidebar () {
 
 const Header = ({ topic }) => (
   <header
-    className='proyecto-container-header'
+    className={`proyecto-container-header ${!topic.coverUrl ? 'no-cover' : ''}`}
     style={topic.coverUrl ? {
       backgroundImage: `url(${topic.coverUrl})`
     } : null}>

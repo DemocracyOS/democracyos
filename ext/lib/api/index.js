@@ -8,6 +8,8 @@ const app = module.exports = express()
 
 app.use('/ext/api', require('./participatory-budget'))
 
+app.use('/api/v2', require('./fixedOpenTopicMethod.js'))
+
 app.use(function validationErrorHandler (err, req, res, next) {
   if (res.headersSent) return next(err)
   if (!(err instanceof validate.SchemaValidationError)) return next(err)
