@@ -21,8 +21,8 @@ export default ({ topic }) => (
       )}
       */}
       <br />
-      <Link to={topic.url} className='btn btn-block btn-secondary'>
-        Ver más info
+      <Link to={topic.url} className='btn btn-block btn-primary'>
+        Quiero participar
       </Link>
     </div>
   </div>
