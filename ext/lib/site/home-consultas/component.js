@@ -127,7 +127,7 @@ class HomeConsultas extends Component {
             </div>
           </div>
         )}
-        <Footer />
+        {topics && <Footer />}
       </div>
     )
   }

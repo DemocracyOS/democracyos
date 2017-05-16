@@ -13,11 +13,17 @@ export default ({ topic }) => (
       <h1 className='topic-card-title'>
         <Link to={topic.url}>{topic.mediaTitle}</Link>
       </h1>
+      {/*
       {topic.attrs && topic.attrs.description && (
         <p className='topic-card-description'>
           <Link to={topic.url}>{topic.attrs.description}</Link>
         </p>
       )}
+      */}
+      <br />
+      <Link to={topic.url} className='btn btn-block btn-secondary'>
+        Ver más info
+      </Link>
     </div>
   </div>
 )

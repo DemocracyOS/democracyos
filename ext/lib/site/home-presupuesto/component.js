@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
+import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
 import distritos from './distritos.json'
@@ -176,6 +177,7 @@ class HomePresupuesto extends Component {
             </div>
           </div>
         )}
+        {this.state.topicsAreas && this.state.topicsDistrito && <Footer />}
       </div>
     )
   }

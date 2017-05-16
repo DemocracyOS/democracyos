@@ -3,6 +3,7 @@ import bus from 'bus'
 import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
+import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
 
@@ -72,6 +73,7 @@ class HomeDesafios extends Component {
             </div>
           </div>
         )}
+        {topics && <Footer />}
       </div>
     )
   }

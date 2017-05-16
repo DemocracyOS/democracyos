@@ -80,7 +80,7 @@ class HomeIdeas extends Component {
             </div>
           </div>
         )}
-        <Footer />
+        {topics && <Footer />}
       </div>
     )
   }

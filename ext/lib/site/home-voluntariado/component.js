@@ -3,6 +3,7 @@ import bus from 'bus'
 import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
+import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
 
@@ -101,8 +102,7 @@ class HomeVoluntariados extends Component {
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/voluntariado-icono.png'
           title='Voluntariado social'
-          description='Las organizaciones sociales son parte central de la vida en nuestra ciudad.'>
-        </Cover>
+          description='Las organizaciones sociales son parte central de la vida en nuestra ciudad. ¡Conocelas!' />
         <div className='container'>
           <p className='sub-sub-title'>Conocelas y sumate como voluntario o <a href='#'>Sumá tu ONG</a>.</p>
         </div>
@@ -137,6 +137,7 @@ class HomeVoluntariados extends Component {
             </div>
           </div>
         )}
+        {topics && <Footer />}
       </div>
     )
   }
