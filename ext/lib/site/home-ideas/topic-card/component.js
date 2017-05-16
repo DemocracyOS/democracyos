@@ -19,7 +19,7 @@ export default ({ topic, onVote }) => (
       {topic.tags && topic.tags.length > 0 && (
         <div className='topic-card-tags'>
           {topic.tags.slice(0, 12).map((tag) => (
-            <span className='badge badge-default'>{tag}</span>
+            <span key={tag} className='badge badge-default'>{tag}</span>
           ))}
         </div>
       )}
@@ -36,7 +36,9 @@ export default ({ topic, onVote }) => (
         </button>
       )}
       {!topic.currentUser.action.supported && (
-        <button onClick={() => onVote(topic.id)} className='btn btn-block btn-primary'>
+        <button
+          onClick={() => onVote(topic.id)}
+          className='btn btn-block btn-primary'>
           Apoyar
         </button>
       )}

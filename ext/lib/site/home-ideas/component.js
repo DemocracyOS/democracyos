@@ -67,8 +67,7 @@ class HomeIdeas extends Component {
       })
     }
 
-    topicStore.support(id)
-      .catch((err) => { throw err })
+    topicStore.support(id).catch((err) => { throw err })
   }
 
   render () {
@@ -90,7 +89,10 @@ class HomeIdeas extends Component {
         {topics && topics.length > 0 && (
           <div className='container topics-container'>
             <div className='row'>
-              <div className='col-md-8'>
+              <div className='col-md-4 push-md-8'>
+                <TagsList forum={forum} />
+              </div>
+              <div className='col-md-8 pull-md-4'>
                 {topics.map((topic) => (
                   <TopicCard
                     onVote={this.handleVote}
@@ -98,9 +100,6 @@ class HomeIdeas extends Component {
                     forum={forum}
                     topic={topic} />
                 ))}
-              </div>
-              <div className='col-md-4'>
-                <TagsList forum={forum} />
               </div>
             </div>
           </div>
@@ -116,9 +115,9 @@ const TagsList = tagsConnector(({ tags }) => {
   if (tags && tags.length > 50) tags = tags.slice(0, 50)
 
   return tags && tags.length > 0 && (
-    <div className='topic-card-tags'>
+    <div className='forum-tags'>
       {tags.map((tag) => (
-        <span className='badge badge-default'>{tag}</span>
+        <span key={tag} className='badge badge-default'>{tag}</span>
       ))}
     </div>
   )
