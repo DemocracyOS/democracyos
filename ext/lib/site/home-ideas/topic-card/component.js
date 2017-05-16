@@ -3,12 +3,14 @@ import { Link } from 'react-router'
 
 export default ({ topic, onVote }) => (
   <div className='ext-topic-card ideas-topic-card'>
+    {/*
     {topic.coverUrl && (
       <Link
         to={topic.url}
         className='topic-card-cover'
         style={{ backgroundImage: `url(${topic.coverUrl})` }} />
     )}
+    */}
     <div className='topic-card-info'>
       <h1 className='topic-card-title'>
         <Link to={topic.url}>
