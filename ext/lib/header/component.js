@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link, withRouter } from 'react-router'
 import moment from 'moment'
 import config from 'lib/config'
 import userConnector from 'lib/site/connectors/user'
@@ -81,15 +81,27 @@ class Header extends Component {
   }
 }
 
-const Navigation = ({ onClick }) => (
+const Navigation = withRouter(({ router, onClick }) => (
   <div className='navigation'>
-    <Link onClick={onClick} to='/consultas'>Consultas</Link>
-    <Link onClick={onClick} to='/ideas'>Ideas</Link>
-    <Link onClick={onClick} to='/desafios'>Desafíos</Link>
-    <Link onClick={onClick} to='/presupuesto'>Presupuesto participativo</Link>
-    <Link onClick={onClick} to='/voluntariado'>Voluntariado Social</Link>
+    {Navigation.links.map(({ slug, title }) => (
+      <Link
+        key={slug}
+        className={router.isActive(`/${slug}`) ? 'active' : ''}
+        onClick={onClick}
+        to={`/${slug}`}>
+        {title}
+      </Link>
+    ))}
   </div>
-)
+))
+
+Navigation.links = [
+  { slug: 'consultas', title: 'Consultas' },
+  { slug: 'ideas', title: 'Ideas' },
+  { slug: 'desafios', title: 'Desafíos' },
+  { slug: 'presupuesto', title: 'Presupuesto participativo' },
+  { slug: 'voluntariado', title: 'Voluntariado Social' }
+]
 
 export default userConnector(Header)
 
