@@ -2,21 +2,29 @@ import React, { Component } from 'react'
 import { connect } from 'react-refetch'
 
 class TweetsFeed extends Component {
-  constructor (props) {
-    super(props)
+  state = {
+    tweets: []
+  }
 
-    this.state = {
-      tweets: []
-    }
+  componentDidMount () {
+    this.setState({
+      tweets: this.parseTweetsFromProps(this.props)
+    })
   }
 
   componentWillReceiveProps (props) {
+    this.setState({
+      tweets: this.parseTweetsFromProps(props)
+    })
+  }
+
+  parseTweetsFromProps (props) {
     const { tweetsFetch } = props
-    const tweets = tweetsFetch.fulfilled ? tweetsFetch.value : []
+    const tweets = tweetsFetch.fulfilled ? tweetsFetch.value.slice(0) : []
 
     while (tweets.length < 6) tweets.push(null)
 
-    this.setState({ tweets })
+    return tweets
   }
 
   render () {
@@ -73,21 +81,29 @@ class TweetsFeed extends Component {
 }
 
 export default connect((props) => {
+  // Temporarily hard-code results, twitter api is
+  // not bringing photos for all tweets
+  // https://github.com/RosarioCiudad/democracyos/issues/89
+  // return {
+  //   tweetsFetch: {
+  //     url: '/tweets',
+  //     then: (res) => ({
+  //       value: res.results.tweets.map((twt) => {
+  //         const media = twt.entities.media && twt.entities.media[0]
+  //         if (!media || !media.url) return false
+  //
+  //         return {
+  //           url: media.url,
+  //           image: media.media_url_https,
+  //           text: twt.text
+  //         }
+  //       }).filter((twt) => twt)
+  //     })
+  //   }
+  // }
   return {
     tweetsFetch: {
-      url: '/tweets',
-      then: (res) => ({
-        value: res.results.tweets.map((twt) => {
-          const media = twt.entities.media && twt.entities.media[0]
-          if (!media || !media.url) return false
-
-          return {
-            url: media.url,
-            image: media.media_url_https,
-            text: twt.text
-          }
-        }).filter((twt) => twt)
-      })
+      value: require('./tweets.json')
     }
   }
 })(TweetsFeed)
