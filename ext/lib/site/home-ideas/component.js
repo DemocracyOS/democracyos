@@ -5,9 +5,10 @@ import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
 import Cover from '../cover'
+import Footer from '../footer/component'
 import TopicCard from './topic-card/component'
 
-class HomeDesafios extends Component {
+class HomeIdeas extends Component {
   constructor (props) {
     super(props)
 
@@ -58,12 +59,12 @@ class HomeDesafios extends Component {
     const { forum, topics } = this.state
 
     return (
-      <div className='ext-home-desafios'>
+      <div className='ext-home-ideas'>
         <Cover
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/idea-icono.png'
           title='Ideas'
-          description='Proponé y apoya ideas.'>
+          description='Proponé y apoyá ideas.'>
           <a
             href='/ideas/admin/topics/create'
             className='btn btn-primary crear-idea'>
@@ -79,9 +80,10 @@ class HomeDesafios extends Component {
             </div>
           </div>
         )}
+        <Footer />
       </div>
     )
   }
 }
 
-export default userConnector(HomeDesafios)
+export default userConnector(HomeIdeas)

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 export default ({ topic }) => (
-  <div className='ext-topic-card desafios-topic-card'>
+  <div className='ext-topic-card ideas-topic-card'>
     {topic.coverUrl && (
       <Link
         to={topic.url}
@@ -16,7 +16,9 @@ export default ({ topic }) => (
     </div>
     <div className='topic-card-footer'>
       <div className='participants'>
-        <span className='icon-heart'></span> {topic.participants.length}
+        <span className='icon-heart' />
+        &nbsp;
+        {topic.participants.length}
       </div>
       <Link to={topic.url} className='btn btn-block btn-primary'>
         Apoyar
