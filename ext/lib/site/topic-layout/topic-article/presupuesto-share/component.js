@@ -3,8 +3,17 @@ import padStart from 'string.prototype.padstart'
 import { SharerFacebook } from 'ext/lib/site/sharer'
 
 export default function PresupuestoShare ({ topic, forum }) {
+  console.log(topic, forum)
   const topicUrl = `${window.location.origin}${topic.url}`
   const twDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
+  let state
+  if (topic.attrs && topic.attrs.state) {
+    state = forum.topicsAttrs
+      .find((attr) => attr.name === 'state')
+      .options
+      .find((attr) => attr.name === topic.attrs.state)
+      .title
+  }
   return (
     <div className='presupuesto-share'>
       {
@@ -18,7 +27,7 @@ export default function PresupuestoShare ({ topic, forum }) {
       {
         (topic.attrs.state || topic.attrs.budget) &&
           <div className='sharer-body'>
-            {topic.attrs.state && <span className='state-proyecto'>{`${forum.topicsAttrs[0].title}: ${topic.attrs.state}`}</span>}
+            {topic.attrs.state && <span className='state-proyecto'>{`${forum.topicsAttrs[0].title}: ${state}`}</span>}
             {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
           </div>
       }
