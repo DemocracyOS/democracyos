@@ -42,7 +42,6 @@ class TopicArticle extends Component {
 
   render () {
     const { topic, forum, user } = this.props
-    console.log(topic, forum)
     return (
       <div className='proyecto-container'>
         {this.state.showSidebar && (
@@ -51,7 +50,7 @@ class TopicArticle extends Component {
         <Header topic={topic} />
         <div className='proyecto-main container'>
           <div className='row'>
-            <div className='proyecto-content col-md-8'>
+            <div className='proyecto-content col-lg-8'>
               <div className='row'>
                 <div className='col-12'>
                   <Link className='volver' to={forum.url}>
@@ -81,10 +80,11 @@ class TopicArticle extends Component {
                 </div>
               </div>
             </div>
-            <div className='col-md-4'>
+            <div className='col-lg-4'>
               {
                 forum.name === 'presupuesto'
                   ? <PresupuestoShare
+                    forum={forum}
                     topic={topic} />
                   : <CommonShare
                     topic={topic}

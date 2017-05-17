@@ -1,23 +1,27 @@
 import React from 'react'
+import padStart from 'string.prototype.padstart'
 import { SharerFacebook } from 'ext/lib/site/sharer'
 
-export default function PresupuestoShare ({ topic }) {
+export default function PresupuestoShare ({ topic, forum }) {
   const topicUrl = `${window.location.origin}${topic.url}`
   const twDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
   return (
     <div className='presupuesto-share'>
-      <div className='sharer-header'>
-        <span className='numero-proyecto'>{`# ${topic.attrs.number}`}</span>
-        <span className='votos-proyecto'>{`${topic.attrs.votes} VOTOS`}</span>
-        {
-          topic.attrs.winner &&
-          <span className='winner-proyecto'>PROYECTO GANADOR</span>
-        }
-      </div>
-      <div className='sharer-body'>
-        <span className='state-proyecto'>{`Estado: ${topic.attrs.state}`}</span>
-        <span className='presu-proyecto'>{`Presupuesto: ${topic.attrs.budget}`}</span>
-      </div>
+      {
+        topic.attrs &&
+          <div className='sharer-header'>
+            {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
+            {topic.attrs.votes && <span className='votos-proyecto'>{`${prettyDecimals(topic.attrs.votes)} VOTOS`}</span>}
+            <span className='winner-proyecto'>Proyecto {topic.attrs && topic.attrs.winner ? 'ganador' : 'presentado'}</span>
+          </div>
+      }
+      {
+        (topic.attrs.state || topic.attrs.budget) &&
+          <div className='sharer-body'>
+            {topic.attrs.state && <span className='state-proyecto'>{`${forum.topicsAttrs[0].title}: ${topic.attrs.state}`}</span>}
+            {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
+          </div>
+      }
       <div className='social-links'>
         <span className='hashtag'>#YoVotoPorMiBarrio</span>
         <SharerFacebook
@@ -33,4 +37,26 @@ export default function PresupuestoShare ({ topic }) {
       </div>
     </div>
   )
+}
+
+function prettyNumber (number) {
+  return `#${padStart(number, 3, '0')}`
+}
+
+function prettyPrice (number) {
+  return `$${prettyDecimals(number)}`
+}
+
+function prettyDecimals (number) {
+  if (typeof number === 'number') number = String(number)
+  if (typeof number !== 'string') return ''
+  if (number.length <= 3) return number
+
+  number = number.split('').reverse().join('').match(/[0-9]{1,3}/g)
+
+  return (number || [])
+    .join('.')
+    .split('')
+    .reverse()
+    .join('')
 }

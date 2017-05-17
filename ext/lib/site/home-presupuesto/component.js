@@ -118,6 +118,7 @@ class HomePresupuesto extends Component {
   }
 
   render () {
+    console.log(this.state.forum && this.state.forum.topicsAttrs)
     // <a href='#' className='find-district-link'>
     //   <i className='icon-location-pin'></i>
     //   <span>¿Cuál es mi distrito?</span>
