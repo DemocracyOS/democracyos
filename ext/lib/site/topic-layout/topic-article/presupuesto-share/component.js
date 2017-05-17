@@ -3,7 +3,6 @@ import padStart from 'string.prototype.padstart'
 import { SharerFacebook } from 'ext/lib/site/sharer'
 
 export default function PresupuestoShare ({ topic, forum }) {
-  console.log(topic, forum)
   const topicUrl = `${window.location.origin}${topic.url}`
   const twDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
   let state
