@@ -86,7 +86,7 @@ const Navigation = withRouter(({ router, onClick }) => (
     {Navigation.links.map(({ slug, title }) => (
       <Link
         key={slug}
-        className={router.isActive(`/${slug}`) ? 'active' : ''}
+        className={!~window.location.pathname.indexOf(slug) ? '' : 'active'}
         onClick={onClick}
         to={`/${slug}`}>
         {title}
