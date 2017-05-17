@@ -87,7 +87,7 @@ class HomeVoluntariados extends Component {
         <h2 className='filter'>
           Ver las organizaciones que trabajan sobre
           <select onChange={this.tagsFilterChange}>
-            <option>todos los temas</option>
+            <option value='ALL'>todos los temas</option>
             {this.state.tags.length > 0 && this.state.tags.map((tag) => (
               <option key={tag} value={tag}>{tag}</option>
             ))}
