@@ -34,12 +34,12 @@ export default ({ forum, topic }) => {
               <div className='closing-at'>
                 <span className='icon-clock' />
                 {' '}
-                {topic.closed && (
+                {topic.status === 'closed' && (
                   <span>
                     Cerró el {moment(topic.createdAt).format('D/M/YY')}
                   </span>
                 )}
-                {!topic.closed && (
+                {topic.status === 'open' && (
                   <span>
                     Cierra <Timeago date={topic.closingAt} />
                   </span>
