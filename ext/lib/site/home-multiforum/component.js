@@ -8,17 +8,12 @@ import Cover from './cover/component'
 import Steps from './steps/component'
 
 export default userConnector(({ user }) => {
-  const coverActionLink = user.state.rejected ? '/#participar' : '/consultas'
-
   return (
     <div className='ext-home-multiforum'>
-      <Cover actionLink={coverActionLink} />
-      {user.state.rejected && (
-        <Anchor id='participar'>
-          <Steps />
-        </Anchor>
-      )}
-      <Anchor className='info' id={user.state.rejected ? '' : 'participar'}>
+      <Cover onClick={() => Anchor.goTo('participar')} />
+      <Anchor id='participar' />
+      {user.state.rejected && <Steps />}
+      <Anchor className='info'>
         <div className='action action-consulta'>
           <div className='action-img' />
           <div className='action-content'>

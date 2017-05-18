@@ -4,7 +4,7 @@ import videos from './videos.json'
 
 const video = videos[Math.floor(Math.random() * videos.length)]
 
-export default () => (
+export default ({ onClick }) => (
   <div className='ext-home-cover' style={{
     backgroundImage: `url("${video.image}")`
   }}>
@@ -26,11 +26,11 @@ export default () => (
     <div className='container'>
       <h1>Queremos que seas parte de las decisiones</h1>
       <h2>Las opiniones y las acciones colectivas<br />mejoran la ciudad.</h2>
-      <Link to='/#participar' className='btn btn-primary btn-lg'>
+      <button onClick={onClick} className='btn btn-primary btn-lg'>
         Participá
-      </Link>
+      </button>
       <div className='follow-arrow'>
-        <Link to='/#participar' className='icon-arrow-down' />
+        <span onClick={onClick} className='icon-arrow-down' />
       </div>
     </div>
   </div>

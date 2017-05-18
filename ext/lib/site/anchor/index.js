@@ -4,42 +4,46 @@ import debounce from 'lodash.debounce'
 import jump from 'jump.js'
 
 export default class Anchor extends Component {
-  constructor (props) {
-    super(props)
+  static anchors = {}
 
-    this.handleHashChange = debounce(this.handleHashChange, 200)
+  static goTo (id) {
+    if (this.anchors[id]) {
+      jump(this.anchors[id], {
+        duration: 400
+      })
+    }
   }
 
+  static start () {
+    if (this._stop) return
+    this._stop = browserHistory.listen(this.handleHashChange)
+  }
+
+  static stop () {
+    if (this._stop) this._stop()
+    delete this._stop
+  }
+
+  static handleHashChange = debounce(({ hash }) => {
+    if (!hash) return
+    Anchor.goTo(hash.slice(1))
+  }, 200)
+
   componentDidMount () {
-    if (this.props.id) {
-      this.removeHistoryListener = browserHistory.listen(this.handleHashChange)
-    }
+    Anchor.start()
   }
 
   componentWillUnmount () {
-    if (typeof this.removeHistoryListener === 'function') {
-      this.removeHistoryListener()
-    }
-  }
-
-  handleHashChange = ({ hash }) => {
-    if (!hash) return
-    const id = hash.slice(1)
-    if (id === this.props.id) this.scroll()
-  }
-
-  scroll = () => {
-    jump(this.el, {
-      duration: 400
-    })
+    const { id } = this.props
+    if (id && Anchor.anchors[id]) delete Anchor.anchors[id]
   }
 
   render () {
-    const props = this.props
+    const { id, children } = this.props
 
     return (
-      <div {...props} id={props.id} ref={(el) => { this.el = el }}>
-        { props.children }
+      <div {...this.props} id={id} ref={(el) => { Anchor.anchors[id] = el }}>
+        {children}
       </div>
     )
   }
