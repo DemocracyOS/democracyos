@@ -10,26 +10,79 @@ import Cover from '../cover'
 import Footer from '../footer/component'
 import TopicCard from './topic-card/component'
 
+const filters = {
+  open: {
+    text: 'Abiertas',
+    filter: (topic) => topic.open,
+    emptyMsg: 'No se encontraron ideas.'
+  },
+  closed: {
+    text: 'Archivadas',
+    filter: (topic) => topic.closed,
+    emptyMsg: 'No se encontraron ideas.'
+  }
+}
+
+const sorts = {
+  new: {
+    text: 'Más Nuevas',
+    sort: '-createdAt'
+  },
+  pop: {
+    text: 'Más Populares',
+    sort: '-participantsCount'
+  }
+}
+
+function filter (key, items = []) {
+  return items.filter(filters[key].filter)
+}
+
+const ListTools = ({ onChangeFilter, onChangeSort, activeSort, activeFilter }) => (
+  <div className='topics-filter container'>
+    {Object.keys(sorts).map((key) => (
+      <button
+        key={key}
+        className={`btn btn-secondary btn-sm ${activeSort === key ? 'active' : ''}`}
+        onClick={() => onChangeSort(key)}>
+        {sorts[key].text}
+      </button>
+    ))}
+    {Object.keys(filters).map((key) => (
+      <button
+        key={key}
+        className={`btn btn-secondary btn-sm ${activeFilter === key ? 'active' : ''}`}
+        onClick={() => onChangeFilter(key)}>
+        {filters[key].text}
+      </button>
+    ))}
+  </div>
+)
+
 class HomeIdeas extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
       forum: null,
-      topics: null
+      topics: null,
+      filter: 'open',
+      sort: 'pop'
     }
   }
 
   componentDidMount = () => {
+    console.log(sorts[this.state.sort].sort)
     forumStore.findOneByName('ideas')
       .then((forum) => Promise.all([
         forum,
-        topicStore.findAll({ forum: forum.id })
+        topicStore.findAll({ forum: forum.id, sort: sorts[this.state.sort].sort })
       ]))
       .then(([forum, topics]) => {
+        console.log(filter(this.state.filter, topics))
         this.setState({
           forum,
-          topics
+          topics: filter(this.state.filter, topics)
         })
 
         bus.on('topic-store:update:all', this.fetchTopics)
@@ -52,9 +105,25 @@ class HomeIdeas extends Component {
   handleFilterChange = (key) => {
     topicStore.findAll({ forum: this.state.forum.id })
       .then((topics) => {
-        this.setState({ topics })
+        this.setState({
+          filter: key,
+          topics: filter(key, topics)
+        })
       })
       .catch((err) => { throw err })
+  }
+
+  handleSortChange = (key) => {
+    topicStore.findAll({
+      forum: this.state.forum.id,
+      sort: sorts[key].sort
+    }).then((topics) => {
+      this.setState({
+        filter: key,
+        topics: filter(this.state.filter, topics)
+      })
+    })
+    .catch((err) => { throw err })
   }
 
   handleVote = (id) => {
@@ -86,6 +155,11 @@ class HomeIdeas extends Component {
             {t('proposal-article.create')}
           </a>
         </Cover>
+        <ListTools
+          activeSort={this.state.sort}
+          activeFilter={this.state.filter}
+          onChangeSort={this.handleSortChange}
+          onChangeFilter={this.handleFilterChange} />
         {topics && topics.length > 0 && (
           <div className='container topics-container'>
             <div className='row'>
