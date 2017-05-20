@@ -1,5 +1,7 @@
+- function te (str) { return t(str) !== str }
+  
 #topic-wrapper(class=forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'collaborative' : '')
-  - if (tags.length == 0)
+  - if (tags.length === 0)
     if (user.staff)
       p.alert.alert-danger.text-center
         != t('admin-topics-form.alert.no-tags')
@@ -27,9 +29,13 @@
         ul.form-messages
         .form-group
           label= t('admin-topics-form.label.mediaTitle')
+          - if (te('admin-topics-form.description.mediaTitle'))
+            span.help-text= t('admin-topics-form.description.mediaTitle')
           input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
         .form-group
           label= t('admin-topics-form.label.tag')
+          - if (te('admin-topics-form.description.tag'))
+            span.help-text= t('admin-topics-form.description.tag')
           select.form-control(name='tag', validate='required')
             - var topicTag = typeof topic.tag === 'string' ? topic.tag : (topic.tag && topic.tag.id)
             - each tag in tags
@@ -37,6 +43,8 @@
                 = tag.name
         .form-group
           label= t('admin-topics-form.label.tags')
+          - if (te('admin-topics-form.description.tags'))
+            span.help-text= t('admin-topics-form.description.tags')
           div.tags-autocomplete
         - if (forum.topicsAttrs.length > 0)
           fieldset.attrs-wrapper
@@ -44,18 +52,28 @@
             div(data-attrs)
         .form-group
           label= t('admin-topics-form.label.topicId')
-          input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.label.topicId'), value=topic.topicId)
+          - if (te('admin-topics-form.description.topicId'))
+            span.help-text= t('admin-topics-form.description.topicId')
+          input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.placeholder.topicId'), value=topic.topicId)
         .form-group
-          label= t('admin-topics-form.label.cover') + ' URL'
-          input.form-control(type='text', maxlength='254', id='coverUrl', name='coverUrl', placeholder=t('admin-topics-form.placeholder.cover'), value=topic.coverUrl, validate='url')
+          label= t('admin-topics-form.label.coverUrl')
+          - if (te('admin-topics-form.description.coverUrl'))
+            span.help-text= t('admin-topics-form.description.coverUrl')
+          input.form-control(type='text', maxlength='254', id='coverUrl', name='coverUrl', placeholder=t('admin-topics-form.placeholder.coverUrl'), value=topic.coverUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.author')
-          input.form-control(type='text', maxlength='100', id='author', name='author', placeholder='John Doe', value=topic.author, validate='author')
+          - if (te('admin-topics-form.description.author'))
+            span.help-text= t('admin-topics-form.description.author')
+          input.form-control(type='text', maxlength='100', id='author', name='author', placeholder=t('admin-topics-form.placeholder.author'), value=topic.author, validate='author')
         .form-group
-          label= t('admin-topics-form.label.author') + ' URL'
-          input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder='http://en.wikipedia.org/wiki/John_Doe', value=topic.authorUrl, validate='url')
+          label= t('admin-topics-form.label.authorUrl')
+          - if (te('admin-topics-form.description.authorUrl'))
+            span.help-text= t('admin-topics-form.description.authorUrl')
+          input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder=t('admin-topics-form.placeholder.authorUrl'), value=topic.authorUrl, validate='url')
         .form-group
           label= t('admin-topics-form.label.action')
+          - if (te('admin-topics-form.description.action'))
+            span.help-text= t('admin-topics-form.description.action')
           select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '')
             option(value='')= t('admin-topics-form.action.none')
             option(value='vote')= t('admin-topics-form.action.vote')
@@ -65,6 +83,8 @@
           - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
           - var pollOptions = topic.action && topic.action.pollOptions
           label= t('admin-topics-form.label.poll-options')
+          - if (te('admin-topics-form.description.poll-options'))
+            span.help-text= t('admin-topics-form.description.poll-options')
           - if (pollOpened)
             p.alert.alert-warning
               = t('admin-topics-form.message.cant-edit-action')
@@ -75,12 +95,18 @@
 
         .form-group
           label= t('admin-topics-form.label.source')
+          - if (te('admin-topics-form.description.source'))
+            span.help-text= t('admin-topics-form.description.source')
           input.form-control(type='text', maxlength='200', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
         .form-group
           label= t('admin-topics-form.label.summary')
+          - if (te('admin-topics-form.description.summary'))
+            span.help-text= t('admin-topics-form.description.summary')
           textarea.form-control(name='body')= topic.body
         .form-group.closingAt
           label= t('admin-topics-form.label.closingAt')
+          - if (te('admin-topics-form.description.closingAt'))
+            span.help-text= t('admin-topics-form.description.closingAt')
           - var closingAt = ''
           - var closingAtTime = ''
           - if (topic.closingAt)
@@ -96,6 +122,8 @@
               input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
         .form-group
           label=t('admin-topics-form.label.resources')
+          - if (te('admin-topics-form.description.resources'))
+            span.help-text= t('admin-topics-form.description.resources')
           .topic-links
             - // create a disabled link to force array value
             input(type='hidden', name='links[][_id]', disabled)
