@@ -10,6 +10,10 @@
     color #d95e59
     a
       color #952722
+
+  .remove-button
+    color: #D9534F
+
   .create-tag
     text-transform none
     padding-top 0.8em
@@ -58,42 +62,24 @@
       textarea
         min-height 180px
 
-      a.add-link
-        background #16a085
-
       .add-link-forbidden
         display block
         width 100%
         color #F00
         text-align center
 
-    .topic-links
-      overflow hidden
+  .topic-link
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    margin-bottom .5em
 
-    .topic-link
-      display block
-      position relative
-      float left
-      width 100%
+    .link-text,
+    .link-url
+      flex-grow: 2
 
-      .link-row
-        position relative
-        width 100%
-        margin 0
-        padding 0 0 20px
-
-        .link-group
-          display inline-block
-          position relative
-          width 49%
-          margin 0
-          padding 0
-
-          & + .link-group
-            margin-left: 2%
-
-      h4
-        margin-top 0
+    .link-text
+      margin-right: .5em
 
   .commands
     margin-top 30px

@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Étiquette",
   "admin-topics-form.label.topicId": "Identifiant officiel",
   "admin-topics-form.label.votable": "Votable",
-  "admin-topics-form.message.add-clause-forbidden": "La loi doit être sauvegardée avant d'ajouter des articles",
-  "admin-topics-form.message.add-link-forbidden": "La loi doit être sauvegardée avant d'ajouter des liens",
   "admin-topics-form.message.onsuccess": "Loi a été sauvegardée avec succès",
   "admin-topics-form.message.private-status": "Cette loi est un brouillon",
   "admin-topics-form.message.public-status": "Cette loi est ouverte au public",

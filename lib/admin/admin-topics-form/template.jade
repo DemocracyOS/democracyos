@@ -117,7 +117,7 @@
             .form-group
               input.form-control(name='closingAt', readonly=true, value=closingAt, placeholder='yyyy/mm/dd')
               input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
-            button.btn.btn-default(type='button', data-clear-closing-at)
+            button.btn.btn-link.remove-button(type='button', data-clear-closing-at)
               i.icon-trash
 
         .form-group
@@ -130,10 +130,10 @@
             input(type='hidden', name='links[][text]', disabled)
             input(type='hidden', name='links[][url]', disabled)
             - if (topic.links && topic.links.length)
-              - each link, id in topic.links
+              - each link, index in topic.links
                 include link
           div
-            a.add-link.btn.btn-info(href='#')
+            button.add-link.btn.btn-link(type='button')
               = '+ ' + t('admin-topics-form.button.add-link')
         input.btn.btn-success.hide(type='submit', value=t('admin-topics-form.button.submit'))
     include commands
