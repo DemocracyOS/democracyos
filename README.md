@@ -43,8 +43,8 @@ See [CONTRIBUTORS.md](https://github.com/DemocracyOS/app/blob/master/CONTRIBUTOR
 We support real browsers and IE10+
 
 ## Acknowledgements
-Tag icons made by Yannick from [flaticon.com](http://www.flaticon.com) licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/).
+Icons made by [Jamal Jama](https://twitter.com/byjml) and [Ahmad Firoz](https://twitter.com/firoz_usf) from [simplelineicons.com](http://simplelineicons.com/).
 
 ## License
 
-DemocracyOS is open source software under the GPL v3.0 license. Please see full terms in the [LICENSE.txt](LICENSE) file.
+DemocracyOS is open source software under the GPL v3.0 license. Please see full terms in the [LICENSE](LICENSE) file.
