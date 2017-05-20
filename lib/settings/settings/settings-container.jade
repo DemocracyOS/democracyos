@@ -3,13 +3,11 @@
     .sidebar-container
       ul.settings-menu
         li.heading= t('settings.title')
-        li: a(href="/settings/profile")= t('settings.profile')
-        - if (!config.facebookSignin)
-          li: a(href="/settings/password")= t('password')
-        li: a(href="/settings/sessions", style="display: none;")= t('settings.sessions')
-        li: a(href="/settings/notifications")= t('settings.notifications')
+        li: a(href='/settings/profile')= t('settings.profile')
+        li: a(href='/settings/password')= t('password')
+        li: a(href='/settings/notifications')= t('settings.notifications')
         - if (config.multiForum && user.privileges && user.privileges.canManage)
-          li: a(href="/settings/forums")= t('settings.sidebar.forums')
+          li: a(href='/settings/forums')= t('settings.sidebar.forums')
         - if (user.staff)
-          li: a(href="/settings/user-badges")= t('settings.user-badges')
+          li: a(href='/settings/user-badges')= t('settings.user-badges')
     .settings-content
