@@ -49,8 +49,6 @@
   "admin-topics-form.label.tag": "Etichetă",
   "admin-topics-form.label.topicId": "Identificator Oficial",
   "admin-topics-form.label.votable": "Votabil",
-  "admin-topics-form.message.add-clause-forbidden": "Subiectul de discuții trebuie salvat pentru a începe să adaugi articole",
-  "admin-topics-form.message.add-link-forbidden": "Subiectul de discuții trebuie salvat înaintea adaugarii de linkuri",
   "admin-topics-form.message.onsuccess": "Subiect de discuții salvat cu succes",
   "admin-topics-form.message.private-status": "Acest subiect de discuții este o ciornă",
   "admin-topics-form.message.public-status": "Acest subiect de discuții este publicat",

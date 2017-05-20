@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Tägi",
   "admin-topics-form.label.topicId": "Virallinen ID",
   "admin-topics-form.label.votable": "Votable",
-  "admin-topics-form.message.add-clause-forbidden": "Sinun täytyy tallentaa laki lisätäksesi ehtoja",
-  "admin-topics-form.message.add-link-forbidden": "Lain täytyy tallentaa ennen kuin lisäät linkkejä",
   "admin-topics-form.message.onsuccess": "Laki tallennettu",
   "admin-topics-form.message.private-status": "Tämä laki on vedos",
   "admin-topics-form.message.public-status": "Tämä laki on julkinen",

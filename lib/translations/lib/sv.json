@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Tagg",
   "admin-topics-form.label.topicId": "Officiell ID",
   "admin-topics-form.label.votable": "Röstningsbar",
-  "admin-topics-form.message.add-clause-forbidden": "Lagförslaget måste sparas för att kunna lägga till klausuler",
-  "admin-topics-form.message.add-link-forbidden": "Lagförslaget måste sparas för att kunna lägga till länk",
   "admin-topics-form.message.onsuccess": "Lag sparad",
   "admin-topics-form.message.private-status": "Detta topic är ett utkast",
   "admin-topics-form.message.public-status": "Detta lagförslag är publicerat offentligt",

@@ -102,8 +102,6 @@
     "admin-topics-form.label.tag": "Etiketë",
     "admin-topics-form.label.topicId": "Id zyrtar",
     "admin-topics-form.label.votable": "Votable",
-    "admin-topics-form.message.add-clause-forbidden": "Tema duhet të ruhen për të filluar duke shtuar klauzola",
-    "admin-topics-form.message.add-link-forbidden": "Tema duhet të ruhen para se të shtoni links",
     "admin-topics-form.message.onsuccess": "Tema ruajtur me sukses",
     "admin-topics-form.message.private-status": "Kjo temë është një draft",
     "admin-topics-form.message.public-status": "Kjo temë është publikuar në publik",

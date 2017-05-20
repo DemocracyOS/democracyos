@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Commissione",
   "admin-topics-form.label.topicId": "Riferimento",
   "admin-topics-form.label.votable": "Votabile",
-  "admin-topics-form.message.add-clause-forbidden": "L'argomento deve essere salvato prima di aggiungere clausole",
-  "admin-topics-form.message.add-link-forbidden": "L'argomento deve essere salvato prima di aggiungere link",
   "admin-topics-form.message.onsuccess": "Argomento salvato con successo",
   "admin-topics-form.message.private-status": "Questo argomento è solo una bozza",
   "admin-topics-form.message.public-status": "Questo argomento è aperto al pubblico",

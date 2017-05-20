@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Tag",
   "admin-topics-form.label.topicId": "Offizielle Bezeichnung",
   "admin-topics-form.label.votable": "Votable",
-  "admin-topics-form.message.add-clause-forbidden": "Gesetz muss erst gespeichert werden, bevor Artikel hinzugefügt werden können",
-  "admin-topics-form.message.add-link-forbidden": "Thema muss vor Hinzufügen von Links gespeichert werden",
   "admin-topics-form.message.onsuccess": "Gesetz erfolgreich gespeichert",
   "admin-topics-form.message.private-status": "Dieses Gesetz liegt bisher nur im Entwurf vor",
   "admin-topics-form.message.public-status": "Dieses Gesetz ist öffentlich zugänglich",

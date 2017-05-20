@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Etiquete",
   "admin-topics-form.label.topicId": "Id oficial",
   "admin-topics-form.label.votable": "Votable",
-  "admin-topics-form.message.add-clause-forbidden": "La llei ha de ser guardat per començar a afegir clàusules",
-  "admin-topics-form.message.add-link-forbidden": "Law must be saved before adding links",
   "admin-topics-form.message.onsuccess": "Law successfuly saved",
   "admin-topics-form.message.private-status": "Aquesta llei és un projecte",
   "admin-topics-form.message.public-status": "Aquesta llei es publica en públic",

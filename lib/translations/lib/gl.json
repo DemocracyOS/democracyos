@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Comisión",
   "admin-topics-form.label.topicId": "Identificación oficial",
   "admin-topics-form.label.votable": "Votable",
-  "admin-topics-form.message.add-clause-forbidden": "A lei debe gardarse antes de agregar artigos",
-  "admin-topics-form.message.add-link-forbidden": "A lei debe gardarse antes de agregar links",
   "admin-topics-form.message.onsuccess": "Lei gardada exitosamente",
   "admin-topics-form.message.private-status": "Esta lei é un borrador",
   "admin-topics-form.message.public-status": "Esta lei está aberta ao público",

@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Ключове слово",
   "admin-topics-form.label.topicId": "Офіційний Ідентифікатор",
   "admin-topics-form.label.votable": "Можна голосувати",
-  "admin-topics-form.message.add-clause-forbidden": "Закон повинен бути збережений, перш ніж почати додавати поправки",
-  "admin-topics-form.message.add-link-forbidden": "Закон повинен бути збережений, перш ніж додавати посилання",
   "admin-topics-form.message.onsuccess": "Закон успішно збережений",
   "admin-topics-form.message.private-status": "Цей закон ще в проекті",
   "admin-topics-form.message.public-status": "Цей закон опублікований для громадян",

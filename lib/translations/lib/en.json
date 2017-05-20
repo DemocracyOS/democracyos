@@ -1,4 +1,6 @@
 {
+  "admin-topics-form.placeholder.links.text": "The reference title",
+  "admin-topics-form.placeholder.links.url": "https://some-link-url.com",
   "404.back-to-democracyos": "Go back to DemocracyOS",
   "404.go-back-to": "go back to",
   "404.not-exists": "This page does not exist",
@@ -107,8 +109,6 @@
   "admin-topics-form.label.tags": "Tags",
   "admin-topics-form.label.topicId": "Official Id",
   "admin-topics-form.label.votable": "Votable",
-  "admin-topics-form.message.add-clause-forbidden": "Topic must be saved to start adding clauses",
-  "admin-topics-form.message.add-link-forbidden": "Topic must be saved before adding links",
   "admin-topics-form.message.cant-edit-action": "There are votes already casted, options can't be modified after that.",
   "admin-topics-form.message.onsuccess": "Topic successfuly saved",
   "admin-topics-form.message.private-status": "This topic is a draft",

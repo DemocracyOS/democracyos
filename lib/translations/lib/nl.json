@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Label",
   "admin-topics-form.label.topicId": "Wetboek/wetsartikel",
   "admin-topics-form.label.votable": "Votable",
-  "admin-topics-form.message.add-clause-forbidden": "De wet moet opgeslagen zijn voordat je een bepaling kunt toevoegen",
-  "admin-topics-form.message.add-link-forbidden": "Onderwerp moeten worden opgeslagen voordat het toevoegen van links",
   "admin-topics-form.message.onsuccess": "De wet is opgeslagen",
   "admin-topics-form.message.private-status": "Dit is een conceptwet",
   "admin-topics-form.message.public-status": "De wet is gepubliceerd",

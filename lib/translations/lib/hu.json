@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Címke",
   "admin-topics-form.label.topicId": "Hivatalos azonosító",
   "admin-topics-form.label.votable": "Szavazhatsz rá",
-  "admin-topics-form.message.add-clause-forbidden": "A témát először mentsd el, csak utána lehet kiegészítéseket hozzáadni.",
-  "admin-topics-form.message.add-link-forbidden": "A témát először mentsd el, csak utána lehet linkeket hozzáadni.",
   "admin-topics-form.message.onsuccess": "A témát sikeresen elmentetted.",
   "admin-topics-form.message.private-status": "Ez a téma egy vázlat.",
   "admin-topics-form.message.public-status": "Ezt a témát nyilvánossá tetted.",

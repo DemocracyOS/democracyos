@@ -48,8 +48,6 @@
   "admin-topics-form.label.tag": "Etiqueta",
   "admin-topics-form.label.topicId": "Identificação oficial",
   "admin-topics-form.label.votable": "Votável",
-  "admin-topics-form.message.add-clause-forbidden": "Você deve salvar a lei antes de adicionar artigos",
-  "admin-topics-form.message.add-link-forbidden": "Você deve salvar a lei antes de adicionar um link",
   "admin-topics-form.message.onsuccess": "Lei salva com sucesso",
   "admin-topics-form.message.private-status": "Esta lei é um rascunho",
   "admin-topics-form.message.public-status": "Está lei está aberta ao público",
