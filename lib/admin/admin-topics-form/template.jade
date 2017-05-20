@@ -113,19 +113,19 @@
             - closingAt = new Date(topic.closingAt)
             - var closingAtTime = moment(closingAt).format('H:mm')
             - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
-          div
-            .input-group
-              input.form-control(name='closingAt', readonly=true, value=closingAt)
-              span.input-group-addon.clear-closingAt
-                i.glyphicon.glyphicon-remove
-            .input-group
+          .form-inline
+            .form-group
+              input.form-control(name='closingAt', readonly=true, value=closingAt, placeholder='yyyy/mm/dd')
               input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
+            button.btn.btn-default(type='button', data-clear-closing-at)
+              i.icon-trash
+
         .form-group
           label=t('admin-topics-form.label.resources')
           - if (te('admin-topics-form.description.resources'))
             span.help-text= t('admin-topics-form.description.resources')
           .topic-links
-            - // create a disabled link to force array value
+            - // create a disabled link to force empty array value
             input(type='hidden', name='links[][_id]', disabled)
             input(type='hidden', name='links[][text]', disabled)
             input(type='hidden', name='links[][url]', disabled)

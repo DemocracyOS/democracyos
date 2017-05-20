@@ -85,7 +85,7 @@
   "admin-topics-form.description.action": "Acción para ser tomada en base al contenido del tema, es opcional, y se puede elegir por votación, encuesta, etc",
   "admin-topics-form.description.author": "",
   "admin-topics-form.description.authorUrl": "",
-  "admin-topics-form.description.closingAt": "Si el tema posee fecha de cierre, luego de la fecha marcada, ningún usuario va a poder votar",
+  "admin-topics-form.description.closingAt": "Si el tema posee fecha de cierre, luego de la fecha marcada ningún usuario podrá votar",
   "admin-topics-form.description.coverUrl": "",
   "admin-topics-form.description.mediaTitle": "",
   "admin-topics-form.description.poll-options": "",
