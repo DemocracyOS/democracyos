@@ -13,12 +13,12 @@ import TopicCard from './topic-card/component'
 const filters = {
   open: {
     text: 'Abiertas',
-    filter: (topic) => topic.open,
+    filter: (topic) => topic.status === 'open',
     emptyMsg: 'No se encontraron ideas.'
   },
   closed: {
     text: 'Archivadas',
-    filter: (topic) => topic.closed,
+    filter: (topic) => topic.status === 'closed',
     emptyMsg: 'No se encontraron ideas.'
   }
 }
@@ -72,14 +72,12 @@ class HomeIdeas extends Component {
   }
 
   componentDidMount = () => {
-    console.log(sorts[this.state.sort].sort)
     forumStore.findOneByName('ideas')
       .then((forum) => Promise.all([
         forum,
         topicStore.findAll({ forum: forum.id, sort: sorts[this.state.sort].sort })
       ]))
       .then(([forum, topics]) => {
-        console.log(filter(this.state.filter, topics))
         this.setState({
           forum,
           topics: filter(this.state.filter, topics)
@@ -119,7 +117,7 @@ class HomeIdeas extends Component {
       sort: sorts[key].sort
     }).then((topics) => {
       this.setState({
-        filter: key,
+        sort: key,
         topics: filter(this.state.filter, topics)
       })
     })
@@ -160,24 +158,29 @@ class HomeIdeas extends Component {
           activeFilter={this.state.filter}
           onChangeSort={this.handleSortChange}
           onChangeFilter={this.handleFilterChange} />
-        {topics && topics.length > 0 && (
-          <div className='container topics-container'>
-            <div className='row'>
-              <div className='col-md-4 push-md-8'>
-                <TagsList forum={forum} />
-              </div>
-              <div className='col-md-8 pull-md-4'>
-                {topics.map((topic) => (
-                  <TopicCard
-                    onVote={this.handleVote}
-                    key={topic.id}
-                    forum={forum}
-                    topic={topic} />
-                ))}
-              </div>
+        <div className='container topics-container'>
+          <div className='row'>
+            <div className='col-md-4 push-md-8'>
+              <TagsList forum={forum} />
+            </div>
+            <div className='col-md-8 pull-md-4'>
+              {topics && topics.length === 0 && (
+                <div className='empty-msg'>
+                  <div className='alert alert-success' role='alert'>
+                    {filters[this.state.filter].emptyMsg}
+                  </div>
+                </div>
+              )}
+              {topics && topics.map((topic) => (
+                <TopicCard
+                  onVote={this.handleVote}
+                  key={topic.id}
+                  forum={forum}
+                  topic={topic} />
+              ))}
             </div>
           </div>
-        )}
+        </div>
         {topics && <Footer />}
       </div>
     )
