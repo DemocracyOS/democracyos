@@ -10,7 +10,7 @@ import TopicCard from './topic-card/component'
 const filters = {
   new: {
     text: 'Más Nuevas',
-    filter: (topic) => topic.open && !topic.currentUser.action.polled,
+    filter: (topic) => topic.status === 'open' && !topic.currentUser.action.polled,
     emptyMsg: '¡Ya participaste en todas las consultas!'
   },
   all: {
@@ -20,12 +20,12 @@ const filters = {
   },
   open: {
     text: 'Abiertas',
-    filter: (topic) => topic.open,
+    filter: (topic) => topic.status === 'open',
     emptyMsg: 'Ya finalizaron todas las consultas, te vamos a avisar cuando se publiquen nuevas.'
   },
   closed: {
     text: 'Finalizadas',
-    filter: (topic) => topic.closed,
+    filter: (topic) => topic.status === 'closed',
     emptyMsg: 'No se encontraron consultas finalizadas.'
   }
 }
