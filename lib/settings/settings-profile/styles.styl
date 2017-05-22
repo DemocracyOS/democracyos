@@ -1,28 +1,30 @@
-#profile-wrapper form .form-group
-  span.error
-    top 40px
+#profile-wrapper
+  form
+    .form-group
+      span.error
+        top: 40px
 
-  &.profile-picture
-    overflow hidden
-    margin-bottom 12px
+  .profile-picture
+    margin-bottom: 12px
+
+    .profile-picture-form
+      display: flex
+      align-items: center
 
     .image-container
-      float left
-      width 58px
+      width: 65px
+      margin-right: 10px
 
       img
-        border-radius 4px
-        margin-right 10px
+        border-radius: 2px
 
     .controls
-      float right
+      flex-grow: 2
+
+      & > *
+        display: block
 
       a
-        display inline-block
-        margin-bottom 12px
-        text-decoration underline
-        &:hover
-          text-decoration underline
-
-        ~span.error
-          top 42px
+        font-size: .8em
+        margin-bottom: 8px
+        font-weight: normal

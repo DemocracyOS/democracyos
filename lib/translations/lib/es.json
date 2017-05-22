@@ -1,6 +1,4 @@
 {
-  "admin-topics-form.placeholder.links.text": "Título de la referencia",
-  "admin-topics-form.placeholder.links.url": "https://una-referencia-url.com",
   "404.back-to-democracyos": "vuelve a DemocracyOS",
   "404.go-back-to": "vuelve a",
   "404.not-exists": "Esta página no existe",
@@ -126,6 +124,8 @@
   "admin-topics-form.placeholder.authorUrl": "http://en.wikipedia.org/wiki/John_Doe",
   "admin-topics-form.placeholder.cover": "http://repositorio-de-imagenes.com/tu_imagen.jpg",
   "admin-topics-form.placeholder.coverUrl": "http://images-repository.com/your_image.jpg",
+  "admin-topics-form.placeholder.links.text": "Título de la referencia",
+  "admin-topics-form.placeholder.links.url": "https://una-referencia-url.com",
   "admin-topics-form.placeholder.source": "http://fuente-de-temas.org/url-oficial/",
   "admin-topics-form.placeholder.topicId": "Identificación oficial",
   "admin-topics-form.title.create": "Nuevo tema",
@@ -359,6 +359,7 @@
   "settings.password-updated": "Tu contraseña fue actualizada exitosamente",
   "settings.paste-url-image": "O pega una URL con tu imagen aquí...",
   "settings.profile": "Perfil",
+  "settings.profile-picture": "Foto de perfil",
   "settings.save": "Guardar",
   "settings.sidebar.forums": "Democracias",
   "settings.successfuly-updated": "Tu perfil se actualizó exitosamente",
