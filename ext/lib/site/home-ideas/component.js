@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
-import bus from 'bus'
 import t from 't-component'
 import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
@@ -75,40 +74,31 @@ class HomeIdeas extends Component {
     forumStore.findOneByName('ideas')
       .then((forum) => Promise.all([
         forum,
-        topicStore.findAll({ forum: forum.id, sort: sorts[this.state.sort].sort })
+        topicStore.findAll({
+          forum: forum.id,
+          sort: sorts[this.state.sort].sort
+        })
       ]))
       .then(([forum, topics]) => {
         this.setState({
           forum,
           topics: filter(this.state.filter, topics)
         })
-
-        bus.on('topic-store:update:all', this.fetchTopics)
-      })
-      .catch((err) => { throw err })
-  }
-
-  componentWillUnmount = () => {
-    bus.off('topic-store:update:all', this.fetchTopics)
-  }
-
-  fetchTopics = () => {
-    topicStore.findAll({ forum: this.state.forum.id })
-      .then((topics) => {
-        this.setState({ topics })
       })
       .catch((err) => { throw err })
   }
 
   handleFilterChange = (key) => {
-    topicStore.findAll({ forum: this.state.forum.id })
-      .then((topics) => {
-        this.setState({
-          filter: key,
-          topics: filter(key, topics)
-        })
+    topicStore.findAll({
+      forum: this.state.forum.id,
+      sort: sorts[this.state.sort].sort
+    }).then((topics) => {
+      this.setState({
+        filter: key,
+        topics: filter(key, topics)
       })
-      .catch((err) => { throw err })
+    })
+    .catch((err) => { throw err })
   }
 
   handleSortChange = (key) => {
