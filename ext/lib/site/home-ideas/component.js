@@ -136,7 +136,7 @@ class HomeIdeas extends Component {
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/idea-icono.png'
           title='Ideas'
-          description='Proponé y apoyá ideas.'>
+          description='¿Tenés ideas para mejorar la vida en la ciudad? Compartilas.'>
           <a
             href='/ideas/admin/topics/create'
             className='btn btn-primary crear-idea'>

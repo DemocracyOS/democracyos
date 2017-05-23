@@ -83,7 +83,7 @@ class HomeVoluntariados extends Component {
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/voluntariado-icono.png'
           title='Voluntariado social'
-          description='Las organizaciones sociales son parte central de la vida en nuestra ciudad. ¡Conocelas!' />
+          description='Muchas organizaciones sociales buscan tu apoyo! \n Conocé a quienes trabajan por una ciudad mejor.' />
         <h2 className='filter'>
           Ver las organizaciones que trabajan sobre
           <select onChange={this.tagsFilterChange}>

@@ -105,7 +105,7 @@ class HomeConsultas extends Component {
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/consulta-icono.png'
           title='Consultas'
-          description='La Municipalidad quiere conocer tu opinión sobre diferentes temáticas de nuestra Ciudad.' />
+          description='Queremos conocer tu opinión sobre diferentes temas. Elegí la mejor opción para la ciudad.' />
         <div className='container'>
           <Filter
             onChange={this.handleFilterChange}

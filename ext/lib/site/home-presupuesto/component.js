@@ -128,7 +128,7 @@ class HomePresupuesto extends Component {
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/voluntariado-icono.png'
           title='Presupuesto Participativo'
-          description='Estos son los proyectos que van a cambiar tu barrio' />
+          description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <div className='topics-section-container distrito-filter-wrapper'>
           <h2 className='topics-section-title'>
             Elegí tu distrito:
