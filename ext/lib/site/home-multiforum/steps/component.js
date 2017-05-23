@@ -12,11 +12,11 @@ export default () => (
               <span className='num'>1</span>
               <p>Registrate</p>
             </div>
-            <p className='p-text'>
+            <Link to='/signin' className='p-text'>
               Hacé click en <Link to='/signin'>Participá</Link>,
               completá el formulario y sé
               parte de Rosario Participa.
-            </p>
+            </Link>
           </div>
           <div className='p-step'>
             <div>
@@ -24,7 +24,7 @@ export default () => (
               <p>Votá</p>
             </div>
             <p className='p-text'>
-              Elegí, debatí y proponé cómo
+              Opiná, proponé y decidí cómo
               querés que sea la ciudad.
             </p>
           </div>
@@ -35,8 +35,8 @@ export default () => (
             </div>
             <p className='p-text'>
               Compartí en redes sociales
-              para que más vecinos
-              puedan aportar sus ideas.
+              para que más rosarinos
+              puedan aportar sus opiniones.
             </p>
           </div>
         </div>

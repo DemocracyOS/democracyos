@@ -40,6 +40,10 @@
 
     .action-content
       max-width: 677px
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      flex: 1
 
     h3
       color: #3ba4ce
@@ -57,15 +61,10 @@
       font-weight: 200
       font-size: 23px
       line-height: 30px
-      margin-bottom: 50px
       color: #818181
 
-    .action-separador
-      height: 4px
-      width: 255px
-      display: block
-      background-color: #3ba4ce
-      margin-bottom: 20px
+    a
+      align-self: baseline
 
     .action-img
       display: none
@@ -84,6 +83,10 @@
   .action-consulta
     .action-img
       background-image: unquote("url('/ext/lib/site/home-multiforum/consulta-icono.png')")
+
+  .action-ideas
+    .action-img
+      background-image: unquote("url('/ext/lib/site/home-multiforum/idea-icono.png')")
 
   .action-presupuesto
     .action-img

@@ -25,11 +25,14 @@
     margin-bottom: 40px
     margin-left: auto
     margin-right: auto
-    width: 230px
+    max-width: 400px
+    text-align: center
+    @media screen and (min-width: 940px)
+      width: 230px
 
     @media screen and (min-width: 940px)
       margin-right: 40px
-      
+
       &:first-child
         margin-left: 0
 
@@ -37,12 +40,15 @@
       width: 0
       height: 0
       border-style: solid
-      border-width: 20px 0 20px 40px
       border-color: transparent transparent transparent #d8d8d8
       position: absolute
-      right: -60px
+      right: -30px
+      border-width: 10px 0 10px 20px
       top: 100px
-
+      z-index: 9
+      @media screen and (min-width: 990px)
+        right: -60px
+        border-width: 20px 0 20px 40px
       @media screen and (min-width: 940px)
         content: ""
 
@@ -54,8 +60,12 @@
       margin-top: 16px
       line-height: 28px
       letter-spacing: 1px
+      font-weight: 300
       text-align: center
       color: #818181
+      a
+        font-weight: 400
+        color: #00adef
 
     div
       position: relative
@@ -69,14 +79,18 @@
         position: absolute
         top: 10px
         left: 7px
+        display: none
+        @media screen and (min-width: 940px)
+          display: block
       p
         border-radius: 50%
-        border: 5px solid #f7f7f7
         color: #818181
         font-size: 40px
         font-weight: 100
-        width: 225px
-        height: 225px
         display: flex
         align-items: center
         justify-content: center
+        @media screen and (min-width: 940px)
+          border: 5px solid #f7f7f7
+          width: 225px
+          height: 225px
