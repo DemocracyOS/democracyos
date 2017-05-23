@@ -60,3 +60,14 @@ patch:
         patched: '2017-04-19T13:08:05.712Z'
     - democracyos-confirmation > dialog-component > stringify > html-minifier > uglify-js:
         patched: '2017-04-19T13:08:05.712Z'
+  'npm:ms:20170412':
+    - mongoose > ms:
+        patched: '2017-05-23T04:32:26.626Z'
+    - migrate-mongoose > mongoose > ms:
+        patched: '2017-05-23T04:32:26.626Z'
+    - compression > debug > ms:
+        patched: '2017-05-23T04:32:26.626Z'
+    - mongoose > mquery > debug > ms:
+        patched: '2017-05-23T04:32:26.626Z'
+    - migrate-mongoose > mongoose > mquery > debug > ms:
+        patched: '2017-05-23T04:32:26.626Z'
