@@ -60,3 +60,6 @@ patch:
         patched: '2017-04-19T13:08:05.712Z'
     - democracyos-confirmation > dialog-component > stringify > html-minifier > uglify-js:
         patched: '2017-04-19T13:08:05.712Z'
+  'npm:ms:20170412':
+    - compression > debug > ms:
+        patched: '2017-05-23T23:54:28.630Z'
