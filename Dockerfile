@@ -12,7 +12,9 @@ RUN npm install --quiet --production
 
 COPY [".", "/usr/src/"]
 
-RUN bin/dos-ext-install --quiet --production
+ONBUILD COPY ["ext", "ext"]
+
+ONBUILD RUN bin/dos-ext-install --quiet --production
 
 ENV NODE_ENV=production \
     NODE_PATH=/usr/src
