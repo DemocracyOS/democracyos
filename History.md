@@ -1,4 +1,21 @@
 
+2.5.0 / 2017-05-25
+==================
+
+  * Fix error when DemocracyOS is not initialized
+  * Add ONBUILD commands for /ext on Docker image
+  * Fix logout on settings and admin
+  * Fix links text on topic form
+  * Fix topic closingAt admin form
+  * Add description fields on Topic form
+  * Remove flaticons
+  * Add /notifications route to urlBuilder
+  * Add /settings routes to urlBuilder
+  * Add Topic.participantsCount to DB #1417
+  * Add Topic Support Action
+  * Add Topic Preview on admin
+  * Add Collaborative Forum
+
 2.4.0 / 2017-05-04
 ==================
 
