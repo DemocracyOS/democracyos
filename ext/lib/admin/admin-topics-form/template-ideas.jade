@@ -8,17 +8,24 @@
       p.text-center
         a.btn.btn-lg.btn-primary.create-tag(href=urlBuilder.for('admin.tags.create', {forum: forum.name}))
           = t('admin-tags-form.title.create')
-    else
+    - else
       p.alert.alert-danger.text-center
         = t('admin-topics-form.alert.no-tags.no-staff')
   - else
-    h2
-      = "Nueva idea"
-      - if (form.type === 'edit')
-        a(class='btn btn-link btn-md', href=topic.url, target='_blank')
-          = t('admin-topics-form.title.preview')
-          | &nbsp;
-          i.icon-eye
+    - if (form.type === 'edit')
+      h2
+        = "Editar idea"
+          a(class='btn btn-link btn-md', href=topic.url, target='_blank')
+            = t('admin-topics-form.title.preview')
+            | &nbsp;
+            i.icon-eye
+    - else
+      h2
+        = "Nueva idea"
+          a(class='btn btn-link btn-md', href=topic.url, target='_blank')
+            = t('admin-topics-form.title.preview')
+            | &nbsp;
+      
     //- include commands
     .alert.alert-info
       p. 
