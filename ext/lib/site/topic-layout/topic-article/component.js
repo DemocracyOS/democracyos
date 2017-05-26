@@ -42,7 +42,7 @@ class TopicArticle extends Component {
 
   handleCloseTopic = (id) => {
     return () => {
-      window.fetch(`/ext/api/ideas/${id}`, { method: 'DELETE' })
+      window.fetch(`/ext/api/ideas/${id}`, { method: 'DELETE', credentials: 'include' })
         .then((res) => res.json())
         .then((res) => {
           if (res.status === 200) {
