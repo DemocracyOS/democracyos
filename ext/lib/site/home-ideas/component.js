@@ -38,23 +38,25 @@ function filter (key, items = []) {
 }
 
 const ListTools = ({ onChangeFilter, onChangeSort, activeSort, activeFilter }) => (
-  <div className='topics-filter container'>
-    {Object.keys(sorts).map((key) => (
-      <button
-        key={key}
-        className={`btn btn-secondary btn-sm ${activeSort === key ? 'active' : ''}`}
-        onClick={() => onChangeSort(key)}>
-        {sorts[key].text}
-      </button>
-    ))}
-    {Object.keys(filters).map((key) => (
-      <button
-        key={key}
-        className={`btn btn-secondary btn-sm ${activeFilter === key ? 'active' : ''}`}
-        onClick={() => onChangeFilter(key)}>
-        {filters[key].text}
-      </button>
-    ))}
+  <div className='container'>
+    <div className='topics-filter'>
+      {Object.keys(sorts).map((key) => (
+        <button
+          key={key}
+          className={`btn btn-secondary btn-sm ${activeSort === key ? 'active' : ''}`}
+          onClick={() => onChangeSort(key)}>
+          {sorts[key].text}
+        </button>
+      ))}
+      {Object.keys(filters).map((key) => (
+        <button
+          key={key}
+          className={`btn btn-secondary btn-sm ${activeFilter === key ? 'active' : ''}`}
+          onClick={() => onChangeFilter(key)}>
+          {filters[key].text}
+        </button>
+      ))}
+    </div>
   </div>
 )
 
