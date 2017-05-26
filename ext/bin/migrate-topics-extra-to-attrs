@@ -38,6 +38,11 @@ Topic.find({
       topic.set('extra.votes', undefined)
     }
 
+    if (topic.extra.hasOwnProperty('winner')) {
+      topic.set('attrs.winner', topic.extra.winner)
+      topic.set('extra.winner', undefined)
+    }
+
     return topic.isModified() ? topic.save() : topic
   })))
   .then((topics) => {

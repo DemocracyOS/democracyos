@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+const models = require('lib/models')()
+
+const Topic = models.Topic
+
+Topic.find({
+  'attrs.winner': true
+}).exec()
+  .then((topics) => Promise.all(topics.map((topic) => {
+    if (topic.attrs.hasOwnProperty('state')) return topic
+
+    topic.set('attrs.state', 'proyectado')
+
+    return topic.save()
+  })))
+  .then((topics) => {
+    console.log('Done!', `Migrated ${topics.length} Topics.`)
+    process.exit(0)
+  })
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })
