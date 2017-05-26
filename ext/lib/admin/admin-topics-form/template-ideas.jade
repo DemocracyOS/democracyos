@@ -20,6 +20,20 @@
           | &nbsp;
           i.icon-eye
     //- include commands
+    .alert.alert-info
+      p. 
+        ¿Qué es lo que querés proponer?
+        #[br]
+        Explicalo de forma simple y breve.
+        #[br]
+        #[br]
+        Al escribir tus Ideas, tené en cuenta que:
+        #[br]
+        Si tu idea infringe los términos y condiciones, será eliminada.
+        #[br]
+        Serán consideradas las ideas pensadas para Rosario, no para otras ciudades.
+        #[br]
+        Insultar no es algo creativo. Cuidemos este espacio de diálogo."
     .topic-admin
       form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
         - if (topic.privileges && !topic.privileges.canEdit)
@@ -28,9 +42,8 @@
           input(type='hidden', name='forum', value=form.forum)
         ul.form-messages
         .form-group
-          label= t('admin-topics-form.label.mediaTitle')
-          - if (te('admin-topics-form.description.mediaTitle'))
-            span.help-text= t('admin-topics-form.description.mediaTitle')
+          label Título de la idea
+          span.help-text Escribí acá un título para tu idea: ¿qué querés proponer?
           input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
         .form-group.hide
           label= t('admin-topics-form.label.tag')
@@ -43,8 +56,10 @@
                 = tag.name
         .form-group
           label= t('admin-topics-form.label.tags')
-          - if (te('admin-topics-form.description.tags'))
-            span.help-text= t('admin-topics-form.description.tags')
+          span.help-text.
+            Mencioná acá las temáticas vinculadas a tu idea. Por ejemplo, "Solidaridad", "Transporte" o "Ambiente".
+            #[br]
+            Escribí cada una y pulsá ENTER o TAB para que se convierta en una etiqueta.
           div.tags-autocomplete
         - if (forum.topicsAttrs.length > 0)
           fieldset.attrs-wrapper
@@ -100,8 +115,12 @@
           input.form-control(type='text', maxlength='200', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
         .form-group
           label= t('admin-topics-form.label.summary')
-          - if (te('admin-topics-form.description.summary'))
-            span.help-text= t('admin-topics-form.description.summary')
+          span.help-text.
+            ¿Cómo llevarías adelante tu idea?
+            #[br]
+            ¿Por qué pensás que tu idea es importante para tu barrio?
+            #[br]
+            Los detalles son siempre interesantes. Contale a todos cómo surgió la idea, dónde la implementarías y con quiénes (organizaciones sociales, empresas, el estado).  
           textarea.form-control(name='body')= topic.body
         .form-group.closingAt.hide
           label= t('admin-topics-form.label.closingAt')
