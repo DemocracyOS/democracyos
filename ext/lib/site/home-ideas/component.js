@@ -140,7 +140,7 @@ class HomeIdeas extends Component {
           <a
             href='/ideas/admin/topics/create'
             className='btn btn-primary crear-idea'>
-            {t('proposal-article.create')}
+            Escribí tu idea
           </a>
         </Cover>
         <ListTools
