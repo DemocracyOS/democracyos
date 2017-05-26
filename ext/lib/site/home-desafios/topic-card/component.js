@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import moment from 'moment'
 
 export default ({ topic }) => (
   <div className='ext-topic-card desafios-topic-card'>
@@ -10,6 +11,7 @@ export default ({ topic }) => (
         style={{ backgroundImage: `url(${topic.coverUrl})` }} />
     )}
     <div className='topic-card-info'>
+      <div className='fecha'>{moment(topic.createdAt).format('D/M/YY')}</div>
       <h1 className='topic-card-title'>
         <Link to={topic.url}>{topic.mediaTitle}</Link>
       </h1>
@@ -19,7 +21,7 @@ export default ({ topic }) => (
         {` ${topic.participants.length} participante${topic.participants.length !== 1 ? 's' : ''}`}
       </div>
       <Link to={topic.url} className='btn btn-block btn-primary'>
-        Sumarme
+        Quiero ser parte
       </Link>
     </div>
   </div>

@@ -7,13 +7,42 @@ import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
 
+const filters = {
+  new: {
+    text: 'Más Nuevas',
+    filter: (topic) => topic.status === 'open' && !topic.currentUser.action.polled,
+    emptyMsg: '¡Ya participaste en todas los desafíos!'
+  },
+  all: {
+    text: 'Todas',
+    filter: () => true,
+    emptyMsg: 'No se encontraron desafíos.'
+  },
+  open: {
+    text: 'Abiertas',
+    filter: (topic) => topic.status === 'open',
+    emptyMsg: 'Ya finalizaron todas los desafíos, te vamos a avisar cuando se publiquen nuevos.'
+  },
+  closed: {
+    text: 'Finalizadas',
+    filter: (topic) => topic.status === 'closed',
+    emptyMsg: 'No se encontraron desafíos finalizados.'
+  }
+}
+
+function filter (key, items = []) {
+  return items.filter(filters[key].filter)
+}
+
 class HomeDesafios extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
       forum: null,
-      topics: null
+      topics: null,
+      filter: 'open',
+      sort: 'pop'
     }
   }
 
@@ -24,9 +53,18 @@ class HomeDesafios extends Component {
         topicStore.findAll({ forum: forum.id })
       ]))
       .then(([forum, topics]) => {
+        let filterKey = this.state.filter
+        let filtered = filter(filterKey, topics)
+
+        if (filterKey === 'new' && filtered.length === 0) {
+          filterKey = 'all'
+          filtered = filter(filterKey, topics)
+        }
+
         this.setState({
           forum,
-          topics
+          filter: filterKey,
+          topics: filtered
         })
 
         bus.on('topic-store:update:all', this.fetchTopics)
@@ -49,7 +87,10 @@ class HomeDesafios extends Component {
   handleFilterChange = (key) => {
     topicStore.findAll({ forum: this.state.forum.id })
       .then((topics) => {
-        this.setState({ topics })
+        this.setState({
+          filter: key,
+          topics: filter(key, topics)
+        })
       })
       .catch((err) => { throw err })
   }
@@ -64,6 +105,9 @@ class HomeDesafios extends Component {
           logo='/ext/lib/site/home-multiforum/desafio-icono.png'
           title='Desafíos'
           description='Tenemos desafíos como comunidad y podemos resolverlos juntos.' />
+        <Filter
+          onChange={this.handleFilterChange}
+          active={this.state.filter} />
         {topics && topics.length > 0 && (
           <div className='topics-section'>
             <div className='topics-container'>
@@ -78,5 +122,20 @@ class HomeDesafios extends Component {
     )
   }
 }
+
+const Filter = ({ onChange, active }) => (
+  <div className='container'>
+    <div className='topics-filter'>
+      {Object.keys(filters).map((key) => (
+        <button
+          key={key}
+          className={`btn btn-secondary btn-sm ${active === key ? 'active' : ''}`}
+          onClick={() => onChange(key)}>
+          {filters[key].text}
+        </button>
+      ))}
+    </div>
+  </div>
+)
 
 export default userConnector(HomeDesafios)
