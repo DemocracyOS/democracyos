@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
-import t from 't-component'
 import forumStore from 'lib/stores/forum-store/forum-store'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import userConnector from 'lib/site/connectors/user'
@@ -10,26 +9,21 @@ import Footer from '../footer/component'
 import TopicCard from './topic-card/component'
 
 const filters = {
-  open: {
-    text: 'Abiertas',
-    filter: (topic) => topic.status === 'open',
-    emptyMsg: 'No se encontraron ideas.'
-  },
-  closed: {
-    text: 'Archivadas',
-    filter: (topic) => topic.status === 'closed',
-    emptyMsg: 'No se encontraron ideas.'
-  }
-}
-
-const sorts = {
   new: {
     text: 'Más Nuevas',
-    sort: '-createdAt'
+    sort: '-createdAt',
+    filter: (topic) => topic.status === 'open'
   },
   pop: {
     text: 'Más Populares',
-    sort: '-participantsCount'
+    sort: '-participantsCount',
+    filter: (topic) => topic.status === 'open'
+  },
+  closed: {
+    text: 'Archivadas',
+    sort: '-participantsCount',
+    filter: (topic) => topic.status === 'closed',
+    emptyMsg: 'No se encontraron ideas.'
   }
 }
 
@@ -37,17 +31,9 @@ function filter (key, items = []) {
   return items.filter(filters[key].filter)
 }
 
-const ListTools = ({ onChangeFilter, onChangeSort, activeSort, activeFilter }) => (
+const ListTools = ({ onChangeFilter, activeFilter }) => (
   <div className='container'>
     <div className='topics-filter'>
-      {Object.keys(sorts).map((key) => (
-        <button
-          key={key}
-          className={`btn btn-secondary btn-sm ${activeSort === key ? 'active' : ''}`}
-          onClick={() => onChangeSort(key)}>
-          {sorts[key].text}
-        </button>
-      ))}
       {Object.keys(filters).map((key) => (
         <button
           key={key}
@@ -67,8 +53,7 @@ class HomeIdeas extends Component {
     this.state = {
       forum: null,
       topics: null,
-      filter: 'open',
-      sort: 'pop'
+      filter: 'pop'
     }
   }
 
@@ -78,7 +63,7 @@ class HomeIdeas extends Component {
         forum,
         topicStore.findAll({
           forum: forum.id,
-          sort: sorts[this.state.sort].sort
+          sort: filters[this.state.filter].sort
         })
       ]))
       .then(([forum, topics]) => {
@@ -93,24 +78,11 @@ class HomeIdeas extends Component {
   handleFilterChange = (key) => {
     topicStore.findAll({
       forum: this.state.forum.id,
-      sort: sorts[this.state.sort].sort
+      sort: filters[key].sort
     }).then((topics) => {
       this.setState({
         filter: key,
         topics: filter(key, topics)
-      })
-    })
-    .catch((err) => { throw err })
-  }
-
-  handleSortChange = (key) => {
-    topicStore.findAll({
-      forum: this.state.forum.id,
-      sort: sorts[key].sort
-    }).then((topics) => {
-      this.setState({
-        sort: key,
-        topics: filter(this.state.filter, topics)
       })
     })
     .catch((err) => { throw err })
@@ -151,9 +123,7 @@ class HomeIdeas extends Component {
           </a>
         </Cover>
         <ListTools
-          activeSort={this.state.sort}
           activeFilter={this.state.filter}
-          onChangeSort={this.handleSortChange}
           onChangeFilter={this.handleFilterChange} />
         <div className='container topics-container'>
           <div className='row'>
