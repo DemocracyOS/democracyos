@@ -28,12 +28,10 @@
         #[br]
         #[br]
         Al escribir tus Ideas, tené en cuenta que:
-        #[br]
-        Si tu idea infringe los términos y condiciones, será eliminada.
-        #[br]
-        Serán consideradas las ideas pensadas para Rosario, no para otras ciudades.
-        #[br]
-        Insultar no es algo creativo. Cuidemos este espacio de diálogo.
+      ul
+        li Si tu idea infringe los términos y condiciones, será eliminada.
+        li Serán consideradas las ideas pensadas para Rosario, no para otras ciudades.
+        li Insultar no es algo creativo. Cuidemos este espacio de diálogo.
     .topic-admin
       form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
         - if (topic.privileges && !topic.privileges.canEdit)
