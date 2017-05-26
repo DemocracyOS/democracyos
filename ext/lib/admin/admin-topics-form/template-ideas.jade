@@ -1,0 +1,136 @@
+- function te (str) { return t(str) !== str }
+  
+#topic-wrapper(class=forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'collaborative' : '')
+  - if (tags.length === 0)
+    if (user.staff)
+      p.alert.alert-danger.text-center
+        != t('admin-topics-form.alert.no-tags')
+      p.text-center
+        a.btn.btn-lg.btn-primary.create-tag(href=urlBuilder.for('admin.tags.create', {forum: forum.name}))
+          = t('admin-tags-form.title.create')
+    else
+      p.alert.alert-danger.text-center
+        = t('admin-topics-form.alert.no-tags.no-staff')
+  - else
+    h2
+      = "Nueva idea"
+      - if (form.type === 'edit')
+        a(class='btn btn-link btn-md', href=topic.url, target='_blank')
+          = t('admin-topics-form.title.preview')
+          | &nbsp;
+          i.icon-eye
+    //- include commands
+    .topic-admin
+      form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+        - if (topic.privileges && !topic.privileges.canEdit)
+          .block-overlay
+        - if (form.forum)
+          input(type='hidden', name='forum', value=form.forum)
+        ul.form-messages
+        .form-group
+          label= t('admin-topics-form.label.mediaTitle')
+          - if (te('admin-topics-form.description.mediaTitle'))
+            span.help-text= t('admin-topics-form.description.mediaTitle')
+          input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
+        .form-group.hide
+          label= t('admin-topics-form.label.tag')
+          - if (te('admin-topics-form.description.tag'))
+            span.help-text= t('admin-topics-form.description.tag')
+          select.form-control(name='tag', validate='required')
+            - var topicTag = typeof topic.tag === 'string' ? topic.tag : (topic.tag && topic.tag.id)
+            - each tag in tags
+              option(selected=tag.id === topicTag, value=tag.id)
+                = tag.name
+        .form-group
+          label= t('admin-topics-form.label.tags')
+          - if (te('admin-topics-form.description.tags'))
+            span.help-text= t('admin-topics-form.description.tags')
+          div.tags-autocomplete
+        - if (forum.topicsAttrs.length > 0)
+          fieldset.attrs-wrapper
+            legend= t('admin-topics-form.label.attrs')
+            div(data-attrs)
+        .form-group.hide
+          label= t('admin-topics-form.label.topicId')
+          - if (te('admin-topics-form.description.topicId'))
+            span.help-text= t('admin-topics-form.description.topicId')
+          input.form-control(type='text', maxlength='200', id='topicId', name='topicId', placeholder=t('admin-topics-form.placeholder.topicId'), value=topic.topicId)
+        .form-group.hide
+          label= t('admin-topics-form.label.coverUrl')
+          - if (te('admin-topics-form.description.coverUrl'))
+            span.help-text= t('admin-topics-form.description.coverUrl')
+          input.form-control(type='text', maxlength='254', id='coverUrl', name='coverUrl', placeholder=t('admin-topics-form.placeholder.coverUrl'), value=topic.coverUrl, validate='url')
+        .form-group.hide
+          label= t('admin-topics-form.label.author')
+          - if (te('admin-topics-form.description.author'))
+            span.help-text= t('admin-topics-form.description.author')
+          input.form-control(type='text', maxlength='100', id='author', name='author', placeholder=t('admin-topics-form.placeholder.author'), value=topic.author, validate='author')
+        .form-group.hide
+          label= t('admin-topics-form.label.authorUrl')
+          - if (te('admin-topics-form.description.authorUrl'))
+            span.help-text= t('admin-topics-form.description.authorUrl')
+          input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder=t('admin-topics-form.placeholder.authorUrl'), value=topic.authorUrl, validate='url')
+        .form-group.hide
+          label= t('admin-topics-form.label.action')
+          - if (te('admin-topics-form.description.action'))
+            span.help-text= t('admin-topics-form.description.action')
+          select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '')
+            option(value='')= t('admin-topics-form.action.none')
+            option(value='vote')= t('admin-topics-form.action.vote')
+            option(value='poll')= t('admin-topics-form.action.poll')
+            option(value='cause')= t('admin-topics-form.action.cause')
+        .form-group.poll-options.hide
+          - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
+          - var pollOptions = topic.action && topic.action.pollOptions
+          label= t('admin-topics-form.label.poll-options')
+          - if (te('admin-topics-form.description.poll-options'))
+            span.help-text= t('admin-topics-form.description.poll-options')
+          - if (pollOpened)
+            p.alert.alert-warning
+              = t('admin-topics-form.message.cant-edit-action')
+            input.form-control(type='text', value=pollOptions.join(', '), disabled)
+              
+          - if (!pollOpened)
+            input.form-control(type='tags', name='action.pollOptions', value=pollOptions)
+
+        .form-group.hide
+          label= t('admin-topics-form.label.source')
+          - if (te('admin-topics-form.description.source'))
+            span.help-text= t('admin-topics-form.description.source')
+          input.form-control(type='text', maxlength='200', name='source', placeholder=t('admin-topics-form.placeholder.source'), value=topic.source, validate='url')
+        .form-group
+          label= t('admin-topics-form.label.summary')
+          - if (te('admin-topics-form.description.summary'))
+            span.help-text= t('admin-topics-form.description.summary')
+          textarea.form-control(name='body')= topic.body
+        .form-group.closingAt.hide
+          label= t('admin-topics-form.label.closingAt')
+          - if (te('admin-topics-form.description.closingAt'))
+            span.help-text= t('admin-topics-form.description.closingAt')
+          - var closingAt = ''
+          - var closingAtTime = ''
+          - if (topic.closingAt)
+            - closingAt = new Date(topic.closingAt)
+            - var closingAtTime = moment(closingAt).format('H:mm')
+            - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
+          .form-inline
+            .form-group
+              input.form-control(name='closingAt', readonly=true, value=closingAt, placeholder='yyyy/mm/dd')
+              input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
+            button.btn.btn-link.remove-button(type='button', data-clear-closing-at)
+              i.icon-trash
+
+        .form-group.hide
+          label=t('admin-topics-form.label.resources')
+          - if (te('admin-topics-form.description.resources'))
+            span.help-text= t('admin-topics-form.description.resources')
+          .topic-links
+            - // create a disabled link to force empty array value
+            input(type='hidden', name='links[][_id]', disabled)
+            input(type='hidden', name='links[][text]', disabled)
+            input(type='hidden', name='links[][url]', disabled)
+          div
+            button.add-link.btn.btn-link(type='button')
+              = '+ ' + t('admin-topics-form.button.add-link')
+        input.btn.btn-success.hide(type='submit', value=t('admin-topics-form.button.submit'))
+    include commands
