@@ -45,10 +45,9 @@ class TopicArticle extends Component {
       window.fetch(`/ext/api/ideas/${id}`, { method: 'DELETE' })
         .then((res) => res.json())
         .then((res) => {
-          this.setState({ closedSuccess: true })
-        })
-        .catch((err) => {
-          console.log(err)
+          if (res.status === 200) {
+            this.setState({ closedSuccess: true })
+          }
         })
     }
   }

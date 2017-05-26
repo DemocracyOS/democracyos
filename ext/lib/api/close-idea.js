@@ -10,7 +10,6 @@ middlewares.topics.findById,
 middlewares.forums.findFromTopic,
 middlewares.forums.privileges.canChangeTopics,
 function postTopics (req, res, next) {
-  console.log('can edit')
   api.topics.edit({
     id: req.params.id,
     user: req.user,
