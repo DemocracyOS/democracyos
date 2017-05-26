@@ -7,7 +7,7 @@ import Cover from '../cover'
 export default () => (
   <Cover
     background='/ext/lib/site/boot/bg-home-forum.jpg'
-    logo='/ext/lib/site/home-multiforum/consulta-icono.png'
+    logo='/ext/lib/site/home-multiforum/consultas-icono.png'
     title='Consultas'
     description={<span>La Municipalidad quiere conocer tu opinión sobre<br />diferentes temáticas de nuestra Ciudad.</span>} />
 )

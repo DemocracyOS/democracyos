@@ -103,7 +103,7 @@ class HomeConsultas extends Component {
       <div className='ext-home-consultas'>
         <Cover
           background='/ext/lib/site/boot/bg-home-forum.jpg'
-          logo='/ext/lib/site/home-multiforum/consulta-icono.png'
+          logo='/ext/lib/site/home-multiforum/consultas-icono.png'
           title='Consultas'
           description='Queremos conocer tu opinión sobre diferentes temas. Elegí la mejor opción para la ciudad.' />
         <div className='container'>

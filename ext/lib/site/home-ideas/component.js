@@ -134,7 +134,7 @@ class HomeIdeas extends Component {
       <div className='ext-home-ideas'>
         <Cover
           background='/ext/lib/site/boot/bg-home-forum.jpg'
-          logo='/ext/lib/site/home-multiforum/idea-icono.png'
+          logo='/ext/lib/site/home-multiforum/ideas-icono.png'
           title='Ideas'
           description='¿Tenés ideas para mejorar la vida en la ciudad? Compartilas.'>
           <a
