@@ -29,7 +29,7 @@ export default ({ topic }) => (
       */}
       <br />
       <Link to={topic.url} className='btn btn-block btn-primary'>
-        Quiero participar
+        Quiero saber más
       </Link>
     </div>
   </div>
