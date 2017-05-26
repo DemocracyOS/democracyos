@@ -5,7 +5,6 @@ import urlBuilder from 'lib/url-builder'
 import userConnector from 'lib/site/connectors/user'
 import Content from 'ext/lib/site/topic-layout/topic-article/content/component'
 import Comments from 'lib/site/topic-layout/topic-article/comments/component'
-import Vote from 'lib/site/topic-layout/topic-article/vote/component'
 import Poll from 'lib/site/topic-layout/topic-article/poll/component'
 import Cause from 'lib/site/topic-layout/topic-article/cause/component'
 import PresupuestoShare from './presupuesto-share/component'
@@ -16,7 +15,8 @@ class TopicArticle extends Component {
     super(props)
 
     this.state = {
-      showSidebar: false
+      showSidebar: false,
+      closedSuccess: false
     }
   }
 
@@ -40,14 +40,27 @@ class TopicArticle extends Component {
     })
   }
 
+  handleCloseTopic = (id) => {
+    return () => {
+      window.fetch(`/ext/api/ideas/${id}`, { method: 'DELETE' })
+        .then((res) => res.json())
+        .then((res) => {
+          this.setState({ closedSuccess: true })
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  }
+
   render () {
     const { topic, forum, user } = this.props
     return (
-      <div className='proyecto-container'>
+      <div className={`proyecto-container ${forum.name === 'ideas' ? 'idea-topic' : ''}`}>
         {this.state.showSidebar && (
           <div onClick={hideSidebar} className='topic-overlay' />
         )}
-        <Header topic={topic} />
+        <Header topic={topic} isIdea={forum.name === 'ideas'} />
         <div className='proyecto-main container'>
           <div className='row'>
             <div className='proyecto-content col-lg-8'>
@@ -65,8 +78,20 @@ class TopicArticle extends Component {
                       className='btn btn-default btn-sm editar-idea'>
                       <i className='icon-pencil' />
                       &nbsp;
-                      Editar idea
+                      Editar
                     </a>
+                  )}
+                  {forum.privileges.canChangeTopics && (
+                    <button
+                      onClick={this.handleCloseTopic(topic.id)}
+                      className='btn btn-danger btn-sm eliminar-idea'
+                      disabled={(topic.status === 'closed' || this.state.closedSuccess)}>
+                      {
+                        (topic.status === 'closed' || this.state.closedSuccess)
+                          ? 'Cerrado'
+                          : 'Cerrar'
+                      }
+                    </button>
                   )}
                 </div>
               </div>
