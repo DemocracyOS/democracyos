@@ -124,7 +124,12 @@ class HomeIdeas extends Component {
       })
     }
 
-    topicStore.support(id).catch((err) => { throw err })
+    topicStore.support(id).then((res) => {
+      let topics = this.state.topics
+      let index = topics.findIndex((t) => t.id === id)
+      topics[index] = res
+      this.setState({ topics })
+    }).catch((err) => { throw err })
   }
 
   render () {
