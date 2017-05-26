@@ -215,7 +215,7 @@ function sortTopics (topics) {
     if (topic.attrs && topic.attrs.winner) {
       winners.push(topic)
     } else {
-      // losers.push(topic)
+      losers.push(topic)
     }
   })
 
