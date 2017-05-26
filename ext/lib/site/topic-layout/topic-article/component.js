@@ -52,14 +52,26 @@ class TopicArticle extends Component {
           <div className='row'>
             <div className='proyecto-content col-lg-8'>
               <div className='row'>
-                <div className='col-12'>
+                <div className='col-lg-12'>
                   <Link className='volver' to={forum.url}>
                     <i className='icon-arrow-left' />&nbsp;Volver a {forum.title}
                   </Link>
+                  {topic.privileges.canEdit && (
+                    <a
+                      href={urlBuilder.for('admin.topics.id', {
+                        forum: forum.name,
+                        id: topic.id
+                      })}
+                      className='btn btn-default btn-sm editar-idea'>
+                      <i className='icon-pencil' />
+                      &nbsp;
+                      Editar idea
+                    </a>
+                  )}
                 </div>
               </div>
               <div className='row'>
-                <div className='col-12'>
+                <div className='col-lg-12'>
                   {topic.clauses && <Content clauses={topic.clauses} />}
 
                   {
