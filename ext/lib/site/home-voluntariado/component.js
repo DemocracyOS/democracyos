@@ -83,7 +83,7 @@ class HomeVoluntariados extends Component {
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/voluntariado-icono.png'
           title='Voluntariado social'
-          description='Muchas organizaciones sociales buscan tu apoyo! \n Conocé a quienes trabajan por una ciudad mejor.' />
+          description='Muchas organizaciones sociales buscan tu apoyo! Conocé a quienes trabajan por una ciudad mejor.' />
         <h2 className='filter'>
           Ver las organizaciones que trabajan sobre
           <select onChange={this.tagsFilterChange}>
@@ -104,9 +104,9 @@ class HomeVoluntariados extends Component {
         )}
         <div className='jumbotron add-ong'>
           <div className='container'>
-            <h1 className='display-4'>¿Sos una ONG?</h1>
-            <p className='lead'>Si queres sumar tu ONG a este listado para poder contactarte con nuevos voluntarios, completá el siguiente formulario.</p>
-            <a className='btn btn-primary btn-lg' href='#'>Sumar mi ONG</a>
+            <h1 className='display-4'>¿Sos una organización?</h1>
+            <p className='lead'>Si querés sumar tu organización a este listado, completá el siguiente formulario.</p>
+            <a className='btn btn-primary btn-lg' href='https://www.rosario.gov.ar/form/id/voluntarios_participacion'>Sumar mi organización</a>
           </div>
         </div>
         {topics && <Footer />}
