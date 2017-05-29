@@ -24,12 +24,12 @@ class Header extends Component {
   showSub () {
     const pathname = window.location.pathname
     const show = !(
-      ~pathname.indexOf('auth/facebook/confirm/authorize')
-      // ~pathname.indexOf('signin') ||
-      // ~pathname.indexOf('signup') ||
-      // ~pathname.indexOf('admin') ||
-      // ~pathname.indexOf('settings') ||
-      // ~pathname.indexOf('notifications')
+      ~pathname.indexOf('auth/facebook/confirm/authorize') ||
+      ~pathname.indexOf('signin') ||
+      ~pathname.indexOf('signup') ||
+      ~pathname.indexOf('admin') ||
+      ~pathname.indexOf('settings') ||
+      ~pathname.indexOf('notifications')
     )
     return show
   }
