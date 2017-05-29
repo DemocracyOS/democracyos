@@ -3,7 +3,7 @@
     .col-sm-4
       a.btn.btn-danger.btn-block.delete-topic(class=topic.privileges && topic.privileges.canDelete ? '' : 'hide')
         span=t('admin-topics-form.delete-topic.button.delete')
-  - if (!topic.id && !forum.privileges.canChangeTopics)
+  - if (!topic.id)
     .col-sm-4
       a.btn.btn-primary.btn-block.auto-save
         span=t('admin-topics-form.button.make-public')
