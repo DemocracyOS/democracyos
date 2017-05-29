@@ -94,6 +94,7 @@ export default class TopicForm extends FormView {
     this.bind('click', '.make-public', this.bound('onmakepublicclick'))
     this.bind('click', '.make-private', this.bound('onmakeprivateclick'))
     this.bind('click', '.delete-topic', this.bound('ondeletetopicclick'))
+    this.bind('click', '.archivar', this.bound('onclosetopicclick'))
     this.bind('click', '[data-clear-closing-at]', this.bound('onclearclosingat'))
     this.bind('change', '.method-input', this.bound('onmethodchange'))
     this.on('success', this.onsuccess)
@@ -318,5 +319,20 @@ export default class TopicForm extends FormView {
   onmethodchange (e) {
     const action = e.target.value === 'poll' ? 'removeClass' : 'addClass'
     this.find('.poll-options')[action]('hide')
+  }
+
+  onclosetopicclick = (e) => {
+    console.log(this.topic.id)
+    console.log(this.forum.name)
+
+    window.fetch(`/ext/api/${this.forum.name}/${this.topic.id}`, { method: 'DELETE', credentials: 'include' })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200) {
+          e.target.textContent = 'Archivado'
+          e.target.disabled = true
+        }
+      })
+
   }
 }
