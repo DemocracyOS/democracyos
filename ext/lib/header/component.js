@@ -21,6 +21,19 @@ class Header extends Component {
     })
   }
 
+  showSub () {
+    const pathname = window.location.pathname
+    const show = !(
+      ~pathname.indexOf('auth/facebook/confirm/authorize')
+      // ~pathname.indexOf('signin') ||
+      // ~pathname.indexOf('signup') ||
+      // ~pathname.indexOf('admin') ||
+      // ~pathname.indexOf('settings') ||
+      // ~pathname.indexOf('notifications')
+    )
+    return show
+  }
+
   render () {
     return (
       <header className='ext-header'>
@@ -55,12 +68,12 @@ class Header extends Component {
             )}
           </div>
         </div>
-        {!this.state.onMobile && (
+        {!this.state.onMobile && this.showSub() && (
           <div className='ext-header-sub'>
             <Navigation />
           </div>
         )}
-        {this.state.onMobile && (
+        {this.state.onMobile && this.showSub() && (
           <div
             className='ext-header-sub mobile'
             onClick={this.toggleMobileNavigation}>
