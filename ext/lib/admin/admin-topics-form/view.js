@@ -322,9 +322,6 @@ export default class TopicForm extends FormView {
   }
 
   onclosetopicclick = (e) => {
-    console.log(this.topic.id)
-    console.log(this.forum.name)
-
     window.fetch(`/ext/api/${this.forum.name}/${this.topic.id}`, { method: 'DELETE', credentials: 'include' })
       .then((res) => res.json())
       .then((res) => {
@@ -333,6 +330,5 @@ export default class TopicForm extends FormView {
           e.target.disabled = true
         }
       })
-
   }
 }
