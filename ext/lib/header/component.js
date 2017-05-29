@@ -24,17 +24,18 @@ class Header extends Component {
   showSub () {
     const pathname = window.location.pathname
     const show = !(
-      ~pathname.indexOf('auth/facebook/confirm/authorize') ||
-      ~pathname.indexOf('signin') ||
-      ~pathname.indexOf('signup') ||
-      ~pathname.indexOf('admin') ||
-      ~pathname.indexOf('settings') ||
-      ~pathname.indexOf('notifications')
+      pathname.includes('auth/facebook/confirm/authorize') ||
+      pathname.includes('signin') ||
+      pathname.includes('signup') ||
+      pathname.includes('admin') ||
+      pathname.includes('settings') ||
+      pathname.includes('notifications')
     )
     return show
   }
 
   render () {
+    const showSubMenu = this.showSub()
     return (
       <header className='ext-header'>
         <div className='ext-header-prefix'>
@@ -68,12 +69,12 @@ class Header extends Component {
             )}
           </div>
         </div>
-        {!this.state.onMobile && this.showSub() && (
+        {!this.state.onMobile && showSubMenu && (
           <div className='ext-header-sub'>
             <Navigation />
           </div>
         )}
-        {this.state.onMobile && this.showSub() && (
+        {this.state.onMobile && showSubMenu && (
           <div
             className='ext-header-sub mobile'
             onClick={this.toggleMobileNavigation}>
