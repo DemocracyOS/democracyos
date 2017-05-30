@@ -9,7 +9,7 @@ export default () => (
       </p>
       <Link to='/s/terminos-y-condiciones'>Términos y condiciones</Link>
       <span className='spacer'>|</span>
-      <a href='mailto:participa@rosario.gob.ar'>Contacto</a>
+      <a href='http://www.rosario.gov.ar/form/id/contacto_institucional_persona/50'>Contacto</a>
     </div>
     <div className='footer-logos'>
       <a href='http://democraciaenred.org' className='democracy' />
