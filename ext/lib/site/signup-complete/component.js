@@ -40,7 +40,7 @@ export default class SignupComplete extends Component {
         extra: this.state.data
       }))
 
-      browserHistory.push('/presupuesto')
+      browserHistory.push('/')
     }).catch((err) => {
       err.res.json().then((body) => {
         if (!body) throw err
