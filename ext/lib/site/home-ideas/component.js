@@ -33,15 +33,24 @@ function filter (key, items = []) {
 
 const ListTools = ({ onChangeFilter, activeFilter }) => (
   <div className='container'>
-    <div className='topics-filter'>
-      {Object.keys(filters).map((key) => (
-        <button
-          key={key}
-          className={`btn btn-secondary btn-sm ${activeFilter === key ? 'active' : ''}`}
-          onClick={() => onChangeFilter(key)}>
-          {filters[key].text}
-        </button>
-      ))}
+    <div className='row'>
+      <div className='col-md-8 list-tools'>
+        <div className='topics-filter'>
+          {Object.keys(filters).map((key) => (
+            <button
+              key={key}
+              className={`btn btn-secondary btn-sm ${activeFilter === key ? 'active' : ''}`}
+              onClick={() => onChangeFilter(key)}>
+              {filters[key].text}
+            </button>
+          ))}
+        </div>
+        <a
+          href='/ideas/admin/topics/create'
+          className='btn btn-lg btn-primary crear-idea'>
+          Escribí tu idea
+        </a>
+      </div>
     </div>
   </div>
 )
@@ -115,13 +124,7 @@ class HomeIdeas extends Component {
           background='/ext/lib/site/boot/bg-home-forum.jpg'
           logo='/ext/lib/site/home-multiforum/ideas-icono.png'
           title='Ideas'
-          description='¿Tenés ideas para mejorar la vida en la ciudad? Compartilas.'>
-          <a
-            href='/ideas/admin/topics/create'
-            className='btn btn-primary crear-idea'>
-            Escribí tu idea
-          </a>
-        </Cover>
+          description='¿Tenés ideas para mejorar la vida en la ciudad? Compartilas.' />
         <ListTools
           activeFilter={this.state.filter}
           onChangeFilter={this.handleFilterChange} />
@@ -131,6 +134,7 @@ class HomeIdeas extends Component {
               <TagsList forum={forum} />
             </div>
             <div className='col-md-8 pull-md-4'>
+
               {topics && topics.length === 0 && (
                 <div className='empty-msg'>
                   <div className='alert alert-success' role='alert'>
