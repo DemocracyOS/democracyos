@@ -42,6 +42,15 @@ export default function PresupuestoShare ({ topic, forum }) {
           target='_blank'
           href={`http://twitter.com/home?status=${twDesc}`}
           className='tw' />
+        {
+          window.innerWidth <= 630 &&
+          (
+            <a
+              target='_blank'
+              href={`whatsapp://send?text=${twDesc}`}
+              className='wp' />
+          )
+        }
       </div>
     </div>
   )
