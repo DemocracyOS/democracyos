@@ -9,22 +9,22 @@ import TopicCard from './topic-card/component'
 
 const filters = {
   new: {
-    text: 'Más Nuevas',
+    text: 'Más Nuevos',
     filter: (topic) => topic.status === 'open' && !topic.currentUser.action.polled,
     emptyMsg: '¡Ya participaste en todas los desafíos!'
   },
   all: {
-    text: 'Todas',
+    text: 'Todos',
     filter: () => true,
     emptyMsg: 'No se encontraron desafíos.'
   },
   open: {
-    text: 'Abiertas',
+    text: 'Abiertos',
     filter: (topic) => topic.status === 'open',
     emptyMsg: 'Ya finalizaron todas los desafíos, te vamos a avisar cuando se publiquen nuevos.'
   },
   closed: {
-    text: 'Finalizadas',
+    text: 'Finalizados',
     filter: (topic) => topic.status === 'closed',
     emptyMsg: 'No se encontraron desafíos finalizados.'
   }
