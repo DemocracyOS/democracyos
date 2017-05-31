@@ -70,7 +70,6 @@ class Header extends Component {
                    ? { ref: window.location.pathname }
                    : null
                 }}
-                onClick={(e) => { localStorage.addItem('ref', window.location.pathname) }}
                 className='btn btn-primary btn-sm'>
                 Ingresar
               </Link>
