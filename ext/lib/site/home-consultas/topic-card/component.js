@@ -28,7 +28,7 @@ export default ({ forum, topic }) => {
         <div className='topic-card-footer-container'>
           <div className='topic-card-footer'>
             <div className='poll-participants'>
-              <span>{`${votes} voto${votes !== 1 ? 's' : ''}`}</span>
+              <span>{`${votes} participante${votes !== 1 ? 's' : ''}`}</span>
             </div>
             {topic.closingAt && (
               <div className='closing-at'>
