@@ -63,7 +63,15 @@ class Header extends Component {
             )}
 
             {this.props.user.state.rejected && (
-              <Link to='/signin' className='btn btn-primary btn-sm'>
+              <Link
+                to={{
+                  pathname: '/signin',
+                  query: window.location.pathname !== '/signup'
+                   ? { ref: window.location.pathname }
+                   : null
+                }}
+                onClick={(e) => { localStorage.addItem('ref', window.location.pathname) }}
+                className='btn btn-primary btn-sm'>
                 Ingresar
               </Link>
             )}
