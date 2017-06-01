@@ -1,10 +1,10 @@
 const fs = require('fs')
 const path = require('path')
-const config = require('lib/config')
+const pug = require('pug')
 const notifierTemplates = require('democracyos-notifier/lib/templates')
 const notifierConfig = require('democracyos-notifier/lib/config')
 const translations = require('democracyos-notifier/lib/translations')
-const pug = require('pug')
+const config = require('lib/config')
 
 require('./translations')
 
@@ -26,20 +26,28 @@ const templates = {}
 ].forEach(function (name) {
   var filePath = path.join(__dirname, './templates/' + name + '.pug')
 
-  fs.readFile(filePath, {encoding: 'utf-8'}, function (err, template) {
+  fs.readFile(filePath, { encoding: 'utf-8' }, function (err, template) {
     if (err) throw err
     templates[name] = pug.compile(template)
   })
 })
 
+const originalPug = notifierTemplates.pug
+
 function _pug (opts, vars, callback) {
-  if ('string' === typeof opts) return _pug({name: opts}, vars, callback)
+  if (typeof opts === 'string') {
+    return _pug({ name: opts }, vars, callback)
+  }
 
-  if (config.enforceLocale) opts.lang = config.locale
+  if (config.enforceLocale) {
+    opts.lang = config.locale
+  }
 
-  if (!templates[opts.name]) return callback(new Error('Template file not found.'))
+  if (!templates[opts.name]) {
+    return originalPug(opts, vars, callback)
+  }
 
-  const content = replaceVars(templates[opts.name]({t: t}), vars)
+  const content = replaceVars(templates[opts.name]({ t: t }), vars)
 
   callback(null, content)
 }
