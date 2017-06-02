@@ -408,6 +408,18 @@ When `true` will enable signin/signup using Facbook instead of the default email
 
 Link to any URL explaining more about the particular DemocracyOS instance or any other thing that wants to be clarified as the institution using it or any kind of impact on the real world the decision arrived on the software will have.
 
+#### **rssEnabled**
+* env: `RSS_ENABLED`
+* default: true
+
+When `true` will enable a route under `/rss` that can be used as a RSS Feed (XML)
+
+#### **commentsPerPage**
+* env: `COMMENTS_PER_PAGE`
+* default: 0
+
+Number specifying how many comments will be listed before a "Show more" button is shown. 0 will get all comments from the backend.
+
 #### **tweetText**
 * env: `TWEET_TEXT`
 * default: ""
