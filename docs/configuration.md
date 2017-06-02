@@ -408,12 +408,6 @@ When `true` will enable signin/signup using Facbook instead of the default email
 
 Link to any URL explaining more about the particular DemocracyOS instance or any other thing that wants to be clarified as the institution using it or any kind of impact on the real world the decision arrived on the software will have.
 
-#### **rssEnabled**
-* env: `RSS_ENABLED`
-* default: true
-
-When `true` will enable a route under `/rss` that can be used as a RSS Feed (XML)
-
 #### **tweetText**
 * env: `TWEET_TEXT`
 * default: ""
