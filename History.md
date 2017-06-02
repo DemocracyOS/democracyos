@@ -1,4 +1,13 @@
 
+2.5.2 / 2017-06-02
+==================
+
+  * Update democracyos-notifier to 1.5.0
+  * Remove topic-voted job calls
+  * Remove unused rssEnabled and commentsPerPage configs
+  * Remove feedsLimit from docs
+  * Fix topic closed flag
+
 2.5.1 / 2017-05-25
 ==================
 
