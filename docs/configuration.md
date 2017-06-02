@@ -420,12 +420,6 @@ When `true` will enable a route under `/rss` that can be used as a RSS Feed (XML
 
 Number specifying how many comments will be listed before a "Show more" button is shown. 0 will get all comments from the backend.
 
-#### **feedsLimit**
-* env: `FEEDS_LIMIT`
-* default: 10
-
-Number of feed cards shown on the homepage when `multiForum` is set to true
-
 #### **tweetText**
 * env: `TWEET_TEXT`
 * default: ""
