@@ -52,12 +52,6 @@
     },
     "nodemailer": {}
   },
-  "slack": {
-    "apiErrorWebhookUri": ""
-  },
-  "recaptchaSite": "",
-  "recaptchaSecret": "",
-  "blackListEmails": [],
   "client": [
     "protocol",
     "host",
@@ -92,8 +86,7 @@
     "segmentKey",
     "spamLimit",
     "availableLocales",
-    "warnHTTP",
-    "recaptchaSite"
+    "warnHTTP"
   ],
   "socialshare": {
     "siteName": "DemocracyOS",
@@ -112,6 +105,7 @@
   "organizationUrl": "https://github.com/DemocracyOS/app",
   "learnMoreUrl": "",
   "googleAnalyticsTrackingId": "",
+  "rssEnabled": true,
   "spamLimit": 5,
   "frequentlyAskedQuestions": false,
   "termsOfService": false,

@@ -414,12 +414,6 @@ Link to any URL explaining more about the particular DemocracyOS instance or any
 
 When `true` will enable a route under `/rss` that can be used as a RSS Feed (XML)
 
-#### **commentsPerPage**
-* env: `COMMENTS_PER_PAGE`
-* default: 0
-
-Number specifying how many comments will be listed before a "Show more" button is shown. 0 will get all comments from the backend.
-
 #### **tweetText**
 * env: `TWEET_TEXT`
 * default: ""
