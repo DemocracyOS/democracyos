@@ -62,23 +62,29 @@ class HomeIdeas extends Component {
     this.state = {
       forum: null,
       topics: null,
+      tags: null,
       filter: 'pop'
     }
   }
 
   componentDidMount = () => {
     forumStore.findOneByName('ideas')
-      .then((forum) => Promise.all([
-        forum,
-        topicStore.findAll({
-          forum: forum.id,
-          sort: filters[this.state.filter].sort
-        })
-      ]))
-      .then(([forum, topics]) => {
+      .then((forum) => {
+        const tags = window.fetch(`/api/v2/forums/${forum.id}/tags`).then((res) => res.json())
+        return Promise.all([
+          forum,
+          topicStore.findAll({
+            forum: forum.id,
+            sort: filters[this.state.filter].sort
+          }),
+          tags
+        ])
+      })
+      .then(([forum, topics, tags]) => {
         this.setState({
           forum,
-          topics: filter(this.state.filter, topics)
+          topics: filter(this.state.filter, topics),
+          tags: tags.results.tags
         })
       })
       .catch((err) => { throw err })
@@ -116,7 +122,7 @@ class HomeIdeas extends Component {
   }
 
   render () {
-    const { forum, topics } = this.state
+    const { forum, topics, tags } = this.state
 
     return (
       <div className='ext-home-ideas'>
@@ -131,7 +137,7 @@ class HomeIdeas extends Component {
         <div className='container topics-container'>
           <div className='row'>
             <div className='col-md-4 push-md-8'>
-              <TagsList forum={forum} />
+              <TagsList tags={tags} />
             </div>
             <div className='col-md-8 pull-md-4'>
 
@@ -159,13 +165,10 @@ class HomeIdeas extends Component {
 }
 
 const TagsList = tagsConnector(({ tags }) => {
-  if (!tags) return null
-  if (tags && tags.length > 50) tags = tags.slice(0, 50)
-
   return tags && tags.length > 0 && (
     <div className='forum-tags'>
-      {tags.map((tag) => (
-        <span key={tag} className='badge badge-default'>{tag}</span>
+      {tags.map((tag, i) => (
+        <span key={i} className='badge badge-default'>{tag}</span>
       ))}
     </div>
   )
