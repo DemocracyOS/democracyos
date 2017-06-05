@@ -68,19 +68,23 @@ class HomeIdeas extends Component {
   }
 
   componentDidMount = () => {
+    var u = new window.URLSearchParams(window.location.search)
+    let query = {}
+
     forumStore.findOneByName('ideas')
       .then((forum) => {
         const tags = window.fetch(`/api/v2/forums/${forum.id}/tags`).then((res) => res.json())
+        query.forum = forum.id
+        query.sort = filters[this.state.filter].sort
+        if (u.has('tag')) query.tag = u.get('tag')
         return Promise.all([
           forum,
-          topicStore.findAll({
-            forum: forum.id,
-            sort: filters[this.state.filter].sort
-          }),
+          topicStore.findAll(query),
           tags
         ])
       })
       .then(([forum, topics, tags]) => {
+        console.log('componentDidMount', topics)
         this.setState({
           forum,
           topics: filter(this.state.filter, topics),
@@ -91,16 +95,21 @@ class HomeIdeas extends Component {
   }
 
   handleFilterChange = (key) => {
-    topicStore.findAll({
-      forum: this.state.forum.id,
-      sort: filters[key].sort
-    }).then((topics) => {
-      this.setState({
-        filter: key,
-        topics: filter(key, topics)
+    let query = {}
+    var u = new window.URLSearchParams(window.location.search)
+    if (u.has('tag')) query.tag = u.get('tag')
+    query.forum = this.state.forum.id
+    query.sort = filters[this.state.filter].sort
+
+    topicStore.findAll(query)
+      .then((topics) => {
+        console.log('handleFilterChange', topics)
+        this.setState({
+          filter: key,
+          topics: filter(key, topics)
+        })
       })
-    })
-    .catch((err) => { throw err })
+      .catch((err) => { throw err })
   }
 
   handleVote = (id) => {
@@ -137,7 +146,7 @@ class HomeIdeas extends Component {
         <div className='container topics-container'>
           <div className='row'>
             <div className='col-md-4 push-md-8'>
-              <TagsList tags={tags} />
+              {forum && <TagsList tags={tags} forumName={forum.name} />}
             </div>
             <div className='col-md-8 pull-md-4'>
 
@@ -164,11 +173,16 @@ class HomeIdeas extends Component {
   }
 }
 
-const TagsList = tagsConnector(({ tags }) => {
+const TagsList = tagsConnector(({ tags, forumName }) => {
   return tags && tags.length > 0 && (
     <div className='forum-tags'>
       {tags.map((tag, i) => (
-        <span key={i} className='badge badge-default'>{tag}</span>
+        <a
+          className='badge badge-default'
+          href={`${window.location.origin}/${forumName}?tag=${tag}`}
+          key={i}>
+          {tag}
+        </a>
       ))}
     </div>
   )
