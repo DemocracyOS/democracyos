@@ -88,6 +88,7 @@ export default class TopicForm extends FormView {
 
   switchOn () {
     this.bind('click', '.add-link', this.bound('onaddlinkclick'))
+    this.bind('click', '.forum-tag', this.bound('onaddforumtagclick'))
     this.bind('click', '[data-remove-link]', this.bound('onremovelinkclick'))
     this.bind('click', '.save', this.bound('onsaveclick'))
     this.bind('click', '.auto-save', this.bound('onsaveclick'))
@@ -115,6 +116,7 @@ export default class TopicForm extends FormView {
     ReactRender((
       <ForumTagsSearch
         tags={this.topic && this.topic.tags && this.topic.tags}
+        initialTags={this.forum.initialTags}
         forum={this.forum.id} />
     ), this.el[0].querySelector('.tags-autocomplete'))
 
@@ -330,5 +332,20 @@ export default class TopicForm extends FormView {
           e.target.disabled = true
         }
       })
+  }
+
+  onaddforumtagclick (e) {
+    if (this.find('input[name="tags"]')[0].value.length === 0) {
+      this.find('input[name="tags"]')[0].value = `${e.target.dataset.value}`
+    } else if (!~this.find('input[name="tags"]')[0].value.indexOf(e.target.dataset.value)) {
+      this.find('input[name="tags"]')[0].value += `,${e.target.dataset.value}`
+    } else {
+      return
+    }
+    let span = document.createElement('span')
+    span.setAttribute('data-tag', e.target.dataset.value)
+    span.textContent = e.target.dataset.value
+    span.className = 'tag'
+    this.find('.tags-autocomplete .tags-input').prepend(span)
   }
 }

@@ -66,6 +66,11 @@
             #[br]
             Escribí cada una y pulsá ENTER o TAB para que se convierta en una etiqueta.
           div.tags-autocomplete
+          - if (forum.initialTags && forum.initialTags.length > 0)
+            span.help-text Distritos
+            - each tag in forum.initialTags
+              button.btn.btn-default.btn-sm.forum-tag(data-value=tag, type='button', disabled=(topic.tags && !!~topic.tags.indexOf(tag)))= tag
+
         - if (forum.topicsAttrs.length > 0)
           fieldset.attrs-wrapper
             legend= t('admin-topics-form.label.attrs')
