@@ -89,6 +89,7 @@
   "admin-topics-form.description.summary": "",
   "admin-topics-form.description.tag": "",
   "admin-topics-form.description.tags": "Tags for the topic, submit with ENTER or TAB",
+  "admin-topics-form.description.forum-tags": "Suggested tags",
   "admin-topics-form.description.topicId": "Unique identifier for this topic",
   "admin-topics-form.label.action": "Action",
   "admin-topics-form.label.attrs": "Attributes",
