@@ -145,8 +145,10 @@ class HomeIdeas extends Component {
           onChangeFilter={this.handleFilterChange} />
         <div className='container topics-container'>
           <div className='row'>
-            <div className='col-md-4 push-md-8'>
+            <div className='col-md-4 push-md-8 etiquetas'>
               {forum && <TagsList tags={tags} forumName={forum.name} />}
+              <h3>Distritos:</h3>
+              {forum && <TagsList tags={forum.initialTags} forumName={forum.name} />}
             </div>
             <div className='col-md-8 pull-md-4'>
 
@@ -174,11 +176,12 @@ class HomeIdeas extends Component {
 }
 
 const TagsList = tagsConnector(({ tags, forumName }) => {
+  var u = new window.URLSearchParams(window.location.search)
   return tags && tags.length > 0 && (
     <div className='forum-tags'>
       {tags.map((tag, i) => (
         <a
-          className='badge badge-default'
+          className={`badge badge-default ${(u.has('tag') && u.get('tag') === tag) ? 'active' : ''}`}
           href={`${window.location.origin}/${forumName}?tag=${tag}`}
           key={i}>
           {tag}
