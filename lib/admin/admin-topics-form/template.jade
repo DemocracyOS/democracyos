@@ -46,13 +46,10 @@
           - if (te('admin-topics-form.description.tags'))
             span.help-text= t('admin-topics-form.description.tags')
           div.tags-autocomplete
-          - if (forum.extra && forum.extra.tags)
-            - var forumtags = forum.extra.tags.filter((tag) => !~topic.tags.indexOf(tag))
-            - if (forumtags.length > 0)
-              span.help-text= t('admin-topics-form.description.forum-tags')
-              - topic.tags = topic.tags || []
-              - each tag in forumtags
-                button.btn.btn-default.btn-sm.forum-tag(data-value=tag, type='button')= tag
+          - if (forum.initialTags && forum.initialTags.length > 0)
+            span.help-text= t('admin-topics-form.description.forum-tags')
+            - each tag in forum.initialTags
+              button.btn.btn-default.btn-sm.forum-tag(data-value=tag, type='button', disabled=(topic.tags && !!~topic.tags.indexOf(tag)))= tag
 
         - if (forum.topicsAttrs.length > 0)
           fieldset.attrs-wrapper
