@@ -12,12 +12,14 @@ const filters = {
   new: {
     text: 'Más Nuevas',
     sort: '-createdAt',
-    filter: (topic) => topic.status === 'open'
+    filter: (topic) => topic.status === 'open',
+    emptyMsg: 'No se encontraron ideas.'
   },
   pop: {
     text: 'Más Populares',
     sort: '-participantsCount',
-    filter: (topic) => topic.status === 'open'
+    filter: (topic) => topic.status === 'open',
+    emptyMsg: 'No se encontraron ideas.'
   },
   closed: {
     text: 'Archivadas',
@@ -84,7 +86,6 @@ class HomeIdeas extends Component {
         ])
       })
       .then(([forum, topics, tags]) => {
-        console.log('componentDidMount', topics)
         this.setState({
           forum,
           topics: filter(this.state.filter, topics),
@@ -103,7 +104,6 @@ class HomeIdeas extends Component {
 
     topicStore.findAll(query)
       .then((topics) => {
-        console.log('handleFilterChange', topics)
         this.setState({
           filter: key,
           topics: filter(key, topics)
