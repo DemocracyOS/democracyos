@@ -10,10 +10,10 @@ import Steps from './steps/component'
 export default userConnector(({ user }) => {
   return (
     <div className='ext-home-multiforum'>
-      <Cover onClick={() => Anchor.goTo('participar')} />
+      <Cover toSteps={() => Anchor.goTo('participar')} toInfo={() => Anchor.goTo('info')} userLoaded={user.state.fulfilled} />
       <Anchor id='participar' />
-      <Steps />
-      <Anchor className='info'>
+      <Steps scrollInfo={() => Anchor.goTo('info')} />
+      <Anchor className='info' id='info'>
         <div className='action action-consulta'>
           <div className='action-img' />
           <div className='action-content'>

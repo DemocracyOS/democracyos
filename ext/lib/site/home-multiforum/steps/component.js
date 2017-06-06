@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-export default () => (
+export default ({ scrollInfo }) => (
   <div className='ext-home-steps'>
     <div className='container'>
       <div className='row'>
@@ -13,12 +13,12 @@ export default () => (
               <p>Registrate</p>
             </div>
             <Link to='/signin' className='p-text'>
-              Hacé click en <Link to='/signin'>Participá</Link>,
+              Hacé click en <Link to='/signin'>Ingresar</Link>,
               completá el formulario y sé
               parte de Rosario Participa.
             </Link>
           </div>
-          <div className='p-step'>
+          <div className='p-step' onClick={scrollInfo} style={{ cursor: 'pointer' }}>
             <div>
               <span className='num'>2</span>
               <p>Votá</p>
