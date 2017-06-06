@@ -54,6 +54,7 @@ class TopicArticle extends Component {
 
   render () {
     const { topic, forum, user } = this.props
+    console.log(user)
     return (
       <div className={`proyecto-container ${forum.name === 'ideas' ? 'idea-topic' : ''}`}>
         {this.state.showSidebar && (
@@ -112,7 +113,10 @@ class TopicArticle extends Component {
                         canVoteAndComment={forum.privileges.canVoteAndComment} />
                     )
                   }
-
+                  {
+                    forum.name === 'desafios' &&
+                    <iframe src={`https://www.rosario.gov.ar/form/id/desafios?name=${user.state.value.firstName}&apellido=${user.state.value.lastName}&email=${user.state.value.email}`} />
+                  }
                 </div>
               </div>
             </div>
