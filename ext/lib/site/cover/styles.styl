@@ -6,7 +6,16 @@
   background-repeat: no-repeat
   background-position: center center
   background-color: #fafafa
-
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-image: unquote("linear-gradient(to bottom right,#00adef,#f59231)")
+    opacity: .5
   .ext-site-cover-isologo
     margin: 0 auto 1em
     width: 8em
@@ -21,7 +30,9 @@
       content: ' '
       display: block
       padding-top: 100%
-
+  .container
+    position: relative
+    z-index: 9
   h1
     margin: 0 0
     font-size: 3em

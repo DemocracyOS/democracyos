@@ -101,7 +101,7 @@ class HomeDesafios extends Component {
     return (
       <div className='ext-home-desafios'>
         <Cover
-          background='/ext/lib/site/boot/bg-home-forum.jpg'
+          background='/ext/lib/site/boot/desafios.jpg'
           logo='/ext/lib/site/home-multiforum/desafios-icono.png'
           title='Desafíos'
           description='Tenemos desafíos como comunidad y podemos resolverlos juntos.' />

@@ -80,7 +80,7 @@ class HomeVoluntariados extends Component {
     return (
       <div className='ext-home-voluntariados'>
         <Cover
-          background='/ext/lib/site/boot/bg-home-forum.jpg'
+          background='/ext/lib/site/boot/voluntariado-social.jpg'
           logo='/ext/lib/site/home-multiforum/voluntariado-icono.png'
           title='Voluntariado social'
           description='Muchas organizaciones sociales buscan tu apoyo! Conocé a quienes trabajan por una ciudad mejor.' />
