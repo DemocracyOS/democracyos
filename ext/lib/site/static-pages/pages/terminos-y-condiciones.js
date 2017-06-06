@@ -81,22 +81,19 @@ export default function Page () {
 
       <h2 id='politicas-de-privacidad'><a href='#politicas-de-privacidad'>Políticas de privacidad</a></h2>
 
-      <p>​La recolección y tratamiento de los datos personales tiene como finalidad conocer sobre el uso de Rosario Participa y mejorar la propuesta.</p>
-      <p>La Municipalidad de Rosario no cederá a ninguna otra persona ni organismo los datos personales de los votantes, salvo orden judicial en contrario. Los datos recabados tienen por único objeto verificar que los votos sean cursados por personas diferentes y evitar abusos a su respecto. La información personal entregada al votar es separada completamente del voto cursado, con lo que nadie puede vincular esas informaciones. Esta información será utilizada exclusivamente para obtener estadísticas generales de los usuarios.</p>
+      <p>La recolección y tratamiento de los datos personales tiene como finalidad conocer sobre el uso de Rosario Participa y mejorar la propuesta.</p>
+      <p>La Municipalidad de Rosario no cederá a ninguna otra persona ni organismo los datos personales de los participantes, salvo orden judicial en contrario. Los datos recabados tienen por único objeto verificar que los votos sean cursados por personas diferentes y evitar abusos en el uso de la plataforma. La información personal entregada al participar es separada completamente del voto cursado, con lo que nadie puede vincular esas informaciones. Esta información será utilizada exclusivamente para obtener estadísticas generales de los usuarios.</p>
 
       <h4>Información proporcionada por los usuarios:</h4>
-
       <p>El uso de Rosario Participa requiere que los usuarios se registren. En ese caso, se solicitará información personal, como nombre y apellido, documento, dirección de correo electrónico. El perfil que es visible públicamente puede incluir el nombre y la foto seleccionada.</p>
       <p>Asimismo, si un usuario se pone en contacto con Rosario Participa, es posible que guardemos constancia de la comunicación para poder resolver más fácilmente cualquier incidencia que se haya producido.</p>
-      <p>Las direcciones de correo electrónico o cuenta de Facebook sólo se utilizarán para enviar notificaciones sobre el uso de la plataforma, avisos sobre futuras votaciones y otra información sobre el Presupuesto Participativo. No obstante, cada usuario podrá darse de baja en cualquier momento si así lo desea.</p>
+      <p>Las direcciones de correo electrónico o cuenta de Facebook sólo se utilizarán para enviar notificaciones sobre el uso de la plataforma, avisos sobre futuras votaciones o consultas y otra información sobre el Presupuesto Participativo. No obstante, cada usuario podrá darse de baja en cualquier momento si así lo desea.</p>
 
       <h4>Información obtenida a partir del uso de la plataforma:</h4>
-
-      <p><strong>Rosario Participa</strong> puede recopilar información sobre la forma en que los usuarios usan la plataforma. Entre la información obtenida de esta forma, se incluye el tipo de navegador utilizado, la preferencias de lenguaje y, por ejemplo, los comentarios que ha realizado.</p>
-
+      <p>Rosario Participa puede recopilar información sobre la forma en que los usuarios usan la plataforma. Entre la información obtenida de esta forma, se incluye el tipo de navegador utilizado, la preferencias de lenguaje y, por ejemplo, los comentarios que ha realizado.</p>
       <p>Rosario Participa podrá compartir información de manera agregada, y en carácter no personal, con el público en general (por ejemplo, mostrar tendencias sobre el uso del sitio).</p>
+      <p>Rosario Participa garantiza la debida protección de los datos personales almacenados en esta plataforma web así como también el acceso a la información registrada en el mismo, de conformidad a lo establecido en el artículo 43, párrafo tercero de la Constitución Nacional y la Ley N° 25.326 de Protección de los Datos Personales.</p>
 
-      <p>Rosario Participa garantiza la debida protección de los datos personales almacenados en esta plataforma web así como también el acceso a la información registrada en el mismo, de conformidad a lo establecido en el <strong>artículo 43</strong>, párrafo tercero de la <strong>Constitución Nacional</strong> y la <strong>Ley N° 25.326 de Protección de los Datos Personales.</strong></p>
     </div>
   )
 }
