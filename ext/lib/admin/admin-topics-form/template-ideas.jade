@@ -62,12 +62,12 @@
         .form-group
           label= t('admin-topics-form.label.tags')
           span.help-text.
-            Mencioná acá las temáticas vinculadas a tu idea. Por ejemplo, "Solidaridad", "Transporte" o "Ambiente".
+            Mencioná acá los Temas vinculados a tu idea. Por ejemplo, "Solidaridad", "Transporte" o "Ambiente".
             #[br]
             Escribí cada una y pulsá ENTER o TAB para que se convierta en una etiqueta.
           div.tags-autocomplete
           - if (forum.initialTags && forum.initialTags.length > 0)
-            span.help-text Distritos
+            span.help-text Elegí el Distrito donde la implementarías.
             - each tag in forum.initialTags
               button.btn.btn-default.btn-sm.forum-tag(data-value=tag, type='button', disabled=(topic.tags && !!~topic.tags.indexOf(tag)))= tag
 

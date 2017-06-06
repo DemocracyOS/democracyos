@@ -146,9 +146,10 @@ class HomeIdeas extends Component {
         <div className='container topics-container'>
           <div className='row'>
             <div className='col-md-4 push-md-8 etiquetas'>
-              {forum && <TagsList tags={tags} forumName={forum.name} />}
-              <h3>Distritos:</h3>
+              <h3>Distritos</h3>
               {forum && <TagsList tags={forum.initialTags} forumName={forum.name} />}
+              <h3>Temas</h3>
+              {forum && <TagsList tags={tags} forumName={forum.name} />}
             </div>
             <div className='col-md-8 pull-md-4'>
 
