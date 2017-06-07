@@ -10,17 +10,16 @@ import page from 'page'
 import moment from 'moment'
 import tagsInput from 'tags-input'
 import { dom as render } from 'lib/render/render'
-import request from 'lib/request/request'
 import Richtext from 'lib/richtext/richtext'
 import urlBuilder from 'lib/url-builder'
 import FormView from 'lib/form-view/form-view'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import * as serializer from 'lib/admin/admin-topics-form/body-serializer'
 import template from 'lib/admin/admin-topics-form/template.jade'
-import templateIdeas from './template-ideas.jade'
 import linkTemplate from 'lib/admin/admin-topics-form/link.jade'
 import ForumTagsSearch from 'lib/admin/admin-topics-form/tag-autocomplete/component'
 import Attrs from 'lib/admin/admin-topics-form/attrs/component'
+import templateIdeas from './template-ideas.jade'
 
 const log = debug('democracyos:admin-topics-form')
 
@@ -96,6 +95,7 @@ export default class TopicForm extends FormView {
     this.bind('click', '.make-private', this.bound('onmakeprivateclick'))
     this.bind('click', '.delete-topic', this.bound('ondeletetopicclick'))
     this.bind('click', '.archivar', this.bound('onclosetopicclick'))
+    this.bind('click', '.abrir', this.bound('onopentopicclick'))
     this.bind('click', '[data-clear-closing-at]', this.bound('onclearclosingat'))
     this.bind('change', '.method-input', this.bound('onmethodchange'))
     this.on('success', this.onsuccess)
@@ -324,12 +324,21 @@ export default class TopicForm extends FormView {
   }
 
   onclosetopicclick = (e) => {
-    window.fetch(`/ext/api/${this.forum.name}/${this.topic.id}`, { method: 'DELETE', credentials: 'include' })
+    window.fetch(`/ext/api/${this.forum.name}/${this.topic.id}/status`, { method: 'DELETE', credentials: 'include' })
       .then((res) => res.json())
       .then((res) => {
         if (res.status === 200) {
-          e.target.textContent = 'Archivado'
-          e.target.disabled = true
+          window.location.reload()
+        }
+      })
+  }
+
+  onopentopicclick = (e) => {
+    window.fetch(`/ext/api/${this.forum.name}/${this.topic.id}/status`, { method: 'POST', credentials: 'include' })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200) {
+          window.location.reload()
         }
       })
   }

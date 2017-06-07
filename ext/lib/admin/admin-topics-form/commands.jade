@@ -13,8 +13,8 @@
         span Archivar
   - if (topic.id && forum.privileges.canChangeTopics && topic.status === 'closed')
     .col-sm-4
-      button(disabled=true).btn.btn-warning.btn-block.archivar
-        span Archivado
+      button.btn.btn-warning.btn-block.abrir
+        span Abrir
     
   .col-sm-4(class=topic.id && !forum.privileges.canChangeTopics ? '' : 'hide')
     a.btn.btn-success.btn-block.save
