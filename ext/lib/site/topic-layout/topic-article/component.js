@@ -54,7 +54,6 @@ class TopicArticle extends Component {
 
   render () {
     const { topic, forum, user } = this.props
-    console.log(user)
     return (
       <div className={`proyecto-container ${forum.name === 'ideas' ? 'idea-topic' : ''}`}>
         {this.state.showSidebar && (

@@ -15,7 +15,11 @@
     .col-sm-4
       button.btn.btn-warning.btn-block.abrir
         span Abrir
-    
+  .col-sm-4(class=!forum.privileges.canChangeTopics ? 'hide' : '')
+    a.btn.btn-primary.btn-block.make-private(class=topic.public && topic.id ? '' : 'hide')
+      span=t('admin-topics-form.button.make-private')
+    a.btn.btn-primary.btn-block.make-public(class=topic.draft && topic.id ? '' : 'hide')
+      span=t('admin-topics-form.button.make-public')
   .col-sm-4(class=topic.id && !forum.privileges.canChangeTopics ? '' : 'hide')
     a.btn.btn-success.btn-block.save
       span=t('admin-topics-form.button.submit')
