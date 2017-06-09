@@ -68,7 +68,7 @@ class TopicArticle extends Component {
                   <Link className='volver' to={forum.url}>
                     <i className='icon-arrow-left' />&nbsp;Volver a {forum.title}
                   </Link>
-                  {topic.privileges.canEdit && (
+                  {(topic.privileges.canEdit || forum.privileges.canChangeTopics) && (
                     <a
                       href={urlBuilder.for('admin.topics.id', {
                         forum: forum.name,
@@ -79,18 +79,6 @@ class TopicArticle extends Component {
                       &nbsp;
                       Editar
                     </a>
-                  )}
-                  {forum.privileges.canChangeTopics && (
-                    <button
-                      onClick={this.handleCloseTopic(topic.id)}
-                      className='btn btn-danger btn-sm eliminar-idea'
-                      disabled={(topic.status === 'closed' || this.state.closedSuccess)}>
-                      {
-                        (topic.status === 'closed' || this.state.closedSuccess)
-                          ? 'Cerrado'
-                          : 'Cerrar'
-                      }
-                    </button>
                   )}
                 </div>
               </div>
