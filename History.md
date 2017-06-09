@@ -1,4 +1,13 @@
 
+2.6.0 / 2017-06-09
+==================
+
+  * Fix mongoIdString comparison
+  * Add tags fuzzy search autocomplete
+  * Fix arrow function messing up virtuals scope on Topic Model
+  * Update topic support icon
+  * Add topic tag navigation
+
 2.5.2 / 2017-06-02
 ==================
 
