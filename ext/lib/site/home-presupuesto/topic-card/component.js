@@ -31,7 +31,7 @@ export default ({ topic, forum }) => {
   }
 
   if (topic.attrs && topic.attrs.winner) classNames.push('is-winner')
-
+  if (topic.attrs && topic.attrs.state) classNames.push(topic.attrs.state.toLowerCase())
   return (
     <div className={classNames.join(' ')}>
       {topic.attrs && topic.attrs.state && (
@@ -62,14 +62,16 @@ export default ({ topic, forum }) => {
             </span>
           )}
         </div>
-        <h1 className='topic-card-title'>
-          <Link to={topic.url}>{topic.mediaTitle}</Link>
-        </h1>
-        {topic.attrs && topic.attrs.description && (
-          <p className='topic-card-description'>
-            <Link to={topic.url}>{topic.attrs.description}</Link>
-          </p>
-        )}
+        <div className='topic-card-body'>
+          <h1 className='topic-card-title'>
+            <Link to={topic.url}>{topic.mediaTitle}</Link>
+          </h1>
+          {topic.attrs && topic.attrs.description && (
+            <p className='topic-card-description'>
+              <Link to={topic.url}>{topic.attrs.description}</Link>
+            </p>
+          )}
+        </div>
         <div className='topic-card-footer'>
           <div className='social-links'>
             <SharerFacebook
@@ -88,7 +90,7 @@ export default ({ topic, forum }) => {
                 className='wp' />
             }
           </div>
-          {topic.attrs && topic.attrs.budget && (
+          {topic.attrs && (
             <p className='budget'>{prettyPrice(topic.attrs.budget)}</p>
           )}
         </div>
@@ -102,6 +104,7 @@ function prettyNumber (number) {
 }
 
 function prettyPrice (number) {
+  if (!number) number = 1
   return `$${prettyDecimals(number)}`
 }
 

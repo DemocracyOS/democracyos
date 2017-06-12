@@ -6,16 +6,29 @@
       color: #A5A9AA
       font-weight: 400
 
-  &.is-winner
-    .topic-results
-      color: #F39431
-      border-bottom-color: #F39431
+  &.proyectado
+    .state
+      background-color: #00adef
 
+    .topic-card-info
+      border-top-color: #00adef
+
+  &.finalizado
+    .state
+      background-color: #30aa2d
+
+    .topic-card-info
+      border-top-color: #30aa2d
+
+  &.ejecutandose
     .state
       background-color: #F39431
 
-    .topic-card-cover
-      border-bottom-color: #F39431
+    .topic-card-info
+      border-top-color: #F39431
+
+  .topic-card-info
+    border-top-color: #999
 
   .state
     z-index: 10
@@ -61,8 +74,8 @@
   .topic-card-title
     font-size: 1.125em
 
-  .topic-card-description
-    flex-grow: 2
+  .topic-card-body
+    flex: 1
 
   .topic-card-footer
     text-align: right

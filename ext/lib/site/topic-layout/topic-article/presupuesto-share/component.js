@@ -57,6 +57,7 @@ export default function PresupuestoShare ({ topic, forum }) {
 }
 
 function prettyNumber (number) {
+  if (!number) number = 1
   return `#${padStart(number, 3, '0')}`
 }
 

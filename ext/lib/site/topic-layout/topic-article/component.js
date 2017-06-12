@@ -109,7 +109,8 @@ class TopicArticle extends Component {
             </div>
             <div className='col-lg-4'>
               {
-                forum.name === 'presupuesto'
+                (forum.name === 'presupuesto' ||
+                forum.name === 'presupuesto-joven')
                   ? <PresupuestoShare
                     forum={forum}
                     topic={topic} />
