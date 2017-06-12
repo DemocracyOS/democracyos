@@ -81,6 +81,12 @@ export default ({ topic, forum }) => {
               href={`http://twitter.com/home?status=${twitterDesc}`}>
               <i className='icon-social-twitter' />
             </span>
+            {window.innerWidth <= 630 &&
+              <span
+                onClick={handleLinkClick}
+                href={`whatsapp://send?text=${twitterDesc}`}
+                className='wp' />
+            }
           </div>
           {topic.attrs && topic.attrs.budget && (
             <p className='budget'>{prettyPrice(topic.attrs.budget)}</p>
