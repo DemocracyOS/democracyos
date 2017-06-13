@@ -13,6 +13,9 @@ export default function PresupuestoShare ({ topic, forum }) {
       .find((attr) => attr.name === topic.attrs.state)
       .title
   }
+  console.log(forum.topicsAttrs)
+  const stateTitle = forum.topicsAttrs.find((ta) => ta.name === 'state').title
+  const anioTitle = forum.topicsAttrs.find((ta) => ta.name === 'anio').title
   return (
     <div className='presupuesto-share'>
       {
@@ -26,7 +29,8 @@ export default function PresupuestoShare ({ topic, forum }) {
       {
         (topic.attrs.state || topic.attrs.budget) &&
           <div className='sharer-body'>
-            {topic.attrs.state && <span className='state-proyecto'>{`${forum.topicsAttrs[0].title}: ${state}`}</span>}
+            {topic.attrs.anio && <span className='anio-proyecto'>{`${anioTitle}: ${topic.attrs.anio}`}</span>}
+            {topic.attrs.state && <span className='state-proyecto'>{`${stateTitle}: ${state}`}</span>}
             {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
           </div>
       }
