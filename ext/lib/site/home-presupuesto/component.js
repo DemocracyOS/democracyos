@@ -208,28 +208,45 @@ function DistritoFilter (props) {
 }
 
 function sortTopics (topics) {
-  const winners = []
-  const losers = []
-
-  topics.forEach((topic) => {
-    if (topic.attrs && topic.attrs.winner) {
-      winners.push(topic)
-    } else {
-      losers.push(topic)
-    }
-  })
-
-  return sortTopicsByNumber(winners).concat(sortTopicsByNumber(losers))
+  return topics
+    .filter(winners)
+    .sort(byNumber)
+    .sort(byState)
 }
 
-function sortTopicsByNumber (topics) {
-  return topics.sort((a, b) => {
-    if (!(a.attrs && a.attrs.number)) return -1
-    if (!(b.attrs && b.attrs.number)) return 1
-    return a.attrs.number > b.attrs.number
-      ? 1
-      : a.attrs.number < b.attrs.number
-      ? -1
-      : 0
-  })
+function winners (topic) {
+  return topic.attrs && topic.attrs.winner
+}
+
+function byNumber (a, b) {
+  if (!(a.attrs && a.attrs.number)) return -1
+  if (!(b.attrs && b.attrs.number)) return 1
+  return a.attrs.number > b.attrs.number
+    ? 1
+    : a.attrs.number < b.attrs.number
+    ? -1
+    : 0
+}
+
+function estadoNum (e) {
+  switch (e) {
+    case 'terminado':
+      return 1
+    case 'ejecutandose':
+      return 2
+    case 'proyectado':
+      return 3
+    default:
+      return 4
+  }
+}
+
+function byState (a, b) {
+  let ae = estadoNum(a.attrs && a.attrs.state)
+  let be = estadoNum(b.attrs && b.attrs.state)
+  return ae > be
+    ? 1
+    : ae < be
+    ? -1
+    : 0
 }
