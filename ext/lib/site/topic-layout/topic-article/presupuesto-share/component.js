@@ -13,7 +13,6 @@ export default function PresupuestoShare ({ topic, forum }) {
       .find((attr) => attr.name === topic.attrs.state)
       .title
   }
-  console.log(forum.topicsAttrs)
   const stateTitle = forum.topicsAttrs.find((ta) => ta.name === 'state').title
   const anioTitle = forum.topicsAttrs.find((ta) => ta.name === 'anio').title
   return (

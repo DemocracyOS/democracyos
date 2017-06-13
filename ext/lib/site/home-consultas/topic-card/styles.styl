@@ -11,18 +11,24 @@
     width: 100%
     align-self: flex-end
 
+  .poll-participants
+    font-size: .9em
+    color: #a5a9aa
+
+  .topic-time
+    font-size: .9em
+    color: #a5a9aa
+    .icon-clock
+      font-size: .8em
+
   .topic-card-footer
     display: flex
     flex-wrap: wrap
-    font-size: .9em
+    justify-content: space-between
+    align-items: center
     padding-top: .8em
     width: 100%
-    color: #a5a9aa
     border-top: 1px solid #ddd
-
-    & > div
-      display: inline-block
-      margin-right: 1em
 
     [class*="icon-"]
       position: relative
@@ -35,16 +41,18 @@
       &:hover
         color: #3dacf1
 
-    .comments
-      margin-right: 0
-      margin-left: auto
-
   .social-links
-    position: absolute
-    left: 15px
-    bottom: 15px
     font-size: 20px
 
     span
       margin-right: 7px
       color: #999
+
+    .wp
+      width: 18px
+      height: 18px
+      background-size: contain
+      background-repeat: no-repeat
+      display: inline-block
+      margin: 0 0 0 2px
+      background-image: unquote("url('/ext/lib/site/topic-layout/whatsapp-logo-gris.svg')")
