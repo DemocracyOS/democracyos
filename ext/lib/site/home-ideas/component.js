@@ -180,14 +180,22 @@ const TagsList = tagsConnector(({ tags, forumName }) => {
   var u = new window.URLSearchParams(window.location.search)
   return tags && tags.length > 0 && (
     <div className='forum-tags'>
-      {tags.map((tag, i) => (
-        <a
-          className={`badge badge-default ${(u.has('tag') && u.get('tag') === tag) ? 'active' : ''}`}
-          href={`${window.location.origin}/${forumName}?tag=${tag}`}
+      {tags.map((tag, i) => {
+        let active, url
+        if (u.has('tag') && u.get('tag') === tag) {
+          active = 'active'
+          url = `${window.location.origin}/${forumName}`
+        } else {
+          active = ''
+          url = `${window.location.origin}/${forumName}?tag=${tag}`
+        }
+        return <a
+          className={`badge badge-default ${active}`}
+          href={`${url}`}
           key={i}>
           {tag}
         </a>
-      ))}
+      })}
     </div>
   )
 })
