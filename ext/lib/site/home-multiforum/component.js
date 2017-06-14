@@ -6,6 +6,7 @@ import Footer from '../footer/component'
 import Anchor from '../anchor'
 import Cover from './cover/component'
 import Steps from './steps/component'
+import Feed from './feed/component'
 
 export default userConnector(({ user }) => {
   return (
@@ -54,6 +55,7 @@ export default userConnector(({ user }) => {
             <Link to='/voluntariado' className='btn btn-primary btn-lg'>Quiero sumarme</Link>
           </div>
         </div>
+        <Feed />
       </Anchor>
       <TweetsFeed />
       <Footer />
