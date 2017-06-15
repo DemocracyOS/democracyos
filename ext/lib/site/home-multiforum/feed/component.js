@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import urlBuilder from 'lib/url-builder'
 import PresuCard from 'ext/lib/site/home-presupuesto/topic-card/component'
 import ConsuCard from 'ext/lib/site/home-consultas/topic-card/component'
 import DesafCard from 'ext/lib/site/home-desafios/topic-card/component'
@@ -49,17 +50,22 @@ export default Feed
 
 function topicCard (topic, forums, i) {
   const forum = forums.find((f) => topic.forum === f.id)
+  const url = urlBuilder.for('site.topic', {
+    forum: forum.name,
+    id: topic.id
+  })
+
   switch (forum.name) {
     case 'voluntariado':
-      return <TopicLink url={topic.url} key={i}><VolunCard forum={forum} topic={topic} /></TopicLink>
+      return <TopicLink url={url} key={i}><VolunCard forum={forum} topic={topic} /></TopicLink>
     case 'consultas':
-      return <TopicLink url={topic.url} key={i}><ConsuCard forum={forum} topic={topic} /></TopicLink>
+      return <TopicLink url={url} key={i}><ConsuCard forum={forum} topic={topic} /></TopicLink>
     case 'presupuesto':
-      return <TopicLink url={topic.url} key={i}><PresuCard forum={forum} topic={topic} /></TopicLink>
+      return <TopicLink url={url} key={i}><PresuCard forum={forum} topic={topic} /></TopicLink>
     case 'desafios':
-      return <TopicLink url={topic.url} key={i}><DesafCard forum={forum} topic={topic} /></TopicLink>
+      return <TopicLink url={url} key={i}><DesafCard forum={forum} topic={topic} /></TopicLink>
     case 'ideas':
-      return <TopicLink url={topic.url} key={i}><IdeasCard forum={forum} topic={topic} onVote={(e) => { console.log(e) }} /></TopicLink>
+      return <TopicLink url={url} key={i}><IdeasCard forum={forum} topic={topic} onVote={(e) => { console.log(e) }} /></TopicLink>
   }
 }
 
