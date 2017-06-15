@@ -18,13 +18,12 @@ function getFeed (req, res, next) {
         { $sort: { 'participantsCount': -1 } },
         { $group: { _id: '$forum', topics: { $push: '$$ROOT' } } },
         { $project: { best_topics: { $slice: [ '$topics', 2 ] } } },
-        { $unwind: '$best_topics' },
-        { $replaceRoot: { newRoot: '$best_topics' } }
+        { $unwind: '$best_topics' }
       ], function (err, topicsM) {
         if (err) {
           res.json({ result: null, error: err })
         } else {
-          const topicsIds = topicsM.map((topic) => ObjectID(topic._id))
+          const topicsIds = topicsM.map((topic) => ObjectID(topic.best_topics._id))
           Topic.find({ _id: { $in: topicsIds } })
             .populate(scopes.ordinary.populate)
             .select(scopes.ordinary.select).exec()
