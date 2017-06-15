@@ -1,14 +1,43 @@
 #feed
-  display: flex
-  flex-wrap: wrap
-  align-items: stretch
-  justify-content: center
-  padding: 50px
+  height: 1000px
+  overflow: hidden
+  padding: 10px
+  width: 100%
   background: #00adef
-  @import '../../home-presupuesto/topic-card/styles'
-  @import '../../home-consultas/topic-card/styles'
-  @import '../../home-desafios/topic-card/styles'
-  @import '../../home-ideas/topic-card/styles'
-  @import '../../home-voluntariado/topic-card/styles'
-  .btn-primary
-    color: #fff
+  position: relative
+  @media (min-width: 1000px)
+    height: 800px
+  .feed-container
+    position: relative
+    column-count: 4
+    column-gap: 10px
+    @import '../../home-presupuesto/topic-card/styles'
+    @import '../../home-consultas/topic-card/styles'
+    @import '../../home-desafios/topic-card/styles'
+    @import '../../home-ideas/topic-card/styles'
+    @import '../../home-voluntariado/topic-card/styles'
+    @media (max-width: 1000px)
+      column-count: 3
+    @media (max-width: 750px)
+      column-count: 2
+    @media (max-width: 450px)
+      column-count: 1
+    .ext-topic-card
+      width: 100%!important
+      margin: 0 0 10px 0
+      position: static
+      display: inline-block
+      .btn-primary
+        color: #fff
+      .topic-card-cover
+        height: 150px
+      .topic-card-info
+        border-top: none
+  .feed-shadow
+    width: 100%
+    height: 0
+    position: absolute
+    bottom: 0
+    left: 0
+    box-shadow: 0 0 100px 66px #ffffff
+    z-index: 999

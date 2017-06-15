@@ -34,9 +34,6 @@ export default ({ topic, forum }) => {
   if (topic.attrs && topic.attrs.state) classNames.push(topic.attrs.state.toLowerCase())
   return (
     <div className={classNames.join(' ')}>
-      {topic.attrs && topic.attrs.state && (
-        <div className='state'>{state}</div>
-      )}
       {topic.coverUrl && (
         <Link
           to={topic.url}
@@ -52,6 +49,9 @@ export default ({ topic, forum }) => {
         </div>
       )}
       <div className='topic-card-info'>
+        {topic.attrs && topic.attrs.state && (
+          <div className='state'>{state}</div>
+        )}
         <div className='topic-location'>
           <i className='icon-location-pin' />
           <span>{topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}`}</span>

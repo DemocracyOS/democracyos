@@ -17,8 +17,9 @@ function getFeed (req, res, next) {
         { $sort: { 'createdAt': -1 } },
         { $sort: { 'participantsCount': -1 } },
         { $group: { _id: '$forum', topics: { $push: '$$ROOT' } } },
-        { $project: { topic: { $arrayElemAt: [ '$topics', 1 ] } } },
-        { $replaceRoot: { newRoot: '$topic' } }
+        { $project: { best_topics: { $slice: [ '$topics', 2 ] } } },
+        { $unwind: '$best_topics' },
+        { $replaceRoot: { newRoot: '$best_topics' } }
       ], function (err, topicsM) {
         if (err) {
           res.json({ result: null })

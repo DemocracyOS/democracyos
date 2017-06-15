@@ -1,5 +1,4 @@
 .ext-topic-card
-  display: block
   display: flex
   flex-direction: column
   z-index: 0
@@ -10,6 +9,7 @@
   color: inherit
   transition: all .3s unquote('cubic-bezier(.25,.8,.25,1)')
   background-color: #fff
+  overflow: hidden
 
   &:hover
     box-shadow 0 10px 20px rgba(0,0,0,.19), 0 6px 6px rgba(0,0,0,.23)
@@ -19,6 +19,7 @@
     position: relative
     width: 100%
     background-size: cover
+    background-position: center
     background-color: #efefef
 
     &:after
