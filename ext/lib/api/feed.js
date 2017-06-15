@@ -22,7 +22,7 @@ function getFeed (req, res, next) {
         { $replaceRoot: { newRoot: '$best_topics' } }
       ], function (err, topicsM) {
         if (err) {
-          res.json({ result: null })
+          res.json({ result: null, error: err })
         } else {
           const topicsIds = topicsM.map((topic) => ObjectID(topic._id))
           Topic.find({ _id: { $in: topicsIds } })
@@ -40,14 +40,12 @@ function getFeed (req, res, next) {
               res.json({ result: { topics, forums } })
             })
             .catch((err) => {
-              console.log(err)
-              res.json({ result: null })
+              res.json({ result: null, error: err })
             })
         }
       })
     })
     .catch((err) => {
-      console.log(err)
-      res.json({ result: null })
+      res.json({ result: null, error: err })
     })
 })
