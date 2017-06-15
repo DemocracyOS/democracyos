@@ -101,7 +101,7 @@ class TopicArticle extends Component {
                     )
                   }
                   {
-                    forum.name === 'desafios' &&
+                    forum.name === 'desafios' && user.state.fulfilled &&
                     <iframe src={`https://www.rosario.gov.ar/form/id/desafios?name=${user.state.value.firstName}&apellido=${user.state.value.lastName}&email=${user.state.value.email}`} />
                   }
                 </div>
