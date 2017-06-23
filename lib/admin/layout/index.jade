@@ -10,10 +10,10 @@ block styles
     href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css')
 
   //- Application Styles
-  link(rel='stylesheet', href='/admin.css')
-  
+  link(rel='stylesheet', href=(locale == 'fa')?'/admin-rtl.css':'/admin.css')
+
 block content
   section#content.site-content
-  
+
 block scripts
   script(src='/admin.js')
