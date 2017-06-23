@@ -7,12 +7,14 @@ import Anchor from '../anchor'
 import Cover from './cover/component'
 import Steps from './steps/component'
 import Feed from './feed/component'
+import Noticias from './noticias/component'
 
 export default userConnector(({ user }) => {
   return (
     <div className='ext-home-multiforum'>
       <Cover toSteps={() => Anchor.goTo('participar')} toInfo={() => Anchor.goTo('info')} userLoaded={user.state.fulfilled} />
       <Anchor id='participar' />
+      <Noticias />
       <Steps scrollInfo={() => Anchor.goTo('info')} />
       <Anchor className='info' id='info'>
         <div className='action action-consulta'>
