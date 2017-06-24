@@ -2,8 +2,8 @@
   display: flex
   justify-content: center
   align-items: center
+  padding-top: 50px
   .texto-container
-    padding: 50px 20px 0
     .topic-article-content
       padding: 0!important
       color: #757575
@@ -16,18 +16,19 @@
       font-weight: 400
       color: #4f5353
   .media-container
-    margin-left: 50px
-    width: 100%
+    flex: 1
+    padding: 0 0 0 50px
     iframe
       border: none
+      @media (max-width: 1220px)
+        width: 360px
+        height: 224px
     .media-img
       height: 400px
-      background-size: contain;
-  @media (max-width: 900px)
-    flex-direction: column
+      width: 100%
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+  @media (max-width: 950px)
     .media-container
-      margin-left: 0px
-      margin-top: 50px
-      order: 1
-    .texto-container
-      order: 2
+      display: none

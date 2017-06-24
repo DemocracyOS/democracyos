@@ -35,8 +35,13 @@ class Noticias extends Component {
         </div>
         <div className='media-container'>
           {
-            topic.attrs.videoUrl &&
-            <iframe width='560' height='315' src={topic.attrs.videoUrl} frameBorder='0' allowFullScreen />
+            topic.attrs.videoUrl && (
+              <div className='responsive-video-wide'>
+                <div className='video-wrapper'>
+                  <iframe width='560' height='315' src={topic.attrs.videoUrl} frameBorder='0' allowFullScreen />
+                </div>
+              </div>
+            )
           }
           {
             !topic.attrs.videoUrl && topic.attrs.imgUrl &&
