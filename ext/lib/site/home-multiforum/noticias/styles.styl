@@ -1,0 +1,35 @@
+#noticias
+  display: flex
+  justify-content: center
+  align-items: center
+  padding-top: 50px
+  .texto-container
+    .topic-article-content
+      max-width: none
+      padding: 0!important
+      color: #757575
+      font-size: 1.1em
+    a.btn
+      margin-top: 20px
+    h3
+      margin-top: 0
+      font-size: 24px
+      font-weight: 400
+      color: #4f5353
+  .media-container
+    flex: 1
+    padding: 0 0 0 50px
+    iframe
+      border: none
+      @media (max-width: 1220px)
+        width: 360px
+        height: 224px
+    .media-img
+      height: 400px
+      width: 100%
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+  @media (max-width: 950px)
+    .media-container
+      display: none
