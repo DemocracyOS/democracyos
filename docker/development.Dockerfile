@@ -1,4 +1,4 @@
-FROM node:argon
+FROM node:6
 
 MAINTAINER Guido Vilariño <guido@democracyos.org>
 
