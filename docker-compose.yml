@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   app:
@@ -6,26 +6,19 @@ services:
       context: .
       dockerfile: ./docker/development.Dockerfile
     env_file: docker/.env
+    links:
+      - mongo
     ports:
-      - 3000:3000
+      - "3000:3000"
     # mount source volume, but
     # don't overwrite `node_modules` or mirror dir from container
     volumes:
-      - ./public:/usr/src/public
-      - ./bin:/usr/src/bin
-      - ./config:/usr/src/config
-      - ./lib:/usr/src/lib
-      - ./migrations:/usr/src/migrations
-      - ./test:/usr/src/test
+      - ${PWD}:/usr/src
       - /usr/src/node_modules
-    depends_on:
-      - mongo
     tty: true
 
   mongo:
     image: mongo:3.2
-    ports:
-      - 27017:27017
     # Optionally mount external data directory
-    volumes:
-      - ./tmp/db:/data/db
+    # volumes:
+    #   - path-to-your-data-dir:/data/db
