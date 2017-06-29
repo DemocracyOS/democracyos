@@ -13,6 +13,7 @@
 *.sublime-*
 config*.json
 docker-cloud.yml
+/*.override.yml
 lib-cov
 logs
 mongroup.conf
