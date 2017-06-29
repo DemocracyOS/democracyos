@@ -18,7 +18,7 @@ services:
     tty: true
 
   mongo:
-    image: mongo
+    image: mongo:3.2
     # Optionally mount external data directory
     # volumes:
     #   - path-to-your-data-dir:/data/db
