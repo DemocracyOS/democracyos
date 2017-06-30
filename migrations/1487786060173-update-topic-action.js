@@ -1,6 +1,6 @@
 require('lib/models')()
 
-const ObjectID = require('mongodb').ObjectID
+const ObjectID = require('mongoose').Types.ObjectId
 const Topic = require('lib/models').Topic
 const dbReady = require('lib/models').ready
 
