@@ -5,8 +5,8 @@
  * Intended to be used on forks, for an easier extension of DemocracyOS
  */
 
-const fs = require('fs-extra')
 const path = require('path')
+const fs = require('fs-extra')
 
 const ROOT_FOLDER = path.resolve(__dirname, '..')
 const TEMPLATE_FOLDER = path.resolve(ROOT_FOLDER, 'lib', 'ext', 'template')
