@@ -1,4 +1,13 @@
 
+2.6.1 / 2017-07-03
+==================
+
+  * Fix reset password
+  * Add ignore docker-compose override
+  * Set docker mongo version & add dev debug config
+  * Fix forum store import
+  * Update topic tags autocomplete select
+
 2.6.0 / 2017-06-09
 ==================
 
