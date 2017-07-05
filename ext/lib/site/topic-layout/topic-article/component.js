@@ -84,7 +84,7 @@ class TopicArticle extends Component {
               </div>
               <div className='row'>
                 <div className='col-lg-12'>
-                  {topic.clauses && <Content clauses={topic.clauses} />}
+                  {topic.clauses && <Content clauses={topic.clauses} esDesafio={(forum.name === 'desafios')} />}
 
                   {
                     topic.action.method && topic.action.method === 'poll' && (
@@ -99,10 +99,6 @@ class TopicArticle extends Component {
                         topic={topic}
                         canVoteAndComment={forum.privileges.canVoteAndComment} />
                     )
-                  }
-                  {
-                    forum.name === 'desafios' && user.state.fulfilled &&
-                    <iframe src={`https://www.rosario.gov.ar/form/id/desafios?name=${user.state.value.firstName}&apellido=${user.state.value.lastName}&email=${user.state.value.email}`} />
                   }
                 </div>
               </div>

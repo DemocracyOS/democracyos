@@ -1,24 +1,28 @@
-version: '2'
+version: '3'
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: ./docker/development.Dockerfile
-    env_file: docker/.env
+    container_name: dos
+    build: .
+    command: ["./node_modules/.bin/gulp", "bws"]
+    environment:
+      - NODE_ENV=development
+      - DEBUG=democracyos*
+      - MONGO_URL=mongodb://mongo/development
+      - ORGANIZATION_NAME=DemocracyOS Fork
     links:
       - mongo
     ports:
-      - "3000:3000"
-    # mount source volume, but
-    # don't overwrite `node_modules` or mirror dir from container
+      - 3000:3000
     volumes:
-      - ${PWD}:/usr/src
-      - /usr/src/node_modules
+      - ./ext/lib:/usr/src/ext/lib
+      - ./public:/usr/src/public
     tty: true
 
   mongo:
-    image: mongo
-    # Optionally mount external data directory
-    # volumes:
-    #   - path-to-your-data-dir:/data/db
+    container_name: dos-mongo
+    image: mongo:3.2
+    ports:
+      - 27017:27017
+    volumes:
+      - ./tmp/db:/data/db

@@ -1,50 +1,42 @@
-# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.png)](http://bit.ly/1iHAcWz)
-[![Dependencies](https://david-dm.org/DemocracyOS/democracyos.svg)](https://david-dm.org/DemocracyOS/democracyos.svg)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DemocracyOS/democracyos)
-[![Code Climate](https://codeclimate.com/github/DemocracyOS/democracyos/badges/gpa.svg)](https://codeclimate.com/github/DemocracyOS/democracyos)
+# DemocracyOS Extension Example
 
-DemocracyOS is an online space for deliberation and voting on political proposals. It is a platform for a more open and participatory government.The software aims to stimulate better arguments and come to better rulings, as peers.
+This is an example demonstrating how to extend DemocracyOS using [Docker](https://www.docker.com/).
 
-Check out the [live DemocracyOS demo](https://app.democracyos.org/).
+## Getting Started
 
-![DemocracyOS](https://cldup.com/5UCVpUnOhO.png)
+1. Clone this repo
+2. Make sure to have [Docker](https://www.docker.com/) installed on your machine.
+3. Copy the file `docker-compose.override.yml.example` to `docker-compose.override.yml`, and set the email that you're going to signup with on STAFF. This way you will be able to setup DemocracyOS on the first run.
+4. Run DemocracyOS with `docker-compose up --build` _(this could take a while)_
+5. Go to [http://localhost:3000](http://localhost:3000)
+6. Signup, setup your instance, and that's all :)
 
-## Installation
-Please refer to the [Installation](http://docs.democracyos.org/install.html) wiki page for detailed instructions on how to install and setup your instance of DemocracyOS.
+### Refs
 
-## Current DemocracyOS deployments
+* The file `docker-compose.override.yml` is added to the `.gitignore` so it's not uploaded to your Git repo to avoid disclosing any sensitive data or keys.
+* If you want to know more about `docker-compose`, here's the docs: https://docs.docker.com/compose/
+* The complete documentation on overriding the default docker-compose.yml can be found here: https://docs.docker.com/compose/extends/
+* On your `docker-compose.override.yml` you can configure DemocracyOS using environment variables. All the available options are here: http://docs.democracyos.org/configuration.html
+* The port `27017` is exposed so you can connect to mongo from your machine using any mongo client such as [Robomongo](https://robomongo.org/).
+* All the customized views/endpoints are located on the `/ext` folder. Following the same folders pattern as DemocracyOS/democracyos.
+* New frontend builds, which allows you to use your custom frontend code, are defined [here](https://github.com/DemocracyOS/extension-example/blob/master/ext/lib/build/entries.json).
 
-* [DemocracyOS - PDR](http://dos.partidodelared.org): The Net Party's official deployment of DemocracyOS.
-* [EuVoto](http://euvoto.org/): Brazilian initiative by the Open Knowledge Foundation Brasil to discuss legislation in the city of Sao Paulo.
-* [Loi Renseignement](http://pjlr.democracyos.eu/): First deployment by DemocracyOS France to discuss the Loi Renseignement.
-* [Evoks](http://evoks.hu/): Hungarian project by Atlatszo.hu for discussing social issues.
-* [PAMI](http://debatics.pami.org.ar/): The largest healthcare program for elderly people opens its technical decisions.
-* [Ukrainian Choice](http://ukrainianchoice.herokuapp.com/law/557ba8ca29e8180300c88c48): Official deployment of DemocracyOS Ukraine.
-* [Paris](https://crm.paris.fr/2016/): Official deployment of DemocracyOS in Paris (France) by city's mayor Anne Hidalgo.
+## Commands
 
-## Contributing
+```
+# Spin up your development server with:
+docker-compose up
+```
 
-Please see [CONTRIBUTING.md](https://github.com/DemocracyOS/app/blob/master/CONTRIBUTING.md) for further details.
+```
+# If you change any dependency you have to re-build your Docker image with:
+docker-compose up --build
+```
 
-## Contributors
+```
+# Enter to the running DemocracyOS container with:
+docker exec -it dos bash
+```
 
-See [CONTRIBUTORS.md](https://github.com/DemocracyOS/app/blob/master/CONTRIBUTORS.md) to get to know the DemocracyOS team and contributors.
-
-## Links
-
-* [DemocracyOS official site](http://democracyos.org). The project's official site.
-* [DemocracyOS official documentation site](http://docs.democracyos.org). The project's official site.
-* [DemocracyOS mailing list](https://groups.google.com/forum/#!forum/democracyos-app): questions about DemocracyOS exclusively. For bug reports or feature requests please use the project's [Issues](https://github.com/DemocracyOS/app/issues).
-* [DemocracyOS chat room](https://gitter.im/democracyos/app/).
-* [Democracia en Red](http://democraciaenred.org): The `Net Democracy Foundation` official site.
-
-## Browser support
-
-We support real browsers and IE10+
-
-## Acknowledgements
-Icons made by [Jamal Jama](https://twitter.com/byjml) and [Ahmad Firoz](https://twitter.com/firoz_usf) from [simplelineicons.com](http://simplelineicons.com/).
-
-## License
-
-DemocracyOS is open source software under the GPL v3.0 license. Please see full terms in the [LICENSE](LICENSE) file.
+## Running on Production
+Use as reference the repo [DemocracyOS/onpremises](https://github.com/DemocracyOS/onpremises). It uses Ansible for provisioning, and Docker Compose to run the server, there you will find more detailed documentation.
