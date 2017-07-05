@@ -10,8 +10,6 @@ services:
       - DEBUG=democracyos*
       - MONGO_URL=mongodb://mongo/development
       - ORGANIZATION_NAME=DemocracyOS Fork
-      # Add your email here!
-      - STAFF=email@example.com
     links:
       - mongo
     ports:
