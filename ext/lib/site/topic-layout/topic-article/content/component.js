@@ -1,21 +1,31 @@
 import React from 'react'
 
-export default ({ clauses, esDesafio }) => (
+export default ({ clauses, esDesafio, user, titulo, id }) => (
   <div
     className='clauses'
-    ref={esDesafio ? contentMount : null}
-    dangerouslySetInnerHTML={createClauses(clauses)} />
+    ref={esDesafio ? contentMount(user, titulo, id) : null}
+    dangerouslySetInnerHTML={createClauses(clauses, esDesafio)} />
 )
 
-function contentMount (e) {
-  if (!e) return
-  let a = e.getElementsByTagName('a')[0]
-  if (a) a.addEventListener('click', openPopUpWindow)
+function contentMount (userState, titulo, id) {
+  const user = userState.value
+  return (e) => {
+    if (!e) return
+    let a = e.getElementsByTagName('a')
+    a = a[a.length - 1]
+    if (a) a.addEventListener('click', openPopUpWindow(user, titulo, id))
+  }
 }
 
-function openPopUpWindow (e) {
-  e.preventDefault()
-  PopupCenter(e.target.href, 'Desafío Rosario Participa', 900, 500)
+function openPopUpWindow (user, titulo, id) {
+  return (e) => {
+    e.preventDefault()
+    let url = e.target.href
+    if (user) {
+      url += `?desafio_nombre=${encodeURI(titulo)}&desafio_id=${id}&nombre=${user.firstName}&apellido=${user.lastName}&email=${user.email}&email_conf=${user.email}`
+    }
+    PopupCenter(url, titulo, 900, 500)
+  }
 }
 
 function PopupCenter (url, title, w, h) {
@@ -27,7 +37,7 @@ function PopupCenter (url, title, w, h) {
 
   var left = ((width / 2) - (w / 2)) + dualScreenLeft
   var top = ((height / 2) - (h / 2)) + dualScreenTop
-  var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left)
+  var newWindow = window.open(url, title, 'toolbar=no, menubar=no, resizable=yes, scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left)
 
   // Puts focus on the newWindow
   if (window.focus) {
@@ -35,7 +45,7 @@ function PopupCenter (url, title, w, h) {
   }
 }
 
-function createClauses (clauses) {
+function createClauses (clauses, esDesafio) {
   return {
     __html: clauses
       .sort(function (a, b) {

@@ -84,7 +84,15 @@ class TopicArticle extends Component {
               </div>
               <div className='row'>
                 <div className='col-lg-12'>
-                  {topic.clauses && <Content clauses={topic.clauses} esDesafio={(forum.name === 'desafios')} />}
+                  {
+                    topic.clauses &&
+                      <Content
+                        clauses={topic.clauses}
+                        user={user.state}
+                        titulo={topic.mediaTitle}
+                        id={topic._id}
+                        esDesafio={(forum.name === 'desafios')} />
+                  }
 
                   {
                     topic.action.method && topic.action.method === 'poll' && (
