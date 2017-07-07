@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Page () {
+  document.body.scrollTop = 0
   return (
     <div className='ext-terminos-y-condiciones container'>
       <h1>Términos y condiciones de uso</h1>
