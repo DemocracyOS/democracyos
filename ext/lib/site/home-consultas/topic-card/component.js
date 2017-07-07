@@ -8,7 +8,7 @@ import { SharerFacebook } from 'ext/lib/site/sharer'
 export default ({ forum, topic }) => {
   const votes = topic.action.pollResults.length
   const topicUrl = `${window.location.origin}${topic.url}`
-  const twitterDesc = encodeURIComponent(`Estoy participando en esta consulta participá vos también ${topicUrl} #RosarioParticipa`)
+  const twitterDesc = encodeURIComponent(`Estoy participando en esta consulta, participá vos también ${topicUrl} #RosarioParticipa`)
   return (
     <div className='ext-topic-card consultas-topic-card'>
       {topic.coverUrl && (

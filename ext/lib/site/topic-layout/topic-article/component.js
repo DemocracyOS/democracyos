@@ -108,6 +108,11 @@ class TopicArticle extends Component {
                         canVoteAndComment={forum.privileges.canVoteAndComment} />
                     )
                   }
+                  {
+                    forum.name === 'voluntariado' && (
+                      <a className='btn btn-primary' href=''>Contactáte</a>
+                    )
+                  }
                 </div>
               </div>
             </div>
