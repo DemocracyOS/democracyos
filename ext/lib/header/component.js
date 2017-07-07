@@ -39,7 +39,7 @@ class Header extends Component {
     return (
       <header className='ext-header'>
         <div className='ext-header-prefix'>
-          <a href='http://rosario.gob.ar' rel='noopener noreferrer'>
+          <a href='http://rosario.gob.ar' rel='noopener noreferrer' target='_blank'>
             <img src='/ext/lib/header/rosarioigual.png' />
           </a>
         </div>
