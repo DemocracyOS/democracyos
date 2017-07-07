@@ -22,7 +22,7 @@ export default ({ topic, forum }) => {
       .title
   }
 
-  const twitterDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
+  const twitterDesc = encodeURIComponent(`Mirá el proyecto para mi barrio ${topicUrl} #RosarioParticipa`)
 
   const classNames = ['ext-topic-card', 'presupuesto-topic-card']
 
