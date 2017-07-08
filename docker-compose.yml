@@ -9,7 +9,6 @@ services:
       - NODE_ENV=development
       - DEBUG=democracyos*
       - MONGO_URL=mongodb://mongo/development
-      - ORGANIZATION_NAME=DemocracyOS Fork
     links:
       - mongo
     ports:
