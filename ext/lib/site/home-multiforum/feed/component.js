@@ -34,7 +34,7 @@ class Feed extends Component {
     const { topics, forums } = this.state
 
     return (
-      <div id='feed'>
+      <div id='feed' className={topics && topics.length > 8 ? 'grande' : 'chico'}>
         {(topics && forums) && (
           <div className='feed-container'>
             { topics.map((topic, i) => topicCard(topic, forums, i)) }

@@ -6,11 +6,29 @@
   background: #00adef
   position: relative
   @media (min-width: 1000px)
-    height: 800px
+    &.chico
+      height: 405px
+      .feed-container
+        height: 405px
+    &.grande
+      height: 800px
+      .feed-container
+        height: 800px
+  &.chico
+    height: 405px
+    .feed-container
+      height: 405px
+      .ext-topic-card
+        height: 380px
+  &.grande
+    height: 1000px
+    .feed-container
+      height: 1000px
   .feed-container
     position: relative
     column-count: 4
     column-gap: 20px
+    column-fill: balance
     @import '../../home-presupuesto/topic-card/styles'
     @import '../../home-consultas/topic-card/styles'
     @import '../../home-desafios/topic-card/styles'
