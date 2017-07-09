@@ -2,14 +2,19 @@ const passport = require('passport')
 const express = require('express')
 const FacebookStrategy = require('passport-facebook').Strategy
 const User = require('lib/models').User
+const utils = require('lib/utils')
 const config = require('lib/config')
 
 const app = module.exports = express()
 
+const callbackURL = utils.buildUrl(config, {
+  pathname: '/auth/facebook/confirm/authorize'
+})
+
 const strategy = new FacebookStrategy({
   clientID: config.auth.facebook.clientID,
   clientSecret: config.auth.facebook.clientSecret,
-  callbackURL: '/auth/facebook/confirm/authorize',
+  callbackURL: callbackURL,
   profileFields: ['id', 'displayName', 'first_name', 'last_name', 'email'],
   enableProof: false
 }, function (accessToken, refreshToken, profile, done) {
@@ -40,10 +45,6 @@ app.get('/auth/facebook/confirm/authorize',
       avatar: req.user.avatar
     }
 
-    next()
-  },
-  function (req, res, next) {
-    console.log(res.locals.initialState)
     next()
   },
   require('lib/site/layout')
