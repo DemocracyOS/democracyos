@@ -4,6 +4,7 @@ import bus from 'bus'
 import urlBuilder from 'lib/url-builder'
 import userConnector from 'lib/site/connectors/user'
 import Content from 'ext/lib/site/topic-layout/topic-article/content/component'
+import PopupCenter from 'ext/lib/open-popup'
 import Comments from 'lib/site/topic-layout/topic-article/comments/component'
 import Poll from 'lib/site/topic-layout/topic-article/poll/component'
 import Cause from 'lib/site/topic-layout/topic-article/cause/component'
@@ -50,6 +51,17 @@ class TopicArticle extends Component {
           }
         })
     }
+  }
+
+  openPopup = (e) => {
+    e.preventDefault()
+    const { topic, user } = this.props
+    let url = 'https://www.rosario.gov.ar/form/id/contacto_institucional_persona/53'
+    if (user.state.value) {
+      const userValue = user.state.value
+      url += `?ong_nombre=${encodeURI(topic.mediaTitle)}&ong_id=${topic.id}&nombreirstName}&apellido=${userValue.lastName}&email=${userValue.email}&email_conf=${userValue.email}`
+    }
+    PopupCenter(url, topic.mediaTitle, 900, 500)
   }
 
   render () {
@@ -110,7 +122,7 @@ class TopicArticle extends Component {
                   }
                   {
                     forum.name === 'voluntariado' && (
-                      <a className='btn btn-primary' href=''>Contactáte</a>
+                      <a onClick={this.openPopup} className='btn btn-primary' href='#'>Contactáte</a>
                     )
                   }
                 </div>

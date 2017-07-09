@@ -6,6 +6,7 @@ import userConnector from 'lib/site/connectors/user'
 import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
+import PopupCenter from 'ext/lib/open-popup'
 
 class HomeVoluntariados extends Component {
   constructor (props) {
@@ -74,6 +75,13 @@ class HomeVoluntariados extends Component {
     this.setState({ topics })
   }
 
+  openPopup = (e) => {
+    e.preventDefault()
+    const { topic } = this.props
+    let url = 'https://www.rosario.gov.ar/form/id/voluntarios_participacion'
+    PopupCenter(url, '', 900, 500)
+  }
+
   render () {
     const { forum, topics } = this.state
 
@@ -106,7 +114,7 @@ class HomeVoluntariados extends Component {
           <div className='container'>
             <h1 className='display-4'>¿Sos una organización?</h1>
             <p className='lead'>Si querés sumar tu organización a este listado, completá el siguiente formulario.</p>
-            <a className='btn btn-primary btn-lg' href='https://www.rosario.gov.ar/form/id/voluntarios_participacion'>Sumar mi organización</a>
+            <a className='btn btn-primary btn-lg' onClick={this.openPopup} href='#'>Sumar mi organización</a>
           </div>
         </div>
         {topics && <Footer />}
