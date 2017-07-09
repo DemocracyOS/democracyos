@@ -13,7 +13,7 @@ function getFeed (req, res, next) {
   Forum.find({ name: { $in: forumsNames } })
     .then((forumsM) => {
       Topic.aggregate([
-        { $match: { forum: { $in: forumsM.map((f) => f._id) } } },
+        { $match: { forum: { $in: forumsM.map((f) => f._id) }, deletedAt: null } },
         { $sort: { 'createdAt': -1 } },
         { $sort: { 'participantsCount': -1 } },
         { $group: { _id: '$forum', topics: { $push: '$$ROOT' } } },
