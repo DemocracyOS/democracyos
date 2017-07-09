@@ -38,7 +38,7 @@ export default userConnector(({ user }) => {
           <div className='action-content'>
             <h3>Ideas</h3>
             <p>¿Tenés ideas para mejorar la vida en la ciudad? Compartilas.</p>
-            <Link to='/consultas' className='btn btn-primary btn-lg'>Quiero proponer</Link>
+            <Link to='/ideas' className='btn btn-primary btn-lg'>Quiero proponer</Link>
           </div>
         </div>
         <div className='action action-presupuesto'>
