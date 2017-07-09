@@ -149,7 +149,7 @@ class HomeIdeas extends Component {
               <h3>Distritos</h3>
               {forum && <TagsList tags={forum.initialTags} forumName={forum.name} />}
               <h3>Temas</h3>
-              {forum && <TagsList tags={tags} forumName={forum.name} />}
+              {forum && <TagsList tags={tags} forumName={forum.name} without={forum.initialTags} />}
             </div>
             <div className='col-md-8 pull-md-4'>
 
@@ -176,8 +176,9 @@ class HomeIdeas extends Component {
   }
 }
 
-const TagsList = tagsConnector(({ tags, forumName }) => {
+const TagsList = tagsConnector(({ tags, forumName, without }) => {
   var u = new window.URLSearchParams(window.location.search)
+  if (without) tags = tags.filter((t) => !~without.indexOf(t))
   return tags && tags.length > 0 && (
     <div className='forum-tags'>
       {tags.map((tag, i) => {
