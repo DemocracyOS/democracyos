@@ -14,7 +14,10 @@ services:
     ports:
       - 3000:3000
     volumes:
+      - ./ext/bin:/usr/src/ext/bin
+      - ./ext/config:/usr/src/ext/config
       - ./ext/lib:/usr/src/ext/lib
+      - ./ext/package.json:/usr/src/ext/package.json
       - ./public:/usr/src/public
     tty: true
 
