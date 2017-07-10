@@ -1,4 +1,11 @@
 
+2.8.0 / 2017-07-10
+==================
+
+  * Add slack errors
+  * update notifier to 2.1.0
+  * Add new-comment notification
+
 2.7.3 / 2017-07-09
 ==================
 
