@@ -33,7 +33,8 @@ class Feed extends Component {
   render () {
     const { topics, forums } = this.state
 
-    return (
+    return (!topics || topics.length < 4) ? null : (
+
       <div id='feed' className={topics && topics.length > 8 ? 'grande' : 'chico'}>
         {(topics && forums) && (
           <div className='feed-container'>

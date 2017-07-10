@@ -8,7 +8,7 @@ app.get('/',
 function getNoticias (req, res, next) {
   Forum.findOne({ name: 'noticias' })
     .then((forum) => {
-      Topic.findOne({ forum: forum._id })
+      Topic.findOne({ forum: forum._id, publishedAt: { $ne: null }, deletedAt: null })
         .sort({ created_at: -1 })
         .exec(function (err, topic) {
           if (err) {
