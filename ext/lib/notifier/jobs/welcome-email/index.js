@@ -1,12 +1,11 @@
 const utils = require('democracyos-notifier/lib/utils')
-const mailer = require('democracyos-notifier/lib/mailer')
 const template = require('./template')
 
 const jobName = 'welcome-email'
 const subject = 'Bienvenido al portal de participación de la ciudad de Rosario'
 
 module.exports = function welcomeEmail (notifier) {
-  const { db, agenda } = notifier
+  const { db, agenda, mailer } = notifier
   const users = db.get('users')
 
   agenda.define(jobName, { priority: 'high' }, welcomeEmailJob)
