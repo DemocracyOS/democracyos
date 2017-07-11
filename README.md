@@ -1,4 +1,4 @@
-# Consulta Pública Argentina
+# Rosario Participa
 
 Fork de la plataforma [DemocracyOS](https://github.com/DemocracyOS/democracyos) con modificaciones específicas para Gobierno Abierto de Argentina
 
