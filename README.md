@@ -1,6 +1,6 @@
 # Rosario Participa
 
-Fork de la plataforma [DemocracyOS](https://github.com/DemocracyOS/democracyos) con modificaciones específicas para Gobierno Abierto de Argentina
+Fork de la plataforma [DemocracyOS](https://github.com/DemocracyOS/democracyos) con modificaciones específicas para la plataforma de participación ciudadana Rosario Participa.
 
 ## Para empezar
 
