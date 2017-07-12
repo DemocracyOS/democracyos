@@ -17,9 +17,6 @@ export default ({ topic }) => (
       </h1>
     </div>
     <div className='topic-card-footer'>
-      <div className='participants'>
-        {` ${topic.participants.length} participante${topic.participants.length !== 1 ? 's' : ''}`}
-      </div>
       <Link to={topic.url} className='btn btn-block btn-primary'>
         Quiero ser parte
       </Link>
