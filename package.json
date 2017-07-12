@@ -1,6 +1,6 @@
 {
   "name": "democracyos",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
   "homepage": "http://www.democracyos.org/",
   "license": "GPL-3.0",
