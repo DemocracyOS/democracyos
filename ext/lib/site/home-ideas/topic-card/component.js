@@ -51,7 +51,7 @@ export default ({ topic, onVote }) => (
           //   : <span className='icon-heart' />
         }
         &nbsp;
-        {topic.participants.length}
+        {topic.participantsCount}
       </div>
       {topic.currentUser.action.supported && (
         <button disabled className='btn btn-primary'>

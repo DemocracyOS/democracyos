@@ -1,4 +1,4 @@
-FROM democracyos/democracyos:2.8.1
+FROM democracyos/democracyos:2.8.2
 
 MAINTAINER Matías Lescano <matias@democraciaenred.org>
 
