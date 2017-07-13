@@ -15,6 +15,9 @@ export default ({ topic }) => (
       <h1 className='topic-card-title'>
         <Link to={topic.url}>{topic.mediaTitle}</Link>
       </h1>
+      <div className='participants'>
+        { topic.topicId && ` ${topic.topicId} participantes` }
+      </div>
     </div>
     <div className='topic-card-footer'>
       <Link to={topic.url} className='btn btn-block btn-primary'>
