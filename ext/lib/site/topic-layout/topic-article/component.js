@@ -165,9 +165,14 @@ const Header = ({ topic }) => (
     <div className='header-content'>
       <div className='container'>
         <h1>{topic.mediaTitle}</h1>
-        {topic.attrs && topic.attrs.description && (
-          <p>{topic.attrs.description}</p>
-        )}
+        <div className='autor'>
+          <div
+          className='avatar'
+          style={{
+            backgroundImage: `url(${topic.owner.avatar})`
+          }}></div>
+          <span>{topic.owner.fullName}</span>
+        </div>
       </div>
     </div>
   </header>
