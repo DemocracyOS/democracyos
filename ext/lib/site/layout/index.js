@@ -7,7 +7,7 @@ const app = module.exports = express()
 layout.setTemplate(path.join(__dirname, 'index.jade'))
 
 app.use(function initializeState (req, res, next) {
-  if (!res.locals.initialState) res.locals.initialState = {}
+  if (!res.locals.initialState) res.locals.initialState = {og:{}}
 
   next()
 })
