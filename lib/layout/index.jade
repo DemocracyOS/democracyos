@@ -9,7 +9,7 @@ html(lang=locale)
     meta(charset='utf-8')
     meta(name='description', content=config.socialshare.siteDescription)
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
-    
+  
     //-
     //-   Styles
     //-   ==================================================
@@ -19,6 +19,12 @@ html(lang=locale)
     script(src='https://cdn.polyfill.io/v1/polyfill.min.js')
 
     link(rel='icon', type='image/x-icon', href=config.favicon)
+    
+    
+    //-
+    //-   Extra header
+    //-   ==================================================
+    block extraHeader
 
   body
     //-
