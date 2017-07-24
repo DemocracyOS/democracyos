@@ -67,9 +67,28 @@ class HomeDesafios extends Component {
           topics: filtered
         })
 
+        Promise.all(filtered.map(this.getTopicCount))
+          .then((topics) => { this.setState({ topics }) })
+          .catch((err) => { console.log(err) })
+
         bus.on('topic-store:update:all', this.fetchTopics)
       })
       .catch((err) => { throw err })
+  }
+
+  getTopicCount (t) {
+    t.count = 0
+    const clauses = t.clauses.map((c) => c.markup).join(' ')
+    if (clauses) {
+      const hrefs = /href="(.*?)"/g.exec(clauses)
+      const formUrl = hrefs[hrefs.length - 1] + '/total_registros'
+      return window.fetch(formUrl).then((r) => r.json()).then((r) => {
+        t.count = r.registros
+        return t
+      })
+    } else {
+      return Promise.resolve(t)
+    }
   }
 
   componentWillUnmount = () => {

@@ -11,12 +11,12 @@ export default ({ topic }) => (
         style={{ backgroundImage: `url(${topic.coverUrl})` }} />
     )}
     <div className='topic-card-info'>
-      <div className='fecha'>{moment(topic.createdAt).format('D/M/YY')}</div>
       <h1 className='topic-card-title'>
         <Link to={topic.url}>{topic.mediaTitle}</Link>
       </h1>
       <div className='participants'>
-        { topic.topicId && ` ${topic.topicId} participantes` }
+      <div className='fecha'>{moment(topic.createdAt).format('D/M/YY')}</div>
+        {topic.count ? ` ${topic.count} participante${topic.count !== 1 ? 's' : ''}` : ''}
       </div>
     </div>
     <div className='topic-card-footer'>
