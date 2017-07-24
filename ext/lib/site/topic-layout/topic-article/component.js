@@ -156,7 +156,7 @@ function hideSidebar () {
   bus.emit('sidebar:show', false)
 }
 
-const Header = ({ topic }) => (
+const Header = ({ topic, isIdea }) => (
   <header
     className={`proyecto-container-header ${!topic.coverUrl ? 'no-cover' : ''}`}
     style={topic.coverUrl ? {
@@ -165,14 +165,19 @@ const Header = ({ topic }) => (
     <div className='header-content'>
       <div className='container'>
         <h1>{topic.mediaTitle}</h1>
-        <div className='autor'>
-          <div
-          className='avatar'
-          style={{
-            backgroundImage: `url(${topic.owner.avatar})`
-          }}></div>
-          <span>{topic.owner.fullName}</span>
-        </div>
+        {
+          isIdea && (
+            <div className='autor'>
+              <div
+                className='avatar'
+                style={{
+                  backgroundImage: `url(${topic.owner.avatar})`
+                }}>
+              </div>
+              <span>{topic.owner.fullName}</span>
+            </div>
+          )
+        }
       </div>
     </div>
   </header>
