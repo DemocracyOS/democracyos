@@ -1,4 +1,10 @@
 
+2.8.5 / 2017-07-27
+==================
+
+  * Update democracyos-notifier to 2.1.2
+  * Fix error logging on startup
+
 2.8.0 / 2017-07-10
 ==================
 
