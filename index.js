@@ -20,17 +20,13 @@ if (module === require.main) {
     .then(migrations.ready())
     .then(() => {
       server(opts, function (err) {
-        if (err) {
-          log(err)
-          process.exit(1)
-          return
-        }
+        if (err) throw err
 
         log('DemocracyOS server running...')
       })
     })
     .catch((err) => {
-      log(err.message)
+      console.error(err)
       process.exit(1)
     })
 }
