@@ -24,11 +24,11 @@ export default ({ forum, topic }) => {
             {' '}
             {topic.status === 'closed' && (
               <span>
-                Cerró el {moment(topic.createdAt).format('D/M/YY')}
+                Cerró el {moment(topic.closingAt).format('D/M/YY')}
               </span>
             )}
+            <span>
             {topic.status === 'open' && (
-              <span>
                 Cierra <Timeago date={topic.closingAt} />
               </span>
             )}
