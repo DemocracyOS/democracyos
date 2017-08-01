@@ -27,8 +27,8 @@ export default ({ forum, topic }) => {
                 Cerró el {moment(topic.closingAt).format('D/M/YY')}
               </span>
             )}
-            <span>
             {topic.status === 'open' && (
+              <span>
                 Cierra <Timeago date={topic.closingAt} />
               </span>
             )}
