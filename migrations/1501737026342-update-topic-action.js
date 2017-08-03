@@ -32,6 +32,7 @@ exports.up = function up (done) {
   dbReady()
     .then(() => Topic.collection.find({}).toArray())
     .then(mapPromises(function (topic) {
+      if (topic.action && Object.keys(topic.action).includes('box')) return Promise.resolve(0)
       const action = {
         _id: new ObjectID(),
         method: topic.action ? topic.action.method : ''
@@ -57,15 +58,13 @@ exports.up = function up (done) {
           action.box = []
           action.results = []
       }
-      action.boxCount = action.box.length
 
       if (!action.box) {
-        console.log('empty box')
         action.box = []
         action.results = []
-        action.boxCount - 0
       }
 
+      action.boxCount = action.box.length
       action.results = votingResults(action.box, action.results.map(o => o.value))
 
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
