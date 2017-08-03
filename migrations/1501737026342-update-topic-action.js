@@ -10,8 +10,8 @@ function votingResults (votes, options) {
   const votesTotal = votes.length
 
   const votesCounts = votes.reduce((counts, result) => {
-    if (!counts[vote.value]) counts[vote.value] = 0
-    counts[vote.value]++
+    if (!counts[result.value]) counts[result.value] = 0
+    counts[result.value]++
     return counts
   }, {})
 
@@ -34,10 +34,10 @@ exports.up = function up (done) {
     .then(mapPromises(function (topic) {
       const action = {
         _id: new ObjectID(),
-        method: topic.action.method
+        method: topic.action ? topic.action.method : ''
       }
 
-      switch (topic.action.method) {
+      switch (topic.action && topic.action.method) {
         case 'vote':
           action.box = topic.action.voteResults
           action.results = [{ value: 'positive', percentage: 0 }, { value: 'neutral', percentage: 0 }, { value: 'negative', percentage: 0 }]
@@ -55,17 +55,26 @@ exports.up = function up (done) {
           break;
         default:
           action.box = []
+          action.results = []
+      }
+      action.boxCount = action.box.length
+
+      if (!action.box) {
+        console.log('empty box')
+        action.box = []
+        action.results = []
+        action.boxCount - 0
       }
 
-      action.boxCount = action.box.length
-      action.results = votingResults(action.box, action.results)
+      action.results = votingResults(action.box, action.results.map(o => o.value))
 
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
-        $unset: { 'action.voteResults': '','action.pollResults': '', 'action.causeResults': '', 'action.pollOptions': '', 'participants': '', 'participantsCount': '' },
+        $unset: { 'action.voteResults': '','action.pollResults': '', 'action.causeResults': '', 'action.pollOptions': '', 'participants': '', 'participantsCount': '' }
+      }).then(r => Topic.collection.findOneAndUpdate({ _id: topic._id }, {
         $set: {
           action: action
         }
-      })
+      }))
     }))
     .then(function (results) {
       const total = results.filter((v) => !!v).length
