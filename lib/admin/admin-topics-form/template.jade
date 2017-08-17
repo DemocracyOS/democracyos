@@ -76,27 +76,36 @@
             span.help-text= t('admin-topics-form.description.authorUrl')
           input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder=t('admin-topics-form.placeholder.authorUrl'), value=topic.authorUrl, validate='url')
         .form-group
+          - var pollOpen = !!(topic.action && topic.action.boxCount > 0)
           label= t('admin-topics-form.label.action')
+          - if (pollOpen)
+            p.alert.alert-warning
+              = t('admin-topics-form.message.cant-edit-action')
+            select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '', disabled)
+              option(value='')= t('admin-topics-form.action.none')
+              option(value='vote')= t('admin-topics-form.action.vote')
+              option(value='poll')= t('admin-topics-form.action.poll')
+              option(value='cause')= t('admin-topics-form.action.cause')
           - if (te('admin-topics-form.description.action'))
             span.help-text= t('admin-topics-form.description.action')
-          select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '')
-            option(value='')= t('admin-topics-form.action.none')
-            option(value='vote')= t('admin-topics-form.action.vote')
-            option(value='poll')= t('admin-topics-form.action.poll')
-            option(value='cause')= t('admin-topics-form.action.cause')
+          - if (!pollOpen)
+            select.form-control.method-input(name='action.method', value=topic.action ? topic.action.method : '')
+              option(value='')= t('admin-topics-form.action.none')
+              option(value='vote')= t('admin-topics-form.action.vote')
+              option(value='poll')= t('admin-topics-form.action.poll')
+              option(value='cause')= t('admin-topics-form.action.cause')
         .form-group.poll-options.hide
-          - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
-          - var pollOptions = topic.action && topic.action.pollOptions
+          - var pollOpen = !!(topic.action && topic.action.boxCount > 0)
+          - var pollOptions = topic.action && topic.action.results && topic.action.results.map(function(o){ return o.value })
           label= t('admin-topics-form.label.poll-options')
           - if (te('admin-topics-form.description.poll-options'))
             span.help-text= t('admin-topics-form.description.poll-options')
-          - if (pollOpened)
+          - if (pollOpen)
             p.alert.alert-warning
-              = t('admin-topics-form.message.cant-edit-action')
+              = t('admin-topics-form.message.cant-edit-action.options')
             input.form-control(type='text', value=pollOptions.join(', '), disabled)
-              
-          - if (!pollOpened)
-            input.form-control(type='tags', name='action.pollOptions', value=pollOptions)
+          - if (!pollOpen)
+            input.form-control(type='tags', name='action.options', value=pollOptions)
 
         .form-group
           label= t('admin-topics-form.label.source')
