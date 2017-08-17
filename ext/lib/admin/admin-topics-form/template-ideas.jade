@@ -105,7 +105,7 @@
             option(value='poll')= t('admin-topics-form.action.poll')
             option(value='cause')= t('admin-topics-form.action.cause')
         .form-group.poll-options.hide
-          - var pollOpened = !!(topic.action && topic.action.pollResults && topic.action.pollResults.length > 0)
+          - var pollOpened = !!(topic.action && topic.action.results && topic.action.results.length > 0)
           - var pollOptions = topic.action && topic.action.pollOptions
           label= t('admin-topics-form.label.poll-options')
           - if (te('admin-topics-form.description.poll-options'))

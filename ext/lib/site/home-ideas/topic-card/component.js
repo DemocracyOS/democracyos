@@ -46,19 +46,19 @@ export default ({ topic, onVote }) => (
       <div className='participants'>
         <span className='icon-heart' />
         {
-          // !topic.currentUser.action.supported
+          // !topic.currentUser.action.voted
           //   ? <span onClick={() => onVote(topic.id)} className='icon-heart' />
           //   : <span className='icon-heart' />
         }
         &nbsp;
-        {topic.participantsCount}
+        {topic.action.boxCount}
       </div>
-      {topic.currentUser.action.supported && (
+      {topic.currentUser.action.voted && (
         <button disabled className='btn btn-primary'>
           ¡Gracias!
         </button>
       )}
-      {!topic.currentUser.action.supported && (
+      {!topic.currentUser.action.voted && (
         <button
           onClick={() => onVote(topic.id)}
           className='btn btn-primary'>
