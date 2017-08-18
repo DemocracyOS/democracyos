@@ -17,13 +17,13 @@ const filters = {
   },
   pop: {
     text: 'Más Populares',
-    sort: '-participantsCount',
+    sort: '-action.boxCount',
     filter: (topic) => topic.status === 'open',
     emptyMsg: 'No se encontraron ideas.'
   },
   closed: {
     text: 'Archivadas',
-    sort: '-participantsCount',
+    sort: '-action.boxCount',
     filter: (topic) => topic.status === 'closed',
     emptyMsg: 'No se encontraron ideas.'
   }

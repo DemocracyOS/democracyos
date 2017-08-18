@@ -10,8 +10,8 @@ import TopicCard from './topic-card/component'
 const filters = {
   new: {
     text: 'Más Nuevos',
-    filter: (topic) => topic.status === 'open' && !topic.currentUser.action.polled,
-    emptyMsg: '¡Ya participaste en todas los desafíos!'
+    filter: (topic) => topic.status === 'open' && !topic.voted,
+    emptyMsg: '¡Ya participaste en todos los desafíos!'
   },
   all: {
     text: 'Todos',
@@ -79,8 +79,21 @@ class HomeDesafios extends Component {
   getTopicCount (t) {
     t.count = 0
     const clauses = t.clauses.map((c) => c.markup).join(' ')
+    let hrefs = []
     if (clauses) {
-      const hrefs = /href="(.*?)"/g.exec(clauses)
+      const regex = /\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]*))/gi
+      let m
+
+      while ((m = regex.exec(clauses)) !== null) {
+          if (m.index === regex.lastIndex) {
+              regex.lastIndex++
+          }
+
+          m.forEach((match, groupIndex) => {
+            if (match && groupIndex === 1) hrefs.push(match)
+          })
+      }
+
       const formUrl = hrefs[hrefs.length - 1] + '/total_registros'
       return window.fetch(formUrl).then((r) => r.json()).then((r) => {
         t.count = r.registros
@@ -106,10 +119,13 @@ class HomeDesafios extends Component {
   handleFilterChange = (key) => {
     topicStore.findAll({ forum: this.state.forum.id })
       .then((topics) => {
-        this.setState({
-          filter: key,
-          topics: filter(key, topics)
-        })
+        Promise.all(filter(key, topics).map(this.getTopicCount))
+          .then((topics) => { this.setState({ topics, filter: key }) })
+          .catch((err) => { console.log(err) })
+        // this.setState({
+        //   filter: key,
+        //   topics: filter(key, topics)
+        // })
       })
       .catch((err) => { throw err })
   }
