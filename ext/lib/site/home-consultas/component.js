@@ -10,7 +10,7 @@ import TopicCard from './topic-card/component'
 const filters = {
   new: {
     text: 'Más Nuevas',
-    filter: (topic) =>  topic.status === 'open' && !topic.currentUser.action.voted,
+    filter: (topic) =>  topic.status === 'open' && !topic.voted,
     emptyMsg: '¡Ya participaste en todas las consultas!'
   },
   all: {
