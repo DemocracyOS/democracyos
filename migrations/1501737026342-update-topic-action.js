@@ -64,7 +64,7 @@ exports.up = function up (done) {
         action.results = []
       }
 
-      action.boxCount = action.box.length
+      action.count = action.box.length
       action.results = votingResults(action.box, action.results.map(o => o.value))
 
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, {

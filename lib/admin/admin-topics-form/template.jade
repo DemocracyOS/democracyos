@@ -76,7 +76,7 @@
             span.help-text= t('admin-topics-form.description.authorUrl')
           input.form-control(type='text', maxlength='254', id='authorUrl', name='authorUrl', placeholder=t('admin-topics-form.placeholder.authorUrl'), value=topic.authorUrl, validate='url')
         .form-group
-          - var pollOpen = !!(topic.action && topic.action.boxCount > 0)
+          - var pollOpen = !!(topic.action && topic.action.count > 0)
           label= t('admin-topics-form.label.action')
           - if (pollOpen)
             p.alert.alert-warning
@@ -95,7 +95,7 @@
               option(value='poll')= t('admin-topics-form.action.poll')
               option(value='cause')= t('admin-topics-form.action.cause')
         .form-group.poll-options.hide
-          - var pollOpen = !!(topic.action && topic.action.boxCount > 0)
+          - var pollOpen = !!(topic.action && topic.action.count > 0)
           - var pollOptions = topic.action && topic.action.results && topic.action.results.map(function(o){ return o.value })
           label= t('admin-topics-form.label.poll-options')
           - if (te('admin-topics-form.description.poll-options'))
