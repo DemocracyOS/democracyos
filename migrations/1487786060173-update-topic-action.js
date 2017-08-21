@@ -10,19 +10,18 @@ exports.up = function up (done) {
   dbReady()
     .then(() => Topic.collection.find({}).toArray())
     .then(mapPromises(function (topic) {
-      if (!topic.votes) return false
-
       const action = {}
       action.method = topic.votable ? 'vote' : ''
       if (topic.votes) action.voteResults = topic.votes
 
       action._id = new ObjectID()
       return Topic.collection.findOneAndUpdate({ _id: topic._id }, {
-        $unset: { votes: '', votable: '' },
+        $unset: { votes: '', votable: '' }
+      }).then(() => Topic.collection.findOneAndUpdate({ _id: topic._id }, {
         $set: {
           action: action
         }
-      })
+      }))
     }))
     .then(function (results) {
       const total = results.filter((v) => !!v).length
