@@ -57,6 +57,7 @@
   },
   "recaptchaSite": "",
   "recaptchaSecret": "",
+  "blackListEmails": [],
   "client": [
     "protocol",
     "host",
