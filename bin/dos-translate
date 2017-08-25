@@ -5,6 +5,7 @@ var fs = require('fs')
 var arrDiff = require('arr-diff')
 var jsonFile = require('json-file-plus')
 var Batch = require('batch')
+var nomnom = require('nomnom')
 var config = require('../lib/config')
 
 // Load the list of available languages.
@@ -107,7 +108,7 @@ function commandTranslateMissing (opts) {
   forEachLanguageFile(langs, function (lang, file) {
     console.log('Translating ' + missings[lang].length + ' missing keys on `' + lang + '`:')
 
-    var formatRegex = /%[a-z]|{[a-z\-]+}/
+    var formatRegex = /%[a-z]|{[a-z-]+}/
     var batch = new Batch()
 
     batch.concurrency(3)
@@ -141,6 +142,8 @@ function commandTranslateMissing (opts) {
         file.sort()
         file.save().then(function () {
           console.log('Done!')
+        }).catch(function (err) {
+          throw err
         })
       }
     })
@@ -282,8 +285,6 @@ function commandDeleteRepeatedValues (opts) {
 /*
  * Definition of terminal interface
  */
-
-var nomnom = require('nomnom')
 
 nomnom.command('list-missing')
   .option('base', {

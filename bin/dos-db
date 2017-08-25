@@ -4,12 +4,12 @@
  * Module dependencies.
  */
 
-var program = require('commander')
 var fs = require('fs')
 var dir = fs.readdirSync
 var read = fs.readFileSync
 var exists = fs.existsSync
 var path = require('path')
+var program = require('commander')
 var resolve = path.resolve
 var parse = JSON.parse
 var mongoose = require('mongoose')

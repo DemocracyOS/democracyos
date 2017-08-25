@@ -51,7 +51,7 @@ function populate () {
     .then((forums) => {
       forumId = forums[0].id.toString()
       userId = forums[0].owner.toString()
-      Promise.resolve()
+      resolve()
     })
     .then(resolve)
     .catch(reject)
@@ -67,6 +67,7 @@ describe('/api/forum/:id/permissions', function () {
     populate()
       .then(signin('testuser1@example.com'))
       .then(done)
+      .catch(console.error)
   })
 
   // with owner permissions
@@ -106,5 +107,6 @@ describe('/api/forum/:id/permissions', function () {
       fixtures.users.wipe()
     ])
     .then(done)
+    .catch(console.error)
   })
 })
