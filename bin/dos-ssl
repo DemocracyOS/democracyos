@@ -1,22 +1,19 @@
 #!/usr/bin/env node
 
-var path = require('path')
-var resolve = path.resolve
-
+var fs = require('fs')
+var mkdir = fs.mkdirSync
+var rm = fs.unlinkSync
+var exists = fs.existsSync
+var exec = require('child_process').exec
 var program = require('commander')
+var log = require('debug')('democracyos:certs')
+
 program
   .option('-k --keyfile [serverKey]', 'Specifies the name of the generated key file (default: ssl/server.key)', 'ssl/server.key')
   .option('-c --certfile [serverCert]', 'Specifies the name of the generated certificate file (default: ssl/server.crt)', 'ssl/server.crt')
   .option('-s --subj [subj]', 'Specifices subject field data', '"/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com"')
   .option('-d --days [days]', 'Specifies the number of days to make a certificate valid for (default: 365)', '365')
   .parse(process.argv)
-
-var fs = require('fs')
-var mkdir = fs.mkdirSync
-var rm = fs.unlinkSync
-var exists = fs.existsSync
-var exec = require('child_process').exec
-var log = require('debug')('democracyos:certs')
 
 ensureDir(program.keyfile)
 ensureDir(program.certfile)

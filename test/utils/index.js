@@ -86,4 +86,3 @@ module.exports = {
     wipe: wipeUsers
   }
 }
-

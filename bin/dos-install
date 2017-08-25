@@ -8,8 +8,8 @@ var exists = fs.existsSync
 var write = fs.writeFileSync
 var path = require('path')
 var resolve = path.resolve
-var program = require('commander')
 var crypto = require('crypto')
+var program = require('commander')
 var env = process.env.NODE_ENV || 'development'
 
 program
