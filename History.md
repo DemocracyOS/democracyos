@@ -1,4 +1,12 @@
 
+2.9.2 / 2017-08-29
+==================
+
+  * execute captcha on submit
+  * update analytics
+  * dont migrate results on closed topics
+  * fix registry empty body response
+
 2.9.1 / 2017-08-28
 ==================
 
