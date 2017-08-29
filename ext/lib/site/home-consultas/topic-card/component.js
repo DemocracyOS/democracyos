@@ -6,7 +6,7 @@ import Poll from 'lib/site/topic-layout/topic-article/poll/component'
 import { SharerFacebook } from 'ext/lib/site/sharer'
 
 export default ({ forum, topic }) => {
-  const votes = topic.action.boxCount
+  const votes = topic.action.count
   const topicUrl = `${window.location.origin}${topic.url}`
   const twitterDesc = encodeURIComponent(`Estoy participando en esta consulta, participá vos también ${topicUrl} #RosarioParticipa`)
   return (

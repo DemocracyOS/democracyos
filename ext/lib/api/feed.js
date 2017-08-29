@@ -19,7 +19,7 @@ function getFeed (req, res, next) {
             $or: [{closingAt: { $exists: false }}, {closingAt: { $gt: (new Date())}}]
         }},
         { $sort: { 'createdAt': -1 } },
-        { $sort: { 'action.boxCount': -1 } },
+        { $sort: { 'action.count': -1 } },
         { $group: { _id: '$forum', topics: { $push: '$$ROOT' } } },
         { $project: { best_topics: { $slice: [ '$topics', 2 ] } } },
         { $unwind: '$best_topics' }

@@ -230,8 +230,8 @@ export default class TopicForm extends FormView {
     data.clauses = serializer.toArray(data.body)
     delete data.body
 
-    if (data['action.pollOptions']) {
-      data['action.pollOptions'] = data['action.pollOptions'].split(',')
+    if (data['action.options']) {
+      data['action.options'] = data['action.options'].split(',')
     }
 
     if (data.tags) {
