@@ -21,9 +21,10 @@ exports.up = function up (done) {
       return Promise.all(newVotes).then((results) => {
         return calcResult(topic)
           .then((results) => {
+            const closed = topic.closingAt.getTime() < Date.now()
             const action = {
-              count: results.count,
-              results: results.results,
+              count: closed ? topic.action.count : results.count,
+              results: closed ? topic.action.results : results.results,
               method: topic.action.method
             }
             return Topic.collection.findOneAndUpdate({ _id: topic._id }, { $set: { 'action': action } })
