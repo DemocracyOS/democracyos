@@ -11,6 +11,7 @@ exports.up = function up (done) {
   dbReady()
     .then(() => Topic.collection.find({}).toArray())
     .then(mapPromises(function (topic) {
+      if (!topic.action || !Object.keys(topic.action).includes('box')) return Promise.resolve(0)
       const newVotes = topic.action.box.map((vote) => {
         const newVote = new Vote({ author: vote.author, value: vote.value, topic: topic._id })
         return newVote.save().then(() => Promise.resolve(1)).catch((err) => {
@@ -21,7 +22,7 @@ exports.up = function up (done) {
       return Promise.all(newVotes).then((results) => {
         return calcResult(topic)
           .then((results) => {
-            const closed = topic.closingAt.getTime() < Date.now()
+            const closed = topic.closingAt && topic.closingAt.getTime() < Date.now()
             const action = {
               count: closed ? topic.action.count : results.count,
               results: closed ? topic.action.results : results.results,
