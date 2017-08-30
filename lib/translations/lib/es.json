@@ -405,6 +405,7 @@
   "signup.resend-validation-email": "Reenviar correo electrónico de validación",
   "signup.resend-validation-email-complete": "Reenviar correo electrónico de validación completado",
   "signup.retype-password": "Reingresa la contraseña",
+  "signup.user-already-registered": "Un usuario con ese e-mail ya ha sido registrado",
   "signup.user-already-validated": "Este usuario ya validó la dirección de correo electrónico",
   "signup.validating": "Validando la cuenta.",
   "signup.validation-email-resent": "El correo electrónico de validación ha sido reenviado.",
