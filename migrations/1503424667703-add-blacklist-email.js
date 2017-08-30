@@ -22,7 +22,7 @@ exports.up = function up (done) {
     .then(mapPromises((topic) => {
       return calcResult(topic)
       .then(({ count, results }) => {
-        const closed = topic.closingAt.getTime() < Date.now()
+        const closed = topic.closingAt && topic.closingAt.getTime() < Date.now()
         const action = {
           count: closed ? topic.action.count : count,
           results: closed ? topic.action.results : results,
