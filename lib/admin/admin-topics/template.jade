@@ -36,3 +36,6 @@
           span.glyphicon.glyphicon-tag
           span.text.topic-id=topic.tag.name
           span.topic-date.hide=topic.createdAt
+    .well.well-sm
+      a.btn.btn-primary(href=urlBuilder.for('admin.topics.csv', {forum: forum.name}))
+        = ' ' + t('admin-comments.dowload-as-csv')
