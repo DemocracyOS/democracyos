@@ -17,7 +17,6 @@
             span.glyphicon.glyphicon-time
           button.btn.btn-primary.sort(data-sort='topic-title')
             span.glyphicon.glyphicon-font
-    .well.well-sm.clearfix.export-update
     .list.list-group.col-xs-12
       - each topic in topics
         a.list-group-item(href=urlBuilder.for('admin.topics.id', {id: topic.id, forum: forum.name}), data-topicid=topic.id)
@@ -37,4 +36,6 @@
           span.glyphicon.glyphicon-tag
           span.text.topic-id=topic.tag.name
           span.topic-date.hide=topic.createdAt
-    .topics-pagination
+    .well.well-sm
+      a.btn.btn-primary(href=urlBuilder.for('admin.topics.csv', {forum: forum.name}))
+        = ' ' + t('admin-comments.dowload-as-csv')
