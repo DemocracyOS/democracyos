@@ -239,6 +239,24 @@ function FiltersNavbar (props) {
         className = 'btn btn-md btn-outline-primary'>
         Filtro por distrito <span>▾</span>
       </button>
+
+      <div className='filter-dropdown'>
+        <div className='filter-options'>
+          <label for='adultos'>
+          <input type='radio' name='adultos' value='adultos' />
+          Proyecto adultos
+          </label>
+          <label for='jovenes'>
+          <input type='radio' name='jovenes' value='jovenes' />
+          Proyecto jóvenes
+          </label>
+        </div>
+        <div className='dropdown-actions'>
+          <a id='cancelar' href='#'>Cancelar</a>
+          <a id='aplicar' href='#'>Aplicar</a>
+        </div>
+      </div>
+
     </nav>
   )
 }
