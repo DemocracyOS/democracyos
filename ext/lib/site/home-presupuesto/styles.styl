@@ -17,13 +17,12 @@
     justify-content center
     margin-bottom: 60px
 
-  .distrito-filter-wrapper
-    text-align: center
+  .filters-wrapper
     margin-top: 2em
 
-    label
-      margin: 0 0 20px
-      font-size: 20px
+    //label
+      //margin: 0 0 20px
+      //font-size: 20px
 
   .distrito-filter
     .btn
@@ -47,9 +46,40 @@
       &.active
         color: #fff
         background-color: #00adef
+  
+  // NAVBAR FILTROS
+    
+  .filters-nav
+    .btn
+      margin: 0
+      width: 158px
+      border-radius: 5px
+      color: #4f5353
+      border-color: #4f5353
+      font-weight: 500
+      box-shadow: none
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active
+        outline: 0
+        border-color: #00adef
+        color: #00adef
+        background-color: transparent
+
+      &.active
+        color: #fff
+        background-color: #00adef
+      
+      span
+        padding-left: 8px
+        
+    .btn + .btn
+        margin-left: 35px 
 
   .topics-section
-    padding: 50px 0 45px
+    padding: 2em 0
 
     &.distrito
       background-color: #E7EBEE

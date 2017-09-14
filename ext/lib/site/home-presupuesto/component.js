@@ -129,19 +129,18 @@ class HomePresupuesto extends Component {
           logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
           title='Presupuesto Participativo'
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
-        <div className='topics-section-container distrito-filter-wrapper'>
-          <h2 className='topics-section-title'>
-            Elegí tu distrito:
-          </h2>
-          <DistritoFilter
+        <div className='topics-section-container filters-wrapper'>
+          {/*<DistritoFilter
             active={this.state.distrito}
-            onChange={this.handleDistritoFilterChange} />
+            onChange={this.handleDistritoFilterChange} /> */}
+          <FiltersNavbar
+            distrito={this.state.distrito} />
         </div>
         {this.state.topicsAreas && this.state.topicsAreas.length > 0 && (
           <div className='topics-section areas'>
-            <h2 className='topics-section-container topics-section-title'>
+            {/* <h2 className='topics-section-container topics-section-title'>
               Distrito {this.state.distrito.title} | Proyectos para tu barrio
-            </h2>
+            </h2> */}
             <div className='topics-container areas'>
               {this.state.loading && <div className='loader' />}
               {this.state.topicsAreas.map((topic) => {
@@ -188,6 +187,9 @@ export default userConnector(HomePresupuesto)
 function DistritoFilter (props) {
   const { active, onChange } = props
 
+  console.log('distritofilter', distritos.map)
+  console.log('props', props)
+
   return (
     <div className='distrito-filter'>
       {distritos.map((d) => {
@@ -204,6 +206,40 @@ function DistritoFilter (props) {
         )
       })}
     </div>
+  )
+}
+
+function FiltersNavbar (props) {
+  const {filterStatus, onChange} = props
+
+  return (
+    <nav className='filters-nav'>
+  {/*{buttonFilters.map((d) => {
+    const filterApplied = d.filterStatus === filterStatus.name ? ' active' : ''
+    return (
+    METER LOS BOTONES ACA
+    )
+    })} 
+  */}
+      <button
+        type='button'
+        // key={d.name}
+        // data-name={d.name}
+        // onClick={() => onChange(d)}
+        // className={`btn btn-md btn-outline-primary${isActive}`}>
+        className = 'btn btn-md btn-outline-primary'>
+        Filtro por edad <span>▾</span>
+      </button>
+      <button
+        type='button'
+        // key={d.name}
+        // data-name={d.name}
+        // onClick={() => onChange(d)}
+        // className={`btn btn-md btn-outline-primary${isActive}`}>
+        className = 'btn btn-md btn-outline-primary'>
+        Filtro por distrito <span>▾</span>
+      </button>
+    </nav>
   )
 }
 
@@ -236,8 +272,10 @@ function estadoNum (e) {
       return 2
     case 'proyectado':
       return 3
-    default:
+    case 'votacion':
       return 4
+    default:
+      return 5
   }
 }
 

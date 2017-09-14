@@ -8,7 +8,7 @@ services:
     environment:
       - NODE_ENV=development
       - DEBUG=democracyos*
-      - MONGO_URL=mongodb://mongo/development
+      - MONGO_URL=mongodb://mongo/rosario
     links:
       - mongo
     ports:
@@ -27,4 +27,4 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./tmp/db:/data/db
+      - ~/data:/data/db
