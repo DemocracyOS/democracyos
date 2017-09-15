@@ -5,6 +5,7 @@ import userConnector from 'lib/site/connectors/user'
 import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
+import FiltersNavbar from './filters-navbar/component'
 import distritos from './distritos.json'
 
 let distritoCurrent = ''
@@ -206,58 +207,6 @@ function DistritoFilter (props) {
         )
       })}
     </div>
-  )
-}
-
-function FiltersNavbar (props) {
-  const {filterStatus, onChange} = props
-
-  return (
-    <nav className='filters-nav'>
-  {/*{buttonFilters.map((d) => {
-    const filterApplied = d.filterStatus === filterStatus.name ? ' active' : ''
-    return (
-    METER LOS BOTONES ACA
-    )
-    })} 
-  */}
-      <button
-        type='button'
-        // key={d.name}
-        // data-name={d.name}
-        // onClick={() => onChange(d)}
-        // className={`btn btn-md btn-outline-primary${isActive}`}>
-        className = 'btn btn-md btn-outline-primary'>
-        Filtro por edad <span>▾</span>
-      </button>
-      <button
-        type='button'
-        // key={d.name}
-        // data-name={d.name}
-        // onClick={() => onChange(d)}
-        // className={`btn btn-md btn-outline-primary${isActive}`}>
-        className = 'btn btn-md btn-outline-primary'>
-        Filtro por distrito <span>▾</span>
-      </button>
-
-      <div className='filter-dropdown'>
-        <div className='filter-options'>
-          <label for='adultos'>
-          <input type='radio' name='adultos' value='adultos' />
-          Proyecto adultos
-          </label>
-          <label for='jovenes'>
-          <input type='radio' name='jovenes' value='jovenes' />
-          Proyecto jóvenes
-          </label>
-        </div>
-        <div className='dropdown-actions'>
-          <a id='cancelar' href='#'>Cancelar</a>
-          <a id='aplicar' href='#'>Aplicar</a>
-        </div>
-      </div>
-
-    </nav>
   )
 }
 

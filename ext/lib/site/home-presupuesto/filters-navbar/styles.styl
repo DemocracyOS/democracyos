@@ -1,0 +1,70 @@
+.filter
+  display: inline-block
+  .btn
+    margin: 0
+    border-radius: 5px
+    color: #4f5353
+    border-color: #4f5353
+    font-weight: 500
+    box-shadow: none
+    position: relative
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active
+      outline: 0
+      border-color: #00adef
+      color: #00adef
+      background-color: transparent
+
+    &.active
+      color: #fff
+      background-color: #00adef
+    
+    span
+      padding-left: 8px
+  
+    .filter-dropdown
+      display: none
+      cursor: auto
+      position: absolute
+      width: 250px
+      top: 55px
+      left: 0
+      z-index: 99
+      padding: 15px
+      border: 1px solid #4f5353
+      border-radius: 5px
+      text-align: left
+      color: #4f5353
+      background-color: #fff
+      font-weight: 500
+      box-shadow: 2px 2px 2px rgba(0,0,0,.3)
+      .filter-options
+        display: inline-block
+        label
+          display: block
+          font-size: 1rem
+          margin: 10px 0
+          input
+            margin-right: 10px
+      .filter-options + .filter-options
+        float: right
+      .dropdown-actions
+        margin-top: 20px
+        display: flex
+        justify-content: space-between
+        a
+          text-decoration: none
+          font-weight: normal
+          font-size: 0.8rem
+          font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+          color: #4f5353
+          cursor: pointer
+        a:last-child
+          color: #f59231
+          text-decoration: underline
+          
+.filter + .filter
+  margin-left: 35px
