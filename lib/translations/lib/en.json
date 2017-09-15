@@ -136,6 +136,7 @@
   "admin-topics.list.search.placeholder": "Search a topic...",
   "admin-topics.list.sort": "Sort",
   "admin-topics.list.title": "System topic",
+  "admin-topics.update-from-csv": "Update topics from .csv",
   "admin-whitelist.actions": "Actions",
   "admin-whitelist.delete-whitelist.confirmation.body": "This action will erase data permanently. Would you like to proceed?",
   "admin-whitelist.delete-whitelist.confirmation.cancel": "Cancel",
