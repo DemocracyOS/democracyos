@@ -5,34 +5,75 @@ class FiltersNavbar extends Component {
     super(props)
 
     this.state = {
-      edad: '',
-      adultos: '',
-      jovenes: '',
-      distrito: '',
-      centro: '',
-      noroeste: '',
-      norte: '',
-      oeste: '',
-      sudoeste: '',
-      sur: ''
+
+      appliedFilters: {
+        edad: {
+          adultos: true,
+          jovenes: true
+        },
+        distrito: {
+          centro: true,
+          noroeste: true,
+          norte: true,
+          oeste: true,
+          sudoeste: true,
+          sur: true
+        }
+      },
+
+      selectFilters: {
+        edad: {
+          adultos: false,
+          jovenes: false
+        },
+        distrito: {
+          centro: false,
+          noroeste: false,
+          norte: false,
+          oeste: false,
+          sudoeste: false,
+          sur: false
+        }
+      },
+
+      navbarUI: {
+        edad: null,
+        distrito: null
+      }
     }
   }
 
   //this.handleCheckboxChange = this.handleCheckboxChange.bind(this) O USAR ARROW FUNCTION
   // LAS ARROW FUNCTIONS TIENEN EL SCOPE DEL COMPONENTE
 
-
-  handleCheckboxChange = (e) => {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+  handleCheckboxChange = (select) => (e) => {
+    debugger
+    const target = e.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
 
     this.setState({
-      [name]: value
+      selectFilters[select][name]: value
     }, function(){
-      console.log(this.state[name])
-    });
-  } 
+      //console.log(this.state[name])
+    })
+  }
+
+  cancelApplyFilters = (e) => {
+    this.setState ({
+      selectFilters: appliedFilters
+      }), function () {
+      console.log('selectFilters is now: ', selectFilters)
+    }
+  }
+
+  confirmApplyFilters = (e) => {
+    this.setState ({
+      appliedFilters: selectFilters
+      }), function () {
+      console.log('appliedFilters is now: ', appliedFilters)
+    }
+  }
 
   render () {
     return (
@@ -46,17 +87,17 @@ class FiltersNavbar extends Component {
           <div className='filter-dropdown' id="opciones-edad">
             <div className='filter-options'>
               <label htmlFor='adultos'>
-              <input onChange={this.handleCheckboxChange} type='checkbox' name='adultos' checked={this.state.adultos} />
+              <input onChange={this.handleCheckboxChange('edad')} type='checkbox' name='adultos' checked={this.state.selectFilters.edad.adultos} />
               Proyecto adultos
               </label>
               <label htmlFor='jovenes'>
-              <input type='checkbox' name='jovenes' checked={this.state.jovenes} />
+              <input onChange={this.handleCheckboxChange('edad')} type='checkbox' name='jovenes' checked={this.state.selectFilters.edad.jovenes} />
               Proyecto jóvenes
               </label>
             </div>
             <div className='dropdown-actions'>
-              <a className='cancelar'>Cancelar</a>
-              <a className='aplicar'>Aplicar</a>
+              <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
+              <a className='aplicar' onClick={this.confirmApplyFilters}>Aplicar</a>
             </div>
           </div>
         </button>
@@ -75,35 +116,35 @@ class FiltersNavbar extends Component {
           <div className='filter-dropdown' id="opciones-distrito">
             <div className='filter-options'>
               <label htmlFor='centro'>
-                <input type='checkbox' name='centro' checked={this.state.centro} />
+                <input onChange={this.handleCheckboxChange} type='checkbox' name='centro' checked={this.state.selectFilters.distrito.centro} />
               Centro
               </label>
               <label htmlFor='noroeste'>
-                <input type='checkbox' name='noroeste' checked={this.state.noroeste} />
+                <input onChange={this.handleCheckboxChange} type='checkbox' name='noroeste' checked={this.state.selectFilters.distrito.noroeste} />
               Noroeste
               </label>
               <label htmlFor='norte'>
-                <input type='checkbox' name='norte' checked={this.state.norte} />
+                <input onChange={this.handleCheckboxChange} type='checkbox' name='norte' checked={this.state.selectFilters.distrito.norte} />
               Norte
               </label>
             </div>
             <div className='filter-options'>
               <label htmlFor='oeste'>
-                <input type='checkbox' name='oeste' checked={this.state.oeste} />
+                <input onChange={this.handleCheckboxChange} type='checkbox' name='oeste' checked={this.state.selectFilters.distrito.oeste} />
               Oeste
               </label>
               <label htmlFor='sudoeste'>
-                <input type='checkbox' name='sudoeste' checked={this.state.sudoeste} />
+                <input onChange={this.handleCheckboxChange} type='checkbox' name='sudoeste' checked={this.state.selectFilters.distrito.sudoeste} />
               Sudoeste
               </label>
               <label htmlFor='sur'>
-                <input type='checkbox' name='sur' checked={this.state.sur} />
+                <input onChange={this.handleCheckboxChange} type='checkbox' name='sur' checked={this.state.selectFilters.distrito.sur} />
               Sur
               </label>
             </div>
             <div className='dropdown-actions'>
-              <a className='cancelar'>Cancelar</a>
-              <a className='aplicar'>Aplicar</a>
+              <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
+              <a className='aplicar' onClick={this.confirmApplyFilters}>Aplicar</a>
             </div>
           </div>
         </button>
