@@ -185,10 +185,10 @@ class FiltersNavbar extends Component {
       <div className='filter'>
         <button
           type='button'
-          id="filtro-edad"
+          id="filtro-año"
           className = 'btn btn-md btn-outline-primary'>
           Año <span>▾</span>
-          <div className='filter-dropdown' id="opciones-edad">
+          <div className='filter-dropdown' id="opciones-año">
             <div className='filter-options'>
               <label htmlFor='proyectos2015'>
               <input onChange={this.handleCheckboxChange('año')} type='checkbox' id='proyectos2015' name='año' checked={this.state.selectFilters.año.proyectos2015} />
@@ -214,15 +214,20 @@ class FiltersNavbar extends Component {
       <div className='filter'>
         <button
           type='button'
-          id="filtro-edad"
+          id="filtro-estado"
           className = 'btn btn-md btn-outline-primary'>
           Estado <span>▾</span>
-          <div className='filter-dropdown' id="opciones-edad">
+          <div className='filter-dropdown' id="opciones-estado">
             <div className='filter-options'>
-              <label htmlFor='proyectados'>
-              <input onChange={this.handleCheckboxChange('estado')} type='checkbox' id='proyectados' name='estado' checked={this.state.selectFilters.estado.proyectados} />
-              Proyectados
-              </label>
+
+              <div className='option-container'>
+                <div className='check-container'>
+                  <input onChange={this.handleCheckboxChange('estado')} type='checkbox' id='proyectados' className='invisible' name='estado' checked={this.state.selectFilters.estado.proyectados} />
+                  <label htmlFor='proyectados' className='custom-check'></label>
+                </div>
+                <label htmlFor='proyectados'>Proyectados</label>
+              </div>
+
               <label htmlFor='en-ejecucion'>
               <input onChange={this.handleCheckboxChange('estado')} type='checkbox' id='en-ejecucion' name='estado' checked={this.state.selectFilters.estado.enEjecucion} />
               En ejecución
