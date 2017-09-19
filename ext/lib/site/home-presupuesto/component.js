@@ -5,6 +5,7 @@ import userConnector from 'lib/site/connectors/user'
 import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
+import TopicGrid from './topic-grid/component'
 import distritos from './distritos.json'
 
 let distritoCurrent = ''
@@ -137,46 +138,14 @@ class HomePresupuesto extends Component {
             active={this.state.distrito}
             onChange={this.handleDistritoFilterChange} />
         </div>
-        {this.state.topicsAreas && this.state.topicsAreas.length > 0 && (
-          <div className='topics-section areas'>
-            <h2 className='topics-section-container topics-section-title'>
-              Distrito {this.state.distrito.title} | Proyectos para tu barrio
-            </h2>
-            <div className='topics-container areas'>
-              {this.state.loading && <div className='loader' />}
-              {this.state.topicsAreas.map((topic) => {
-                return <TopicCard key={topic.id} topic={topic} forum={this.state.forum} />
-              })}
-            </div>
-          </div>
-        )}
-        {this.state.topicsDistrito && this.state.topicsDistrito.length > 0 && (
-          <div className='topics-section distrito'>
-            <h2 className='topics-section-container topics-section-title'>
-              Distrito {this.state.distrito.title} | Proyectos para tu distrito
-            </h2>
-            <div className='topics-container'>
-              {this.state.loading && <div className='loader' />}
-              {this.state.topicsDistrito.map((topic) => {
-                return <TopicCard key={topic.id} topic={topic} forum={this.state.forum} />
-              })}
-            </div>
-          </div>
-        )}
-        {this.state.topicsJoven && this.state.topicsJoven.length > 0 && (
-          <div className='topics-section pp-joven'>
-            <h2 className='topics-section-container topics-section-title'>
-              <span>Distrito {this.state.distrito.title} | Proyectos jóvenes</span><br />
-              <sub />
-            </h2>
-            <div className='topics-container'>
-              {this.state.loading && <div className='loader' />}
-              {this.state.topicsJoven.map((topic) => {
-                return <TopicCard key={topic.id} topic={topic} forum={this.state.forumJoven} />
-              })}
-            </div>
-          </div>
-        )}
+        <TopicGrid
+          loading={this.state.loading}
+          distrito={this.state.distrito} 
+          forum={this.state.forum}
+          forumJoven={this.state.forumJoven}
+          topicsAreas={this.state.topicsAreas}
+          topicsDistrito={this.state.topicsDistrito}
+          topicsJoven={this.state.topicsJoven} />
         {this.state.topicsAreas && this.state.topicsDistrito && <Footer />}
       </div>
     )

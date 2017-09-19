@@ -1,6 +1,5 @@
 .ext-home-presupuesto
-  @import './topic-card/styles'
-
+  @import './topic-grid/styles'
   .loader
     position: absolute
     top: 0
@@ -47,30 +46,7 @@
       &.active
         color: #fff
         background-color: #00adef
-
-  .topics-section
-    padding: 50px 0 45px
-
-    &.distrito
-      background-color: #E7EBEE
-
-  .topics-section-title
-    margin-top: 0
-    font-size: 24px
-    font-weight: 400
-    color: #4F5353
-
-  .topics-section-container
-    margin-left: auto
-    margin-right: auto
-    padding-left: 15px
-    padding-right: 15px
-
-    for i in (2..8)
-      width = (i * 290px)
-      @media (min-width: width)
-        max-width: width
-
+        
   .find-district-link
     font-weight: 400
     color: #fff

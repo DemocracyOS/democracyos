@@ -2,7 +2,7 @@ import React from 'react'
 import padStart from 'string.prototype.padstart'
 import { Link } from 'react-router'
 import { SharerFacebook } from 'ext/lib/site/sharer'
-import distritosData from '../distritos.json'
+import distritosData from '.../distritos.json'
 
 const distritos = (function () {
   const c = {}
