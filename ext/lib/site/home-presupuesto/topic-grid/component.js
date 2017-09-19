@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import TopicCard from './topic-card/component'
+import TopicCard from '../topic-card/component'
 
 export default class TopicGrid extends Component {
     constructor (props) {
         super(props)
-
     }
-    componentDidMount () {
-        console.log(this.props)
-    }
+    
     render () {
     return (
         <div>
