@@ -59,7 +59,9 @@ class FiltersNavbar extends Component {
       navbarUI: {
         edad: null,
         distrito: null
-      }
+      },
+
+      activeDropdown: ''
     }
   }
 
@@ -93,7 +95,6 @@ class FiltersNavbar extends Component {
   }
 
   confirmApplyFilters = () => {
-    debugger
     var selectFilters = this.state.selectFilters
     this.setState ({
       appliedFilters: selectFilters
@@ -101,6 +102,13 @@ class FiltersNavbar extends Component {
       console.log('appliedFilters is now: ', this.state.appliedFilters)
     }
   }
+
+  displayDropdown = (id) => (e) => {
+      this.setState({
+        activeDropdown: id
+      }), function () {console.log(this.state.activeDropdown)}
+  }
+
 
   render () {
     return (
@@ -114,8 +122,11 @@ class FiltersNavbar extends Component {
         <button
           type='button'
           id="filtro-edad"
-          className = 'btn btn-md btn-outline-primary'>
+          className='btn btn-md btn-outline-primary'
+          onClick={this.displayDropdown('opciones-edad')}
+          >
           Rango de edad <span>▾</span>
+          {this.state.activeDropdown == 'opciones-edad' &&
           <div className='filter-dropdown' id="opciones-edad">
             <div className='filter-options'>
 
@@ -141,6 +152,7 @@ class FiltersNavbar extends Component {
               <a className='aplicar' onClick={this.confirmApplyFilters}>Aplicar</a>
             </div>
           </div>
+        }
         </button>
       </div>
 
