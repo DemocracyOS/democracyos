@@ -1,7 +1,23 @@
 .container-banner
     background-color: #F39431
     display: flex
+    flex-wrap: wrap
+    flex-direction: column
     justify-content: center
-    height: 200px
+    align-items: center
+    padding: 100px 250px
+    @media (min-width: 1440px)
+        padding: 100px 400px
+    @media (max-width: 768px)
+        padding: 50px 80px
+    @media (max-width: 320px)
+        padding: 50px 20px
     h3
         color: #FFFFFF
+        text-align: center
+        margin-top: 0
+        @media (max-width: 320px)
+            font-size: 1em
+    .banner-button
+        border-radius: 5px
+    

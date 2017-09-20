@@ -90,7 +90,7 @@ class HomePresupuesto extends Component {
           loading={this.state.loading}
           topics={this.prepareTopics()} />
         {this.state.topicsAreas && this.state.topicsDistrito &&
-          <BannerPresupuesto />
+          <BannerPresupuesto content='archivo'/> 
         }
         {this.state.topicsAreas && this.state.topicsDistrito &&
           <Footer />
