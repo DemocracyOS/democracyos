@@ -17,6 +17,7 @@ nav
   .filter
     display: inline-block
     margin: 10px 0
+    position: relative
     .btn
       margin: 0
       border-radius: 5px
@@ -24,7 +25,7 @@ nav
       border-color: #4f5353
       font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
       box-shadow: none
-      position: relative
+      //position: relative
       &:hover,
       &:focus,
       &:active,
@@ -43,76 +44,77 @@ nav
         color: #4f5353
         font-size: .8rem
     
-      .filter-dropdown
-        cursor: auto
-        position: absolute
-        min-width: 190px
-        top: 55px
-        left: 0
-        z-index: 99
-        padding: 15px 20px
-        border: 1px solid #4f5353
-        border-radius: 5px
-        text-align: left
-        color: #4f5353
-        background-color: #fff
-        box-shadow: 2px 2px 2px rgba(0,0,0,.3)
-        .filter-options
-          display: flex
-          .filter-column
-            .option-container
-              display: flex
-              margin: 10px 0
-              .check-container
-                width: 20px
-                position: relative
-                display: inline-block
-                input[type=checkbox]
-                  visibility: hidden
-                input[type=checkbox] + label
-                  width: 19px
-                  height: 19px
-                  margin: 0 10px 0 0
-                  position: absolute
-                  top: 0
-                  left: 0
-                  cursor: pointer
-                  border: 2px solid #4f5353
-                  border-radius: 2px
-                input[type=checkbox]:checked + label
-                  background-color: #1daeec
-                  border-color: #1daeec
-                input[type=checkbox]:checked + label:after
-                  content: ''
-                  width: 13px
-                  height: 7px
-                  position: absolute
-                  top: 3px
-                  left: 1px
-                  background: transparent
-                  border: 3px solid #fff
-                  border-top: none
-                  border-right: none
-                  transform: rotate(-50deg)
-              label
-                font-size: 1rem
-                margin-left: 10px
-          .filter-column + .filter-column
-            margin-left: 25px
-        .dropdown-actions
-          margin-top: 10px
-          display: flex
-          justify-content: space-between
-          a
-            text-decoration: none
-            font-weight: normal
-            font-size: 0.8rem
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-            color: #4f5353
-            cursor: pointer
-          a:last-child
-            color: #f59231
-            text-decoration: underline
+    .filter-dropdown
+      cursor: auto
+      position: absolute
+      min-width: 190px
+      top: 55px
+      left: 0
+      z-index: 99
+      padding: 15px 20px
+      border: 1px solid #4f5353
+      border-radius: 5px
+      text-align: left
+      color: #4f5353
+      background-color: #fff
+      box-shadow: 2px 2px 2px rgba(0,0,0,.3)
+      .filter-options
+        display: flex
+        .filter-column
+          .option-container
+            display: flex
+            margin: 10px 0
+            .check-container
+              width: 20px
+              position: relative
+              display: inline-block
+              input[type=checkbox]
+                visibility: hidden
+              input[type=checkbox] + label
+                width: 19px
+                height: 19px
+                margin: 0 10px 0 0
+                position: absolute
+                top: 0
+                left: 0
+                cursor: pointer
+                border: 2px solid #4f5353
+                border-radius: 2px
+              input[type=checkbox]:checked + label
+                background-color: #1daeec
+                border-color: #1daeec
+              input[type=checkbox]:checked + label:after
+                content: ''
+                width: 13px
+                height: 7px
+                position: absolute
+                top: 3px
+                left: 1px
+                background: transparent
+                border: 3px solid #fff
+                border-top: none
+                border-right: none
+                transform: rotate(-50deg)
+            label
+              font-size: 1rem
+              margin-left: 10px
+              white-space: nowrap
+        .filter-column + .filter-column
+          margin-left: 25px
+      .dropdown-actions
+        margin-top: 10px
+        display: flex
+        justify-content: space-between
+        a
+          text-decoration: none
+          font-weight: normal
+          font-size: 0.8rem
+          font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+          color: #4f5353
+          cursor: pointer
+        a:last-child
+          color: #f59231
+          text-decoration: underline
             
   .filter + .filter
     margin-left: 35px
