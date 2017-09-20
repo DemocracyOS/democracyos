@@ -148,7 +148,7 @@ class HomePresupuesto extends Component {
           topicsDistrito={this.state.topicsDistrito}
           topicsJoven={this.state.topicsJoven} />
         {this.state.topicsAreas && this.state.topicsDistrito &&
-          <BannerPresupuesto /> 
+          <BannerPresupuesto content='archivo'/> 
         }
         {this.state.topicsAreas && this.state.topicsDistrito &&
           <Footer />
