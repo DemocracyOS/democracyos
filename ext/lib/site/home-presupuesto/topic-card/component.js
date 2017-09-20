@@ -71,8 +71,13 @@ export default ({ topic, forum }) => {
               <Link to={topic.url}>{topic.attrs.description}</Link>
             </p>
           )}
-        </div>
+        </div> 
         <div className='topic-card-footer'>
+          <div>
+            <span>
+              {topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}`}
+            </span> 
+          </div>
           {topic.attrs && (
             <p className='budget'>{prettyPrice(topic.attrs.budget)}</p>
           )}
