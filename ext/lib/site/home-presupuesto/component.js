@@ -17,21 +17,7 @@ class HomePresupuesto extends Component {
 
     this.state = {
       loading: true,
-      distrito: distritos[0],
-      forum: null,
-      forumJoven: null,
-      topicsAreas: null,
-      topicsDistrito: null,
-      topicsJoven: null
-    }
-  }
-
-  componentWillMount () {
-    if (!window.location.hash && !distritoCurrent) return
-    const distritoKey = distritos.map((d) => d.name).indexOf(distritoCurrent)
-    if (~distritoKey) {
-      window.history.pushState(null, null, `#${distritoCurrent}`)
-      this.setState({ distrito: distritos[distritoKey] }, this.fetchForums)
+      topics: null
     }
   }
 
@@ -49,81 +35,50 @@ class HomePresupuesto extends Component {
       forumStore.findOneByName('presupuesto'),
       forumStore.findOneByName('presupuesto-joven')
     ])
-      .then(([forum, forumJoven]) => {
-        this._fetchingForums = false
-        this.setState({
-          forum,
-          forumJoven
-        }, this.fetchTopics)
-      }).catch((err) => {
-        this._fetchingForums = false
-        console.error(err)
-        this.setState({
-          loading: false,
-          forum: null,
-          forumJoven: null
+    .then(([forum, forumJoven]) => Promise.all([
+        topicStore.findAll({ forum: forum.id }),
+        topicStore.findAll({ forum: forumJoven.id })
+      ])
+    )
+    .then(([topicsAdulto, topicsJoven]) => {
+      const topics = [].concat(
+        topicsJoven.map((topic) => {
+          topic.edad = 'joven'
+          return topic
         })
+      ).concat(
+        topicsAdulto.map((topic) => {
+          topic.edad = 'adulto'
+          return topic
+        })
+      )
+      this._fetchingForums = false
+      this.setState({
+        loading: false,
+        topics
       })
+    })
+    .catch((err) => {
+      this._fetchingForums = false
+      console.error(err)
+      this.setState({
+        loading: false,
+        topics: null
+      })
+    })
   }
 
-  _fetchingTopics = false
-  fetchTopics = () => {
-    if (this._fetchingTopics) return
-    this._fetchingTopics = true
-
-    this.setState({ loading: true })
-
-    Promise.all([
-      topicStore.findAll({ forum: this.state.forum.id }),
-      topicStore.findAll({ forum: this.state.forumJoven.id })
-    ])
-      .then(([topics, topicsJoven]) => {
-        this._fetchingTopics = false
-
-        topics = sortTopics(topics)
-        topicsJoven = sortTopics(topicsJoven)
-
-        this.setState({
-          loading: false,
-          topicsAreas: topics.filter((t) => {
-            if (!t.attrs) return false
-            return t.attrs.district === this.state.distrito.name &&
-              t.attrs.area !== '0'
-          }),
-          topicsDistrito: topics.filter((t) => {
-            if (!t.attrs) return false
-            return t.attrs.district === this.state.distrito.name &&
-              (!t.attrs.area || t.attrs.area === '0')
-          }),
-          topicsJoven: topicsJoven.filter((t) => {
-            if (!t.attrs) return false
-            return t.attrs.district === this.state.distrito.name
-          })
-        })
-      })
-      .catch((err) => {
-        this._fetchingTopics = false
-        console.error(err)
-        this.setState({
-          loading: false,
-          topicsAreas: null,
-          topicsDistrito: null,
-          topicsJoven: null
-        })
-      })
-  }
-
-  handleDistritoFilterChange = (distrito) => {
-    distritoCurrent = distrito.name
-    window.history.pushState(null, null, `#${distrito.name}`)
-    this.setState({ distrito }, this.fetchForums)
+  prepareTopics = () => {
+    return distritos.map((distrito) => {
+      distrito.topics = this.state.topics ?
+        this.state.topics.filter((topic) => {
+          return topic.attrs && topic.attrs.district === distrito.name
+        }) : []
+      return distrito
+    })
   }
 
   render () {
-    // <a href='#' className='find-district-link'>
-    //   <i className='icon-location-pin'></i>
-    //   <span>¿Cuál es mi distrito?</span>
-    // </a>
     return (
       <div className='ext-home-presupuesto'>
         <Cover
@@ -131,24 +86,11 @@ class HomePresupuesto extends Component {
           logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
           title='Presupuesto Participativo'
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
-        <div className='topics-section-container distrito-filter-wrapper'>
-          <h2 className='topics-section-title'>
-            Elegí tu distrito:
-          </h2>
-          <DistritoFilter
-            active={this.state.distrito}
-            onChange={this.handleDistritoFilterChange} />
-        </div>
         <TopicGrid
           loading={this.state.loading}
-          distrito={this.state.distrito} 
-          forum={this.state.forum}
-          forumJoven={this.state.forumJoven}
-          topicsAreas={this.state.topicsAreas}
-          topicsDistrito={this.state.topicsDistrito}
-          topicsJoven={this.state.topicsJoven} />
+          topics={this.prepareTopics()} />
         {this.state.topicsAreas && this.state.topicsDistrito &&
-          <BannerPresupuesto /> 
+          <BannerPresupuesto />
         }
         {this.state.topicsAreas && this.state.topicsDistrito &&
           <Footer />
@@ -159,28 +101,6 @@ class HomePresupuesto extends Component {
 }
 
 export default userConnector(HomePresupuesto)
-
-function DistritoFilter (props) {
-  const { active, onChange } = props
-
-  return (
-    <div className='distrito-filter'>
-      {distritos.map((d) => {
-        const isActive = d.name === active.name ? ' active' : ''
-        return (
-          <button
-            type='button'
-            key={d.name}
-            data-name={d.name}
-            onClick={() => onChange(d)}
-            className={`btn btn-md btn-outline-primary${isActive}`}>
-            {d.title}
-          </button>
-        )
-      })}
-    </div>
-  )
-}
 
 function sortTopics (topics) {
   return topics

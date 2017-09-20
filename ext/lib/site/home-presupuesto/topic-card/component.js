@@ -10,16 +10,27 @@ const distritos = (function () {
   return c
 })()
 
-export default ({ topic, forum }) => {
+export default ({ topic }) => {
   const topicUrl = `${window.location.origin}${topic.url}`
 
   let state
+  const estadosPP = [
+      {
+          "name" : "proyectado",
+          "title" : "Proyectado"
+      },
+      {
+          "name" : "ejecutandose",
+          "title" : "En Ejecución"
+      },
+      {
+          "name" : "terminado",
+          "title" : "Terminado"
+      }
+  ]
+
   if (topic.attrs && topic.attrs.state) {
-    state = forum.topicsAttrs
-      .find((attr) => attr.name === 'state')
-      .options
-      .find((attr) => attr.name === topic.attrs.state)
-      .title
+    state = estadosPP.find((attr) => attr.name === topic.attrs.state).title
   }
 
   const twitterDesc = encodeURIComponent(`Mirá el proyecto para mi barrio ${topicUrl} #RosarioParticipa`)
