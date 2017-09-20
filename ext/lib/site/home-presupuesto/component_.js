@@ -10,6 +10,7 @@ import distritos from './distritos.json'
 
 let distritoCurrent = ''
 
+
 class HomePresupuesto extends Component {
   constructor (props) {
     super(props)
@@ -136,7 +137,8 @@ class HomePresupuesto extends Component {
             onChange={this.handleDistritoFilterChange} /> */}
           <FiltersNavbar
             filterChange={handleDistritoFilterChange}
-            distrito={this.state.distrito} />
+            distrito={this.state.distrito}
+            stage='votacion' />
         </div>
         {this.state.topicsAreas && this.state.topicsAreas.length > 0 && (
           <div className='topics-section areas'>
@@ -190,7 +192,6 @@ function DistritoFilter (props) {
   const { active, onChange } = props
 
   console.log('distritofilter', distritos.map)
-  console.log('props', props)
 
   return (
     <div className='distrito-filter'>

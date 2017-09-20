@@ -22,7 +22,8 @@ class HomePresupuesto extends Component {
           title='Presupuesto Participativo'
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <div className='topics-section-container filters-wrapper'>
-          <FiltersNavbar />
+          <FiltersNavbar
+            stage='archivo' />
         </div>
       </div>
     )
