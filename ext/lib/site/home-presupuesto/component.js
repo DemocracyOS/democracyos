@@ -6,6 +6,7 @@ import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
 import TopicGrid from './topic-grid/component'
+import BannerPresupuesto from './banner-presupuesto/component'
 import distritos from './distritos.json'
 
 let distritoCurrent = ''
@@ -146,7 +147,12 @@ class HomePresupuesto extends Component {
           topicsAreas={this.state.topicsAreas}
           topicsDistrito={this.state.topicsDistrito}
           topicsJoven={this.state.topicsJoven} />
-        {this.state.topicsAreas && this.state.topicsDistrito && <Footer />}
+        {this.state.topicsAreas && this.state.topicsDistrito &&
+          <BannerPresupuesto /> 
+        }
+        {this.state.topicsAreas && this.state.topicsDistrito &&
+          <Footer />
+        }
       </div>
     )
   }
