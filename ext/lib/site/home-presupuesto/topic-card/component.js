@@ -86,8 +86,8 @@ export default ({ topic }) => {
         <div className='topic-card-footer'>
           <div>
             <span>
-              {topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}`}
-            </span> 
+              {topic.edad === 'joven' ? `Presupuesto ${topic.edad}` : topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}` }
+            </span>
           </div>
           {topic.attrs && (
             <p className='budget'>{prettyPrice(topic.attrs.budget)}</p>
