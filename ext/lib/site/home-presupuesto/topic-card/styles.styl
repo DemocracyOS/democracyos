@@ -1,40 +1,47 @@
 .presupuesto-topic-card
   width: 260px
+        
+  &.topic-joven
+    .topic-card-info
+      border-top-color: #FF3366
+    
+    .topic-card-category
+      background-color: #FF3366
 
-  &.has-votes
     .budget
-      color: #00adef
-      font-weight: 400
+      color: #FF3366
+      
+  &.topic-area
+    .topic-card-info
+      border-top-color: #00B1F0
+    
+    .topic-card-category
+      background-color: #00B1F0
+
+    .budget
+      color: #00B1F0
+      
+  &.topic-distrito
+    .topic-card-info
+      border-top-color: #FF8700
+    
+    .topic-card-category
+      background-color: #FF8700
+
+    .budget
+      color: #FF8700
 
   &.proyectado
     .state
-      background-color: #00adef
-
-    .topic-card-info
-      border-top-color: #00adef
-    
-    .budget
-      color: #00adef
+      background-color: #29C3D5
 
   &.finalizado
     .state
-      background-color: #30aa2d
-
-    .topic-card-info
-      border-top-color: #30aa2d
-    
-    .budget
-      color: #30aa2d
+      background-color: #64D677
 
   &.ejecutandose
     .state
-      background-color: #F39431
-
-    .topic-card-info
-      border-top-color: #F39431
-      
-    .budget
-      color: #F39431
+      background-color: #EFCA08
 
   .topic-card-info
     border-top-color: #999
@@ -88,10 +95,20 @@
     flex: 1
 
   .topic-card-footer
-    text-align: right
     align-self: flex-end
     width: 100%
     position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    
+    .topic-card-category
+      border-radius: 5px
+      color: #FFF
+      font-size: 13px
+      padding: 5px 2px
+      text-align: center
+      width: 88px
 
   .budget
     margin: 0

@@ -43,6 +43,10 @@ export default ({ topic }) => {
 
   if (topic.attrs && topic.attrs.winner) classNames.push('is-winner')
   if (topic.attrs && topic.attrs.state) classNames.push(topic.attrs.state.toLowerCase())
+  if (topic.edad === 'joven') classNames.push('topic-joven')
+  if (topic.attrs.area !== '0' && topic.edad !== 'joven') classNames.push('topic-area')
+  if (topic.attrs.area === '0' && topic.edad !== 'joven') classNames.push('topic-distrito')
+    
   return (
     <div className={classNames.join(' ')}>
       {topic.coverUrl && (
@@ -84,9 +88,9 @@ export default ({ topic }) => {
           )}
         </div> 
         <div className='topic-card-footer'>
-          <div>
+          <div className='topic-card-category'>
             <span>
-              {topic.edad === 'joven' ? `Presupuesto ${topic.edad}` : topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}` }
+              {topic.edad === 'joven' ? `Joven` : topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial` : `Distrito` }
             </span>
           </div>
           {topic.attrs && (
