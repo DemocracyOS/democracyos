@@ -11,7 +11,6 @@ export default class BannerPresupuesto extends Component {
     }
 
     componentWillMount (){
-        console.log(this.props.content)
         if (this.props.content == 'archivo') {
             title = 'Votá los proyectos del Presupuesto Participativo 2017! Tenés tiempo hasta el xx/xx'
             textButton = 'Seguimiento de proyectos anteriores'

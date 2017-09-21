@@ -88,11 +88,11 @@ class HomePresupuesto extends Component {
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <TopicGrid
           loading={this.state.loading}
-          topics={this.prepareTopics()} />
-        {this.state.topicsAreas && this.state.topicsDistrito &&
+          districts={this.prepareTopics()} />
+        {this.state.topics &&
           <BannerPresupuesto content='archivo'/> 
         }
-        {this.state.topicsAreas && this.state.topicsDistrito &&
+        {this.state.topics && 
           <Footer />
         }
       </div>

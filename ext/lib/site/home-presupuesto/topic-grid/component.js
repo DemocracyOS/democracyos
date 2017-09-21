@@ -7,48 +7,23 @@ export default class TopicGrid extends Component {
     }
 
     render () {
-    return (
-        <div>
-            {this.props.topicsAreas && this.props.topicsAreas.length > 0 && (
-                <div className='topics-section areas'>
-                    <h2 className='topics-section-container topics-section-title'>
-                    Distrito {this.props.distrito.title} | Proyectos para tu barrio
-                    </h2>
-                    <div className='topics-container areas'>
-                        {this.props.loading && <div className='loader' />}
-                        {this.props.topicsAreas.map((topic) => {
-                            return <TopicCard key={topic.id} topic={topic} forum={this.props.forum} />
-                        })}
-                    </div>
-                </div>
-            )}
-            {this.props.topicsDistrito && this.props.topicsDistrito.length > 0 && (
-                <div className='topics-section distrito'>
-                    <h2 className='topics-section-container topics-section-title'>
-                        Distrito {this.props.distrito.title} | Proyectos para tu distrito
-                    </h2>
-                    <div className='topics-container'>
-                        {this.props.loading && <div className='loader' />}
-                        {this.props.topicsDistrito.map((topic) => {
-                        return <TopicCard key={topic.id} topic={topic} forum={this.props.forum} />
-                        })}
-                    </div>
-                </div>
-            )}
-            {this.props.topicsJoven && this.props.topicsJoven.length > 0 && (
-                <div className='topics-section pp-joven'>
-                    <h2 className='topics-section-container topics-section-title'>
-                        <span>Distrito {this.props.distrito.title} | Proyectos jóvenes</span><br />
-                        <sub />
-                    </h2>
-                    <div className='topics-container'>
-                        {this.props.loading && <div className='loader' />}
-                        {this.props.topicsJoven.map((topic) => {
-                            return <TopicCard key={topic.id} topic={topic} forum={this.props.forumJoven} />
-                        })}
-                    </div>
-                </div>
-            )}
-        </div>
-    )}
-}
+        return (
+            <div>
+                {this.props.districts && this.props.districts.length > 0 && (
+                    this.props.districts.map((district, i) => 
+                        <div key={i} className='topics-section'>
+                            <h2 className='topics-section-container topics-section-title'> 
+                                {district.title} 
+                            </h2>
+                            <div className='topics-container'>
+                                {this.props.loading && <div className='loader' />}
+                                {district.topics.map((topic)=> 
+                                    <TopicCard key={topic.id} topic={topic} />
+                                )}
+                            </div>
+                        </div>
+                    )
+                )} 
+            </div>
+        )}
+    }
