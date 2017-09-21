@@ -2,6 +2,7 @@ header
   display: flex
   flex-direction: column
   width: 100vw
+  margin: 50px 0
   .stage-header
     display: flex
     align-items: center
@@ -28,21 +29,43 @@ header
     display: flex
     align-items: center
     flex-wrap: wrap
-    margin: 30px auto
+    margin: 30px auto 0
     
     .filter
       display: inline-block
       margin: 10px 0
       position: relative
       .btn
-        margin: 0 6px
+        margin: 6px
         width: 180px
+        position: relative
         box-shadow: none
         border-color: #4f5353
         border-radius: 5px
         background-color: #fff
         color: #4f5353
         font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+        &:hover,
+        &:focus
+        //&:active
+          color: #f59231
+        .btn-content
+          margin: 0 auto
+          .badge
+            padding: .2rem 0.3rem
+            font-size: .8rem
+            color: #fff
+            background-color: #f59231
+            border-radius: 50%
+            margin-left: 3px
+        .caret-down
+          display: inline-block
+          position: absolute
+          top: 10px
+          right: 9px
+          color: #4f5353
+          font-size: .8rem
+      .btn-votacion
         &:hover,
         &:focus,
         &:active
@@ -51,27 +74,14 @@ header
           color: #fff
           background-color: #00adef
         
-        span
-          margin-left: 8px
-        .badge
-          padding: .2rem 0.3rem
-          font-size: .8rem
-          color: #fff
-          background-color: #f59231
-          border-radius: 50%
-          margin-left: 5px
-        .caret-down
-          position: relative
-          top: -1px
-          color: #4f5353
-          font-size: .8rem
+        
       
       .filter-dropdown
         cursor: auto
         position: absolute
         min-width: 190px
         top: 55px
-        left: 0
+        left: 6px //igual al margin de los botones
         z-index: 99
         padding: 15px 20px
         border: 1px solid #4f5353
@@ -137,6 +147,3 @@ header
           a:last-child
             color: #f59231
             text-decoration: underline
-              
-    .filter + .filter
-      margin-left: 35px

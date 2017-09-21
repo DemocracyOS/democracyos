@@ -157,6 +157,7 @@ class FiltersNavbar extends Component {
             <div className='pp-stage'>
               Seguimiento de proyectos
             </div>
+            <span className='header-text'>Elegí tu filtro:</span>
           </div>
 
           <nav>
@@ -167,7 +168,7 @@ class FiltersNavbar extends Component {
                 className='btn btn-md btn-outline-primary'
                 onClick={this.handleDropdown('opciones-edad')}
                 >
-                Rango de edad <span className='badge'>2</span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Rango de edad</span> <span className='badge'>2</span></span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-edad' && (
               <div className='filter-dropdown' id="opciones-edad">
@@ -205,7 +206,7 @@ class FiltersNavbar extends Component {
                 id="filtro-distrito"
                 className = 'btn btn-md btn-outline-primary'
                 onClick = {this.handleDropdown('opciones-distrito')}>
-                Distrito <span className='badge'>3</span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Distrito</span> <span className='badge'>3</span></span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-distrito' && (
                 <div className='filter-dropdown' id="opciones-distrito">
@@ -275,7 +276,7 @@ class FiltersNavbar extends Component {
                 id="filtro-año"
                 className = 'btn btn-md btn-outline-primary'
                 onClick = {this.handleDropdown('opciones-año')}>
-                Año <span className='badge'>2</span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Año</span> <span className='badge'>2</span></span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-año' && (
                 <div className='filter-dropdown' id="opciones-año">
@@ -320,7 +321,7 @@ class FiltersNavbar extends Component {
                 id="filtro-estado"
                 className = 'btn btn-md btn-outline-primary'
                 onClick = {this.handleDropdown('opciones-estado')}>
-                Estado <span className='badge'>2</span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Estado</span> <span className='badge'>2</span></span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-estado' && (
                 <div className='filter-dropdown' id="opciones-estado">
@@ -394,8 +395,8 @@ function DistritoFilter (props) {
                 key={d.name}
                 data-name={d.name}
                 onClick={() => onChange(d)}
-                className={`btn btn-md btn-outline-primary${isActive}`}>
-                {d.title}
+                className={`btn btn-md btn-outline-primary${isActive} btn-votacion`}>
+                <span className='btn-content'><span className='btn-text'>{d.title}</span></span>
               </button>
             )
           })}
