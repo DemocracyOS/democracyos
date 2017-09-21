@@ -42,13 +42,13 @@ class HomePresupuesto extends Component {
     )
     .then(([topicsAdulto, topicsJoven]) => {
       const topics = [].concat(
-        topicsJoven.map((topic) => {
-          topic.edad = 'joven'
+        topicsAdulto.map((topic) => {
+          topic.edad = 'adulto'
           return topic
         })
       ).concat(
-        topicsAdulto.map((topic) => {
-          topic.edad = 'adulto'
+        topicsJoven.map((topic) => {
+          topic.edad = 'joven'
           return topic
         })
       )
