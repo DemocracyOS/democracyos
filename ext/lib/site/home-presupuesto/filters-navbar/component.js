@@ -89,13 +89,10 @@ class FiltersNavbar extends Component {
     this.setState({
       selectFilters: selectFilters
     }, function () {
-      console.log(this.state.selectFilters)
     })
   }
 
   cancelApplyFilters = () => {
-    console.log('entra en cancelApplyFilters')
-    //console.log('initial applied filters ', this.state.appliedFilters)
     var appliedFilters = this.state.appliedFilters
     this.setState ({
       // se actualiza selectFilters y se cierra el dropdown
@@ -105,7 +102,6 @@ class FiltersNavbar extends Component {
   }
 
   applyFilters = (id) => (e) => {
-    console.log('entra en applyFilters')
     var selectFilters = this.state.selectFilters
     var badgeNum = Object.values(selectFilters[id]).filter(boolean => boolean).length
     this.setState ({
@@ -173,7 +169,7 @@ class FiltersNavbar extends Component {
                 className='btn btn-md btn-outline-primary'
                 onClick={this.handleDropdown('opciones-edad')}
                 >
-                <span className='btn-content'><span className='btn-text'>Rango de edad</span> <span className='badge'>2</span></span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Rango de edad</span> {this.state.badges.edad !== 0 && <span className='badge'>{this.state.badges.edad}</span>} </span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-edad' && (
               <div className='filter-dropdown' id="opciones-edad">
@@ -211,7 +207,7 @@ class FiltersNavbar extends Component {
                 id="filtro-distrito"
                 className = 'btn btn-md btn-outline-primary'
                 onClick = {this.handleDropdown('opciones-distrito')}>
-                <span className='btn-content'><span className='btn-text'>Distrito</span> <span className='badge'>3</span></span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Distrito</span> {this.state.badges.distrito !== 0 && <span className='badge'>{this.state.badges.distrito}</span>} </span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-distrito' && (
                 <div className='filter-dropdown' id="opciones-distrito">
@@ -281,7 +277,7 @@ class FiltersNavbar extends Component {
                 id="filtro-anio"
                 className = 'btn btn-md btn-outline-primary'
                 onClick = {this.handleDropdown('opciones-anio')}>
-                <span className='btn-content'><span className='btn-text'>Año</span> <span className='badge'>2</span></span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Año</span> {this.state.badges.anio !== 0 && <span className='badge'>{this.state.badges.anio}</span>} </span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-anio' && (
                 <div className='filter-dropdown' id="opciones-anio">
@@ -326,7 +322,7 @@ class FiltersNavbar extends Component {
                 id="filtro-estado"
                 className = 'btn btn-md btn-outline-primary'
                 onClick = {this.handleDropdown('opciones-estado')}>
-                <span className='btn-content'><span className='btn-text'>Estado</span> <span className='badge'>2</span></span> <span className='caret-down'>▾</span>
+                <span className='btn-content'><span className='btn-text'>Estado</span> {this.state.badges.estado !== 0 && <span className='badge'>{this.state.badges.estado}</span>} </span> <span className='caret-down'>▾</span>
               </button>
               {this.state.activeDropdown == 'opciones-estado' && (
                 <div className='filter-dropdown' id="opciones-estado">
@@ -378,9 +374,6 @@ export default ReactOutsideEvent(FiltersNavbar)
 
 function DistritoFilter (props) {
   const { active, onChange } = props
-
-  console.log('distritofilter', distritos.map)
-  console.log('props', props)
 
   return (
     <header>
