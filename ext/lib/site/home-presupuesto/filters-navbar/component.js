@@ -84,8 +84,6 @@ class FiltersNavbar extends Component {
 
     let selectFilters = update(this.state.selectFilters, { [select]: { [id]: { $set: value } } })
 
-    // selectFilters[select][id] = value
-
     this.setState({
       selectFilters: selectFilters
     }, function () {
@@ -118,7 +116,6 @@ class FiltersNavbar extends Component {
       this.setState({activeDropdown: ''})
     } else {
       // se actualiza selectFilters y se abre el dropdown
-      // var appliedFilters = this.state.appliedFilters
       this.setState({
         selectFilters: update({}, { $merge: this.state.appliedFilters }),
         activeDropdown: id
@@ -158,7 +155,7 @@ class FiltersNavbar extends Component {
             <div className='pp-stage'>
               Seguimiento de proyectos
             </div>
-            <span className='header-text'>Elegí tu filtro:</span>
+            <p className='header-text'>Elegí tu filtro:</p>
           </div>
 
           <nav>
@@ -381,7 +378,7 @@ function DistritoFilter (props) {
         <div className='pp-stage'>
           Votación abierta
         </div>
-        <span className='header-text'>Elegí tu distrito:</span>
+        <p className='header-text'>Elegí tu distrito:</p>
       </div>
       <nav>
         <div className='filter'>

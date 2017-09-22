@@ -3,16 +3,20 @@ header
   flex-direction: column
   width: 100vw
   margin: 50px 0
+  @media screen and (max-width: 768px)
+    margin-top: 42px
   .stage-header
     display: flex
     align-items: center
     justify-content: center
     position: relative
+    @media screen and (max-width: 768px)
+      flex-direction: column
     .pp-stage
       display: inline-block
-      padding: .8rem 4rem
+      padding: .8rem
+      width: 350px
       background-color: #1daeec
-      margin-right: 20px
       border-radius: 1px
       color: #fff
       font-weight: 800
@@ -20,16 +24,23 @@ header
       text-transform: uppercase
       position: absolute
       left: 0
+      @media screen and (max-width: 768px)
+        position: static
+        align-self: flex-start
     .header-text
       margin: 0 auto
       font-size: 1.5rem
       color: #4f5353
+      @media screen and (max-width: 860px)
+        margin-left: 360px
+      @media screen and (max-width: 768px)
+        margin: 15px auto 0
       
   nav
     display: flex
     align-items: center
     flex-wrap: wrap
-    margin: 30px auto 0
+    margin: 20px auto 0
     
     .filter
       display: inline-block
