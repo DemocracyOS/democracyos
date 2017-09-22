@@ -11,6 +11,11 @@ import distritos from './distritos.json'
 
 let distritoCurrent = ''
 
+const edades = ['joven']
+const estados = ['ejecutandose']
+const anios = []
+const districts = ['centro']
+
 class HomePresupuesto extends Component {
   constructor (props) {
     super(props)
@@ -69,9 +74,11 @@ class HomePresupuesto extends Component {
   }
 
   prepareTopics = () => {
+    
     return distritos.map((distrito) => {
       distrito.topics = this.state.topics ?
-        this.state.topics.filter((topic) => {
+        this.state.topics
+        .filter((topic) => {
           return topic.attrs && topic.attrs.district === distrito.name
         }) : []
       return distrito
@@ -90,7 +97,7 @@ class HomePresupuesto extends Component {
           loading={this.state.loading}
           districts={this.prepareTopics()} />
         {this.state.topics &&
-          <BannerPresupuesto content='archivo'/> 
+          <BannerPresupuesto content='votacion'/> 
         }
         {this.state.topics && 
           <Footer />
@@ -144,4 +151,21 @@ function byState (a, b) {
     : ae < be
     ? -1
     : 0
+}
+
+function filterAge (topic) {
+  return topic.edad && edades.includes(topic.edad)
+}
+
+function filterState (topic) {
+  return topic.attrs && topic.attrs.state && estados.includes(topic.attrs.state)
+   
+}
+
+function filterDistrict (topic) {
+  return topic.attrs && topic.attrs.district && districts.includes(topic.attrs.district)
+}
+
+function filterYear (topic) {
+  return topic.attrs && topic.attrs.anio && anios.includes(topic.attrs.anio)
 }
