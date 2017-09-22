@@ -15,8 +15,8 @@ class FiltersNavbar extends Component {
 
       appliedFilters: {
         edad: {
-          adultos: false,
-          jovenes: false
+          adulto: false,
+          joven: false
         },
         distrito: {
           centro: false,
@@ -32,16 +32,16 @@ class FiltersNavbar extends Component {
           proyectos2017: false
         },
         estado: {
-          proyectados: false,
-          ejecucion: false,
-          finalizados: false
+          proyectado: false,
+          ejecutandose: false,
+          finalizado: false
         }
       },
 
       selectFilters: {
         edad: {
-          adultos: false,
-          jovenes: false
+          adulto: false,
+          joven: false
         },
         distrito: {
           centro: false,
@@ -57,17 +57,17 @@ class FiltersNavbar extends Component {
           proyectos2017: false
         },
         estado: {
-          proyectados: false,
-          ejecucion: false,
-          finalizados: false
+          proyectado: false,
+          ejecutandose: false,
+          finalizado: false
         }
       },
 
-      navbarUI: {
-        edad: null,
-        distrito: null,
-        anio: null,
-        estado: null
+      badges: {
+        edad: 0,
+        distrito: 0,
+        anio: 0,
+        estado: 0
       },
 
       activeDropdown: ''
@@ -93,26 +93,28 @@ class FiltersNavbar extends Component {
     })
   }
 
-  // cancelApplyFilters = () => {
-  //   console.log('entra en cancelApplyFilters')
-  //   //console.log('initial applied filters ', this.state.appliedFilters)
-  //   var appliedFilters = this.state.appliedFilters
-  //   this.setState ({
-  //     // se actualiza selectFilters y se cierra el dropdown
-  //     selectFilters: appliedFilters,
-  //     activeDropdown: ''
-  //   })
-  // }
+  cancelApplyFilters = () => {
+    console.log('entra en cancelApplyFilters')
+    //console.log('initial applied filters ', this.state.appliedFilters)
+    var appliedFilters = this.state.appliedFilters
+    this.setState ({
+      // se actualiza selectFilters y se cierra el dropdown
+      selectFilters: update({}, { $merge: this.state.appliedFilters}),
+      activeDropdown: ''
+    })
+  }
 
-  // applyFilters = () => {
-  //   console.log('entra en applyFilters')
-  //   var selectFilters = this.state.selectFilters
-  //   this.setState ({
-  //     // se actualiza appliedFilters y se cierra el dropdown
-  //     appliedFilters: selectFilters,
-  //     activeDropdown: ''
-  //   })
-  // }
+  applyFilters = (id) => (e) => {
+    console.log('entra en applyFilters')
+    var selectFilters = this.state.selectFilters
+    var badgeNum = Object.values(selectFilters[id]).filter(boolean => boolean).length
+    this.setState ({
+      // se actualiza appliedFilters y se cierra el dropdown
+      appliedFilters: update({}, { $merge: this.state.selectFilters }),
+      badges: {[id]: badgeNum},
+      activeDropdown: ''
+    })
+  }
 
   handleDropdown = (id) => (e) => {
     // si se apreta el botón de un dropdown ya abierto, se cierra
@@ -122,7 +124,7 @@ class FiltersNavbar extends Component {
       // se actualiza selectFilters y se abre el dropdown
       // var appliedFilters = this.state.appliedFilters
       this.setState({
-        selectFilters: update({}, { $merge: this.state.appliedFilters }),  // NO FUNCA
+        selectFilters: update({}, { $merge: this.state.appliedFilters }),
         activeDropdown: id
       })
     }
@@ -132,6 +134,11 @@ class FiltersNavbar extends Component {
     distritoCurrent = distrito.name
     window.history.pushState(null, null, `#${distrito.name}`)
     this.setState({ distrito }, this.fetchForums)
+  }
+
+  // contar numero de filtros para calcular el valor del badge
+  calculateBadge = (id) => {
+    this.state.appliedFilters[id].filter()
   }
 
   // cerrar dropdown si hago click afuera
@@ -175,24 +182,24 @@ class FiltersNavbar extends Component {
                   <div className='filter-column'>
                     <div className='option-container'>
                       <div className='check-container'>
-                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='adultos' name='edad' checked={this.state.selectFilters.edad.adultos} />
-                        <label htmlFor='adultos'></label>
+                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='adulto' name='edad' checked={this.state.selectFilters.edad.adulto} />
+                        <label htmlFor='adulto'></label>
                       </div>
-                      <label htmlFor='adultos'>Proyecto adultos</label>
+                      <label htmlFor='adulto'>Proyecto adultos</label>
                     </div>
                     <div className='option-container'>
                       <div className='check-container'>
-                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='jovenes' name='edad' checked={this.state.selectFilters.edad.jovenes} />
-                        <label htmlFor='jovenes'></label>
+                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='joven' name='edad' checked={this.state.selectFilters.edad.joven} />
+                        <label htmlFor='joven'></label>
                       </div>
-                      <label htmlFor='jovenes'>Proyecto jóvenes</label>
+                      <label htmlFor='joven'>Proyecto jóvenes</label>
                     </div>
                   </div>
 
                 </div>
                 <div className='dropdown-actions'>
                   <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-                  <a className='aplicar' onClick={this.applyFilters}>Aplicar</a>
+                  <a className='aplicar' onClick={this.applyFilters('edad')}>Aplicar</a>
                 </div>
               </div>
               )}
@@ -262,7 +269,7 @@ class FiltersNavbar extends Component {
                   </div>
                   <div className='dropdown-actions'>
                     <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-                    <a className='aplicar' onClick={this.applyFilters}>Aplicar</a>
+                    <a className='aplicar' onClick={this.applyFilters('distrito')}>Aplicar</a>
                   </div>
                 </div>
                 )}
@@ -307,7 +314,7 @@ class FiltersNavbar extends Component {
                   </div>
                   <div className='dropdown-actions'>
                     <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-                    <a className='aplicar' onClick={this.applyFilters}>Aplicar</a>
+                    <a className='aplicar' onClick={this.applyFilters('anio')}>Aplicar</a>
                   </div>
                 </div>
                 )}
@@ -328,24 +335,24 @@ class FiltersNavbar extends Component {
                     <div className='filter-column'>
                       <div className='option-container'>
                         <div className='check-container'>
-                          <input onChange={this.handleCheckboxChange('estado')} type='checkbox' id='proyectados' name='estado' checked={this.state.selectFilters.estado.proyectados} />
-                          <label htmlFor='proyectados'></label>
+                          <input onChange={this.handleCheckboxChange('estado')} type='checkbox' id='proyectado' name='estado' checked={this.state.selectFilters.estado.proyectado} />
+                          <label htmlFor='proyectado'></label>
                         </div>
-                        <label htmlFor='proyectados'>Proyectados</label>
+                        <label htmlFor='proyectado'>Proyectados</label>
                       </div>
                       <div className='option-container'>
                         <div className='check-container'>
-                          <input onChange={this.handleCheckboxChange('estado')}  type='checkbox' id='ejecucion' name='estado' checked={this.state.selectFilters.estado.ejecucion} />
-                          <label htmlFor='ejecucion'></label>
+                          <input onChange={this.handleCheckboxChange('estado')}  type='checkbox' id='ejecutandose' name='estado' checked={this.state.selectFilters.estado.ejecutandose} />
+                          <label htmlFor='ejecutandose'></label>
                         </div>
-                        <label htmlFor='ejecucion'>En ejecución</label>
+                        <label htmlFor='ejecutandose'>En ejecución</label>
                       </div>
                       <div className='option-container'>
                         <div className='check-container'>
-                          <input onChange={this.handleCheckboxChange('estado')} type='checkbox' id='finalizados' name='estado' checked={this.state.selectFilters.estado.finalizados} />
-                          <label htmlFor='finalizados'></label>
+                          <input onChange={this.handleCheckboxChange('estado')} type='checkbox' id='finalizado' name='estado' checked={this.state.selectFilters.estado.finalizado} />
+                          <label htmlFor='finalizado'></label>
                         </div>
-                        <label htmlFor='finalizados'>Finalizados</label>
+                        <label htmlFor='finalizado'>Finalizados</label>
                       </div>
                     </div>
 
@@ -353,7 +360,7 @@ class FiltersNavbar extends Component {
 
                   <div className='dropdown-actions'>
                     <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-                    <a className='aplicar' onClick={this.applyFilters}>Aplicar</a>
+                    <a className='aplicar' onClick={this.applyFilters('estado')}>Aplicar</a>
                   </div>
                 </div>
                 )}
