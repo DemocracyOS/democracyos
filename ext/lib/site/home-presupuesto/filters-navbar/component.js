@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactOutsideEvent from 'react-outside-event'
+import update from 'immutability-helper'
 import distritos from '../distritos.json'
 
 let distritoCurrent = ''
@@ -81,9 +82,9 @@ class FiltersNavbar extends Component {
     const value = target.type === 'checkbox' ? target.checked : target.value
     const id = target.id
 
-    let selectFilters = Object.assign({}, this.state.selectFilters)
+    let selectFilters = update(this.state.selectFilters, { [select]: { [id]: { $set: value } } })
 
-    selectFilters[select][id] = value
+    // selectFilters[select][id] = value
 
     this.setState({
       selectFilters: selectFilters
@@ -121,7 +122,7 @@ class FiltersNavbar extends Component {
       // se actualiza selectFilters y se abre el dropdown
       // var appliedFilters = this.state.appliedFilters
       this.setState({
-        selectFilters: Object.assign({}, this.state.appliedFilters),  // NO FUNCA
+        selectFilters: update({}, { $merge: this.state.appliedFilters }),  // NO FUNCA
         activeDropdown: id
       })
     }
