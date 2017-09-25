@@ -14,7 +14,7 @@ let distritoCurrent = ''
 const filtros = {
   edad: {          
     adulto: true,          
-    joven: true        
+    joven: false        
   },        
   distrito: {          
     centro: true,          
@@ -25,14 +25,16 @@ const filtros = {
     sur: false        
   },        
   anio: {          
-    proyectos2015: false,          
-    proyectos2016: false,          
-    proyectos2017: false       
+    proyectos2015: true,          
+    proyectos2016: true,          
+    proyectos2017: true       
   },        
-  estado: {          
+  estado: {
+    pendiente: false,          
     proyectado: true,          
-    ejecutandose: true,          
-    finalizado: true        
+    ejecutandose: false,          
+    finalizado: false,
+    perdedor: false        
     } 
   }
 
@@ -44,7 +46,7 @@ class HomePresupuesto extends Component {
       topics: null,
       edad: ['joven', 'adulto'],
       distrito: ['centro', 'noroeste', 'norte', 'oeste', 'sudoeste', 'sur'],
-      anio: [2015, 2016, 2017],
+      anio: ['2015', '2016', '2017'],
       estado: ['proyectado', 'ejecutandose', 'finalizado']   
     }
   }
@@ -100,7 +102,6 @@ class HomePresupuesto extends Component {
   }
 
   prepareTopics = () => {
-    
     return distritos
       .filter(this.filtroDistrito)
       .map((distrito) => {
@@ -120,15 +121,15 @@ class HomePresupuesto extends Component {
       .filter(k =>  filtros.anio[k])
       .map(anio => {
         if (anio === 'proyectos2015') {
-        anio = 2015 
+        anio = '2015' 
         return anio
       }
       if (anio === 'proyectos2016') {
-        anio = 2016 
+        anio = '2016' 
         return anio
       }
       if (anio === 'proyectos2017') {
-        anio = 2017 
+        anio = '2017' 
         return anio
       }
       })
