@@ -11,21 +11,47 @@ import distritos from './distritos.json'
 
 let distritoCurrent = ''
 
-const edades = ['joven']
-const estados = ['ejecutandose']
-const anios = []
-const districts = ['centro']
+const filtros = {
+  edad: {          
+    adulto: true,          
+    joven: true        
+  },        
+  distrito: {          
+    centro: true,          
+    noroeste: false,          
+    norte: false,          
+    oeste: false,          
+    sudoeste: false,          
+    sur: false        
+  },        
+  anio: {          
+    proyectos2015: false,          
+    proyectos2016: false,          
+    proyectos2017: false       
+  },        
+  estado: {          
+    proyectado: true,          
+    ejecutandose: true,          
+    finalizado: true        
+    } 
+  }
 
 class HomePresupuesto extends Component {
   constructor (props) {
     super(props)
-
     this.state = {
       loading: true,
-      topics: null
+      topics: null,
+      edad: ['joven', 'adulto'],
+      distrito: ['centro', 'noroeste', 'norte', 'oeste', 'sudoeste', 'sur'],
+      anio: [2015, 2016, 2017],
+      estado: ['proyectado', 'ejecutandose', 'finalizado']   
     }
   }
 
+  componentWillMount () {
+    this.setState(this.prepareFilters(filtros))
+  }
   componentDidMount () {
     this.setState({ loading: true }, this.fetchForums)
   }
@@ -75,16 +101,65 @@ class HomePresupuesto extends Component {
 
   prepareTopics = () => {
     
-    return distritos.map((distrito) => {
+    return distritos
+      .filter(this.filtroDistrito)
+      .map((distrito) => {
       distrito.topics = this.state.topics ?
         this.state.topics
-        .filter((topic) => {
-          return topic.attrs && topic.attrs.district === distrito.name
-        }) : []
+        .filter(this.filtroEdad)
+        .filter(this.filtroEstado)
+        : []
       return distrito
     })
   }
 
+  prepareFilters = (filtros) =>  {
+    const edad = Object.keys(filtros.edad).filter(k => filtros.edad[k])
+    const distritos = Object.keys(filtros.distrito).filter(k => filtros.distrito[k])
+    const anios = Object.keys(filtros.anio)
+      .filter(k =>  filtros.anio[k])
+      .map(anio => {
+        if (anio === 'proyectos2015') {
+        anio = 2015 
+        return anio
+      }
+      if (anio === 'proyectos2016') {
+        anio = 2016 
+        return anio
+      }
+      if (anio === 'proyectos2017') {
+        anio = 2017 
+        return anio
+      }
+      })
+
+    const estado = Object.keys(filtros.estado).filter(k => filtros.estado[k])
+    return {
+      edad: edad,
+      distrito: distritos,
+      anio: anios,
+      estado: estado
+    }
+  }
+
+  //Filter Functions
+
+  filtroEdad = (topic) => {
+    return topic.edad && this.state.edad.includes(topic.edad)
+  }
+
+  filtroEstado = (topic) => {
+    return topic.attrs && topic.attrs.state && this.state.estado.includes(topic.attrs.state) 
+  }
+
+  filtroDistrito = (distrito) => {
+    return this.state.distrito.includes(distrito.name)
+  }
+
+  filtroAnio = (topic) => {
+    return topic.attrs && topic.attrs.anio && this.state.anio.includes(topic.attrs.anio)
+  }
+  
   render () {
     return (
       <div className='ext-home-presupuesto'>
@@ -153,19 +228,3 @@ function byState (a, b) {
     : 0
 }
 
-function filterAge (topic) {
-  return topic.edad && edades.includes(topic.edad)
-}
-
-function filterState (topic) {
-  return topic.attrs && topic.attrs.state && estados.includes(topic.attrs.state)
-   
-}
-
-function filterDistrict (topic) {
-  return topic.attrs && topic.attrs.district && districts.includes(topic.attrs.district)
-}
-
-function filterYear (topic) {
-  return topic.attrs && topic.attrs.anio && anios.includes(topic.attrs.anio)
-}
