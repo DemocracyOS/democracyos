@@ -74,8 +74,33 @@ class FiltersNavbar extends Component {
     }
   }
 
-  //this.handleCheckboxChange = this.handleCheckboxChange.bind(this) O USAR ARROW FUNCTION
-  // LAS ARROW FUNCTIONS TIENEN EL SCOPE DEL COMPONENTE
+  // FUNCTIONS
+
+  handleDistritoFilterChange = (distrito) => {
+    distritoCurrent = distrito.name
+    window.history.pushState(null, null, `#${distrito.name}`)
+    this.setState({ distrito }, this.fetchForums)
+  }
+
+  handleDropdown = (id) => (e) => {
+    // si se apreta el botón de un dropdown ya abierto, se cierra
+    if (this.state.activeDropdown == id) {
+      this.setState({activeDropdown: ''})
+    } else {
+      // se actualiza selectFilters y se abre el dropdown
+      this.setState({
+        selectFilters: update({}, { $merge: this.state.appliedFilters }),
+        activeDropdown: id
+      })
+    }
+    console.log('badges al abrir dropdown: ', this.state.badges)
+  }
+
+  // cerrar dropdown si hago click afuera
+  onOutsideEvent = () => {
+    if (!this.state.activeDropdown) return
+    this.setState({activeDropdown: ''})
+  }
 
   handleCheckboxChange = (select) => (e) => {
     const target = e.target
@@ -101,44 +126,35 @@ class FiltersNavbar extends Component {
 
   applyFilters = (id) => (e) => {
     var selectFilters = this.state.selectFilters
-    var badgeNum = Object.values(selectFilters[id]).filter(boolean => boolean).length
     this.setState ({
       // se actualiza appliedFilters y se cierra el dropdown
       appliedFilters: update({}, { $merge: this.state.selectFilters }),
-      badges: {[id]: badgeNum},
       activeDropdown: ''
+    }, () =>
+      {console.log('entra a la callback')
+      // se actualiza badgeNum para renderear el badge
+      var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
+      this.setState (
+        {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
+        () => console.log('badges al aplicar filtros ', this.state.badges))
+      // this.exposeFilters
     })
   }
 
-  handleDropdown = (id) => (e) => {
-    // si se apreta el botón de un dropdown ya abierto, se cierra
-    if (this.state.activeDropdown == id) {
-      this.setState({activeDropdown: ''})
-    } else {
-      // se actualiza selectFilters y se abre el dropdown
-      this.setState({
-        selectFilters: update({}, { $merge: this.state.appliedFilters }),
-        activeDropdown: id
+  exposeFilters = () => {
+    console.log('entra a exposeFilters')
+    var exposedFilters = Object.assign({}, this.state.appliedFilters)
+    var checkAllFalse = Object.values(exposedFilters).filter(boolean => boolean).length
+    if (checkAllFalse == 0) {
+      Object.keys(exposedFilters).forEach(function(key) {
+        exposedFilters[key] = true
       })
     }
+    console.log(exposedFilters)
+    console.log('appliedFilters: ', this.state.appliedFilters)
   }
 
-  handleDistritoFilterChange = (distrito) => {
-    distritoCurrent = distrito.name
-    window.history.pushState(null, null, `#${distrito.name}`)
-    this.setState({ distrito }, this.fetchForums)
-  }
-
-  // contar numero de filtros para calcular el valor del badge
-  calculateBadge = (id) => {
-    this.state.appliedFilters[id].filter()
-  }
-
-  // cerrar dropdown si hago click afuera
-  onOutsideEvent = () => {
-    if (!this.state.activeDropdown) return
-    this.setState({activeDropdown: ''})
-  }
+  
 
 
   render () {

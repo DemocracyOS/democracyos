@@ -13,6 +13,10 @@ class HomePresupuesto extends Component {
     super(props)
     }
 
+  updateFilters(filters) {
+    console.log(filters)
+  }
+
   render () {
     return (
       <div className='ext-home-presupuesto'>
@@ -23,7 +27,8 @@ class HomePresupuesto extends Component {
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
-            stage='votaci' />
+            stage ='votaci'
+            updateFilters = {this.updateFilters} />
         </div>
       </div>
     )
