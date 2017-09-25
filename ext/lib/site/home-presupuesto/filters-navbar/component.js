@@ -93,7 +93,6 @@ class FiltersNavbar extends Component {
         activeDropdown: id
       })
     }
-    console.log('badges al abrir dropdown: ', this.state.badges)
   }
 
   // cerrar dropdown si hago click afuera
@@ -136,35 +135,79 @@ class FiltersNavbar extends Component {
       var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
       this.setState (
         {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
-        () => console.log('badges al aplicar filtros ', this.state.badges))
-      // this.exposeFilters
+        )
+      // ejecuta exposeFilters
+      this.exposeFilters()
     })
   }
 
   exposeFilters = () => {
-    console.log('entra a exposeFilters')
-    var exposedFilters = Object.assign({}, this.state.appliedFilters)
-    var checkAllFalse = Object.values(exposedFilters).filter(boolean => boolean).length
-    if (checkAllFalse == 0) {
-      Object.keys(exposedFilters).forEach(function(key) {
-        exposedFilters[key] = true
-      })
-    }
-    console.log(exposedFilters)
-    console.log('appliedFilters: ', this.state.appliedFilters)
+    var exposedFilters = update({}, { $merge: this.state.appliedFilters })
+    exposedFilters = this.filterCleanup(exposedFilters)
+    exposedFilters = this.filterReady(exposedFilters)
+    console.log('exposed filters: ', exposedFilters)
   }
 
-  
+  filterCleanup = (filters) => {
+    return Object.keys(filters).map(f => {
+      if (Object.keys(filters[f]).filter(o => filters[f][o]).length === 0) {
+          Object.keys(filters[f]).forEach(o => {
+              filters[f][o] = true
+          })
+          return filters[f]
+      } else {
+          return filters[f]
+      }
+    })
+  }
 
+  filterReady = (filters) => {
+    console.log('exposed: ', filters)
+    if (this.props.stage === 'seguimiento') {
+      console.log('entro aca')
+      filters[3] = update(filters, {
+        proyectado: { $set: true },
+        ejecutandose: { $set: true },
+        finalizado: { $set: true },
+        pendiente: { $set: false },
+        perdedor: { $set: false },
+      })
+    } else if (this.props.stage === 'votacion-abierta') {
+      filters.estado = {
+        proyectado: false,
+        ejecutandose: false,
+        finalizado: false,
+        pendiente: true,
+        perdedor: false
+      }
+    } else if (this.props.stage === 'votacion-cerrada') {
+      filters.estado = {
+        proyectado: true,
+        ejecutandose: false,
+        finalizado: false,
+        pendiente: false,
+        perdedor: true
+      }
+      filters.anio = {
+        proyectos2015: false,
+        proyectos2016: false,
+        proyectos2017: true
+      }
+    }
+  }
+
+
+// RENDER
 
   render () {
     return (
       <div>
-    {this.props.stage == 'votacion' ? (
+    {(this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') && (
         <DistritoFilter
               active={this.state.distrito}
               onChange={this.handleDistritoFilterChange} />
-        ) : (
+    )}
+    {this.props.stage === 'seguimiento' && (
         <header>
 
           <div className='stage-header'>
@@ -175,45 +218,6 @@ class FiltersNavbar extends Component {
           </div>
 
           <nav>
-            <div className='filter'>
-              <button
-                type='button'
-                id="filtro-edad"
-                className='btn btn-md btn-outline-primary'
-                onClick={this.handleDropdown('opciones-edad')}
-                >
-                <span className='btn-content'><span className='btn-text'>Rango de edad</span> {this.state.badges.edad !== 0 && <span className='badge'>{this.state.badges.edad}</span>} </span> <span className='caret-down'>▾</span>
-              </button>
-              {this.state.activeDropdown == 'opciones-edad' && (
-              <div className='filter-dropdown' id="opciones-edad">
-                <div className='filter-options'>
-
-                  <div className='filter-column'>
-                    <div className='option-container'>
-                      <div className='check-container'>
-                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='adulto' name='edad' checked={this.state.selectFilters.edad.adulto} />
-                        <label htmlFor='adulto'></label>
-                      </div>
-                      <label htmlFor='adulto'>Proyecto adultos</label>
-                    </div>
-                    <div className='option-container'>
-                      <div className='check-container'>
-                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='joven' name='edad' checked={this.state.selectFilters.edad.joven} />
-                        <label htmlFor='joven'></label>
-                      </div>
-                      <label htmlFor='joven'>Proyecto jóvenes</label>
-                    </div>
-                  </div>
-
-                </div>
-                <div className='dropdown-actions'>
-                  <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-                  <a className='aplicar' onClick={this.applyFilters('edad')}>Aplicar</a>
-                </div>
-              </div>
-              )}
-            </div>
-
             <div className='filter'>
               <button
                 type='button'
@@ -282,6 +286,47 @@ class FiltersNavbar extends Component {
                   </div>
                 </div>
                 )}
+            </div>
+
+
+
+            <div className='filter'>
+              <button
+                type='button'
+                id="filtro-edad"
+                className='btn btn-md btn-outline-primary'
+                onClick={this.handleDropdown('opciones-edad')}
+                >
+                <span className='btn-content'><span className='btn-text'>Rango de edad</span> {this.state.badges.edad !== 0 && <span className='badge'>{this.state.badges.edad}</span>} </span> <span className='caret-down'>▾</span>
+              </button>
+              {this.state.activeDropdown == 'opciones-edad' && (
+              <div className='filter-dropdown' id="opciones-edad">
+                <div className='filter-options'>
+
+                  <div className='filter-column'>
+                    <div className='option-container'>
+                      <div className='check-container'>
+                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='adulto' name='edad' checked={this.state.selectFilters.edad.adulto} />
+                        <label htmlFor='adulto'></label>
+                      </div>
+                      <label htmlFor='adulto'>Proyecto adultos</label>
+                    </div>
+                    <div className='option-container'>
+                      <div className='check-container'>
+                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='joven' name='edad' checked={this.state.selectFilters.edad.joven} />
+                        <label htmlFor='joven'></label>
+                      </div>
+                      <label htmlFor='joven'>Proyecto jóvenes</label>
+                    </div>
+                  </div>
+
+                </div>
+                <div className='dropdown-actions'>
+                  <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
+                  <a className='aplicar' onClick={this.applyFilters('edad')}>Aplicar</a>
+                </div>
+              </div>
+              )}
             </div>
 
             <div className='filter'>
