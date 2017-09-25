@@ -68,12 +68,10 @@ export default ({ topic }) => {
           <div className='state'>{state}</div>
         )}
         <div className='topic-location'>
-          <i className='icon-location-pin' />
           <span>{topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}`}</span>
           {topic.attrs && topic.attrs.number && (
             <span className='number'>
-              <i className='icon-tag' />
-              {prettyNumber(topic.attrs.number)}
+              {topic.attrs.anio}
             </span>
           )}
         </div>

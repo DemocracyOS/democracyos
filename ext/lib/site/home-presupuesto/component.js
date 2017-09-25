@@ -14,19 +14,19 @@ let distritoCurrent = ''
 const filtros = {
   edad: {          
     adulto: true,          
-    joven: false        
+    joven: true        
   },        
   distrito: {          
     centro: true,          
-    noroeste: false,          
-    norte: false,          
-    oeste: false,          
-    sudoeste: false,          
-    sur: false        
+    noroeste: true,          
+    norte: true,          
+    oeste: true,          
+    sudoeste: true,          
+    sur: true        
   },        
   anio: {          
-    proyectos2015: true,          
-    proyectos2016: true,          
+    proyectos2015: false,          
+    proyectos2016: false,          
     proyectos2017: true       
   },        
   estado: {
