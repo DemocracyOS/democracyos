@@ -14,10 +14,6 @@ class FiltersNavbar extends Component {
       distrito: distritos[0],
 
       appliedFilters: {
-        edad: {
-          adulto: false,
-          joven: false
-        },
         distrito: {
           centro: false,
           noroeste: false,
@@ -25,6 +21,10 @@ class FiltersNavbar extends Component {
           oeste: false,
           sudoeste: false,
           sur: false
+        },
+        edad: {
+          adulto: false,
+          joven: false
         },
         anio: {
           proyectos2015: false,
@@ -39,10 +39,6 @@ class FiltersNavbar extends Component {
       },
 
       selectFilters: {
-        edad: {
-          adulto: false,
-          joven: false
-        },
         distrito: {
           centro: false,
           noroeste: false,
@@ -50,6 +46,10 @@ class FiltersNavbar extends Component {
           oeste: false,
           sudoeste: false,
           sur: false
+        },
+        edad: {
+          adulto: false,
+          joven: false
         },
         anio: {
           proyectos2015: false,
@@ -124,7 +124,6 @@ class FiltersNavbar extends Component {
   }
 
   applyFilters = (id) => (e) => {
-    var selectFilters = this.state.selectFilters
     this.setState ({
       // se actualiza appliedFilters y se cierra el dropdown
       appliedFilters: update({}, { $merge: this.state.selectFilters }),
@@ -141,12 +140,19 @@ class FiltersNavbar extends Component {
     })
   }
 
+  // preparo los filtros para enviar la query definitiva a la API
   exposeFilters = () => {
+    debugger
+    console.log('applied filters al entrar a exposeFilters: ', this.state.appliedFilters)
     var exposedFilters = update({}, { $merge: this.state.appliedFilters })
-    exposedFilters = this.filterCleanup(exposedFilters)
-    exposedFilters = this.filterReady(exposedFilters)
-    console.log('exposed filters: ', exposedFilters)
+    console.log('applied filters antes del filtersCleanup: ', this.state.appliedFilters)
+    exposedFilters = update({}, { $merge: this.filterCleanup(exposedFilters) }) // ACA SE EVIDENCIA EL BARDO
+    console.log('applied filters antes de filterReady: ', this.state.appliedFilters)
+    exposedFilters = update({}, { $merge: this.filterReady(exposedFilters) })
+    console.log('exposed filters final: ', exposedFilters)
+    console.log('applied filters final: ', this.state.appliedFilters)
   }
+
 
   filterCleanup = (filters) => {
     return Object.keys(filters).map(f => {
@@ -162,38 +168,37 @@ class FiltersNavbar extends Component {
   }
 
   filterReady = (filters) => {
-    console.log('exposed: ', filters)
     if (this.props.stage === 'seguimiento') {
-      console.log('entro aca')
-      filters[3] = update(filters, {
+      filters[3] = update(filters[3], {
         proyectado: { $set: true },
         ejecutandose: { $set: true },
         finalizado: { $set: true },
         pendiente: { $set: false },
-        perdedor: { $set: false },
+        perdedor: { $set: false }
       })
     } else if (this.props.stage === 'votacion-abierta') {
-      filters.estado = {
-        proyectado: false,
-        ejecutandose: false,
-        finalizado: false,
-        pendiente: true,
-        perdedor: false
-      }
+      filters[3] = update(filters[3], {
+        proyectado: { $set: false },
+        ejecutandose: { $set: false },
+        finalizado: { $set: false },
+        pendiente: { $set: true },
+        perdedor: { $set: false }
+      })
     } else if (this.props.stage === 'votacion-cerrada') {
-      filters.estado = {
-        proyectado: true,
-        ejecutandose: false,
-        finalizado: false,
-        pendiente: false,
-        perdedor: true
-      }
-      filters.anio = {
-        proyectos2015: false,
-        proyectos2016: false,
-        proyectos2017: true
-      }
+      filters[3] = update(filters[3], {
+        proyectado: { $set: true },
+        ejecutandose: { $set: false },
+        finalizado: { $set: false },
+        pendiente: { $set: false },
+        perdedor: { $set: true }
+      })
+      filters[2] = update(filters[2], {
+        proyectos2015: { $set: false },
+        proyectos2016: { $set: false },
+        proyectos2017: { $set: true }
+      })
     }
+    return filters
   }
 
 
