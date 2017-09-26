@@ -82,10 +82,11 @@ class FiltersNavbar extends Component {
     
     this.setState({
       appliedFilters: update(this.state.appliedFilters, { distrito: { [distritoCurrent]: { $set: true } } })
-    }, () => {console.log('applied filters inicial: ', this.state.appliedFilters)}
-    )
-
-    this.exposeFilters()
+    }, () => {
+      console.log('applied filters inicial: ', this.state.appliedFilters)
+      this.exposeFilters()
+    })
+ 
   }
 
 
@@ -445,14 +446,13 @@ export default ReactOutsideEvent(FiltersNavbar)
 
 
 function DistritoFilter (props) {
-  const { active, onChange } = props
+  const { active, onChange, stage } = props
 
   return (
     <header>
       <div className='stage-header'>
         <div className='pp-stage'>
-          { this.props.stage === 'votacion-abierta' && 'Votación abierta' }
-          { this.props.stage === 'votacion-cerrada' && 'Votación cerrada' }
+          { stage === 'votacion-abierta' ? 'Votación abierta' : 'Votación cerrada' }
         </div>
         <p className='header-text'>Elegí tu distrito:</p>
       </div>
