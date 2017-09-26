@@ -15,59 +15,59 @@ class FiltersNavbar extends Component {
 
       appliedFilters: {
         distrito: {
-          centro: false,
-          noroeste: false,
-          norte: false,
-          oeste: false,
-          sudoeste: false,
-          sur: false
+          centro: true,
+          noroeste: true,
+          norte: true,
+          oeste: true,
+          sudoeste: true,
+          sur: true
         },
         edad: {
-          adulto: false,
-          joven: false
+          adulto: true,
+          joven: true
         },
         anio: {
-          proyectos2015: false,
-          proyectos2016: false,
-          proyectos2017: false
+          proyectos2015: true,
+          proyectos2016: true,
+          proyectos2017: true
         },
         estado: {
-          proyectado: false,
-          ejecutandose: false,
-          finalizado: false
+          proyectado: true,
+          ejecutandose: true,
+          finalizado: true
         }
       },
 
       selectFilters: {
         distrito: {
-          centro: false,
-          noroeste: false,
-          norte: false,
-          oeste: false,
-          sudoeste: false,
-          sur: false
+          centro: true,
+          noroeste: true,
+          norte: true,
+          oeste: true,
+          sudoeste: true,
+          sur: true
         },
         edad: {
-          adulto: false,
-          joven: false
+          adulto: true,
+          joven: true
         },
         anio: {
-          proyectos2015: false,
-          proyectos2016: false,
-          proyectos2017: false
+          proyectos2015: true,
+          proyectos2016: true,
+          proyectos2017: true
         },
         estado: {
-          proyectado: false,
-          ejecutandose: false,
-          finalizado: false
+          proyectado: true,
+          ejecutandose: true,
+          finalizado: true
         }
       },
 
       badges: {
-        edad: 0,
-        distrito: 0,
-        anio: 0,
-        estado: 0
+        distrito: 6,
+        edad: 2,
+        anio: 3,
+        estado: 3
       },
 
       activeDropdown: ''
@@ -79,16 +79,25 @@ class FiltersNavbar extends Component {
   handleDistritoFilterChange = (distrito) => {
     distritoCurrent = distrito.name
     window.history.pushState(null, null, `#${distrito.name}`)
-    
-    this.setState({
-      appliedFilters: update(this.state.appliedFilters, { distrito: { [distritoCurrent]: { $set: true } } })
-    }, () => {
-      console.log('applied filters inicial: ', this.state.appliedFilters)
-      this.exposeFilters()
-    })
- 
-  }
 
+    this.setState({
+      appliedFilters: update(this.state.appliedFilters, { 
+        distrito: { centro: { $set: false },
+          noroeste: { $set: false },
+          norte: { $set: false },
+          oeste: { $set: false },
+          sudoeste: { $set: false },
+          sur: { $set: false }
+        }
+      })
+    }, function() {
+        this.setState({
+        appliedFilters: update(this.state.appliedFilters, { distrito: { [distritoCurrent]: { $set: true } } })
+      }, () => {
+        this.exposeFilters()
+      })
+    }) 
+  }
 
   handleDropdown = (id) => (e) => {
     // si se apreta el botón de un dropdown ya abierto, se cierra
@@ -137,28 +146,22 @@ class FiltersNavbar extends Component {
       appliedFilters: update({}, { $merge: this.state.selectFilters }),
       activeDropdown: ''
     }, () =>
-      {console.log('entra a la callback')
+      {
       // se actualiza badgeNum para renderear el badge
       var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
       this.setState (
         {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
         )
-      // ejecuta exposeFilters
       this.exposeFilters()
     })
   }
 
   // preparo los filtros para enviar la query definitiva a la API
   exposeFilters = () => {
-    // debugger
-    console.log('applied filters al entrar a exposeFilters: ', this.state.appliedFilters)
     var exposedFilters = update({}, { $merge: this.state.appliedFilters })
-    console.log('applied filters antes del filtersCleanup: ', this.state.appliedFilters)
-    exposedFilters = update({}, { $merge: this.filterCleanup(exposedFilters) }) // ACA SE EVIDENCIA EL BARDO
-    console.log('applied filters antes de filterReady: ', this.state.appliedFilters)
+    exposedFilters = update({}, { $merge: this.filterCleanup(exposedFilters) })
     exposedFilters = update({}, { $merge: this.filterReady(exposedFilters) })
-    console.log('exposed filters final: ', exposedFilters)
-    console.log('applied filters final: ', this.state.appliedFilters)
+    this.props.updateFilters(exposedFilters)
   }
 
 
@@ -168,17 +171,17 @@ class FiltersNavbar extends Component {
           Object.keys(filters[f]).forEach(o => {
               filters[f][o] = true
           })
-          return filters[f]
+          return [f, filters[f]]
       } else {
-          return filters[f]
+          return [f, filters[f]]
       }
-    })
+    }).reduce((acc, intFnOutput) => { acc[intFnOutput[0]] = intFnOutput[1]; return acc }, {})
   }
 
 
   filterReady = (filters) => {
     if (this.props.stage === 'seguimiento') {
-      filters[3] = update(filters[3], {
+      filters.estado = update(filters.estado, {
         proyectado: { $set: true },
         ejecutandose: { $set: true },
         finalizado: { $set: true },
@@ -186,22 +189,27 @@ class FiltersNavbar extends Component {
         perdedor: { $set: false }
       })
     } else if (this.props.stage === 'votacion-abierta') {
-      filters[3] = update(filters[3], {
+      filters.estado = update(filters.estado, {
         proyectado: { $set: false },
         ejecutandose: { $set: false },
         finalizado: { $set: false },
         pendiente: { $set: true },
         perdedor: { $set: false }
       })
+      filters.anio = update(filters.anio, {
+        proyectos2015: { $set: false },
+        proyectos2016: { $set: false },
+        proyectos2017: { $set: true }
+      })
     } else if (this.props.stage === 'votacion-cerrada') {
-      filters[3] = update(filters[3], {
+      filters.estado = update(filters.estado, {
         proyectado: { $set: true },
         ejecutandose: { $set: false },
         finalizado: { $set: false },
         pendiente: { $set: false },
         perdedor: { $set: true }
       })
-      filters[2] = update(filters[2], {
+      filters.anio = update(filters.anio, {
         proyectos2015: { $set: false },
         proyectos2016: { $set: false },
         proyectos2017: { $set: true }
@@ -438,9 +446,9 @@ class FiltersNavbar extends Component {
         </header>
       )}
       </div>
-  )} // cierro el render
+  )} // cierra el render
 
-} // cierro el componente
+} // cierra el componente
 
 export default ReactOutsideEvent(FiltersNavbar)
 

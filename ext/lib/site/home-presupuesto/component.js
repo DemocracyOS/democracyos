@@ -14,7 +14,7 @@ class HomePresupuesto extends Component {
     }
 
   updateFilters(filters) {
-    console.log(filters)
+    console.log('filters: ', filters)
   }
 
   render () {
@@ -27,7 +27,7 @@ class HomePresupuesto extends Component {
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
-            stage ='votacion-cerrada'
+            stage ='votacion-abierta'
             updateFilters = {this.updateFilters} />
         </div>
       </div>
