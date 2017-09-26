@@ -1,6 +1,9 @@
 .ext-home-presupuesto
   @import './topic-grid/styles'
   @import './banner-presupuesto/styles'
+  @import './filters-navbar/styles'
+
+
   .loader
     position: absolute
     top: 0
@@ -17,13 +20,13 @@
     justify-content center
     margin-bottom: 60px
 
-  .distrito-filter-wrapper
-    text-align: center
-    margin-top: 2em
+  .filters-wrapper
+    margin: 2em 0
+    padding: 0
 
-    label
-      margin: 0 0 20px
-      font-size: 20px
+    //label
+      //margin: 0 0 20px
+      //font-size: 20px
 
   .distrito-filter
     .btn
@@ -47,7 +50,6 @@
       &.active
         color: #fff
         background-color: #00adef
-        
   .find-district-link
     font-weight: 400
     color: #fff

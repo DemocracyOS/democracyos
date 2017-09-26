@@ -228,4 +228,3 @@ function byState (a, b) {
     ? -1
     : 0
 }
-
