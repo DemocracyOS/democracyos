@@ -141,6 +141,8 @@
   "admin-topics.list.search.placeholder": "Buscar un tema...",
   "admin-topics.list.sort": "Clase",
   "admin-topics.list.title": "Temas del sistema",
+  "admin-topics.update-from-csv": "Actualizar temas desde .csv",
+  "admin-topics.update-from-csv.success": "Temas actualizados exitosamente",
   "admin-whitelist.actions": "Acciones",
   "admin-whitelist.delete-whitelist.confirmation.body": "Esta acción eliminará la información de manera permanente. ¿Desea continuar?",
   "admin-whitelist.delete-whitelist.confirmation.cancel": "Cancelar",

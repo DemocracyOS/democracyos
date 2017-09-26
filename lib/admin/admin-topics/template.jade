@@ -17,6 +17,7 @@
             span.glyphicon.glyphicon-time
           button.btn.btn-primary.sort(data-sort='topic-title')
             span.glyphicon.glyphicon-font
+    .well.well-sm.clearfix.export-update
     .list.list-group.col-xs-12
       - each topic in topics
         a.list-group-item(href=urlBuilder.for('admin.topics.id', {id: topic.id, forum: forum.name}), data-topicid=topic.id)
