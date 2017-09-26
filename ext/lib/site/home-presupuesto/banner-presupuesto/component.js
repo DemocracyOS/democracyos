@@ -6,8 +6,13 @@ import React, { Component } from 'react'
 export default class BannerPresupuesto extends Component {
 
     constructor (props) {
-    super(props)
-
+        super(props)
+        this.state={
+            visibility: false,
+            firstTime: true
+        }
+        this.limit=document.body.scrollHeight - 800
+        this.didScroll = false
     }
 
     componentWillMount (){
@@ -19,20 +24,39 @@ export default class BannerPresupuesto extends Component {
             title = 'También podés ver el estado de los proyectos ganadores de años anteriores!'
             textButton = 'Seguimiento de proyectos anteriores'
         }
+
+        window.addEventListener('scroll', this.checkScroll) 
+    }
+
+    checkScroll = (event) => {
+        if (document.body.scrollTop > this.limit){this.didScroll = true}
+        if (document.body.scrollTop<this.limit && this.didScroll && this.state.firstTime){
+            this.setState({
+                visibility: true,
+                firstTime: false
+            })
+        }
+    }
+
+    closeBanner = (event) => {
+        this.setState({visibility: false})
     }
 
     render() {
         return (
-            <div className='container-banner'>
-                <h3>
-                    {title}
-                </h3>
-                <button className='btn btn-primary btn-m banner-button'>
-                    <span>
-                        {textButton}
-                    </span>
-                </button>
-            </div> 
+                this.state.visibility && (
+                    <div className='container-banner'>
+                        <button className='closes' onClick={this.closeBanner}>x</button>
+                        <h3>
+                            {title}
+                        </h3>
+                        <button className='btn btn-primary btn-m banner-button'>
+                            <span>
+                                {textButton}
+                            </span>
+                        </button>
+                    </div> 
+                )
         )
     }
 }
