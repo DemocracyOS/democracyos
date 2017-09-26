@@ -79,8 +79,15 @@ class FiltersNavbar extends Component {
   handleDistritoFilterChange = (distrito) => {
     distritoCurrent = distrito.name
     window.history.pushState(null, null, `#${distrito.name}`)
-    this.setState({ distrito }, this.fetchForums)
+    
+    this.setState({
+      appliedFilters: update(this.state.appliedFilters, { distrito: { [distritoCurrent]: { $set: true } } })
+    }, () => {console.log('applied filters inicial: ', this.state.appliedFilters)}
+    )
+
+    this.exposeFilters()
   }
+
 
   handleDropdown = (id) => (e) => {
     // si se apreta el botón de un dropdown ya abierto, se cierra
@@ -142,7 +149,7 @@ class FiltersNavbar extends Component {
 
   // preparo los filtros para enviar la query definitiva a la API
   exposeFilters = () => {
-    debugger
+    // debugger
     console.log('applied filters al entrar a exposeFilters: ', this.state.appliedFilters)
     var exposedFilters = update({}, { $merge: this.state.appliedFilters })
     console.log('applied filters antes del filtersCleanup: ', this.state.appliedFilters)
@@ -166,6 +173,7 @@ class FiltersNavbar extends Component {
       }
     })
   }
+
 
   filterReady = (filters) => {
     if (this.props.stage === 'seguimiento') {
@@ -210,7 +218,8 @@ class FiltersNavbar extends Component {
     {(this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') && (
         <DistritoFilter
               active={this.state.distrito}
-              onChange={this.handleDistritoFilterChange} />
+              onChange={this.handleDistritoFilterChange}
+              stage={this.props.stage} />
     )}
     {this.props.stage === 'seguimiento' && (
         <header>
@@ -442,7 +451,8 @@ function DistritoFilter (props) {
     <header>
       <div className='stage-header'>
         <div className='pp-stage'>
-          Votación abierta
+          { this.props.stage === 'votacion-abierta' && 'Votación abierta' }
+          { this.props.stage === 'votacion-cerrada' && 'Votación cerrada' }
         </div>
         <p className='header-text'>Elegí tu distrito:</p>
       </div>
