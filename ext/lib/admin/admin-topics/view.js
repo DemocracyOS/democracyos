@@ -12,7 +12,7 @@ import urlBuilder from 'lib/url-builder'
 import View from 'lib/view/view'
 import topicStore from 'lib/stores/topic-store/topic-store'
 import template from './template.jade'
-// import ExportUpdate from './export-update/component'
+import UpdateStage from './update-stage/component'
 
 const log = debug('democracyos:admin-topics')
 
@@ -36,9 +36,9 @@ export default class TopicsListView extends View {
     this.bind('click', '.btn.delete-topic', this.bound('ondeletetopicclick'))
     this.list = new List('topics-wrapper', { valueNames: ['topic-title', 'topic-id', 'topic-date'] })
     ReactRender((
-      <ExportUpdate
+      <UpdateStage
         forum={this.forum} />
-    ), this.el[0].querySelector('.export-update'))
+    ), this.el[0].querySelector('.update-stage'))
   }
 
   ondeletetopicclick (ev) {
