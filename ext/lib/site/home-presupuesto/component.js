@@ -6,37 +6,11 @@ import Footer from '../footer/component'
 import Cover from '../cover'
 import TopicCard from './topic-card/component'
 import TopicGrid from './topic-grid/component'
+import FiltersNavbar from './filters-navbar/component'
 import BannerPresupuesto from './banner-presupuesto/component'
 import distritos from './distritos.json'
 
 let distritoCurrent = ''
-
-const filtros = {
-  edad: {          
-    adulto: true,          
-    joven: true        
-  },        
-  distrito: {          
-    centro: true,          
-    noroeste: true,          
-    norte: true,          
-    oeste: true,          
-    sudoeste: true,          
-    sur: true        
-  },        
-  anio: {          
-    proyectos2015: false,          
-    proyectos2016: false,          
-    proyectos2017: true       
-  },        
-  estado: {
-    pendiente: false,          
-    proyectado: true,          
-    ejecutandose: false,          
-    finalizado: false,
-    perdedor: false        
-    } 
-  }
 
 class HomePresupuesto extends Component {
   constructor (props) {
@@ -50,9 +24,8 @@ class HomePresupuesto extends Component {
       estado: ['proyectado', 'ejecutandose', 'finalizado']   
     }
   }
-
-  componentWillMount () {
-    this.setState(this.prepareFilters(filtros))
+  componentWillMount() {
+    console.log(this.state)
   }
   componentDidMount () {
     this.setState({ loading: true }, this.fetchForums)
@@ -107,8 +80,8 @@ class HomePresupuesto extends Component {
       .map((distrito) => {
       distrito.topics = this.state.topics ?
         this.state.topics
-        .filter(this.filtroEdad)
         .filter(this.filtroEstado)
+        .filter(this.filtroEdad)
         : []
       return distrito
     })
@@ -135,13 +108,19 @@ class HomePresupuesto extends Component {
       })
 
     const estado = Object.keys(filtros.estado).filter(k => filtros.estado[k])
-    return {
+    this.setState ({
       edad: edad,
       distrito: distritos,
       anio: anios,
       estado: estado
-    }
+    })
   }
+
+  getFilters = (filters) => {
+    console.log(filters.estado)
+    this.prepareFilters(filters)
+  }
+
 
   //Filter Functions
 
@@ -169,6 +148,11 @@ class HomePresupuesto extends Component {
           logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
           title='Presupuesto Participativo'
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
+        <div className='topics-section-container filters-wrapper'>
+          <FiltersNavbar
+            stage ='seguimiento'
+            updateFilters = {this.getFilters} />
+        </div>
         <TopicGrid
           loading={this.state.loading}
           districts={this.prepareTopics()} />
