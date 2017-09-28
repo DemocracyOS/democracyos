@@ -71,7 +71,6 @@ class HomePresupuesto extends Component {
       })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.result)
         return Promise.resolve(res.result)
       })
   }
