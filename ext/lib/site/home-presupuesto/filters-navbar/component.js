@@ -111,7 +111,7 @@ class FiltersNavbar extends Component {
       })
     }
   }
-  
+
 
   // FUNCTIONS
 
@@ -195,15 +195,16 @@ class FiltersNavbar extends Component {
       appliedFilters: update({}, {$merge: exposedFilters})
     }, () => {
       // calcula y renderea el badge
-      this.calculateBadges(id)
       // agrega filtros extra de estado en stage seguimiento
       if (this.props.stage === 'seguimiento') {
+        this.calculateBadges(id)
         exposedFilters.estado = update(exposedFilters.estado, {
           pendiente: { $set: false },
           perdedor: { $set: false }
         })
       }
       // query final
+      console.log(exposedFilters)
       this.props.updateFilters(exposedFilters)
     })
   }

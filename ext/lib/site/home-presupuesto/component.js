@@ -150,7 +150,7 @@ class HomePresupuesto extends Component {
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
-            stage ='seguimiento'
+            stage ='votacion-cerrada'
             updateFilters = {this.getFilters} />
         </div>
         <TopicGrid
