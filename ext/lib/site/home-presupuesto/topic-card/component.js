@@ -43,9 +43,9 @@ export default ({ topic }) => {
 
   if (topic.attrs && topic.attrs.winner) classNames.push('is-winner')
   if (topic.attrs && topic.attrs.state) classNames.push(topic.attrs.state.toLowerCase())
-  if (topic.edad === 'joven') classNames.push('topic-joven')
-  if (topic.attrs.area !== '0' && topic.edad !== 'joven') classNames.push('topic-area')
-  if (topic.attrs.area === '0' && topic.edad !== 'joven') classNames.push('topic-distrito')
+  if (topic.attrs.edad === 'joven') classNames.push('topic-joven')
+  if (topic.attrs.area !== '0' && topic.attrs.edad !== 'joven') classNames.push('topic-area')
+  if (topic.attrs.area === '0' && topic.attrs.edad !== 'joven') classNames.push('topic-distrito')
 
   return (
     <div className={classNames.join(' ')}>
