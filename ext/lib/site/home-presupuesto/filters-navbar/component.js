@@ -74,6 +74,48 @@ class FiltersNavbar extends Component {
     }
   }
 
+  componentWillMount() {
+    if (this.props.stage === 'votacion-abierta') {
+      this.setState({
+        appliedFilters: update (this.state.appliedFilters, {
+          estado: {
+            proyectado: { $set: false },
+            ejecutandose: { $set: false },
+            finalizado: { $set: false },
+            pendiente: { $set: true },
+            perdedor: { $set: false }
+          },
+          anio: {
+            proyectos2015: { $set: false },
+            proyectos2016: { $set: false },
+            proyectos2017: { $set: true }
+          }
+        })
+      })
+    } else if (this.props.stage === 'votacion-cerrada') {
+      this.setState({
+        appliedFilters: update (this.state.appliedFilters, {
+          estado: {
+            proyectado: { $set: true },
+            ejecutandose: { $set: false },
+            finalizado: { $set: false },
+            pendiente: { $set: false },
+            perdedor: { $set: true }
+          },
+          anio: {
+            proyectos2015: { $set: false },
+            proyectos2016: { $set: false },
+            proyectos2017: { $set: true }
+          }
+        })
+      })
+    }
+  }
+
+  componentDidMount() {
+    console.log('initial state: ', this.state.appliedFilters)
+  }
+
   // FUNCTIONS
 
   handleDistritoFilterChange = (distrito) => {
@@ -145,22 +187,36 @@ class FiltersNavbar extends Component {
       // se actualiza appliedFilters y se cierra el dropdown
       appliedFilters: update({}, { $merge: this.state.selectFilters }),
       activeDropdown: ''
-    }, () =>
-      {
-      // se actualiza badgeNum para renderear el badge
-      var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
-      this.setState (
-        {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
-        )
+    }, () => {
+      this.calculateBadges(id)
       this.exposeFilters()
     })
   }
 
+  // actualiza badgeNum para renderear el badge
+  calculateBadges = (id) => {
+    var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
+    console.log('badge: ', badgeNum)
+    this.setState (
+      {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
+      )
+  }
+
   // preparo los filtros para enviar la query definitiva a la API
-  exposeFilters = () => {
+  exposeFilters = (id) => {
     var exposedFilters = update({}, { $merge: this.state.appliedFilters })
     exposedFilters = update({}, { $merge: this.filterCleanup(exposedFilters) })
-    exposedFilters = update({}, { $merge: this.filterReady(exposedFilters) })
+    this.setState ({
+      appliedFilters: update({}, {$merge: exposedFilters})
+    })
+    if (this.props.stage === 'seguimiento') {
+      exposedFilters.estado = update(exposedFilters.estado, {
+        pendiente: { $set: false },
+        perdedor: { $set: false }
+      })
+    }
+    // exposedFilters = update({}, { $merge: this.filterReady(exposedFilters) })
+    console.log('final filters: ', exposedFilters)
     this.props.updateFilters(exposedFilters)
   }
 
@@ -178,45 +234,16 @@ class FiltersNavbar extends Component {
     }).reduce((acc, intFnOutput) => { acc[intFnOutput[0]] = intFnOutput[1]; return acc }, {})
   }
 
-
-  filterReady = (filters) => {
-    if (this.props.stage === 'seguimiento') {
-      filters.estado = update(filters.estado, {
-        proyectado: { $set: true },
-        ejecutandose: { $set: true },
-        finalizado: { $set: true },
-        pendiente: { $set: false },
-        perdedor: { $set: false }
-      })
-    } else if (this.props.stage === 'votacion-abierta') {
-      filters.estado = update(filters.estado, {
-        proyectado: { $set: false },
-        ejecutandose: { $set: false },
-        finalizado: { $set: false },
-        pendiente: { $set: true },
-        perdedor: { $set: false }
-      })
-      filters.anio = update(filters.anio, {
-        proyectos2015: { $set: false },
-        proyectos2016: { $set: false },
-        proyectos2017: { $set: true }
-      })
-    } else if (this.props.stage === 'votacion-cerrada') {
-      filters.estado = update(filters.estado, {
-        proyectado: { $set: true },
-        ejecutandose: { $set: false },
-        finalizado: { $set: false },
-        pendiente: { $set: false },
-        perdedor: { $set: true }
-      })
-      filters.anio = update(filters.anio, {
-        proyectos2015: { $set: false },
-        proyectos2016: { $set: false },
-        proyectos2017: { $set: true }
-      })
-    }
-    return filters
-  }
+  // preparo estado final para seguimiento
+  // filterReady = (filters) => {
+  //   if (this.props.stage === 'seguimiento') {
+  //     filters.estado = update(filters.estado, {
+  //       pendiente: { $set: false },
+  //       perdedor: { $set: false }
+  //     })
+  //   }
+  //   return filters
+  // }
 
 
 // RENDER
