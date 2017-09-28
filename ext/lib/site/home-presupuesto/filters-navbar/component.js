@@ -78,6 +78,9 @@ class FiltersNavbar extends Component {
     if (this.props.stage === 'votacion-abierta') {
       this.setState({
         appliedFilters: update (this.state.appliedFilters, {
+          distrito: {
+            centro: { $set: true }
+          },
           estado: {
             proyectado: { $set: false },
             ejecutandose: { $set: false },
@@ -95,6 +98,9 @@ class FiltersNavbar extends Component {
     } else if (this.props.stage === 'votacion-cerrada') {
       this.setState({
         appliedFilters: update (this.state.appliedFilters, {
+          distrito: {
+            centro: { $set: true }
+          },
           estado: {
             proyectado: { $set: true },
             ejecutandose: { $set: false },
@@ -121,7 +127,8 @@ class FiltersNavbar extends Component {
 
     this.setState({
       appliedFilters: update(this.state.appliedFilters, { 
-        distrito: { centro: { $set: false },
+        distrito: {
+          centro: { $set: false },
           noroeste: { $set: false },
           norte: { $set: false },
           oeste: { $set: false },
@@ -129,7 +136,7 @@ class FiltersNavbar extends Component {
           sur: { $set: false }
         }
       })
-    }, function() {
+    }, () => {
         this.setState({
         appliedFilters: update(this.state.appliedFilters, { distrito: { [distritoCurrent]: { $set: true } } })
       }, () => {
@@ -204,7 +211,7 @@ class FiltersNavbar extends Component {
         })
       }
       // query final
-      console.log(exposedFilters)
+      console.log('final filters: ', exposedFilters)
       this.props.updateFilters(exposedFilters)
     })
   }
@@ -481,13 +488,14 @@ function DistritoFilter (props) {
         <div className='filter'>
           {distritos.map((d) => {
             const isActive = d.name === active.name ? ' active' : ''
+            // var isActive = active.name ? ' active' : ''
             return (
               <button
                 type='button'
                 key={d.name}
                 data-name={d.name}
                 onClick={() => onChange(d)}
-                className={`btn btn-md btn-outline-primary${isActive} btn-votacion`}>
+                className={`btn btn-md btn-outline-primary btn-votacion${isActive}`}>
                 <span className='btn-content'><span className='btn-text'>{d.title}</span></span>
               </button>
             )
