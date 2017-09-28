@@ -39,7 +39,7 @@ class HomePresupuesto extends Component {
     forumStore.findOneByName('presupuesto')
     .then((forum) => {
       this.setState({stage: forum.extra.stage})
-      return topicStore.findAll({ forum: forum.id })
+      return this.fetchTopics()
     })
     .then((topics) => {
       this._fetchingForums = false
@@ -58,15 +58,36 @@ class HomePresupuesto extends Component {
     })
   }
 
+  fetchTopics () {
+    const { edad, distrito, anio, estado } = this.state
+    return window.fetch(`/ext/api/pp-feed`, {
+        credentials: 'include',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({ edad, distrito, anio, estado })
+      })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res.result)
+        return Promise.resolve(res.result)
+      })
+  }
+
   prepareTopics = () => {
     return distritos
-      .filter(this.filtroDistrito)
+      .filter(this.filtroDistritoCategoria)
       .map((distrito) => {
         distrito.topics = this.state.topics
           ? this.state.topics
               .filter(this.filtroEdad)
               .filter(this.filtroEstado)
               .filter(this.filtroAnio)
+              .filter(this.filtroDistrito(distrito.name))
+              .sort(byState)
+              .sort(byEdad)
           : []
 
       return distrito
@@ -96,11 +117,6 @@ class HomePresupuesto extends Component {
     })
   }
 
-  getFilters = (filters) => {
-    console.log(filters)
-    this.prepareFilters(filters)
-  }
-
   //Filter Functions
 
   filtroEdad = (topic) => {
@@ -111,12 +127,16 @@ class HomePresupuesto extends Component {
     return topic.attrs && topic.attrs.state && this.state.estado.includes(topic.attrs.state)
   }
 
-  filtroDistrito = (distrito) => {
+  filtroDistritoCategoria = (distrito) => {
     return this.state.distrito.includes(distrito.name)
   }
 
   filtroAnio = (topic) => {
     return topic.attrs && topic.attrs.anio && this.state.anio.includes(topic.attrs.anio)
+  }
+
+  filtroDistrito = (distritoName) => (topic) => {
+    return topic.attrs && topic.attrs.district === distritoName
   }
 
   render () {
@@ -147,17 +167,6 @@ class HomePresupuesto extends Component {
 }
 
 export default userConnector(HomePresupuesto)
-
-function sortTopics (topics) {
-  return topics
-    .filter(winners)
-    .sort(byNumber)
-    .sort(byState)
-}
-
-function winners (topic) {
-  return topic.attrs && topic.attrs.winner
-}
 
 function byNumber (a, b) {
   if (!(a.attrs && a.attrs.number)) return -1
@@ -190,4 +199,8 @@ function byState (a, b) {
     : ae < be
     ? -1
     : 0
+}
+
+function byEdad (a, b) {
+  return a.attrs.edad === 'joven' ? 1 : -1
 }
