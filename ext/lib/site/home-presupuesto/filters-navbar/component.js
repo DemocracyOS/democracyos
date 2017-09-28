@@ -111,10 +111,7 @@ class FiltersNavbar extends Component {
       })
     }
   }
-
-  componentDidMount() {
-    console.log('initial state: ', this.state.appliedFilters)
-  }
+  
 
   // FUNCTIONS
 
@@ -184,40 +181,39 @@ class FiltersNavbar extends Component {
 
   applyFilters = (id) => (e) => {
     this.setState ({
-      // se actualiza appliedFilters y se cierra el dropdown
+      // actualiza appliedFilters y cierra el dropdown
       appliedFilters: update({}, { $merge: this.state.selectFilters }),
       activeDropdown: ''
-    }, () => {
-      this.calculateBadges(id)
-      this.exposeFilters()
-    })
+    }, () => {this.exposeFilters(id)})
   }
 
-  // actualiza badgeNum para renderear el badge
-  calculateBadges = (id) => {
-    var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
-    console.log('badge: ', badgeNum)
-    this.setState (
-      {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
-      )
-  }
-
-  // preparo los filtros para enviar la query definitiva a la API
+  // prepara los filtros para enviar la query definitiva a la API
   exposeFilters = (id) => {
     var exposedFilters = update({}, { $merge: this.state.appliedFilters })
     exposedFilters = update({}, { $merge: this.filterCleanup(exposedFilters) })
     this.setState ({
       appliedFilters: update({}, {$merge: exposedFilters})
+    }, () => {
+      // calcula y renderea el badge
+      this.calculateBadges(id)
+      // agrega filtros extra de estado en stage seguimiento
+      if (this.props.stage === 'seguimiento') {
+        exposedFilters.estado = update(exposedFilters.estado, {
+          pendiente: { $set: false },
+          perdedor: { $set: false }
+        })
+      }
+      // query final
+      this.props.updateFilters(exposedFilters)
     })
-    if (this.props.stage === 'seguimiento') {
-      exposedFilters.estado = update(exposedFilters.estado, {
-        pendiente: { $set: false },
-        perdedor: { $set: false }
-      })
-    }
-    // exposedFilters = update({}, { $merge: this.filterReady(exposedFilters) })
-    console.log('final filters: ', exposedFilters)
-    this.props.updateFilters(exposedFilters)
+  }
+
+
+  calculateBadges = (id) => {
+    var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
+    this.setState (
+      {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
+      )
   }
 
 
@@ -233,17 +229,6 @@ class FiltersNavbar extends Component {
       }
     }).reduce((acc, intFnOutput) => { acc[intFnOutput[0]] = intFnOutput[1]; return acc }, {})
   }
-
-  // preparo estado final para seguimiento
-  // filterReady = (filters) => {
-  //   if (this.props.stage === 'seguimiento') {
-  //     filters.estado = update(filters.estado, {
-  //       pendiente: { $set: false },
-  //       perdedor: { $set: false }
-  //     })
-  //   }
-  //   return filters
-  // }
 
 
 // RENDER
