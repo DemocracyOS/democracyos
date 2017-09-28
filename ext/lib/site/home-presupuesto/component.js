@@ -17,11 +17,12 @@ class HomePresupuesto extends Component {
     super(props)
     this.state = {
       loading: true,
+      stage: 'seguimiento',
       topics: null,
       edad: ['joven', 'adulto'],
       distrito: ['centro', 'noroeste', 'norte', 'oeste', 'sudoeste', 'sur'],
-      anio: ['2015', '2016', '2017'],
-      estado: ['proyectado', 'ejecutandose', 'finalizado']   
+      anio: ['2016', '2017'],
+      estado: ['proyectado', 'ejecutandose', 'finalizado']
     }
   }
 
@@ -35,27 +36,12 @@ class HomePresupuesto extends Component {
     this._fetchingForums = true
     this.setState({ loading: true })
 
-    Promise.all([
-      forumStore.findOneByName('presupuesto'),
-      forumStore.findOneByName('presupuesto-joven')
-    ])
-    .then(([forum, forumJoven]) => Promise.all([
-        topicStore.findAll({ forum: forum.id }),
-        topicStore.findAll({ forum: forumJoven.id })
-      ])
-    )
-    .then(([topicsAdulto, topicsJoven]) => {
-      const topics = [].concat(
-        topicsAdulto.map((topic) => {
-          topic.edad = 'adulto'
-          return topic
-        })
-      ).concat(
-        topicsJoven.map((topic) => {
-          topic.edad = 'joven'
-          return topic
-        })
-      )
+    forumStore.findOneByName('presupuesto')
+    .then((forum) => {
+      this.setState({stage: forum.extra.stage})
+      return topicStore.findAll({ forum: forum.id })
+    })
+    .then((topics) => {
       this._fetchingForums = false
       this.setState({
         loading: false,
@@ -76,15 +62,13 @@ class HomePresupuesto extends Component {
     return distritos
       .filter(this.filtroDistrito)
       .map((distrito) => {
-        distrito.topics = this.state.topics ?
-          this.state.topics
-            .filter(this.filtroEdad)
-            .filter(this.filtroEstado)
-            .filter(this.filtroAnio)
-            .filter((topic) => {
-              return topic.attrs && topic.attrs.district === distrito.name
-            }) : []
-        console.log(distrito.topics)
+        distrito.topics = this.state.topics
+          ? this.state.topics
+              .filter(this.filtroEdad)
+              .filter(this.filtroEstado)
+              .filter(this.filtroAnio)
+          : []
+
       return distrito
     })
   }
@@ -95,45 +79,36 @@ class HomePresupuesto extends Component {
     const anios = Object.keys(filtros.anio)
       .filter(k =>  filtros.anio[k])
       .map(anio => {
-        if (anio === 'proyectos2015') {
-        anio = '2015' 
-        return anio
-      }
-      if (anio === 'proyectos2016') {
-        anio = '2016' 
-        return anio
-      }
-      if (anio === 'proyectos2017') {
-        anio = '2017' 
-        return anio
-      }
+        if (anio === 'proyectos2016') {
+          return '2016'
+        }
+        if (anio === 'proyectos2017') {
+          return '2017'
+        }
       })
 
     const estado = Object.keys(filtros.estado).filter(k => filtros.estado[k])
-    console.log(distritos)
     this.setState ({
       edad: edad,
       distrito: distritos,
       anio: anios,
       estado: estado
     })
-    console.log(this.state)
   }
 
   getFilters = (filters) => {
-    console.log(filters.distrito)
+    console.log(filters)
     this.prepareFilters(filters)
   }
-
 
   //Filter Functions
 
   filtroEdad = (topic) => {
-    return topic.edad && this.state.edad.includes(topic.edad)
+    return topic.attrs && topic.attrs.edad && this.state.edad.includes(topic.attrs.edad)
   }
 
   filtroEstado = (topic) => {
-    return topic.attrs && topic.attrs.state && this.state.estado.includes(topic.attrs.state) 
+    return topic.attrs && topic.attrs.state && this.state.estado.includes(topic.attrs.state)
   }
 
   filtroDistrito = (distrito) => {
@@ -143,7 +118,7 @@ class HomePresupuesto extends Component {
   filtroAnio = (topic) => {
     return topic.attrs && topic.attrs.anio && this.state.anio.includes(topic.attrs.anio)
   }
-  
+
   render () {
     return (
       <div className='ext-home-presupuesto'>
@@ -154,16 +129,16 @@ class HomePresupuesto extends Component {
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
-            stage ='votacion-abierta'
-            updateFilters = {this.getFilters} />
+            stage ='seguimiento'
+            updateFilters={this.prepareFilters} />
         </div>
         <TopicGrid
           loading={this.state.loading}
           districts={this.prepareTopics()} />
         {this.state.topics &&
-          <BannerPresupuesto content='votacion'/> 
+          <BannerPresupuesto content='votacion'/>
         }
-        {this.state.topics && 
+        {this.state.topics &&
           <Footer />
         }
       </div>

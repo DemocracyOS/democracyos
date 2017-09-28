@@ -46,7 +46,7 @@ export default ({ topic }) => {
   if (topic.edad === 'joven') classNames.push('topic-joven')
   if (topic.attrs.area !== '0' && topic.edad !== 'joven') classNames.push('topic-area')
   if (topic.attrs.area === '0' && topic.edad !== 'joven') classNames.push('topic-distrito')
-    
+
   return (
     <div className={classNames.join(' ')}>
       {topic.coverUrl && (
@@ -84,11 +84,11 @@ export default ({ topic }) => {
               <Link to={topic.url}>{topic.attrs.description}</Link>
             </p>
           )}
-        </div> 
+        </div>
         <div className='topic-card-footer'>
           <div className='topic-card-category'>
             <span>
-              {topic.edad === 'joven' ? `Joven` : topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial` : `Distrito` }
+              {topic.attrs.edad === 'joven' ? `Joven` : topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial` : `Distrito` }
             </span>
           </div>
           {topic.attrs && (
