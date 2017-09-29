@@ -16,11 +16,15 @@ export default class BannerPresupuesto extends Component {
   }
 
   componentWillMount (){
-    if (this.props.stage === 'seguimiento') {
+    if (this.props.stage === 'votacion-abierta') {
       title = 'Votá los proyectos del Presupuesto Participativo 2017! Tenés tiempo hasta el xx/xx'
-      textButton = 'Seguimiento de proyectos anteriores'
+      textButton = 'Ver de proyectos'
     }
-    if (this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') {
+    if (this.props.stage === 'votacion-cerrada') {
+      title = 'Mirá los resultados de la votación de proyectos del Presupuesto Participativo 2017!'
+      textButton = 'Ver de proyectos'
+    }
+    if (this.props.stage === 'seguimiento') {
       title = 'También podés ver el estado de los proyectos ganadores de años anteriores!'
       textButton = 'Seguimiento de proyectos anteriores'
     }
