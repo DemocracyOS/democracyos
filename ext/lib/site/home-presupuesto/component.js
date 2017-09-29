@@ -136,7 +136,7 @@ class HomePresupuesto extends Component {
       anio: anios,
       estado: estado,
       s: 0
-    }, this.fetchTopics)
+    }, () => this.fetchTopics(0))
   }
 
   //Filter Functions
@@ -171,7 +171,7 @@ class HomePresupuesto extends Component {
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
-            stage ='seguimiento'
+            stage={this.state.stage}
             updateFilters={this.prepareFilters} />
         </div>
         <TopicGrid
@@ -179,7 +179,7 @@ class HomePresupuesto extends Component {
           districts={this.prepareTopics()}
           paginateFoward={this.paginateFoward} />
         {this.state.topics &&
-          <BannerPresupuesto content='votacion'/>
+          <BannerPresupuesto stage={this.state.stage} />
         }
         {this.state.topics &&
           <Footer />
