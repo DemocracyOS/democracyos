@@ -27,7 +27,6 @@ class FiltersNavbar extends Component {
           joven: true
         },
         anio: {
-          proyectos2015: true,
           proyectos2016: true,
           proyectos2017: true
         },
@@ -89,7 +88,6 @@ class FiltersNavbar extends Component {
             perdedor: { $set: false }
           },
           anio: {
-            proyectos2015: { $set: false },
             proyectos2016: { $set: false },
             proyectos2017: { $set: true }
           }
@@ -109,7 +107,6 @@ class FiltersNavbar extends Component {
             perdedor: { $set: true }
           },
           anio: {
-            proyectos2015: { $set: false },
             proyectos2016: { $set: false },
             proyectos2017: { $set: true }
           }
@@ -124,7 +121,7 @@ class FiltersNavbar extends Component {
   handleDistritoFilterChange = (distrito) => {
     distritoCurrent = distrito.name
     //resetea los filtros
-    let appliedFilters = update(this.state.appliedFilters, { 
+    let appliedFilters = update(this.state.appliedFilters, {
         distrito: {
           centro: { $set: false },
           noroeste: { $set: false },
@@ -384,13 +381,6 @@ class FiltersNavbar extends Component {
                   <div className='filter-options'>
 
                     <div className='filter-column'>
-                      <div className='option-container'>
-                        <div className='check-container'>
-                          <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2015' name='anio' checked={this.state.selectFilters.anio.proyectos2015} />
-                          <label htmlFor='proyectos2015'></label>
-                        </div>
-                        <label htmlFor='proyectos2015'>2015</label>
-                      </div>
                       <div className='option-container'>
                         <div className='check-container'>
                           <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2016' name='anio' checked={this.state.selectFilters.anio.proyectos2016} />
