@@ -7,10 +7,12 @@ export default class TopicGrid extends Component {
   }
 
   render () {
+    if (!this.props.districts && !this.props.districts.length) return null
+    let districts = this.props.districts.filter(d => d.topics.length > 0)
     return (
-      <div>
-        {this.props.districts && this.props.districts.length > 0 && (
-          this.props.districts.map((district, i) =>
+      <div className='topics-grid'>
+        {
+          districts.map((district, i) =>
             <div key={i} className='topics-section'>
               <h2 className='topics-section-container topics-section-title'>
                 Distrito {district.title}
@@ -24,7 +26,10 @@ export default class TopicGrid extends Component {
               </div>
             </div>
           )
-        )}
+        }
+        <div className='grid-bottom'>
+          <button className='ver-mas' onClick={this.props.paginateFoward}>Ver mas</button>
+        </div>
       </div>
     )
   }

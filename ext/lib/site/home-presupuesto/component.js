@@ -16,6 +16,7 @@ class HomePresupuesto extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      s: 0,
       loading: true,
       stage: 'seguimiento',
       topics: null,
@@ -39,7 +40,7 @@ class HomePresupuesto extends Component {
     forumStore.findOneByName('presupuesto')
     .then((forum) => {
       this.setState({stage: forum.extra.stage})
-      return this.fetchTopics()
+      return this.fetchTopics(0)
     })
     .then((topics) => {
       this._fetchingForums = false
@@ -58,7 +59,7 @@ class HomePresupuesto extends Component {
     })
   }
 
-  fetchTopics () {
+  fetchTopics (s) {
     const { edad, distrito, anio, estado } = this.state
     return window.fetch(`/ext/api/pp-feed`, {
         credentials: 'include',
@@ -67,12 +68,33 @@ class HomePresupuesto extends Component {
           'Content-Type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ edad, distrito, anio, estado })
+        body: JSON.stringify({ edad, distrito, anio, estado, s })
       })
       .then((res) => res.json())
       .then((res) => {
         return Promise.resolve(res.result)
       })
+  }
+
+  paginateFoward = () => {
+    this.setState({ loading: true }, () => {
+      let s = this.state.s
+      s += 20
+      this.fetchTopics(s)
+        .then((topics) => {
+          this.setState({
+            loading: false,
+            topics: this.state.topics.concat(topics),
+            s
+          })
+        })
+        .catch((err) => {
+          console.error(err)
+          this.setState({
+            loading: false
+          })
+        })
+    })
   }
 
   prepareTopics = () => {
@@ -112,8 +134,9 @@ class HomePresupuesto extends Component {
       edad: edad,
       distrito: distritos,
       anio: anios,
-      estado: estado
-    })
+      estado: estado,
+      s: 0
+    }, this.fetchTopics)
   }
 
   //Filter Functions
@@ -153,7 +176,8 @@ class HomePresupuesto extends Component {
         </div>
         <TopicGrid
           loading={this.state.loading}
-          districts={this.prepareTopics()} />
+          districts={this.prepareTopics()}
+          paginateFoward={this.paginateFoward} />
         {this.state.topics &&
           <BannerPresupuesto content='votacion'/>
         }

@@ -11,6 +11,23 @@ app.post('/',
 function getFeed (req, res, next) {
   let filters = req.body
   const s = +req.body.s || 0
+  delete filters.s
+  const validFilters = {
+    edad: ['joven', 'adulto'],
+    distrito: ['centro', 'noroeste', 'norte', 'oeste', 'sudoeste', 'sur'],
+    anio: ['2016', '2017'],
+    estado: ['proyectado', 'ejecutandose', 'finalizado']
+  }
+
+  let isValid = Object.keys(filters)
+    .map(filterKey => {
+      return filters[filterKey]
+        .map(option => !!~validFilters[filterKey].indexOf(option))
+        .filter(v => !v)
+    })
+    .reduce((invalids, f) => invalids.concat(f), []).length === 0
+  if (!isValid) return res.json({ result: null, error: 'Filtros inválidos' })
+
   Forum.find({ name: 'presupuesto' })
     .then((forum) => {
       Topic.aggregate([
@@ -24,6 +41,7 @@ function getFeed (req, res, next) {
             'attrs.state': { $in: req.body.estado }
         }},
         { $sort: { 'createdAt': -1 } },
+        { $sort: { 'attrs.district': 1 } },
         { $skip: s },
         { $limit: 20 }
       ], function (err, topicsM) {
@@ -31,13 +49,13 @@ function getFeed (req, res, next) {
           res.json({ result: null, error: err })
         } else {
           let topics = topicsM.map(topic => ({
+            id: topic._id,
             action: topic.action,
             attrs: topic.attrs,
             coverUrl: topic.coverUrl,
             forum: topic.forum,
             mediaTitle: topic.mediaTitle,
-            tags: topic.tags,
-            id: topic._id
+            tags: topic.tags
           }))
           res.json({ result: topics })
         }
