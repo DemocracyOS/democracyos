@@ -24,9 +24,7 @@ class HomePresupuesto extends Component {
       estado: ['proyectado', 'ejecutandose', 'finalizado']   
     }
   }
-  componentWillMount() {
-    console.log(this.state)
-  }
+
   componentDidMount () {
     this.setState({ loading: true }, this.fetchForums)
   }
@@ -78,11 +76,15 @@ class HomePresupuesto extends Component {
     return distritos
       .filter(this.filtroDistrito)
       .map((distrito) => {
-      distrito.topics = this.state.topics ?
-        this.state.topics
-        .filter(this.filtroEstado)
-        .filter(this.filtroEdad)
-        : []
+        distrito.topics = this.state.topics ?
+          this.state.topics
+            .filter(this.filtroEdad)
+            .filter(this.filtroEstado)
+            .filter(this.filtroAnio)
+            .filter((topic) => {
+              return topic.attrs && topic.attrs.district === distrito.name
+            }) : []
+        console.log(distrito.topics)
       return distrito
     })
   }
@@ -108,16 +110,18 @@ class HomePresupuesto extends Component {
       })
 
     const estado = Object.keys(filtros.estado).filter(k => filtros.estado[k])
+    console.log(distritos)
     this.setState ({
       edad: edad,
       distrito: distritos,
       anio: anios,
       estado: estado
     })
+    console.log(this.state)
   }
 
   getFilters = (filters) => {
-    console.log(filters.estado)
+    console.log(filters.distrito)
     this.prepareFilters(filters)
   }
 
