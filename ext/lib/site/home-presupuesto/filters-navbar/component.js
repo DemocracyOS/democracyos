@@ -11,7 +11,7 @@ class FiltersNavbar extends Component {
 
     this.state = {
 
-      distrito: distritos[0],
+      distrito: 'centro',
 
       appliedFilters: {
         distrito: {
@@ -123,10 +123,8 @@ class FiltersNavbar extends Component {
 
   handleDistritoFilterChange = (distrito) => {
     distritoCurrent = distrito.name
-    window.history.pushState(null, null, `#${distrito.name}`)
-
-    this.setState({
-      appliedFilters: update(this.state.appliedFilters, { 
+    //resetea los filtros
+    let appliedFilters = update(this.state.appliedFilters, { 
         distrito: {
           centro: { $set: false },
           noroeste: { $set: false },
@@ -136,13 +134,15 @@ class FiltersNavbar extends Component {
           sur: { $set: false }
         }
       })
+    // setea el filtro activo
+    appliedFilters.distrito[distritoCurrent] = true
+    // aplica los filtros actualizados
+    this.setState({
+      appliedFilters: appliedFilters,
+      distrito: distritoCurrent
     }, () => {
-        this.setState({
-        appliedFilters: update(this.state.appliedFilters, { distrito: { [distritoCurrent]: { $set: true } } })
-      }, () => {
-        this.exposeFilters()
-      })
-    }) 
+      this.exposeFilters()
+    })
   }
 
   handleDropdown = (id) => (e) => {
@@ -201,17 +201,16 @@ class FiltersNavbar extends Component {
     this.setState ({
       appliedFilters: update({}, {$merge: exposedFilters})
     }, () => {
-      // calcula y renderea el badge
-      // agrega filtros extra de estado en stage seguimiento
       if (this.props.stage === 'seguimiento') {
+        // calcula y renderea el badge
         this.calculateBadges(id)
+        // agrega filtros extra de estado en stage seguimiento
         exposedFilters.estado = update(exposedFilters.estado, {
           pendiente: { $set: false },
           perdedor: { $set: false }
         })
       }
       // query final
-      console.log('final filters: ', exposedFilters)
       this.props.updateFilters(exposedFilters)
     })
   }
@@ -487,8 +486,7 @@ function DistritoFilter (props) {
       <nav>
         <div className='filter'>
           {distritos.map((d) => {
-            const isActive = d.name === active.name ? ' active' : ''
-            // var isActive = active.name ? ' active' : ''
+            const isActive = d.name === active ? ' active' : ''
             return (
               <button
                 type='button'
