@@ -1,40 +1,42 @@
 import React, { Component } from 'react'
 
-let title = ''
-let textButton = ''
-
+let texts = {
+  abierta: {
+    title: 'Votá los proyectos del Presupuesto Participativo 2017! Tenés tiempo hasta el xx/xx',
+    btn: 'Ver de proyectos'
+  },
+  cerrada: {
+    title: 'Mirá los resultados de la votación de proyectos del Presupuesto Participativo 2017!',
+    btn: 'Ver de proyectos'
+  },
+  seguimiento: {
+    title: 'También podés ver el estado de los proyectos ganadores de años anteriores!',
+    btn: 'Seguimiento de proyectos anteriores'
+  }
+}
 export default class BannerPresupuesto extends Component {
 
   constructor (props) {
     super(props)
     this.state={
-        visibility: false,
-        firstTime: true
+      visibility: false,
+      firstTime: true
     }
-    this.limit=document.body.scrollHeight - 800
+    this.limit = window.innerHeight
     this.didScroll = false
   }
 
-  componentWillMount (){
-    if (this.props.stage === 'votacion-abierta') {
-      title = 'Votá los proyectos del Presupuesto Participativo 2017! Tenés tiempo hasta el xx/xx'
-      textButton = 'Ver de proyectos'
-    }
-    if (this.props.stage === 'votacion-cerrada') {
-      title = 'Mirá los resultados de la votación de proyectos del Presupuesto Participativo 2017!'
-      textButton = 'Ver de proyectos'
-    }
-    if (this.props.stage === 'seguimiento') {
-      title = 'También podés ver el estado de los proyectos ganadores de años anteriores!'
-      textButton = 'Seguimiento de proyectos anteriores'
-    }
-
+  componentDidMount (){
     window.addEventListener('scroll', this.checkScroll)
   }
 
-  checkScroll = (event) => {
-    if (document.body.scrollTop > this.limit){this.didScroll = true}
-    if (document.body.scrollTop<this.limit && this.didScroll && this.state.firstTime){
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.checkScroll)
+  }
+
+  checkScroll = () => {
+    if (document.body.scrollTop > this.limit) this.didScroll = true
+    if (document.body.scrollTop < this.limit && this.didScroll && this.state.firstTime){
       this.setState({
         visibility: true,
         firstTime: false
@@ -47,16 +49,40 @@ export default class BannerPresupuesto extends Component {
   }
 
   render() {
+    let key
+    let nextStage
+    switch (this.props.stage) {
+      case 'seguimiento':
+        if (this.props.forumStage === 'votacion-abierta') {
+          nextStage = 'votacion-abierta'
+          key = 'abierta'
+        } else {
+          nextStage = 'votacion-cerrada'
+          key = 'cerrada'
+        }
+        break;
+      case 'votacion-abierta':
+        key = 'seguimiento'
+        nextStage = 'seguimiento'
+        break;
+      case 'votacion-cerrada':
+        key = 'seguimiento'
+        nextStage = 'seguimiento'
+        break;
+    }
+
     return (
       this.state.visibility && (
         <div className='container-banner'>
           <button className='closes' onClick={this.closeBanner}>x</button>
           <h3>
-            {title}
+            {texts[key].title}
           </h3>
-          <button className='btn btn-primary btn-m banner-button'>
+          <button
+            className='btn btn-primary btn-m banner-button'
+            onClick={() => {this.props.changeStage(nextStage); this.closeBanner()}}>
             <span>
-              {textButton}
+              {texts[key].btn}
             </span>
           </button>
         </div>

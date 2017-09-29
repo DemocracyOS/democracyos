@@ -16,7 +16,7 @@ function getFeed (req, res, next) {
     edad: ['joven', 'adulto'],
     distrito: ['centro', 'noroeste', 'norte', 'oeste', 'sudoeste', 'sur'],
     anio: ['2016', '2017'],
-    estado: ['proyectado', 'ejecutandose', 'finalizado']
+    estado: ['proyectado', 'ejecutandose', 'finalizado', 'pendiente', 'perdedor']
   }
 
   let isValid = Object.keys(filters)
@@ -48,6 +48,9 @@ function getFeed (req, res, next) {
         if (err) {
           res.json({ result: null, error: err })
         } else {
+          console.log('////////////////////////')
+          console.log(topicsM.length)
+          console.log('////////////////////////')
           let topics = topicsM.map(topic => ({
             id: topic._id,
             action: topic.action,

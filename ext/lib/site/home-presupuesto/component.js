@@ -17,9 +17,11 @@ class HomePresupuesto extends Component {
     super(props)
     this.state = {
       s: 0,
+      noMore: false,
       loading: true,
-      stage: 'seguimiento',
-      topics: null,
+      stage: null,
+      forumStage: null,
+      topics: [],
       edad: ['joven', 'adulto'],
       distrito: ['centro', 'noroeste', 'norte', 'oeste', 'sudoeste', 'sur'],
       anio: ['2016', '2017'],
@@ -28,25 +30,21 @@ class HomePresupuesto extends Component {
   }
 
   componentDidMount () {
-    this.setState({ loading: true }, this.fetchForums)
+    this.setState({ loading: true }, this.fetchForum)
   }
 
   _fetchingForums = false
-  fetchForums = () => {
+  fetchForum = () => {
     if (this._fetchingForums) return
     this._fetchingForums = true
     this.setState({ loading: true })
 
     forumStore.findOneByName('presupuesto')
     .then((forum) => {
-      this.setState({stage: forum.extra.stage})
-      return this.fetchTopics(0)
-    })
-    .then((topics) => {
-      this._fetchingForums = false
       this.setState({
         loading: false,
-        topics
+        stage: forum.extra.stage,
+        forumStage: forum.extra.stage
       })
     })
     .catch((err) => {
@@ -85,6 +83,7 @@ class HomePresupuesto extends Component {
           this.setState({
             loading: false,
             topics: this.state.topics.concat(topics),
+            noMore: topics.length === 0 || topics.length < 20,
             s
           })
         })
@@ -136,7 +135,23 @@ class HomePresupuesto extends Component {
       anio: anios,
       estado: estado,
       s: 0
-    }, () => this.fetchTopics(0))
+    }, () => {
+      this.fetchTopics(0)
+        .then((topics) => {
+          this.setState({
+            loading: false,
+            topics,
+            s: 0,
+            noMore: topics.length === 0 || topics.length < 20
+          })
+        })
+        .catch((err) => {
+          console.error(err)
+          this.setState({
+            loading: false
+          })
+        })
+    })
   }
 
   //Filter Functions
@@ -161,6 +176,8 @@ class HomePresupuesto extends Component {
     return topic.attrs && topic.attrs.district === distritoName
   }
 
+  changeStage = (stage) => this.setState({stage})
+
   render () {
     return (
       <div className='ext-home-presupuesto'>
@@ -177,9 +194,13 @@ class HomePresupuesto extends Component {
         <TopicGrid
           loading={this.state.loading}
           districts={this.prepareTopics()}
+          noMore={this.state.noMore}
           paginateFoward={this.paginateFoward} />
-        {this.state.topics &&
-          <BannerPresupuesto stage={this.state.stage} />
+        {this.state.topics && this.state.forumStage !== 'seguimiento' &&
+          <BannerPresupuesto
+            forumStage={this.state.forumStage}
+            stage={this.state.stage}
+            changeStage={this.changeStage}/>
         }
         {this.state.topics &&
           <Footer />

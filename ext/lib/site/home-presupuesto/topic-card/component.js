@@ -29,7 +29,7 @@ export default ({ topic }) => {
       }
   ]
 
-  if (topic.attrs && topic.attrs.state) {
+  if (topic.attrs && topic.attrs.state && estadosPP.map(e => e.name).includes(topic.attrs.state)) {
     state = estadosPP.find((attr) => attr.name === topic.attrs.state).title
   }
 
@@ -41,7 +41,6 @@ export default ({ topic }) => {
     classNames.push('has-votes')
   }
 
-  if (topic.attrs && topic.attrs.winner) classNames.push('is-winner')
   if (topic.attrs && topic.attrs.state) classNames.push(topic.attrs.state.toLowerCase())
   if (topic.attrs.edad === 'joven') classNames.push('topic-joven')
   if (topic.attrs.area !== '0' && topic.attrs.edad !== 'joven') classNames.push('topic-area')
@@ -64,7 +63,7 @@ export default ({ topic }) => {
         </div>
       )}
       <div className='topic-card-info'>
-        {topic.attrs && topic.attrs.state && (
+        {topic.attrs && topic.attrs.state && estadosPP.map(e => e.name).includes(topic.attrs.state) && (
           <div className='state'>{state}</div>
         )}
         <div className='topic-location'>

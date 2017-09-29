@@ -51,7 +51,6 @@ class FiltersNavbar extends Component {
           joven: true
         },
         anio: {
-          proyectos2015: true,
           proyectos2016: true,
           proyectos2017: true
         },
@@ -65,7 +64,7 @@ class FiltersNavbar extends Component {
       badges: {
         distrito: 6,
         edad: 2,
-        anio: 3,
+        anio: 2,
         estado: 3
       },
 
@@ -73,48 +72,87 @@ class FiltersNavbar extends Component {
     }
   }
 
-  componentWillMount() {
-    if (this.props.stage === 'votacion-abierta') {
-      this.setState({
-        appliedFilters: update (this.state.appliedFilters, {
-          distrito: {
-            centro: { $set: true }
-          },
-          estado: {
-            proyectado: { $set: false },
-            ejecutandose: { $set: false },
-            finalizado: { $set: false },
-            pendiente: { $set: true },
-            perdedor: { $set: false }
-          },
-          anio: {
-            proyectos2016: { $set: false },
-            proyectos2017: { $set: true }
-          }
-        })
-      })
-    } else if (this.props.stage === 'votacion-cerrada') {
-      this.setState({
-        appliedFilters: update (this.state.appliedFilters, {
-          distrito: {
-            centro: { $set: true }
-          },
-          estado: {
-            proyectado: { $set: true },
-            ejecutandose: { $set: false },
-            finalizado: { $set: false },
-            pendiente: { $set: false },
-            perdedor: { $set: true }
-          },
-          anio: {
-            proyectos2016: { $set: false },
-            proyectos2017: { $set: true }
-          }
-        })
-      })
+  componentWillReceiveProps(props) {
+    if (props.stage !== this.props.stage) {
+      switch (props.stage) {
+        case 'votacion-abierta':
+          this.setState({
+            appliedFilters: update (this.state.appliedFilters, {
+              distrito: {
+                centro: { $set: true },
+                noroeste: { $set: false },
+                norte: { $set: false },
+                oeste: { $set: false },
+                sudoeste: { $set: false },
+                sur: { $set: false }
+              },
+              estado: {
+                proyectado: { $set: false },
+                ejecutandose: { $set: false },
+                finalizado: { $set: false },
+                pendiente: { $set: true },
+                perdedor: { $set: false }
+              },
+              anio: {
+                proyectos2016: { $set: true },
+                proyectos2017: { $set: true }
+              }
+            })
+          }, this.exposeFilters)
+          break
+        case 'votacion-cerrada':
+          this.setState({
+            appliedFilters: update (this.state.appliedFilters, {
+              distrito: {
+                centro: { $set: true },
+                noroeste: { $set: false },
+                norte: { $set: false },
+                oeste: { $set: false },
+                sudoeste: { $set: false },
+                sur: { $set: false }
+              },
+              estado: {
+                proyectado: { $set: true },
+                ejecutandose: { $set: false },
+                finalizado: { $set: false },
+                pendiente: { $set: false },
+                perdedor: { $set: true }
+              },
+              anio: {
+                proyectos2016: { $set: false },
+                proyectos2017: { $set: true }
+              }
+            })
+          }, this.exposeFilters)
+          break
+        case 'seguimiento':
+          this.setState({
+            appliedFilters: update (this.state.appliedFilters, {
+              distrito: {
+                centro: { $set: true },
+                noroeste: { $set: true },
+                norte: { $set: true },
+                oeste: { $set: true },
+                sudoeste: { $set: true },
+                sur: { $set: true }
+              },
+              estado: {
+                proyectado: { $set: true },
+                ejecutandose: { $set: true },
+                finalizado: { $set: true },
+                pendiente: { $set: false },
+                perdedor: { $set: false }
+              },
+              anio: {
+                proyectos2016: { $set: true },
+                proyectos2017: { $set: true }
+              }
+            })
+          }, this.exposeFilters)
+          break
+      }
     }
   }
-
 
   // FUNCTIONS
 
@@ -194,30 +232,22 @@ class FiltersNavbar extends Component {
   // prepara los filtros para enviar la query definitiva a la API
   exposeFilters = (id) => {
     var exposedFilters = update({}, { $merge: this.state.appliedFilters })
-    exposedFilters = update({}, { $merge: this.filterCleanup(exposedFilters) })
+    exposedFilters = this.filterCleanup(exposedFilters)
     this.setState ({
       appliedFilters: update({}, {$merge: exposedFilters})
     }, () => {
-      if (this.props.stage === 'seguimiento') {
-        // calcula y renderea el badge
-        this.calculateBadges(id)
-        // agrega filtros extra de estado en stage seguimiento
-        exposedFilters.estado = update(exposedFilters.estado, {
-          pendiente: { $set: false },
-          perdedor: { $set: false }
-        })
-      }
-      // query final
+      this.calculateBadges()
       this.props.updateFilters(exposedFilters)
     })
   }
 
 
   calculateBadges = (id) => {
-    var badgeNum = Object.values(this.state.appliedFilters[id]).filter(boolean => boolean).length
-    this.setState (
-      {badges: update(this.state.badges, { [id] : { $set: badgeNum } }) },
-      )
+    let badges = Object.keys(this.state.appliedFilters)
+      .map(f => [f, Object.values(this.state.appliedFilters[f]).filter(boolean => boolean).length])
+      .reduce((acc, f) => {acc[f[0]] = f[1]; return acc}, {})
+
+    this.setState({ badges })
   }
 
 
@@ -464,7 +494,6 @@ export default ReactOutsideEvent(FiltersNavbar)
 
 function DistritoFilter (props) {
   const { active, onChange, stage } = props
-
   return (
     <header>
       <div className='stage-header'>

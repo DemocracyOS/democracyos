@@ -28,7 +28,9 @@ export default class TopicGrid extends Component {
           )
         }
         <div className='grid-bottom'>
-          <button className='ver-mas' onClick={this.props.paginateFoward}>Ver mas</button>
+          {
+            !this.props.noMore && <button className='ver-mas' onClick={this.props.paginateFoward}>Ver mas</button>
+          }
         </div>
       </div>
     )
