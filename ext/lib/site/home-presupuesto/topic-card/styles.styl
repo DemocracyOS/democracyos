@@ -1,31 +1,26 @@
 .presupuesto-topic-card
   width: 260px
-
-  &.has-votes
-    .budget
-      color: #A5A9AA
-      font-weight: 400
-
-  &.proyectado
-    .state
-      background-color: #00adef
-
+        
+  &.topic-joven
     .topic-card-info
-      border-top-color: #00adef
-
-  &.finalizado
-    .state
-      background-color: #30aa2d
-
+      border-top-color: #FF3366
+    
+    .topic-card-category
+      background-color: #FF3366
+      
+  &.topic-area
     .topic-card-info
-      border-top-color: #30aa2d
-
-  &.ejecutandose
-    .state
-      background-color: #F39431
-
+      border-top-color: #00B1F0
+    
+    .topic-card-category
+      background-color: #00B1F0
+      
+  &.topic-distrito
     .topic-card-info
-      border-top-color: #F39431
+      border-top-color: #F59231
+    
+    .topic-card-category
+      background-color: #F59231
 
   .topic-card-info
     border-top-color: #999
@@ -41,7 +36,7 @@
     color: #fff
     font-size: 21px
     font-weight: 500
-    background-color: #00adef
+    background-color: #545454
 
   .topic-results
     padding: 12px 15px 9px
@@ -62,7 +57,7 @@
       font-size: 14px
 
   .topic-location
-    color: #a5a9aa
+    color: #686868
     font-size: 13px
     margin-bottom: 0.8em
 
@@ -79,32 +74,26 @@
     flex: 1
 
   .topic-card-footer
-    text-align: right
     align-self: flex-end
     width: 100%
     position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    
+    .topic-card-category
+      border-radius: 5px
+      color: #FFF
+      font-size: 13px
+      padding: 5px 1px
+      text-align: center
+      width: 88px
 
   .budget
     margin: 0
-    color: #999
+    color: #737373
     font-weight: 900
     line-height: 1
     font-size: 24px
 
-  .social-links
-    position: absolute
-    font-size: 20px
 
-    span
-      cursor: pointer
-      margin-right: 7px
-      color: #999
-
-    .wp
-      width: 25px
-      height: 20px
-      background-size: contain
-      background-repeat: no-repeat
-      display: inline-block
-      margin-top: 0
-      background-image: unquote("url('/ext/lib/site/topic-layout/whatsapp-logo-gris.svg')")

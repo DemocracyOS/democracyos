@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+const models = require('lib/models')()
+const ObjectID = require('mongodb').ObjectID
+
+const Topic = models.Topic
+const Forum = models.Forum
+
+Promise.all([
+  Forum.findOne({ name: 'presupuesto' }),
+  Forum.findOne({ name: 'presupuesto-joven' })
+])
+  .then(([pp, ppJoven]) => Topic.find({ forum: pp.id }).exec()
+    .then((topics) => Promise.all(topics.map((topic) => {
+      topic.set('attrs.edad', 'adulto')
+      return topic.save()
+    })))
+    .then(() => Topic.find({ forum: ppJoven.id }).exec()
+      .then((topics) => Promise.all(topics.map((topic) => {
+        topic.set('attrs.edad', 'joven')
+        topic.set('forum', ObjectID(pp.id))
+        return topic.save()
+      })))
+    )
+    .then(() => Topic.find({ forum: pp.id }).exec())
+  )
+  .then((topics) => Promise.all(topics.map((topic) => {
+    topic.set('attrs.anio', '2016')
+    if (topic.attrs.hasOwnProperty('winner') && topic.attrs.winner === false) {
+      topic.set('attrs.state', 'perdedor')
+    } else if (!topic.attrs.hasOwnProperty('winner') && !topic.attrs.hasOwnProperty('state')) {
+      topic.set('attrs.state', 'perdedor')
+    }
+    topic.set('attrs.winner', undefined)
+    return topic.save()
+  })))
+  .then(() => {
+    console.log('Listo! Proyectos PP actualizados.')
+    process.exit(0)
+  })
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })

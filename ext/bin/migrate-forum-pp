@@ -1,0 +1,92 @@
+#!/usr/bin/env node
+
+const models = require('lib/models')()
+
+const Forum = models.Forum
+
+Forum.findOne({
+  'name': 'presupuesto'
+}).exec()
+  .then((forum) => {
+    let forumTopicsAttrs = forum.toObject().topicsAttrs
+
+    const stateI = forumTopicsAttrs.map(s => s.name).indexOf('state')
+    const winnerI = forumTopicsAttrs.map(s => s.name).indexOf('winner')
+    const votosI = forumTopicsAttrs.map(s => s.name).indexOf('votos')
+    const edadI = forumTopicsAttrs.map(s => s.name).indexOf('edad')
+
+    const estados = {
+      "name" : "state",
+      "kind" : "Enum",
+      "title" : "Estado",
+      "mandatory" : true,
+      "options" : [
+        {
+          "name" : "pendiente",
+          "title" : "Pendiente"
+        },
+        {
+          "name" : "proyectado",
+          "title" : "Proyectado"
+        },
+        {
+          "name" : "ejecutandose",
+          "title" : "En Ejecución"
+        },
+        {
+          "name" : "terminado",
+          "title" : "Terminado"
+        },
+        {
+          "name" : "perdedor",
+          "title" : "Perdedor"
+        }
+      ]
+    }
+
+    const edad = {
+      "kind" : "Enum",
+      "name" : "edad",
+      "title" : "Modalidad",
+      "mandatory" : true,
+      "options" : [
+        {
+          "name" : "adulto",
+          "title" : "Adulto"
+        },
+        {
+          "name" : "joven",
+          "title" : "Joven"
+        }
+      ]
+    }
+
+    const votos = {
+      "kind" : "Number",
+      "name" : "votos",
+      "title" : "Votos",
+      "mandatory" : true,
+      "min" : 1,
+      "max" : 999999999
+    }
+
+    forumTopicsAttrs[stateI] = estados
+    forumTopicsAttrs.splice(winnerI, 1)
+
+    if (!~edadI) forumTopicsAttrs.push(edad)
+    if (!~votosI) forumTopicsAttrs.push(votos)
+
+    forum.topicsAttrs = forumTopicsAttrs
+    forum.extra = {stage: 'seguimiento'}
+
+    return forum.save()
+  })
+  .then((forum) => {
+    console.log('Listo! Foro PP actualizado.')
+
+    process.exit(0)
+  })
+  .catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })

@@ -1,5 +1,8 @@
 .ext-home-presupuesto
-  @import './topic-card/styles'
+  @import './topic-grid/styles'
+  @import './banner-presupuesto/styles'
+  @import './filters-navbar/styles'
+
 
   .loader
     position: absolute
@@ -17,66 +20,6 @@
     justify-content center
     margin-bottom: 60px
 
-  .distrito-filter-wrapper
-    text-align: center
-    margin-top: 2em
-
-    label
-      margin: 0 0 20px
-      font-size: 20px
-
-  .distrito-filter
-    .btn
-      margin: 0 6px 12px
-      width: 158px
-      border-radius: 5px
-      color: #4f5353
-      border-color: #4f5353
-      font-weight: 500
-      box-shadow: none
-
-      &:hover,
-      &:focus,
-      &:active,
-      &.active
-        outline: 0
-        border-color: #00adef
-        color: #00adef
-        background-color: transparent
-
-      &.active
-        color: #fff
-        background-color: #00adef
-
-  .topics-section
-    padding: 50px 0 45px
-
-    &.distrito
-      background-color: #E7EBEE
-
-  .topics-section-title
-    margin-top: 0
-    font-size: 24px
-    font-weight: 400
-    color: #4F5353
-
-  .topics-section-container
-    margin-left: auto
-    margin-right: auto
-    padding-left: 15px
-    padding-right: 15px
-
-    for i in (2..8)
-      width = (i * 290px)
-      @media (min-width: width)
-        max-width: width
-
-  .find-district-link
-    font-weight: 400
-    color: #fff
-
-    &:hover span
-      text-decoration: underline
-
-    i
-      margin-right: 3px
+  .filters-wrapper
+    margin: 2em 0
+    padding: 0

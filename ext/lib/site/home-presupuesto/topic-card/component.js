@@ -10,16 +10,27 @@ const distritos = (function () {
   return c
 })()
 
-export default ({ topic, forum }) => {
+export default ({ topic }) => {
   const topicUrl = `${window.location.origin}${topic.url}`
 
   let state
-  if (topic.attrs && topic.attrs.state) {
-    state = forum.topicsAttrs
-      .find((attr) => attr.name === 'state')
-      .options
-      .find((attr) => attr.name === topic.attrs.state)
-      .title
+  const estadosPP = [
+      {
+          "name" : "proyectado",
+          "title" : "Proyectado"
+      },
+      {
+          "name" : "ejecutandose",
+          "title" : "En Ejecución"
+      },
+      {
+          "name" : "terminado",
+          "title" : "Terminado"
+      }
+  ]
+
+  if (topic.attrs && topic.attrs.state && estadosPP.map(e => e.name).includes(topic.attrs.state)) {
+    state = estadosPP.find((attr) => attr.name === topic.attrs.state).title
   }
 
   const twitterDesc = encodeURIComponent(`Mirá el proyecto para mi barrio ${topicUrl} #RosarioParticipa`)
@@ -30,8 +41,11 @@ export default ({ topic, forum }) => {
     classNames.push('has-votes')
   }
 
-  if (topic.attrs && topic.attrs.winner) classNames.push('is-winner')
   if (topic.attrs && topic.attrs.state) classNames.push(topic.attrs.state.toLowerCase())
+  if (topic.attrs.edad === 'joven') classNames.push('topic-joven')
+  if (topic.attrs.area !== '0' && topic.attrs.edad !== 'joven') classNames.push('topic-area')
+  if (topic.attrs.area === '0' && topic.attrs.edad !== 'joven') classNames.push('topic-distrito')
+  topic.url = `/presupuesto/topic/${topic.id}`
   return (
     <div className={classNames.join(' ')}>
       {topic.coverUrl && (
@@ -49,16 +63,14 @@ export default ({ topic, forum }) => {
         </div>
       )}
       <div className='topic-card-info'>
-        {topic.attrs && topic.attrs.state && (
+        {topic.attrs && topic.attrs.state && estadosPP.map(e => e.name).includes(topic.attrs.state) && (
           <div className='state'>{state}</div>
         )}
         <div className='topic-location'>
-          <i className='icon-location-pin' />
           <span>{topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial ${topic.attrs.area}` : `Distrito ${distritos[topic.attrs.district]}`}</span>
           {topic.attrs && topic.attrs.number && (
             <span className='number'>
-              <i className='icon-tag' />
-              {prettyNumber(topic.attrs.number)}
+              {topic.attrs.anio}
             </span>
           )}
         </div>
@@ -73,22 +85,10 @@ export default ({ topic, forum }) => {
           )}
         </div>
         <div className='topic-card-footer'>
-          <div className='social-links'>
-            <SharerFacebook
-              className='fb'
-              params={{ picture: topic.coverUrl, link: topicUrl }} />
-            <span
-              onClick={handleLinkClick}
-              target='_blank'
-              href={`http://twitter.com/home?status=${twitterDesc}`}>
-              <i className='icon-social-twitter' />
+          <div className='topic-card-category'>
+            <span>
+              {topic.attrs.edad === 'joven' ? `Joven` : topic.attrs && topic.attrs.area && topic.attrs.area !== '0' ? `Área Barrial` : `Distrito` }
             </span>
-            {window.innerWidth <= 630 &&
-              <span
-                onClick={handleLinkClick}
-                href={`whatsapp://send?text=${twitterDesc}`}
-                className='wp' />
-            }
           </div>
           {topic.attrs && (
             <p className='budget'>{prettyPrice(topic.attrs.budget)}</p>

@@ -9,6 +9,7 @@ const app = module.exports = express()
 app.use('/ext/api', require('./participatory-budget'))
 app.use('/ext/api/ideas', require('./abrir-cerrar-idea'))
 app.use('/ext/api/feed', require('./feed'))
+app.use('/ext/api/pp-feed', require('./pp-feed'))
 app.use('/ext/api/noticias', require('./noticias'))
 app.use('/api/v2', require('./fixedOpenTopicMethod.js'))
 
