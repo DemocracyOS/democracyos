@@ -94,7 +94,7 @@ class FiltersNavbar extends Component {
                 perdedor: { $set: false }
               },
               anio: {
-                proyectos2016: { $set: true },
+                proyectos2016: { $set: false },
                 proyectos2017: { $set: true }
               }
             })

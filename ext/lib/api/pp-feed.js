@@ -31,6 +31,7 @@ function getFeed (req, res, next) {
   Forum.find({ name: 'presupuesto' })
     .then((forum) => {
       Topic.aggregate([
+        { $sort: { 'attrs.district': 1 } },
         { $match: {
             forum: forum[0]._id,
             deletedAt: null,
@@ -40,15 +41,20 @@ function getFeed (req, res, next) {
             'attrs.anio': { $in: req.body.anio },
             'attrs.state': { $in: req.body.estado }
         }},
-        { $sort: { 'createdAt': -1 } },
-        { $sort: { 'attrs.district': 1 } },
-        { $skip: s },
-        { $limit: 20 }
-      ], function (err, topicsM) {
+        {
+          $group: {
+            _id: null,
+            results: { $push: '$$ROOT' }
+          } },
+          { $project: {
+            topics: { $slice: ['$results', s, 20] }
+          }
+        }
+      ], function (err, results) {
         if (err) {
           res.json({ result: null, error: err })
         } else {
-          let topics = topicsM.map(topic => ({
+          let topics = results[0].topics.map(topic => ({
             id: topic._id,
             action: topic.action,
             attrs: topic.attrs,

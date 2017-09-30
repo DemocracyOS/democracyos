@@ -51,8 +51,7 @@ class HomePresupuesto extends Component {
       this._fetchingForums = false
       console.error(err)
       this.setState({
-        loading: false,
-        topics: null
+        loading: false
       })
     })
   }
@@ -69,9 +68,7 @@ class HomePresupuesto extends Component {
         body: JSON.stringify({ edad, distrito, anio, estado, s })
       })
       .then((res) => res.json())
-      .then((res) => {
-        return Promise.resolve(res.result)
-      })
+      .then((res) => Promise.resolve(res.result))
   }
 
   paginateFoward = () => {

@@ -45,7 +45,7 @@ export default ({ topic }) => {
   if (topic.attrs.edad === 'joven') classNames.push('topic-joven')
   if (topic.attrs.area !== '0' && topic.attrs.edad !== 'joven') classNames.push('topic-area')
   if (topic.attrs.area === '0' && topic.attrs.edad !== 'joven') classNames.push('topic-distrito')
-
+  topic.url = `/presupuesto/topic/${topic.id}`
   return (
     <div className={classNames.join(' ')}>
       {topic.coverUrl && (

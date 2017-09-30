@@ -19,10 +19,7 @@ export default class TopicGrid extends Component {
               </h2>
               <div className='topics-container'>
                 {this.props.loading && <div className='loader' />}
-                {district.topics.map((topic)=>{
-                     return <TopicCard key={topic.id} topic={topic} />
-                }
-                )}
+                {district.topics.map((topic, i) => <TopicCard key={i} topic={topic} />)}
               </div>
             </div>
           )
