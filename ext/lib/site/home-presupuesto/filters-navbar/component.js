@@ -398,43 +398,45 @@ class FiltersNavbar extends Component {
               )}
             </div>
 
-            <div className='filter'>
-              <button
-                type='button'
-                id="filtro-anio"
-                className = 'btn btn-md btn-outline-primary'
-                onClick = {this.handleDropdown('opciones-anio')}>
-                <span className='btn-content'><span className='btn-text'>Año</span> {this.state.badges.anio !== 0 && <span className='badge'>{this.state.badges.anio}</span>} </span> <span className='caret-down'>▾</span>
-              </button>
-              {this.state.activeDropdown == 'opciones-anio' && (
-                <div className='filter-dropdown' id="opciones-anio">
-                  <div className='filter-options'>
-
-                    <div className='filter-column'>
-                      <div className='option-container'>
-                        <div className='check-container'>
-                          <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2016' name='anio' checked={this.state.selectFilters.anio.proyectos2016} />
-                          <label htmlFor='proyectos2016'></label>
-                        </div>
-                        <label htmlFor='proyectos2016'>2016</label>
-                      </div>
-                      <div className='option-container'>
-                        <div className='check-container'>
-                          <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2017' name='anio' checked={this.state.selectFilters.anio.proyectos2017} />
-                          <label htmlFor='proyectos2017'></label>
-                        </div>
-                        <label htmlFor='proyectos2017'>2017</label>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div className='dropdown-actions'>
-                    <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-                    <a className='aplicar' onClick={this.applyFilters('anio')}>Aplicar</a>
-                  </div>
-                </div>
-                )}
-            </div>
+            {
+              // <div className='filter'>
+              //   <button
+              //     type='button'
+              //     id="filtro-anio"
+              //     className = 'btn btn-md btn-outline-primary'
+              //     onClick = {this.handleDropdown('opciones-anio')}>
+              //     <span className='btn-content'><span className='btn-text'>Año</span> {this.state.badges.anio !== 0 && <span className='badge'>{this.state.badges.anio}</span>} </span> <span className='caret-down'>▾</span>
+              //   </button>
+              //   {this.state.activeDropdown == 'opciones-anio' && (
+              //     <div className='filter-dropdown' id="opciones-anio">
+              //       <div className='filter-options'>
+              //
+              //         <div className='filter-column'>
+              //           <div className='option-container'>
+              //             <div className='check-container'>
+              //               <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2016' name='anio' checked={this.state.selectFilters.anio.proyectos2016} />
+              //               <label htmlFor='proyectos2016'></label>
+              //             </div>
+              //             <label htmlFor='proyectos2016'>2016</label>
+              //           </div>
+              //           <div className='option-container'>
+              //             <div className='check-container'>
+              //               <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2017' name='anio' checked={this.state.selectFilters.anio.proyectos2017} />
+              //               <label htmlFor='proyectos2017'></label>
+              //             </div>
+              //             <label htmlFor='proyectos2017'>2017</label>
+              //           </div>
+              //         </div>
+              //
+              //       </div>
+              //       <div className='dropdown-actions'>
+              //         <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
+              //         <a className='aplicar' onClick={this.applyFilters('anio')}>Aplicar</a>
+              //       </div>
+              //     </div>
+              //     )}
+              // </div>
+            }
 
             <div className='filter'>
               <button
