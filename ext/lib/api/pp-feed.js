@@ -51,8 +51,8 @@ function getFeed (req, res, next) {
           }
         }
       ], function (err, results) {
-        if (err) {
-          res.json({ result: null, error: err })
+        if (err || !results[0]) {
+          res.json({ result: null, error: err || 'error' })
         } else {
           let topics = results[0].topics.map(topic => ({
             id: topic._id,
