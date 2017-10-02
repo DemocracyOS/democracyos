@@ -23,12 +23,15 @@ function changeStage (req, res, err) {
 				}
 			})
 		.then((forum)=> {
-			log('Forum stage changed successfully to ' + forum.extra.stage)
-			res.status(200)
+			log('Forum stage changed successfully.')
+			res.json({
+				status: 200,
+				message: forum.extra.stage
+			})
     		res.end()
 		}) 
 	} else {
-		log('Error: Wrong forum stage value')
+		log('Error: Wrong forum stage value.')
 		res.status(400)
 		res.end()
 	}

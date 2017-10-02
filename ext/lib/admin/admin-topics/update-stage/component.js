@@ -8,22 +8,36 @@ export default class UpdateStage extends Component {
   constructor (props) {
     super (props)
     this.state = {
-      hasError: false,
+      visibility: false,
       success: false,
-      stage: this.props.forum.extra.stage,
-      disabled: true
+      initialStage: '',
+      selectedStage: '',
+      savedStage: '',
+      disabled: true,
+      forum: ''
     }
   }
 
-  disabledState = () => {
-    if (this.refs.selectStage.value !== this.state.stage) {
-      this.setState({disabled: false})
-    } else {
-      this.setState({disabled: true})
-    }
+  componentWillMount () {
+    this.setState ({
+      initialStage: this.props.forum.extra.stage,
+      forum: this.props.forum.id
+    })
   }
 
-  changeStage = () => { 
+  chooseStage = (e) => {
+    let option = e.target.value
+    this.setState({selectedStage: option}, () => {
+      if (this.state.selectedStage === this.state.initialStage ) {
+        this.setState({disabled: true})
+      } else {
+        this.setState({disabled: false})
+      } 
+    })
+  }
+
+  changeStage = () => {
+    const sendStage = this.state.selectedStage
     fetch('/ext/api/change-stage', {
           method: 'POST',
           credentials: 'same-origin',
@@ -31,29 +45,53 @@ export default class UpdateStage extends Component {
             Accept: 'application/json',
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({stage: this.refs.selectStage.value, forumId: this.props.forum.id})
+          body: JSON.stringify({stage: sendStage, forumId: this.state.forum})
+    })
+    .then((res) => {
+      if (res.status === 200) {
+        this.setState({
+          initialStage: sendStage,
+          visibility: true,
+          disabled: true,
+          success: true
         })
+      } else {
+        if (res.status == 400) {
+          this.setState({
+            visibility: true,
+            success: false
+          })
+        }
+      }
+    })
   }
   
   render () {
     return (
-      <div className='wrapper-container'>
+      <div>
+        {this.state.visibility &&
+          <div className={this.state.success ? 'success-message' : 'error-message'}>
+            <p>{ this.state.success ?'Cambio realizado exitosamente.': 'El cambio no pudo ser realizado.'}</p>
+          </div>
+        }
         <div className='wrapper-select'>
-          <label className='stage-label'>
-            Cambiar fase de Presupuesto Participativo
-          </label>
-          <select id='select-stage' className='select-stage' ref='selectStage' onChange={this.disabledState}>
-            <option value={this.props.forum.extra.stage}>{this.props.forum.extra.stage}</option>
-            {stages.map((stage, i)=> {
-              if (this.state.stage != stage) {
-               return <option value={stage} key={i}>{stage}</option>
-              }
-            })}
-          </select>
+          <div>
+            <label className='stage-label'>
+              Cambiar fase de Presupuesto Participativo
+            </label>
+            <select className='select-stage' onChange={this.chooseStage}>
+                <option value={this.state.initialStage}>{this.state.initialStage}</option>
+                {stages.map((stage, i)=> {
+                  if (this.state.initialStage !== stage) {
+                    return <option value={stage} key={i}>{stage}</option>
+                  }
+                })}
+            </select>
+          </div>
+          <button className='btn btn-primary pull-right boton' onClick={this.changeStage} disabled={this.state.disabled}>
+            Confirmar
+          </button>
         </div>
-        <button className='btn btn-primary pull-right boton' onClick={this.changeStage} disabled={this.state.disabled}>
-          Confirmar
-        </button>
       </div>
       )
   }
