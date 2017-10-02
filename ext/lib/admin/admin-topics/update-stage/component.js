@@ -3,7 +3,7 @@ import 'whatwg-fetch'
 import t from 't-component'
 import urlBuilder from 'lib/url-builder'
 
-const stages = ['Votación abierta', 'Votación cerrada', 'Seguimiento']
+const stages = ['votación abierta', 'votación cerrada', 'seguimiento']
 export default class UpdateStage extends Component {
   constructor (props) {
     super (props)
