@@ -3,7 +3,12 @@ import 'whatwg-fetch'
 import t from 't-component'
 import urlBuilder from 'lib/url-builder'
 
-const stages = ['votación abierta', 'votación cerrada', 'seguimiento']
+const stages = [
+  {'name': 'votacion-abierta', 'title': 'Votación abierta'},
+  {'name': 'votacion-cerrada', 'title': 'Votación cerrada'},
+  {'name': 'seguimiento', 'title': 'Seguimiento' }
+]
+
 export default class UpdateStage extends Component {
   constructor (props) {
     super (props)
@@ -63,6 +68,10 @@ export default class UpdateStage extends Component {
           })
         }
       }
+      setTimeout(() => this.setState({
+        visibility: false,
+        success: false
+        }), 5000)
     })
   }
   
@@ -80,12 +89,13 @@ export default class UpdateStage extends Component {
               Cambiar fase de Presupuesto Participativo
             </label>
             <select className='select-stage' onChange={this.chooseStage}>
-                <option value={this.state.initialStage}>{this.state.initialStage}</option>
-                {stages.map((stage, i)=> {
-                  if (this.state.initialStage !== stage) {
-                    return <option value={stage} key={i}>{stage}</option>
-                  }
-                })}
+              {stages.map((stage, i)=> {
+                if (stage.name === this.state.initialStage) {
+                return <option value={stage.name} key={i} selected>{stage.title}</option>
+                } else {
+                return <option value={stage.name} key={i}>{stage.title}</option>
+                }
+              })}
             </select>
           </div>
           <button className='btn btn-primary pull-right boton' onClick={this.changeStage} disabled={this.state.disabled}>

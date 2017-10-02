@@ -11,7 +11,7 @@ app.post('/',
 middlewares.users.restrict,
 function changeStage (req, res, err) {
 	log('POST/api/change-stage')
-	const possibleStages = ['votación abierta', 'votación cerrada', 'seguimiento']
+	const possibleStages = ['votacion-abierta', 'votacion-cerrada', 'seguimiento']
 	let forumId = req.body.forumId
 	let futureStage = req.body.stage
 	if (possibleStages.includes(futureStage)) {
