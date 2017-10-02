@@ -19,14 +19,18 @@ export default function PresupuestoShare ({ topic, forum }) {
     <div className='presupuesto-container'>
       {
         (state && state === 'Pendiente') ? (
-        <div className='presupuesto-share'>
+        <aside className='presupuesto-share'>
           {
             (topic.attrs && topic.attrs.budget) &&
-              <div className='sharer-header'>
-                {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
-                {topic.attrs.votes && <span className='votos-proyecto'>{`${prettyDecimals(topic.attrs.votes)} VOTITOS`}</span>}
-                {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
-                <span className='winner-proyecto'>Proyectito {topic.attrs && topic.attrs.winner ? 'ganador' : 'presentado'}</span>
+              <div className='sharer-pending'>
+                <div className='pending-header'>
+                  <span className='presupuesto'>Presupuesto:</span>
+                  {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
+                </div>
+                <div className='pending-body'>
+                  {topic.attrs.budget && <span className='presu-proyecto'>{prettyPrice(topic.attrs.budget)}</span>}
+                  <button className='btn btn-active btn-pending'>Votar este proyecto</button>
+                </div>
               </div>
           }
           <div className='social-links'>
@@ -41,19 +45,10 @@ export default function PresupuestoShare ({ topic, forum }) {
               target='_blank'
               href={`http://twitter.com/home?status=${twDesc}`}
               className='tw' />
-            {
-              window.innerWidth <= 630 &&
-              (
-                <a
-                  target='_blank'
-                  href={`whatsapp://send?text=${twDesc}`}
-                  className='wp' />
-              )
-            }
           </div>
-        </div>
+        </aside>
         ) : (
-        <div className='presupuesto-share'>
+        <aside className='presupuesto-share'>
           {
             topic.attrs &&
               <div className='sharer-header'>
@@ -92,7 +87,7 @@ export default function PresupuestoShare ({ topic, forum }) {
               )
             }
           </div>
-        </div>
+        </aside>
         )
       }
     </div>
