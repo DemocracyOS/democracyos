@@ -251,6 +251,9 @@ class FiltersNavbar extends Component {
   }
 
 
+
+
+
   filterCleanup = (filters) => {
     return Object.keys(filters).map(f => {
       if (Object.keys(filters[f]).filter(o => filters[f][o]).length === 0) {
@@ -259,14 +262,23 @@ class FiltersNavbar extends Component {
           })
           return [f, filters[f]]
       } else {
+
+
+
           return [f, filters[f]]
       }
     }).reduce((acc, intFnOutput) => { acc[intFnOutput[0]] = intFnOutput[1]; return acc }, {})
   }
 
+  changeColor = (id) => {
+    const filters = Object.values(this.state.selectFilters[id])
+    console.log(filters)
+    if (filters.includes(false)){ 
+      return 'applied-filter'
+    } 
+  }
 
 // RENDER
-
   render () {
     return (
       <div>
@@ -291,7 +303,7 @@ class FiltersNavbar extends Component {
               <button
                 type='button'
                 id="filtro-distrito"
-                className = 'btn btn-md btn-outline-primary'
+                className = {`btn btn-md btn-outline-primary ${this.changeColor('distrito')}`}
                 onClick = {this.handleDropdown('opciones-distrito')}>
                 <span className='btn-content'><span className='btn-text'>Distrito</span> {this.state.badges.distrito !== 0 && <span className='badge'>{this.state.badges.distrito}</span>} </span> <span className='caret-down'>▾</span>
               </button>
@@ -363,7 +375,7 @@ class FiltersNavbar extends Component {
               <button
                 type='button'
                 id="filtro-edad"
-                className='btn btn-md btn-outline-primary'
+                className={`btn btn-md btn-outline-primary ${this.changeColor('edad')}`}
                 onClick={this.handleDropdown('opciones-edad')}
                 >
                 <span className='btn-content'><span className='btn-text'>Rango de edad</span> {this.state.badges.edad !== 0 && <span className='badge'>{this.state.badges.edad}</span>} </span> <span className='caret-down'>▾</span>
@@ -442,7 +454,7 @@ class FiltersNavbar extends Component {
               <button
                 type='button'
                 id="filtro-estado"
-                className = 'btn btn-md btn-outline-primary'
+                className = {`btn btn-md btn-outline-primary ${this.changeColor('estado')}`}
                 onClick = {this.handleDropdown('opciones-estado')}>
                 <span className='btn-content'><span className='btn-text'>Estado</span> {this.state.badges.estado !== 0 && <span className='badge'>{this.state.badges.estado}</span>} </span> <span className='caret-down'>▾</span>
               </button>
