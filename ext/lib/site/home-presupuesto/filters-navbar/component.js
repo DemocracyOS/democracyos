@@ -139,9 +139,7 @@ class FiltersNavbar extends Component {
               estado: {
                 proyectado: { $set: true },
                 ejecutandose: { $set: true },
-                finalizado: { $set: true },
-                pendiente: { $set: false },
-                perdedor: { $set: false }
+                finalizado: { $set: true }
               },
               anio: {
                 proyectos2016: { $set: true },
@@ -236,6 +234,12 @@ class FiltersNavbar extends Component {
     this.setState ({
       appliedFilters: update({}, {$merge: exposedFilters})
     }, () => {
+      if (this.props.stage === 'seguimiento'){
+        exposedFilters.estado = update(exposedFilters.estado, {
+        pendiente: { $set: false },
+        perdedor: { $set: false }
+        })
+      }
       this.calculateBadges()
       this.props.updateFilters(exposedFilters)
     })
@@ -272,7 +276,6 @@ class FiltersNavbar extends Component {
 
   changeColor = (id) => {
     const filters = Object.values(this.state.selectFilters[id])
-    console.log(filters)
     if (filters.includes(false)){ 
       return 'applied-filter'
     } 
@@ -415,7 +418,7 @@ class FiltersNavbar extends Component {
               //   <button
               //     type='button'
               //     id="filtro-anio"
-              //     className = 'btn btn-md btn-outline-primary'
+              //     className = {`btn btn-md btn-outline-primary ${this.changeColor('anio')}`}
               //     onClick = {this.handleDropdown('opciones-anio')}>
               //     <span className='btn-content'><span className='btn-text'>Año</span> {this.state.badges.anio !== 0 && <span className='badge'>{this.state.badges.anio}</span>} </span> <span className='caret-down'>▾</span>
               //   </button>
