@@ -11,6 +11,7 @@ app.use('/ext/api/ideas', require('./abrir-cerrar-idea'))
 app.use('/ext/api/feed', require('./feed'))
 app.use('/ext/api/pp-feed', require('./pp-feed'))
 app.use('/ext/api/noticias', require('./noticias'))
+app.use('/ext/api/change-stage', require('./change-stage'))
 app.use('/api/v2', require('./fixedOpenTopicMethod.js'))
 
 app.use(function validationErrorHandler (err, req, res, next) {

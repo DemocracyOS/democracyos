@@ -68,7 +68,7 @@ class HomePresupuesto extends Component {
         body: JSON.stringify({ edad, distrito, anio, estado, s })
       })
       .then((res) => res.json())
-      .then((res) => Promise.resolve(res.result))
+      .then((res) => res.error ? Promise.reject(res.error) : Promise.resolve(res.result))
   }
 
   paginateFoward = () => {
@@ -85,10 +85,8 @@ class HomePresupuesto extends Component {
           })
         })
         .catch((err) => {
-          console.error(err)
-          this.setState({
-            loading: false
-          })
+          console.log(err)
+          this.setState({ loading: false })
         })
     })
   }
@@ -135,6 +133,7 @@ class HomePresupuesto extends Component {
     }, () => {
       this.fetchTopics(0)
         .then((topics) => {
+          console.log(topics)
           this.setState({
             loading: false,
             topics,
