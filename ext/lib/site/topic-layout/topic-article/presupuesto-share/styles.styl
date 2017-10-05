@@ -3,40 +3,6 @@
   min-width: 250px
   margin: 0 auto
   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif
-  .sharer-header
-    background: #f2f2f2
-    color: #31506c
-    position: relative
-    min-height: 120px
-    border-bottom: 4px solid #31506c
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    padding: 40px 20px 20px
-    .numero-proyecto
-      background: #31506c
-      color: #fff
-      position: absolute
-      top: 10px
-      right: 0
-      padding: 5px 10px
-    .votos-proyecto
-      font-size: 35px
-      font-weight: 500
-    .winner-proyecto
-      text-transform: uppercase
-      font-size: 20px
-      font-weight: 500
-  .sharer-body
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    padding: 20px
-    span
-      color: #a6a6a6
-      font-size: 22px
-      &.anio-proyecto
-        font-size: 14px
   .sharer-pending
     background: #f2f2f2
     color: rgb(67,67,71)
@@ -111,14 +77,13 @@
   max-width: 450px
   min-width: 250px
   margin: 0 auto
-  //max-width: 650px
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
   .box-header
     display: flex
     justify-content: center
     align-items: center
     padding: 7px 0
-    background-color: #7cbb42
+    background-color: #20c759
     color: white
     font-weight: bold
     font-size: 30px
@@ -130,7 +95,7 @@
     align-items: center
     flex-wrap: wrap
     padding: 10px 0
-    background-color: #e9e9e9
+    background-color: #f2f2f2
     .box-content-item
       display: flex
       flex-direction: column
@@ -140,21 +105,22 @@
       .box-content-title
         font-weight: 500
         font-size: 24px
+        color: #434347
       .box-content-info
-        color: #3d699e
+        color: #00afef
         font-weight: 500
-        font-size: 47px
+        font-size: 48px
   .box-footer
     display: flex
     justify-content: center
     align-items: center
-    padding: 10px 0
-    background-color: #3d699e
+    padding: 15px 10px
+    background-color: #f7941d
     color: #ffffff
     .hashtag
       font-size: 24px
       margin-right: 9px
-      @media screen and (min-width: 450px)
+      @media screen and (max-width: 450px)
         font-size: 20px
     a
       margin: 0 9px

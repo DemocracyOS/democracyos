@@ -4,7 +4,7 @@ import { SharerFacebook } from 'ext/lib/site/sharer'
 
 export default function PresupuestoShare ({ topic, forum }) {
   const topicUrl = `${window.location.origin}${topic.url}`
-  const twDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
+
   let state
   if (topic.attrs && topic.attrs.state) {
     state = forum.topicsAttrs
@@ -16,17 +16,27 @@ export default function PresupuestoShare ({ topic, forum }) {
   const stateTitle = forum.topicsAttrs.find((ta) => ta.name === 'state').title
   const anioTitle = forum.topicsAttrs.find((ta) => ta.name === 'anio').title
 
-  const socialLinksUrl = 'hola'
-  const twitterText = 'chau'
+  const twitterText = twitText()
 
-  console.log('hola mundo')
-  console.log(topic.attrs.state)
+  function twitText() { 
+    switch (topic.attrs.state) {
+      case 'pendiente':
+      return encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio `)
+      case 'perdedor':
+      return encodeURIComponent(topic.mediaTitle)
+      case 'proyectado':
+      return encodeURIComponent('Este proyecto se va a realizar gracias a la participación de los vecinos. ')
+      default:
+      return ''
+    }
+  }
+  
 
   return (
     <div className='presupuesto-container'>
       {
-        state === 'Pendiente' && (
-        <aside className='presupuesto-share ṕendiente'>
+        topic.attrs.state === 'pendiente' && (
+        <aside className='presupuesto-share pendiente'>
           {
             (topic.attrs && topic.attrs.budget) &&
               <div className='sharer-pending'>
@@ -48,16 +58,13 @@ export default function PresupuestoShare ({ topic, forum }) {
                 picture: topic.coverUrl,
                 link: window.location.href
               }} />
-            <a
-              target='_blank'
-              href={`http://twitter.com/home?status=${twDesc}`}
-              className='tw' />
+            <a target='_blank' href={`http://twitter.com/share?text=${twitterText}&url=${topicUrl}`} rel='noopener noreferrer' className='tw'></a>
           </div>
         </aside>
         )
       }
       {
-        state === 'Proyectado' &&
+        topic.attrs.state === 'proyectado' &&
         (
         <aside className='presupuesto-share ganador'>
           <div className='box-header'>
@@ -74,9 +81,9 @@ export default function PresupuestoShare ({ topic, forum }) {
             </div>
           </div>
           <div className='box-footer'>
-            <span className='hashtag'>#ForosVecinalesVteLopez</span>
-              <a target='_blank' href={`http://www.facebook.com/sharer.php?u=${socialLinksUrl}`} rel='noopener noreferrer' className='fb'></a>
-              <a target='_blank' href={`http://twitter.com/share?text=${twitterText}&url=${socialLinksUrl}`} rel='noopener noreferrer' className='tw'></a>
+            <span className='hashtag'>#YoVotoPorMiBarrio</span>
+              <a target='_blank' href={`http://www.facebook.com/sharer.php?u=${topicUrl}`} rel='noopener noreferrer' className='fb'></a>
+              <a target='_blank' href={`http://twitter.com/share?text=${twitterText}&url=${topicUrl}`} rel='noopener noreferrer' className='tw'></a>
           </div>
         </aside>
         )
