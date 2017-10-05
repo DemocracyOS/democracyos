@@ -26,10 +26,7 @@ export default class TopicGrid extends Component {
         }
         <div className='grid-bottom'>
           {
-             districts.length > 0 && !this.props.noMore && <button className='ver-mas' onClick={this.props.paginateFoward}>Ver mas</button>
-          }
-          {
-            districts.length == 0 && <p className='error-message'>No hay proyectos que coincidan con los filtros seleccionados.</p>
+            !this.props.noMore && <button className='ver-mas' onClick={this.props.paginateFoward}>Ver más</button>
           }
         </div>
       </div>
