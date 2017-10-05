@@ -21,13 +21,13 @@ export default function PresupuestoShare ({ topic, forum }) {
   function twitText() { 
     switch (topic.attrs.state) {
       case 'pendiente':
-      return encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio `)
+        return encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio `)
       case 'perdedor':
-      return encodeURIComponent(topic.mediaTitle)
+        return encodeURIComponent(topic.mediaTitle)
       case 'proyectado':
-      return encodeURIComponent('Este proyecto se va a realizar gracias a la participación de los vecinos. ')
+        return encodeURIComponent('Este proyecto se va a realizar gracias a la participación de los vecinos. ')
       default:
-      return ''
+        return ''
     }
   }
   
