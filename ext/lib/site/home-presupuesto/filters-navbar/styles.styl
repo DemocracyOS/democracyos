@@ -5,6 +5,8 @@ header
   margin-top: 50px
   @media screen and (max-width: 768px)
     margin-top: 42px
+  @media screen and (max-width: 425px)
+    margin-top: 5px 
   .stage-header
     display: flex
     align-items: center
@@ -12,6 +14,8 @@ header
     position: relative
     @media screen and (max-width: 768px)
       flex-direction: column
+    @media screen and (max-width: 425px)
+      border-bottom: 1px solid #4f5353
     .pp-stage
       display: inline-block
       padding: .8rem
@@ -27,6 +31,8 @@ header
       @media screen and (max-width: 768px)
         position: static
         align-self: flex-start
+      @media screen and (max-width: 425px)
+        width: 100%
     .header-text
       margin: 0 auto
       font-size: 1.5rem
@@ -35,17 +41,26 @@ header
         margin-left: 360px
       @media screen and (max-width: 768px)
         margin: 15px auto 0
+      @media screen and (max-width: 425px)
+        margin-top: 0
+        font-size: 1rem
+        padding: 12px 0
       
   nav
     display: flex
     align-items: center
     flex-wrap: wrap
     margin: 20px auto 0
+    @media screen and (max-width: 425px)
+      margin: 0
     
     .filter
       display: inline-block
       margin: 10px 0
       position: relative
+      @media screen and (max-width: 425px)
+        width: 100%
+        margin: 0
       .btn
         margin: 6px
         width: 180px
@@ -59,6 +74,14 @@ header
         &:hover,
         &:focus
           color: #f59231
+        @media screen and (max-width: 425px)
+          width: 100%
+          margin: 0px
+          border-radius: 0px
+          border-top: none
+          border-right: none
+          border-left: none
+          padding: 12px
         .btn-content
           margin: 0 auto
           .badge
@@ -75,6 +98,8 @@ header
           right: 9px
           color: #4f5353
           font-size: .8rem
+          @media screen and (max-width: 425px)
+            right: 25px
       .btn-votacion
         &:hover
           outline: 0
