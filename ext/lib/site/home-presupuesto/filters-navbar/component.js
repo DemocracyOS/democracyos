@@ -15,49 +15,49 @@ class FiltersNavbar extends Component {
 
       appliedFilters: {
         distrito: {
-          centro: true,
-          noroeste: true,
-          norte: true,
-          oeste: true,
-          sudoeste: true,
-          sur: true
+          centro: false,
+          noroeste: false,
+          norte: false,
+          oeste: false,
+          sudoeste: false,
+          sur: false
         },
         edad: {
-          adulto: true,
-          joven: true
+          adulto: false,
+          joven: false
         },
         anio: {
-          proyectos2016: true,
-          proyectos2017: true
+          proyectos2016: false,
+          proyectos2017: false
         },
         estado: {
-          proyectado: true,
-          ejecutandose: true,
-          finalizado: true
+          proyectado: false,
+          ejecutandose: false,
+          finalizado: false
         }
       },
 
       selectFilters: {
         distrito: {
-          centro: true,
-          noroeste: true,
-          norte: true,
-          oeste: true,
-          sudoeste: true,
-          sur: true
+          centro: false,
+          noroeste: false,
+          norte: false,
+          oeste: false,
+          sudoeste: false,
+          sur: false
         },
         edad: {
-          adulto: true,
-          joven: true
+          adulto: false,
+          joven: false
         },
         anio: {
-          proyectos2016: true,
-          proyectos2017: true
+          proyectos2016: false,
+          proyectos2017: false
         },
         estado: {
-          proyectado: true,
-          ejecutandose: true,
-          finalizado: true
+          proyectado: false,
+          ejecutandose: false,
+          finalizado: false
         }
       },
 
@@ -73,9 +73,11 @@ class FiltersNavbar extends Component {
   }
 
   componentWillReceiveProps(props) {
+    debugger
     if (props.stage !== this.props.stage) {
       switch (props.stage) {
         case 'votacion-abierta':
+          console.log('appliedFilters on componentWillReceiveProps votacion-abierta', this.state.appliedFilters)
           this.setState({
             appliedFilters: update (this.state.appliedFilters, {
               distrito: {
@@ -101,10 +103,11 @@ class FiltersNavbar extends Component {
           }, this.exposeFilters)
           break
         case 'votacion-cerrada':
+          console.log('appliedFilters on componentWillReceiveProps votacion-cerrada', this.state.appliedFilters)
           this.setState({
             appliedFilters: update (this.state.appliedFilters, {
               distrito: {
-                centro: { $set: true },
+                centro: { $set: false },
                 noroeste: { $set: false },
                 norte: { $set: false },
                 oeste: { $set: false },
@@ -126,24 +129,25 @@ class FiltersNavbar extends Component {
           }, this.exposeFilters)
           break
         case 'seguimiento':
+          console.log('appliedFilters on componentWillReceiveProps seguimiento', this.state.appliedFilters)
           this.setState({
             appliedFilters: update (this.state.appliedFilters, {
               distrito: {
-                centro: { $set: true },
-                noroeste: { $set: true },
-                norte: { $set: true },
-                oeste: { $set: true },
-                sudoeste: { $set: true },
-                sur: { $set: true }
+                centro: { $set: false },
+                noroeste: { $set: false },
+                norte: { $set: false },
+                oeste: { $set: false },
+                sudoeste: { $set: false },
+                sur: { $set: false }
               },
               estado: {
-                proyectado: { $set: true },
-                ejecutandose: { $set: true },
-                finalizado: { $set: true }
+                proyectado: { $set: false },
+                ejecutandose: { $set: false },
+                finalizado: { $set: false }
               },
               anio: {
-                proyectos2016: { $set: true },
-                proyectos2017: { $set: true }
+                proyectos2016: { $set: false },
+                proyectos2017: { $set: false }
               }
             })
           }, this.exposeFilters)
@@ -170,6 +174,7 @@ class FiltersNavbar extends Component {
     // setea el filtro activo
     appliedFilters.distrito[distritoCurrent] = true
     // aplica los filtros actualizados
+
     this.setState({
       appliedFilters: appliedFilters,
       distrito: distritoCurrent
@@ -224,29 +229,39 @@ class FiltersNavbar extends Component {
       // actualiza appliedFilters y cierra el dropdown
       appliedFilters: update({}, { $merge: this.state.selectFilters }),
       activeDropdown: ''
-    }, () => {this.exposeFilters(id)})
+    }, () => {
+      this.exposeFilters(id)
+      // this.calculateBadges()
+    })
   }
 
   // prepara los filtros para enviar la query definitiva a la API
   exposeFilters = (id) => {
+    console.log('exposeFilters', this.state.appliedFilters)
     var exposedFilters = update({}, { $merge: this.state.appliedFilters })
     exposedFilters = this.filterCleanup(exposedFilters)
-    this.setState ({
-      appliedFilters: update({}, {$merge: exposedFilters})
-    }, () => {
+    //this.setState ({
+    //   appliedFilters: update({}, {$merge: exposedFilters})
+    // }, () => {
       if (this.props.stage === 'seguimiento'){
         exposedFilters.estado = update(exposedFilters.estado, {
-        pendiente: { $set: false },
-        perdedor: { $set: false }
+          pendiente: { $set: false },
+          perdedor: { $set: false }
+        })
+      } else {
+        exposedFilters.estado = update(exposedFilters.estado, {
+          proyectado: { $set: false },
+          ejecutandose: { $set: false },
+          finalizado: { $set: false }
         })
       }
-      this.calculateBadges()
+      // this.calculateBadges()
       this.props.updateFilters(exposedFilters)
-    })
+    // })
   }
 
 
-  calculateBadges = (id) => {
+  calculateBadges = () => {
     let badges = Object.keys(this.state.appliedFilters)
       .map(f => [f, Object.values(this.state.appliedFilters[f]).filter(boolean => boolean).length])
       .reduce((acc, f) => {acc[f[0]] = f[1]; return acc}, {})
@@ -266,9 +281,6 @@ class FiltersNavbar extends Component {
           })
           return [f, filters[f]]
       } else {
-
-
-
           return [f, filters[f]]
       }
     }).reduce((acc, intFnOutput) => { acc[intFnOutput[0]] = intFnOutput[1]; return acc }, {})
