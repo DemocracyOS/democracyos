@@ -22,11 +22,8 @@ sharerFacebook({
 export function sharerFacebook (params) {
 
   if (!config.ext.facebookClientID) {
-    console.log('entra pero no encuenta facebookClientID')
     throw new Error('Facebook app configuration missing.')
   }
-
-  console.log('existe la ID', config.ext.facebookClientID)
 
   params = Object.assign({
     app_id: config.ext.facebookClientID,
