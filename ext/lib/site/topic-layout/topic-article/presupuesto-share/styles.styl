@@ -1,4 +1,4 @@
-.presupuesto-share
+.presupuesto-share.pendiente
   max-width: 350px
   min-width: 250px
   margin: 0 auto
@@ -106,3 +106,66 @@
     a.tw
       background-image: unquote("url('/ext/lib/site/topic-layout/tw-icon.svg')")
       margin-bottom: 1px
+      
+.presupuesto-share.ganador
+  max-width: 450px
+  min-width: 250px
+  margin: 0 auto
+  //max-width: 650px
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  .box-header
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 7px 0
+    background-color: #7cbb42
+    color: white
+    font-weight: bold
+    font-size: 30px
+    text-transform: uppercase
+  .box-content
+    display: flex
+    justify-content: space-around
+    justify-content: space-evenly
+    align-items: center
+    flex-wrap: wrap
+    padding: 10px 0
+    background-color: #e9e9e9
+    .box-content-item
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      margin: 5px 10px
+      .box-content-title
+        font-weight: 500
+        font-size: 24px
+      .box-content-info
+        color: #3d699e
+        font-weight: 500
+        font-size: 47px
+  .box-footer
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 10px 0
+    background-color: #3d699e
+    color: #ffffff
+    .hashtag
+      font-size: 24px
+      margin-right: 9px
+      @media screen and (min-width: 450px)
+        font-size: 20px
+    a
+      margin: 0 9px
+    a.fb
+      width: 24px
+      height: 22px
+      background: unquote("url('/ext/lib/site/topic-layout/fb-icon.svg')") no-repeat center
+      background-size: contain
+      margin-bottom: 1px
+    a.tw
+      width: 24px
+      height: 25px
+      background: unquote("url('/ext/lib/site/topic-layout/tw-icon.svg')") no-repeat center
+      background-size: contain

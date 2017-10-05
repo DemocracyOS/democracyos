@@ -15,11 +15,18 @@ export default function PresupuestoShare ({ topic, forum }) {
   }
   const stateTitle = forum.topicsAttrs.find((ta) => ta.name === 'state').title
   const anioTitle = forum.topicsAttrs.find((ta) => ta.name === 'anio').title
+
+  const socialLinksUrl = 'hola'
+  const twitterText = 'chau'
+
+  console.log('hola mundo')
+  console.log(topic.attrs.state)
+
   return (
     <div className='presupuesto-container'>
       {
-        (state && state === 'Pendiente') ? (
-        <aside className='presupuesto-share'>
+        state === 'Pendiente' && (
+        <aside className='presupuesto-share ṕendiente'>
           {
             (topic.attrs && topic.attrs.budget) &&
               <div className='sharer-pending'>
@@ -47,36 +54,29 @@ export default function PresupuestoShare ({ topic, forum }) {
               className='tw' />
           </div>
         </aside>
-        ) : (
-        <aside className='presupuesto-share'>
-          {
-            topic.attrs &&
-              <div className='sharer-header'>
-                {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
-                {topic.attrs.votes && <span className='votos-proyecto'>{`${prettyDecimals(topic.attrs.votes)} VOTES`}</span>}
-                <span className='winner-proyecto'>Proyecto {topic.attrs && topic.attrs.winner ? 'ganador' : 'presentado'}</span>
-              </div>
-          }
-          {
-            (topic.attrs.state || topic.attrs.budget) &&
-              <div className='sharer-body'>
-                {topic.attrs.anio && <span className='anio-proyecto'>{`${anioTitle}: ${topic.attrs.anio}`}</span>}
-                {topic.attrs.state && <span className='state-proyecto'>{`${stateTitle}: ${state}`}</span>}
-                {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
-              </div>
-          }
-          <div className='social-links'>
-            <span className='hashtag'>#YoVotoPorMiBarrio</span>
-            <SharerFacebook
-              className='fb'
-              params={{
-                picture: topic.coverUrl,
-                link: window.location.href
-              }} />
-            <a
-              target='_blank'
-              href={`http://twitter.com/home?status=${twDesc}`}
-              className='tw' />
+        )
+      }
+      {
+        state === 'Proyectado' &&
+        (
+        <aside className='presupuesto-share ganador'>
+          <div className='box-header'>
+            <span>Proyecto ganador</span>
+          </div>
+          <div className='box-content'>
+            <div className='box-content-item'>
+              <span className='box-content-title'>Presupuesto asignado:</span>
+              <span className='box-content-info'>{prettyPrice(topic.attrs.budget)}</span>
+            </div>
+            <div className='box-content-item'>
+              <span className='box-content-title'>Cantidad de votos:</span>
+              <span className='box-content-info'>{topic.attrs.votes}</span>
+            </div>
+          </div>
+          <div className='box-footer'>
+            <span className='hashtag'>#ForosVecinalesVteLopez</span>
+              <a target='_blank' href={`http://www.facebook.com/sharer.php?u=${socialLinksUrl}`} rel='noopener noreferrer' className='fb'></a>
+              <a target='_blank' href={`http://twitter.com/share?text=${twitterText}&url=${socialLinksUrl}`} rel='noopener noreferrer' className='tw'></a>
           </div>
         </aside>
         )
