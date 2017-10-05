@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 let texts = {
   abierta: {
     title: 'Votá los proyectos del Presupuesto Participativo 2017! Tenés tiempo hasta el xx/xx',
-    btn: 'Ver de proyectos'
+    btn: 'Explorá los proyectos y votá'
   },
   cerrada: {
     title: 'Mirá los resultados de la votación de proyectos del Presupuesto Participativo 2017!',
-    btn: 'Ver de proyectos'
+    btn: 'Ver proyectos'
   },
   seguimiento: {
     title: 'También podés ver el estado de los proyectos ganadores de años anteriores!',
@@ -80,7 +80,7 @@ export default class BannerPresupuesto extends Component {
           </h3>
           <button
             className='btn btn-primary btn-m banner-button'
-            onClick={() => {this.props.changeStage(nextStage); this.closeBanner()}}>
+            onClick={() => {this.props.changeStage(nextStage); this.closeBanner(); this.setState({firstTime: true})}}>
             <span>
               {texts[key].btn}
             </span>
