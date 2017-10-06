@@ -4,6 +4,7 @@ import moment from 'moment'
 import config from 'lib/config'
 import userConnector from 'lib/site/connectors/user'
 import UserBadge from 'lib/header/user-badge/component'
+import SignupComplete from '../site/signup-complete/component'
 
 class Header extends Component {
   constructor (props) {
@@ -11,7 +12,8 @@ class Header extends Component {
 
     this.state = {
       onMobile: window.innerWidth <= 630,
-      showMobileNavigation: false
+      showMobileNavigation: false,
+      openUserModal: false
     }
   }
 
@@ -34,10 +36,24 @@ class Header extends Component {
     return show
   }
 
+  handleCompleteData = () => {
+    this.setState({
+      openUserModal: true
+    }, () => {console.log(this.state.openUserModal)}
+    )
+  }
+
   render () {
     const showSubMenu = this.showSub()
     return (
       <header className='ext-header'>
+
+      {this.state.openUserModal && (
+        <div className='modal-container'>
+          <SignupComplete />  
+        </div>
+      )}
+
         <div className='ext-header-prefix'>
           <a href='http://rosario.gob.ar' rel='noopener noreferrer' target='_blank'>
             <img src='/ext/lib/header/rosarioigual.png' />
@@ -59,9 +75,11 @@ class Header extends Component {
             {this.props.user.state.fulfilled && (
               <ul className='user-nav nav navbar-nav'>
                 <UserBadge />
+                <a className='missing-data' onClick={this.handleCompleteData}>!</a>
               </ul>
             )}
 
+            
             {this.props.user.state.rejected && (
               <Link
                 to={{
