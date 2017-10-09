@@ -14,7 +14,7 @@ class Header extends Component {
     this.state = {
       onMobile: window.innerWidth <= 630,
       showMobileNavigation: false,
-      openUserModal: false
+      showUserModal: false
     }
   }
 
@@ -37,15 +37,11 @@ class Header extends Component {
     return show
   }
 
-  handleCompleteData = () => {
+  toggleUserModal = () => {
     this.setState({
-      openUserModal: true
+      showUserModal: !this.state.showUserModal
     }, () => {console.log(this.state.openUserModal)}
     )
-  }
-
-  closeModal = () => {
-    console.log('cierra el modal')
   }
 
   render () {
@@ -53,11 +49,12 @@ class Header extends Component {
     return (
       <header className='ext-header'>
 
-      {this.state.openUserModal && (
+      {this.state.showUserModal && (
         <div className='modal-container'>
+          <a className='close-modal' onClick={this.toggleUserModal}>X</a>
           <SignupComplete
-            closeModal={this.closeModal}
-            openModal={this.state.openUserModal} />  
+            toggleModal={this.toggleUserModal}
+            openModal={this.state.showUserModal} />  
         </div>
       )}
 
@@ -82,7 +79,14 @@ class Header extends Component {
             { this.props.user.state.fulfilled && (
               <ul className='user-nav nav navbar-nav'>
                 <UserBadge />
-                <a className='missing-data' onClick={this.handleCompleteData}>!</a>
+                
+              </ul>
+            )}
+
+            { (this.props.user.state.fulfilled && !this.props.user.profileIsComplete()) && (
+              <ul className='user-nav nav navbar-nav'>
+                <UserBadge />
+                <a className='missing-data' onClick={this.toggleUserModal}>!</a>
               </ul>
             )}
 

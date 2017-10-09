@@ -85,6 +85,13 @@ export class UserBadge extends Component {
               {t('notifications.title')}
             </Link>
           </li>
+          {!this.props.user.profileIsComplete() && (
+              <li>
+                <Link to=''>
+                  Completar datos <span className='alert'>!</span>
+                </Link>
+              </li>
+            )}
           <li>
             <Link to={urlBuilder.for('settings')}>
               {t('header.settings')}
