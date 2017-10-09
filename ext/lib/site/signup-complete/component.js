@@ -21,6 +21,8 @@ export default class SignupComplete extends Component {
         nro_doc: extra.nro_doc || null
       }
     }
+    console.log(props)
+    // console.log(this.state)
   }
 
   handleSuccess = (evt) => {
@@ -84,6 +86,7 @@ export default class SignupComplete extends Component {
 
     this.setState({ data })
   }
+
 
   render () {
     return (
@@ -174,8 +177,11 @@ export default class SignupComplete extends Component {
 
         {!user.profileIsComplete() && (
           <div className='text-right'>
+          <button onClick={this.closeModal}>
+            BOTONAZO
+          </button>
             <Link
-              to='/'
+              onClick={this.props.closeModal}
               className='btn btn-sm btn-link'>
               completar mas tarde
               {' '}

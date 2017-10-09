@@ -44,6 +44,12 @@ class Header extends Component {
     )
   }
 
+  closeModal = (e) => {
+    this.setState({
+      openModal: false
+    }, () => {console.log('cerro modal')})
+  }
+
   render () {
     const showSubMenu = this.showSub()
     return (
@@ -54,7 +60,8 @@ class Header extends Component {
           <a className='close-modal' onClick={this.toggleUserModal}>X</a>
           <SignupComplete
             toggleModal={this.toggleUserModal}
-            openModal={this.state.showUserModal} />  
+            openModal={this.state.showUserModal}
+            closeModal={this.closeModal} />  
         </div>
       )}
 
@@ -76,10 +83,9 @@ class Header extends Component {
               </Link>
             </h1>
 
-            { this.props.user.state.fulfilled && (
+            { (this.props.user.state.fulfilled && this.props.user.profileIsComplete()) && (
               <ul className='user-nav nav navbar-nav'>
                 <UserBadge />
-                
               </ul>
             )}
 
