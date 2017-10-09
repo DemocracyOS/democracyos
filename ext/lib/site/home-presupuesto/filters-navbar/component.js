@@ -233,23 +233,19 @@ class FiltersNavbar extends Component {
 
   // prepara los filtros para enviar la query definitiva a la API
   exposeFilters = () => {
-    var exposedFilters = update(this.state.appliedFilters, {})
-    exposedFilters = this.filterCleanup(exposedFilters)
+    let exposedFilters = this.filterCleanup(this.state.appliedFilters)
       switch (this.props.stage) {
         case 'seguimiento':
           exposedFilters.estado.pendiente = false
           exposedFilters.estado.perdedor = false
           break
         case 'votacion-abierta':
-          exposedFilters.estado.pendiente = false
           exposedFilters.estado.perdedor = false
           break
-        case 'votacion-abierta':
+        case 'votacion-cerrada':
           exposedFilters.estado.pendiente = false
-          exposedFilters.estado.perdedor = false
           break
       }
-      console.log('updateFilters', exposedFilters)
       this.props.updateFilters(exposedFilters)
   }
 
@@ -263,23 +259,24 @@ class FiltersNavbar extends Component {
   }
 
   filterCleanup = (filters) => {
-    return Object.keys(filters).map(f => {
-      if (Object.values(filters[f]).every(o => o)) {
-          Object.keys(filters[f]).forEach(o => {
-              filters[f][o] = true
-          })
-          return [f, filters[f]]
-      } else {
-          return [f, filters[f]]
-      }
-    }).reduce((acc, intFnOutput) => { acc[intFnOutput[0]] = intFnOutput[1]; return acc }, {})
+    let createTransformation = ob => {
+      let transformation = {}
+      Object.keys(ob).forEach(k => {
+        if (!(Object.values(ob[k]).includes(true))){
+          transformation[k] = typeof ob[k] != "object" ? { $set: true } : createTransformation(ob[k])
+        }
+      })
+      return transformation;
+    }
+    return update(filters, createTransformation(filters))
   }
 
   changeColor = (id) => {
-    const filters = Object.values(this.state.selectFilters[id])
-    if (filters.includes(false)){ 
+     if (this.state.badges[id] > 0) { 
       return 'applied-filter'
-    } 
+    } else {  
+      return ''
+    }
   }
 
 // RENDER
