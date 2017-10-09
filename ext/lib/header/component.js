@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router'
 import moment from 'moment'
 import config from 'lib/config'
+import user from 'lib/site/user/user'
 import userConnector from 'lib/site/connectors/user'
-import UserBadge from 'lib/header/user-badge/component'
+import UserBadge from './user-badge/component'
 import SignupComplete from '../site/signup-complete/component'
 
 class Header extends Component {
@@ -43,6 +44,10 @@ class Header extends Component {
     )
   }
 
+  closeModal = () => {
+    console.log('cierra el modal')
+  }
+
   render () {
     const showSubMenu = this.showSub()
     return (
@@ -50,7 +55,9 @@ class Header extends Component {
 
       {this.state.openUserModal && (
         <div className='modal-container'>
-          <SignupComplete />  
+          <SignupComplete
+            closeModal={this.closeModal}
+            openModal={this.state.openUserModal} />  
         </div>
       )}
 
@@ -72,7 +79,7 @@ class Header extends Component {
               </Link>
             </h1>
 
-            {this.props.user.state.fulfilled && (
+            { this.props.user.state.fulfilled && (
               <ul className='user-nav nav navbar-nav'>
                 <UserBadge />
                 <a className='missing-data' onClick={this.handleCompleteData}>!</a>
