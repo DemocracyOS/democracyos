@@ -21,11 +21,9 @@ export default class SignupComplete extends Component {
         nro_doc: extra.nro_doc || null
       }
     }
-    console.log(props)
-    // console.log(this.state)
   }
 
-  handleSuccess = (evt) => {
+  handleForm = (evt) => {
     evt.preventDefault()
     this.setState({
       error: '',
@@ -42,7 +40,9 @@ export default class SignupComplete extends Component {
         extra: this.state.data
       }))
 
-      browserHistory.push('/')
+      this.props.toggleUserModal()
+
+      // browserHistory.push('/')
     }).catch((err) => {
       err.res.json().then((body) => {
         if (!body) throw err
@@ -94,7 +94,7 @@ export default class SignupComplete extends Component {
         {this.state.loading && <div className='loader' />}
         <h3 className='title'>Completá tus datos</h3>
         <p>Para poder votar el Presupuesto Participativo necesitás tener tu perfil completo.</p>
-        <form role='form' onSubmit={this.handleSuccess} method='POST'>
+        <form role='form' onSubmit={this.handleForm} method='POST'>
           {this.state.error && (
             <div className='alert alert-danger error' role='alert'>
               <span dangerouslySetInnerHTML={{
@@ -176,12 +176,9 @@ export default class SignupComplete extends Component {
         </form>
 
         {!user.profileIsComplete() && (
-          <div className='text-right'>
-          <button onClick={this.closeModal}>
-            BOTONAZO
-          </button>
+          <div className='complete-later'>
             <Link
-              onClick={this.props.closeModal}
+              onClick={this.props.toggleUserModal}
               className='btn btn-sm btn-link'>
               completar mas tarde
               {' '}

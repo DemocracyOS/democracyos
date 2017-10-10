@@ -87,9 +87,9 @@ export class UserBadge extends Component {
           </li>
           {!this.props.user.profileIsComplete() && (
               <li>
-                <Link to=''>
-                  Completar datos <span className='alert'>!</span>
-                </Link>
+                <a onClick={this.props.toggleUserModal}>
+                  Completar datos <span className='alert'>!</span>  
+                </a>
               </li>
             )}
           <li>
