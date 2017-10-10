@@ -9,14 +9,15 @@ const app = module.exports = express()
 
 app.post('/',
 middlewares.users.restrict,
+middlewares.forums.findFromBody,
+middlewares.forums.privileges.canEdit,
 function changeStage (req, res, err) {
 	log('POST/api/change-stage')
 	const possibleStages = ['votacion-abierta', 'votacion-cerrada', 'seguimiento']
-	let forumId = req.body.forumId
 	let futureStage = req.body.stage
 	if (possibleStages.includes(futureStage)) {
 		Forum.findOneAndUpdate(
-			{'_id': forumId},
+			{'_id': req.forum.id},
 			{$set:
 				{extra: 
 					{stage: futureStage}
