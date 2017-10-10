@@ -4,7 +4,7 @@ import { SharerFacebook } from 'ext/lib/site/sharer'
 
 export default function PresupuestoShare ({ topic, forum }) {
   const topicUrl = `${window.location.origin}${topic.url}`
-  const twDesc = encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio`)
+
   let state
   if (topic.attrs && topic.attrs.state) {
     state = forum.topicsAttrs
@@ -15,11 +15,28 @@ export default function PresupuestoShare ({ topic, forum }) {
   }
   const stateTitle = forum.topicsAttrs.find((ta) => ta.name === 'state').title
   const anioTitle = forum.topicsAttrs.find((ta) => ta.name === 'anio').title
+
+  const twitterText = twitText()
+
+  function twitText() { 
+    switch (topic.attrs.state) {
+      case 'pendiente':
+        return encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio `)
+      case 'perdedor':
+        return encodeURIComponent(topic.mediaTitle)
+      case 'proyectado':
+        return encodeURIComponent('Este proyecto se va a realizar gracias a la participación de los vecinos. ')
+      default:
+        return ''
+    }
+  }
+  
+
   return (
     <div className='presupuesto-container'>
       {
-        (state && state === 'Pendiente') ? (
-        <aside className='presupuesto-share'>
+        topic.attrs.state === 'pendiente' && (
+        <aside className='presupuesto-share pendiente'>
           {
             (topic.attrs && topic.attrs.budget) &&
               <div className='sharer-pending'>
@@ -41,42 +58,32 @@ export default function PresupuestoShare ({ topic, forum }) {
                 picture: topic.coverUrl,
                 link: window.location.href
               }} />
-            <a
-              target='_blank'
-              href={`http://twitter.com/home?status=${twDesc}`}
-              className='tw' />
+            <a target='_blank' href={`http://twitter.com/share?text=${twitterText}&url=${topicUrl}`} rel='noopener noreferrer' className='tw'></a>
           </div>
         </aside>
-        ) : (
-        <aside className='presupuesto-share'>
-          {
-            topic.attrs &&
-              <div className='sharer-header'>
-                {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
-                {topic.attrs.votes && <span className='votos-proyecto'>{`${prettyDecimals(topic.attrs.votes)} VOTES`}</span>}
-                <span className='winner-proyecto'>Proyecto {topic.attrs && topic.attrs.winner ? 'ganador' : 'presentado'}</span>
-              </div>
-          }
-          {
-            (topic.attrs.state || topic.attrs.budget) &&
-              <div className='sharer-body'>
-                {topic.attrs.anio && <span className='anio-proyecto'>{`${anioTitle}: ${topic.attrs.anio}`}</span>}
-                {topic.attrs.state && <span className='state-proyecto'>{`${stateTitle}: ${state}`}</span>}
-                {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
-              </div>
-          }
-          <div className='social-links'>
+        )
+      }
+      {
+        topic.attrs.state === 'proyectado' &&
+        (
+        <aside className='presupuesto-share ganador'>
+          <div className='box-header'>
+            <span>Proyecto ganador</span>
+          </div>
+          <div className='box-content'>
+            <div className='box-content-item'>
+              <span className='box-content-title'>Presupuesto asignado:</span>
+              <span className='box-content-info'>{prettyPrice(topic.attrs.budget)}</span>
+            </div>
+            <div className='box-content-item'>
+              <span className='box-content-title'>Cantidad de votos:</span>
+              <span className='box-content-info'>{topic.attrs.votes}</span>
+            </div>
+          </div>
+          <div className='box-footer'>
             <span className='hashtag'>#YoVotoPorMiBarrio</span>
-            <SharerFacebook
-              className='fb'
-              params={{
-                picture: topic.coverUrl,
-                link: window.location.href
-              }} />
-            <a
-              target='_blank'
-              href={`http://twitter.com/home?status=${twDesc}`}
-              className='tw' />
+              <a target='_blank' href={`http://www.facebook.com/sharer.php?u=${topicUrl}`} rel='noopener noreferrer' className='fb'></a>
+              <a target='_blank' href={`http://twitter.com/share?text=${twitterText}&url=${topicUrl}`} rel='noopener noreferrer' className='tw'></a>
           </div>
         </aside>
         )

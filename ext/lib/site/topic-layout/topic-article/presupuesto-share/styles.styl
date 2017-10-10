@@ -1,42 +1,8 @@
-.presupuesto-share
+.presupuesto-share.pendiente
   max-width: 350px
   min-width: 250px
   margin: 0 auto
   font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif
-  .sharer-header
-    background: #f2f2f2
-    color: #31506c
-    position: relative
-    min-height: 120px
-    border-bottom: 4px solid #31506c
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    padding: 40px 20px 20px
-    .numero-proyecto
-      background: #31506c
-      color: #fff
-      position: absolute
-      top: 10px
-      right: 0
-      padding: 5px 10px
-    .votos-proyecto
-      font-size: 35px
-      font-weight: 500
-    .winner-proyecto
-      text-transform: uppercase
-      font-size: 20px
-      font-weight: 500
-  .sharer-body
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    padding: 20px
-    span
-      color: #a6a6a6
-      font-size: 22px
-      &.anio-proyecto
-        font-size: 14px
   .sharer-pending
     background: #f2f2f2
     color: rgb(67,67,71)
@@ -85,7 +51,7 @@
     align-items: center
     padding: 15px
     .hashtag
-      font-size: 18px
+      font-size: 20px
     a
       width: 35px
       height: 20px
@@ -106,3 +72,64 @@
     a.tw
       background-image: unquote("url('/ext/lib/site/topic-layout/tw-icon.svg')")
       margin-bottom: 1px
+      
+.presupuesto-share.ganador
+  max-width: 450px
+  min-width: 250px
+  margin: 0 auto
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  .box-header
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 7px 0
+    background-color: #20c759
+    color: white
+    font-weight: bold
+    font-size: 28px
+    text-transform: uppercase
+  .box-content
+    display: flex
+    justify-content: space-around
+    justify-content: space-evenly
+    align-items: center
+    flex-wrap: wrap
+    padding: 10px 0
+    background-color: #f2f2f2
+    .box-content-item
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      margin: 5px 10px
+      .box-content-title
+        font-weight: 500
+        font-size: 22px
+        color: #434347
+      .box-content-info
+        color: #00afef
+        font-weight: 500
+        font-size: 48px
+  .box-footer
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 15px 10px
+    background-color: #f7941d
+    color: #ffffff
+    .hashtag
+      font-size: 20px
+      margin-right: 9px
+    a
+      margin: 0 9px
+    a.fb
+      width: 24px
+      height: 22px
+      background: unquote("url('/ext/lib/site/topic-layout/fb-icon.svg')") no-repeat center
+      background-size: contain
+      margin-bottom: 1px
+    a.tw
+      width: 24px
+      height: 25px
+      background: unquote("url('/ext/lib/site/topic-layout/tw-icon.svg')") no-repeat center
+      background-size: contain
