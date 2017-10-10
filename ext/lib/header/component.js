@@ -5,7 +5,7 @@ import config from 'lib/config'
 import user from 'lib/site/user/user'
 import userConnector from 'lib/site/connectors/user'
 import UserBadge from './user-badge/component'
-import SignupComplete from '../site/signup-complete/component'
+import CompleteUserData from './complete-data/component'
 
 class Header extends Component {
   constructor (props) {
@@ -50,13 +50,8 @@ class Header extends Component {
       <header className='ext-header'>
 
       {this.state.showUserModal && (
-        <div className='modal-container'>
-          <a className='close-modal' onClick={this.toggleUserModal}>X</a>
-          <div className='form-component-wrapper'>
-            <SignupComplete
-            toggleUserModal={this.toggleUserModal} />
-          </div>  
-        </div>
+        <CompleteUserData
+          toggleUserModal={this.toggleUserModal} />
       )}
 
         <div className='ext-header-prefix'>
