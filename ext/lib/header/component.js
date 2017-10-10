@@ -19,10 +19,12 @@ class Header extends Component {
   }
 
   componentWillMount() {
+    // listener para que el hash #completar-datos togglee el modal
     window.addEventListener('hashchange', () => {
       if (location.hash === '#completar-datos') {
         this.toggleUserModal()
-        location.hash = ''
+        // limpia el hash
+        history.pushState('', document.title, window.location.pathname)
       }
     }) 
   }
