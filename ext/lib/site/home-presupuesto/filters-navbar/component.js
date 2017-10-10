@@ -183,6 +183,24 @@ class FiltersNavbar extends Component {
     })
   }
 
+  handleEdadFilterChange = (edad) => {
+    //resetea el filtro edad
+    let appliedFilters = update(this.state.appliedFilters, {
+      edad: {
+        adulto: { $set: false},
+        joven: { $set: false}
+      }
+    })
+    //actualiza filtro edad con la opcion elegida
+    appliedFilters.edad[edad] = true
+    //aplica los filtros actualizados
+    this.setState({
+      appliedFilters: appliedFilters
+    }, () => {
+      this.exposeFilters()
+    })
+  }
+
   handleDropdown = (id) => (e) => {
     // si se apreta el botón de un dropdown ya abierto, se cierra
     if (this.state.activeDropdown == id) {
@@ -291,6 +309,7 @@ class FiltersNavbar extends Component {
         <DistritoFilter
               active={this.state.distrito}
               onChange={this.handleDistritoFilterChange}
+              changeEdad={this.handleEdadFilterChange}
               stage={this.props.stage} 
               appliedFilters={this.state.appliedFilters}/>
     )}
@@ -514,7 +533,7 @@ export default ReactOutsideEvent(FiltersNavbar)
 //Navbar en votacion abierta / votacion cerrada
 
 function DistritoFilter (props) {
-  const { active, onChange, stage, appliedFilters } = props
+  const { active, onChange, stage, appliedFilters, changeEdad } = props
   return (
     <header>
       <div className='stage-header-votacion'>
@@ -524,11 +543,15 @@ function DistritoFilter (props) {
         <nav className='pp-nav'>
            <button
                 type='button'
+                data-name='adulto'
+                onClick={() => changeEdad('adulto')}
                 className={`btn btn-md btn-outline-primary ${appliedFilters.edad.adulto ? 'active' : ''}`}>
                 <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
             </button>
             <button
                 type='button'
+                data-name='joven'
+                onClick={() => changeEdad('joven')}
                 className={`btn btn-md btn-outline-primary ${appliedFilters.edad.joven ? 'active' : ''}`}>
                 <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
             </button>
