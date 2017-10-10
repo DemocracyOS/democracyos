@@ -63,7 +63,7 @@ Forum.findOne({
 
     const votos = {
       "kind" : "Number",
-      "name" : "votos",
+      "name" : "votes",
       "title" : "Votos",
       "mandatory" : true,
       "min" : 1,
