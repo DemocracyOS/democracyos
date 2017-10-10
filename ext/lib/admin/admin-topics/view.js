@@ -36,7 +36,7 @@ export default class TopicsListView extends View {
   switchOn () {
     this.bind('click', '.btn.delete-topic', this.bound('ondeletetopicclick'))
     this.list = new List('topics-wrapper', { valueNames: ['topic-title', 'topic-id', 'topic-date'] })
-   if (this.forum.name === 'presupuesto'){
+   if (this.forum.name === 'presupuesto' && this.forum.privileges.canEdit){
       ReactRender(
         (<UpdateStage 
         forum={this.forum} />), 
