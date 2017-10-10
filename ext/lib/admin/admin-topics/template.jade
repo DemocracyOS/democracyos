@@ -17,7 +17,7 @@
             span.glyphicon.glyphicon-time
           button.btn.btn-primary.sort(data-sort='topic-title')
             span.glyphicon.glyphicon-font
-    - if (forum.name === 'presupuesto')
+    - if (forum.name === 'presupuesto' && forum.privileges.canEdit)
       .well.well-lg.clearfix.update-stage
       .well.well-sm.clearfix.export-update
     .list.list-group.col-xs-12

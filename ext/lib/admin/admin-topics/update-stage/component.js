@@ -50,7 +50,7 @@ export default class UpdateStage extends Component {
             Accept: 'application/json',
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({stage: sendStage, forumId: this.state.forum})
+          body: JSON.stringify({stage: sendStage, forum: this.state.forum})
     })
     .then((res) => {
       if (res.status === 200) {
