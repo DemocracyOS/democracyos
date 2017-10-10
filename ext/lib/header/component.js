@@ -18,6 +18,15 @@ class Header extends Component {
     }
   }
 
+  componentWillMount() {
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#completar-datos') {
+        this.toggleUserModal()
+        location.hash = ''
+      }
+    }) 
+  }
+
   toggleMobileNavigation = () => {
     this.setState({
       showMobileNavigation: !this.state.showMobileNavigation
@@ -80,9 +89,8 @@ class Header extends Component {
 
             { (this.props.user.state.fulfilled && !this.props.user.profileIsComplete()) && (
               <ul className='user-nav nav navbar-nav'>
-                <UserBadge
-                  toggleUserModal={this.toggleUserModal}/>
-                <a className='missing-data' onClick={this.toggleUserModal}>!</a>
+                <UserBadge />
+                <a className='missing-data' href='#completar-datos' >!</a>
               </ul>
             )}
 

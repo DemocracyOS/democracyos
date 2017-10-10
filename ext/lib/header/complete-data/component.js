@@ -5,7 +5,13 @@ import SignupComplete from '../../site/signup-complete/component'
 export default class CompleteUserData extends Component {
   constructor (props) {
     super (props) 
-    console.log(props)
+
+  }
+
+  componentWillMount() {
+    // window.addEventListener('hashchange', () => {
+    //   console.log(location.hash)
+    // }) 
   }
 
   render() {
