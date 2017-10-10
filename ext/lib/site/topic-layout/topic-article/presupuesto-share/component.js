@@ -16,45 +16,71 @@ export default function PresupuestoShare ({ topic, forum }) {
   const stateTitle = forum.topicsAttrs.find((ta) => ta.name === 'state').title
   const anioTitle = forum.topicsAttrs.find((ta) => ta.name === 'anio').title
   return (
-    <div className='presupuesto-share'>
+    <div className='presupuesto-container'>
       {
-        topic.attrs &&
-          <div className='sharer-header'>
-            {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
-            {topic.attrs.votes && <span className='votos-proyecto'>{`${prettyDecimals(topic.attrs.votes)} VOTOS`}</span>}
-            <span className='winner-proyecto'>Proyecto {topic.attrs && topic.attrs.winner ? 'ganador' : 'presentado'}</span>
-          </div>
-      }
-      {
-        (topic.attrs.state || topic.attrs.budget) &&
-          <div className='sharer-body'>
-            {topic.attrs.anio && <span className='anio-proyecto'>{`${anioTitle}: ${topic.attrs.anio}`}</span>}
-            {topic.attrs.state && <span className='state-proyecto'>{`${stateTitle}: ${state}`}</span>}
-            {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
-          </div>
-      }
-      <div className='social-links'>
-        <span className='hashtag'>#YoVotoPorMiBarrio</span>
-        <SharerFacebook
-          className='fb'
-          params={{
-            picture: topic.coverUrl,
-            link: window.location.href
-          }} />
-        <a
-          target='_blank'
-          href={`http://twitter.com/home?status=${twDesc}`}
-          className='tw' />
-        {
-          window.innerWidth <= 630 &&
-          (
+        (state && state === 'Pendiente') ? (
+        <aside className='presupuesto-share'>
+          {
+            (topic.attrs && topic.attrs.budget) &&
+              <div className='sharer-pending'>
+                <div className='pending-header'>
+                  <span className='presupuesto'>Presupuesto:</span>
+                  {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
+                </div>
+                <div className='pending-body'>
+                  {topic.attrs.budget && <span className='presu-proyecto'>{prettyPrice(topic.attrs.budget)}</span>}
+                  <button className='btn btn-active btn-pending'>Votar este proyecto</button>
+                </div>
+              </div>
+          }
+          <div className='social-links'>
+            <span className='hashtag'>#YoVotoPorMiBarrio</span>
+            <SharerFacebook
+              className='fb'
+              params={{
+                picture: topic.coverUrl,
+                link: window.location.href
+              }} />
             <a
               target='_blank'
-              href={`whatsapp://send?text=${twDesc}`}
-              className='wp' />
-          )
-        }
-      </div>
+              href={`http://twitter.com/home?status=${twDesc}`}
+              className='tw' />
+          </div>
+        </aside>
+        ) : (
+        <aside className='presupuesto-share'>
+          {
+            topic.attrs &&
+              <div className='sharer-header'>
+                {topic.attrs.number && <span className='numero-proyecto'>{`${prettyNumber(topic.attrs.number)}`}</span>}
+                {topic.attrs.votes && <span className='votos-proyecto'>{`${prettyDecimals(topic.attrs.votes)} VOTES`}</span>}
+                <span className='winner-proyecto'>Proyecto {topic.attrs && topic.attrs.winner ? 'ganador' : 'presentado'}</span>
+              </div>
+          }
+          {
+            (topic.attrs.state || topic.attrs.budget) &&
+              <div className='sharer-body'>
+                {topic.attrs.anio && <span className='anio-proyecto'>{`${anioTitle}: ${topic.attrs.anio}`}</span>}
+                {topic.attrs.state && <span className='state-proyecto'>{`${stateTitle}: ${state}`}</span>}
+                {topic.attrs.budget && <span className='presu-proyecto'>{`Presupuesto: ${prettyPrice(topic.attrs.budget)}`}</span>}
+              </div>
+          }
+          <div className='social-links'>
+            <span className='hashtag'>#YoVotoPorMiBarrio</span>
+            <SharerFacebook
+              className='fb'
+              params={{
+                picture: topic.coverUrl,
+                link: window.location.href
+              }} />
+            <a
+              target='_blank'
+              href={`http://twitter.com/home?status=${twDesc}`}
+              className='tw' />
+          </div>
+        </aside>
+        )
+      }
     </div>
   )
 }

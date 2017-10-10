@@ -20,9 +20,13 @@ sharerFacebook({
 
 */
 export function sharerFacebook (params) {
+
   if (!config.ext.facebookClientID) {
+    console.log('entra pero no encuenta facebookClientID')
     throw new Error('Facebook app configuration missing.')
   }
+
+  console.log('existe la ID', config.ext.facebookClientID)
 
   params = Object.assign({
     app_id: config.ext.facebookClientID,
@@ -60,6 +64,7 @@ import {SharerFacebook} from 'ext/lib/site/sharer'
   }} />
 */
 export function SharerFacebook (args) {
+
   if (!config.ext.facebookClientID) return null
 
   const params = args.params
@@ -79,7 +84,7 @@ export function SharerFacebook (args) {
 
   return (
     <span {...props} onClick={handleClick}>
-      <i className='icon-social-facebook' />
+      <i className='fb-share' />
     </span>
   )
 }

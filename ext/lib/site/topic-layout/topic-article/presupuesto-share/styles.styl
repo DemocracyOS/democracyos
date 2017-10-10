@@ -2,6 +2,7 @@
   max-width: 350px
   min-width: 250px
   margin: 0 auto
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif
   .sharer-header
     background: #f2f2f2
     color: #31506c
@@ -36,6 +37,46 @@
       font-size: 22px
       &.anio-proyecto
         font-size: 14px
+  .sharer-pending
+    background: #f2f2f2
+    color: rgb(67,67,71)
+    min-height: 120px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    padding: 25px 0
+    .pending-header
+      display: flex
+      justify-content: space-between
+      align-items: baseline
+      width: 100%
+      font-size: 24px
+      .presupuesto
+        padding-left: 20px
+        font-weight: 500
+      .numero-proyecto
+        padding: 5px 15px
+        font-weight: bold
+        background-color: #f7941d
+        color: #fff
+    .pending-body
+      display: flex
+      flex-direction: column
+      align-items: center
+      .presu-proyecto
+        margin: 20px 0 15px
+        font-weight: 500
+        font-size: 48px
+        color: rgb(0,175,239)
+      .btn-pending
+        color: #fff
+        background-color: rgb(32,199,89)
+        padding: 15px 20px
+        border: 1px solid rgb(32,199,89)
+        border-radius: 8px
+        text-transform: uppercase
+        font-weight: 700
   .social-links
     background-color: #f7941d
     color: #fff
@@ -44,21 +85,24 @@
     align-items: center
     padding: 15px
     .hashtag
-      margin-right: 10px
-      font-size: 15px
+      font-size: 18px
     a
-      width: 40px
-      height: 30px
-      background-size: auto 30px
+      width: 35px
+      height: 20px
+      background-size: auto 20px
       background-repeat: no-repeat
+      background-position: center
       display: inline-block
-      margin-top: 20px
-    .fb
-      font-size: 30px
-      margin-right: 5px
-    a.wp
-      background-image: unquote("url('/ext/lib/site/topic-layout/whatsapp-logo.svg')")
-      margin: 0
+    span
+      .fb-share
+        width: 30px
+        height: 20px
+        margin: 0 4px 2px 7px
+        background-size: auto 20px
+        background-repeat: no-repeat
+        background-position: center
+        display: inline-block
+        background-image: unquote("url('/ext/lib/site/topic-layout/fb-icon.svg')")
     a.tw
-      background-image: unquote("url('/ext/lib/site/topic-layout/icon-twitter@3x.png')")
-      margin: 0 5px 0 0
+      background-image: unquote("url('/ext/lib/site/topic-layout/tw-icon.svg')")
+      margin-bottom: 1px
