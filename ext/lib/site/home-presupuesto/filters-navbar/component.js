@@ -86,6 +86,10 @@ class FiltersNavbar extends Component {
                 sudoeste: { $set: false },
                 sur: { $set: false }
               },
+              edad: {
+                adulto: { $set: true },
+                joven: { $set: false }
+              },
               estado: {
                 proyectado: { $set: false },
                 ejecutandose: { $set: false },
@@ -287,7 +291,8 @@ class FiltersNavbar extends Component {
         <DistritoFilter
               active={this.state.distrito}
               onChange={this.handleDistritoFilterChange}
-              stage={this.props.stage} />
+              stage={this.props.stage} 
+              appliedFilters={this.state.appliedFilters}/>
     )}
     {this.props.stage === 'seguimiento' && (
         <header>
@@ -506,15 +511,28 @@ class FiltersNavbar extends Component {
 
 export default ReactOutsideEvent(FiltersNavbar)
 
+//Navbar en votacion abierta / votacion cerrada
 
 function DistritoFilter (props) {
-  const { active, onChange, stage } = props
+  const { active, onChange, stage, appliedFilters } = props
   return (
     <header>
-      <div className='stage-header'>
+      <div className='stage-header-votacion'>
         <div className='pp-stage'>
           { stage === 'votacion-abierta' ? 'Votación abierta' : 'Votación cerrada' }
         </div>
+        <nav className='pp-nav'>
+           <button
+                type='button'
+                className={`btn btn-md btn-outline-primary ${appliedFilters.edad.adulto ? 'active' : ''}`}>
+                <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
+            </button>
+            <button
+                type='button'
+                className={`btn btn-md btn-outline-primary ${appliedFilters.edad.joven ? 'active' : ''}`}>
+                <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
+            </button>
+        </nav>
         <p className='header-text'>Elegí tu distrito:</p>
       </div>
       <nav>

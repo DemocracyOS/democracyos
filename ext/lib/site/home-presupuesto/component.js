@@ -133,6 +133,7 @@ class HomePresupuesto extends Component {
     }, () => {
       this.fetchTopics(0)
         .then((topics) => {
+          console.log(topics)
           this.setState({
             loading: false,
             topics,
