@@ -23,8 +23,6 @@ class Header extends Component {
     window.addEventListener('hashchange', () => {
       if (location.hash === '#completar-datos') {
         this.toggleUserModal()
-        // limpia el hash
-        history.pushState('', document.title, window.location.pathname)
       }
     }) 
   }
@@ -51,6 +49,11 @@ class Header extends Component {
   toggleUserModal = () => {
     this.setState({
       showUserModal: !this.state.showUserModal
+    }, () => {
+      // limpia el hash al salir del modal
+      if (!this.state.showUserModal) {
+        history.pushState('', document.title, window.location.pathname)
+      }
     })
   }
 
