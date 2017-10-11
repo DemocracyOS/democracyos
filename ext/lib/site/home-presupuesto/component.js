@@ -185,7 +185,9 @@ class HomePresupuesto extends Component {
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
             stage={this.state.stage}
-            updateFilters={this.prepareFilters} />
+            updateFilters={this.prepareFilters}
+            changeStage={this.changeStage}
+            />
         </div>
         <TopicGrid
           loading={this.state.loading}

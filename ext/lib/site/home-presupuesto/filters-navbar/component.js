@@ -148,6 +148,10 @@ class FiltersNavbar extends Component {
               anio: {
                 proyectos2016: { $set: false },
                 proyectos2017: { $set: false }
+              },
+              edad: {
+                joven: { $set: false },
+                adulto: { $set: false }
               }
             })
           }, this.exposeFilters)
@@ -255,7 +259,9 @@ class FiltersNavbar extends Component {
 
   // prepara los filtros para enviar la query definitiva a la API
   exposeFilters = () => {
+    console.log('appliedFilters',this.state.appliedFilters)
     let exposedFilters = this.filterCleanup(this.state.appliedFilters)
+    console.log('exposedFilters', exposedFilters)
       switch (this.props.stage) {
         case 'seguimiento':
           exposedFilters.estado.pendiente = false
@@ -305,15 +311,16 @@ class FiltersNavbar extends Component {
   render () {
     return (
       <div>
-    {(this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') && (
+      {(this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') && (
         <DistritoFilter
               active={this.state.distrito}
               onChange={this.handleDistritoFilterChange}
               changeEdad={this.handleEdadFilterChange}
+              changeStage={this.props.changeStage}
               stage={this.props.stage} 
               appliedFilters={this.state.appliedFilters}/>
-    )}
-    {this.props.stage === 'seguimiento' && (
+      )}
+      {this.props.stage === 'seguimiento' && (
         <header>
 
           <div className='stage-header'>
@@ -523,7 +530,7 @@ class FiltersNavbar extends Component {
           </nav>
         </header>
       )}
-      </div>
+    </div>
   )} // cierra el render
 
 } // cierra el componente
@@ -533,12 +540,16 @@ export default ReactOutsideEvent(FiltersNavbar)
 //Navbar en votacion abierta / votacion cerrada
 
 function DistritoFilter (props) {
-  const { active, onChange, stage, appliedFilters, changeEdad } = props
+  const { active, onChange, stage, appliedFilters, changeEdad, changeStage } = props
   return (
     <header>
       { stage === 'votacion-abierta' && (
+      <div>
+        <a className='link-stage'
+          onClick={() => {changeStage('seguimiento')}}>
+            {'< Ir a Seguimiento de Proyectos'}
+          </a>
         <div className='stage-header-votacion'>
-          <a><Ir a seguimiento de proyectos</a>
           <div className='pp-stage'>
             Votación Abierta
           </div>
@@ -560,6 +571,7 @@ function DistritoFilter (props) {
           </nav>
           <p className='header-text'>Elegí tu distrito:</p>
         </div>
+      </div>
       )}
       { stage === 'votacion-cerrada' && (
         <div className='stage-header'>
