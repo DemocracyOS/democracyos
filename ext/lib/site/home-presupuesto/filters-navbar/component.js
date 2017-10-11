@@ -536,28 +536,38 @@ function DistritoFilter (props) {
   const { active, onChange, stage, appliedFilters, changeEdad } = props
   return (
     <header>
-      <div className='stage-header-votacion'>
-        <div className='pp-stage'>
-          { stage === 'votacion-abierta' ? 'Votación abierta' : 'Votación cerrada' }
-        </div>
-        <nav className='pp-nav'>
-           <button
-                type='button'
-                data-name='adulto'
-                onClick={() => changeEdad('adulto')}
-                className={`btn btn-md btn-outline-primary ${appliedFilters.edad.adulto ? 'active' : ''}`}>
-                <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
+      { stage === 'votacion-abierta' && (
+        <div className='stage-header-votacion'>
+          <div className='pp-stage'>
+            Votación Abierta
+          </div>
+          <nav className='pp-nav'>
+            <button
+              type='button'
+              data-name='adulto'
+              onClick={() => changeEdad('adulto')}
+              className={`btn btn-md btn-outline-primary ${appliedFilters.edad.adulto ? 'active' : ''}`}>
+              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
             </button>
             <button
-                type='button'
-                data-name='joven'
-                onClick={() => changeEdad('joven')}
-                className={`btn btn-md btn-outline-primary ${appliedFilters.edad.joven ? 'active' : ''}`}>
-                <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
+              type='button'
+              data-name='joven'
+              onClick={() => changeEdad('joven')}
+              className={`btn btn-md btn-outline-primary ${appliedFilters.edad.joven ? 'active' : ''}`}>
+              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
             </button>
-        </nav>
-        <p className='header-text'>Elegí tu distrito:</p>
-      </div>
+          </nav>
+          <p className='header-text'>Elegí tu distrito:</p>
+        </div>
+      )}
+      { stage === 'votacion-cerrada' && (
+        <div className='stage-header'>
+          <div className='pp-stage'>
+            Votación Cerrada
+          </div>
+          <p className='header-text'>Elegí tu distrito:</p>
+        </div>
+      )}
       <nav>
         <div className='filter'>
           {distritos.map((d) => {

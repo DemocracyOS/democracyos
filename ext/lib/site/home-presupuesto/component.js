@@ -190,6 +190,8 @@ class HomePresupuesto extends Component {
         <TopicGrid
           loading={this.state.loading}
           districts={this.prepareTopics()}
+          age={this.state.edad}
+          stage={this.state.stage}
           noMore={this.state.noMore}
           paginateFoward={this.paginateFoward} />
         {this.state.topics && this.state.forumStage !== 'seguimiento' &&

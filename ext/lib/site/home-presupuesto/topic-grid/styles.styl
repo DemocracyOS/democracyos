@@ -16,16 +16,24 @@
       text-transform: uppercase
 
   .topics-section
-    padding-bottom: 45px
-
+    padding: 50px 0 45px
+    &:nth-child(even)
+      background-color: #EBEBEB
+      
     &.distrito
       background-color: #E7EBEE
 
-  .topics-section-title
-    margin-top: 0
-    font-size: 24px
-    font-weight: 400
-    color: #F59231
+    .topics-section-title
+      margin-top: 0
+      font-size: 24px
+      font-weight: 400
+      color: #F59231
+    
+    .topics-section-title-area
+      color: #00b1F0
+    
+    .topics-section-title-joven
+      color: #FF3366
 
   .topics-section-container
     margin-left: auto
@@ -37,6 +45,7 @@
       width = (i * 290px)
       @media (min-width: width)
         max-width: width
+
   .grid-bottom
     width: 100%
     text-align: center
