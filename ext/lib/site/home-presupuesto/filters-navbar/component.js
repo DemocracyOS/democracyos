@@ -538,6 +538,7 @@ function DistritoFilter (props) {
     <header>
       { stage === 'votacion-abierta' && (
         <div className='stage-header-votacion'>
+          <a><Ir a seguimiento de proyectos</a>
           <div className='pp-stage'>
             Votación Abierta
           </div>
