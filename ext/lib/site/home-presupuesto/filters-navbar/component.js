@@ -259,9 +259,7 @@ class FiltersNavbar extends Component {
 
   // prepara los filtros para enviar la query definitiva a la API
   exposeFilters = () => {
-    console.log('appliedFilters',this.state.appliedFilters)
     let exposedFilters = this.filterCleanup(this.state.appliedFilters)
-    console.log('exposedFilters', exposedFilters)
       switch (this.props.stage) {
         case 'seguimiento':
           exposedFilters.estado.pendiente = false
@@ -292,6 +290,10 @@ class FiltersNavbar extends Component {
       Object.keys(ob).forEach(k => {
         if (!(Object.values(ob[k]).includes(true))){
           transformation[k] = typeof ob[k] != "object" ? { $set: true } : createTransformation(ob[k])
+        }
+        if (this.props.stage === 'seguimiento' && k === 'estado' && ob[k].pendiente) {
+          transformation[k] = typeof ob[k] != "object" ? { $set: true } : createTransformation(ob[k])
+          ob[k].pendiente = false
         }
       })
       return transformation;

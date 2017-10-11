@@ -172,7 +172,9 @@ class HomePresupuesto extends Component {
     return topic.attrs && topic.attrs.district === distritoName
   }
 
-  changeStage = (stage) => this.setState({stage})
+  changeStage = (stage) => {
+    this.setState({stage: stage})
+  }
 
   render () {
     return (
