@@ -5,7 +5,6 @@ import t from 't-component'
 import ReCAPTCHA from 'react-google-recaptcha'
 import config from 'lib/config'
 import FormAsync from 'lib/site/form-async'
-import SignupComplete from 'ext/lib/site/signup-complete/component'
 
 export default class SignUp extends Component {
   constructor (props) {
@@ -238,9 +237,6 @@ export default class SignUp extends Component {
               </FormAsync>
             </div>
           )
-        }
-        {
-          this.state.active === 'complete-profile' && <SignupComplete />
         }
         {
           this.state.active === 'congrats' &&
