@@ -3,9 +3,9 @@
   .grid-bottom
     width: 100%
     text-align: center
-    button
+    .ver-mas
       cursor: pointer
-      margin: 6px
+      margin: 6px 6px 60px
       width: 180px
       border-radius: 5px
       padding: 0.8rem
@@ -14,17 +14,26 @@
       border: none
       font-size: 20px
       text-transform: uppercase
+
   .topics-section
     padding: 50px 0 45px
-
+    &:nth-child(even)
+      background-color: #EBEBEB
+      
     &.distrito
       background-color: #E7EBEE
 
-  .topics-section-title
-    margin-top: 0
-    font-size: 24px
-    font-weight: 400
-    color: #F59231
+    .topics-section-title
+      margin-top: 0
+      font-size: 24px
+      font-weight: 400
+      color: #F59231
+    
+    .topics-section-title-area
+      color: #00b1F0
+    
+    .topics-section-title-joven
+      color: #FF3366
 
   .topics-section-container
     margin-left: auto
@@ -36,3 +45,20 @@
       width = (i * 290px)
       @media (min-width: width)
         max-width: width
+
+  .grid-bottom
+    width: 100%
+    text-align: center
+    button
+      cursor: pointer
+      margin: 6px
+      width: 180px
+      border-radius: 5px
+      padding: 0.8rem
+      background-color: #1daeec
+      color: #fff
+      border: none
+      font-size: 20px
+      text-transform: uppercase
+    .error-message
+      margin: 70px

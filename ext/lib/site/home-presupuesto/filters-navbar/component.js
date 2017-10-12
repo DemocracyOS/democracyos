@@ -15,57 +15,57 @@ class FiltersNavbar extends Component {
 
       appliedFilters: {
         distrito: {
-          centro: true,
-          noroeste: true,
-          norte: true,
-          oeste: true,
-          sudoeste: true,
-          sur: true
+          centro: false,
+          noroeste: false,
+          norte: false,
+          oeste: false,
+          sudoeste: false,
+          sur: false
         },
         edad: {
-          adulto: true,
-          joven: true
+          adulto: false,
+          joven: false
         },
         anio: {
-          proyectos2016: true,
-          proyectos2017: true
+          proyectos2016: false,
+          proyectos2017: false
         },
         estado: {
-          proyectado: true,
-          ejecutandose: true,
-          finalizado: true
+          proyectado: false,
+          ejecutandose: false,
+          finalizado: false
         }
       },
 
       selectFilters: {
         distrito: {
-          centro: true,
-          noroeste: true,
-          norte: true,
-          oeste: true,
-          sudoeste: true,
-          sur: true
+          centro: false,
+          noroeste: false,
+          norte: false,
+          oeste: false,
+          sudoeste: false,
+          sur: false
         },
         edad: {
-          adulto: true,
-          joven: true
+          adulto: false,
+          joven: false
         },
         anio: {
-          proyectos2016: true,
-          proyectos2017: true
+          proyectos2016: false,
+          proyectos2017: false
         },
         estado: {
-          proyectado: true,
-          ejecutandose: true,
-          finalizado: true
+          proyectado: false,
+          ejecutandose: false,
+          finalizado: false
         }
       },
 
       badges: {
-        distrito: 6,
-        edad: 2,
-        anio: 2,
-        estado: 3
+        distrito: 0,
+        edad: 0,
+        anio: 0,
+        estado: 0
       },
 
       activeDropdown: ''
@@ -86,6 +86,10 @@ class FiltersNavbar extends Component {
                 sudoeste: { $set: false },
                 sur: { $set: false }
               },
+              edad: {
+                adulto: { $set: true },
+                joven: { $set: false }
+              },
               estado: {
                 proyectado: { $set: false },
                 ejecutandose: { $set: false },
@@ -104,7 +108,7 @@ class FiltersNavbar extends Component {
           this.setState({
             appliedFilters: update (this.state.appliedFilters, {
               distrito: {
-                centro: { $set: true },
+                centro: { $set: false },
                 noroeste: { $set: false },
                 norte: { $set: false },
                 oeste: { $set: false },
@@ -129,23 +133,25 @@ class FiltersNavbar extends Component {
           this.setState({
             appliedFilters: update (this.state.appliedFilters, {
               distrito: {
-                centro: { $set: true },
-                noroeste: { $set: true },
-                norte: { $set: true },
-                oeste: { $set: true },
-                sudoeste: { $set: true },
-                sur: { $set: true }
+                centro: { $set: false },
+                noroeste: { $set: false },
+                norte: { $set: false },
+                oeste: { $set: false },
+                sudoeste: { $set: false },
+                sur: { $set: false }
               },
               estado: {
-                proyectado: { $set: true },
-                ejecutandose: { $set: true },
-                finalizado: { $set: true },
-                pendiente: { $set: false },
-                perdedor: { $set: false }
+                proyectado: { $set: false },
+                ejecutandose: { $set: false },
+                finalizado: { $set: false }
               },
               anio: {
-                proyectos2016: { $set: true },
-                proyectos2017: { $set: true }
+                proyectos2016: { $set: false },
+                proyectos2017: { $set: false }
+              },
+              edad: {
+                joven: { $set: false },
+                adulto: { $set: false }
               }
             })
           }, this.exposeFilters)
@@ -172,9 +178,28 @@ class FiltersNavbar extends Component {
     // setea el filtro activo
     appliedFilters.distrito[distritoCurrent] = true
     // aplica los filtros actualizados
+
     this.setState({
       appliedFilters: appliedFilters,
       distrito: distritoCurrent
+    }, () => {
+      this.exposeFilters()
+    })
+  }
+
+  handleEdadFilterChange = (edad) => {
+    //resetea el filtro edad
+    let appliedFilters = update(this.state.appliedFilters, {
+      edad: {
+        adulto: { $set: false},
+        joven: { $set: false}
+      }
+    })
+    //actualiza filtro edad con la opcion elegida
+    appliedFilters.edad[edad] = true
+    //aplica los filtros actualizados
+    this.setState({
+      appliedFilters: appliedFilters
     }, () => {
       this.exposeFilters()
     })
@@ -187,7 +212,7 @@ class FiltersNavbar extends Component {
     } else {
       // se actualiza selectFilters y se abre el dropdown
       this.setState({
-        selectFilters: update({}, { $merge: this.state.appliedFilters }),
+        selectFilters: update(this.state.appliedFilters, { $merge: {} }),
         activeDropdown: id
       })
     }
@@ -216,7 +241,7 @@ class FiltersNavbar extends Component {
     var appliedFilters = this.state.appliedFilters
     this.setState ({
       // se actualiza selectFilters y se cierra el dropdown
-      selectFilters: update({}, { $merge: this.state.appliedFilters}),
+      selectFilters: update(this.state.appliedFilters, { $merge: {} }),
       activeDropdown: ''
     })
   }
@@ -224,25 +249,34 @@ class FiltersNavbar extends Component {
   applyFilters = (id) => (e) => {
     this.setState ({
       // actualiza appliedFilters y cierra el dropdown
-      appliedFilters: update({}, { $merge: this.state.selectFilters }),
+      appliedFilters: update(this.state.selectFilters, { $merge: {} }),
       activeDropdown: ''
-    }, () => {this.exposeFilters(id)})
-  }
-
-  // prepara los filtros para enviar la query definitiva a la API
-  exposeFilters = (id) => {
-    var exposedFilters = update({}, { $merge: this.state.appliedFilters })
-    exposedFilters = this.filterCleanup(exposedFilters)
-    this.setState ({
-      appliedFilters: update({}, {$merge: exposedFilters})
     }, () => {
+      this.exposeFilters()
       this.calculateBadges()
-      this.props.updateFilters(exposedFilters)
     })
   }
 
+  // prepara los filtros para enviar la query definitiva a la API
+  exposeFilters = () => {
+    let exposedFilters = this.filterCleanup(this.state.appliedFilters)
+      switch (this.props.stage) {
+        case 'seguimiento':
+          exposedFilters.estado.pendiente = false
+          exposedFilters.estado.perdedor = false
+          break
+        case 'votacion-abierta':
+          exposedFilters.estado.perdedor = false
+          break
+        case 'votacion-cerrada':
+          exposedFilters.estado.pendiente = false
+          break
+      }
+      this.props.updateFilters(exposedFilters)
+  }
 
-  calculateBadges = (id) => {
+
+  calculateBadges = () => {
     let badges = Object.keys(this.state.appliedFilters)
       .map(f => [f, Object.values(this.state.appliedFilters[f]).filter(boolean => boolean).length])
       .reduce((acc, f) => {acc[f[0]] = f[1]; return acc}, {})
@@ -250,33 +284,45 @@ class FiltersNavbar extends Component {
     this.setState({ badges })
   }
 
-
   filterCleanup = (filters) => {
-    return Object.keys(filters).map(f => {
-      if (Object.keys(filters[f]).filter(o => filters[f][o]).length === 0) {
-          Object.keys(filters[f]).forEach(o => {
-              filters[f][o] = true
-          })
-          return [f, filters[f]]
-      } else {
-          return [f, filters[f]]
-      }
-    }).reduce((acc, intFnOutput) => { acc[intFnOutput[0]] = intFnOutput[1]; return acc }, {})
+    let createTransformation = ob => {
+      let transformation = {}
+      Object.keys(ob).forEach(k => {
+        if (!(Object.values(ob[k]).includes(true))){
+          transformation[k] = typeof ob[k] != "object" ? { $set: true } : createTransformation(ob[k])
+        }
+        if (this.props.stage === 'seguimiento' && k === 'estado' && ob[k].pendiente) {
+          transformation[k] = typeof ob[k] != "object" ? { $set: true } : createTransformation(ob[k])
+          ob[k].pendiente = false
+        }
+      })
+      return transformation;
+    }
+    return update(filters, createTransformation(filters))
   }
 
+  changeColor = (id) => {
+     if (this.state.badges[id] > 0) { 
+      return 'applied-filter'
+    } else {  
+      return ''
+    }
+  }
 
 // RENDER
-
   render () {
     return (
       <div>
-    {(this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') && (
+      {(this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') && (
         <DistritoFilter
               active={this.state.distrito}
               onChange={this.handleDistritoFilterChange}
-              stage={this.props.stage} />
-    )}
-    {this.props.stage === 'seguimiento' && (
+              changeEdad={this.handleEdadFilterChange}
+              changeStage={this.props.changeStage}
+              stage={this.props.stage} 
+              appliedFilters={this.state.appliedFilters}/>
+      )}
+      {this.props.stage === 'seguimiento' && (
         <header>
 
           <div className='stage-header'>
@@ -291,7 +337,7 @@ class FiltersNavbar extends Component {
               <button
                 type='button'
                 id="filtro-distrito"
-                className = 'btn btn-md btn-outline-primary'
+                className = {`btn btn-md btn-outline-primary ${this.changeColor('distrito')}`}
                 onClick = {this.handleDropdown('opciones-distrito')}>
                 <span className='btn-content'><span className='btn-text'>Distrito</span> {this.state.badges.distrito !== 0 && <span className='badge'>{this.state.badges.distrito}</span>} </span> <span className='caret-down'>▾</span>
               </button>
@@ -363,7 +409,7 @@ class FiltersNavbar extends Component {
               <button
                 type='button'
                 id="filtro-edad"
-                className='btn btn-md btn-outline-primary'
+                className={`btn btn-md btn-outline-primary ${this.changeColor('edad')}`}
                 onClick={this.handleDropdown('opciones-edad')}
                 >
                 <span className='btn-content'><span className='btn-text'>Rango de edad</span> {this.state.badges.edad !== 0 && <span className='badge'>{this.state.badges.edad}</span>} </span> <span className='caret-down'>▾</span>
@@ -403,7 +449,7 @@ class FiltersNavbar extends Component {
               //   <button
               //     type='button'
               //     id="filtro-anio"
-              //     className = 'btn btn-md btn-outline-primary'
+              //     className = {`btn btn-md btn-outline-primary ${this.changeColor('anio')}`}
               //     onClick = {this.handleDropdown('opciones-anio')}>
               //     <span className='btn-content'><span className='btn-text'>Año</span> {this.state.badges.anio !== 0 && <span className='badge'>{this.state.badges.anio}</span>} </span> <span className='caret-down'>▾</span>
               //   </button>
@@ -442,7 +488,7 @@ class FiltersNavbar extends Component {
               <button
                 type='button'
                 id="filtro-estado"
-                className = 'btn btn-md btn-outline-primary'
+                className = {`btn btn-md btn-outline-primary ${this.changeColor('estado')}`}
                 onClick = {this.handleDropdown('opciones-estado')}>
                 <span className='btn-content'><span className='btn-text'>Estado</span> {this.state.badges.estado !== 0 && <span className='badge'>{this.state.badges.estado}</span>} </span> <span className='caret-down'>▾</span>
               </button>
@@ -486,24 +532,57 @@ class FiltersNavbar extends Component {
           </nav>
         </header>
       )}
-      </div>
+    </div>
   )} // cierra el render
 
 } // cierra el componente
 
 export default ReactOutsideEvent(FiltersNavbar)
 
+//Navbar en votacion abierta / votacion cerrada
 
 function DistritoFilter (props) {
-  const { active, onChange, stage } = props
+  const { active, onChange, stage, appliedFilters, changeEdad, changeStage } = props
   return (
     <header>
-      <div className='stage-header'>
-        <div className='pp-stage'>
-          { stage === 'votacion-abierta' ? 'Votación abierta' : 'Votación cerrada' }
+      { stage === 'votacion-abierta' && (
+      <div>
+        <a className='link-stage'
+          onClick={() => {changeStage('seguimiento')}}>
+            {'< Ir a Seguimiento de Proyectos'}
+          </a>
+        <div className='stage-header-votacion'>
+          <div className='pp-stage'>
+            Votación Abierta
+          </div>
+          <nav className='pp-nav'>
+            <button
+              type='button'
+              data-name='adulto'
+              onClick={() => changeEdad('adulto')}
+              className={`btn btn-md btn-outline-primary ${appliedFilters.edad.adulto ? 'active' : ''}`}>
+              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
+            </button>
+            <button
+              type='button'
+              data-name='joven'
+              onClick={() => changeEdad('joven')}
+              className={`btn btn-md btn-outline-primary ${appliedFilters.edad.joven ? 'active' : ''}`}>
+              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
+            </button>
+          </nav>
+          <p className='header-text'>Elegí tu distrito:</p>
         </div>
-        <p className='header-text'>Elegí tu distrito:</p>
       </div>
+      )}
+      { stage === 'votacion-cerrada' && (
+        <div className='stage-header'>
+          <div className='pp-stage'>
+            Votación Cerrada
+          </div>
+          <p className='header-text'>Elegí tu distrito:</p>
+        </div>
+      )}
       <nav>
         <div className='filter'>
           {distritos.map((d) => {

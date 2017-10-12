@@ -2,9 +2,12 @@ header
   display: flex
   flex-direction: column
   width: 100vw
-  margin: 50px 0
+  margin: 40px 0
+
   @media screen and (max-width: 768px)
     margin-top: 42px
+  @media screen and (max-width: 425px)
+    margin-top: 5px 
   .stage-header
     display: flex
     align-items: center
@@ -12,6 +15,8 @@ header
     position: relative
     @media screen and (max-width: 768px)
       flex-direction: column
+    @media screen and (max-width: 425px)
+      border-bottom: 1px solid #4f5353
     .pp-stage
       display: inline-block
       padding: .8rem
@@ -27,6 +32,8 @@ header
       @media screen and (max-width: 768px)
         position: static
         align-self: flex-start
+      @media screen and (max-width: 425px)
+        width: 100%
     .header-text
       margin: 0 auto
       font-size: 1.5rem
@@ -35,17 +42,76 @@ header
         margin-left: 360px
       @media screen and (max-width: 768px)
         margin: 15px auto 0
+      @media screen and (max-width: 425px)
+        margin-top: 0
+        font-size: 1rem
+        padding: 18px 0
+
+  .link-stage
+      color: #FF8700
+      font-weight: 400
+      margin-left: 20px
+      cursor: pointer
+      &:hover
+        color: #FF8700
+  .stage-header-votacion
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: nowrap
+    flex-direction: column
+    @media screen and (max-width: 425px)
+      margin-top: 30px
+    .pp-stage
+      color: #4f5353
+      font-size: 1.5rem
+      font-weight: 700
+      text-align: center
+      text-transform: uppercase
+    .pp-nav
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      margin: 40px auto
+      justify-content: center
+      .btn
+        margin: 20px
+        position: relative
+        box-shadow: none
+        border-color: #4f5353
+        border-radius: 5px
+        background-color: #fff
+        color: #4f5353
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+        width: 260px
+        .btn-content
+          margin: 0 auto
+      .active
+        outline: 0
+        border-color: #f59231
+        color: #fff
+        background-color: #f59231
+    .header-text
+      font-size: 1.5rem
+      color: #4f5353
       
   nav
     display: flex
     align-items: center
     flex-wrap: wrap
     margin: 20px auto 0
+    @media screen and (max-width: 425px)
+      margin: 0
     
     .filter
       display: inline-block
-      margin: 10px 0
+      margin: 10px auto
       position: relative
+      @media screen and (max-width: 425px)
+        width: 100%
+        margin: 0
+        display: flex
+        flex-direction: column
       .btn
         margin: 6px
         width: 180px
@@ -59,6 +125,14 @@ header
         &:hover,
         &:focus
           color: #f59231
+        @media screen and (max-width: 425px)
+          width: 100%
+          margin: 0px
+          border-radius: 0px
+          border-top: none
+          border-right: none
+          border-left: none
+          padding: 18px
         .btn-content
           margin: 0 auto
           .badge
@@ -75,6 +149,9 @@ header
           right: 9px
           color: #4f5353
           font-size: .8rem
+          @media screen and (max-width: 425px)
+            top: 18px
+            right: 25px
       .btn-votacion
         &:hover
           outline: 0
@@ -86,8 +163,14 @@ header
         border-color: #00adef
         color: #fff
         background-color: #00adef
+        &:hover,
         &:focus
           color: #fff
+      .applied-filter
+        color: #f59231
+        &:hover,
+        &:focus
+          color: #f59231
         
       .filter-dropdown
         cursor: auto
@@ -103,8 +186,18 @@ header
         color: #4f5353
         background-color: #fff
         box-shadow: 2px 2px 2px rgba(0,0,0,.3)
+        @media screen and (max-width: 425px)
+          width: 100%
+          margin: 0
+          top: 58px
+          left: 0px
+          border: 0
+          border-radius: 0px
+          padding: 15px 25px
         .filter-options
           display: flex
+          @media screen and (max-width: 425px)
+            justify-content: space-between
           .filter-column
             .option-container
               display: flex
@@ -146,6 +239,8 @@ header
                 white-space: nowrap
           .filter-column + .filter-column
             margin-left: 25px
+            @media screen and (max-width: 425px)
+              margin-left: 0
         .dropdown-actions
           margin-top: 10px
           display: flex
@@ -157,6 +252,8 @@ header
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
             color: #4f5353
             cursor: pointer
+            @media screen and (max-width: 425px)
+              font-size: 0.9rem
           a:last-child
             color: #f59231
             text-decoration: underline
