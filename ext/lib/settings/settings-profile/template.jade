@@ -1,0 +1,33 @@
+#profile-wrapper.hide(data-section=urlBuilder.for('settings.profile'))
+  .profile-settings
+    .heading
+      .circle
+        i.icon-user
+      h1= t('settings.profile')
+    form.form(action='/api/settings/profile', method='post', role='form', autocomplete='off', autovalidate='autovalidate', autosubmit='autosubmit')
+      ul.form-messages
+      .form-group
+        label= t('settings.first-name')
+        input.form-control(type='text', id='firstName', name='firstName', maxlength=100, placeholder=t('settings.first-name'), value='#{user.firstName}', validate='required firstname')
+      .form-group
+        label= t('settings.last-name')
+        input.form-control(type='text', id='lastName', name='lastName', maxlength=100, placeholder=t('settings.last-name'), value='#{user.lastName}', validate='required lastname')
+      .form-group
+        label= t('signup.email')
+        input.form-control(type='text', disabled='disabled', name='email', maxlength=200, placeholder=t('forgot.mail.example'), value='#{user.email}', validate='required email')
+      .form-group
+        label= t('settings.locale')
+        select.form-control(id='locale', name='locale')
+      .form-group.profile-picture
+        label= t('settings.profile-picture')
+        .profile-picture-form
+          .image-container
+            img(src=user.profilePicture(), width=65)
+          .controls
+            a(href='https://gravatar.com', target='_blank')
+              = t('settings.change-at-gravatar') + ' '
+              i.icon-share-alt
+            input.form-control(type='text', name='profilePictureUrl', maxlength=200, placeholder=t('settings.paste-url-image'), value=user.profilePictureUrl, validate='url')
+      .well.well-lg.clearfix.complete-profile-registry
+      .form-group: button.btn.btn-success.btn-block.btn-lg
+        =t('settings.save')
