@@ -16,9 +16,6 @@ export default class SignUp extends Component {
       name: '',
       lastName: '',
       email: '',
-      sex: '',
-      cod_doc: '',
-      nro_doc: '',
       pass: '',
       captchaKey: ''
     }
@@ -29,9 +26,6 @@ export default class SignUp extends Component {
     this.saveLastName = this.saveLastName.bind(this)
     this.saveEmail = this.saveEmail.bind(this)
     this.savePass = this.savePass.bind(this)
-    this.saveSex = this.saveSex.bind(this)
-    this.saveIdType = this.saveIdType.bind(this)
-    this.saveIdNumber = this.saveIdNumber.bind(this)
     this.checkPassLength = this.checkPassLength.bind(this)
     this.onCaptchaChange = this.onCaptchaChange.bind(this)
     this.onSubmitClick = this.onSubmitClick.bind(this)
@@ -79,18 +73,6 @@ export default class SignUp extends Component {
     this.setState({ pass: e.target.value })
   }
 
-  saveSex (e) {
-    this.setState({ sex: e.target.value })
-  }
-
-  saveIdType (e) {
-    this.setState({ cod_doc: e.target.value })
-  }
-
-  saveIdNumber (e) {
-    this.setState({ nro_doc: e.target.value })
-  }
-
   checkPassLength (e) {
     const passLength = e.target.value
 
@@ -106,12 +88,14 @@ export default class SignUp extends Component {
   }
 
   checkIdNumber (e) {
-    const idNumber = e.target.value
+    const idNumber = parseInt(e.target.value)
     const expr = new RegExp('^[0-9]{7,8}$')
+
     if(!expr.test(idNumber)) {
     e.target.setCustomValidity('Ingresa un número de documento válido')
     } else {
       e.target.setCustomValidity('')
+      return idNumber
     }
   }
 
@@ -202,10 +186,9 @@ export default class SignUp extends Component {
                   <label htmlFor=''>Sexo</label>
                   <select 
                     className='form-control' 
-                    defaultValue='sexo'
-                    name='extra.sexo'
-                    onChange={this.saveSex}>
-                    <option value='sexo'>Sexo</option>
+                    defaultValue=''
+                    name='extra.sexo'>
+                    <option value=''disabled >Sexo</option>
                     <option value='F'>Femenino</option>
                     <option value='M'>Masculino</option>
                   </select>
@@ -215,22 +198,20 @@ export default class SignUp extends Component {
                   <select 
                     className='form-control'
                     name='extra.cod_doc' 
-                    defaultValue='tipo'
-                    onChange={this.saveIdType}>
-                    <option value='tipo'>Tipo</option>
+                    defaultValue='' >
+                    <option value='' disabled>Tipo</option>
                     <option value='DNI'>DNI</option>
                     <option value='LC'>LC</option>
                     <option value='LE'>LE</option>
                   </select>
                   <input 
-                    type='text'
+                    type='number'
                     className='form-control'
                     id='nro_doc'
                     name='extra.nro_doc'
                     maxLength='10'
                     placeholder='Número de documento'
-                    onBlur={this.checkIdNumber}
-                    onChange={this.saveIdNumber}/>
+                    onBlur={this.checkIdNumber}/>
                 </div>
                 <div className='form-group'>
                   <label htmlFor=''>{t('password')}</label>
