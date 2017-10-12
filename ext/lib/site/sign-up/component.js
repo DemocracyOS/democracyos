@@ -171,6 +171,28 @@ export default class SignUp extends Component {
                     required />
                 </div>
                 <div className='form-group'>
+                  <label htmlFor=''>Sexo</label>
+                  <select className='form-control' defaultValue='sexo'>
+                    <option value='sexo'>Sexo</option>
+                    <option value='F'>Femenino</option>
+                    <option value='M'>Masculino</option>
+                  </select>
+                </div>
+                <div className='form-group'>
+                  <label htmlFor=''>Tu documento</label>
+                  <select 
+                    className='form-control' 
+                    defaultValue='tipo'>
+                    <option value='tipo'>Tipo</option>
+                    <option value='DNI'>DNI</option>
+                    <option value='LC'>LC</option>
+                    <option value='LE'>LE</option>
+                  </select>
+                  <input 
+                    type='text'
+                    className='form-control'/>
+                </div>
+                <div className='form-group'>
                   <label htmlFor=''>{t('password')}</label>
                   <input
                     id='signup-pass'
