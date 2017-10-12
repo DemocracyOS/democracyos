@@ -51,8 +51,10 @@ function getFeed (req, res, next) {
           }
         }
       ], function (err, results) {
-        if (err || !results[0]) {
-          res.json({ result: null, error: err || 'error' })
+        if (err) {
+          return res.json({ result: null, error: err })
+        } else if (!results[0]) {
+          return res.json({ result: [] })
         } else {
           let topics = results[0].topics.map(topic => ({
             id: topic._id,

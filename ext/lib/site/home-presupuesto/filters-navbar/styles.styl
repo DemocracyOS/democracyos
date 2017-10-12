@@ -2,8 +2,8 @@ header
   display: flex
   flex-direction: column
   width: 100vw
-  max-width:100%
-  margin-top: 50px
+  margin: 40px 0
+
   @media screen and (max-width: 768px)
     margin-top: 42px
   @media screen and (max-width: 425px)
@@ -46,6 +46,54 @@ header
         margin-top: 0
         font-size: 1rem
         padding: 18px 0
+
+  .link-stage
+      color: #FF8700
+      font-weight: 400
+      margin-left: 20px
+      cursor: pointer
+      &:hover
+        color: #FF8700
+  .stage-header-votacion
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: nowrap
+    flex-direction: column
+    @media screen and (max-width: 425px)
+      margin-top: 30px
+    .pp-stage
+      color: #4f5353
+      font-size: 1.5rem
+      font-weight: 700
+      text-align: center
+      text-transform: uppercase
+    .pp-nav
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      margin: 40px auto
+      justify-content: center
+      .btn
+        margin: 20px
+        position: relative
+        box-shadow: none
+        border-color: #4f5353
+        border-radius: 5px
+        background-color: #fff
+        color: #4f5353
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+        width: 260px
+        .btn-content
+          margin: 0 auto
+      .active
+        outline: 0
+        border-color: #f59231
+        color: #fff
+        background-color: #f59231
+    .header-text
+      font-size: 1.5rem
+      color: #4f5353
       
   nav
     display: flex
@@ -57,11 +105,13 @@ header
     
     .filter
       display: inline-block
-      margin: 10px 0
+      margin: 10px auto
       position: relative
       @media screen and (max-width: 425px)
         width: 100%
         margin: 0
+        display: flex
+        flex-direction: column
       .btn
         margin: 6px
         width: 180px
@@ -113,8 +163,14 @@ header
         border-color: #00adef
         color: #fff
         background-color: #00adef
+        &:hover,
         &:focus
           color: #fff
+      .applied-filter
+        color: #f59231
+        &:hover,
+        &:focus
+          color: #f59231
         
       .filter-dropdown
         cursor: auto

@@ -133,6 +133,7 @@ class HomePresupuesto extends Component {
     }, () => {
       this.fetchTopics(0)
         .then((topics) => {
+          console.log(topics)
           this.setState({
             loading: false,
             topics,
@@ -171,7 +172,9 @@ class HomePresupuesto extends Component {
     return topic.attrs && topic.attrs.district === distritoName
   }
 
-  changeStage = (stage) => this.setState({stage})
+  changeStage = (stage) => {
+    this.setState({stage: stage})
+  }
 
   render () {
     return (
@@ -184,11 +187,15 @@ class HomePresupuesto extends Component {
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
             stage={this.state.stage}
-            updateFilters={this.prepareFilters} />
+            updateFilters={this.prepareFilters}
+            changeStage={this.changeStage}
+            />
         </div>
         <TopicGrid
           loading={this.state.loading}
           districts={this.prepareTopics()}
+          age={this.state.edad}
+          stage={this.state.stage}
           noMore={this.state.noMore}
           paginateFoward={this.paginateFoward} />
         {this.state.topics && this.state.forumStage !== 'seguimiento' &&
