@@ -16,7 +16,7 @@ export default class SignupComplete extends Component {
       sexo_disabled: !!extra.sexo,
       nro_doc_disabled: !!extra.nro_doc,
       data: {
-        cod_doc: extra.cod_doc || 'DNI',
+        cod_doc: extra.cod_doc || '',
         sexo: extra.sexo || '',
         nro_doc: extra.nro_doc || null
       }
@@ -108,7 +108,7 @@ export default class SignupComplete extends Component {
             )}
             <div className='form-group field-sexo'>
               <div className='form-select-wrapper'>
-                <i className='icon-arrow-down' />
+                <i />
                 <select
                   className='form-control custom-select field-sexo'
                   name='sexo'
@@ -117,15 +117,15 @@ export default class SignupComplete extends Component {
                   onChange={this.handleInputChange}
                   disabled={this.state.loading || this.state.sexo_disabled}
                   required>
-                  <option value='' default>¿Cuál es tu sexo?</option>
-                  <option value='F'>Femenino</option>
-                  <option value='M'>Masculino</option>
+                  <option className='opcion' value='' disabled>¿Cuál es tu sexo?</option>
+                  <option className='opcion' value='F'>Femenino</option>
+                  <option className='opcion' value='M'>Masculino</option>
                 </select>
               </div>
             </div>
             <div className='form-group field-cod-doc'>
               <div className='form-select-wrapper'>
-                <i className='icon-arrow-down' />
+                <i />
                 <select
                   className='form-control custom-select'
                   name='cod_doc'
@@ -134,7 +134,7 @@ export default class SignupComplete extends Component {
                   onChange={this.handleInputChange}
                   disabled={this.state.loading || this.state.cod_doc_disabled}
                   required>
-                  <option value='' default>Tipo</option>
+                  <option value='' disabled>Tipo</option>
                   <option value='DNI'>DNI</option>
                   <option value='LC'>LC</option>
                   <option value='LE'>LE</option>
