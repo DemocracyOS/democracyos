@@ -184,6 +184,7 @@ export default class SignUp extends Component {
                 </div>
                 <div className='form-group'>
                   <label htmlFor=''>Sexo</label>
+                  <span className='optional-field'>Este campo es opcional.</span>
                   <select 
                     className='form-control' 
                     defaultValue=''
@@ -195,6 +196,7 @@ export default class SignUp extends Component {
                 </div>
                 <div className='form-group form-group-documento'>
                   <label htmlFor=''>Tu documento</label>
+                  <span className='optional-field'>Este campo es opcional.</span>
                   <select 
                     className='form-control'
                     name='extra.cod_doc' 
