@@ -44,11 +44,12 @@
                 option(selected=tag.id === topicTag, value=tag.id)
                   = tag.name
 
-        .form-group
-          label= t('admin-topics-form.label.tags')
-          - if (te('admin-topics-form.description.tags'))
-            span.help-text= t('admin-topics-form.description.tags')
-          div.tags-autocomplete
+        - if (forum.name !== 'presupuesto')         
+          .form-group
+            label= t('admin-topics-form.label.tags')
+            - if (te('admin-topics-form.description.tags'))
+              span.help-text= t('admin-topics-form.description.tags')
+            div.tags-autocomplete
             - if (forum.initialTags && forum.initialTags.length > 0)
               span.help-text= t('admin-topics-form.description.forum-tags')
               - each tag in forum.initialTags
@@ -121,6 +122,8 @@
           - if (te('admin-topics-form.description.summary'))
             span.help-text= t('admin-topics-form.description.summary')
           textarea.form-control(name='body')= topic.body
+
+        
         .form-group.closingAt
           label= t('admin-topics-form.label.closingAt')
           - if (te('admin-topics-form.description.closingAt'))

@@ -113,12 +113,14 @@ export default class TopicForm extends FormView {
     const tags = this.el[0].querySelectorAll('input[type="tags"]')
     Array.prototype.forEach.call(tags, tagsInput)
 
-    ReactRender((
-      <ForumTagsSearch
-        tags={this.topic && this.topic.tags && this.topic.tags}
-        initialTags={this.forum.initialTags}
-        forum={this.forum.id} />
-    ), this.el[0].querySelector('.tags-autocomplete'))
+    if (this.forum.name !== 'presupuesto') {
+      ReactRender((
+        <ForumTagsSearch
+          tags={this.topic && this.topic.tags && this.topic.tags}
+          initialTags={this.forum.initialTags}
+          forum={this.forum.id} />
+      ), this.el[0].querySelector('.tags-autocomplete'))
+    }
 
     if (this.forum.topicsAttrs.length > 0) {
       const attrsWrapper = this.el[0].querySelector('[data-attrs]')
