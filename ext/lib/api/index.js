@@ -13,6 +13,7 @@ app.use('/ext/api/pp-feed', require('./pp-feed'))
 app.use('/ext/api/noticias', require('./noticias'))
 app.use('/ext/api/change-stage', require('./change-stage'))
 app.use('/api/v2', require('./fixedOpenTopicMethod.js'))
+app.use('/api/v2', require('./customCsvExportUpdate.js'))
 
 app.use(function validationErrorHandler (err, req, res, next) {
   if (res.headersSent) return next(err)
