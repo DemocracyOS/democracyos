@@ -32,24 +32,27 @@
           - if (te('admin-topics-form.description.mediaTitle'))
             span.help-text= t('admin-topics-form.description.mediaTitle')
           input.form-control(type='text', maxlength='200', id='mediaTitle', name='mediaTitle', placeholder=t('admin-topics-form.label.mediaTitle'), value=topic.mediaTitle, validate='required')
-        .form-group
-          label= t('admin-topics-form.label.tag')
-          - if (te('admin-topics-form.description.tag'))
-            span.help-text= t('admin-topics-form.description.tag')
-          select.form-control(name='tag', validate='required')
-            - var topicTag = typeof topic.tag === 'string' ? topic.tag : (topic.tag && topic.tag.id)
-            - each tag in tags
-              option(selected=tag.id === topicTag, value=tag.id)
-                = tag.name
+        
+        - if (forum.name !== 'presupuesto')
+          .form-group
+            label= t('admin-topics-form.label.tag')
+            - if (te('admin-topics-form.description.tag'))
+              span.help-text= t('admin-topics-form.description.tag')
+            select.form-control(name='tag', validate='required')
+              - var topicTag = typeof topic.tag === 'string' ? topic.tag : (topic.tag && topic.tag.id)
+              - each tag in tags
+                option(selected=tag.id === topicTag, value=tag.id)
+                  = tag.name
+
         .form-group
           label= t('admin-topics-form.label.tags')
           - if (te('admin-topics-form.description.tags'))
             span.help-text= t('admin-topics-form.description.tags')
           div.tags-autocomplete
-          - if (forum.initialTags && forum.initialTags.length > 0)
-            span.help-text= t('admin-topics-form.description.forum-tags')
-            - each tag in forum.initialTags
-              button.btn.btn-default.btn-sm.forum-tag(data-value=tag, type='button', disabled=(topic.tags && !!~topic.tags.indexOf(tag)))= tag
+            - if (forum.initialTags && forum.initialTags.length > 0)
+              span.help-text= t('admin-topics-form.description.forum-tags')
+              - each tag in forum.initialTags
+                button.btn.btn-default.btn-sm.forum-tag(data-value=tag, type='button', disabled=(topic.tags && !!~topic.tags.indexOf(tag)))= tag
 
         - if (forum.topicsAttrs.length > 0)
           fieldset.attrs-wrapper
