@@ -123,23 +123,23 @@
             span.help-text= t('admin-topics-form.description.summary')
           textarea.form-control(name='body')= topic.body
 
-        
-        .form-group.closingAt
-          label= t('admin-topics-form.label.closingAt')
-          - if (te('admin-topics-form.description.closingAt'))
-            span.help-text= t('admin-topics-form.description.closingAt')
-          - var closingAt = ''
-          - var closingAtTime = ''
-          - if (topic.closingAt)
-            - closingAt = new Date(topic.closingAt)
-            - var closingAtTime = moment(closingAt).format('H:mm')
-            - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
-          .form-inline
-            .form-group
-              input.form-control(name='closingAt', readonly=true, value=closingAt, placeholder='yyyy/mm/dd')
-              input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
-            button.btn.btn-link.remove-button(type='button', data-clear-closing-at)
-              i.icon-trash
+        - if (forum.name !== 'presupuesto')
+          .form-group.closingAt
+            label= t('admin-topics-form.label.closingAt')
+            - if (te('admin-topics-form.description.closingAt'))
+              span.help-text= t('admin-topics-form.description.closingAt')
+            - var closingAt = ''
+            - var closingAtTime = ''
+            - if (topic.closingAt)
+              - closingAt = new Date(topic.closingAt)
+              - var closingAtTime = moment(closingAt).format('H:mm')
+              - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
+            .form-inline
+              .form-group
+                input.form-control(name='closingAt', readonly=true, value=closingAt, placeholder='yyyy/mm/dd')
+                input.form-control(name='closingAtTime', maxlength='10', value=closingAtTime, placeholder='hh:mm', validate='time')
+              button.btn.btn-link.remove-button(type='button', data-clear-closing-at)
+                i.icon-trash
 
         .form-group
           label=t('admin-topics-form.label.resources')

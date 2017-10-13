@@ -179,10 +179,12 @@ export default class TopicForm extends FormView {
    */
 
   renderDateTimePickers () {
-    this.closingAt = this.find('[name=closingAt]', this.el)
-    this.closingAtTime = this.find('[name=closingAtTime]')
-    this.dp = new Datepicker(this.closingAt[0])
-    return this
+    if (this.forum.name !== 'presupuesto') {
+      this.closingAt = this.find('[name=closingAt]', this.el)
+      this.closingAtTime = this.find('[name=closingAtTime]')
+      this.dp = new Datepicker(this.closingAt[0])
+      return this
+    }
   }
 
   onaddlinkclick (evt) {
