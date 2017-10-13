@@ -1,28 +1,38 @@
 .modal-container
-  position: absolute
   width: 550px
   height: 550px
-  background-color: #fff
-  border: 2px solid #525252
-  z-index: 99
-  left: 50%
-  top: 50% 
   margin-left: -275px
   margin-top: -275px
+  padding: 16px
+  position: absolute
+  left: 50%
+  top: 50% 
+  background-color: #fff
+  // border: 2px solid #525252
+  z-index: 99
+  -webkit-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
+  -moz-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
+  box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
   @media screen and (max-width: 550px)
     width: 340px
     margin-left: -170px
   
   .close-modal
-    display: block
-    width: 50px
-    padding: 8px 15px
-    font-size: 30px
-    font-weight: 300
+    padding: 2px 8px
+    color: #1daeec
+    border: 2px solid #1daeec
+    border-radius: 50px
+    text-align: center
+    font-size: 18px
+    font-weight: 400
     cursor: pointer 
+    float: right
+    &:hover
+      color: #1daeec
   
   .form-component-wrapper
     margin: 0 auto
-    max-width: 360px
+    clear: both
+    max-width: 370px
     @media screen and (max-width: 550px)
       max-width: 300px

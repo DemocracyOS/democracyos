@@ -21,6 +21,7 @@ export default class SignupComplete extends Component {
         nro_doc: extra.nro_doc || null
       }
     }
+    
   }
 
   handleForm = (evt) => {
@@ -92,100 +93,90 @@ export default class SignupComplete extends Component {
     return (
       <div className='ext-signup-complete'>
         {this.state.loading && <div className='loader' />}
-        <h3 className='title'>Completá tus datos</h3>
-        <p>Para poder votar el Presupuesto Participativo necesitás tener tu perfil completo.</p>
         <form role='form' onSubmit={this.handleForm} method='POST'>
-          {this.state.error && (
-            <div className='alert alert-danger error' role='alert'>
-              <span dangerouslySetInnerHTML={{
-                __html: this.state.error
-              }} />
+          <div className='form-header'>
+            <h3 className='title'>Completá tus datos</h3>
+            <p>Para poder votar es necesario completar estos datos. En caso de no querer hacerlo ahora, podés hacerlo en cualquier momento desde tu perfil de usuario.</p>
+          </div>
+          <div className='form-fields'>
+            {this.state.error && (
+              <div className='alert alert-danger error' role='alert'>
+                <span dangerouslySetInnerHTML={{
+                  __html: this.state.error
+                }} />
+              </div>
+            )}
+            <div className='form-group field-sexo'>
+              <div className='form-select-wrapper'>
+                <i className='icon-arrow-down' />
+                <select
+                  className='form-control custom-select field-sexo'
+                  name='sexo'
+                  id='sexo'
+                  value={this.state.data.sexo}
+                  onChange={this.handleInputChange}
+                  disabled={this.state.loading || this.state.sexo_disabled}
+                  required>
+                  <option value='' default>¿Cuál es tu sexo?</option>
+                  <option value='F'>Femenino</option>
+                  <option value='M'>Masculino</option>
+                </select>
+              </div>
             </div>
-          )}
-          <div className='form-group'>
-            <label htmlFor='cod_doc'>Tipo de documento</label>
-            <div className='form-select-wrapper'>
-              <i className='icon-arrow-down' />
-              <select
+            <div className='form-group field-cod-doc'>
+              <div className='form-select-wrapper'>
+                <i className='icon-arrow-down' />
+                <select
+                  className='form-control custom-select'
+                  name='cod_doc'
+                  id='cod_doc'
+                  value={this.state.data.cod_doc}
+                  onChange={this.handleInputChange}
+                  disabled={this.state.loading || this.state.cod_doc_disabled}
+                  required>
+                  <option value='' default>Tipo</option>
+                  <option value='DNI'>DNI</option>
+                  <option value='LC'>LC</option>
+                  <option value='LE'>LE</option>
+                </select>
+              </div>
+            </div>
+            <div className='form-group field-nro-doc'>
+              <input
                 className='form-control custom-select'
-                name='cod_doc'
-                id='cod_doc'
-                value={this.state.data.cod_doc}
-                onChange={this.handleInputChange}
-                disabled={this.state.loading || this.state.cod_doc_disabled}
-                required>
-                <option value='DNI'>DNI</option>
-                <option value='LC'>LC</option>
-                <option value='LE'>LE</option>
-              </select>
+                type='text'
+                name='nro_doc'
+                id='nro_doc'
+                maxLength='10'
+                onChange={this.handleInputNumberChange}
+                value={prettyNumber(this.state.data.nro_doc) || ''}
+                disabled={this.state.loading || this.state.nro_doc_disabled}
+                placeholder='Número de documento'
+                required />
             </div>
           </div>
-          <div className='form-group'>
-            <label htmlFor='nro_doc'>Nº de documento</label>
-            <input
-              className='form-control custom-select'
-              type='text'
-              name='nro_doc'
-              id='nro_doc'
-              maxLength='10'
-              onChange={this.handleInputNumberChange}
-              value={prettyNumber(this.state.data.nro_doc) || ''}
-              disabled={this.state.loading || this.state.nro_doc_disabled}
-              required />
-          </div>
-          <div className='form-group'>
-            <label>Género</label>
-            <div className='form-check'>
-              <label className='form-check-label'>
-                <input
-                  type='radio'
-                  className='form-check-input'
-                  name='sexo'
-                  value='F'
-                  onChange={this.handleInputChange}
-                  defaultChecked={this.state.data.sexo === 'F'}
-                  disabled={this.state.loading || this.state.sexo_disabled}
-                  required />
-                Femenino
-              </label>
-            </div>
-            <div className='form-check'>
-              <label className='form-check-label'>
-                <input
-                  type='radio'
-                  className='form-check-input'
-                  name='sexo'
-                  value='M'
-                  onChange={this.handleInputChange}
-                  defaultChecked={this.state.data.sexo === 'M'}
-                  disabled={this.state.loading || this.state.sexo_disabled}
-                  required />
-                Masculino
-              </label>
-            </div>
+          
+          <div className='form-actions'>
+            {!user.profileIsComplete() && (
+              <button
+                className='btn-modal'
+                type='submit'
+                disabled={this.state.loading}>
+                Enviar datos
+              </button>
+            )}
+
+            {!user.profileIsComplete() && (
+              <Link
+                onClick={this.props.toggleUserModal}
+                className='complete-later'>
+                Cancelar
+              </Link>
+            )}
           </div>
 
-          {!user.profileIsComplete() && (
-            <button
-              className='btn btn-block btn-success'
-              type='submit'
-              disabled={this.state.loading}>
-              Guardar
-            </button>
-          )}
         </form>
 
-        {!user.profileIsComplete() && (
-          <div className='complete-later'>
-            <Link
-              onClick={this.props.toggleUserModal}
-              className='btn btn-sm btn-link'>
-              completar mas tarde
-              {' '}
-              <i className='icon-arrow-right' />
-            </Link>
-          </div>
-        )}
       </div>
     )
   }
