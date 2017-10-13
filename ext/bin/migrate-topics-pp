@@ -25,7 +25,7 @@ Promise.all([
     .then(() => Topic.find({ forum: pp.id }).exec())
   )
   .then((topics) => Promise.all(topics.map((topic) => {
-    topic.set('attrs.anio', '2016')
+    topic.set('attrs.anio', '2017')
     if (topic.attrs.hasOwnProperty('winner') && topic.attrs.winner === false) {
       topic.set('attrs.state', 'perdedor')
     } else if (!topic.attrs.hasOwnProperty('winner') && !topic.attrs.hasOwnProperty('state')) {
