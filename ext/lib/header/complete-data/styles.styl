@@ -1,38 +1,51 @@
-.modal-container
-  width: 550px
-  height: 550px
-  margin-left: -275px
-  margin-top: -275px
-  padding: 16px
-  position: absolute
-  left: 50%
-  top: 50% 
-  background-color: #fff
-  // border: 2px solid #525252
-  z-index: 99
-  -webkit-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
-  -moz-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
-  box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
-  @media screen and (max-width: 550px)
-    width: 340px
-    margin-left: -170px
-  
-  .close-modal
-    padding: 2px 8px
-    color: #1daeec
-    border: 2px solid #1daeec
-    border-radius: 50px
-    text-align: center
-    font-size: 18px
-    font-weight: 400
-    cursor: pointer 
-    float: right
-    &:hover
-      color: #1daeec
-  
-  .form-component-wrapper
-    margin: 0 auto
-    clear: both
-    max-width: 370px
+
+.modal-wrapper
+    position: fixed
+    width: 100vw
+    height: 100vh
+    z-index: 50
+    
+  .overlay
+    height: 100%
+    width: 100%
+    background-color: #fff
+    opacity: .5
+    z-index: 75
+
+  .modal-dialog
+    width: 550px
+    height: 550px
+    margin-left: -275px
+    margin-top: -275px
+    padding: 16px
+    position: absolute
+    left: 50%
+    top: 50% 
+    background-color: #fff
+    z-index: 99
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
+    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.33)
     @media screen and (max-width: 550px)
-      max-width: 300px
+      width: 340px
+      margin-left: -170px
+    
+    .close-modal
+      padding: 2px 8px
+      color: #1daeec
+      border: 2px solid #1daeec
+      border-radius: 50px
+      text-align: center
+      font-size: 18px
+      font-weight: 400
+      cursor: pointer 
+      float: right
+      &:hover
+        color: #1daeec
+    
+    .form-component-wrapper
+      margin: 0 auto
+      clear: both
+      max-width: 370px
+      @media screen and (max-width: 550px)
+        max-width: 300px

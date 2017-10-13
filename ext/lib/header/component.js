@@ -62,7 +62,7 @@ class Header extends Component {
     const showSubMenu = this.showSub()
     return (
       <header className='ext-header'>
-
+      
       {this.state.showUserModal && (
         <CompleteUserData
           toggleUserModal={this.toggleUserModal} />
