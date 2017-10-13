@@ -16,6 +16,9 @@ export default class SignUp extends Component {
       name: '',
       lastName: '',
       email: '',
+      cod_doc: '',
+      sexo: '',
+      nro_doc: null,
       pass: '',
       captchaKey: ''
     }
@@ -25,6 +28,9 @@ export default class SignUp extends Component {
     this.saveName = this.saveName.bind(this)
     this.saveLastName = this.saveLastName.bind(this)
     this.saveEmail = this.saveEmail.bind(this)
+    this.saveSex = this.saveSex.bind(this)
+    this.saveIdType = this.saveIdType.bind(this)
+    this.saveIdNumber = this.saveIdNumber.bind(this)
     this.savePass = this.savePass.bind(this)
     this.checkPassLength = this.checkPassLength.bind(this)
     this.onCaptchaChange = this.onCaptchaChange.bind(this)
@@ -67,6 +73,19 @@ export default class SignUp extends Component {
 
   saveEmail (e) {
     this.setState({ email: e.target.value })
+  }
+
+  saveSex (e) {
+    this.setState({ sexo: e.target.value })
+  }
+
+  saveIdType (e) {
+    this.setState({ cod_doc: e.target.value })
+  }
+
+  saveIdNumber (e) {
+    const input = e.target.value.replace(/[^0-9]/g, '')
+    this.setState({nro_doc: input}, () => console.log(this.state))
   }
 
   savePass (e) {
@@ -188,6 +207,7 @@ export default class SignUp extends Component {
                   <select 
                     className='form-control' 
                     defaultValue=''
+                    onChange={this.saveSex}
                     name='extra.sexo'>
                     <option value=''disabled >Sexo</option>
                     <option value='F'>Femenino</option>
@@ -200,6 +220,7 @@ export default class SignUp extends Component {
                   <select 
                     className='form-control'
                     name='extra.cod_doc' 
+                    onChange={this.saveIdType}
                     defaultValue='' >
                     <option value='' disabled>Tipo</option>
                     <option value='DNI'>DNI</option>
@@ -213,6 +234,7 @@ export default class SignUp extends Component {
                     name='extra.nro_doc'
                     maxLength='10'
                     placeholder='Número de documento'
+                    onChange={this.saveIdNumber}
                     onBlur={this.checkIdNumber}/>
                 </div>
                 <div className='form-group'>
