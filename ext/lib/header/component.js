@@ -86,19 +86,11 @@ class Header extends Component {
               </Link>
             </h1>
 
-            { (this.props.user.state.fulfilled && this.props.user.profileIsComplete()) && (
+            { this.props.user.state.fulfilled && (
               <ul className='user-nav nav navbar-nav'>
                 <UserBadge />
               </ul>
             )}
-
-            { (this.props.user.state.fulfilled && !this.props.user.profileIsComplete()) && (
-              <ul className='user-nav nav navbar-nav'>
-                <UserBadge />
-                <a className='missing-data' href='#completar-datos' >!</a>
-              </ul>
-            )}
-
             
             {this.props.user.state.rejected && (
               <Link

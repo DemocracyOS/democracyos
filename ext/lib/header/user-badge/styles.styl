@@ -7,13 +7,25 @@
     .dropdown-list
       display block
 
-  button
+  button.header-link
+    position: relative
     color inherit
     background none
     border none
     cursor pointer
     padding 0
     height 54px
+    
+    .dot-alert
+      position: absolute
+      width: 16px
+      height: 16px
+      top: 32px
+      left: 20px
+      background-image: url(ext/lib/header/alert-icon.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      z-index: 3
 
     .name
       font-weight bold
@@ -25,10 +37,10 @@
       top 0
       color inherit
 
-    img
+    .avatar
       width 32px
       border-radius 100px
-      margin -.5rem 5px -.5rem 0
+      margin .5rem 10px .5rem 0
 
   .dropdown-list
     display none

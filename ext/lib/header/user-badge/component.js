@@ -73,7 +73,8 @@ export class UserBadge extends Component {
     return (
       <div className={classes.join(' ')} onClick={this.toggleMenu}>
         <button className='header-link'>
-          <img src={userAttrs.avatar} alt='' />
+          {!this.props.user.profileIsComplete() && <div className='dot-alert'></div>}
+          <img className='avatar' src={userAttrs.avatar} alt='' />
           <span className='name hidden-xs-down'>{userAttrs.firstName}</span>
           <span className='caret hidden-xs-down' />
         </button>
