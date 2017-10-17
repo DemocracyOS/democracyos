@@ -16,7 +16,8 @@ const titles = [
   'Area Barrial',
   'Monto',
   'Secretaria',
-  'Descripcion'
+  'Descripcion',
+  'Topic Id'
 ]
 
 function escapeTxt (text) {
@@ -39,13 +40,14 @@ app.get('/topics.csv',
         topic.attrs = {}
       }
       infoTopics.push([
-        `"${escapeTxt(topic.attrs.district)}"`.toUpperCase(),
-        `"${escapeTxt(topic.attrs.number)}"`,
-        `"${escapeTxt(topic.mediaTitle)}"`,
-        `"${escapeTxt(topic.attrs.area)}"`,
-        `"${escapeTxt(topic.attrs.budget)}"`,
-        `"${escapeTxt('DESCONOCIDO')}"`,
-        `"${escapeTxt(topic.attrs.description)}"`
+        `${escapeTxt(topic.attrs.district)}`.toUpperCase(),
+        `${escapeTxt(topic.attrs.number)}`,
+        `${escapeTxt(topic.mediaTitle)}`,
+        `${escapeTxt(topic.attrs.area)}`,
+        `${escapeTxt(topic.attrs.budget)}`,
+        `${escapeTxt('DESCONOCIDO')}`,
+        `${escapeTxt(topic.attrs.description)}`,
+        topic.id
       ])
     })
 
@@ -75,34 +77,47 @@ app.post('/topics.csv',
         log('get csv: array to csv error', err)
         return res.status(500).end()
       }
-      const attrs = req.forum.topicsAttrs
-      Topic.find({ _id: { $in: json.map((t) => t['Topic ID']) } })
+      //console.log(json)
+      //const attrs = req.forum.topicsAttrs
+      Topic.find({ _id: { $in: json.map((t) => t['Topic Id']) } })
         .then((topics) => {
           return Promise.all(
             topics.map((topic) => {
               const _topic = json.find((t) => {
-                return t['Topic ID'] === getIdString(topic._id)
+                return t['Topic Id'] === getIdString(topic._id)
               })
 
-              attrs.forEach((attr) => {
-                if (!_topic[attr.name]) {
-                  switch (attr.kind) {
-                    case 'Number':
-                      _topic[attr.name] = 0
-                      break
-                    case 'Enum':
-                      _topic[attr.name] = []
-                      break
-                    case 'String':
-                      _topic[attr.name] = ''
-                      break
-                    default:
-                  }
-                }
-                if (attr.kind === 'String') _topic[attr.name] = _topic[attr.name].replace(/"/g, '')
+              let votes = _topic[' Cantidad Votos']
+              let winner = _topic[' incluido (SI/NO)']
 
-                topic.set(`attrs.${attr.name}`, _topic[attr.name])
-              })
+              topic.set('attrs.votes', votes)
+
+              if (winner === 'SI') {
+                topic.set('attrs.state', 'pendiente')
+              } else {
+                topic.set('attrs.state', 'perdedor')
+              }
+
+              //attrs.forEach((attr) => {
+                //if (!_topic[attr.name]) {
+                  //switch (attr.kind) {
+                    //case 'Number':
+                      //_topic[attr.name] = 0
+                      //break
+                    //case 'Enum':
+                      //_topic[attr.name] = []
+                      //break
+                    //case 'String':
+                      //_topic[attr.name] = ''
+                      //break
+                    //default:
+                  //}
+                //}
+                //if (attr.kind === 'String') _topic[attr.name] = _topic[attr.name].replace(/"/g, '')
+
+                //topic.set(`attrs.${attr.name}`, _topic[attr.name])
+              //})
+
               return topic.save()
             })
           )
