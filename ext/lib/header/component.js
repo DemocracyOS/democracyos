@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router'
 import moment from 'moment'
 import config from 'lib/config'
+import user from 'lib/site/user/user'
 import userConnector from 'lib/site/connectors/user'
-import UserBadge from 'lib/header/user-badge/component'
+import UserBadge from './user-badge/component'
+import CompleteUserData from './complete-data/component'
 
 class Header extends Component {
   constructor (props) {
@@ -11,8 +13,18 @@ class Header extends Component {
 
     this.state = {
       onMobile: window.innerWidth <= 630,
-      showMobileNavigation: false
+      showMobileNavigation: false,
+      showUserModal: false
     }
+  }
+
+  componentWillMount() {
+    // listener para que el hash #completar-datos togglee el modal
+    window.addEventListener('hashchange', () => {
+      if (location.hash === '#completar-datos') {
+        this.toggleUserModal()
+      }
+    }) 
   }
 
   toggleMobileNavigation = () => {
@@ -34,10 +46,28 @@ class Header extends Component {
     return show
   }
 
+  toggleUserModal = () => {
+    this.setState({
+      showUserModal: !this.state.showUserModal
+    }, () => {
+      // limpia el hash al salir del modal
+      if (!this.state.showUserModal) {
+        history.pushState('', document.title, window.location.pathname)
+      }
+    })
+  }
+
+
   render () {
     const showSubMenu = this.showSub()
     return (
       <header className='ext-header'>
+      
+      {this.state.showUserModal && (
+        <CompleteUserData
+          toggleUserModal={this.toggleUserModal} />
+      )}
+
         <div className='ext-header-prefix'>
           <a href='http://rosario.gob.ar' rel='noopener noreferrer' target='_blank'>
             <img src='/ext/lib/header/rosarioigual.png' />
@@ -56,12 +86,12 @@ class Header extends Component {
               </Link>
             </h1>
 
-            {this.props.user.state.fulfilled && (
+            { this.props.user.state.fulfilled && (
               <ul className='user-nav nav navbar-nav'>
                 <UserBadge />
               </ul>
             )}
-
+            
             {this.props.user.state.rejected && (
               <Link
                 to={{

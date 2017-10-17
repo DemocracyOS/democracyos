@@ -1,4 +1,7 @@
 .ext-header
+  @import './user-badge/styles'
+  @import './complete-data/styles'
+
   padding: 0
   color: #525252
   background-color: #fff
@@ -6,6 +9,7 @@
 .ext-header-prefix
   height: 29px
   background-color: #1DAEEC
+  z-index: 1
 
   img
     padding: 10px 15px
@@ -143,8 +147,9 @@
       justify-content: flex-end
 
     .user-badge
+      display: inline-block
       position: relative
-      margin-left: 8px
+      margin: 0 12px
 
       &.active button
         background: none
@@ -156,6 +161,19 @@
         position: absolute
         top: 100%
         right: 0
+    
+    .missing-data
+      background-color: #f00
+      color: #fff
+      padding: 3px 9px
+      border-radius: 20px
+      font-weight: bold
+      font-size: 14px
+      cursor: pointer
+      &:hover
+        -webkit-box-shadow: 0px 3px 8px 1px #FF0000
+        box-shadow: 0px 3px 8px 1px #FF0000
+        color: white
 
     .nav-link
       height: 100% !important

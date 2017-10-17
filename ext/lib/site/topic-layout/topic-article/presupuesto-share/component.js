@@ -1,8 +1,10 @@
 import React from 'react'
+import user from 'lib/site/user/user'
 import padStart from 'string.prototype.padstart'
 import { SharerFacebook } from 'ext/lib/site/sharer'
 
 export default function PresupuestoShare ({ topic, forum }) {
+
   const topicUrl = `${window.location.origin}${topic.url}`
 
   let state
@@ -30,6 +32,8 @@ export default function PresupuestoShare ({ topic, forum }) {
         return ''
     }
   }
+
+ 
   
 
   return (
@@ -46,7 +50,11 @@ export default function PresupuestoShare ({ topic, forum }) {
                 </div>
                 <div className='pending-body'>
                   {topic.attrs.budget && <span className='presu-proyecto'>{prettyPrice(topic.attrs.budget)}</span>}
-                  <button className='btn btn-active btn-pending'>Votar este proyecto</button>
+                  {user.profileIsComplete() ?
+                    (<button className='btn btn-active btn-pending'>Votar este proyecto</button>)
+                    :
+                    (<button onClick={completarDatos} className='btn btn-active btn-pending'>Votar este proyecto</button>)
+                  }
                 </div>
               </div>
           }
@@ -114,3 +122,7 @@ function prettyDecimals (number) {
     .reverse()
     .join('')
 }
+
+ function completarDatos () {
+    location.hash = '#completar-datos'
+  }

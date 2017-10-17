@@ -1,0 +1,88 @@
+.user-badge
+  position relative
+
+  &.active
+    button
+      background rgba(0,0,0,.1)
+    .dropdown-list
+      display block
+
+  button.header-link
+    position: relative
+    color inherit
+    background none
+    border none
+    cursor pointer
+    padding 0
+    height 54px
+    
+    .dot-alert
+      position: absolute
+      width: 16px
+      height: 16px
+      top: 32px
+      left: 20px
+      background-image: url(ext/lib/header/alert-icon.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      z-index: 3
+
+    .name
+      font-weight bold
+
+    .caret
+      margin-left 6px
+      position relative
+      right 0
+      top 0
+      color inherit
+
+    .avatar
+      width 32px
+      border-radius 100px
+      margin .5rem 10px .5rem 0
+
+  .dropdown-list
+    display none
+    position absolute
+    top 100%
+    right 0
+    z-index 1000
+    padding 0
+    width auto
+    font-size 14px
+    white-space nowrap
+    list-style none
+    border 1px solid rgba(#000,.15)
+    box-shadow 1px 1px 4px -1px rgba(#000, .175)
+    color #000
+    background-color #f9f9f9
+
+    a
+      display block
+      clear both
+      padding 10px 20px
+      line-height 1.5
+      text-transform none
+      font-weight bold
+      text-decoration none
+      color inherit
+
+      &:hover
+        background #2c3e50
+        color white
+        
+    .complete-data
+      .complete-data-link
+        display: flex
+        align-items: center
+        span
+          color: #df2a2a 
+        div
+          width: 15px
+          height: 15px
+          margin-left: 5px
+          display: inline-block
+          background-image: url(ext/lib/header/alert-icon.svg)
+          background-repeat: no-repeat
+          background-size: contain
