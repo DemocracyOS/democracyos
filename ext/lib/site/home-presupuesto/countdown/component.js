@@ -23,10 +23,10 @@ export default class Countdown extends Component {
   render () {
     return (
       <div>
-        {this.props.stage === 'votacion-abierta' &&
+        {this.props.stage !=== ('votacion-abierta' | 'votacion-cerrada') &&
           <span>La votación va a comenzar en { this.remainingDays(this.state.openDate) } días</span>
         }
-        {this.props.stage === 'votacion-cerrada' &&
+        {this.props.stage === 'votacion-abierta' &&
           <span>La votación va a cerrar en { this.remainingDays(this.state.closeDate) } días</span>
         }
       </div>
