@@ -10,8 +10,13 @@ const log = debug('democracyos:api:topic:csv')
 const app = module.exports = express()
 
 const titles = [
-  'Topic ID',
-  'Topic Title'
+  'Distrito',
+  'Numero de Proyecto',
+  'Titulo',
+  'Area Barrial',
+  'Monto',
+  'Secretaria',
+  'Descripcion'
 ]
 
 function escapeTxt (text) {
@@ -20,24 +25,28 @@ function escapeTxt (text) {
   return text.replace(/"/g, '\'').replace(/\r/g, '').replace(/\n/g, '')
 }
 
+
 app.get('/topics.csv',
   middlewares.users.restrict,
   middlewares.forums.findByName,
   middlewares.topics.findAllFromForum,
   middlewares.forums.privileges.canChangeTopics,
   function getCsv (req, res, next) {
-    const infoTopics = [titles.concat(req.forum.topicsAttrs.map((attr) => attr.name))]
-    const attrsNames = req.forum.topicsAttrs
-      .map((attr) => attr.name)
+    const infoTopics = [titles]
 
     req.topics.forEach((topic) => {
       if (topic.attrs === undefined) {
         topic.attrs = {}
       }
       infoTopics.push([
-        topic.id,
-        `"${escapeTxt(topic.mediaTitle)}"`
-      ].concat(attrsNames.map((name) => `"${escapeTxt(topic.attrs[name])}"` || '')))
+        `"${escapeTxt(topic.attrs.district)}"`.toUpperCase(),
+        `"${escapeTxt(topic.attrs.number)}"`,
+        `"${escapeTxt(topic.mediaTitle)}"`,
+        `"${escapeTxt(topic.attrs.area)}"`,
+        `"${escapeTxt(topic.attrs.budget)}"`,
+        `"${escapeTxt('DESCONOCIDO')}"`,
+        `"${escapeTxt(topic.attrs.description)}"`
+      ])
     })
 
     json2csv(infoTopics, function (err, csv) {
