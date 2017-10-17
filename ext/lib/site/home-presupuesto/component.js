@@ -8,6 +8,7 @@ import TopicCard from './topic-card/component'
 import TopicGrid from './topic-grid/component'
 import FiltersNavbar from './filters-navbar/component'
 import BannerPresupuesto from './banner-presupuesto/component'
+import Countdown from './countdown/component'
 import distritos from './distritos.json'
 
 let distritoCurrent = ''
@@ -44,7 +45,9 @@ class HomePresupuesto extends Component {
       this.setState({
         loading: false,
         stage: forum.extra.stage,
-        forumStage: forum.extra.stage
+        forumStage: forum.extra.stage,
+        apertura: forum.extra.apertura,
+        cierre: forum.extra.cierre
       })
     })
     .catch((err) => {
@@ -183,6 +186,10 @@ class HomePresupuesto extends Component {
           logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
           title='Presupuesto Participativo'
           description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
+        <Countdown
+          apertura={this.state.apertura}
+          cierre={this.state.cierre}
+          stage={this.state.stage} />
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
             stage={this.state.stage}
