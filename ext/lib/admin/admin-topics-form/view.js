@@ -18,7 +18,7 @@ import * as serializer from 'lib/admin/admin-topics-form/body-serializer'
 import template from 'lib/admin/admin-topics-form/template.jade'
 import linkTemplate from 'lib/admin/admin-topics-form/link.jade'
 import ForumTagsSearch from 'lib/admin/admin-topics-form/tag-autocomplete/component'
-import Attrs from 'lib/admin/admin-topics-form/attrs/component'
+import Attrs from './attrs/component'
 import templateIdeas from './template-ideas.jade'
 
 const log = debug('democracyos:admin-topics-form')
