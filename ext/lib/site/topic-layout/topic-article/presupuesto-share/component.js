@@ -51,7 +51,7 @@ export default function PresupuestoShare ({ topic, forum }) {
                 <div className='pending-body'>
                   {topic.attrs.budget && <span className='presu-proyecto'>{prettyPrice(topic.attrs.budget)}</span>}
                   {user.profileIsComplete() ?
-                    (<button className='btn btn-active btn-pending'>Votar este proyecto</button>)
+                    (<a href='/ext/api/participatory-budget/vote' className='btn btn-active btn-pending'>Votar este proyecto</a>)
                     :
                     (<button onClick={completarDatos} className='btn btn-active btn-pending'>Votar este proyecto</button>)
                   }
