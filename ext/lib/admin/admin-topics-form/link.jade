@@ -1,0 +1,11 @@
+- link = link || {}
+
+.topic-link(data-link)
+  input(type='hidden', name='links[][_id]', value=link._id)
+  .link-group.link-text
+    input.form-control(type='text', name='links[][text]', value=link.text, placeholder=t('admin-topics-form.placeholder.links.text'))
+  .link-group.link-url
+    input.form-control(type='text', name='links[][url]', validate='url', value=link.url, placeholder=t('admin-topics-form.placeholder.links.url'))
+  .link-group.link-remove
+    button.btn.btn-link.remove-button(type='button', data-remove-link)
+      i.icon-trash

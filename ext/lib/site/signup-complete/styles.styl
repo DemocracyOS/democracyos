@@ -1,8 +1,5 @@
 .ext-signup-complete
-  position: relative
-  margin: 0 auto
-  padding: 0 15px
-  max-width: 380px
+  height: 450px
 
   .loader
     position: absolute
@@ -14,41 +11,85 @@
     background-color: rgba(#fff, .3)
 
 
-  input:disabled,
-  select:disabled,
-  textarea:disabled
-    color: #aaa
-
   form
-    margin-bottom: .5em
+    height: 100%
+    display: flex
+    flex-flow: column
+    justify-content: space-around
+    font-family: 'Droid Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+    margin: 0
+          
+    .form-header
+      .title
+        margin: 0 0 20px 0
+        text-align: center
+        font-weight: 500 // Roboto Medium
+        font-size: 36px
+        color: #1daeec
+      p
+        color: rgb(170, 170, 170)
+        text-align: justify
+        font-size: 16px
+        line-height: 1.35
+        margin: 20px 0
 
-  .title
-    margin-bottom: .4em
-
-  input[type="radio"]
-    margin-right: .5em
-
-  .form-select-wrapper
-    position: relative
-
-    select
-      cursor: pointer
-
-    i
-      pointer-events: none
-
-      &::before
-        position: absolute
-        right: .8em
-        top: 1.2em
-        font-size: .8em
-
-  .btn
-    &[type="submit"]
-      margin-top: .5em
-
-    [class*="icon-"]
-      font-size: .6em
-
-  .text-right
-    text-align: right
+    .form-fields
+      input,
+      select,
+      select.form-control:not([size]):not([multiple])
+        height: auto
+        padding: 10px 20px
+        background-color: #e9e9e9
+        border: none
+        border-radius: 7px
+        font-size: 18px
+        color: rgb(105,105,105)
+        &::placeholder
+          color: #565656
+        @media screen and (max-width: 550px)
+          font-size: 16px
+      .form-select-wrapper
+        position: relative
+        select
+          cursor: pointer
+        i
+          pointer-events: none
+          &::before
+            position: absolute
+            right: 1.7em
+            top: 2.2em
+            font-size: .45em
+            content: '\25bc'
+            transform: scale(2, 1)
+            
+      .field-sexo
+        margin-bottom: 15px
+      .field-cod-doc
+        display: inline-block
+        width: 25%    
+      .field-nro-doc
+        display: inline-block
+        width: 70%
+        float: right
+        
+    .form-actions
+      display: flex
+      flex-flow: column
+      align-items: center
+      .btn-modal
+        width: 160px
+        margin: 10px
+        padding: 10px
+        border: none
+        border-radius: 7px
+        background-color: #1daeec
+        font-weight: bold
+        font-size: 18px
+        color: #fff
+      .complete-later
+        text-align: center
+        text-decoration: underline
+        color: #f59231
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+        font-size: 14px
+        font-weight: 400
