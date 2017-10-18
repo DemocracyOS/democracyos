@@ -77,8 +77,7 @@ app.post('/topics.csv',
         log('get csv: array to csv error', err)
         return res.status(500).end()
       }
-      //console.log(json)
-      //const attrs = req.forum.topicsAttrs
+
       Topic.find({ _id: { $in: json.map((t) => t['Topic Id']) } })
         .then((topics) => {
           return Promise.all(
@@ -87,37 +86,19 @@ app.post('/topics.csv',
                 return t['Topic Id'] === getIdString(topic._id)
               })
 
-              let votes = _topic[' Cantidad Votos']
-              let winner = _topic[' incluido (SI/NO)']
-
-              topic.set('attrs.votes', votes)
-
-              if (winner === 'SI') {
-                topic.set('attrs.state', 'pendiente')
-              } else {
-                topic.set('attrs.state', 'perdedor')
+              const newTopic = {
+                district: _topic['Nombre Distrito'].toLowerCase(),
+                area:  _topic[' Area Barrial Numero'],
+                budget: Number(_topic[' Area Barrial Presupuesto']),
+                number: Number(_topic[' Numero Proyecto']),
+                votos: Number(_topic[' Cantidad Votos']),
+                state: _topic[' incluido (SI/NO)'] === 'SI' ? 'pendiente' : 'ganador'
               }
 
-              //attrs.forEach((attr) => {
-                //if (!_topic[attr.name]) {
-                  //switch (attr.kind) {
-                    //case 'Number':
-                      //_topic[attr.name] = 0
-                      //break
-                    //case 'Enum':
-                      //_topic[attr.name] = []
-                      //break
-                    //case 'String':
-                      //_topic[attr.name] = ''
-                      //break
-                    //default:
-                  //}
-                //}
-                //if (attr.kind === 'String') _topic[attr.name] = _topic[attr.name].replace(/"/g, '')
-
-                //topic.set(`attrs.${attr.name}`, _topic[attr.name])
-              //})
-
+              Object.keys(newTopic).forEach((k)=>{
+                topic.set(`attrs.${k}`, newTopic[k])
+              })
+              
               return topic.save()
             })
           )
