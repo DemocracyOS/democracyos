@@ -27,8 +27,8 @@ class FiltersNavbar extends Component {
           joven: false
         },
         anio: {
-          proyectos2016: false,
-          proyectos2017: false
+          proyectos2017: false,
+          proyectos2018: false
         },
         estado: {
           proyectado: false,
@@ -51,8 +51,8 @@ class FiltersNavbar extends Component {
           joven: false
         },
         anio: {
-          proyectos2016: false,
-          proyectos2017: false
+          proyectos2017: false,
+          proyectos2018: false
         },
         estado: {
           proyectado: false,
@@ -98,8 +98,8 @@ class FiltersNavbar extends Component {
                 perdedor: { $set: false }
               },
               anio: {
-                proyectos2016: { $set: false },
-                proyectos2017: { $set: true }
+                proyectos2017: { $set: false },
+                proyectos2018: { $set: true }
               }
             })
           }, this.exposeFilters)
@@ -123,8 +123,8 @@ class FiltersNavbar extends Component {
                 perdedor: { $set: true }
               },
               anio: {
-                proyectos2016: { $set: false },
-                proyectos2017: { $set: true }
+                proyectos2017: { $set: false },
+                proyectos2018: { $set: true }
               }
             })
           }, this.exposeFilters)
@@ -146,8 +146,8 @@ class FiltersNavbar extends Component {
                 finalizado: { $set: false }
               },
               anio: {
-                proyectos2016: { $set: false },
-                proyectos2017: { $set: false }
+                proyectos2017: { $set: false },
+                proyectos2018: { $set: false }
               },
               edad: {
                 joven: { $set: false },
@@ -460,17 +460,17 @@ class FiltersNavbar extends Component {
               //         <div className='filter-column'>
               //           <div className='option-container'>
               //             <div className='check-container'>
-              //               <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2016' name='anio' checked={this.state.selectFilters.anio.proyectos2016} />
-              //               <label htmlFor='proyectos2016'></label>
-              //             </div>
-              //             <label htmlFor='proyectos2016'>2016</label>
-              //           </div>
-              //           <div className='option-container'>
-              //             <div className='check-container'>
               //               <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2017' name='anio' checked={this.state.selectFilters.anio.proyectos2017} />
               //               <label htmlFor='proyectos2017'></label>
               //             </div>
               //             <label htmlFor='proyectos2017'>2017</label>
+              //           </div>
+              //           <div className='option-container'>
+              //             <div className='check-container'>
+              //               <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2018' name='anio' checked={this.state.selectFilters.anio.proyectos2018} />
+              //               <label htmlFor='proyectos2018'></label>
+              //             </div>
+              //             <label htmlFor='proyectos2018'>2018</label>
               //           </div>
               //         </div>
               //

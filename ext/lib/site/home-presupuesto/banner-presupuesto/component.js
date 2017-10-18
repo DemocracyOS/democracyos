@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 let texts = {
   abierta: {
-    title: 'Votá los proyectos del Presupuesto Participativo 2017! Tenés tiempo hasta el xx/xx',
+    title: 'Votá los proyectos del Presupuesto Participativo 2018! Tenés tiempo hasta el xx/xx',
     btn: 'Explorá los proyectos y votá'
   },
   cerrada: {
-    title: 'Mirá los resultados de la votación de proyectos del Presupuesto Participativo 2017!',
+    title: 'Mirá los resultados de la votación de proyectos del Presupuesto Participativo 2018!',
     btn: 'Ver proyectos'
   },
   seguimiento: {

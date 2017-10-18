@@ -24,7 +24,7 @@ class HomePresupuesto extends Component {
       topics: [],
       edad: ['joven', 'adulto'],
       distrito: ['centro', 'noroeste', 'norte', 'oeste', 'sudoeste', 'sur'],
-      anio: ['2016', '2017'],
+      anio: ['2017', '2018'],
       estado: ['proyectado', 'ejecutandose', 'finalizado']
     }
   }
@@ -115,11 +115,11 @@ class HomePresupuesto extends Component {
     const anios = Object.keys(filtros.anio)
       .filter(k =>  filtros.anio[k])
       .map(anio => {
-        if (anio === 'proyectos2016') {
-          return '2016'
-        }
         if (anio === 'proyectos2017') {
           return '2017'
+        }
+        if (anio === 'proyectos2018') {
+          return '2018'
         }
       })
 
