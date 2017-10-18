@@ -62,6 +62,7 @@ class HomeIdeas extends Component {
     super(props)
 
     this.state = {
+      s: 0,
       forum: null,
       topics: null,
       tags: null,
@@ -93,6 +94,10 @@ class HomeIdeas extends Component {
         })
       })
       .catch((err) => { throw err })
+  }
+
+  fetchTopics = (s) => {
+
   }
 
   handleFilterChange = (key) => {
@@ -168,6 +173,7 @@ class HomeIdeas extends Component {
                   topic={topic} />
               ))}
             </div>
+            <button>Ver Más</button>
           </div>
         </div>
         {topics && <Footer />}
