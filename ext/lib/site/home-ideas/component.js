@@ -62,7 +62,8 @@ class HomeIdeas extends Component {
     super(props)
 
     this.state = {
-      s: 0,
+      p: 0,
+      noMore: false,
       forum: null,
       topics: null,
       tags: null,
@@ -78,6 +79,7 @@ class HomeIdeas extends Component {
       .then((forum) => {
         const tags = window.fetch(`/api/v2/forums/${forum.id}/tags`).then((res) => res.json())
         query.forum = forum.id
+        query.page = this.state.page
         query.sort = filters[this.state.filter].sort
         if (u.has('tag')) query.tag = u.get('tag')
         return Promise.all([
@@ -96,8 +98,24 @@ class HomeIdeas extends Component {
       .catch((err) => { throw err })
   }
 
-  fetchTopics = (s) => {
+  fetchTopics = (p) => {
+    
+  }
 
+  paginateForward = () = {
+    let p = this.state.p
+    p += 1
+    this.fetchTopics(p)
+      .then((topics) => {
+        this.setState({
+          topics: this.state.topics.concat(topics),
+          noMore: topics.length === 0 || topics.length < 20,
+          p //INVESTIGAR ESTO
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   handleFilterChange = (key) => {
@@ -173,7 +191,9 @@ class HomeIdeas extends Component {
                   topic={topic} />
               ))}
             </div>
-            <button>Ver Más</button>
+            {
+              !this.state.noMore && <button onClick={this.paginateForward}>Ver Más</button>
+            }
           </div>
         </div>
         {topics && <Footer />}
