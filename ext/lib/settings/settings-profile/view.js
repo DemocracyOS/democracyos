@@ -38,9 +38,7 @@ export default class ProfileForm extends FormView {
         this.locales.value = user.locale || config.locale
         var selected = this.find(`option[value="${this.locales.value}"]`)
         selected.attr('selected', true)
-        // console.log (userExtra)
         if (Object.keys(user.extra).length > 0) {
-            console.log('entra')
             ReactRender(
             (<CompleteProfileRegistry
                 forum={this.forum} />),
