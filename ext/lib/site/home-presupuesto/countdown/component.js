@@ -21,8 +21,9 @@ export default class Countdown extends Component {
   }
 
   render () {
+    console.log(this.props.stage)
     return (
-      <div>
+      <div className='countdown-wrapper'>
         {this.props.stage !== ('votacion-abierta' | 'votacion-cerrada') &&
           <span className='aviso'>La votación va a comenzar en { this.remainingDays(this.state.openDate) } días</span>
         }
