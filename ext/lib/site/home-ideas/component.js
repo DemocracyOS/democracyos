@@ -79,7 +79,7 @@ class HomeIdeas extends Component {
       .then((forum) => {
         const tags = window.fetch(`/api/v2/forums/${forum.id}/tags`).then((res) => res.json())
         query.forum = forum.id
-        query.page = this.state.page
+        query.page = this.state.p
         query.sort = filters[this.state.filter].sort
         if (u.has('tag')) query.tag = u.get('tag')
         return Promise.all([
@@ -103,9 +103,10 @@ class HomeIdeas extends Component {
   }
 
   paginateForward = () = {
-    let p = this.state.p
-    p += 1
-    this.fetchTopics(p)
+    this.setState({
+      p: this.state.p + 1
+    }, () => {
+      this.fetchTopics(p)
       .then((topics) => {
         this.setState({
           topics: this.state.topics.concat(topics),
@@ -116,6 +117,7 @@ class HomeIdeas extends Component {
       .catch((err) => {
         console.log(err)
       })
+    })
   }
 
   handleFilterChange = (key) => {
