@@ -14,8 +14,8 @@ export default class Countdown extends Component {
 
   
 
-  remainingDays = (closingtime) => {
-    var t = Date.parse(closingtime) - Date.parse(new Date())
+  remainingDays = (date) => {
+    var t = Date.parse(date) - Date.parse(new Date())
     var days = Math.floor( t/(1000*60*60*24) )
     return days
   }
@@ -23,11 +23,11 @@ export default class Countdown extends Component {
   render () {
     return (
       <div>
-        {this.props.stage !=== ('votacion-abierta' | 'votacion-cerrada') &&
-          <span>La votación va a comenzar en { this.remainingDays(this.state.openDate) } días</span>
+        {this.props.stage !== ('votacion-abierta' | 'votacion-cerrada') &&
+          <span className='aviso'>La votación va a comenzar en { this.remainingDays(this.state.openDate) } días</span>
         }
         {this.props.stage === 'votacion-abierta' &&
-          <span>La votación va a cerrar en { this.remainingDays(this.state.closeDate) } días</span>
+          <span className='aviso'>La votación va a cerrar en { this.remainingDays(this.state.closeDate) } días</span>
         }
       </div>
     )
