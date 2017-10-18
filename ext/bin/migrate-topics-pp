@@ -10,20 +10,27 @@ Promise.all([
   Forum.findOne({ name: 'presupuesto' }),
   Forum.findOne({ name: 'presupuesto-joven' })
 ])
-  .then(([pp, ppJoven]) => Topic.find({ forum: pp.id }).exec()
-    .then((topics) => Promise.all(topics.map((topic) => {
-      topic.set('attrs.edad', 'adulto')
-      return topic.save()
-    })))
-    .then(() => Topic.find({ forum: ppJoven.id }).exec()
-      .then((topics) => Promise.all(topics.map((topic) => {
-        topic.set('attrs.edad', 'joven')
-        topic.set('forum', ObjectID(pp.id))
-        return topic.save()
-      })))
-    )
-    .then(() => Topic.find({ forum: pp.id }).exec())
-  )
+  .then(([pp, ppJoven]) => {
+    // if (pp.extra && pp.extra.stage) return Topic.find({ forum: pp.id }).exec()
+    return Topic.find({ forum: ppJoven.id }).exec()
+      .then((topics) => {
+        console.log(topics.length)
+        if (topics.length === 0) return Topic.find({ forum: pp.id }).exec()
+        return Topic.find({ forum: pp.id }).exec()
+          .then((topics) => Promise.all(topics.map((topic) => {
+            topic.set('attrs.edad', 'adulto')
+            return topic.save()
+          })))
+          .then(() => Topic.find({ forum: ppJoven.id }).exec()
+            .then((topics) => Promise.all(topics.map((topic) => {
+              topic.set('attrs.edad', 'joven')
+              topic.set('forum', ObjectID(pp.id))
+              return topic.save()
+            })))
+          )
+          .then(() => Topic.find({ forum: pp.id }).exec())
+      })
+  })
   .then((topics) => Promise.all(topics.map((topic) => {
     topic.set('attrs.anio', '2017')
     if (topic.attrs.hasOwnProperty('winner') && topic.attrs.winner === false) {
