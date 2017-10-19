@@ -62,7 +62,7 @@ class HomeIdeas extends Component {
     super(props)
 
     this.state = {
-      p: 0,
+      page: 1,
       noMore: false,
       forum: null,
       topics: null,
@@ -72,19 +72,13 @@ class HomeIdeas extends Component {
   }
 
   componentDidMount = () => {
-    var u = new window.URLSearchParams(window.location.search)
-    let query = {}
 
     forumStore.findOneByName('ideas')
       .then((forum) => {
         const tags = window.fetch(`/api/v2/forums/${forum.id}/tags`).then((res) => res.json())
-        query.forum = forum.id
-        query.page = this.state.p
-        query.sort = filters[this.state.filter].sort
-        if (u.has('tag')) query.tag = u.get('tag')
         return Promise.all([
           forum,
-          topicStore.findAll(query),
+          this.fetchTopics(this.state.page, forum.id),
           tags
         ])
       })
@@ -98,25 +92,30 @@ class HomeIdeas extends Component {
       .catch((err) => { throw err })
   }
 
-  fetchTopics = (p) => {
-    
+  fetchTopics = (page, forumId) => {
+    var u = new window.URLSearchParams(window.location.search)
+    let query = {}
+    query.forum = forumId
+    query.page = page
+    query.limit = 20
+    query.sort = filters[this.state.filter].sort
+    if (u.has('tag')) query.tag = u.get('tag')
+    return topicStore.findAll(query)
   }
 
-  paginateForward = () = {
-    this.setState({
-      p: this.state.p + 1
-    }, () => {
-      this.fetchTopics(p)
-      .then((topics) => {
-        this.setState({
-          topics: this.state.topics.concat(topics),
-          noMore: topics.length === 0 || topics.length < 20,
-          p //INVESTIGAR ESTO
-        })
+  paginateForward = () => {
+    let page = this.state.page
+    page++
+    this.fetchTopics(page, this.state.forum.id)
+    .then((topics) => {
+      this.setState({
+        topics: this.state.topics.concat(topics),
+        noMore: topics.length === 0 || topics.length < 20,
+        page
       })
-      .catch((err) => {
-        console.log(err)
-      })
+    })
+    .catch((err) => {
+      console.log(err)
     })
   }
 
@@ -192,10 +191,15 @@ class HomeIdeas extends Component {
                   forum={forum}
                   topic={topic} />
               ))}
+              {
+                !this.state.noMore &&
+                  (
+                  <div className='more-topics'>
+                    <button onClick={this.paginateForward}>Ver Más</button>
+                  </div>
+                  )
+              }
             </div>
-            {
-              !this.state.noMore && <button onClick={this.paginateForward}>Ver Más</button>
-            }
           </div>
         </div>
         {topics && <Footer />}
