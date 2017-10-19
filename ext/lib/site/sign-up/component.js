@@ -85,7 +85,7 @@ export default class SignUp extends Component {
 
   saveIdNumber (e) {
     const input = e.target.value.replace(/[^0-9]/g, '')
-    this.setState({nro_doc: input}, () => console.log(this.state))
+    this.setState({nro_doc: input})
   }
 
   savePass (e) {

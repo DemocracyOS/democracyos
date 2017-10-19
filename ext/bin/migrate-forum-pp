@@ -8,6 +8,7 @@ Forum.findOne({
   'name': 'presupuesto'
 }).exec()
   .then((forum) => {
+    if (forum.extra && forum.extra.stage) return Promise.resolve()
     let forumTopicsAttrs = forum.toObject().topicsAttrs
 
     const stateI = forumTopicsAttrs.map(s => s.name).indexOf('state')

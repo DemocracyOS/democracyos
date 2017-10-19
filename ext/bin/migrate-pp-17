@@ -1,3 +1,2 @@
 #!/bin/bash
-node ./ext/bin/migrate-forum-pp
-node ./ext/bin/migrate-topics-pp
+node ./ext/bin/migrate-forum-pp && node ./ext/bin/migrate-topics-pp
