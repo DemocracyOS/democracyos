@@ -126,14 +126,16 @@ class HomeIdeas extends Component {
     query.forum = this.state.forum.id
     query.sort = filters[this.state.filter].sort
 
-    topicStore.findAll(query)
-      .then((topics) => {
-        this.setState({
-          filter: key,
-          topics: filter(key, topics)
+    this.setState({ filter: key }, () => {
+      this.fetchTopics(1, this.state.forum.id)
+        .then((topics) => {
+          this.setState({
+            topics,
+            noMore: topics.length === 0 || topics.length < 20,
+            page: 1
+          })
         })
-      })
-      .catch((err) => { throw err })
+    })
   }
 
   handleVote = (id) => {
