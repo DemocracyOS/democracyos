@@ -181,15 +181,16 @@ class HomePresupuesto extends Component {
   render () {
     return (
       <div className='ext-home-presupuesto'>
-        <Cover
-          background='/ext/lib/site/boot/presupuesto-participativo.jpg'
-          logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
-          title='Presupuesto Participativo'
-          description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
-        <Countdown
-          apertura={this.state.apertura}
-          cierre={this.state.cierre}
-          stage={this.state.stage} />
+        {
+          this.state.stage === 'votacion-abierta' ?
+            <Countdown />
+          :
+            <Cover
+            background='/ext/lib/site/boot/presupuesto-participativo.jpg'
+            logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
+            title='Presupuesto Participativo'
+            description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
+        }
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
             stage={this.state.stage}
