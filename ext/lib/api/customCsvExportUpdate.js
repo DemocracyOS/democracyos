@@ -86,17 +86,17 @@ app.post('/topics.csv',
                 return t['Topic Id'] === getIdString(topic._id)
               })
 
-              const newTopic = {
+              const attrs = {
                 district: _topic['Nombre Distrito'].toLowerCase(),
                 area:  _topic[' Area Barrial Numero'],
                 budget: Number(_topic[' Area Barrial Presupuesto']),
                 number: Number(_topic[' Numero Proyecto']),
                 votos: Number(_topic[' Cantidad Votos']),
-                state: _topic[' incluido (SI/NO)'] === 'SI' ? 'pendiente' : 'ganador'
+                state: _topic[' incluido (SI/NO)'] === 'SI' ? 'proyectado' : 'perdedor'
               }
 
-              Object.keys(newTopic).forEach((k)=>{
-                topic.set(`attrs.${k}`, newTopic[k])
+              Object.keys(attrs).forEach((k)=>{
+                topic.set(`attrs.${k}`, attrs[k])
               })
               
               return topic.save()
