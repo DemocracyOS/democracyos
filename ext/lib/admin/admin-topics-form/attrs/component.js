@@ -39,7 +39,7 @@ forms.Number = ({
       max={max}
       required={mandatory}
       validate={mandatory && 'required'}
-      disabled={name === 'votos' ? true : false} />
+      disabled={name === 'votes' ? true : false} />
   </div>
 )
 

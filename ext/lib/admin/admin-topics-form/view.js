@@ -17,7 +17,7 @@ import topicStore from 'lib/stores/topic-store/topic-store'
 import * as serializer from 'lib/admin/admin-topics-form/body-serializer'
 import linkTemplate from './link.jade'
 import ForumTagsSearch from 'lib/admin/admin-topics-form/tag-autocomplete/component'
-import Attrs from 'lib/admin/admin-topics-form/attrs/component'
+import Attrs from 'ext/lib/admin/admin-topics-form/attrs/component'
 import template from './template.jade'
 import templateIdeas from './template-ideas.jade'
 
