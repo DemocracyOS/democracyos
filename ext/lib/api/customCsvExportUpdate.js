@@ -91,7 +91,7 @@ app.post('/topics.csv',
                 area:  _topic[' Area Barrial Numero'],
                 budget: Number(_topic[' Area Barrial Presupuesto']),
                 number: Number(_topic[' Numero Proyecto']),
-                votos: Number(_topic[' Cantidad Votos']),
+                votes: Number(_topic[' Cantidad Votos']),
                 state: _topic[' incluido (SI/NO)'] === 'SI' ? 'proyectado' : 'perdedor'
               }
 
