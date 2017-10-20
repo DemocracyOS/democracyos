@@ -182,7 +182,7 @@ class HomePresupuesto extends Component {
     return (
       <div className='ext-home-presupuesto'>
         {
-          this.state.stage === 'votacion-abierta' ?
+          this.state.cierre && this.state.stage === 'votacion-abierta' ?
             <Countdown
               cierre={this.state.cierre} />
           :

@@ -6,7 +6,6 @@ export default class Countdown extends Component {
     super (props)
 
     this.state = {
-      closeDate: this.props.cierre,
       seconds : 0,
       minutes : 0,
       hours : 0,
@@ -16,6 +15,7 @@ export default class Countdown extends Component {
 
   componentDidMount() {
     // inicializa el contador
+    this.tick()
     this.timeInterval = setInterval(
       () => this.tick(),
       1000
@@ -46,7 +46,7 @@ export default class Countdown extends Component {
 
   tick = () => {
     // actualiza el contador
-    this.setState(this.remainingTime(this.state.closeDate))
+    this.setState(this.remainingTime(this.props.cierre))
   }
 
 
