@@ -8,6 +8,7 @@ import TopicCard from './topic-card/component'
 import TopicGrid from './topic-grid/component'
 import FiltersNavbar from './filters-navbar/component'
 import BannerPresupuesto from './banner-presupuesto/component'
+import Countdown from './countdown/component'
 import distritos from './distritos.json'
 
 let distritoCurrent = ''
@@ -20,6 +21,7 @@ class HomePresupuesto extends Component {
       noMore: false,
       loading: true,
       stage: null,
+      cierre: null,
       forumStage: null,
       topics: [],
       edad: ['joven', 'adulto'],
@@ -44,7 +46,8 @@ class HomePresupuesto extends Component {
       this.setState({
         loading: false,
         stage: forum.extra.stage,
-        forumStage: forum.extra.stage
+        forumStage: forum.extra.stage,
+        cierre: forum.extra.cierre
       })
     })
     .catch((err) => {
@@ -178,11 +181,17 @@ class HomePresupuesto extends Component {
   render () {
     return (
       <div className='ext-home-presupuesto'>
-        <Cover
-          background='/ext/lib/site/boot/presupuesto-participativo.jpg'
-          logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
-          title='Presupuesto Participativo'
-          description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
+        {
+          this.state.cierre && this.state.stage === 'votacion-abierta' ?
+            <Countdown
+              cierre={this.state.cierre} />
+          :
+            <Cover
+            background='/ext/lib/site/boot/presupuesto-participativo.jpg'
+            logo='/ext/lib/site/home-multiforum/presupuesto-icono.png'
+            title='Presupuesto Participativo'
+            description='Vos decidís cómo invertir parte del presupuesto de la ciudad. Podés elegir los proyectos que van a cambiar tu barrio y seguir su ejecución.' />
+        }
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
             stage={this.state.stage}
