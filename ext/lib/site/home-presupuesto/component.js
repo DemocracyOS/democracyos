@@ -21,6 +21,7 @@ class HomePresupuesto extends Component {
       noMore: false,
       loading: true,
       stage: null,
+      cierre: null,
       forumStage: null,
       topics: [],
       edad: ['joven', 'adulto'],
@@ -46,7 +47,6 @@ class HomePresupuesto extends Component {
         loading: false,
         stage: forum.extra.stage,
         forumStage: forum.extra.stage,
-        apertura: forum.extra.apertura,
         cierre: forum.extra.cierre
       })
     })
@@ -183,7 +183,8 @@ class HomePresupuesto extends Component {
       <div className='ext-home-presupuesto'>
         {
           this.state.stage === 'votacion-abierta' ?
-            <Countdown />
+            <Countdown
+              cierre={this.state.cierre} />
           :
             <Cover
             background='/ext/lib/site/boot/presupuesto-participativo.jpg'

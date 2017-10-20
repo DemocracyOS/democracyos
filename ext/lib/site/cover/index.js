@@ -19,16 +19,13 @@ import classNames from 'classnames'
 
 export default ({
   className,
-  background,
   logo,
   title,
   description,
   children
 }) => {
   return (
-    <div
-      className={classNames('ext-site-cover', className)}
-      style={{ backgroundImage: `url('${background}')` }}>
+    <div className={classNames('ext-site-cover', className)}>
       <div className='container'>
         <div
           className='ext-site-cover-isologo'

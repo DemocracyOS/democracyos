@@ -6,13 +6,12 @@ export default class Countdown extends Component {
     super (props)
 
     this.state = {
-      closeDate: new Date(2017, 11, 28, 9),
+      closeDate: this.props.cierre,
       seconds : 0,
       minutes : 0,
       hours : 0,
       days : 0
     }
-    console.log(props)
   }
 
   componentDidMount() {
@@ -52,7 +51,6 @@ export default class Countdown extends Component {
 
 
   render () {
-    console.log(this.props.stage)
     return (
       <section className='countdown-wrapper'>
         <div className='intro'>
