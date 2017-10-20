@@ -64,19 +64,19 @@ export default class Countdown extends Component {
         </div>
         <main className='countdown'>
           <div className='clock'>
-            <span className='number'>04</span>
+            <span className='number'>{this.state.days}</span>
             <span className='caption'>días</span>
           </div>
           <div className='clock'>
-            <span className='number'>08</span>
-            <span className='caption'>minutos</span>
-          </div>
-          <div className='clock'>
-            <span className='number'>15</span>
+            <span className='number'>{this.state.hours}</span>
             <span className='caption'>horas</span>
           </div>
           <div className='clock'>
-            <span className='number'>16</span>
+            <span className='number'>{this.state.minutes}</span>
+            <span className='caption'>minutos</span>
+          </div>
+          <div className='clock'>
+            <span className='number'>{this.state.seconds}</span>
             <span className='caption'>segundos</span>
           </div>
         </main>
