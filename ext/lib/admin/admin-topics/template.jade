@@ -19,6 +19,7 @@
             span.glyphicon.glyphicon-font
     - if (forum.name === 'presupuesto' && forum.privileges.canEdit)
       .well.well-lg.clearfix.update-stage
+      span.export-year Solo se exportarán proyectos del PP 2018
       .well.well-sm.clearfix.export-update
     .list.list-group.col-xs-12
       - each topic in topics
