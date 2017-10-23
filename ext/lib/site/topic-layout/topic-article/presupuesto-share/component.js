@@ -23,7 +23,7 @@ export default function PresupuestoShare ({ topic, forum }) {
   function twitText() { 
     switch (topic.attrs.state) {
       case 'pendiente':
-        return encodeURIComponent(`Mirá el proyecto que quiero para mi barrio ${topicUrl} #YoVotoPorMiBarrio `)
+        return encodeURIComponent(`Mirá el proyecto que quiero para mi barrio #YoVotoPorMiBarrio `)
       case 'perdedor':
         return encodeURIComponent(topic.mediaTitle)
       case 'proyectado':
