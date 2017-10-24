@@ -194,7 +194,7 @@ class HomePresupuesto extends Component {
         }
         <div className='topics-section-container filters-wrapper'>
           <FiltersNavbar
-            stage={this.state.stage}
+            stage={'seguimiento'} //this.state.stage
             updateFilters={this.prepareFilters}
             changeStage={this.changeStage}
             />

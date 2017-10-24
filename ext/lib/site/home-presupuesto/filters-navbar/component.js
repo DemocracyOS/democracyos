@@ -334,6 +334,23 @@ class FiltersNavbar extends Component {
             <p className='header-text'>Elegí tu filtro:</p>
           </div>
 
+          <nav className='pp-nav-age'>
+            <button
+              type='button'
+              data-name='adulto'
+              onClick={() => this.handleEdadFilterChange('adulto')}
+              className={`btn btn-md btn-outline-primary ${this.state.appliedFilters.edad.adulto ? 'active' : ''}`}>
+              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
+            </button>
+            <button
+              type='button'
+              data-name='joven'
+              onClick={() => this.handleEdadFilterChange('joven')}
+              className={`btn btn-md btn-outline-primary ${this.state.appliedFilters.edad.joven ? 'active' : ''}`}>
+              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
+            </button>
+          </nav>
+
           <nav>
             <div className='filter'>
               <button
@@ -407,6 +424,7 @@ class FiltersNavbar extends Component {
 
 
 
+            {/*
             <div className='filter'>
               <button
                 type='button'
@@ -445,6 +463,7 @@ class FiltersNavbar extends Component {
               </div>
               )}
             </div>
+          */}
 
             { deltaFecha <= 0 &&
               <div className='filter'>
