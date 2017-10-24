@@ -50,7 +50,7 @@ app.get('/topics.csv',
       res.status(200)
       res.set({
         'Content-Type': 'text/csv; charset=utf-8',
-        'Content-Disposition': 'attachment; filename=' + req.forum.name.replace(/\s/g, '-') + '.csv'
+        'Content-Disposition': `attachment; filename=${req.forum.name.replace(/\s/g, '-')}-${Math.floor((new Date()) / 1000)}.csv`
       })
       res.write(csv)
       res.end()
@@ -78,11 +78,11 @@ app.post('/topics.csv',
               })
 
               const attrs = {
-                district: _topic['Nombre Distrito'].toLowerCase(),
-                area:  _topic[' Area Barrial Numero'],
-                budget: Number(_topic[' Area Barrial Presupuesto']),
-                number: Number(_topic[' Numero Proyecto']),
-                votes: Number(_topic[' Cantidad Votos']),
+                district: _topic['Nombre Distrito'].replace(/"/g, '').toLowerCase(),
+                area: _topic[' Area Barrial Numero'].replace(/"/g, ''),
+                budget: Number(_topic[' Area Barrial Presupuesto'].replace(/"/g, '')),
+                number: Number(_topic[' Numero Proyecto'].replace(/"/g, '')),
+                votes: Number(_topic[' Cantidad Votos'].replace(/"/g, '')),
                 state: _topic[' incluido (SI/NO)'] === 'SI' ? 'proyectado' : 'perdedor'
               }
 
@@ -102,5 +102,5 @@ app.post('/topics.csv',
           log('post csv: find topics error', err)
           res.status(500).end()
         })
-    })
+    }, { delimiter: { wrap: '"' } })
   })
