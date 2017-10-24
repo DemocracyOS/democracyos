@@ -331,25 +331,25 @@ class FiltersNavbar extends Component {
             <div className='pp-stage'>
               Seguimiento de proyectos
             </div>
-            <p className='header-text'>Elegí tu filtro:</p>
-          </div>
 
-          <nav className='pp-nav-age'>
-            <button
-              type='button'
-              data-name='adulto'
-              onClick={() => this.handleEdadFilterChange('adulto')}
-              className={`btn btn-md btn-outline-primary ${this.state.appliedFilters.edad.adulto ? 'active' : ''}`}>
-              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
-            </button>
-            <button
-              type='button'
-              data-name='joven'
-              onClick={() => this.handleEdadFilterChange('joven')}
-              className={`btn btn-md btn-outline-primary ${this.state.appliedFilters.edad.joven ? 'active' : ''}`}>
-              <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
-            </button>
-          </nav>
+            <nav className='pp-nav'>
+              <button
+                type='button'
+                data-name='adulto'
+                onClick={() => this.handleEdadFilterChange('adulto')}
+                className={`btn btn-md btn-outline-primary ${this.state.appliedFilters.edad.adulto ? 'active' : ''}`}>
+                <span className='btn-content'><span className='btn-text'>Presupuesto Participativo</span></span>
+              </button>
+              <button
+                type='button'
+                data-name='joven'
+                onClick={() => this.handleEdadFilterChange('joven')}
+                className={`btn btn-md btn-outline-primary ${this.state.appliedFilters.edad.joven ? 'active' : ''}`}>
+                <span className='btn-content'><span className='btn-text'>Presupuesto Participativo Joven</span></span>
+              </button>
+            </nav>
+            <p className='header-text'>Filtros adicionales:</p>
+          </div>
 
           <nav>
             <div className='filter'>
@@ -572,7 +572,7 @@ function DistritoFilter (props) {
           onClick={() => {changeStage('seguimiento')}}>
             {'< Ir a Seguimiento de Proyectos'}
           </a>
-        <div className='stage-header-votacion'>
+        <div className='stage-header'>
           <div className='pp-stage'>
             Votación Abierta
           </div>
@@ -601,7 +601,7 @@ function DistritoFilter (props) {
           <div className='pp-stage'>
             Votación Cerrada
           </div>
-          <p className='header-text'>Elegí tu distrito:</p>
+          <p className='header-text header-text-cerrada'>Elegí tu distrito:</p>
         </div>
       )}
       <nav>
