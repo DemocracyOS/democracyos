@@ -19,7 +19,7 @@
           = t('admin-topics-form.title.preview')
           | &nbsp;
           i.icon-eye
-    include commands
+    include ../../../../lib/admin/admin-topics-form/commands
     .topic-admin
       form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
         - if (topic.privileges && !topic.privileges.canEdit)
@@ -43,6 +43,8 @@
               - each tag in tags
                 option(selected=tag.id === topicTag, value=tag.id)
                   = tag.name
+        - else
+          input(name='tag', type='hidden', value=tags[0].id)
 
         - if (forum.name !== 'presupuesto')         
           .form-group
@@ -157,4 +159,4 @@
             button.add-link.btn.btn-link(type='button')
               = '+ ' + t('admin-topics-form.button.add-link')
         input.btn.btn-success.hide(type='submit', value=t('admin-topics-form.button.submit'))
-    include commands
+    include ../../../../lib/admin/admin-topics-form/commands
