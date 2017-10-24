@@ -311,6 +311,8 @@ class FiltersNavbar extends Component {
 
 // RENDER
   render () {
+    let deltaFecha = Date.parse("Mon, 20 Nov 2017 00:00:00 -0300") - Date.parse(new Date())
+
     return (
       <div>
       {(this.props.stage === 'votacion-abierta' || this.props.stage === 'votacion-cerrada') && (
@@ -444,44 +446,44 @@ class FiltersNavbar extends Component {
               )}
             </div>
 
-            {
-              // <div className='filter'>
-              //   <button
-              //     type='button'
-              //     id="filtro-anio"
-              //     className = {`btn btn-md btn-outline-primary ${this.changeColor('anio')}`}
-              //     onClick = {this.handleDropdown('opciones-anio')}>
-              //     <span className='btn-content'><span className='btn-text'>Año</span> {this.state.badges.anio !== 0 && <span className='badge'>{this.state.badges.anio}</span>} </span> <span className='caret-down'>▾</span>
-              //   </button>
-              //   {this.state.activeDropdown == 'opciones-anio' && (
-              //     <div className='filter-dropdown' id="opciones-anio">
-              //       <div className='filter-options'>
-              //
-              //         <div className='filter-column'>
-              //           <div className='option-container'>
-              //             <div className='check-container'>
-              //               <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2017' name='anio' checked={this.state.selectFilters.anio.proyectos2017} />
-              //               <label htmlFor='proyectos2017'></label>
-              //             </div>
-              //             <label htmlFor='proyectos2017'>2017</label>
-              //           </div>
-              //           <div className='option-container'>
-              //             <div className='check-container'>
-              //               <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2018' name='anio' checked={this.state.selectFilters.anio.proyectos2018} />
-              //               <label htmlFor='proyectos2018'></label>
-              //             </div>
-              //             <label htmlFor='proyectos2018'>2018</label>
-              //           </div>
-              //         </div>
-              //
-              //       </div>
-              //       <div className='dropdown-actions'>
-              //         <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-              //         <a className='aplicar' onClick={this.applyFilters('anio')}>Aplicar</a>
-              //       </div>
-              //     </div>
-              //     )}
-              // </div>
+            { deltaFecha <= 0 &&
+              <div className='filter'>
+                <button
+                  type='button'
+                  id="filtro-anio"
+                  className = {`btn btn-md btn-outline-primary ${this.changeColor('anio')}`}
+                  onClick = {this.handleDropdown('opciones-anio')}>
+                  <span className='btn-content'><span className='btn-text'>Año</span> {this.state.badges.anio !== 0 && <span className='badge'>{this.state.badges.anio}</span>} </span> <span className='caret-down'>▾</span>
+                </button>
+                {this.state.activeDropdown == 'opciones-anio' && (
+                  <div className='filter-dropdown' id="opciones-anio">
+                    <div className='filter-options'>
+              
+                      <div className='filter-column'>
+                        <div className='option-container'>
+                          <div className='check-container'>
+                            <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2017' name='anio' checked={this.state.selectFilters.anio.proyectos2017} />
+                            <label htmlFor='proyectos2017'></label>
+                          </div>
+                          <label htmlFor='proyectos2017'>2017</label>
+                        </div>
+                        <div className='option-container'>
+                          <div className='check-container'>
+                            <input onChange={this.handleCheckboxChange('anio')} type='checkbox' id='proyectos2018' name='anio' checked={this.state.selectFilters.anio.proyectos2018} />
+                            <label htmlFor='proyectos2018'></label>
+                          </div>
+                          <label htmlFor='proyectos2018'>2018</label>
+                        </div>
+                      </div>
+              
+                    </div>
+                    <div className='dropdown-actions'>
+                      <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
+                      <a className='aplicar' onClick={this.applyFilters('anio')}>Aplicar</a>
+                    </div>
+                  </div>
+                  )}
+              </div>
             }
 
             <div className='filter'>
