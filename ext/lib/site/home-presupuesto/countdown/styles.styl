@@ -1,0 +1,96 @@
+.countdown-wrapper
+  box-sizing: border-box
+  width: 100vw
+  padding: 40px 15px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  color: #fff
+  background-image: unquote("linear-gradient(to left,#ff8700,#00acec)")
+  opacity: .75
+  @media screen and (max-width: 525px)
+    padding: 25px 15px
+  
+  .intro
+    display: flex
+    align-items: center
+    max-width: 60%
+    @media screen and (max-width: 1240px)
+      max-width: 75%
+    @media screen and (max-width: 920px)
+      max-width: 85%
+    @media screen and (max-width: 800px)
+      align-items: flex-start
+    @media screen and (max-width: 800px)
+      max-width: 100%
+    @media screen and (max-width: 534px)
+      flex-wrap: wrap
+    
+    .circle
+      flex: none
+      display: inline-block
+      height: 145px
+      width: 145px
+      margin-right: 30px
+      background-color: #00acec
+      background-image: url('/ext/lib/site/home-multiforum/presupuesto-icono.png')
+      background-repeat: no-repeat
+      background-position: center center
+      background-size: 75%
+      border-radius: 50%
+      box-shadow: 2px 2px 4px rgba(81, 81, 81, .4)
+      @media screen and (max-width: 534px)
+        display: none
+        
+    .text
+      flex: auto
+      h2
+        margin: 0 0 20px 0
+        font-size: 2.5em
+        font-weight: 500
+        @media screen and (max-width: 525px)
+          font-size: 2.2em
+      p
+        margin: 0
+        font-size: 1.5em
+        font-weight: 500
+        line-height: 1.2
+        @media screen and (max-width: 525px)
+          font-size: 1.3em
+        
+  .countdown
+    margin-top: 30px
+    border: 1px solid #fff
+    display: flex
+    max-width: 96vw
+    @media screen and (max-width: 525px)
+      margin-top: 20px
+    .clock
+      width: 25%
+      margin: 10px 0
+      padding: 9 25px
+      display: flex
+      flex-direction: column
+      align-items: center
+      .number
+        font-size: 4em
+        font-weight: 400
+        line-height: 1
+        @media screen and (max-width: 525px)
+         font-size: 3.3em
+      .caption
+        font-size: 1.3em
+        font-weight: 400
+        @media screen and (max-width: 525px)
+          font-size: 1em
+    .clock + .clock
+      border-left: 1px solid #fff
+
+  footer
+    margin-top: 7px
+    font-size: 1.4em
+    font-weight: 400
+    @media screen and (max-width: 525px)
+      font-size: 1.1em

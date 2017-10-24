@@ -62,6 +62,8 @@ class HomeIdeas extends Component {
     super(props)
 
     this.state = {
+      page: 1,
+      noMore: false,
       forum: null,
       topics: null,
       tags: null,
@@ -70,18 +72,13 @@ class HomeIdeas extends Component {
   }
 
   componentDidMount = () => {
-    var u = new window.URLSearchParams(window.location.search)
-    let query = {}
 
     forumStore.findOneByName('ideas')
       .then((forum) => {
         const tags = window.fetch(`/api/v2/forums/${forum.id}/tags`).then((res) => res.json())
-        query.forum = forum.id
-        query.sort = filters[this.state.filter].sort
-        if (u.has('tag')) query.tag = u.get('tag')
         return Promise.all([
           forum,
-          topicStore.findAll(query),
+          this.fetchTopics(this.state.page, forum.id),
           tags
         ])
       })
@@ -95,6 +92,33 @@ class HomeIdeas extends Component {
       .catch((err) => { throw err })
   }
 
+  fetchTopics = (page, forumId) => {
+    var u = new window.URLSearchParams(window.location.search)
+    let query = {}
+    query.forum = forumId
+    query.page = page
+    query.limit = 20
+    query.sort = filters[this.state.filter].sort
+    if (u.has('tag')) query.tag = u.get('tag')
+    return topicStore.findAll(query)
+  }
+
+  paginateForward = () => {
+    let page = this.state.page
+    page++
+    this.fetchTopics(page, this.state.forum.id)
+    .then((topics) => {
+      this.setState({
+        topics: this.state.topics.concat(topics),
+        noMore: topics.length === 0 || topics.length < 20,
+        page
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
   handleFilterChange = (key) => {
     let query = {}
     var u = new window.URLSearchParams(window.location.search)
@@ -102,14 +126,16 @@ class HomeIdeas extends Component {
     query.forum = this.state.forum.id
     query.sort = filters[this.state.filter].sort
 
-    topicStore.findAll(query)
-      .then((topics) => {
-        this.setState({
-          filter: key,
-          topics: filter(key, topics)
+    this.setState({ filter: key }, () => {
+      this.fetchTopics(1, this.state.forum.id)
+        .then((topics) => {
+          this.setState({
+            topics,
+            noMore: topics.length === 0 || topics.length < 20,
+            page: 1
+          })
         })
-      })
-      .catch((err) => { throw err })
+    })
   }
 
   handleVote = (id) => {
@@ -136,7 +162,6 @@ class HomeIdeas extends Component {
     return (
       <div className='ext-home-ideas'>
         <Cover
-          background='/ext/lib/site/boot/ideas.jpg'
           logo='/ext/lib/site/home-multiforum/ideas-icono.png'
           title='Ideas'
           description='¿Tenés ideas para mejorar la vida en la ciudad? Compartilas.' />
@@ -167,6 +192,14 @@ class HomeIdeas extends Component {
                   forum={forum}
                   topic={topic} />
               ))}
+              {
+                !this.state.noMore &&
+                  (
+                  <div className='more-topics'>
+                    <button onClick={this.paginateForward}>Ver Más</button>
+                  </div>
+                  )
+              }
             </div>
           </div>
         </div>
