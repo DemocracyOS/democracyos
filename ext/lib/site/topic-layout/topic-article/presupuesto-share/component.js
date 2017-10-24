@@ -3,7 +3,7 @@ import user from 'lib/site/user/user'
 import padStart from 'string.prototype.padstart'
 import { SharerFacebook } from 'ext/lib/site/sharer'
 
-export default function PresupuestoShare ({ topic, forum }) {
+export default function PresupuestoShare ({ topic, forum, user }) {
 
   const topicUrl = `${window.location.origin}${topic.url}`
 
@@ -33,9 +33,6 @@ export default function PresupuestoShare ({ topic, forum }) {
     }
   }
 
- 
-  
-
   return (
     <div className='presupuesto-container'>
       {
@@ -50,10 +47,17 @@ export default function PresupuestoShare ({ topic, forum }) {
                 </div>
                 <div className='pending-body'>
                   {topic.attrs.budget && <span className='presu-proyecto'>{prettyPrice(topic.attrs.budget)}</span>}
-                  {user.profileIsComplete() ?
-                    (<a href='/ext/api/participatory-budget/vote' className='btn btn-active btn-pending'>Votar este proyecto</a>)
-                    :
-                    (<button onClick={completarDatos} className='btn btn-active btn-pending'>Votar este proyecto</button>)
+                  {
+                    !user.state.value &&
+                      <a href='/signin' className='btn btn-active btn-pending'>Votar este proyecto</a>
+                  }
+                  {
+                    (user.state.value && user.profileIsComplete()) &&
+                      <a href='/ext/api/participatory-budget/vote' className='btn btn-active btn-pending'>Votar este proyecto</a>
+                  }
+                  {
+                    (user.state.value && !user.profileIsComplete()) &&
+                      <button onClick={completarDatos} className='btn btn-active btn-pending'>Votar este proyecto</button>
                   }
                 </div>
               </div>

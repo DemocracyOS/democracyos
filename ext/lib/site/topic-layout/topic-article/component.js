@@ -132,6 +132,7 @@ class TopicArticle extends Component {
               {
                 (forum.name === 'presupuesto')
                   ? <PresupuestoShare
+                    user={user}
                     forum={forum}
                     topic={topic} />
                   : <CommonShare
