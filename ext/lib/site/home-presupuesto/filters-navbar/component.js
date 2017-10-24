@@ -150,8 +150,8 @@ class FiltersNavbar extends Component {
                 proyectos2018: { $set: false }
               },
               edad: {
-                joven: { $set: false },
-                adulto: { $set: false }
+                adulto: { $set: true },
+                joven: { $set: false }
               }
             })
           }, this.exposeFilters)
