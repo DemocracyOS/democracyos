@@ -326,7 +326,14 @@ class FiltersNavbar extends Component {
       )}
       {this.props.stage === 'seguimiento' && (
         <header>
-
+          { this.props.forumStage === 'votacion-abierta' && (
+              <a
+                className='link-stage'
+                onClick={() => {this.props.changeStage('votacion-abierta')}}>
+                  {'< Volver a Votación'}
+              </a>
+            )
+          }
           <div className='stage-header'>
             <div className='pp-stage'>
               Seguimiento de proyectos
@@ -421,49 +428,6 @@ class FiltersNavbar extends Component {
                 </div>
                 )}
             </div>
-
-
-
-            {/*
-            <div className='filter'>
-              <button
-                type='button'
-                id="filtro-edad"
-                className={`btn btn-md btn-outline-primary ${this.changeColor('edad')}`}
-                onClick={this.handleDropdown('opciones-edad')}
-                >
-                <span className='btn-content'><span className='btn-text'>Rango de edad</span> {this.state.badges.edad !== 0 && <span className='badge'>{this.state.badges.edad}</span>} </span> <span className='caret-down'>▾</span>
-              </button>
-              {this.state.activeDropdown == 'opciones-edad' && (
-              <div className='filter-dropdown' id="opciones-edad">
-                <div className='filter-options'>
-
-                  <div className='filter-column'>
-                    <div className='option-container'>
-                      <div className='check-container'>
-                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='adulto' name='edad' checked={this.state.selectFilters.edad.adulto} />
-                        <label htmlFor='adulto'></label>
-                      </div>
-                      <label htmlFor='adulto'>Proyecto adultos</label>
-                    </div>
-                    <div className='option-container'>
-                      <div className='check-container'>
-                        <input onChange={this.handleCheckboxChange('edad')} type='checkbox' id='joven' name='edad' checked={this.state.selectFilters.edad.joven} />
-                        <label htmlFor='joven'></label>
-                      </div>
-                      <label htmlFor='joven'>Proyecto jóvenes</label>
-                    </div>
-                  </div>
-
-                </div>
-                <div className='dropdown-actions'>
-                  <a className='cancelar' onClick={this.cancelApplyFilters}>Cancelar</a>
-                  <a className='aplicar' onClick={this.applyFilters('edad')}>Aplicar</a>
-                </div>
-              </div>
-              )}
-            </div>
-          */}
 
             { deltaFecha <= 0 &&
               <div className='filter'>
