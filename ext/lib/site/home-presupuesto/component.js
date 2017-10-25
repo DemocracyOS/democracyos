@@ -197,6 +197,7 @@ class HomePresupuesto extends Component {
             stage={this.state.stage}
             updateFilters={this.prepareFilters}
             changeStage={this.changeStage}
+            forumStage={this.state.forumStage}
             />
         </div>
         <TopicGrid
