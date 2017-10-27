@@ -28,7 +28,7 @@
               = t('settings.change-at-gravatar') + ' '
               i.icon-share-alt
             input.form-control(type='text', name='profilePictureUrl', maxlength=200, placeholder=t('settings.paste-url-image'), value=user.profilePictureUrl, validate='url')
-      if Object.keys(user.extra).length > 0
+      if Object.keys(user.extra).length > 0 && Object.values(user.extra).every((v) => v !== '')
         .well.well-lg.clearfix.complete-profile-registry
       .form-group: button.btn.btn-success.btn-block.btn-lg
         =t('settings.save')

@@ -34,7 +34,7 @@ export default class CompleteProfileRegistry extends Component {
                 <input className='form-control' type='text' disabled='disabled' defaultValue={user.extra.nro_doc}/>
                 <label>Sexo</label>
                 <input className='form-control' type='text' disabled='disabled' defaultValue={this.valueSexo(user.extra.sexo)}/>
-                <p>Si querés modificar estos datos, comunicate con info@rosario.com</p>
+                <p>Para modificar estos datos comunicarse con <a href="mailto:soporte@rosario.gov.ar">soporte@rosario.gov.ar</a></p>
             </div>
         )
   	}
