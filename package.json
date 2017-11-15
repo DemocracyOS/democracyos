@@ -192,7 +192,6 @@
     "eslint": "~3.18.0",
     "eslint-config-democracyos": "~1.1.0",
     "google-translate": "~2.0.4",
-    "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
     "nomnom": "^1.8.1",
@@ -211,7 +210,7 @@
     "clean": "NODE_PATH=. gulp clean",
     "migrate": "NODE_PATH=. bin/dos-migrate",
     "heroku-postbuild": "NODE_PATH=. gulp build --minify",
-    "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test",
+    "test": "",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
