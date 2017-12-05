@@ -1,21 +1,19 @@
-FROM node:6
+FROM node:6-alpine
 
 MAINTAINER Guido Vilariño <guido@democracyos.org>
 
-RUN npm config set python python2.7
+ENV NODE_ENV=development \
+    NODE_PATH=/usr/src
 
-COPY ["package.json", "/usr/src/"]
+RUN apk add --no-cache \
+      git
+
+COPY . /usr/src/
 
 WORKDIR /usr/src
 
-RUN npm install --quiet --production
-
-RUN npm install --quiet --only=development
-
-COPY [".", "/usr/src/"]
-
-EXPOSE 3000
-
-ENV NODE_PATH=.
+RUN npm install --quiet
 
 CMD ["./node_modules/.bin/gulp", "bws"]
+
+EXPOSE 3000
