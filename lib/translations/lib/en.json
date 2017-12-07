@@ -402,6 +402,7 @@
   "signup.resend-validation-email": "Resend validation email",
   "signup.resend-validation-email-complete": "Resend validation email complete",
   "signup.retype-password": "Re-type password",
+  "signup.user-already-registered": "A user with the given username is already registered",
   "signup.user-already-validated": "This user already validated the email address",
   "signup.validating": "Validating account.",
   "signup.validation-email-resent": "The validation email was resent.",
