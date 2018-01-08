@@ -1,9 +1,0 @@
-#forums-wrapper.hide(data-section=urlBuilder.for('settings.forums'))
-  .forums-settings
-    .heading
-      - if(user.privileges.canCreate)
-        .actions
-          a.btn.btn-default(href=urlBuilder.for('forums.new'))
-            = t('newsfeed.call-to-action.start-a-forum')
-      h1= t('settings.sidebar.forums')
-    .forums
