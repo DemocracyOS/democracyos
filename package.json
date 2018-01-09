@@ -15,6 +15,7 @@
     "dotenv": "^4.0.0",
     "mongoose": "^4.13.8",
     "mongoose-paginate": "^5.0.3",
+    "pinkie": "^2.0.4",
     "winston": "^2.4.0"
   },
   "devDependencies": {
