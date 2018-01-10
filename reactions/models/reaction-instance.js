@@ -22,4 +22,4 @@ const ReactionInstance = new mongoose.Schema({
  * Expose `ReactionInstance` Model
  */
 
-module.exports = mongoose.model('Reaction', ReactionInstance)
+module.exports = mongoose.model('ReactionInstance', ReactionInstance)

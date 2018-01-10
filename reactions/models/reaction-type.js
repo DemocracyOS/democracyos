@@ -23,4 +23,4 @@ const ReactionType = new mongoose.Schema({
  * Expose `ReactionType` Model
  */
 
-module.exports = mongoose.model('Reaction', ReactionType)
+module.exports = mongoose.model('ReactionType', ReactionType)

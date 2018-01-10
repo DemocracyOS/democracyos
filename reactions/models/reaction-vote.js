@@ -5,8 +5,8 @@ const mongoose = require('mongoose')
  */
 
 const ReactionVote = new mongoose.Schema({
-    userId: { type: ObjectId, ref: 'User' },
-    value: {}
+  userId: { type: ObjectId, ref: 'User' },
+  value: {}
 }, { timestamps: true })
 
 /**
@@ -19,4 +19,4 @@ const ReactionVote = new mongoose.Schema({
  * Expose `ReactionVote` Model
  */
 
-module.exports = mongoose.model('Reaction', ReactionVote)
+module.exports = mongoose.model('ReactionVote', ReactionVote)
