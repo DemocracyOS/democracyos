@@ -1,12 +1,10 @@
 const winston = require('winston')
+const expressWinston = require('express-winston')
 
-let level = process.env.LOG_LEVEL || 'debug'
-if (process.env.NODE_ENV === 'test') level = 'error'
-
-const logger = new winston.Logger({
+const log = new winston.Logger({
   transports: [
     new winston.transports.Console({
-      level: level,
+      level: process.env.NODE_ENV === 'test' ? 'error' : 'debug',
       colorize: true,
       timestamp: function () {
         return new Date().toISOString()
@@ -15,4 +13,9 @@ const logger = new winston.Logger({
   ]
 })
 
-module.exports = logger
+const middleware = expressWinston.logger({ winstonInstance: log })
+
+module.exports = {
+  log,
+  middleware
+}

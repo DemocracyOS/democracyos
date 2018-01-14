@@ -1,4 +1,4 @@
-const logger = require('logger')
+const { log } = require('../../logger')
 const User = require('../models/user')
 
 /**
@@ -9,7 +9,7 @@ const User = require('../models/user')
  */
 
 exports.create = function create (user) {
-  logger.debug('user db-api create')
+  log.debug('user db-api create')
 
   return (new User(user)).save()
 }
@@ -22,7 +22,7 @@ exports.create = function create (user) {
  */
 
 exports.get = function get (id) {
-  logger.debug('user db-api get')
+  log.debug('user db-api get')
 
   return User.find({ _id: id })
 }
@@ -37,7 +37,7 @@ exports.get = function get (id) {
  */
 
 exports.list = function list ({ limit, page }) {
-  logger.debug('user db-api list')
+  log.debug('user db-api list')
 
   return User
     .paginate({}, { page, limit })
@@ -53,7 +53,7 @@ exports.list = function list ({ limit, page }) {
  */
 
 exports.update = function update ({ id, user }) {
-  logger.debug('user db-api update')
+  log.debug('user db-api update')
 
   return User.find({ _id: id })
     .then((_user) => Object.assign(_user, user).save())
@@ -67,7 +67,7 @@ exports.update = function update ({ id, user }) {
  */
 
 exports.remove = function remove (id) {
-  logger.debug('user db-api remove')
+  log.debug('user db-api remove')
 
   return User.find({ _id: id })
     .then((user) => user.remove())
