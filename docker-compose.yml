@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   app:
@@ -9,16 +9,25 @@ services:
     links:
       - mongo
     ports:
-      - "3000:3000"
+      - 3000:3000
     # mount source volume, but
     # don't overwrite `node_modules` or mirror dir from container
     volumes:
-      - ${PWD}:/usr/src
+      - ./public:/usr/src/public
+      - ./bin:/usr/src/bin
+      - ./config:/usr/src/config
+      - ./lib:/usr/src/lib
+      - ./migrations:/usr/src/migrations
+      - ./test:/usr/src/test
       - /usr/src/node_modules
+    depends_on:
+      - mongo
     tty: true
 
   mongo:
-    image: mongo:3.2
+    image: mongo:3.6
+    ports:
+      - 27017:27017
     # Optionally mount external data directory
-    # volumes:
-    #   - path-to-your-data-dir:/data/db
+    volumes:
+      - ./tmp/db:/data/db
