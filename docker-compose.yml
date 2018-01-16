@@ -6,8 +6,6 @@ services:
       context: .
       dockerfile: ./docker/development.Dockerfile
     env_file: docker/.env
-    links:
-      - mongo
     ports:
       - 3000:3000
     # mount source volume, but
