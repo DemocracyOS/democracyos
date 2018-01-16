@@ -1,7 +1,3 @@
-.idea/*
-.npmrc
-.project
-.tmp
 *.csv
 *.dat
 *.DS_Store
@@ -11,9 +7,14 @@
 *.pid
 *.seed
 *.sublime-*
+.idea/*
+.npmrc
+.project
+.tmp
+/*.override.yml
+/tmp
 config*.json
 docker-cloud.yml
-/*.override.yml
 lib-cov
 logs
 mongroup.conf

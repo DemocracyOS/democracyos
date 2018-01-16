@@ -8,6 +8,8 @@ COPY ["package.json", "/usr/src/"]
 
 WORKDIR /usr/src
 
+ENV NODE_PATH=.
+
 RUN npm install --quiet --production
 
 RUN npm install --quiet --only=development
@@ -15,7 +17,5 @@ RUN npm install --quiet --only=development
 COPY [".", "/usr/src/"]
 
 EXPOSE 3000
-
-ENV NODE_PATH=.
 
 CMD ["./node_modules/.bin/gulp", "bws"]
