@@ -189,6 +189,7 @@
   },
   "devDependencies": {
     "arr-diff": "~3.0.0",
+    "ava": "0.23.0",
     "eslint": "~3.18.0",
     "eslint-config-democracyos": "~1.1.0",
     "google-translate": "~2.0.4",
