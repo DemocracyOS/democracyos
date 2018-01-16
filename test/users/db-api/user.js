@@ -1,7 +1,8 @@
-const { assert } = require('chai')
+const { expect } = require('chai')
 const rewire = require('rewire')
 const sinon = require('sinon')
 require('sinon-mongoose')
+const { Types: { ObjectId } } = require('mongoose')
 
 const User = require('../../../users/models/user')
 const user = require('../../../users/db-api/user')
@@ -12,7 +13,7 @@ describe('db-api.users', () => {
   describe('#create', () => {
     it('should create a user', () => {
       // require module with rewire to override its internal User reference
-      const user = rewire('users/db-api/user')
+      const user = rewire('../../../users/db-api/user')
 
       // replace User constructor for a spy
       const UserMock = sinon.spy()
@@ -29,9 +30,10 @@ describe('db-api.users', () => {
       // call create method
       return user.create(sampleUser)
         .then((result) => {
+          sinon.assert.calledWithNew(UserMock)
           sinon.assert.calledWith(UserMock, sampleUser)
           sinon.assert.calledOnce(save)
-          assert.equal(result, sampleUser)
+          expect(result).to.equal(sampleUser)
         })
     })
   })
@@ -41,15 +43,15 @@ describe('db-api.users', () => {
       const UserMock = sinon.mock(User)
 
       UserMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves(sampleUser)
 
-      return user.get('ID')
+      return user.get('5a5e29d948a9cc2fbeed02fa')
         .then((result) => {
           UserMock.verify()
           UserMock.restore()
-          assert.equal(result, sampleUser)
+          expect(result).to.equal(sampleUser)
         })
     })
   })
@@ -66,7 +68,7 @@ describe('db-api.users', () => {
         .then((result) => {
           UserMock.verify()
           UserMock.restore()
-          assert.equal(result, sampleUser)
+          expect(result).to.equal(sampleUser)
         })
     })
   })
@@ -77,16 +79,16 @@ describe('db-api.users', () => {
       const save = sinon.spy(() => sampleUser)
 
       UserMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ save })
 
-      return user.update({ id: 'ID', user: {} })
+      return user.update({ id: '5a5e29d948a9cc2fbeed02fa', user: {} })
         .then((result) => {
           UserMock.verify()
           UserMock.restore()
           sinon.assert.calledOnce(save)
-          assert.equal(result, sampleUser)
+          expect(result).to.equal(sampleUser)
         })
     })
   })
@@ -97,11 +99,11 @@ describe('db-api.users', () => {
       const remove = sinon.spy()
 
       UserMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ remove })
 
-      return user.remove('ID')
+      return user.remove('5a5e29d948a9cc2fbeed02fa')
         .then(() => {
           UserMock.verify()
           UserMock.restore()

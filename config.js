@@ -2,7 +2,7 @@
 // application. All defaults are assumed here, validation should also be
 // completed here.
 
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'test') require('dotenv').config()
 
 // ==============================================================================
 //  CONFIG INITIALIZATION
@@ -18,7 +18,7 @@ const CONFIG = {
 // ==============================================================================
 
 if (process.env.NODE_ENV === 'test' && !CONFIG.MONGO_URL) {
-  CONFIG.MONGO_URL = 'mongodb://localhost/test'
+  CONFIG.MONGO_URL = 'mongodb://localhost/DemocracyOS-test'
 }
 
 module.exports = CONFIG

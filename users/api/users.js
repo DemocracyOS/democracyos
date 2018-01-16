@@ -1,44 +1,69 @@
 const express = require('express')
-const user = require('../db-api/user')
+const {
+  OK,
+  CREATED,
+  NO_CONTENT,
+  INTERNAL_SERVER_ERROR
+} = require('http-status')
+const { log } = require('../../logger')
+const User = require('../db-api/user')
 
 const router = express.Router()
 
 router.route('/users')
   .post(async (req, res, next) => {
     try {
-      await user.create()
+      await User.create(req.body)
+      res.status(CREATED).end()
     } catch (err) {
-      res.status(200).json({ ola: 'mundo' })
+      log.error(err)
+      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
     }
   })
   .get(async (req, res, next) => {
     try {
-      await user.list()
+      const results = await User.list({ limit: req.query.limit, page: req.query.page })
+
+      res.status(OK).json({
+        results: results.docs,
+        pagination: {
+          count: results.total,
+          page: results.page,
+          limit: results.limit
+        }
+      })
     } catch (err) {
-      res.status(200).json({ ola: 'mundo' })
+      log.error(err)
+      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
     }
   })
 
 router.route('/users/:id')
   .get(async (req, res, next) => {
     try {
-      await user.get()
+      const user = await User.get(req.params.id)
+      res.status(OK).json(user)
     } catch (err) {
-      res.status().json()
+      log.error(err)
+      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
     }
   })
   .put(async (req, res, next) => {
     try {
-      await user.update()
+      await User.update({ id: req.params.id, user: req.body })
+      res.status(NO_CONTENT).end()
     } catch (err) {
-      res.status().json()
+      log.error(err)
+      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
     }
   })
   .delete(async (req, res, next) => {
     try {
-      await user.remove()
+      await User.remove(req.params.id)
+      res.status(NO_CONTENT).end()
     } catch (err) {
-      res.status().json()
+      log.error(err)
+      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
     }
   })
 
