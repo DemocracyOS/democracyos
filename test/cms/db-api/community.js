@@ -49,21 +49,6 @@ describe('UNIT: Communities', function () {
       })
   })
 
-  it('should list all cms', function () {
-    const CommunityMock = sinon.mock(Community)
-
-    CommunityMock
-      .expects('paginate').withArgs({}, { limit: 10, page: 1 })
-      .resolves(sampleCommunity)
-
-    return community.list({ limit: 10, page: 1 })
-      .then((result) => {
-        CommunityMock.verify()
-        CommunityMock.restore()
-        assert.equal(result, sampleCommunity)
-      })
-  })
-
   it('should update a community', function () {
     const CommunityMock = sinon.mock(Community)
     const save = sinon.spy(() => sampleCommunity)

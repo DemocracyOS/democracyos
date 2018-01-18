@@ -1,4 +1,4 @@
-const logger = require('logger')
+const { log } = require('logger')
 const Community = require('../models/community')
 
 /**
@@ -8,8 +8,8 @@ const Community = require('../models/community')
  * @return {promise}
  */
 
-exports.create = function create (Community) {
-  logger.debug('create community')
+exports.create = function create (community) {
+  log.debug('create community')
   return (new Community(community)).save()
 }
 
@@ -21,8 +21,8 @@ exports.create = function create (Community) {
  */
 
 exports.get = function get (id) {
-  logger.debug('get community')
-  return community.find({ _id: id })
+  log.debug('get community')
+  return Community.find({ _id: id })
 }
 
 /**
@@ -34,10 +34,10 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.update = function update ({ id,community }) {
-  logger.debug('update community')
-  // return Promise.resolve()
-  return community.find({ _id: id })
+exports.update = function update ({ id, community }) {
+  log.debug('update community')
+
+  return Community.find({ _id: id })
     .then((_community) => Object.assign(_community, community).save())
 }
 
@@ -49,7 +49,7 @@ exports.update = function update ({ id,community }) {
  */
 
 exports.remove = function remove (id) {
-  logger.debug('remove community')
+  log.debug('remove community')
   return Community.find({ _id: id })
     .then((community) => community.remove())
 }

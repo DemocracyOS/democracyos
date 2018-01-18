@@ -6,11 +6,10 @@ const mongoose = require('mongoose')
 
 const Community = new mongoose.Schema({
   communityName: String,
-  logo: url,
+  logo: String,
   permissions: String,
   theme: String
 }, { timestamps: true })
-
 
 /**
  * Expose `Community` Model

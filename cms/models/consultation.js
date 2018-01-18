@@ -10,8 +10,8 @@ const Consultation = new mongoose.Schema({
   content: String,
   reactionId: String,
   author: String,
-  openingDate: {type: Date},
-  closingDate: {type: Date},
+  openingDate: { type: Date },
+  closingDate: { type: Date },
   tags: [String]
 })
 
