@@ -1,4 +1,4 @@
-const logger = require('logger')
+const { log } = require('../../logger')
 const ReactionVote = require('../models/reaction-vote')
 
 /**
@@ -9,8 +9,8 @@ const ReactionVote = require('../models/reaction-vote')
  */
 
 exports.create = function create(reactionVote) {
-    logger.debug('create reactionVote')
-    return (new ReactionVote(reactionVote)).save()
+  log.debug('create reactionVote')
+  return (new ReactionVote(reactionVote)).save()
 }
 
 /**
@@ -21,8 +21,8 @@ exports.create = function create(reactionVote) {
  */
 
 exports.get = function get(id) {
-    logger.debug('get reactionVote')
-    return reactionVote.find({ _id: id })
+  log.debug('get reactionVote')
+  return ReactionVote.find({ _id: id })
 }
 
 /**
@@ -35,9 +35,9 @@ exports.get = function get(id) {
  */
 
 exports.list = function list({ limit, page }) {
-    logger.debug('get reactionVote list')
-    return reactionVote
-        .paginate({}, { page, limit })
+  log.debug('get reactionVote list')
+  return ReactionVote
+    .paginate({}, { page, limit })
 }
 
 /**
@@ -50,10 +50,10 @@ exports.list = function list({ limit, page }) {
  */
 
 exports.update = function update({ id, reactionVote }) {
-    logger.debug('update reactionVote')
-    // return Promise.resolve()
-    return reactionVote.find({ _id: id })
-        .then((_reactionVote) => Object.assign(_reactionVote, reactionVote).save())
+  log.debug('update reactionVote')
+  // return Promise.resolve()
+  return ReactionVote.find({ _id: id })
+    .then((_ReactionVote) => Object.assign(_ReactionVote, reactionVote).save())
 }
 
 /**
@@ -64,7 +64,13 @@ exports.update = function update({ id, reactionVote }) {
  */
 
 exports.remove = function remove(id) {
-    logger.debug('remove reactionVote')
-    return reactionVote.find({ _id: id })
-        .then((reactionVote) => reactionVote.remove())
+  log.debug('remove reactionVote')
+  return ReactionVote.find({ _id: id })
+    .then((ReactionVote) => ReactionVote.remove())
 }
+
+
+/**
+ * Get list of reactionVotes from User (not closed) 
+ *   Param: UserId
+ */

@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 
 /**
  * Define `ReactionVote` Schema
  */
 
 const ReactionVote = new mongoose.Schema({
-  userId: { type: ObjectId, ref: 'User' },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   value: {}
 }, { timestamps: true })
 
@@ -13,7 +14,12 @@ const ReactionVote = new mongoose.Schema({
  * Define Schema Indexes
  */
 
-// Empty
+/**
+* Model's Plugin Extensions
+*/
+
+ReactionVote.plugin(mongoosePaginate)
+
 
 /**
  * Expose `ReactionVote` Model

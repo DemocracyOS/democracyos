@@ -1,32 +1,32 @@
-const logger = require('logger')
+const { log } = require('../../logger')
 const ReactionType = require('../models/reaction-type')
 
 /**
- * Create reactionType
+ * Create ReactionType
  * @method create
- * @param  {object} reactionType
+ * @param  {object} ReactionType
  * @return {promise}
  */
 
-exports.create = function create(reactionType) {
-    logger.debug('create reactionType')
-    return (new ReactionType(reactionType)).save()
+exports.create = function create (reactionType) {
+  log.debug('create ReactionType')
+  return (new ReactionType(reactionType)).save()
 }
 
 /**
- * Get reactionType by id
+ * Get ReactionType by id
  * @method get
  * @param  {string} id
  * @return {promise}
  */
 
-exports.get = function get(id) {
-    logger.debug('get reactionType')
-    return reactionType.find({ _id: id })
+exports.get = function get (id) {
+  log.debug('get ReactionType')
+  return ReactionType.find({ _id: id })
 }
 
 /**
- * Get list of reactionTypes
+ * Get list of ReactionTypes
  * @method list
  * @param  {object} opts
  * @param  {number} opts.limit
@@ -35,36 +35,35 @@ exports.get = function get(id) {
  */
 
 exports.list = function list({ limit, page }) {
-    logger.debug('get reactionType list')
-    return reactionType
-        .paginate({}, { page, limit })
+  log.debug('get ReactionType list')
+  return ReactionType.paginate({}, { page, limit })
 }
 
 /**
- * Update reactionType
+ * Update ReactionType
  * @method update
  * @param  {object} opts
  * @param  {string} opts.id
- * @param  {object} opts.reactionType
+ * @param  {object} opts.ReactionType
  * @return {promise}
  */
 
-exports.update = function update({ id, reactionType }) {
-    logger.debug('update reactionType')
-    // return Promise.resolve()
-    return reactionType.find({ _id: id })
-        .then((_reactionType) => Object.assign(_reactionType, reactionType).save())
+exports.update = function update ({ id, reactionType }) {
+  log.debug('update ReactionType')
+  // return Promise.resolve()
+  return ReactionType.find({ _id: id })
+    .then((_ReactionType) => Object.assign(_ReactionType, reactionType).save())
 }
 
 /**
- * Remove reactionType
+ * Remove ReactionType
  * @method delete
  * @param  {string} id
  * @return {promise}
  */
 
-exports.remove = function remove(id) {
-    logger.debug('remove reactionType')
-    return reactionType.find({ _id: id })
-        .then((reactionType) => reactionType.remove())
+exports.remove = function remove (id) {
+  log.debug('remove ReactionType')
+  return ReactionType.find({ _id: id })
+    .then((ReactionType) => ReactionType.remove())
 }

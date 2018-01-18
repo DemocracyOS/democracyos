@@ -1,22 +1,25 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 
 /**
  * Define `ReactionInstance` Schema
  */
 
 const ReactionInstance = new mongoose.Schema({
-    reactionType: String,
-    reactionId: { type: ObjectId, refPath: 'reactionType' },
-    resourceType: String,
-    resourceId: String,
-    results: [{}]
+  reactionId: { type: mongoose.Schema.Types.ObjectId, refPath: 'reactionType' },
+  resourceType: String,
+  resourceId: String,
+  results: [{}]
 }, { timestamps: true })
 
 /**
  * Define Schema Indexes
  */
+/**
+* Model's Plugin Extensions
+*/
 
-// Empty    
+ReactionInstance.plugin(mongoosePaginate)
 
 /**
  * Expose `ReactionInstance` Model

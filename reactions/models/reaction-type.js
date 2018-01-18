@@ -1,23 +1,24 @@
 const mongoose = require('mongoose')
-const METHODS = require('../enum/methods');
+const mongoosePaginate = require('mongoose-paginate')
+const METHODS = require('../enum/methods')
 /**
  * Define `ReactionType` Schema
  */
 
 const ReactionType = new mongoose.Schema({
-    method: {
-        type: String,
-        enum: METHODS,
-      },
-    startingDate: Date,
-    closingDate: Date,
+  method: {
+    type: String,
+    enum: METHODS,
+  },
+  startingDate: Date,
+  closingDate: Date,
 }, { timestamps: true })
 
 /**
  * Define Schema Indexes
  */
 
-// Empty
+ReactionType.plugin(mongoosePaginate)
 
 /**
  * Expose `ReactionType` Model

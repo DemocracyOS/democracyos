@@ -1,4 +1,4 @@
-const logger = require('logger')
+const { log } = require('../../logger')
 const ReactionInstance = require('../models/reaction-instance')
 
 /**
@@ -9,8 +9,8 @@ const ReactionInstance = require('../models/reaction-instance')
  */
 
 exports.create = function create(reactionInstance) {
-    logger.debug('create reactionInstance')
-    return (new ReactionInstance(reactionInstance)).save()
+  log.debug('create reactionInstance')
+  return (new ReactionInstance(reactionInstance)).save()
 }
 
 /**
@@ -21,8 +21,8 @@ exports.create = function create(reactionInstance) {
  */
 
 exports.get = function get(id) {
-    logger.debug('get reactionInstance')
-    return reactionInstance.find({ _id: id })
+  log.debug('get reactionInstance')
+  return ReactionInstance.find({ _id: id })
 }
 
 /**
@@ -34,10 +34,10 @@ exports.get = function get(id) {
  * @return {promise}
  */
 
-exports.list = function list({ limit, page }) {
-    logger.debug('get reactionInstance list')
-    return reactionInstance
-        .paginate({}, { page, limit })
+exports.list = function list ({ limit, page }) {
+  log.debug('get reactionInstance list')
+  return ReactionInstance
+    .paginate({}, { page, limit })
 }
 
 /**
@@ -49,11 +49,11 @@ exports.list = function list({ limit, page }) {
  * @return {promise}
  */
 
-exports.update = function update({ id, reactionInstance }) {
-    logger.debug('update reactionInstance')
-    // return Promise.resolve()
-    return reactionInstance.find({ _id: id })
-        .then((_reactionInstance) => Object.assign(_reactionInstance, reactionInstance).save())
+exports.update = function update ({ id, reactionInstance }) {
+  log.debug('update reactionInstance')
+  // return Promise.resolve()
+  return ReactionInstance.find({ _id: id })
+    .then((_ReactionInstance) => Object.assign(_ReactionInstance, reactionInstance).save())
 }
 
 /**
@@ -63,8 +63,27 @@ exports.update = function update({ id, reactionInstance }) {
  * @return {promise}
  */
 
-exports.remove = function remove(id) {
-    logger.debug('remove reactionInstance')
-    return reactionInstance.find({ _id: id })
-        .then((reactionInstance) => reactionInstance.remove())
+exports.remove = function remove (id) {
+  log.debug('remove reactionInstance')
+  return ReactionInstance.find({ _id: id })
+    .then((ReactionInstance) => ReactionInstance.remove())
 }
+
+// TODO
+
+/**
+ * Get reactionInstance by resourceId 
+ */
+
+/**
+ * Get list of active reactionInstances (not closed) 
+ *   Param: (Opt) dateFrom: Date (Default: start of the current year)
+ *   Param: (Opt) dateTo: Date (Default: current day-month-year)
+ */
+
+/**
+ * Get list of closed reactionInstances in a range of date
+ *   Param: (Opt) dateFrom: Date (Default: start of the current year)
+ *   Param: (Opt) dateTo: Date (Default: current day-month-year)
+ */
+
