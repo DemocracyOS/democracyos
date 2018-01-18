@@ -1,4 +1,4 @@
-const logger = require('logger')
+const { log } = require('logger')
 const Consultation = require('../models/consultation')
 
 /**
@@ -9,7 +9,7 @@ const Consultation = require('../models/consultation')
  */
 
 exports.create = function create (consultation) {
-  logger.debug('create consultation')
+  log.debug('create consultation')
   return (new Consultation(consultation)).save()
 }
 
@@ -21,7 +21,7 @@ exports.create = function create (consultation) {
  */
 
 exports.get = function get (id) {
-  logger.debug('get consultation')
+  log.debug('get consultation')
   return Consultation.find({ _id: id })
 }
 
@@ -35,7 +35,7 @@ exports.get = function get (id) {
  */
 
 exports.list = function list ({ limit, page }) {
-  logger.debug('get consultations list')
+  log.debug('get consultations list')
   return Consultation
     .paginate({}, { page, limit })
 }
@@ -50,7 +50,7 @@ exports.list = function list ({ limit, page }) {
  */
 
 exports.update = function update ({ id, consultation }) {
-  logger.debug('update consultation')
+  log.debug('update consultation')
   // return Promise.resolve()
   return Consultation.find({ _id: id })
     .then((_consultation) => Object.assign(_consultation, consultation).save())
@@ -64,7 +64,7 @@ exports.update = function update ({ id, consultation }) {
  */
 
 exports.remove = function remove (id) {
-  logger.debug('remove consultation')
+  log.debug('remove consultation')
   return Consultation.find({ _id: id })
     .then((consultation) => consultation.remove())
 }
