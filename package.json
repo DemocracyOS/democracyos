@@ -9,10 +9,16 @@
     "node": "^8"
   },
   "scripts": {
-    "test": "NODE_PATH=. NODE_ENV=test mocha --recursive"
+    "test": "NODE_ENV=test mocha --recursive --timeout 10000"
   },
   "dependencies": {
+    "compression": "^1.7.1",
     "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-paginate": "^0.3.0",
+    "express-winston": "^2.4.0",
+    "helmet": "^3.9.0",
+    "http-status": "^1.0.1",
     "mongoose": "^4.13.8",
     "mongoose-paginate": "^5.0.3",
     "pinkie": "^2.0.4",
@@ -20,6 +26,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
     "eslint": "^4.14.0",
     "eslint-config-democracyos": "^2.0.2",
     "mocha": "^4.1.0",
