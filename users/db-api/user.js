@@ -1,4 +1,5 @@
-const logger = require('logger')
+const { Types: { ObjectId } } = require('mongoose')
+const { log } = require('../../logger')
 const User = require('../models/user')
 
 /**
@@ -9,7 +10,8 @@ const User = require('../models/user')
  */
 
 exports.create = function create (user) {
-  logger.debug('create user')
+  log.debug('user db-api create')
+
   return (new User(user)).save()
 }
 
@@ -21,8 +23,8 @@ exports.create = function create (user) {
  */
 
 exports.get = function get (id) {
-  logger.debug('get user')
-  return User.find({ _id: id })
+  log.debug('user db-api get')
+  return User.findOne({ _id: ObjectId(id) })
 }
 
 /**
@@ -35,7 +37,8 @@ exports.get = function get (id) {
  */
 
 exports.list = function list ({ limit, page }) {
-  logger.debug('get user list')
+  log.debug('user db-api list')
+
   return User
     .paginate({}, { page, limit })
 }
@@ -50,9 +53,9 @@ exports.list = function list ({ limit, page }) {
  */
 
 exports.update = function update ({ id, user }) {
-  logger.debug('update user')
-  // return Promise.resolve()
-  return User.find({ _id: id })
+  log.debug('user db-api update')
+
+  return User.findOne({ _id: ObjectId(id) })
     .then((_user) => Object.assign(_user, user).save())
 }
 
@@ -64,7 +67,8 @@ exports.update = function update ({ id, user }) {
  */
 
 exports.remove = function remove (id) {
-  logger.debug('remove user')
-  return User.find({ _id: id })
+  log.debug('user db-api remove')
+
+  return User.findOne({ _id: ObjectId(id) })
     .then((user) => user.remove())
 }
