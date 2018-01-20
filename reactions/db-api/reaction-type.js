@@ -1,3 +1,4 @@
+const { Types: { ObjectId } } = require('mongoose')
 const { log } = require('../../logger')
 const ReactionType = require('../models/reaction-type')
 
@@ -22,7 +23,7 @@ exports.create = function create (reactionType) {
 
 exports.get = function get (id) {
   log.debug('get ReactionType')
-  return ReactionType.find({ _id: id })
+  return ReactionType.findOne({ _id: ObjectId(id) })
 }
 
 /**
@@ -51,7 +52,7 @@ exports.list = function list ({ limit, page }) {
 exports.update = function update ({ id, reactionType }) {
   log.debug('update ReactionType')
   // return Promise.resolve()
-  return ReactionType.find({ _id: id })
+  return ReactionType.findOne({ _id: ObjectId(id) })
     .then((_ReactionType) => Object.assign(_ReactionType, reactionType).save())
 }
 
@@ -64,6 +65,6 @@ exports.update = function update ({ id, reactionType }) {
 
 exports.remove = function remove (id) {
   log.debug('remove ReactionType')
-  return ReactionType.find({ _id: id })
+  return ReactionType.findOne({ _id: ObjectId(id) })
     .then((ReactionType) => ReactionType.remove())
 }

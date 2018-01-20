@@ -1,4 +1,4 @@
-
+const { Types: { ObjectId } } = require('mongoose')
 const { assert } = require('chai')
 const rewire = require('rewire')
 const sinon = require('sinon')
@@ -49,11 +49,11 @@ describe('db-api.reactionVote', function () {
       const ReactionVoteMock = sinon.mock(ReactionVote)
 
       ReactionVoteMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves(sampleReactionVote)
 
-      return reactionVote.get('ID')
+      return reactionVote.get('5a5e29d948a9cc2fbeed02fa')
         .then((result) => {
           ReactionVoteMock.verify()
           ReactionVoteMock.restore()
@@ -85,11 +85,11 @@ describe('db-api.reactionVote', function () {
       const save = sinon.spy(() => sampleReactionVote)
 
       ReactionVoteMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ save })
 
-      return reactionVote.update({ id: 'ID', reactionVote: {} })
+      return reactionVote.update({ id: '5a5e29d948a9cc2fbeed02fa', reactionVote: {} })
         .then((result) => {
           ReactionVoteMock.verify()
           ReactionVoteMock.restore()
@@ -105,11 +105,11 @@ describe('db-api.reactionVote', function () {
       const remove = sinon.spy()
 
       ReactionVoteMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ remove })
 
-      return reactionVote.remove('ID')
+      return reactionVote.remove('5a5e29d948a9cc2fbeed02fa')
         .then(() => {
           ReactionVoteMock.verify()
           ReactionVoteMock.restore()

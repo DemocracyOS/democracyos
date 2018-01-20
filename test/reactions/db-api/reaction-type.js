@@ -1,3 +1,4 @@
+const { Types: { ObjectId } } = require('mongoose')
 const { assert } = require('chai')
 const rewire = require('rewire')
 const sinon = require('sinon')
@@ -32,7 +33,7 @@ describe('db-api.reactionType', function () {
       // call create method
       return reactionType.create(sampleReactionType)
         .then((result) => {
-          sinon.assert.calledWithNew(ReactionTypeMock)        
+          sinon.assert.calledWithNew(ReactionTypeMock)
           sinon.assert.calledWith(ReactionTypeMock, sampleReactionType)
           sinon.assert.calledOnce(save)
           assert.equal(result, sampleReactionType)
@@ -45,11 +46,11 @@ describe('db-api.reactionType', function () {
       const ReactionTypeMock = sinon.mock(ReactionType)
 
       ReactionTypeMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves(sampleReactionType)
 
-      return reactionType.get('ID')
+      return reactionType.get('5a5e29d948a9cc2fbeed02fa')
         .then((result) => {
           ReactionTypeMock.verify()
           ReactionTypeMock.restore()
@@ -81,11 +82,11 @@ describe('db-api.reactionType', function () {
       const save = sinon.spy(() => sampleReactionType)
 
       ReactionTypeMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ save })
 
-      return reactionType.update({ id: 'ID', reactionType: {} })
+      return reactionType.update({ id: '5a5e29d948a9cc2fbeed02fa', reactionType: {} })
         .then((result) => {
           ReactionTypeMock.verify()
           ReactionTypeMock.restore()
@@ -101,11 +102,11 @@ describe('db-api.reactionType', function () {
       const remove = sinon.spy()
 
       ReactionTypeMock
-        .expects('find').withArgs({ _id: 'ID' })
+        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ remove })
 
-      return reactionType.remove('ID')
+      return reactionType.remove('5a5e29d948a9cc2fbeed02fa')
         .then(() => {
           ReactionTypeMock.verify()
           ReactionTypeMock.restore()
