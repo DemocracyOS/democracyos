@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 
 /**
-Define `Consultation` schema
+Define `Post` schema
 */
 
-const Consultation = new mongoose.Schema({
+const Post = new mongoose.Schema({
   title: String,
   content: String,
   reactionId: String,
@@ -19,10 +19,10 @@ const Consultation = new mongoose.Schema({
  * Model's Plugin Extensions
  */
 
-Consultation.plugin(mongoosePaginate)
+Post.plugin(mongoosePaginate)
 
 /**
  * Expose `User` Model
  */
 
-module.exports = mongoose.model('Consultation', Consultation)
+module.exports = mongoose.model('Post', Post)
