@@ -43,6 +43,7 @@ describe('db-api.reactionVote', function () {
         })
     })
   })
+
   describe('#get', function () {
     it('should get a reactionVote', function () {
       const ReactionVoteMock = sinon.mock(ReactionVote)
@@ -60,6 +61,7 @@ describe('db-api.reactionVote', function () {
         })
     })
   })
+
   describe('#list', function () {
     it('should list all reactionVotes', function () {
       const ReactionVoteMock = sinon.mock(ReactionVote)
@@ -76,6 +78,7 @@ describe('db-api.reactionVote', function () {
         })
     })
   })
+
   describe('#update', function () {
     it('should update a reactionVote', function () {
       const ReactionVoteMock = sinon.mock(ReactionVote)
@@ -95,6 +98,7 @@ describe('db-api.reactionVote', function () {
         })
     })
   })
+
   describe('#remove', function () {
     it('should remove a reactionVote', function () {
       const ReactionVoteMock = sinon.mock(ReactionVote)

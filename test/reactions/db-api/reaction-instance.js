@@ -64,6 +64,7 @@ describe('db-api.reactionInstance', function () {
         })
     })
   })
+
   describe('#list', function () {
     it('should list all reactionInstances', function () {
       const ReactionInstanceMock = sinon.mock(ReactionInstance)
@@ -82,7 +83,6 @@ describe('db-api.reactionInstance', function () {
   })
 
   describe('#update', function () {
-
     it('should update a reactionInstance', function () {
       const ReactionInstanceMock = sinon.mock(ReactionInstance)
       const save = sinon.spy(() => sampleReactionInstance)
@@ -103,7 +103,6 @@ describe('db-api.reactionInstance', function () {
   })
 
   describe('#remove', function () {
-
     it('should remove a reactionInstance', function () {
       const ReactionInstanceMock = sinon.mock(ReactionInstance)
       const remove = sinon.spy()

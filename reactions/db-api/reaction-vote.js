@@ -8,7 +8,7 @@ const ReactionVote = require('../models/reaction-vote')
  * @return {promise}
  */
 
-exports.create = function create(reactionVote) {
+exports.create = function create (reactionVote) {
   log.debug('create reactionVote')
   return (new ReactionVote(reactionVote)).save()
 }
@@ -20,7 +20,7 @@ exports.create = function create(reactionVote) {
  * @return {promise}
  */
 
-exports.get = function get(id) {
+exports.get = function get (id) {
   log.debug('get reactionVote')
   return ReactionVote.find({ _id: id })
 }
@@ -34,7 +34,7 @@ exports.get = function get(id) {
  * @return {promise}
  */
 
-exports.list = function list({ limit, page }) {
+exports.list = function list ({ limit, page }) {
   log.debug('get reactionVote list')
   return ReactionVote
     .paginate({}, { page, limit })
@@ -49,7 +49,7 @@ exports.list = function list({ limit, page }) {
  * @return {promise}
  */
 
-exports.update = function update({ id, reactionVote }) {
+exports.update = function update ({ id, reactionVote }) {
   log.debug('update reactionVote')
   // return Promise.resolve()
   return ReactionVote.find({ _id: id })
@@ -63,14 +63,13 @@ exports.update = function update({ id, reactionVote }) {
  * @return {promise}
  */
 
-exports.remove = function remove(id) {
+exports.remove = function remove (id) {
   log.debug('remove reactionVote')
   return ReactionVote.find({ _id: id })
     .then((ReactionVote) => ReactionVote.remove())
 }
 
-
 /**
- * Get list of reactionVotes from User (not closed) 
+ * Get list of reactionVotes from User (not closed)
  *   Param: UserId
  */

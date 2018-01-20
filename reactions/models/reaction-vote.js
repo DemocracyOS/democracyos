@@ -20,7 +20,6 @@ const ReactionVote = new mongoose.Schema({
 
 ReactionVote.plugin(mongoosePaginate)
 
-
 /**
  * Expose `ReactionVote` Model
  */

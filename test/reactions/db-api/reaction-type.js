@@ -5,7 +5,7 @@ require('sinon-mongoose')
 
 const ReactionType = require('../../../reactions/models/reaction-type')
 const reactionType = require('../../../reactions/db-api/reaction-type')
-const sampleReactionType = { 
+const sampleReactionType = {
   method: 'LIKE',
   startingDate: new Date('2017-12-20 00:00:00'),
   closingDate: new Date('2018-02-20 00:00:00')
@@ -41,7 +41,6 @@ describe('db-api.reactionType', function () {
   })
 
   describe('#get', function () {
-  
     it('should get a reactionType', function () {
       const ReactionTypeMock = sinon.mock(ReactionType)
 
@@ -60,7 +59,6 @@ describe('db-api.reactionType', function () {
   })
 
   describe('#list', function () {
-
     it('should list all reactionTypes', function () {
       const ReactionTypeMock = sinon.mock(ReactionType)
 
@@ -76,7 +74,8 @@ describe('db-api.reactionType', function () {
         })
     })
   })
-  describe('#update', function () {  
+
+  describe('#update', function () {
     it('should update a reactionType', function () {
       const ReactionTypeMock = sinon.mock(ReactionType)
       const save = sinon.spy(() => sampleReactionType)
@@ -95,7 +94,8 @@ describe('db-api.reactionType', function () {
         })
     })
   })
-  describe('#remove', function () {  
+
+  describe('#remove', function () {
     it('should remove a reactionType', function () {
       const ReactionTypeMock = sinon.mock(ReactionType)
       const remove = sinon.spy()

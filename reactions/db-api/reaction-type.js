@@ -34,7 +34,7 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.list = function list({ limit, page }) {
+exports.list = function list ({ limit, page }) {
   log.debug('get ReactionType list')
   return ReactionType.paginate({}, { page, limit })
 }

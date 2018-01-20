@@ -8,7 +8,7 @@ const ReactionInstance = require('../models/reaction-instance')
  * @return {promise}
  */
 
-exports.create = function create(reactionInstance) {
+exports.create = function create (reactionInstance) {
   log.debug('create reactionInstance')
   return (new ReactionInstance(reactionInstance)).save()
 }
@@ -20,7 +20,7 @@ exports.create = function create(reactionInstance) {
  * @return {promise}
  */
 
-exports.get = function get(id) {
+exports.get = function get (id) {
   log.debug('get reactionInstance')
   return ReactionInstance.find({ _id: id })
 }
@@ -72,11 +72,11 @@ exports.remove = function remove (id) {
 // TODO
 
 /**
- * Get reactionInstance by resourceId 
+ * Get reactionInstance by resourceId
  */
 
 /**
- * Get list of active reactionInstances (not closed) 
+ * Get list of active reactionInstances (not closed)
  *   Param: (Opt) dateFrom: Date (Default: start of the current year)
  *   Param: (Opt) dateTo: Date (Default: current day-month-year)
  */
@@ -86,4 +86,3 @@ exports.remove = function remove (id) {
  *   Param: (Opt) dateFrom: Date (Default: start of the current year)
  *   Param: (Opt) dateTo: Date (Default: current day-month-year)
  */
-

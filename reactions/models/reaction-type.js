@@ -8,10 +8,10 @@ const METHODS = require('../enum/methods')
 const ReactionType = new mongoose.Schema({
   method: {
     type: String,
-    enum: METHODS,
+    enum: METHODS
   },
   startingDate: Date,
-  closingDate: Date,
+  closingDate: Date
 }, { timestamps: true })
 
 /**
