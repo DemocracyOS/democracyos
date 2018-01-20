@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
 /**
- * Define `Community` Schema
+ * Define `Settings` Schema
  */
 
-const Community = new mongoose.Schema({
+const Settings = new mongoose.Schema({
   communityName: String,
   logo: String,
   permissions: String,
@@ -12,7 +12,7 @@ const Community = new mongoose.Schema({
 }, { timestamps: true })
 
 /**
- * Expose `Community` Model
+ * Expose `Settings` Model
  */
 
-module.exports = mongoose.model('Community', Community)
+module.exports = mongoose.model('Settings', Settings)
