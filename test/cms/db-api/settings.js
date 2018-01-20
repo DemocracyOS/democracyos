@@ -8,7 +8,7 @@ const Settings = require('../../../cms/models/setting')
 const settings = require('../../../cms/db-api/settings')
 const sampleSettings = { settingsname: 'COMMUNITYNAME' }
 
-describe('UNIT: Communities', function () {
+describe('db-api.settings', function () {
   describe('#create', () => {
     it('should create a settings', function () {
       // require module with rewire to override its internal Settings reference
