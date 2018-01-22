@@ -10,7 +10,7 @@ const User = require('../db-api/user')
 
 const router = express.Router()
 
-router.route('/users')
+router.route('/')
   .post(async (req, res, next) => {
     try {
       await User.create(req.body)
@@ -38,7 +38,7 @@ router.route('/users')
     }
   })
 
-router.route('/users/:id')
+router.route('/:id')
   .get(async (req, res, next) => {
     try {
       const user = await User.get(req.params.id)
