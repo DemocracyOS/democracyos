@@ -5,10 +5,10 @@ const {
   CREATED,
   NO_CONTENT
 } = require('http-status')
-const app = require('../../../app')
+const app = require('../../../main')
 const User = require('../../../users/models/user')
 
-require('../../../services/mongoose')
+require('../../../main/mongoose')
 
 const expect = chai.expect
 chai.use(chaiHttp)

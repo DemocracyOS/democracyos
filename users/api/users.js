@@ -5,7 +5,7 @@ const {
   NO_CONTENT,
   INTERNAL_SERVER_ERROR
 } = require('http-status')
-const { log } = require('../../services/logger')
+const { log } = require('../../main/logger')
 const User = require('../db-api/user')
 
 const router = express.Router()

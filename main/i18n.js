@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const Globalize = require('globalize')
 const accepts = require('accepts')
-const { DEFAULT_LANG } = require('../config')
+const { DEFAULT_LANG } = require('./config')
 
 Globalize.load(
   require('cldr-data/supplemental/likelySubtags')

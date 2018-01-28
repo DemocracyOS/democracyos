@@ -1,5 +1,5 @@
 const { Types: { ObjectId } } = require('mongoose')
-const { log } = require('../../services/logger')
+const { log } = require('../../main/logger')
 const ReactionInstance = require('../models/reaction-instance')
 
 /**

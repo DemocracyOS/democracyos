@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 const http = require('http')
-const { log } = require('./services/logger')
-const { PORT } = require('./config')
-const app = require('./app')
+const { log } = require('./main/logger')
+const { PORT } = require('./main/config')
+const app = require('./main')
 
-require('./services/mongoose')
-require('./services/i18n')
+require('./main/mongoose')
+require('./main/i18n')
 
 /**
  * Get port from environment and store in Express.

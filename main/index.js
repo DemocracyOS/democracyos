@@ -1,9 +1,9 @@
 const express = require('express')
 const compression = require('compression')
 const helmet = require('helmet')
-const { middleware: loggerMiddleware } = require('./services/logger')
-const { middleware: i18nMiddleware } = require('./services/i18n')
-const routes = require('./routes')
+const routes = require('../routes')
+const { middleware: loggerMiddleware } = require('./logger')
+const { middleware: i18nMiddleware } = require('./i18n')
 const app = express()
 
 // Apply middlewares

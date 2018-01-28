@@ -1,7 +1,7 @@
 const express = require('express')
 const paginate = require('express-paginate')
-const errors = require('../errors')
-const { log } = require('../services/logger')
+const errors = require('../main/errors')
+const { log } = require('../main/logger')
 const router = express.Router()
 
 // Apply paginate middleware to API routes
