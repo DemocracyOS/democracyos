@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { log } = require('../logger')
+const { log } = require('../services/logger')
 const { MONGO_URL } = require('../config')
 
 mongoose.Promise = global.Promise

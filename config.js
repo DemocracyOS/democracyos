@@ -10,7 +10,8 @@ if (process.env.NODE_ENV !== 'test') require('dotenv').config()
 
 const CONFIG = {
   MONGO_URL: process.env.DEMOCRACYOS_MONGO_URL,
-  PORT: process.env.PORT || '3000'
+  PORT: process.env.PORT || '3000',
+  DEFAULT_LANG: process.env.DEMOCRACYOS_DEFAULT_LANG || 'en'
 }
 
 // ==============================================================================

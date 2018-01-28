@@ -1,7 +1,7 @@
 const express = require('express')
 const paginate = require('express-paginate')
 const errors = require('../errors')
-const { log } = require('../logger')
+const { log } = require('../services/logger')
 const router = express.Router()
 
 // Apply paginate middleware to API routes
@@ -24,7 +24,7 @@ router.use((req, res, next) => {
 
 // General api error handler. Respond with the message and error if we have it
 // while returning a status code that makes sense.
-router.use('/api', (err, req, res, next) => {
+router.use((err, req, res, next) => {
   if (err !== errors.ErrNotFound) {
     log.error(err)
   }
