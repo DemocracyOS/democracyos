@@ -196,6 +196,7 @@
     "gulp-jasmine": "^2.2.1",
     "gulp-pleeease": "^2.0.2",
     "json-file-plus": "^3.0.0",
+    "nodemon": "^1.14.11",
     "nomnom": "^1.8.1",
     "supertest": "~3.0.0"
   },
@@ -210,6 +211,7 @@
     "build": "NODE_PATH=. gulp build",
     "watch": "NODE_PATH=. gulp watch",
     "clean": "NODE_PATH=. gulp clean",
+    "serve": "NODE_PATH=. gulp serve",
     "migrate": "NODE_PATH=. bin/dos-migrate",
     "heroku-postbuild": "NODE_PATH=. gulp build --minify",
     "test": "NODE_PATH=. MONGO_URL=mongodb://localhost/DemocracyOS-test gulp test",
