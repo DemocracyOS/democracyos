@@ -25,13 +25,11 @@ router.use((req, res, next) => {
 // General api error handler. Respond with the message and error if we have it
 // while returning a status code that makes sense.
 router.use((err, req, res, next) => {
-  if (err !== errors.ErrNotFound) {
-    log.error(err)
-  }
+  log.error(err)
 
   if (err instanceof errors.APIError) {
     res.status(err.status).json({
-      // message: res.locals.t(`error.${err.translation_key}`),
+      message: res.locals.t(`error/${err.translationKey}`),
       error: err
     })
   } else {

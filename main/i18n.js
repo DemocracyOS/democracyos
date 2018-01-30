@@ -5,7 +5,8 @@ const accepts = require('accepts')
 const { DEFAULT_LANG } = require('./config')
 
 Globalize.load(
-  require('cldr-data/supplemental/likelySubtags')
+  require('cldr-data/supplemental/likelySubtags'),
+  require('cldr-data/supplemental/plurals')
 )
 
 const locales = fs
@@ -27,27 +28,24 @@ const GlobalizeInstances = locales.map((locale) => ({
   [locale]: (function () {
     const G = new Globalize(locale)
     const messagesFormaters = {}
-    const t = (key, params) => {
+
+    return (key, params) => {
       if (Object.keys(messagesFormaters).includes(key)) {
         return messagesFormaters[key](params)
       } else {
         messagesFormaters[key] = G.messageFormatter(key)
+
         return messagesFormaters[key](params)
       }
     }
-    return { t }
   }())
-}))
-
-const t = (locale) => GlobalizeInstances[locale]
+})).reduce((instancesObject, instance) => Object.assign(instancesObject, instance), {})
 
 module.exports = {
   middleware: (req, res, next) => {
     const lang = accepts(req).language(locales)
     const language = lang || DEFAULT_LANG
-
-    res.locals.t = t(language)
+    res.locals.t = GlobalizeInstances[language]
     next()
-  },
-  t: t(DEFAULT_LANG)
+  }
 }

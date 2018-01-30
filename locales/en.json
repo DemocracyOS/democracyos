@@ -1,5 +1,7 @@
 {
   "en": {
-    "hola": "world"
+    "error": {
+      "NOT_FOUND": "Resource not found"
+    }
   }
 }
