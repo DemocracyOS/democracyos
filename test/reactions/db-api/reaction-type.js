@@ -7,9 +7,11 @@ require('sinon-mongoose')
 const ReactionType = require('../../../reactions/models/reaction-type')
 const reactionType = require('../../../reactions/db-api/reaction-type')
 const sampleReactionType = {
+  name: 'MyReactionConfig',
   method: 'LIKE',
   startingDate: new Date('2017-12-20 00:00:00'),
-  closingDate: new Date('2018-02-20 00:00:00')
+  closingDate: new Date('2018-02-20 00:00:00'),
+  limit: 5
 }
 
 describe('db-api.reactionType', function () {
