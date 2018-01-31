@@ -27,6 +27,31 @@ exports.get = function get (id) {
 }
 
 /**
+ * Get list of ReactionTypes by name
+ * @method getByName
+ * @param  {string} reactionName
+ * @param  {number} opts.limit
+ * @param  {number} opts.page
+ * @return {promise}
+ */
+
+exports.listByName = function listByName ({ reactionName, limit, page }) {
+  log.debug('get list of ReactionTypes by name ')
+  return ReactionType.paginate({ name: /reactionName/ }, { page, limit })
+}
+/**
+ * Get ReactionType by name
+ * @method getOneByName
+ * @param  {string} reactionName
+ * @return {promise}
+ */
+
+exports.getByName = function getByName (reactionName) {
+  log.debug('get one ReactionType by name')
+  return ReactionType.findOne({ name: reactionName })
+}
+
+/**
  * Get list of ReactionTypes
  * @method list
  * @param  {object} opts

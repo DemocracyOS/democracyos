@@ -20,6 +20,9 @@ const ReactionType = new mongoose.Schema({
  * Define Schema Indexes
  */
 
+/**
+* Model's Plugin Extensions
+*/
 ReactionType.plugin(mongoosePaginate)
 
 /**

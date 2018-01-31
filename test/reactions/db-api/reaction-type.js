@@ -61,6 +61,41 @@ describe('db-api.reactionType', function () {
     })
   })
 
+  describe('#getOneByName', function () {
+    it('should get a reactionType by a specific name', function () {
+      const ReactionTypeMock = sinon.mock(ReactionType)
+
+      ReactionTypeMock
+        .expects('findOne').withArgs({ name: 'MyReactionConfig' })
+        .chain('exec')
+        .resolves(sampleReactionType)
+
+      return reactionType.getByName('MyReactionConfig')
+        .then((result) => {
+          ReactionTypeMock.verify()
+          ReactionTypeMock.restore()
+          assert.equal(result, sampleReactionType)
+        })
+    })
+  })
+
+  describe('#listByName', function () {
+    it('should list all reactionTypes by a partial name', function () {
+      const ReactionTypeMock = sinon.mock(ReactionType)
+
+      ReactionTypeMock
+        .expects('paginate').withArgs({ name: /reactionName/ }, { limit: 10, page: 1 })
+        .resolves(sampleReactionType)
+
+      return reactionType.listByName({ reactionName: 'mYrEaCtIo', limit: 10, page: 1 })
+        .then((result) => {
+          ReactionTypeMock.verify()
+          ReactionTypeMock.restore()
+          assert.equal(result, sampleReactionType)
+        })
+    })
+  })
+
   describe('#list', function () {
     it('should list all reactionTypes', function () {
       const ReactionTypeMock = sinon.mock(ReactionType)
