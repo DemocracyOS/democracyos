@@ -84,10 +84,10 @@ describe('db-api.reactionType', function () {
       const ReactionTypeMock = sinon.mock(ReactionType)
 
       ReactionTypeMock
-        .expects('paginate').withArgs({ name: /reactionName/ }, { limit: 10, page: 1 })
+        .expects('paginate').withArgs({ name: { $regex: 'mYrEaCtIo', $options: 'i' } }, { limit: 10, page: 1 })
         .resolves(sampleReactionType)
 
-      return reactionType.listByName({ reactionName: 'mYrEaCtIo', limit: 10, page: 1 })
+      return reactionType.listByName({ name: 'mYrEaCtIo', limit: 10, page: 1 })
         .then((result) => {
           ReactionTypeMock.verify()
           ReactionTypeMock.restore()

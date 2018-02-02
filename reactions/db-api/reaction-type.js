@@ -35,9 +35,9 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.listByName = function listByName ({ reactionName, limit, page }) {
-  log.debug('get list of ReactionTypes by name ')
-  return ReactionType.paginate({ name: /reactionName/ }, { page, limit })
+exports.listByName = function listByName ({ name, limit, page }) {
+  log.debug('get list of ReactionTypes by name')
+  return ReactionType.paginate({ name: { $regex: name, $options: 'i' } }, { page, limit })
 }
 /**
  * Get ReactionType by name
