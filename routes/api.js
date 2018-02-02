@@ -16,7 +16,7 @@ router.use(
 
 // API routes
 router.use('/users', require('../users/api/users'))
-router.use('/reaction-type', require('../reactions/api/reaction-type'))
+router.use('/reaction-rule', require('../reactions/api/reaction-rule'))
 
 // Catch 404 and forward to error handler.
 router.use((req, res, next) => {

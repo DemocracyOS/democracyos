@@ -4,9 +4,9 @@ const rewire = require('rewire')
 const sinon = require('sinon')
 require('sinon-mongoose')
 
-const ReactionType = require('../../../reactions/models/reaction-type')
-const reactionType = require('../../../reactions/db-api/reaction-type')
-const sampleReactionType = {
+const ReactionRule = require('../../../reactions/models/reaction-rule')
+const reactionRule = require('../../../reactions/db-api/reaction-rule')
+const sampleReactionRule = {
   name: 'MyReactionConfig',
   method: 'LIKE',
   startingDate: new Date('2017-12-20 00:00:00'),
@@ -14,139 +14,139 @@ const sampleReactionType = {
   limit: 5
 }
 
-describe('db-api.reactionType', function () {
+describe('db-api.reactionRule', function () {
   describe('#create', function () {
-    it('should create a reaction type', function () {
-    // require module with rewire to override its internal ReactionType reference
-      const reactionType = rewire('../../../reactions/db-api/reaction-type')
+    it('should create a reaction rule', function () {
+    // require module with rewire to override its internal ReactionRule reference
+      const reactionRule = rewire('../../../reactions/db-api/reaction-rule')
 
-      // replace ReactionType constructor for a spy
-      const ReactionTypeMock = sinon.spy()
+      // replace ReactionRule constructor for a spy
+      const ReactionRuleMock = sinon.spy()
 
       // add a save method that only returns the data
-      ReactionTypeMock.prototype.save = function () { return Promise.resolve(sampleReactionType) }
+      ReactionRuleMock.prototype.save = function () { return Promise.resolve(sampleReactionRule) }
 
       // create a spy for the save method
-      const save = sinon.spy(ReactionTypeMock.prototype, 'save')
+      const save = sinon.spy(ReactionRuleMock.prototype, 'save')
 
-      // override ReactionType inside `reactionType/db-api/reaction-type`
-      reactionType.__set__('ReactionType', ReactionTypeMock)
+      // override ReactionRule inside `reactionRule/db-api/reaction-rule`
+      reactionRule.__set__('ReactionRule', ReactionRuleMock)
 
       // call create method
-      return reactionType.create(sampleReactionType)
+      return reactionRule.create(sampleReactionRule)
         .then((result) => {
-          sinon.assert.calledWithNew(ReactionTypeMock)
-          sinon.assert.calledWith(ReactionTypeMock, sampleReactionType)
+          sinon.assert.calledWithNew(ReactionRuleMock)
+          sinon.assert.calledWith(ReactionRuleMock, sampleReactionRule)
           sinon.assert.calledOnce(save)
-          assert.equal(result, sampleReactionType)
+          assert.equal(result, sampleReactionRule)
         })
     })
   })
 
   describe('#get', function () {
-    it('should get a reactionType', function () {
-      const ReactionTypeMock = sinon.mock(ReactionType)
+    it('should get a reactionRule', function () {
+      const ReactionRuleMock = sinon.mock(ReactionRule)
 
-      ReactionTypeMock
+      ReactionRuleMock
         .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
-        .resolves(sampleReactionType)
+        .resolves(sampleReactionRule)
 
-      return reactionType.get('5a5e29d948a9cc2fbeed02fa')
+      return reactionRule.get('5a5e29d948a9cc2fbeed02fa')
         .then((result) => {
-          ReactionTypeMock.verify()
-          ReactionTypeMock.restore()
-          assert.equal(result, sampleReactionType)
+          ReactionRuleMock.verify()
+          ReactionRuleMock.restore()
+          assert.equal(result, sampleReactionRule)
         })
     })
   })
 
   describe('#getOneByName', function () {
-    it('should get a reactionType by a specific name', function () {
-      const ReactionTypeMock = sinon.mock(ReactionType)
+    it('should get a reactionRule by a specific name', function () {
+      const ReactionRuleMock = sinon.mock(ReactionRule)
 
-      ReactionTypeMock
+      ReactionRuleMock
         .expects('findOne').withArgs({ name: 'MyReactionConfig' })
         .chain('exec')
-        .resolves(sampleReactionType)
+        .resolves(sampleReactionRule)
 
-      return reactionType.getByName('MyReactionConfig')
+      return reactionRule.getByName('MyReactionConfig')
         .then((result) => {
-          ReactionTypeMock.verify()
-          ReactionTypeMock.restore()
-          assert.equal(result, sampleReactionType)
+          ReactionRuleMock.verify()
+          ReactionRuleMock.restore()
+          assert.equal(result, sampleReactionRule)
         })
     })
   })
 
   describe('#listByName', function () {
-    it('should list all reactionTypes by a partial name', function () {
-      const ReactionTypeMock = sinon.mock(ReactionType)
+    it('should list all reactionRules by a partial name', function () {
+      const ReactionRuleMock = sinon.mock(ReactionRule)
 
-      ReactionTypeMock
+      ReactionRuleMock
         .expects('paginate').withArgs({ name: { $regex: 'mYrEaCtIo', $options: 'i' } }, { limit: 10, page: 1 })
-        .resolves(sampleReactionType)
+        .resolves(sampleReactionRule)
 
-      return reactionType.listByName({ name: 'mYrEaCtIo', limit: 10, page: 1 })
+      return reactionRule.listByName({ name: 'mYrEaCtIo', limit: 10, page: 1 })
         .then((result) => {
-          ReactionTypeMock.verify()
-          ReactionTypeMock.restore()
-          assert.equal(result, sampleReactionType)
+          ReactionRuleMock.verify()
+          ReactionRuleMock.restore()
+          assert.equal(result, sampleReactionRule)
         })
     })
   })
 
   describe('#list', function () {
-    it('should list all reactionTypes', function () {
-      const ReactionTypeMock = sinon.mock(ReactionType)
+    it('should list all reactionRules', function () {
+      const ReactionRuleMock = sinon.mock(ReactionRule)
 
-      ReactionTypeMock
+      ReactionRuleMock
         .expects('paginate').withArgs({}, { limit: 10, page: 1 })
-        .resolves(sampleReactionType)
+        .resolves(sampleReactionRule)
 
-      return reactionType.list({ limit: 10, page: 1 })
+      return reactionRule.list({ limit: 10, page: 1 })
         .then((result) => {
-          ReactionTypeMock.verify()
-          ReactionTypeMock.restore()
-          assert.equal(result, sampleReactionType)
+          ReactionRuleMock.verify()
+          ReactionRuleMock.restore()
+          assert.equal(result, sampleReactionRule)
         })
     })
   })
 
   describe('#update', function () {
-    it('should update a reactionType', function () {
-      const ReactionTypeMock = sinon.mock(ReactionType)
-      const save = sinon.spy(() => sampleReactionType)
+    it('should update a reactionRule', function () {
+      const ReactionRuleMock = sinon.mock(ReactionRule)
+      const save = sinon.spy(() => sampleReactionRule)
 
-      ReactionTypeMock
+      ReactionRuleMock
         .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ save })
 
-      return reactionType.update({ id: '5a5e29d948a9cc2fbeed02fa', reactionType: {} })
+      return reactionRule.update({ id: '5a5e29d948a9cc2fbeed02fa', reactionRule: {} })
         .then((result) => {
-          ReactionTypeMock.verify()
-          ReactionTypeMock.restore()
+          ReactionRuleMock.verify()
+          ReactionRuleMock.restore()
           sinon.assert.calledOnce(save)
-          assert.equal(result, sampleReactionType)
+          assert.equal(result, sampleReactionRule)
         })
     })
   })
 
   describe('#remove', function () {
-    it('should remove a reactionType', function () {
-      const ReactionTypeMock = sinon.mock(ReactionType)
+    it('should remove a reactionRule', function () {
+      const ReactionRuleMock = sinon.mock(ReactionRule)
       const remove = sinon.spy()
 
-      ReactionTypeMock
+      ReactionRuleMock
         .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ remove })
 
-      return reactionType.remove('5a5e29d948a9cc2fbeed02fa')
+      return reactionRule.remove('5a5e29d948a9cc2fbeed02fa')
         .then(() => {
-          ReactionTypeMock.verify()
-          ReactionTypeMock.restore()
+          ReactionRuleMock.verify()
+          ReactionRuleMock.restore()
           sinon.assert.calledOnce(remove)
         })
     })

@@ -6,33 +6,33 @@ const {
   NO_CONTENT
 } = require('http-status')
 const app = require('../../../main')
-const ReactionType = require('../../../reactions/models/reaction-type')
+const ReactionRule = require('../../../reactions/models/reaction-rule')
 
 require('../../../main/mongoose')
 
 const expect = chai.expect
 chai.use(chaiHttp)
 
-describe('/api/v1.0/reaction-type', () => {
+describe('/api/v1.0/reaction-rule', () => {
   beforeEach(async () => {
-    await ReactionType.remove({})
+    await ReactionRule.remove({})
   })
 
-  const sampleReactionType = {
+  const sampleReactionRule = {
     name: 'MyReactionConfig',
     method: 'LIKE',
     startingDate: new Date('2017-12-20 00:00:00'),
     closingDate: new Date('2018-04-20 18:00:00'),
     limit: 5
   }
-  const anotherReactionType = {
-    name: 'MyReactionType',
+  const anotherReactionRule = {
+    name: 'MyReactionRule',
     method: 'LIKE',
     startingDate: new Date('2017-12-21 00:00:00'),
     closingDate: new Date('2018-04-21 18:00:00'),
     limit: 8
   }
-  const otherReactionType = {
+  const otherReactionRule = {
     name: 'TotallyDifferentName',
     method: 'LIKE',
     startingDate: new Date('2017-12-22 00:00:00'),
@@ -41,23 +41,23 @@ describe('/api/v1.0/reaction-type', () => {
   }
 
   describe('#post', () => {
-    it('should create a reaction type', async () => {
+    it('should create a reaction rule', async () => {
       const res = await chai.request(app)
-        .post('/api/v1.0/reaction-type')
-        .send(sampleReactionType)
+        .post('/api/v1.0/reaction-rule')
+        .send(sampleReactionRule)
 
       expect(res).to.have.status(CREATED)
     })
   })
 
   describe('#list', () => {
-    it('should list all reaction type', async () => {
-      await (new ReactionType(sampleReactionType)).save()
-      await (new ReactionType(anotherReactionType)).save()
-      await (new ReactionType(otherReactionType)).save()
+    it('should list all reaction rule', async () => {
+      await (new ReactionRule(sampleReactionRule)).save()
+      await (new ReactionRule(anotherReactionRule)).save()
+      await (new ReactionRule(otherReactionRule)).save()
 
       const res = await chai.request(app)
-        .get('/api/v1.0/reaction-type')
+        .get('/api/v1.0/reaction-rule')
         .query({ limit: 10, page: 1 })
 
       expect(res).to.have.status(OK)
@@ -73,27 +73,27 @@ describe('/api/v1.0/reaction-type', () => {
   })
 
   describe('#get', () => {
-    it('should get a reaction type by id', async () => {
-      let newReactionType = await (new ReactionType(sampleReactionType)).save()
+    it('should get a reaction rule by id', async () => {
+      let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
       const res = await chai.request(app)
-        .get(`/api/v1.0/reaction-type/${newReactionType.id}`)
+        .get(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
 
       expect(res).to.have.status(OK)
       expect(res.body).to.be.a('object')
       // Check if the response contains all the properties of the object
-      let properties = Object.keys(sampleReactionType)
+      let properties = Object.keys(sampleReactionRule)
       properties.map((prop) => expect(res.body).to.have.property(prop))
     })
   })
 
 
   describe('#listByName', () => {
-    it('should list all reaction type that matches a given string', async () => {
-      let firstReactionType = await (new ReactionType(sampleReactionType)).save()
-      let secondReactionType = await (new ReactionType(anotherReactionType)).save()
-      let thirdReactionType = await (new ReactionType(otherReactionType)).save()
+    it('should list all reaction rule that matches a given string', async () => {
+      let firstReactionRule = await (new ReactionRule(sampleReactionRule)).save()
+      let secondReactionRule = await (new ReactionRule(anotherReactionRule)).save()
+      let thirdReactionRule = await (new ReactionRule(otherReactionRule)).save()
       const res = await chai.request(app)
-        .get('/api/v1.0/reaction-type')
+        .get('/api/v1.0/reaction-rule')
         .query({ name: 'total', limit: 10, page: 1 })
 
       expect(res).to.have.status(OK)
@@ -109,21 +109,21 @@ describe('/api/v1.0/reaction-type', () => {
   })
 
   describe('#put', () => {
-    it('should update a reaction type', async () => {
-      let newReactionType = await (new ReactionType(sampleReactionType)).save()
+    it('should update a reaction rule', async () => {
+      let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
       const res = await chai.request(app)
-        .put(`/api/v1.0/reaction-type/${newReactionType.id}`)
-        .send(Object.assign(sampleReactionType, { name: 'UpdatedName' }))
+        .put(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
+        .send(Object.assign(sampleReactionRule, { name: 'UpdatedName' }))
 
       expect(res).to.have.status(NO_CONTENT)
     })
   })
 
   describe('#delete', () => {
-    it('should remove a reaction type', async () => {
-      let newReactionType = await (new ReactionType(sampleReactionType)).save()
+    it('should remove a reaction rule', async () => {
+      let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
       const res = await chai.request(app)
-        .delete(`/api/v1.0/reaction-type/${newReactionType.id}`)
+        .delete(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
 
       expect(res).to.have.status(NO_CONTENT)
     })

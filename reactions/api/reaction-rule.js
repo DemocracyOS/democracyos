@@ -6,14 +6,14 @@ const {
   INTERNAL_SERVER_ERROR
 } = require('http-status')
 const { log } = require('../../main/logger')
-const ReactionType = require('../db-api/reaction-type')
+const ReactionRule = require('../db-api/reaction-rule')
 
 const router = express.Router()
 
 router.route('/')
   .post(async (req, res, next) => {
     try {
-      await ReactionType.create(req.body)
+      await ReactionRule.create(req.body)
       res.status(CREATED).end()
     } catch (err) {
       log.error(err)
@@ -24,9 +24,9 @@ router.route('/')
     try {
       let results = []
       if (req.query.name) {
-        results = await ReactionType.listByName({ name: req.query.name, limit: req.query.limit, page: req.query.page })
+        results = await ReactionRule.listByName({ name: req.query.name, limit: req.query.limit, page: req.query.page })
       } else {
-        results = await ReactionType.list({ limit: req.query.limit, page: req.query.page })
+        results = await ReactionRule.list({ limit: req.query.limit, page: req.query.page })
       }
 
       res.status(OK).json({
@@ -46,7 +46,7 @@ router.route('/')
 router.route('/:id')
   .get(async (req, res, next) => {
     try {
-      const user = await ReactionType.get(req.params.id)
+      const user = await ReactionRule.get(req.params.id)
       res.status(OK).json(user)
     } catch (err) {
       log.error(err)
@@ -55,7 +55,7 @@ router.route('/:id')
   })
   .put(async (req, res, next) => {
     try {
-      await ReactionType.update({ id: req.params.id, reactionType: req.body })
+      await ReactionRule.update({ id: req.params.id, reactionRule: req.body })
       res.status(NO_CONTENT).end()
     } catch (err) {
       log.error(err)
@@ -64,7 +64,7 @@ router.route('/:id')
   })
   .delete(async (req, res, next) => {
     try {
-      await ReactionType.remove(req.params.id)
+      await ReactionRule.remove(req.params.id)
       res.status(NO_CONTENT).end()
     } catch (err) {
       log.error(err)

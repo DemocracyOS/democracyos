@@ -18,7 +18,7 @@ mongoose
 
 // initialize models
 require('../users/models/user')
-require('../reactions/models/reaction-type')
+require('../reactions/models/reaction-rule')
 
 // handle errors
 const db = mongoose.connection

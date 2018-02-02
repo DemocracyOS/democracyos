@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 const METHODS = require('../enum/methods')
 /**
- * Define `ReactionType` Schema
+ * Define `ReactionRule` Schema
  */
 
-const ReactionType = new mongoose.Schema({
+const ReactionRule = new mongoose.Schema({
   name: String,
   method: {
     type: String,
@@ -23,10 +23,10 @@ const ReactionType = new mongoose.Schema({
 /**
 * Model's Plugin Extensions
 */
-ReactionType.plugin(mongoosePaginate)
+ReactionRule.plugin(mongoosePaginate)
 
 /**
- * Expose `ReactionType` Model
+ * Expose `ReactionRule` Model
  */
 
-module.exports = mongoose.model('ReactionType', ReactionType)
+module.exports = mongoose.model('ReactionRule', ReactionRule)

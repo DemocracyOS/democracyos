@@ -4,8 +4,8 @@ const rewire = require('rewire')
 const sinon = require('sinon')
 require('sinon-mongoose')
 
-const ReactionType = require('../../../reactions/models/reaction-type')
-const sampleReactionType = new ReactionType({
+const ReactionRule = require('../../../reactions/models/reaction-rule')
+const sampleReactionRule = new ReactionRule({
   method: 'LIKE',
   startingDate: new Date('2017-12-20 00:00:00'),
   closingDate: new Date('2018-02-20 00:00:00')
@@ -14,7 +14,7 @@ const sampleReactionType = new ReactionType({
 const ReactionInstance = require('../../../reactions/models/reaction-instance')
 const reactionInstance = require('../../../reactions/db-api/reaction-instance')
 const sampleReactionInstance = {
-  reactionId: sampleReactionType._id,
+  reactionId: sampleReactionRule._id,
   resourceType: 'Article',
   resourceId: '000001',
   results: []
@@ -35,7 +35,7 @@ describe('db-api.reactionInstance', function () {
       // create a spy for the save method
       const save = sinon.spy(ReactionInstanceMock.prototype, 'save')
 
-      // override ReactionInstance inside `reactionInstance/db-api/reaction-type`
+      // override ReactionInstance inside `reactionInstance/db-api/reaction-rule`
       reactionInstance.__set__('ReactionInstance', ReactionInstanceMock)
 
       // call create method
