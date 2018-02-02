@@ -4,8 +4,8 @@ const mongoose = require('mongoose')
  * Define `Settings` Schema
  */
 
-const Settings = new mongoose.Schema({
-  communityName: String,
+const Setting = new mongoose.Schema({
+  settingName: String,
   logo: String,
   permissions: String,
   theme: String
@@ -15,4 +15,4 @@ const Settings = new mongoose.Schema({
  * Expose `Settings` Model
  */
 
-module.exports = mongoose.model('Settings', Settings)
+module.exports = mongoose.model('Setting', Setting)

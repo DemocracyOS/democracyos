@@ -1,93 +1,112 @@
-const { Types: { ObjectId } } = require('mongoose')
-const { assert } = require('chai')
+const { expect } = require('chai')
 const rewire = require('rewire')
 const sinon = require('sinon')
 require('sinon-mongoose')
+const { Types: { ObjectId } } = require('mongoose')
 
-const Settings = require('../../../cms/models/setting')
-const settings = require('../../../cms/db-api/settings')
-const sampleSettings = { settingsname: 'COMMUNITYNAME' }
+const Setting = require('../../../cms/models/setting')
+const setting = require('../../../cms/db-api/setting')
 
-describe('db-api.settings', function () {
+const sampleSetting = { settingName: 'SETTINGNAME' }
+
+describe('db-api.settings', () => {
   describe('#create', () => {
-    it('should create a settings', function () {
+    it('should create a setting', () => {
       // require module with rewire to override its internal Settings reference
-      const settings = rewire('../../../cms/db-api/settings')
+      const setting = rewire('../../../cms/db-api/settings')
 
-      // replace Settings constructor for a spy
-      const SettingsMock = sinon.spy()
+      // replace Setting constructor for a spy
+      const SettingMock = sinon.spy()
 
       // add a save method that only returns the data
-      SettingsMock.prototype.save = function () { return Promise.resolve(sampleSettings) }
+      SettingMock.prototype.save = () => { return Promise.resolve(sampleSetting) }
 
       // create a spy for the save method
-      const save = sinon.spy(SettingsMock.prototype, 'save')
+      const save = sinon.spy(SettingMock.prototype, 'save')
 
-      // override Settings inside `settings/db-api/settings`
-      settings.__set__('Settings', SettingsMock)
+      // override Setting inside `cms/db-api/settings`
+      setting.__set__('Setting', SettingMock)
 
       // call create method
-      return settings.create(sampleSettings)
+      return setting.create(sampleSetting)
         .then((result) => {
-          sinon.assert.calledWith(SettingsMock, sampleSettings)
+          sinon.assert.calledWithNew(SettingMock)
+          sinon.assert.calledWith(SettingMock, sampleSetting)
           sinon.assert.calledOnce(save)
-          assert.equal(result, sampleSettings)
+          expect(result).to.equal(sampleSetting)
         })
     })
   })
 
   describe('#get', () => {
-    it('should get a settings', function () {
-      const SettingsMock = sinon.mock(Settings)
+    it('should get a setting', () => {
+      const SettingMock = sinon.mock(Setting)
 
-      SettingsMock
+      SettingMock
         .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
-        .resolves(sampleSettings)
+        .resolves(sampleSetting)
 
-      return settings.get('5a5e29d948a9cc2fbeed02fa')
+      return setting.get('5a5e29d948a9cc2fbeed02fa')
         .then((result) => {
-          SettingsMock.verify()
-          SettingsMock.restore()
-          assert.equal(result, sampleSettings)
+          SettingMock.verify()
+          SettingMock.restore()
+          expect(result).to.equal(sampleSetting)
         })
     })
   })
 
-  describe('#update', () => {
-    it('should update a settings', function () {
-      const SettingsMock = sinon.mock(Settings)
-      const save = sinon.spy(() => sampleSettings)
+  // describe('#list', () => {
+  //   it('should list all settings', () => {
+  //     const SettingMock = sinon.mock(Setting)
 
-      SettingsMock
+  //     SettingMock
+  //       .expects('paginate').withArgs({}, { limit: 10, page: 1 })
+  //       .resolves(sampleSetting)
+
+  //     return setting.list({ limit: 10, page: 1 })
+  //       .then((result) => {
+  //         SettingMock.verify()
+  //         SettingMock.restore()
+  //         expect(result).to.equal(sampleSetting)
+  //       })
+  //   })
+  // })
+
+  describe('#update', () => {
+    it('should update a setting', () => {
+      const SettingMock = sinon.mock(Setting)
+      const save = sinon.spy(() => sampleSetting)
+
+      SettingMock
         .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ save })
 
-      return settings.update({ id: '5a5e29d948a9cc2fbeed02fa', settings: {} })
+      return setting.update({ id: '5a5e29d948a9cc2fbeed02fa', setting: {} })
         .then((result) => {
-          SettingsMock.verify()
-          SettingsMock.restore()
+          SettingMock.verify()
+          SettingMock.restore()
           sinon.assert.calledOnce(save)
-          assert.equal(result, sampleSettings)
+          expect(result).to.equal(sampleSetting)
         })
     })
   })
 
   describe('#remove', () => {
-    it('should remove a settings', function () {
-      const SettingsMock = sinon.mock(Settings)
+    it('should remove a setting', () => {
+      const SettingMock = sinon.mock(Setting)
       const remove = sinon.spy()
 
-      SettingsMock
+      SettingMock
         .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
         .chain('exec')
         .resolves({ remove })
 
-      return settings.remove('5a5e29d948a9cc2fbeed02fa')
+      return setting.remove('5a5e29d948a9cc2fbeed02fa')
         .then(() => {
-          SettingsMock.verify()
-          SettingsMock.restore()
+          SettingMock.verify()
+          SettingMock.restore()
           sinon.assert.calledOnce(remove)
         })
     })

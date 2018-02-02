@@ -1,56 +1,74 @@
 const { Types: { ObjectId } } = require('mongoose')
 const { log } = require('../../main/logger')
-const Settings = require('../models/setting')
+const Setting = require('../models/setting')
 
 /**
- * Create settings
+ * Create setting
  * @method create
- * @param  {object} settings
+ * @param  {object} setting
  * @return {promise}
  */
 
-exports.create = function create (settings) {
-  log.debug('db-api settings create')
-  return (new Settings(settings)).save()
+exports.create = function create (setting) {
+  log.debug('setting db-api create')
+
+  return (new Setting(setting)).save()
 }
 
 /**
- * Get settings by id
+ * Get setting by id
  * @method get
  * @param  {string} id
  * @return {promise}
  */
 
 exports.get = function get (id) {
-  log.debug('db-api settings get')
-  return Settings.findOne({ _id: ObjectId(id) })
+  log.debug('setting db-api get')
+  return Setting.findOne({ _id: ObjectId(id) })
 }
 
 /**
- * Update settings
- * @method update
+ * Get list of settings
+ * @method list
  * @param  {object} opts
- * @param  {string} opts.id
- * @param  {object} opts.settings
+ * @param  {number} opts.limit
+ * @param  {number} opts.page
  * @return {promise}
  */
 
-exports.update = function update ({ id, settings }) {
-  log.debug('db-api settings update')
+exports.list = function list ({ limit, page }) {
+  log.debug('settings db-api list')
 
-  return Settings.findOne({ _id: ObjectId(id) })
-    .then((_settings) => Object.assign(_settings, settings).save())
+  return Setting
+    .paginate({}, { page, limit })
 }
 
 /**
- * Remove settings
+ * Update setting
+ * @method update
+ * @param  {object} opts
+ * @param  {string} opts.id
+ * @param  {object} opts.setting
+ * @return {promise}
+ */
+
+exports.update = function update ({ id, setting }) {
+  log.debug('setting db-api update')
+
+  return Setting.findOne({ _id: ObjectId(id) })
+    .then((_setting) => Object.assign(_setting, setting).save())
+}
+
+/**
+ * Remove setting
  * @method delete
  * @param  {string} id
  * @return {promise}
  */
 
 exports.remove = function remove (id) {
-  log.debug('db-api settings remove')
-  return Settings.findOne({ _id: ObjectId(id) })
-    .then((settings) => settings.remove())
+  log.debug('setting db-api remove')
+
+  return Setting.findOne({ _id: ObjectId(id) })
+    .then((setting) => setting.remove())
 }
