@@ -5,10 +5,10 @@ const {
   CREATED,
   NO_CONTENT
 } = require('http-status')
-const app = require('../../../main')
 const User = require('../../../users/models/user')
 
-require('../../../main/mongoose')
+// Init app
+require('../../../main')
 
 const expect = chai.expect
 chai.use(chaiHttp)
@@ -27,7 +27,7 @@ describe('/api/v1.0/users', () => {
 
   describe('#post', () => {
     it('should create a user', async () => {
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .post('/api/v1.0/users')
         .send(sampleUser)
 
@@ -37,7 +37,7 @@ describe('/api/v1.0/users', () => {
 
   describe('#list', () => {
     it('should list all users', async () => {
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get('/api/v1.0/users')
         .query({ limit: 10, page: 1 })
 
@@ -56,7 +56,7 @@ describe('/api/v1.0/users', () => {
   describe('#get', () => {
     it('should get a user by id', async () => {
       let newUser = await (new User(sampleUser)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get(`/api/v1.0/users/${newUser.id}`)
 
       expect(res).to.have.status(OK)
@@ -71,7 +71,7 @@ describe('/api/v1.0/users', () => {
   describe('#put', () => {
     it('should update a user', async () => {
       let newUser = await (new User(sampleUser)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .put(`/api/v1.0/users/${newUser.id}`)
         .send(Object.assign(sampleUser, { name: 'Updated Name' }))
 
@@ -82,7 +82,7 @@ describe('/api/v1.0/users', () => {
   describe('#delete', () => {
     it('should remove a user', async () => {
       let newUser = await (new User(sampleUser)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .delete(`/api/v1.0/users/${newUser.id}`)
 
       expect(res).to.have.status(NO_CONTENT)
