@@ -121,6 +121,5 @@ module.exports = () => {
     })
   }
 
-  console.log('providers', providers)
   return providers
 }

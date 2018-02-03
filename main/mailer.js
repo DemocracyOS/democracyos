@@ -20,7 +20,7 @@ if (SMTP_PORT) {
   try {
     options.port = parseInt(SMTP_PORT)
   } catch (e) {
-    throw new Error('TALK_SMTP_PORT is not an integer')
+    throw new Error('DEMOCRACYOS_SMTP_PORT is not an integer')
   }
 } else {
   options.port = 25
@@ -29,6 +29,7 @@ if (SMTP_PORT) {
 const mailer = nodemailer.createTransport(options)
 
 module.exports.send = (email, url) => new Promise((resolve, reject) => {
+  console.log('about to send mail to ', email)
   mailer.sendMail({
     to: email,
     from: SMTP_FROM_ADDRESS,

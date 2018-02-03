@@ -19,6 +19,8 @@ const CONFIG = {
 
   SESSION_SECRET: process.env.DEMOCRACYOS_SESSION_SECRET || null,
 
+  ROOT_URL: process.env.DEMOCRACYOS_ROOT_URL || null,
+
   // ------------------------------------------------------------------------------
   //  Identity providers
   // ------------------------------------------------------------------------------

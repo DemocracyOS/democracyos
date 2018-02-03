@@ -9,7 +9,7 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const authFunctions = require('../users/auth/functions')
 const authProviders = require('../users/auth/providers')
-const { PORT, SESSION_SECRET } = require('./config')
+const { PORT, SESSION_SECRET, ROOT_URL } = require('./config')
 const { middleware: loggerMiddleware } = require('./logger')
 const { middleware: i18nMiddleware } = require('./i18n')
 const mongoose = require('./mongoose')
@@ -46,6 +46,7 @@ const app = next({ dev })
       expressApp: server,
       functions: authFunctions,
       port: PORT,
+      serverUrl: ROOT_URL,
       sessionStore: new MongoStore({
         mongooseConnection: mongoose.connection,
         autoRemove: 'interval',
