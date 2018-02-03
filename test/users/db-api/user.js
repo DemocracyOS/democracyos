@@ -47,7 +47,7 @@ describe('db-api.users', () => {
         .chain('exec')
         .resolves(sampleUser)
 
-      return user.get('5a5e29d948a9cc2fbeed02fa')
+      return user.get({ id: '5a5e29d948a9cc2fbeed02fa' })
         .then((result) => {
           UserMock.verify()
           UserMock.restore()

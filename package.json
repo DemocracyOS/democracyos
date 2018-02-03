@@ -10,21 +10,37 @@
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive --timeout 10000",
-    "start": "node ."
+    "start": "node main"
   },
   "dependencies": {
     "accepts": "^1.3.4",
     "cldr-data": "^32.0.1",
     "compression": "^1.7.1",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-paginate": "^0.3.0",
+    "express-session": "^1.15.6",
     "express-winston": "^2.4.0",
     "globalize": "^1.3.0",
     "helmet": "^3.9.0",
     "http-status": "^1.0.1",
     "mongoose": "^4.13.8",
     "mongoose-paginate": "^5.0.3",
+    "next": "^4.2.3",
+    "next-auth": "^1.3.0",
+    "next-auth-client": "^1.1.3",
+    "nodemailer": "^4.4.2",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-instagram": "^1.0.0",
+    "passport-linkedin-oauth2": "^1.5.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "winston": "^2.4.0"
   },
   "devDependencies": {

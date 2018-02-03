@@ -2,10 +2,8 @@ const express = require('express')
 const {
   OK,
   CREATED,
-  NO_CONTENT,
-  INTERNAL_SERVER_ERROR
+  NO_CONTENT
 } = require('http-status')
-const { log } = require('../../main/logger')
 const User = require('../db-api/user')
 
 const router = express.Router()
@@ -16,8 +14,7 @@ router.route('/')
       await User.create(req.body)
       res.status(CREATED).end()
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .get(async (req, res, next) => {
@@ -33,19 +30,17 @@ router.route('/')
         }
       })
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
 
 router.route('/:id')
   .get(async (req, res, next) => {
     try {
-      const user = await User.get(req.params.id)
+      const user = await User.get({ id: req.params.id })
       res.status(OK).json(user)
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .put(async (req, res, next) => {
@@ -53,8 +48,7 @@ router.route('/:id')
       await User.update({ id: req.params.id, user: req.body })
       res.status(NO_CONTENT).end()
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .delete(async (req, res, next) => {
@@ -62,8 +56,7 @@ router.route('/:id')
       await User.remove(req.params.id)
       res.status(NO_CONTENT).end()
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
 
