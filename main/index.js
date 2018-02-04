@@ -10,7 +10,7 @@ const MongoStore = require('connect-mongo')(session)
 const authFunctions = require('../users/auth/functions')
 const authProviders = require('../users/auth/providers')
 const { PORT, SESSION_SECRET, ROOT_URL } = require('./config')
-// const { middleware: loggerMiddleware } = require('./logger')
+const { middleware: loggerMiddleware, log } = require('./logger')
 const { middleware: i18nMiddleware } = require('./i18n')
 const mongoose = require('./mongoose')
 
@@ -58,10 +58,9 @@ module.exports = (async () => {
         stringify: false
       })
     })
-    server.emit('app_started')
     return server
   } catch (err) {
-    console.log('An error occurred, unable to start the server')
-    console.log(err)
+    log.error('An error occurred, unable to start the server')
+    log.error(err)
   }
 })()
