@@ -52,5 +52,6 @@
     "rewire": "^3.0.2",
     "sinon": "^4.1.3",
     "sinon-mongoose": "^2.0.2"
-  }
+  },
+  "cldr-data-urls-json": "../../cldr.json"
 }
