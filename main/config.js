@@ -42,7 +42,7 @@ const CONFIG = {
 
   SMTP_HOST: process.env.DEMOCRACYOS_SMTP_HOST,
   SMTP_USERNAME: process.env.DEMOCRACYOS_SMTP_USERNAME,
-  SMTP_PORT: process.env.DEMOCRACYOS_SMTP_PORT,
+  SMTP_PORT: process.env.DEMOCRACYOS_SMTP_PORT || 25,
   SMTP_PASSWORD: process.env.DEMOCRACYOS_SMTP_PASSWORD,
   SMTP_FROM_ADDRESS: process.env.DEMOCRACYOS_SMTP_FROM_ADDRESS
 
@@ -59,6 +59,17 @@ if (process.env.NODE_ENV === 'test' && !CONFIG.MONGO_URL) {
 if (!CONFIG.SESSION_SECRET) {
   throw new Error(
     'DEMOCRACYOS_SESSION_SECRET must be provided in the environment to sign the session ID cookie'
+  )
+}
+
+if (!CONFIG.SMTP_HOST || !CONFIG.SMTP_USERNAME || !CONFIG.SMTP_PASSWORD) {
+  let missing = '\n---------------------------------'
+  if (!CONFIG.SMTP_HOST) missing += '\n  DEMOCRACYOS_SMTP_HOST '
+  if (!CONFIG.SMTP_USERNAME) missing += '\n  DEMOCRACYOS_SMTP_USERNAME '
+  if (!CONFIG.SMTP_PASSWORD) missing += '\n  DEMOCRACYOS_SMTP_PASSWORD '
+  missing += '\n---------------------------------'
+  throw new Error(
+    `An SMTP provider must be set to handle emails. \nMissing variables: ${missing}`
   )
 }
 
