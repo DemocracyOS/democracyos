@@ -5,15 +5,16 @@ const {
   CREATED,
   NO_CONTENT
 } = require('http-status')
-const app = require('../../../main')
 const ReactionRule = require('../../../reactions/models/reaction-rule')
-
-require('../../../main/mongoose')
 
 const expect = chai.expect
 chai.use(chaiHttp)
 
 describe('/api/v1.0/reaction-rule', () => {
+  before(async () => {
+    await require('../../../main')
+  })
+
   beforeEach(async () => {
     await ReactionRule.remove({})
   })
@@ -42,7 +43,7 @@ describe('/api/v1.0/reaction-rule', () => {
 
   describe('#post', () => {
     it('should create a reaction rule', async () => {
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .post('/api/v1.0/reaction-rule')
         .send(sampleReactionRule)
 
@@ -56,14 +57,14 @@ describe('/api/v1.0/reaction-rule', () => {
       await (new ReactionRule(anotherReactionRule)).save()
       await (new ReactionRule(otherReactionRule)).save()
 
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get('/api/v1.0/reaction-rule')
         .query({ limit: 10, page: 1 })
 
       expect(res).to.have.status(OK)
 
       const { results, pagination } = res.body
-      
+
       expect(results).to.be.a('array')
       expect(results.length).to.be.eql(3)
       expect(pagination).to.have.property('count')
@@ -75,7 +76,7 @@ describe('/api/v1.0/reaction-rule', () => {
   describe('#get', () => {
     it('should get a reaction rule by id', async () => {
       let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
 
       expect(res).to.have.status(OK)
@@ -86,13 +87,12 @@ describe('/api/v1.0/reaction-rule', () => {
     })
   })
 
-
   describe('#listByName', () => {
     it('should list all reaction rule that matches a given string', async () => {
       let firstReactionRule = await (new ReactionRule(sampleReactionRule)).save()
       let secondReactionRule = await (new ReactionRule(anotherReactionRule)).save()
       let thirdReactionRule = await (new ReactionRule(otherReactionRule)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get('/api/v1.0/reaction-rule')
         .query({ name: 'total', limit: 10, page: 1 })
 
@@ -111,7 +111,7 @@ describe('/api/v1.0/reaction-rule', () => {
   describe('#put', () => {
     it('should update a reaction rule', async () => {
       let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .put(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
         .send(Object.assign(sampleReactionRule, { name: 'UpdatedName' }))
 
@@ -122,7 +122,7 @@ describe('/api/v1.0/reaction-rule', () => {
   describe('#delete', () => {
     it('should remove a reaction rule', async () => {
       let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .delete(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
 
       expect(res).to.have.status(NO_CONTENT)

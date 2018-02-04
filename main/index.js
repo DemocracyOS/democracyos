@@ -14,10 +14,13 @@ const { PORT, SESSION_SECRET, ROOT_URL } = require('./config')
 const { middleware: i18nMiddleware } = require('./i18n')
 const mongoose = require('./mongoose')
 
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
+const { NODE_ENV } = process.env
+const app = next({
+  dev: NODE_ENV !== 'production',
+  quiet: NODE_ENV === 'test'
+})
 
-;(async () => {
+module.exports = (async () => {
   try {
     await app.prepare()
 
@@ -55,6 +58,8 @@ const app = next({ dev })
         stringify: false
       })
     })
+    server.emit('app_started')
+    return server
   } catch (err) {
     console.log('An error occurred, unable to start the server')
     console.log(err)

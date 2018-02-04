@@ -7,13 +7,14 @@ const {
 } = require('http-status')
 const User = require('../../../users/models/user')
 
-// Init app
-require('../../../main')
-
 const expect = chai.expect
 chai.use(chaiHttp)
 
 describe('/api/v1.0/users', () => {
+  before(async () => {
+    await require('../../../main')
+  })
+
   beforeEach(async () => {
     await User.remove({})
   })
