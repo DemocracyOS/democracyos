@@ -2,10 +2,8 @@ const express = require('express')
 const {
   OK,
   CREATED,
-  NO_CONTENT,
-  INTERNAL_SERVER_ERROR
+  NO_CONTENT
 } = require('http-status')
-const { log } = require('../../main/logger')
 const ReactionRule = require('../db-api/reaction-rule')
 
 const router = express.Router()
@@ -16,8 +14,7 @@ router.route('/')
       await ReactionRule.create(req.body)
       res.status(CREATED).end()
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .get(async (req, res, next) => {
@@ -38,8 +35,7 @@ router.route('/')
         }
       })
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
 
@@ -49,8 +45,7 @@ router.route('/:id')
       const user = await ReactionRule.get(req.params.id)
       res.status(OK).json(user)
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .put(async (req, res, next) => {
@@ -58,8 +53,7 @@ router.route('/:id')
       await ReactionRule.update({ id: req.params.id, reactionRule: req.body })
       res.status(NO_CONTENT).end()
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
   .delete(async (req, res, next) => {
@@ -67,8 +61,7 @@ router.route('/:id')
       await ReactionRule.remove(req.params.id)
       res.status(NO_CONTENT).end()
     } catch (err) {
-      log.error(err)
-      res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
+      next(err)
     }
   })
 
