@@ -1,5 +1,6 @@
 const { Types: { ObjectId } } = require('mongoose')
 const { log } = require('../../main/logger')
+const { ErrNotFound } = require('../../main/errors')
 const User = require('../models/user')
 
 /**
@@ -62,7 +63,10 @@ exports.update = function update ({ id, user }) {
   log.debug('user db-api update')
 
   return get({ id })
-    .then((_user) => Object.assign(_user, user).save())
+    .then((_user) => {
+      if (!_user) throw ErrNotFound('User to update not found')
+      return Object.assign(_user, user).save()
+    })
 }
 
 /**
@@ -76,5 +80,8 @@ exports.remove = function remove (id) {
   log.debug('user db-api remove')
 
   return get({ id })
-    .then((user) => user.remove())
+    .then((user) => {
+      if (!user) throw ErrNotFound('User to remove not found')
+      return user.remove()
+    })
 }

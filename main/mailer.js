@@ -28,8 +28,7 @@ if (SMTP_PORT) {
 
 const mailer = nodemailer.createTransport(options)
 
-module.exports.send = (email, url) => new Promise((resolve, reject) => {
-  console.log('about to send mail to ', email)
+module.exports.send = ({ email, url }) => new Promise((resolve, reject) => {
   mailer.sendMail({
     to: email,
     from: SMTP_FROM_ADDRESS,

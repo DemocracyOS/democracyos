@@ -18,9 +18,9 @@ module.exports = {
 
     return User.get(query)
   },
-  insert: User.create,
-  update: (user) => User.update(user._id, user),
-  remove: User.remove,
+  insert: (user) => User.create(user),
+  update: (user) => User.update({ id: user.id, user }),
+  remove: (id) => User.remove(id),
   serialize: (user) => {
     if (user.id) {
       return Promise.resolve(user.id)
@@ -32,17 +32,15 @@ module.exports = {
   },
   deserialize: (id) => {
     return User.get({ id })
-      .then(({
-        _id,
-        name,
-        email,
-        emailVerified
-      }) => Promise.resolve({
-        id: _id,
-        name,
-        email,
-        emailVerified
-      }))
+      .then((user) => {
+        if (!user) return Promise.resolve(null)
+        return Promise.resolve({
+          id: user._id,
+          name: user.name,
+          email: user.email,
+          emailVerified: user.emailVerified
+        })
+      })
   },
   sendSignInEmail: async ({
     email = null,
@@ -53,8 +51,6 @@ module.exports = {
     } catch (err) {
       log.error('Error sending email to ' + email, err)
     }
-    if (process.env.NODE_ENV === 'development') {
-      log.debug('Generated sign in link ' + url + ' for ' + email)
-    }
+    log.debug('Generated sign in link ' + url + ' for ' + email)
   }
 }
