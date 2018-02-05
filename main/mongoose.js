@@ -5,9 +5,7 @@ const { MONGO_URL } = require('./config')
 mongoose.Promise = global.Promise
 
 mongoose
-  .connect(MONGO_URL, {
-    useMongoClient: true
-  })
+  .connect(MONGO_URL)
   .then(() => {
     log.debug('connection established')
   })
