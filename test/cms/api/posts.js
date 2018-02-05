@@ -5,15 +5,16 @@ const {
   CREATED,
   NO_CONTENT
 } = require('http-status')
-const app = require('../../../main')
 const Post = require('../../../cms/models/post')
-
-require('../../../main/mongoose')
 
 const expect = chai.expect
 chai.use(chaiHttp)
 
 describe('/api/v1.0/posts', () => {
+  before(async () => {
+    await require('../../../main')
+  })
+
   beforeEach(async () => {
     await Post.remove({})
   })
@@ -28,7 +29,7 @@ describe('/api/v1.0/posts', () => {
 
   describe('#post', () => {
     it('should create a post', async () => {
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .post('/api/v1.0/posts')
         .send(samplePost)
 
@@ -38,7 +39,7 @@ describe('/api/v1.0/posts', () => {
 
   describe('#list', () => {
     it('should list all posts', async () => {
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get('/api/v1.0/posts')
         .query({ limit: 10, page: 1 })
 
@@ -57,7 +58,7 @@ describe('/api/v1.0/posts', () => {
   describe('#get', () => {
     it('should get a post by id', async () => {
       let newPost = await (new Post(samplePost)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get(`/api/v1.0/posts/${newPost.id}`)
 
       expect(res).to.have.status(OK)
@@ -73,7 +74,7 @@ describe('/api/v1.0/posts', () => {
   describe('#put', () => {
     it('should update a post', async () => {
       let newPost = await (new Post(samplePost)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .put(`/api/v1.0/posts/${newPost.id}`)
         .send(Object.assign(samplePost, { title: 'Updated Title' }))
 
@@ -84,7 +85,7 @@ describe('/api/v1.0/posts', () => {
   describe('#delete', () => {
     it('should remove a post', async () => {
       let newPost = await (new Post(samplePost)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .delete(`/api/v1.0/posts/${newPost.id}`)
 
       expect(res).to.have.status(NO_CONTENT)

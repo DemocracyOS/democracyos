@@ -5,15 +5,16 @@ const {
   CREATED,
   NO_CONTENT
 } = require('http-status')
-const app = require('../../../main')
 const Setting = require('../../../cms/models/setting')
-
-require('../../../main/mongoose')
 
 const expect = chai.expect
 chai.use(chaiHttp)
 
 describe('/api/v1.0/settings', () => {
+  before(async () => {
+    await require('../../../main')
+  })
+
   beforeEach(async () => {
     await Setting.remove({})
   })
@@ -27,7 +28,7 @@ describe('/api/v1.0/settings', () => {
 
   describe('#post', () => {
     it('should create a setting', async () => {
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .post('/api/v1.0/settings')
         .send(sampleSetting)
 
@@ -37,7 +38,7 @@ describe('/api/v1.0/settings', () => {
 
   describe('#list', () => {
     it('should list all settings', async () => {
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get('/api/v1.0/settings')
         .query({ limit: 10, page: 1 })
 
@@ -56,7 +57,7 @@ describe('/api/v1.0/settings', () => {
   describe('#get', () => {
     it('should get a setting by id', async () => {
       let newSetting = await (new Setting(sampleSetting)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .get(`/api/v1.0/settings/${newSetting.id}`)
 
       expect(res).to.have.status(OK)
@@ -71,7 +72,7 @@ describe('/api/v1.0/settings', () => {
   describe('#put', () => {
     it('should update a setting', async () => {
       let newSetting = await (new Setting(sampleSetting)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .put(`/api/v1.0/settings/${newSetting.id}`)
         .send(Object.assign(sampleSetting, { settingName: 'Updated Name' }))
 
@@ -82,7 +83,7 @@ describe('/api/v1.0/settings', () => {
   describe('#delete', () => {
     it('should remove a setting', async () => {
       let newSetting = await (new Setting(sampleSetting)).save()
-      const res = await chai.request(app)
+      const res = await chai.request('http://localhost:3000')
         .delete(`/api/v1.0/settings/${newSetting.id}`)
 
       expect(res).to.have.status(NO_CONTENT)
