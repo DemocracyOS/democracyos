@@ -18,6 +18,7 @@ mongoose
 
 // initialize models
 require('../users/models/user')
+require('../cms/models/post')
 require('../reactions/models/reaction-rule')
 
 // handle errors
