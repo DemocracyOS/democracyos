@@ -1,7 +1,9 @@
 {
   "en": {
     "error": {
-      "NOT_FOUND": "Resource not found"
+      "NOT_FOUND": "Resource not found",
+      "MISSING_PARAM": "Paramether is missing",
+      "PARAM_LENGTH": "Paramether is too long" 
     }
   }
 }

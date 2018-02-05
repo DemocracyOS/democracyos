@@ -6,14 +6,13 @@ Define `Post` schema
 */
 
 const Post = new mongoose.Schema({
-  title: String,
-  content: String,
-  reactionId: String,
-  author: String,
+  title: { type: String, maxLength: 120, required: true },
+  description: { type: String, maxLength: 225 },
+  content: { type: String, required: true },
+  author: { type: String },
   openingDate: { type: Date },
-  closingDate: { type: Date },
-  tags: [String]
-})
+  closingDate: { type: Date }
+}, { timestamps: true })
 
 /**
  * Model's Plugin Extensions

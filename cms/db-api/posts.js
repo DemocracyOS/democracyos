@@ -1,7 +1,12 @@
 const { Types: { ObjectId } } = require('mongoose')
 const { log } = require('../../main/logger')
 const Post = require('../models/post')
-
+// Requires custom errors saved in main/errors
+const {
+  ErrMissingParam,
+  ErrNotFound,
+  ErrParamTooLong
+} = require('../../main/errors')
 /**
  * Create user
  * @method create
@@ -11,6 +16,14 @@ const Post = require('../models/post')
 
 exports.create = function create (post) {
   log.debug('post db-api create')
+  const requiredFields = ['title', 'content']
+  // If a required field is empty return custom error
+  requiredFields.map((f) => {
+    if (isEmpty(post[f])) throw ErrMissingParam(f)
+  })
+  // If a field with maxLength is longer return custom error
+  if (isTooLong(post.title, 120)) throw ErrParamTooLong('title')
+  if (post.description && isTooLong(post.description, 225)) throw ErrParamTooLong('description')
   return (new Post(post)).save()
 }
 
@@ -23,7 +36,12 @@ exports.create = function create (post) {
 
 exports.get = function get (id) {
   log.debug('post db-api get')
-  return Post.findOne({ _id: ObjectId(id) })
+  return Post
+    .findOne({ _id: ObjectId(id) })
+    .then((post) => {
+      if (!post) throw ErrNotFound
+      return post
+    })
 }
 
 /**
@@ -52,9 +70,13 @@ exports.list = function list ({ limit, page }) {
 
 exports.update = function update ({ id, post }) {
   log.debug('post db-api update')
-  // return Promise.resolve()
+  if (post.title && isTooLong(post.title, 120)) throw ErrParamTooLong('title')
+  if (post.description && isTooLong(post.description, 225)) throw ErrParamTooLong('description')
   return Post.findOne({ _id: ObjectId(id) })
-    .then((_post) => Object.assign(_post, post).save())
+    .then((_post) => {
+      if (!_post) throw ErrNotFound
+      return Object.assign(_post, post).save()
+    })
 }
 
 /**
@@ -67,5 +89,22 @@ exports.update = function update ({ id, post }) {
 exports.remove = function remove (id) {
   log.debug('post db-api remove')
   return Post.findOne({ _id: ObjectId(id) })
-    .then((post) => post.remove())
+    .then((post) => {
+      if (!post) throw ErrNotFound
+      post.remove()
+    })
+}
+
+function isEmpty (field) {
+  if (field === undefined || field.length === 0) {
+    return true
+  }
+  return false
+}
+
+function isTooLong (field, maxLength) {
+  if (field.length > maxLength) {
+    return true
+  }
+  return false
 }
