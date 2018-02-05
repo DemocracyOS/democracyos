@@ -1,9 +1,8 @@
 import React from 'react'
 import { Admin } from 'admin-on-rest'
 import Dashboard from './Dashboard'
+import Navbar from './Navbar'
 
 export default () => (
-  <Admin dashboard={Dashboard}>
-    <p>Hola soy una admin</p>
-  </Admin>
+  <Admin dashboard={Dashboard} menu={Navbar} />
 )
