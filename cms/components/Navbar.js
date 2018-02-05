@@ -1,12 +1,16 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import { MenuItemLink, getResources } from 'admin-on-rest'
 
-const Navbar = ({ resources, onMenuTap }) => (
+const Navbar = ({ resources, onMenuTap, logout }) => (
   <nav>
-    <MenuItemLink to="/settings" primaryText="Settings" onClick={onMenuTap} />
-    <MenuItemLink to="/posts" primaryText="Posts" onClick={onMenuTap} />
-    <MenuItemLink to="/reactions" primaryText="Reactions" onClick={onMenuTap} />
+    <MenuItemLink to='/admin/settings' primaryText='Settings' onClick={onMenuTap} />
+    <MenuItemLink to='/admin/posts' primaryText='Posts' onClick={onMenuTap} />
+    <MenuItemLink to='/admin/reactions' primaryText='Reactions' onClick={onMenuTap} />
   </nav>
 )
 
-export default Navbar
+const mapStateToProps = (state) => ({
+  resources: getResources(state)
+})
+export default connect(mapStateToProps)(Navbar)

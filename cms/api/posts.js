@@ -26,7 +26,7 @@ router.route('/')
   .get(async (req, res, next) => {
     try {
       const results = await Post.list({ limit: req.query.limit, page: req.query.page })
-
+      console.log(results)
       // Sends the given results with status 200
       res.status(OK).json({
         results: results.docs,
