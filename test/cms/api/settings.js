@@ -65,7 +65,6 @@ describe('/api/v1.0/settings', () => {
       expect(res.body).to.have.property('logo')
       expect(res.body).to.have.property('permissions')
       expect(res.body).to.have.property('theme')
-
     })
   })
 
