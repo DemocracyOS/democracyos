@@ -1,7 +1,9 @@
 {
   "es": {
     "error": {
-      "NOT_FOUND": "Recurso no encontrado"
+      "NOT_FOUND": "Recurso no encontrado",
+      "MISSING_PARAM": "Parámetro no encontrado",
+      "PARAM_LENGTH": "Parámetro muy largo" 
     }
   }
 }

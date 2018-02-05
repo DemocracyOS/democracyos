@@ -31,7 +31,7 @@ describe('db-api.reactionVote', function () {
       // create a spy for the save method
       const save = sinon.spy(ReactionVoteMock.prototype, 'save')
 
-      // override ReactionVote inside `reactionVote/db-api/reaction-type`
+      // override ReactionVote inside `reactionVote/db-api/reaction-rule`
       reactionVote.__set__('ReactionVote', ReactionVoteMock)
 
       // call create method

@@ -1,0 +1,131 @@
+const chai = require('chai')
+const chaiHttp = require('chai-http')
+const {
+  OK,
+  CREATED,
+  NO_CONTENT
+} = require('http-status')
+const app = require('../../../main')
+const ReactionRule = require('../../../reactions/models/reaction-rule')
+
+require('../../../main/mongoose')
+
+const expect = chai.expect
+chai.use(chaiHttp)
+
+describe('/api/v1.0/reaction-rule', () => {
+  beforeEach(async () => {
+    await ReactionRule.remove({})
+  })
+
+  const sampleReactionRule = {
+    name: 'MyReactionConfig',
+    method: 'LIKE',
+    startingDate: new Date('2017-12-20 00:00:00'),
+    closingDate: new Date('2018-04-20 18:00:00'),
+    limit: 5
+  }
+  const anotherReactionRule = {
+    name: 'MyReactionRule',
+    method: 'LIKE',
+    startingDate: new Date('2017-12-21 00:00:00'),
+    closingDate: new Date('2018-04-21 18:00:00'),
+    limit: 8
+  }
+  const otherReactionRule = {
+    name: 'TotallyDifferentName',
+    method: 'LIKE',
+    startingDate: new Date('2017-12-22 00:00:00'),
+    closingDate: new Date('2018-04-22 18:00:00'),
+    limit: 20
+  }
+
+  describe('#post', () => {
+    it('should create a reaction rule', async () => {
+      const res = await chai.request(app)
+        .post('/api/v1.0/reaction-rule')
+        .send(sampleReactionRule)
+
+      expect(res).to.have.status(CREATED)
+    })
+  })
+
+  describe('#list', () => {
+    it('should list all reaction rule', async () => {
+      await (new ReactionRule(sampleReactionRule)).save()
+      await (new ReactionRule(anotherReactionRule)).save()
+      await (new ReactionRule(otherReactionRule)).save()
+
+      const res = await chai.request(app)
+        .get('/api/v1.0/reaction-rule')
+        .query({ limit: 10, page: 1 })
+
+      expect(res).to.have.status(OK)
+
+      const { results, pagination } = res.body
+      
+      expect(results).to.be.a('array')
+      expect(results.length).to.be.eql(3)
+      expect(pagination).to.have.property('count')
+      expect(pagination).to.have.property('page')
+      expect(pagination).to.have.property('limit')
+    })
+  })
+
+  describe('#get', () => {
+    it('should get a reaction rule by id', async () => {
+      let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
+      const res = await chai.request(app)
+        .get(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
+
+      expect(res).to.have.status(OK)
+      expect(res.body).to.be.a('object')
+      // Check if the response contains all the properties of the object
+      let properties = Object.keys(sampleReactionRule)
+      properties.map((prop) => expect(res.body).to.have.property(prop))
+    })
+  })
+
+
+  describe('#listByName', () => {
+    it('should list all reaction rule that matches a given string', async () => {
+      let firstReactionRule = await (new ReactionRule(sampleReactionRule)).save()
+      let secondReactionRule = await (new ReactionRule(anotherReactionRule)).save()
+      let thirdReactionRule = await (new ReactionRule(otherReactionRule)).save()
+      const res = await chai.request(app)
+        .get('/api/v1.0/reaction-rule')
+        .query({ name: 'total', limit: 10, page: 1 })
+
+      expect(res).to.have.status(OK)
+
+      const { results, pagination } = res.body
+
+      expect(results).to.be.a('array')
+      expect(results.length).to.be.eql(1)
+      expect(pagination).to.have.property('count')
+      expect(pagination).to.have.property('page')
+      expect(pagination).to.have.property('limit')
+    })
+  })
+
+  describe('#put', () => {
+    it('should update a reaction rule', async () => {
+      let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
+      const res = await chai.request(app)
+        .put(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
+        .send(Object.assign(sampleReactionRule, { name: 'UpdatedName' }))
+
+      expect(res).to.have.status(NO_CONTENT)
+    })
+  })
+
+  describe('#delete', () => {
+    it('should remove a reaction rule', async () => {
+      let newReactionRule = await (new ReactionRule(sampleReactionRule)).save()
+      const res = await chai.request(app)
+        .delete(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
+
+      expect(res).to.have.status(NO_CONTENT)
+    })
+  })
+})

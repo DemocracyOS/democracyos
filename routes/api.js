@@ -17,6 +17,8 @@ router.use(
 // API routes
 router.use('/users', require('../users/api/users'))
 router.use('/settings', require('../cms/api/settings'))
+router.use('/reaction-rule', require('../reactions/api/reaction-rule'))
+router.use('/posts', require('../cms/api/posts'))
 
 // Catch 404 and forward to error handler.
 router.use((req, res, next) => {

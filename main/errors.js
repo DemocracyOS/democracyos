@@ -1,6 +1,7 @@
 const {
   INTERNAL_SERVER_ERROR,
-  NOT_FOUND
+  NOT_FOUND,
+  BAD_REQUEST
 } = require('http-status')
 
 class APIError extends Error {
@@ -27,7 +28,23 @@ const ErrNotFound = new APIError('not found', {
   status: NOT_FOUND
 })
 
+const ErrMissingParam = (field) =>  new APIError('Missing required paramether', {
+  translationKey: 'MISSING_PARAM',
+  status: BAD_REQUEST
+}, {
+  field: field
+})
+
+const ErrParamTooLong = (field) => new APIError('Paramether is too long', {
+  translationKey: 'PARAM_LENGTH',
+  status: BAD_REQUEST
+}, {
+  field: field
+})
+
 module.exports = {
   APIError,
-  ErrNotFound
+  ErrNotFound,
+  ErrMissingParam,
+  ErrParamTooLong
 }

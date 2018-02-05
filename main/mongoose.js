@@ -19,6 +19,8 @@ mongoose
 // initialize models
 require('../users/models/user')
 require('../cms/models/setting')
+require('../cms/models/post')
+require('../reactions/models/reaction-rule')
 
 // handle errors
 const db = mongoose.connection
