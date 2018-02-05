@@ -1,21 +1,93 @@
+const chai = require('chai')
+const chaiHttp = require('chai-http')
+const {
+  OK,
+  CREATED,
+  NO_CONTENT
+} = require('http-status')
+const app = require('../../../main')
+const Post = require('../../../cms/models/post')
+
+require('../../../main/mongoose')
+
+const expect = chai.expect
+chai.use(chaiHttp)
+
 describe('/api/v1.0/posts', () => {
+  beforeEach(async () => {
+    await Post.remove({})
+  })
+
+  const samplePost = {
+    title: 'POST TITLE',
+    content: 'POST CONTENT',
+    author: 'POST AUTHOR',
+    openingDate: Date.now(),
+    closingDate: Date.now()
+  }
+
   describe('#post', () => {
-    it('should create a user')
+    it('should create a post', async () => {
+      const res = await chai.request(app)
+        .post('/api/v1.0/posts')
+        .send(samplePost)
+
+      expect(res).to.have.status(CREATED)
+    })
   })
 
   describe('#list', () => {
-    it('should list all users')
+    it('should list all posts', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1.0/posts')
+        .query({ limit: 10, page: 1 })
+
+      expect(res).to.have.status(OK)
+
+      const { results, pagination } = res.body
+
+      expect(results).to.be.a('array')
+      expect(results.length).to.be.eql(0)
+      expect(pagination).to.have.property('count')
+      expect(pagination).to.have.property('page')
+      expect(pagination).to.have.property('limit')
+    })
   })
 
   describe('#get', () => {
-    it('should get a user by id')
+    it('should get a post by id', async () => {
+      let newPost = await (new Post(samplePost)).save()
+      const res = await chai.request(app)
+        .get(`/api/v1.0/posts/${newPost.id}`)
+
+      expect(res).to.have.status(OK)
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('title')
+      expect(res.body).to.have.property('content')
+      expect(res.body).to.have.property('author')
+      expect(res.body).to.have.property('openingDate')
+      expect(res.body).to.have.property('closingDate')
+    })
   })
 
   describe('#put', () => {
-    it('should update a user')
+    it('should update a post', async () => {
+      let newPost = await (new Post(samplePost)).save()
+      const res = await chai.request(app)
+        .put(`/api/v1.0/posts/${newPost.id}`)
+        .send(Object.assign(samplePost, { title: 'Updated Title' }))
+
+      expect(res).to.have.status(NO_CONTENT)
+    })
   })
 
   describe('#delete', () => {
-    it('should remove a user')
+    it('should remove a post', async () => {
+      let newPost = await (new Post(samplePost)).save()
+      const res = await chai.request(app)
+        .delete(`/api/v1.0/posts/${newPost.id}`)
+
+      expect(res).to.have.status(NO_CONTENT)
+    })
   })
 })
