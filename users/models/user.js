@@ -9,7 +9,34 @@ const User = new mongoose.Schema({
   username: String,
   name: String,
   bio: String,
-  email: String
+  email: String,
+  emailToken: String,
+  emailVerified: { type: Boolean, default: false },
+  facebook: {
+    id: String,
+    accessToken: String,
+    refreshToken: String
+  },
+  google: {
+    id: String,
+    accessToken: String,
+    refreshToken: String
+  },
+  twitter: {
+    id: String,
+    accessToken: String,
+    refreshToken: String
+  },
+  linkedin: {
+    id: String,
+    accessToken: String,
+    refreshToken: String
+  },
+  instagram: {
+    id: String,
+    accessToken: String,
+    refreshToken: String
+  }
 }, { timestamps: true })
 
 /**
@@ -17,7 +44,7 @@ const User = new mongoose.Schema({
  */
 
 User.index({ email: 1 }, { unique: true })
-User.index({ username: 1 }, { unique: true })
+// User.index({ username: 1 }, { unique: true })
 
 /**
  * Model's Plugin Extensions

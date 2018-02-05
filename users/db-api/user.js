@@ -1,5 +1,6 @@
 const { Types: { ObjectId } } = require('mongoose')
 const { log } = require('../../main/logger')
+const { ErrNotFound } = require('../../main/errors')
 const User = require('../models/user')
 
 /**
@@ -18,13 +19,19 @@ exports.create = function create (user) {
 /**
  * Get user by id
  * @method get
- * @param  {string} id
+ * @param  {object} query
  * @return {promise}
  */
 
-exports.get = function get (id) {
+const get = exports.get = function get (query) {
   log.debug('user db-api get')
-  return User.findOne({ _id: ObjectId(id) })
+  if (query.id) {
+    let _id = ObjectId(query.id)
+    if (!ObjectId.isValid(_id)) throw new Error('Invalid id')
+    delete query.id
+    query._id = _id
+  }
+  return User.findOne(query)
 }
 
 /**
@@ -55,8 +62,11 @@ exports.list = function list ({ limit, page }) {
 exports.update = function update ({ id, user }) {
   log.debug('user db-api update')
 
-  return User.findOne({ _id: ObjectId(id) })
-    .then((_user) => Object.assign(_user, user).save())
+  return get({ id })
+    .then((_user) => {
+      if (!_user) throw ErrNotFound('User to update not found')
+      return Object.assign(_user, user).save()
+    })
 }
 
 /**
@@ -69,6 +79,9 @@ exports.update = function update ({ id, user }) {
 exports.remove = function remove (id) {
   log.debug('user db-api remove')
 
-  return User.findOne({ _id: ObjectId(id) })
-    .then((user) => user.remove())
+  return get({ id })
+    .then((user) => {
+      if (!user) throw ErrNotFound('User to remove not found')
+      return user.remove()
+    })
 }
