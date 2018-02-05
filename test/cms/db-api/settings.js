@@ -5,7 +5,7 @@ require('sinon-mongoose')
 const { Types: { ObjectId } } = require('mongoose')
 
 const Setting = require('../../../cms/models/setting')
-const setting = require('../../../cms/db-api/setting')
+const setting = require('../../../cms/db-api/settings')
 
 const sampleSetting = { settingName: 'SETTINGNAME' }
 
