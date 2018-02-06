@@ -56,7 +56,6 @@ router.route('/:id')
   .put(async (req, res, next) => {
     try {
       const updatedPost = await Post.update({ id: req.params.id, post: req.body })
-      console.log(updatedPost)
       res.status(OK).json(updatedPost)
     } catch (err) {
       next(err)
@@ -66,7 +65,7 @@ router.route('/:id')
   .delete(async (req, res, next) => {
     try {
       await Post.remove(req.params.id)
-      res.status(NO_CONTENT).end()
+      res.status(NO_CONTENT).json(req.params.id)
     } catch (err) {
       next(err)
     }

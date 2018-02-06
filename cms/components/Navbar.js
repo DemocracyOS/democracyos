@@ -8,6 +8,7 @@ const Navbar = ({ resources, onMenuTap, logout }) => (
     <MenuItemLink to='/admin/settings' primaryText='Settings' onClick={onMenuTap} />
     <MenuItemLink to='/admin/posts' primaryText='Posts' onClick={onMenuTap} />
     <MenuItemLink to='/admin/reactions' primaryText='Reactions' onClick={onMenuTap} />
+    <MenuItemLink to='/admin/users' primaryText='Users' onClick={onMenuTap} />
   </nav>
 )
 

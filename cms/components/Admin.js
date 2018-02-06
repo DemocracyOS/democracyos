@@ -13,5 +13,6 @@ export default () => (
     <Resource name='posts' list={PostList} create={PostCreate} edit={PostEdit} remove={Delete} />
     <Resource name='settings' list={PostList} />
     <Resource name='reaction-rule' list={PostList} />
+    <Resource name='users' list={PostList} />
   </Admin>
 )
