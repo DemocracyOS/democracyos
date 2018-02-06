@@ -4,6 +4,7 @@ import { MenuItemLink, getResources } from 'admin-on-rest'
 
 const Navbar = ({ resources, onMenuTap, logout }) => (
   <nav>
+    <MenuItemLink to='/admin' primaryText='Home' onClick={onMenuTap} />
     <MenuItemLink to='/admin/settings' primaryText='Settings' onClick={onMenuTap} />
     <MenuItemLink to='/admin/posts' primaryText='Posts' onClick={onMenuTap} />
     <MenuItemLink to='/admin/reactions' primaryText='Reactions' onClick={onMenuTap} />
