@@ -80,6 +80,10 @@ const convertHTTPResponseToREST = (response, type, resource, params) => {
       }
     case CREATE:
       return { data: { ...params.data, id: json._id } }
+    case UPDATE:
+      return { data: { ...params.data, id: json._id } }
+    case DELETE:
+      return { data: {} }
     default:
       return { data: json }
   }

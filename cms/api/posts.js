@@ -16,8 +16,10 @@ router.route('/')
   // POST route
   .post(async (req, res, next) => {
     try {
-      await Post.create(req.body)
-      res.status(CREATED).end()
+      const newPost = await Post.create(req.body)
+      res.status(CREATED).json({
+        data: newPost
+      })
     } catch (err) {
       next(err)
     }
@@ -26,7 +28,6 @@ router.route('/')
   .get(async (req, res, next) => {
     try {
       const results = await Post.list({ limit: req.query.limit, page: req.query.page })
-      console.log(results)
       // Sends the given results with status 200
       res.status(OK).json({
         results: results.docs,
@@ -54,8 +55,9 @@ router.route('/:id')
   // UPDATE a post with a given ID
   .put(async (req, res, next) => {
     try {
-      await Post.update({ id: req.params.id, post: req.body })
-      res.status(NO_CONTENT).end()
+      const updatedPost = await Post.update({ id: req.params.id, post: req.body })
+      console.log(updatedPost)
+      res.status(OK).json(updatedPost)
     } catch (err) {
       next(err)
     }
