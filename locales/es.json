@@ -8,6 +8,19 @@
       "SETTINGS_INIT": "Los ajustes ya fueron configurados",
       "USER_NOT_ADMIN": "El usuario no es un administrador",
       "USER_NOT_LOGGED_IN": "Necesitás estar registrado para realizar esta acción"
+    },
+    "admin" : {
+      "welcome": "Bienvenido",
+      "description": "Lorem ipsum sic dolor amet...",
+      "home": "Inicio",
+      "settings": "Ajustes",
+      "posts": "Publicaciones",
+      "reactions": "Reacciones",
+      "users": "Usuarios",
+      "create": "Crear",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "refresh": "Actualizar"
     }
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { messageFormatter as t } from 'globalize'
 import { MenuItemLink, getResources } from 'admin-on-rest'
 
 const Navbar = ({ resources, onMenuTap, logout }) => (
