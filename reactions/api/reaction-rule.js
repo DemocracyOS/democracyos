@@ -11,8 +11,8 @@ const router = express.Router()
 router.route('/')
   .post(async (req, res, next) => {
     try {
-      await ReactionRule.create(req.body)
-      res.status(CREATED).end()
+      const newReactionRule = await ReactionRule.create(req.body)
+      res.status(CREATED).json(newReactionRule)
     } catch (err) {
       next(err)
     }
@@ -50,8 +50,8 @@ router.route('/:id')
   })
   .put(async (req, res, next) => {
     try {
-      await ReactionRule.update({ id: req.params.id, reactionRule: req.body })
-      res.status(NO_CONTENT).end()
+      const updatedReactionRule = await ReactionRule.update({ id: req.params.id, reactionRule: req.body })
+      res.status(NO_CONTENT).json(updatedReactionRule)
     } catch (err) {
       next(err)
     }
@@ -59,7 +59,7 @@ router.route('/:id')
   .delete(async (req, res, next) => {
     try {
       await ReactionRule.remove(req.params.id)
-      res.status(NO_CONTENT).end()
+      res.status(NO_CONTENT).json(req.params.id)
     } catch (err) {
       next(err)
     }

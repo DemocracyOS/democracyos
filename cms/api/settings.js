@@ -13,8 +13,10 @@ const router = express.Router()
 router.route('/')
   .post(async (req, res, next) => {
     try {
-      await Setting.create(req.body)
-      res.status(CREATED).end()
+      const newSetting = await Setting.create(req.body)
+      res.status(CREATED).json({
+        data: newSetting
+      })
     } catch (err) {
       log.error(err)
       res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
@@ -50,8 +52,8 @@ router.route('/:id')
   })
   .put(async (req, res, next) => {
     try {
-      await Setting.update({ id: req.params.id, setting: req.body })
-      res.status(NO_CONTENT).end()
+      const updatedSetting = await Setting.update({ id: req.params.id, setting: req.body })
+      res.status(OK).json(updatedSetting)
     } catch (err) {
       log.error(err)
       res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
@@ -60,7 +62,7 @@ router.route('/:id')
   .delete(async (req, res, next) => {
     try {
       await Setting.remove(req.params.id)
-      res.status(NO_CONTENT).end()
+      res.status(NO_CONTENT).json(req.params.id)
     } catch (err) {
       log.error(err)
       res.status(INTERNAL_SERVER_ERROR).json({ error: 'error' })
