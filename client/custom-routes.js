@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { Delete } from 'admin-on-rest'
-import Dashboard from '../cms/components/Dashboard'
-import { PostList, PostCreate, PostEdit } from '../cms/components/Posts'
+import Dashboard from '../cms/components/dashboard'
+import { PostList, PostCreate, PostEdit } from '../cms/components/posts'
 
 export default [
   <Route exact path='/admin' component={Dashboard} />,

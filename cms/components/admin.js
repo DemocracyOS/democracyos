@@ -2,11 +2,11 @@ import React from 'react'
 import createHistory from 'history/createBrowserHistory'
 const history = createHistory()
 import { Admin, Resource, Delete } from 'admin-on-rest'
-import RestClient from '../../client/RestClient'
-import CustomRoutes from '../../client/CustomRoutes'
-import Dashboard from './Dashboard'
-import Navbar from './Navbar'
-import { PostList, PostCreate, PostEdit } from './Posts'
+import RestClient from '../../client/rest-client'
+import CustomRoutes from '../../client/custom-routes'
+import Dashboard from './dashboard'
+import Navbar from './navbar'
+import { PostList, PostCreate, PostEdit } from './posts'
 
 export default () => (
   <Admin menu={Navbar} title='Democracy OS' restClient={RestClient} customRoutes={CustomRoutes} history={history} >

@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-const Admin = dynamic(import('../cms/components/Admin'), {
+const Admin = dynamic(import('../cms/components/admin'), {
   ssr: false
 })
 
