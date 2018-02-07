@@ -6,6 +6,19 @@
       "PARAM_LENGTH": "Parámetro muy largo",
       "SETTINGS_NOT_INIT": "Los ajustes no fueron configurados",
       "SETTINGS_INIT": "Los ajustes ya fueron configurados" 
+    },
+    "admin" : {
+      "welcome": "Bienvenido",
+      "description": "Lorem ipsum sic dolor amet...",
+      "home": "Inicio",
+      "settings": "Ajustes",
+      "posts": "Publicaciones",
+      "reactions": "Reacciones",
+      "users": "Usuarios",
+      "create": "Crear",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "refresh": "Actualizar"
     }
   }
 }
