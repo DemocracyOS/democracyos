@@ -24,6 +24,7 @@
     "express-session": "^1.15.6",
     "express-winston": "^2.4.0",
     "globalize": "^1.3.0",
+    "globalize-webpack-plugin": "^2.1.0",
     "helmet": "^3.10.0",
     "http-status": "^1.0.1",
     "mongoose": "^5.0.3",
@@ -50,11 +51,9 @@
     "chai-http": "^3.0.0",
     "eslint": "^4.17.0",
     "eslint-config-democracyos": "^2.0.2",
-    "globalize-webpack-plugin": "^2.1.0",
     "mocha": "^5.0.0",
     "rewire": "^3.0.2",
     "sinon": "^4.2.2",
     "sinon-mongoose": "^2.0.2"
-  },
-  "cldr-data-urls-json": "../../cldr.json"
+  }
 }

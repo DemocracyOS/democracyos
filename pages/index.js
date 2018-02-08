@@ -1,4 +1,5 @@
 import React from 'react'
+import Globalize from 'globalize'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
@@ -33,6 +34,7 @@ export default class extends Page {
         <Head {...this.props} />
         <Header settings={this.props.settings} user={this.props.session.user} />
         <div className='text-center'>
+          {console.log(Globalize.messageFormatter('error/NOT_FOUND'))}
           <p className='lead mt-3 mb-3'>Work in progress.</p>
           <SignInMessage {...this.props} />
         </div>
