@@ -1,4 +1,5 @@
 import React from 'react'
+import { messageFormatter as t } from 'globalize'
 import { connect } from 'react-redux'
 import { messageFormatter as t } from 'globalize'
 import { MenuItemLink, getResources } from 'admin-on-rest'
@@ -11,6 +12,7 @@ const Navbar = ({ resources, onMenuTap, logout }) => (
     <MenuItemLink to='/reaction-rule' primaryText='Reaction Rules' onClick={onMenuTap} />
     <MenuItemLink to='/reaction-instance' primaryText='Reaction Instances' onClick={onMenuTap} />
     <MenuItemLink to='/users' primaryText='Users' onClick={onMenuTap} />
+    {console.log(t)}
   </nav>
 )
 

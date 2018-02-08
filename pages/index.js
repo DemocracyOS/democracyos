@@ -1,4 +1,5 @@
 import React from 'react'
+import Globalize from 'globalize'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth/client'
@@ -35,6 +36,7 @@ export default class extends Page {
           settings={this.props.settings}
           session={this.props.session} />
         <div className='text-center'>
+          {console.log(Globalize.messageFormatter('error/NOT_FOUND'))}
           <p className='lead mt-3 mb-3'>Work in progress.</p>
         </div>
         <PostGrid />

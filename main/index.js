@@ -11,7 +11,7 @@ const authProviders = require('../users/auth/providers')
 const { setup } = require('../services/setup')
 const { PORT, SESSION_SECRET, ROOT_URL } = require('./config')
 const { middleware: loggerMiddleware, log } = require('./logger')
-const { middleware: i18nMiddleware } = require('./i18n')
+//const { middleware: i18nMiddleware } = require('./i18n')
 const mongoose = require('./mongoose')
 
 const { NODE_ENV } = process.env
@@ -34,7 +34,7 @@ module.exports = (async () => {
     server.use(passport.initialize())
     server.use(passport.session())
     // server.use(loggerMiddleware)
-    server.use(i18nMiddleware)
+    //server.use(i18nMiddleware)
 
     // Init authentication and next server
     const nextAuthOptions = await nextAuth(app, {
