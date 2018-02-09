@@ -46,6 +46,7 @@ module.exports = {
     const lang = accepts(req).language(locales)
     const language = lang || DEFAULT_LANG
     res.locals.t = GlobalizeInstances[language]
+    const globalize = Globalize.locale(DEFAULT_LANG)
     next()
   }
 }

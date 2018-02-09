@@ -6,8 +6,7 @@ module.exports = {
       production: false,
       developmentLocale: 'en',
       supportedLocales: [ 'en', 'es' ],
-      messages: 'locales/[locale].json',
-      output: 'i18n/[locale].[hash].js'
+      messages: 'locales/[locale].json'
     }))
     return config
   }
