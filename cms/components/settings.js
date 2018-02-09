@@ -1,32 +1,51 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Card, CardText } from 'material-ui/Card';
-import { Create, Edit, List, Datagrid, SimpleForm, TextInput, SelectInput, ImageField, Textfield } from 'admin-on-rest';
+import { RadioButtonGroupInput, ImageInput, Edit, List, Datagrid, EditButton, SimpleForm, TextField, TextInput, SelectInput, ImageField } from 'admin-on-rest';
 
 
-export const SettingsCreate = (props) => (
+
+const styles = {
+  ImageInput: { width: '17em'}
+};
+
+
+
+export const SettingsList = (props) => (
   <List {...props}>
     <Datagrid>
-      <TextInput source='mainName' />
-      <SelectInput source='permissions' choiceschoices={[
-        { id: 'admin', name: 'admin' },
-        { id: 'user', name: 'user' },
-         { id: 'moderator', name: 'moderator' },
-         ]} /> 
-   <ImageField source="url" title="logo" />
-   </Datagrid>
+      <TextField source='id' />
+      <TextField source='settingName' />
+      <EditButton />
+    </Datagrid>
   </List>
 )
 
 export const SettingsEdit = (props) => (
-  <Edit {...props}>
-  <TextInput source='mainName' />
-  <SelectInput source='permissions' choiceschoices={[
+  <Edit title="Community settings" {...props}>
+
+  <SimpleForm>
+
+  <TextInput source='settingName' />
+
+  <ImageInput style={styles.ImageInput} source="logo" label="Community logo" accept="image/*">
+    <ImageField source="logo" title="title" />
+   </ImageInput>
+
+  <SelectInput  source='permissions' choices={[
     { id: 'admin', name: 'admin' },
     { id: 'user', name: 'user' },
-     { id: 'moderator', name: 'moderator' },
+    { id: 'moderator', name: 'moderator' },
      ]} /> 
-  <ImageField source="url" title="logo" />
+   
+   <RadioButtonGroupInput source="theme" choices={[
+    { id: 'Dark', name: 'Dark' },
+    { id: 'Light', name: 'Light' },
+    { id: 'Siena', name: 'Siena' },
+    { id: 'Light Blue', name: 'Light Blue' },
+    { id: 'Red', name: 'Red' },
+]} />
 
+  </SimpleForm>
   </Edit>
 )
