@@ -3,6 +3,7 @@ import Globalize from 'globalize'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
+import { messageFormatter as t } from 'globalize'
 import Page from '../client/site/components/page'
 import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'
@@ -15,6 +16,7 @@ export default class extends Page {
       posts: []
     }
     this.handleSignOutSubmit = this.handleSignOutSubmit.bind(this)
+    Globalize.locale(this.props.locale)
   }
 
   handleSignOutSubmit (event) {
@@ -34,7 +36,7 @@ export default class extends Page {
         <Head {...this.props} />
         <Header settings={this.props.settings} user={this.props.session.user} />
         <div className='text-center'>
-          {console.log(Globalize.messageFormatter('error/NOT_FOUND'))}
+          <p>{t('error/NOT_FOUND')}</p>
           <p className='lead mt-3 mb-3'>Work in progress.</p>
           <SignInMessage {...this.props} />
         </div>
