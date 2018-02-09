@@ -2,7 +2,12 @@ import React from 'react'
 import Globalize from 'globalize'
 import Router from 'next/router'
 import Link from 'next/link'
+<<<<<<< 765f014276b813756b119e3d9f13d88be008eb54
 import { NextAuth } from 'next-auth/client'
+=======
+import { NextAuth } from 'next-auth-client'
+import { messageFormatter as t } from 'globalize'
+>>>>>>> Fixing globalize config in front
 import Page from '../client/site/components/page'
 import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'
@@ -15,6 +20,7 @@ export default class extends Page {
       posts: []
     }
     this.handleSignOutSubmit = this.handleSignOutSubmit.bind(this)
+    Globalize.locale(this.props.locale)
   }
 
   handleSignOutSubmit (event) {
@@ -36,7 +42,7 @@ export default class extends Page {
           settings={this.props.settings}
           session={this.props.session} />
         <div className='text-center'>
-          {console.log(Globalize.messageFormatter('error/NOT_FOUND'))}
+          <p>{t('error/NOT_FOUND')}</p>
           <p className='lead mt-3 mb-3'>Work in progress.</p>
         </div>
         <PostGrid />
