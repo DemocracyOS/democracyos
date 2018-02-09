@@ -8,15 +8,23 @@ import Page from '../client/site/components/page'
 import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'
 import PostGrid from '../client/site/components/post-grid'
+import { t, setLocale } from '../client/i18n'
 
 export default class extends Page {
+  static async getInitialProps ({ req }) {
+    return {
+      session: await NextAuth.init({ req }),
+      locale: 'es'
+    }
+  }
+
   constructor (props) {
     super(props)
     this.state = {
       posts: []
     }
     this.handleSignOutSubmit = this.handleSignOutSubmit.bind(this)
-    Globalize.locale(this.props.locale)
+    setLocale(this.props.locale)
   }
 
   handleSignOutSubmit (event) {
