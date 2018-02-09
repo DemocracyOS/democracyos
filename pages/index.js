@@ -2,12 +2,8 @@ import React from 'react'
 import Globalize from 'globalize'
 import Router from 'next/router'
 import Link from 'next/link'
-<<<<<<< 765f014276b813756b119e3d9f13d88be008eb54
-import { NextAuth } from 'next-auth/client'
-=======
 import { NextAuth } from 'next-auth-client'
 import { messageFormatter as t } from 'globalize'
->>>>>>> Fixing globalize config in front
 import Page from '../client/site/components/page'
 import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'

@@ -34,17 +34,7 @@ module.exports = (async () => {
     server.use(passport.initialize())
     server.use(passport.session())
     // server.use(loggerMiddleware)
-<<<<<<< e0b8c4c49bdf7fd778536a917e65bce453b8b523
     //server.use(i18nMiddleware)
-=======
-    server.use(i18nMiddleware)
-    // Apply API routes
-    server.use('/api/v1.0', require('./api'))
-
-    server.get('/admin/*', (req, res) => {
-      app.render(req, res, '/admin')
-    })
->>>>>>> Globalize package working
 
     // Init authentication and next server
     const nextAuthOptions = await nextAuth(app, {
