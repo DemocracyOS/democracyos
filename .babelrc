@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "stage-2",
+    ["env", {
+      "targets": {
+        "node": "current"
+      }
+    }],
+    "next/babel"
+  ],
+  "plugins": []
+}

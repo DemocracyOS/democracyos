@@ -73,4 +73,12 @@ if (!CONFIG.SMTP_HOST || !CONFIG.SMTP_USERNAME || !CONFIG.SMTP_PASSWORD) {
   )
 }
 
+if (CONFIG.SMTP_PORT !== 25) {
+  try {
+    CONFIG.SMTP_PORT = parseInt(CONFIG.SMTP_PORT)
+  } catch (e) {
+    throw new Error('DEMOCRACYOS_SMTP_PORT is not an integer')
+  }
+}
+
 module.exports = CONFIG

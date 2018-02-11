@@ -1,5 +1,6 @@
 public
 .next
+dist
 
 logs
 *.log

@@ -1,5 +1,6 @@
+import ConfirmEmail from '../components/email/confirm'
 const User = require('../db-api/user')
-const mailer = require('../../main/mailer')
+const { send: sendMail } = require('../../main/mailer')
 const { log } = require('../../main/logger')
 
 module.exports = {
@@ -47,7 +48,14 @@ module.exports = {
     url = null
   } = {}) => {
     try {
-      await mailer.send({ email, url })
+      await sendMail({
+        email,
+        subject: 'Confirmar email',
+        title: 'Confirmar email',
+        preview: 'Hace click en el link para confirmar',
+        data: { url },
+        template: ConfirmEmail
+      })
     } catch (err) {
       log.error('Error sending email to ' + email, err)
     }

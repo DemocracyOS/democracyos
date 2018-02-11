@@ -1,3 +1,6 @@
+import Oy from 'oy-vey'
+import ConfirmEmail from '../users/components/email/confirm'
+const express = require('express')
 const nodemailer = require('nodemailer')
 const {
   SMTP_HOST,
@@ -10,33 +13,45 @@ const {
 
 const options = {
   host: SMTP_HOST,
+  port: SMTP_PORT,
   auth: {
     user: SMTP_USERNAME,
     pass: SMTP_PASSWORD
   }
 }
 
-if (SMTP_PORT) {
-  try {
-    options.port = parseInt(SMTP_PORT)
-  } catch (e) {
-    throw new Error('DEMOCRACYOS_SMTP_PORT is not an integer')
-  }
-} else {
-  options.port = 25
-}
-
 const mailer = nodemailer.createTransport(options)
 
-module.exports.send = ({ email, url }) => new Promise((resolve, reject) => {
+module.exports.send = ({
+  email,
+  subject,
+  title,
+  preview: previewText,
+  data,
+  template
+}) => new Promise((resolve, reject) => {
   mailer.sendMail({
     to: email,
     from: SMTP_FROM_ADDRESS,
-    subject: `${EMAIL_SUBJECT_PREFIX} sign in`,
-    text: `Use the link below to sign in:\n\n${url}\n\n`,
-    html: `<p>Use the link below to sign in:</p><p>${url}</p>`
+    subject: `${EMAIL_SUBJECT_PREFIX} ${subject}`,
+    text: template.text,
+    html: Oy.renderTemplate(<template.html {...data} />, { title, previewText })
   }, (err, info) => {
     if (err) return reject(err)
     resolve(info)
   })
 })
+
+module.exports.routes = (() => {
+  const router = express.Router()
+
+  router.get('/email/confirm', (req, res) => {
+    res.send(Oy.renderTemplate(<ConfirmEmail.html url='url.with/token=342342' />, {
+      title: 'Confirm email',
+      headCSS: '@media ...',
+      previewText: 'Confirm email to login'
+    }))
+  })
+
+  return router
+})()
