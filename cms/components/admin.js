@@ -7,13 +7,11 @@ import CustomRoutes from '../../client/custom-routes'
 import Dashboard from './dashboard'
 import Navbar from './navbar'
 import { PostList, PostCreate, PostEdit } from './posts'
-import { SettingsList, SettingsEdit } from './settings'
+import { SettingsEdit, SettingsShow } from './settings'
 
-
-export default () => (
+export default (props) => (
   <Admin menu={Navbar} title='Democracy OS' restClient={RestClient} customRoutes={CustomRoutes} history={history} >
     <Resource name='posts' list={PostList} create={PostCreate} edit={PostEdit} remove={Delete} />
-    <Resource name='settings' list={SettingsList} edit={SettingsEdit} />
     <Resource name='reaction-rule' list={PostList} />
     <Resource name='users' list={PostList} />
   </Admin>

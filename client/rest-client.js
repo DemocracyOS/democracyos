@@ -11,7 +11,7 @@ import {
 } from 'admin-on-rest'
 import { stringify } from 'query-string'
 
-const API_URL = 'http://localhost:3000/api/v1.0/'
+const API_URL = 'http://localhost:3000/api/v1.0'
 
 /**
  * @param {String} type One of the constants appearing at the top if this file, e.g. 'UPDATE'
@@ -36,7 +36,11 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
       break
     }
     case GET_ONE:
-      url = `${API_URL}/${resource}/${params.id}`
+      if (resource === 'settings' && params === undefined) {
+        url = `${API_URL}/${resource}`
+      } else {
+        url = `${API_URL}/${resource}/${params.id}`
+      }
       break
     case UPDATE:
       url = `${API_URL}/${resource}/${params.id}`
@@ -66,7 +70,7 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
  * @returns {Object} REST response
  */
 const convertHTTPResponseToREST = (response, type, resource, params) => {
-  const { headers, json } = response
+  const { json } = response
   switch (type) {
     case GET_LIST:
       return {
@@ -84,8 +88,10 @@ const convertHTTPResponseToREST = (response, type, resource, params) => {
       return { data: { ...params.data, id: json._id } }
     case DELETE:
       return { data: { id: json._id } }
-    default:
+    case GET_ONE:
       return { data: json }
+    default:
+      return { data: { json } }
   }
 }
 
