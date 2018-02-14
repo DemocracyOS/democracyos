@@ -46,7 +46,7 @@ export default class extends Page {
           settings={this.props.settings}
           session={this.props.session} />
         <div className='text-center'>
-          <p>{t('error/NOT_FOUND')}</p>
+          <h1 className="display-4 mt-3 mb-3">{t('index/title')}</h1>
           <p className='lead mt-3 mb-3'>Work in progress.</p>
         </div>
         <PostGrid />

@@ -9,6 +9,9 @@
       "USER_NOT_ADMIN": "User is not an admin",
       "USER_NOT_LOGGED_IN": "User needs to be logged in to do this action"
     },
+    "index": {
+      "title": "DemocracyOS"
+    },
     "admin" : {
       "title": "Democracy OS",
       "welcome": "Welcome",
@@ -18,6 +21,7 @@
       "posts": "Posts",
       "reactions": "Reactions",
       "users": "Users",
+      "profile": "Profile",
       "create": "Create",
       "edit": "Edit",
       "delete": "Delete",

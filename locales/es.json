@@ -9,6 +9,9 @@
       "USER_NOT_ADMIN": "El usuario no es un administrador",
       "USER_NOT_LOGGED_IN": "Necesitás estar registrado para realizar esta acción"
     },
+    "index": {
+      "title": "DemocracyOS"
+    },
     "admin" : {
       "welcome": "Bienvenido",
       "description": "Lorem ipsum sic dolor amet...",
@@ -17,6 +20,7 @@
       "posts": "Publicaciones",
       "reactions": "Reacciones",
       "users": "Usuarios",
+      "profile": "Perfil",
       "create": "Crear",
       "edit": "Editar",
       "delete": "Borrar",
