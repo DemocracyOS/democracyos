@@ -7,6 +7,9 @@
       "SETTINGS_NOT_INIT": "Los ajustes no fueron configurados",
       "SETTINGS_INIT": "Los ajustes ya fueron configurados" 
     },
+    "index": {
+      "title": "DemocracyOS"
+    },
     "admin" : {
       "title": "Democracy OS",
       "welcome": "Welcome",
@@ -16,6 +19,7 @@
       "posts": "Posts",
       "reactions": "Reactions",
       "users": "Users",
+      "profile": "Profile",
       "create": "Create",
       "edit": "Edit",
       "delete": "Delete",
