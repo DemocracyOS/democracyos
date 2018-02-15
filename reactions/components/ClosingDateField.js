@@ -45,7 +45,6 @@ class NullClosingDate extends React.Component {
       this.setState({ showCalendar: true })
       this.props.input.onChange(this.state.originalClosingDate)
     }
-    // this.forceUpdate()
   }
 
   handleChangeDate = (event, date) => {
