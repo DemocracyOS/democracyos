@@ -13,7 +13,7 @@ export default () => (
   <Admin menu={Navbar} title='Democracy OS' restClient={RestClient} customRoutes={CustomRoutes} history={history} >
     <Resource name='posts' list={PostList} create={PostCreate} edit={PostEdit} remove={Delete} />
     <Resource name='settings' list={PostList} />
-    <Resource name='reaction-rule' options={{ label: 'Reaction Rules' }} list={ReactionRuleList} />
+    <Resource name='reaction-rule' options={{ label: 'Reaction Rules' }} list={ReactionRuleList} create={ReactionRuleCreate} edit={ReactionRuleEdit} />
     <Resource name='users' list={PostList} />
   </Admin>
 )
