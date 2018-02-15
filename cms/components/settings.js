@@ -57,7 +57,7 @@ export class SettingsEdit extends React.Component {
       <Card>
         <SimpleForm record={this.state.settings} save={this.handleSubmit}>
           <ViewTitle title='Settings' />
-          <TextInput source='settingName' label='Community name' />
+          <TextInput source='communityName' label='Community name' />
           {/*<ImageInput style={styles.ImageInput} source='logo' label='Community logo' accept='image/*'>
             <ImageField source="logo" title="title" />
           </ImageInput>*/}
