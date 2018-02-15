@@ -5,18 +5,24 @@ const {
   NO_CONTENT
 } = require('http-status')
 const ReactionRule = require('../db-api/reaction-rule')
-
+// Requires winston lib for log
+const { log } = require('../../main/logger')
+// Requires CRUD apis
 const router = express.Router()
 
 router.route('/')
+  // POST route
   .post(async (req, res, next) => {
     try {
       const newReactionRule = await ReactionRule.create(req.body)
-      res.status(CREATED).json(newReactionRule)
+      res.status(CREATED).json({
+        data: newReactionRule
+      })
     } catch (err) {
       next(err)
     }
   })
+  // GET reaction-rules
   .get(async (req, res, next) => {
     try {
       let results = []
@@ -51,7 +57,7 @@ router.route('/:id')
   .put(async (req, res, next) => {
     try {
       const updatedReactionRule = await ReactionRule.update({ id: req.params.id, reactionRule: req.body })
-      res.status(NO_CONTENT).json(updatedReactionRule)
+      res.status(OK).json(updatedReactionRule)
     } catch (err) {
       next(err)
     }
