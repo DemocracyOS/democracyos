@@ -9,10 +9,9 @@ import Navbar from './navbar'
 import { PostList, PostCreate, PostEdit } from './posts'
 import {UsersList } from './users'
 
-export default () => (
+export default (props) => (
   <Admin menu={Navbar} title='Democracy OS' restClient={RestClient} customRoutes={CustomRoutes} history={history} >
     <Resource name='posts' list={PostList} create={PostCreate} edit={PostEdit} remove={Delete} />
-    <Resource name='settings' list={PostList} />
     <Resource name='reaction-rule' list={PostList} />
     <Resource name='users' list={UsersList} />
   </Admin>
