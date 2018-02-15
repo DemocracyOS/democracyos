@@ -1,6 +1,9 @@
 const { Types: { ObjectId } } = require('mongoose')
 const { log } = require('../../main/logger')
 const Setting = require('../models/setting')
+const {
+  ErrSettingsInit
+} = require('../../main/errors')
 
 /**
  * Create setting
@@ -11,7 +14,11 @@ const Setting = require('../models/setting')
 
 exports.create = function create (setting) {
   log.debug('setting db-api create')
-  return (new Setting(setting)).save()
+  return Setting.findOne({})
+    .then((_setting) => {
+      if (_setting) throw ErrSettingsInit
+      if (!_setting) return (new Setting(setting)).save()
+    })
 }
 
 /**

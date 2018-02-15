@@ -6,12 +6,11 @@ const mongoosePaginate = require('mongoose-paginate')
  */
 
 const Setting = new mongoose.Schema({
-  settingName: String,
+  communityName: String,
   logo: String,
   permissions: String,
   theme: String
 }, { timestamps: true })
-
 
 /**
  * Model's Plugin Extensions
