@@ -25,7 +25,16 @@
       "create": "Create",
       "edit": "Edit",
       "delete": "Delete",
-      "refresh": "Refresh"
+      "refresh": "Refresh",
+      "content" : "content",
+      "tittle" : "tittle",
+      "posts.description" : "description",
+      "post.openingDate" : "opening date",
+      "post.closingDate" : "closing date"
+
+
+
+
     }
   }
 }
