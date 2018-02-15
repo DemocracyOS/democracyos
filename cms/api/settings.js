@@ -22,16 +22,10 @@ router.route('/')
     }
   })
   .get(async (req, res, next) => {
+    // returns Settings only record
     try {
-      const results = await Setting.list({ limit: req.query.limit, page: req.query.page })
-      res.status(OK).json({
-        results: results.docs,
-        pagination: {
-          count: results.total,
-          page: results.page,
-          limit: results.limit
-        }
-      })
+      const results = await Setting.getOne()
+      res.status(OK).json(results)
     } catch (err) {
       next(err)
     }

@@ -78,3 +78,14 @@ exports.remove = function remove (id) {
   return Setting.findOne({ _id: ObjectId(id) })
     .then((setting) => setting.remove())
 }
+
+/**
+ * Get one setting
+ * @method get
+ * @return {promise}
+ */
+
+exports.getOne = function getOne () {
+  log.debug('setting db-api get one')
+  return Setting.findOne({})
+}
