@@ -11,7 +11,6 @@ const Setting = require('../models/setting')
 
 exports.create = function create (setting) {
   log.debug('setting db-api create')
-
   return (new Setting(setting)).save()
 }
 
