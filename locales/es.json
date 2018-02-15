@@ -3,7 +3,9 @@
     "error": {
       "NOT_FOUND": "Recurso no encontrado",
       "MISSING_PARAM": "Parámetro no encontrado",
-      "PARAM_LENGTH": "Parámetro muy largo" 
+      "PARAM_LENGTH": "Parámetro muy largo",
+      "SETTINGS_NOT_INIT": "Los ajustes no fueron configurados",
+      "SETTINGS_INIT": "Los ajustes ya fueron configurados" 
     }
   }
 }

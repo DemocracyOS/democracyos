@@ -13,13 +13,6 @@ const Setting = new mongoose.Schema({
 }, { timestamps: true })
 
 /**
- * Define Schema Indexes
- */
-
-Setting.index({ email: 1 }, { unique: true })
-Setting.index({ username: 1 }, { unique: true })
-
-/**
  * Model's Plugin Extensions
  */
 

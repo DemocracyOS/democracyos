@@ -28,7 +28,7 @@ const ErrNotFound = new APIError('not found', {
   status: NOT_FOUND
 })
 
-const ErrMissingParam = (field) =>  new APIError('Missing required paramether', {
+const ErrMissingParam = (field) => new APIError('Missing required paramether', {
   translationKey: 'MISSING_PARAM',
   status: BAD_REQUEST
 }, {
@@ -42,9 +42,21 @@ const ErrParamTooLong = (field) => new APIError('Paramether is too long', {
   field: field
 })
 
+const ErrSettingsNotInit = new APIError('Settings have not been initialized', {
+  translationKey: 'SETTINGS_NOT_INIT',
+  status: INTERNAL_SERVER_ERROR
+})
+
+const ErrSettingsInit = new APIError('Settings is already initialized', {
+  translationKey: 'SETTINGS_INIT',
+  status: BAD_REQUEST
+})
+
 module.exports = {
   APIError,
   ErrNotFound,
   ErrMissingParam,
-  ErrParamTooLong
+  ErrParamTooLong,
+  ErrSettingsNotInit,
+  ErrSettingsInit
 }
