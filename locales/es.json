@@ -13,6 +13,7 @@
       "title": "DemocracyOS"
     },
     "admin" : {
+      "title": "Democracy OS",
       "welcome": "Bienvenido",
       "description": "Lorem ipsum sic dolor amet...",
       "home": "Inicio",
@@ -24,7 +25,17 @@
       "create": "Crear",
       "edit": "Editar",
       "delete": "Borrar",
-      "refresh": "Actualizar"
-    }
+      "refresh": "Actualizar",
+      "content": "Contenido",
+      "workingprogress": "Sitio en construcción",
+      "manage": "manage",
+      "signIn": "Sign In",
+      "signOut": "Sign Out"
+
+    },
+    "posts" : {
+      "openingDate": "hola",
+      "closingDate": "chau"
+     }
   }
 }

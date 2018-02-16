@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+import { t, setLocale } from '../client/i18n'
 const Admin = dynamic(import('../cms/components/admin'), {
   ssr: false
 })
