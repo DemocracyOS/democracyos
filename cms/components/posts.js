@@ -1,13 +1,18 @@
 import React from 'react'
-import { Resource, List, Datagrid, TextField, Create, Edit, SimpleForm, DisabledInput, TextInput, DateInput, LongTextInput, DateField, EditButton, DeleteButton, PostTitle } from 'admin-on-rest'
+import { Resource, List, Datagrid, TextField, Create, Edit, SimpleForm, TextInput, DateInput, LongTextInput, DateField, EditButton, DeleteButton, PostTitle, ReferenceField } from 'admin-on-rest'
 import BookIcon from 'material-ui/svg-icons/action/book'
 export const PostIcon = BookIcon
 
 export const PostList = (props) => (
   <List {...props}>
     <Datagrid>
-      <TextField source='id' />
-      <TextField source='content' />
+      <TextField source='title' label='Title' />
+      <TextField source='description' label='Description' />
+      <DateField source='openingDate' label='Opening date' />
+      <DateField source='closingDate' label='Closing date' />
+      <ReferenceField label='Author' source='author' reference='users' linkType={false}>
+        <TextField source='username' />
+      </ReferenceField>
       <EditButton />
       <DeleteButton />
     </Datagrid>

@@ -58,9 +58,9 @@ export class SettingsEdit extends React.Component {
         <SimpleForm record={this.state.settings} save={this.handleSubmit}>
           <ViewTitle title='Settings' />
           <TextInput source='communityName' label='Community name' />
-          {/*<ImageInput style={styles.ImageInput} source='logo' label='Community logo' accept='image/*'>
-            <ImageField source="logo" title="title" />
-          </ImageInput>*/}
+          <ImageInput style={styles.ImageInput} source='logo' label='Community logo' accept='image/*'>
+            <ImageField source='logo' src='url' title='title' />
+          </ImageInput>
           <SelectInput source='permissions' choices={[
             { id: 'admin', name: 'admin', key: 1 },
             { id: 'user', name: 'user', key: 2 },
