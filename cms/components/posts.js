@@ -1,7 +1,9 @@
 import React from 'react'
-import { Resource, List, Datagrid, TextField, Create, Edit, SimpleForm, TextInput, DateInput, LongTextInput, DateField, EditButton, DeleteButton, PostTitle, ReferenceField } from 'admin-on-rest'
-import BookIcon from 'material-ui/svg-icons/action/book'
-export const PostIcon = BookIcon
+import { Resource, List, Datagrid, TextField, Create, Edit, Show, ShowButton, ListButton, RefreshButton, SimpleShowLayout, SimpleForm, TextInput, DateInput, LongTextInput, DateField, EditButton, DeleteButton, ReferenceField, CardActions } from 'admin-on-rest'
+
+const PostTitle = ({ record }) => (
+  <span>Post {record ? `"${record.title}"` : ''}</span>
+)
 
 export const PostList = (props) => (
   <List {...props}>
@@ -13,6 +15,7 @@ export const PostList = (props) => (
       <ReferenceField label='Author' source='author' reference='users' linkType={false}>
         <TextField source='username' />
       </ReferenceField>
+      <ShowButton />
       <EditButton />
       <DeleteButton />
     </Datagrid>
@@ -20,7 +23,7 @@ export const PostList = (props) => (
 )
 
 export const PostCreate = (props) => (
-  <Create {...props}>
+  <Create title={<PostTitle />} {...props}>
     <SimpleForm>
       <TextInput source='title' />
       <TextInput source='description' options={{ multiLine: true }} />
@@ -32,7 +35,7 @@ export const PostCreate = (props) => (
 )
 
 export const PostEdit = (props) => (
-  <Edit {...props}>
+  <Edit title={<PostTitle />} {...props}>
     <SimpleForm>
       <TextInput source='title' />
       <LongTextInput source='description' />
@@ -41,4 +44,18 @@ export const PostEdit = (props) => (
       <DateInput label='Closing date' source='closingDate' />
     </SimpleForm>
   </Edit>
+)
+
+export const PostShow = (props) => (
+  <Show title={<PostTitle />} {...props}>
+    <SimpleShowLayout>
+      <TextField source='title' label='Title' />
+      <TextField source='description' label='Description' />
+      <DateField source='openingDate' label='Opening date' />
+      <DateField source='closingDate' label='Closing date' />
+      <ReferenceField label='Author' source='author' reference='users' linkType={false}>
+        <TextField source='username' />
+      </ReferenceField>
+    </SimpleShowLayout>
+  </Show>
 )
