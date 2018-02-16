@@ -24,15 +24,15 @@
       "edit": "Edit",
       "delete": "Delete",
       "refresh": "Refresh",
-      "content" : "content",
-      "tittle" : "tittle",
-      "posts.description" : "description",
-      "post.openingDate" : "opening date",
-      "post.closingDate" : "closing date"
-
-
-
-
-    }
+      "content": "Content",
+      "workingprogress": "Work in progress",
+      "manage": "manage",
+      "signIn": "Sign In",
+      "signOut": "Sign Out"
+    },
+    "posts" : {
+      "openingDate": "hola",
+      "closingDate": "chau"
+     }
   }
 }
