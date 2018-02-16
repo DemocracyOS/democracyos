@@ -7,7 +7,10 @@ import CustomRoutes from '../../client/custom-routes'
 import Dashboard from './dashboard'
 import Navbar from './navbar'
 import { ReactionRuleList, ReactionRuleCreate, ReactionRuleEdit } from '../../reactions/components/reaction-rule'
-import { PostList, PostShow, PostCreate, PostEdit } from './posts'
+import { PostList } from './posts/post-list'
+import { PostShow } from './posts/post-show'
+import { PostCreate } from './posts/post-create'
+import { PostEdit } from './posts/post-edit'
 import { UsersList } from './users'
 
 export default (props) => (
