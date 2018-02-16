@@ -36,7 +36,6 @@ export default class extends Page {
         Router.push('/auth/error?action=signout')
       })
   }
-  
   render () {
     return (
       <div className='container'>
