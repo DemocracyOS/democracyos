@@ -410,6 +410,7 @@
   "signup.with-email": "Signup with email",
   "signup.your-firstname": "Your firstname",
   "signup.your-lastname": "Your lastname",
+  "signup.user-already-registered": "A user with the given username is already registered",
   "sorts.by-title-asc": "By title A -> Z",
   "sorts.closing-soon": "Closing soon",
   "sorts.newest-first": "Newest first",

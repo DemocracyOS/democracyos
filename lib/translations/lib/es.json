@@ -415,6 +415,7 @@
   "signup.with-email": "Registro con correo electrónico",
   "signup.your-firstname": "Tu nombre",
   "signup.your-lastname": "Tu apellido",
+  "signup.user-already-registered": "Un usuario con ese e-mail ya ha sido registrado",
   "sorts.by-title-asc": "Por título A -> Z",
   "sorts.closing-soon": "Próximos a cerrar",
   "sorts.newest-first": "Más recientes",
