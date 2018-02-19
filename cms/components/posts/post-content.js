@@ -1,8 +1,8 @@
 import React from 'react'
-import { Field } from 'redux-form';
+import { Field } from 'redux-form'
 import { Editor, EditorState } from 'draft-js'
 
-export class PostContent extends React.Component {
+class PostContent extends React.Component {
   constructor (props) {
     super(props)
     this.state = { editorState: EditorState.createEmpty() }
@@ -17,6 +17,6 @@ export class PostContent extends React.Component {
 
 export const ContentInput = () => (
   <span>
-    <Field name='content' component={<PostContent />} placeholder='Post content' />
+    <Field name='content' component={PostContent} placeholder='Post content' />
   </span>
 )

@@ -19,7 +19,9 @@ export const PostCreate = (props) => (
     <SimpleForm>
       <TextInput source='title' />
       <TextInput source='description' options={{ multiLine: true }} />
-      <LongTextInput source='content' />
+      {
+        // <LongTextInput source='content' />
+      }
       <ContentInput />
       <DateInput label='Opening date' source='openingDate' defaultValue={new Date()} />
       <DateInput label='Closing date' source='closingDate' defaultValue={new Date()} />
