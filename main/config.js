@@ -52,7 +52,7 @@ const CONFIG = {
 //  CONFIG VALIDATION
 // ==============================================================================
 
-if (process.env.NODE_ENV === 'test' && !CONFIG.MONGO_URL) {
+if (process.env.NODE_ENV === 'test') {
   CONFIG.MONGO_URL = 'mongodb://localhost/DemocracyOS-test'
 }
 
