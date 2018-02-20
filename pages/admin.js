@@ -11,10 +11,10 @@ export default () => (
       <meta charset="utf-8" />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <title>Democracy OS</title>
-      <link rel='stylesheet' href='/static/global.css' />
       {// Adds css sheet for rich content editor library
       }
       <link rel='stylesheet' href='/static/draft.css' />
+      <link rel='stylesheet' href='/static/global.css' />
     </Head>
     <Admin />
   </div>
