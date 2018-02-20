@@ -115,7 +115,7 @@ describe('/api/v1.0/reaction-rule', () => {
         .put(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
         .send(Object.assign(sampleReactionRule, { name: 'UpdatedName' }))
 
-      expect(res).to.have.status(NO_CONTENT)
+      expect(res).to.have.status(OK)
     })
   })
 
