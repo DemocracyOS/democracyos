@@ -48,7 +48,6 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
       options.body = JSON.stringify(params.data)
       break
     case CREATE:
-    console.log(params.data)
       url = `${API_URL}/${resource}`
       options.method = 'POST'
       options.body = JSON.stringify(params.data)

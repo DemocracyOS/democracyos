@@ -18,7 +18,7 @@ export const PostCreate = (props) => (
     <SimpleForm>
       <TextInput source='title' />
       <TextInput source='description' options={{ multiLine: true }} />
-      <ContentInput label='Content' source='content' />
+      <ContentInput label='Content' source='content' addLabel label='Content' />
       <DateInput label='Opening date' source='openingDate' defaultValue={new Date()} />
       <DateInput label='Closing date' source='closingDate' defaultValue={new Date()} />
     </SimpleForm>

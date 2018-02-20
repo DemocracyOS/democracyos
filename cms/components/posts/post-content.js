@@ -1,21 +1,30 @@
 import React from 'react'
 import { Field } from 'redux-form'
-import { Editor, EditorState, RichUtils } from 'draft-js'
+import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js'
 import FlatButton from 'material-ui/FlatButton'
+const pruebita = {
+  hola: 'soy una prueba'
+}
 
 class PostContent extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { editorState: EditorState.createEmpty() }
+    this.state = {
+      editorState: EditorState.createEmpty()
+    }
     this.focus = () => this.refs.editor.focus()
-    this.onChange = (editorState) => this.setState({ editorState }, () => console.log(this.state.editorState))
-    this.handleKeyCommand = (command) => this._handleKeyCommand(command)
-    this.onTab = (e) => this._onTab(e)
-    this.toggleBlockType = (type) => this._toggleBlockType(type)
-    this.toggleInlineStyle = (style) => this._toggleInlineStyle(style)
   }
 
-  _handleKeyCommand (command) {
+  onChange = (editorState) => {
+    this.setState({ editorState })
+    this.props.input.onChange(convertToRaw(editorState.getCurrentContent()))
+  }
+
+  getRaw = () => {
+    return convertToRaw(EditorState.getCurrentContent())
+  }
+
+  handleKeyCommand = (command) => {
     const { editorState } = this.state
     const newState = RichUtils.handleKeyCommand(editorState, command)
     if (newState) {
@@ -25,12 +34,12 @@ class PostContent extends React.Component {
     return false
   }
 
-  _onTab (e) {
+  onTab = (e) => {
     const maxDepth = 4
     this.onChange(RichUtils.onTab(e, this.state.editorState, maxDepth))
   }
 
-  _toggleBlockType (blockType) {
+  toggleBlockType = (blockType) => {
     this.onChange(
       RichUtils.toggleBlockType(
         this.state.editorState,
@@ -39,7 +48,7 @@ class PostContent extends React.Component {
     )
   }
 
-  _toggleInlineStyle (inlineStyle) {
+  toggleInlineStyle = (inlineStyle) => {
     this.onChange(
       RichUtils.toggleInlineStyle(this.state.editorState, inlineStyle)
     )
