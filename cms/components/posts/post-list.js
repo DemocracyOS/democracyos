@@ -19,7 +19,7 @@ export const PostList = (props) => (
       <TextField source='description' label='Description' />
       <DateField source='openingDate' label='Opening date' />
       <DateField source='closingDate' label='Closing date' />
-      <ReferenceField label='Author' source='author' reference='users' linkType={false}>
+      <ReferenceField label='Author' source='author' reference='users' linkType='show'>
         <TextField source='username' />
       </ReferenceField>
       <ShowButton />
