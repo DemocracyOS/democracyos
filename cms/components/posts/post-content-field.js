@@ -11,7 +11,7 @@ export class ContentField extends React.Component {
 
   render () {
     return (
-      <Editor editorState={this.state.editorState} readOnly={true} />
+      <Editor editorState={this.state.editorState} />
     )
   }
 }

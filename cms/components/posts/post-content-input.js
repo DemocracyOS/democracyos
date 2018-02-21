@@ -1,13 +1,14 @@
 import React from 'react'
 import { Field } from 'redux-form'
-import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js'
+import { Editor, EditorState, RichUtils, convertToRaw, convertFromRaw } from 'draft-js'
 import FlatButton from 'material-ui/FlatButton'
 
 class PostContent extends React.Component {
   constructor (props) {
     super(props)
+    console.log(this.props)
     this.state = {
-      editorState: EditorState.createEmpty()
+      editorState: this.props.input.value === '' ? EditorState.createEmpty() : EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.input.value)))
     }
     this.focus = () => this.refs.editor.focus()
   }
