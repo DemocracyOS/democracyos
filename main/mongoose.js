@@ -20,6 +20,7 @@ require('../cms/models/setting')
 require('../cms/models/post')
 require('../reactions/models/reaction-rule')
 require('../reactions/models/reaction-instance')
+require('../reactions/models/reaction-vote')
 
 // handle errors
 const db = mongoose.connection
