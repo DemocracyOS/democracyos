@@ -19,6 +19,7 @@ require('../users/models/user')
 require('../cms/models/setting')
 require('../cms/models/post')
 require('../reactions/models/reaction-rule')
+require('../reactions/models/reaction-instance')
 
 // handle errors
 const db = mongoose.connection
