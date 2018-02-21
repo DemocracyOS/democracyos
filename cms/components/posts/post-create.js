@@ -11,7 +11,7 @@ import {
   DateInput
 } from 'admin-on-rest'
 import { PostTitle } from './post-title'
-import { ContentInput } from './post-content'
+import { ContentInput } from './post-content-input'
 
 export const PostCreate = (props) => (
   <Create title={<PostTitle />} {...props}>

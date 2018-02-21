@@ -2,9 +2,6 @@ import React from 'react'
 import { Field } from 'redux-form'
 import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js'
 import FlatButton from 'material-ui/FlatButton'
-const pruebita = {
-  hola: 'soy una prueba'
-}
 
 class PostContent extends React.Component {
   constructor (props) {
@@ -17,11 +14,7 @@ class PostContent extends React.Component {
 
   onChange = (editorState) => {
     this.setState({ editorState })
-    this.props.input.onChange(convertToRaw(editorState.getCurrentContent()))
-  }
-
-  getRaw = () => {
-    return convertToRaw(EditorState.getCurrentContent())
+    this.props.input.onChange(JSON.stringify(convertToRaw(editorState.getCurrentContent())))
   }
 
   handleKeyCommand = (command) => {
