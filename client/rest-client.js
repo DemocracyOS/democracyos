@@ -2,7 +2,7 @@
 import {
   GET_LIST,
   GET_ONE,
-  // GET_MANY,
+  GET_MANY,
   // GET_MANY_REFERENCE,
   CREATE,
   UPDATE,
@@ -56,6 +56,13 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
       url = `${API_URL}/${resource}/${params.id}`
       options.method = 'DELETE'
       break
+    case GET_MANY:
+      const query = {
+        ids: JSON.stringify(params.ids)
+      }
+      url = `${API_URL}/${resource}?${stringify(query)}`
+      options.method = 'GET'
+      break
     default:
       throw new Error(`Unsupported fetch action type ${type}`)
   }
@@ -90,6 +97,16 @@ const convertHTTPResponseToREST = (response, type, resource, params) => {
       return { data: { id: json._id } }
     case GET_ONE:
       return { data: json }
+    case GET_MANY:
+      return {
+        data: json.results.map((x) => {
+          Object.defineProperty(x, 'id', {
+            value: x._id
+          })
+          return x
+        }),
+        total: parseInt(json.pagination.count)
+      }
     default:
       return { data: { json } }
   }

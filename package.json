@@ -18,6 +18,7 @@
     "compression": "^1.7.1",
     "connect-mongo": "^2.0.1",
     "dotenv": "^5.0.0",
+    "draft-js": "^0.10.5",
     "express": "^4.16.2",
     "express-paginate": "^0.3.0",
     "express-session": "^1.15.6",

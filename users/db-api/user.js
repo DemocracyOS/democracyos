@@ -43,9 +43,15 @@ const get = exports.get = function get (query) {
  * @return {promise}
  */
 
-exports.list = function list ({ limit, page }) {
+exports.list = function list ({ limit, page, ids }) {
   log.debug('user db-api list')
-
+  if (ids) {
+    const idsToArray = JSON.parse(ids)
+    idsToArray.map((id) => {
+      return ObjectId(id)
+    })
+    return User.paginate({ '_id': { $in: idsToArray } }, { page, limit })
+  }
   return User
     .paginate({}, { page, limit })
 }
