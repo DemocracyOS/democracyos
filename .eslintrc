@@ -1,5 +1,5 @@
 {
-  "extends": ["democracyos"],
+  "extends": ["democracyos", "democracyos/react"],
 
   "settings": {
     "import/resolver": {
