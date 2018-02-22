@@ -35,6 +35,7 @@
   "admin-permissions.visibility.public.title": "Open for All",
   "admin-permissions.visibility.title": "Visibility",
   "admin-sidebar.comments.title": "Comments",
+  "admin-sidebar.tags-moderation.title": "Tags moderation",
   "admin-sidebar.permissions.title": "Privileges",
   "admin-sidebar.tags.create": "Create",
   "admin-sidebar.tags.list": "List",
