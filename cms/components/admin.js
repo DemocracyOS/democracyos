@@ -11,12 +11,12 @@ import { PostList } from './posts/post-list'
 import { PostShow } from './posts/post-show'
 import { PostCreate } from './posts/post-create'
 import { PostEdit } from './posts/post-edit'
-import { UsersList } from './users'
+import { UserList, UserView } from '../../users/components/users'
 
 export default (props) => (
   <Admin menu={Navbar} title='Democracy OS' restClient={RestClient} customRoutes={CustomRoutes} history={history} >
     <Resource name='posts' list={PostList} show={PostShow} create={PostCreate} edit={PostEdit} remove={Delete} />
     <Resource name='reaction-rule' options={{ label: 'Reaction Rules' }} list={ReactionRuleList} create={ReactionRuleCreate} edit={ReactionRuleEdit} />
-    <Resource name='users' list={UsersList} />
+    <Resource name='users' list={UserList} edit={UserView} />
   </Admin>
 )

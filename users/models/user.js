@@ -11,6 +11,7 @@ const User = new mongoose.Schema({
   bio: String,
   email: String,
   emailToken: String,
+  role: String,
   emailVerified: { type: Boolean, default: false },
   facebook: {
     id: String,
