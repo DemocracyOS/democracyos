@@ -23,7 +23,7 @@ export const PostShow = (props) => (
       <DateField source='openingDate' label='Opening date' />
       <DateField source='closingDate' label='Closing date' />
       <ReferenceField label='Author' source='author' reference='users' linkType='show'>
-        <TextField source='username' />
+        <TextField source='name' />
       </ReferenceField>
     </SimpleShowLayout>
   </Show>

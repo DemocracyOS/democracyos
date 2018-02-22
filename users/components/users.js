@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Datagrid, TextField, ShowButton, Show, SimpleShowLayout } from 'admin-on-rest'
+import { List, Datagrid, TextField, EditButton, Edit, SimpleForm, DisabledInput, SelectInput } from 'admin-on-rest'
 
 export const UserList = (props) => (
   <List {...props}>
@@ -7,17 +7,23 @@ export const UserList = (props) => (
       <TextField source='username' />
       <TextField source='name' />
       <TextField source='email' />
-      <ShowButton />
+      <TextField source='role' />
+      <EditButton label='Edit role' />
     </Datagrid>
   </List>
 )
 
-export const UserShow = (props) => (
-  <Show title={<UserTitle />} {...props}>
-    <SimpleShowLayout>
-      <TextField source='bio' />
-    </SimpleShowLayout>
-  </Show>
+export const UserView = (props) => (
+  <Edit title={<UserTitle />} {...props}>
+    <SimpleForm>
+      <DisabledInput source='bio' />
+      <SelectInput source='role' choices={[
+        { id: 'user', name: 'User', key: 1 },
+        { id: 'moderator', name: 'Moderator', key: 2 },
+        { id: 'admin', name: 'Admin', key: 3 }
+      ]} />
+    </SimpleForm>
+  </Edit>
 )
 
 export const UserTitle = ({ record }) => (
