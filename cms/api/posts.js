@@ -5,8 +5,6 @@ const {
   CREATED,
   NO_CONTENT
 } = require('http-status')
-// Requires winston lib for log
-const { log } = require('../../main/logger')
 // Requires CRUD apis
 const Post = require('../db-api/posts')
 
