@@ -16,7 +16,6 @@ describe('/api/v1.0/settings', () => {
   })
 
   beforeEach(async () => {
-    console.log('hola')
     await Setting.remove({})
   })
 
