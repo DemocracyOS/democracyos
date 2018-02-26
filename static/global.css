@@ -1,4 +1,22 @@
-body {
+:root {
+  /* COLOURS */
+  --white: #fff;
+  --black: #000;
+  --dark-gray: #434347;
+  --gray: #565656;
+  --light-gray: #efefef;
+  
+  font-size: 10px;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+body {
+  width: 100%;
+  background-color: var(--white);
 }
