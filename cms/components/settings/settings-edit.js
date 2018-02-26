@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from 'material-ui/Card'
 import { showNotification, ViewTitle,  GET_ONE, UPDATE, RadioButtonGroupInput, FlatButton, Toolbar, ImageInput, Edit, List, Datagrid, EditButton, SimpleForm, TextField, TextInput, SelectInput, ImageField } from 'admin-on-rest'
-import restClient from '../../client/rest-client'
+import restClient from '../../../client/rest-client'
 import Snackbar from 'material-ui/Snackbar'
 
 const styles = {
