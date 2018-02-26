@@ -76,7 +76,7 @@ describe('/api/v1.0/users', () => {
         .put(`/api/v1.0/users/${newUser.id}`)
         .send(Object.assign(sampleUser, { name: 'Updated Name' }))
 
-      expect(res).to.have.status(NO_CONTENT)
+      expect(res).to.have.status(OK)
     })
   })
 

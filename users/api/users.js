@@ -45,7 +45,7 @@ router.route('/:id')
   .put(async (req, res, next) => {
     try {
       const updatedUser = await User.update({ id: req.params.id, user: req.body })
-      res.status(NO_CONTENT).json(updatedUser)
+      res.status(OK).json(updatedUser)
     } catch (err) {
       next(err)
     }
