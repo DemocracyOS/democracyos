@@ -78,7 +78,13 @@ describe('/api/v1.0/posts', () => {
         .put(`/api/v1.0/posts/${newPost.id}`)
         .send(Object.assign(samplePost, { title: 'Updated Title' }))
 
-      expect(res).to.have.status(NO_CONTENT)
+      expect(res).to.have.status(OK)
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('title')
+      expect(res.body).to.have.property('content')
+      expect(res.body).to.have.property('author')
+      expect(res.body).to.have.property('openingDate')
+      expect(res.body).to.have.property('closingDate')
     })
   })
 

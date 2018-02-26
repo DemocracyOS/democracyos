@@ -17,7 +17,7 @@ exports.create = function create (setting) {
   return Setting.findOne({})
     .then((_setting) => {
       if (_setting) throw ErrSettingsInit
-      if (!_setting) return (new Setting(setting)).save()
+      return (new Setting(setting)).save()
     })
 }
 

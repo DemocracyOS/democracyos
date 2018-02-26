@@ -20,7 +20,7 @@ describe('/api/v1.0/settings', () => {
   })
 
   const sampleSetting = {
-    settingName: 'test',
+    communityName: 'test',
     logo: 'test',
     permissions: 'test',
     theme: 'test'
@@ -38,19 +38,16 @@ describe('/api/v1.0/settings', () => {
 
   describe('#list', () => {
     it('should list all settings', async () => {
+      let newSetting = await (new Setting(sampleSetting)).save()
       const res = await chai.request('http://localhost:3000')
         .get('/api/v1.0/settings')
-        .query({ limit: 10, page: 1 })
 
       expect(res).to.have.status(OK)
-
-      const { results, pagination } = res.body
-
-      expect(results).to.be.a('array')
-      expect(results.length).to.be.eql(0)
-      expect(pagination).to.have.property('count')
-      expect(pagination).to.have.property('page')
-      expect(pagination).to.have.property('limit')
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('communityName')
+      expect(res.body).to.have.property('logo')
+      expect(res.body).to.have.property('permissions')
+      expect(res.body).to.have.property('theme')
     })
   })
 
@@ -62,7 +59,7 @@ describe('/api/v1.0/settings', () => {
 
       expect(res).to.have.status(OK)
       expect(res.body).to.be.a('object')
-      expect(res.body).to.have.property('settingName')
+      expect(res.body).to.have.property('communityName')
       expect(res.body).to.have.property('logo')
       expect(res.body).to.have.property('permissions')
       expect(res.body).to.have.property('theme')
@@ -74,9 +71,14 @@ describe('/api/v1.0/settings', () => {
       let newSetting = await (new Setting(sampleSetting)).save()
       const res = await chai.request('http://localhost:3000')
         .put(`/api/v1.0/settings/${newSetting.id}`)
-        .send(Object.assign(sampleSetting, { settingName: 'Updated Name' }))
+        .send(Object.assign(sampleSetting, { communityName: 'Updated Name' }))
 
-      expect(res).to.have.status(NO_CONTENT)
+      expect(res).to.have.status(OK)
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('communityName')
+      expect(res.body).to.have.property('logo')
+      expect(res.body).to.have.property('permissions')
+      expect(res.body).to.have.property('theme')
     })
   })
 

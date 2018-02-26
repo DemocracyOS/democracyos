@@ -17,16 +17,20 @@ describe('db-api.settings', () => {
 
       // replace Setting constructor for a spy
       const SettingMock = sinon.spy()
+      
+      // add a findOne method that only returns null
+      SettingMock.findOne = () => { return Promise.resolve(null) }
 
       // add a save method that only returns the data
       SettingMock.prototype.save = () => { return Promise.resolve(sampleSetting) }
 
+      // create a spy for the findOne method
+      const findOne = sinon.spy(SettingMock.findOne)
       // create a spy for the save method
       const save = sinon.spy(SettingMock.prototype, 'save')
 
       // override Setting inside `cms/db-api/settings`
       setting.__set__('Setting', SettingMock)
-
       // call create method
       return setting.create(sampleSetting)
         .then((result) => {
