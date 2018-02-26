@@ -5,14 +5,49 @@ export class PostGrid extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      posts: ''
+      page: 1,
+      posts: null,
+      count: null
     }
   }
 
   componentDidMount () {
-    fetch('/api/v1.0/posts')
+    window.addEventListener('scroll', this.onScroll, false);
+    fetch(`/api/v1.0/posts?page=${this.state.page}`)
       .then((res) => res.json())
-      .then((res) => this.setState({posts: res}))
+      .then((res) => {
+        this.setState({
+          count: res.pagination.count,
+          posts: res.results
+        })
+      })
+      .catch((err) => console.log(err))
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.onScroll, false)
+  }
+
+  onScroll = () => {
+    if (
+      (window.innerHeight + window.scrollY) >= (document.body.offsetHeight ) &&
+      this.state.posts
+    ) {
+      this.handlePagination()
+    }
+  }
+
+  handlePagination = () => {
+    const nextPage = this.state.page + 1
+    const url = `/api/v1.0/posts?page=${nextPage}`
+    fetch(url)
+      .then((res)=> res.json())
+      .then((res)=> {
+        this.setState({
+          posts: this.state.posts.concat(res.results),
+          page: nextPage
+        })
+      })
       .catch((err) => console.log(err))
   }
 
@@ -20,14 +55,16 @@ export class PostGrid extends React.Component {
     return (
       <section className='post-grid'>
         <h2>Posts</h2>
-        {console.log(this.state.posts)}
-        {this.state.posts.results &&
+        {this.state.posts &&
           <div className='post-grid-card-container'>
-            {this.state.posts.results.map((p, i) =>
+            {this.state.posts.map((p, i) =>
               <PostCard post={p}
                 key={i} />
             )}
           </div>
+        }
+        { this.state.posts && this.state.posts.length >= this.state.count &&
+          <h5>You have reached all the posts</h5>
         }
         <style jsx>{`
           .post-grid-card-container {

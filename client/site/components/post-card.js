@@ -20,7 +20,7 @@ export const PostCard = ({ post }) => (
         width: 288px;
       }
       .post-card h3 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 600;
         line-height: 2.4rem;
       }
