@@ -125,7 +125,9 @@ describe('/api/v1.0/reaction-rule', () => {
       const res = await chai.request('http://localhost:3000')
         .delete(`/api/v1.0/reaction-rule/${newReactionRule.id}`)
 
-      expect(res).to.have.status(NO_CONTENT)
+      expect(res).to.have.status(OK)
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('id')
     })
   })
 })
