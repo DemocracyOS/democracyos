@@ -1,3 +1,6 @@
+@import '../../node_modules/tags-input/tags-input.css'
+@import '../admin-topics-form/tag-autocomplete/styles'
+
 .tags-moderation
   .sort-buttons
     display: inline-block
@@ -9,3 +12,38 @@
       font-size: 10px
       &:hover,&.active
         background: #d8d8d8
+
+  .table
+    tbody
+      tr
+        cursor pointer
+
+  .edit-tag-modal-opener
+    position: fixed
+    bottom: 20px
+    right: 20px
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    border: none
+    background: #3d699e
+    color: white
+    font-size: 24px
+    &:hover
+      background: #335884
+  
+  .tags-modal
+    position fixed
+    top: 0
+    left: 0
+    width: 100%
+    height 100%
+    display flex
+    justify-content center
+    align-items center
+    .content
+      background: white
+      z-index: 9999999
+      padding: 20px
+      border-radius: 3px
+      box-shadow: 0 2px 4px 1px #555
