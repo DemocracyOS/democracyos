@@ -45,7 +45,7 @@ router.route('/:id')
   .put(async (req, res, next) => {
     try {
       const updatedUser = await User.update({ id: req.params.id, user: req.body })
-      res.status(NO_CONTENT).json(updatedUser)
+      res.status(OK).json(updatedUser)
     } catch (err) {
       next(err)
     }
@@ -53,7 +53,7 @@ router.route('/:id')
   .delete(async (req, res, next) => {
     try {
       await User.remove(req.params.id)
-      res.status(NO_CONTENT).json(req.params.id)
+      res.status(OK).json({ id: req.params.id })
     } catch (err) {
       next(err)
     }

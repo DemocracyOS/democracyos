@@ -94,7 +94,7 @@ const convertHTTPResponseToREST = (response, type, resource, params) => {
     case UPDATE:
       return { data: { ...params.data, id: json._id } }
     case DELETE:
-      return { data: { id: json._id } }
+      return { data: { id: json.id } }
     case GET_ONE:
       return { data: json }
     case GET_MANY:
