@@ -60,7 +60,7 @@ router.route('/:id')
   .delete(async (req, res, next) => {
     try {
       await ReactionInstance.remove(req.params.id)
-      res.status(NO_CONTENT).json(req.params.id)
+      res.status(OK).json({ id: req.params.id })
     } catch (err) {
       next(err)
     }

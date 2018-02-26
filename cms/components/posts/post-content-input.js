@@ -6,7 +6,6 @@ import FlatButton from 'material-ui/FlatButton'
 class PostContent extends React.Component {
   constructor (props) {
     super(props)
-    console.log(this.props)
     this.state = {
       editorState: this.props.input.value === '' ? EditorState.createEmpty() : EditorState.createWithContent(convertFromRaw(JSON.parse(this.props.input.value)))
     }
