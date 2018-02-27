@@ -38,6 +38,7 @@ exports.get = function get (id) {
   log.debug('post db-api get')
   return Post
     .findOne({ _id: ObjectId(id) })
+    .populate({ path: 'author', select: 'name' })
     .then((post) => {
       if (!post) throw ErrNotFound
       return post
@@ -56,7 +57,7 @@ exports.get = function get (id) {
 exports.list = function list ({ limit, page }) {
   log.debug('post db-api list')
   return Post
-    .paginate({}, { page, limit })
+    .paginate({}, { page, limit, populate: { path: 'author', select: 'name' } })
 }
 
 /**

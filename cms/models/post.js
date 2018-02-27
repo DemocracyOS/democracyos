@@ -9,7 +9,7 @@ const Post = new mongoose.Schema({
   title: { type: String, maxLength: 120, required: true },
   description: { type: String, maxLength: 225 },
   content: { type: String, required: true },
-  author: { type: String },
+  author: { type: mongoose.Schema.ObjectId, ref: 'User', index: true },
   openingDate: { type: Date },
   closingDate: { type: Date }
 }, { timestamps: true })
