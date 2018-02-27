@@ -16,7 +16,7 @@ export const PostCard = ({ post }) => (
       </Link>
     </div>
     <div className='post-card-footer'>
-      <span>{post.author}</span>
+      <span>{post.author.name}</span>
       <span>{post.openingDate}</span>
     </div>
     <style jsx>{`

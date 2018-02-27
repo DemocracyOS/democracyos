@@ -72,6 +72,15 @@ export class PostGrid extends React.Component {
             flex-wrap: wrap;
             justify-content: space-between;
           }
+          h5 {
+            margin: 40px 0;
+            text-align: center;
+          }
+          @media screen and (max-width: 767px) {
+            .post-grid-card-container {
+              justify-content: center;
+            }
+          }
         `}</style>
       </section>
     )
