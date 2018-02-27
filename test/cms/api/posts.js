@@ -1,5 +1,6 @@
 const chai = require('chai')
 const chaiHttp = require('chai-http')
+const { Types: { ObjectId } } = require('mongoose')
 const {
   OK,
   CREATED,
@@ -22,7 +23,7 @@ describe('/api/v1.0/posts', () => {
   const samplePost = {
     title: 'POST TITLE',
     content: 'POST CONTENT',
-    author: 'POST AUTHOR',
+    author: ObjectId('5a5e29d948a9cc2fbeed02fa'),
     openingDate: Date.now(),
     closingDate: Date.now()
   }
