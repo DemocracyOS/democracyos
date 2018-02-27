@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
 export const PostCard = ({ post }) => (
   <div className='post-card'>
@@ -56,3 +57,7 @@ export const PostCard = ({ post }) => (
     `}</style>
   </div>
 )
+
+PostCard.propTypes = {
+  post: PropTypes.object
+}
