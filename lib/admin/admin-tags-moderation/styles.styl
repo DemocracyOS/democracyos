@@ -17,6 +17,10 @@
     tbody
       tr
         cursor pointer
+        &.active
+          td
+            background: #337ab7
+            color: white
 
   .edit-tag-modal-opener
     position: fixed
@@ -47,3 +51,5 @@
       padding: 20px
       border-radius: 3px
       box-shadow: 0 2px 4px 1px #555
+      .tag-label
+        font-weight: bold
