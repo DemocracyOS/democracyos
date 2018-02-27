@@ -12,7 +12,7 @@ export class PostGrid extends React.Component {
   }
 
   componentDidMount () {
-    window.addEventListener('scroll', this.onScroll, false);
+    window.addEventListener('scroll', this.onScroll, false)
     fetch(`/api/v1.0/posts?page=${this.state.page}`)
       .then((res) => res.json())
       .then((res) => {
@@ -41,8 +41,8 @@ export class PostGrid extends React.Component {
     const nextPage = this.state.page + 1
     const url = `/api/v1.0/posts?page=${nextPage}`
     fetch(url)
-      .then((res)=> res.json())
-      .then((res)=> {
+      .then((res) => res.json())
+      .then((res) => {
         this.setState({
           posts: this.state.posts.concat(res.results),
           page: nextPage
