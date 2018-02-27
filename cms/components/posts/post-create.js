@@ -15,7 +15,7 @@ import { ContentInput } from './post-content-input'
 
 export const PostCreate = (props) => (
   <Create title={<PostTitle />} {...props}>
-    <SimpleForm>
+    <SimpleForm redirect='/reaction-instance/create?fromCreation=true'>
       <TextInput source='title' />
       <TextInput source='description' options={{ multiLine: true }} />
       <ContentInput label='Content' source='content' addLabel label='Content'/>
