@@ -19,8 +19,8 @@ export const PostList = (props) => (
       <TextField source='description' label='Description' />
       <DateField source='openingDate' label='Opening date' />
       <DateField source='closingDate' label='Closing date' />
-      <ReferenceField label='Author' source='author' reference='users' linkType='edit'>
-        <TextField source='username' />
+      <ReferenceField label='Author' source='author._id' reference='users' linkType='edit'>
+        <TextField source='name' />
       </ReferenceField>
       <ShowButton />
       <EditButton />
