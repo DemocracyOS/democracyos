@@ -3,12 +3,16 @@ import Head from 'next/head'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
-import { PostGrid } from '../client/site/components/post-grid'
+import Header from '../client/site/components/header'
+import PostGrid from '../client/site/components/post-grid'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
+    const res = await fetch('http://localhost:3000/api/v1.0/settings')
+    const settings = await res.json()
     return {
-      session: await NextAuth.init({ req })
+      session: await NextAuth.init({ req }),
+      settings: settings
     }
   }
 
@@ -38,11 +42,12 @@ export default class extends React.Component {
           <meta name='viewport' content='width=device-width, initial-scale=1'/>
           <script src='https://cdn.polyfill.io/v2/polyfill.min.js'/>
           <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossOrigin='anonymous'/>
+          <link rel='stylesheet' href='/static/global.css' />
         </Head>
+        <Header settings={this.props.settings} user={this.props.session.user} />
         <div className='text-center'>
-          <h1 className='display-4 mt-3 mb-3'>DemocracyOS</h1>
           <p className='lead mt-3 mb-3'>Work in progress.</p>
-          <SignInMessage {...this.props}/>
+          <SignInMessage {...this.props} />
         </div>
         <PostGrid />
       </div>

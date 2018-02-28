@@ -1,7 +1,7 @@
 import React from 'react'
 import { PostCard } from './post-card'
 
-export class PostGrid extends React.Component {
+export default class PostGrid extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
