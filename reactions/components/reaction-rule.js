@@ -1,5 +1,5 @@
 import React from 'react'
-import { Datagrid, TextField, Create, Edit, SimpleForm, TextInput, SelectInput, DateInput, DateField, EditButton, DeleteButton, List, NumberInput, BooleanInput } from 'admin-on-rest'
+import { Datagrid, TextField, Create, Edit, SimpleForm, Filter, TextInput, SelectInput, DateInput, DateField, EditButton, DeleteButton, List, NumberInput, BooleanInput } from 'admin-on-rest'
 import ClosingDateField from './ClosingDateField'
 const METHODS = require('../enum/methods')
 // import BookIcon from 'material-ui/svg-icons/action/book'
@@ -22,11 +22,20 @@ const minClosingDate = () => {
   return date
 }
 
+const ReactionRuleFilters = (props) => (
+  <Filter {...props}>
+    <TextInput label='Search' source='name' alwaysOn />
+    <SelectInput source='method' choices={getChoices()} />
+  </Filter>
+)
+
 export const ReactionRuleList = (props) => (
-  <List {...props} title="List of reaction rules">
+  <List {...props} filters={<ReactionRuleFilters />} title='List of reaction rules'>
     <Datagrid>
-      <TextField source='name' label="Regla" style={{ fontWeight: 'bold' }} />
-      <TextField source='method' label="Reaction" style={{ textTransform: 'capitalize' }} />
+      <TextField source='name' label='Regla' style={{ fontWeight: 'bold' }} />
+      <TextField source='method' label='Reaction' style={{ textTransform: 'capitalize' }} />
+      <DateField source='startingDate' label='Start' />
+      <DateField source='closingDate' label='Ends' />
       <EditButton style={{ textAlign: 'center' }} />
       <DeleteButton style={{ textAlign: 'center' }} />
     </Datagrid>
@@ -34,11 +43,11 @@ export const ReactionRuleList = (props) => (
 )
 
 export const ReactionRuleCreate = (props) => (
-  <Create {...props} title="Create a reaction rule">
+  <Create {...props} title='Create a reaction rule'>
     <SimpleForm>
-      <TextInput source='name' label="Name your rule" />
-      <SelectInput source="method" label="Type of Reaction" choices={getChoices()} />
-      <NumberInput source="limit" step={1} />
+      <TextInput source='name' label='Name your rule' />
+      <SelectInput source='method' label='Type of Reaction' choices={getChoices()} />
+      <NumberInput source='limit' step={1} />
       <DateInput label='Opening date' source='startingDate' defaultValue={new Date()} options={{ minDate: new Date() }} />
       <DateInput label='Closing date' source='closingDate' options={{ minDate: minClosingDate() }} />
     </SimpleForm>
@@ -46,14 +55,14 @@ export const ReactionRuleCreate = (props) => (
 )
 
 export const ReactionRuleEdit = (props) => (
-  <Edit {...props} title="Edit a reaction rule">
+  <Edit {...props} title='Edit a reaction rule'>
     <SimpleForm>
-      <TextInput source='name' label="Name your rule" />
-      <TextField source="method" label="Type of Reaction" />
-      <NumberInput source="limit" step={1} />
-      <DateField label='Opening date' source='startingDate'/>
+      <TextInput source='name' label='Name your rule' />
+      <TextField source='method' label='Type of Reaction' />
+      <NumberInput source='limit' step={1} />
+      <DateField label='Opening date' source='startingDate' />
       {/* <DateInput label='Closing date' source='closingDate' options={{ minDate: minClosingDate() }} /> */}
-      <ClosingDateField/>
+      <ClosingDateField />
     </SimpleForm>
   </Edit>
 )

@@ -60,9 +60,18 @@ exports.getByName = function getByName (reactionName) {
  * @return {promise}
  */
 
-exports.list = function list ({ limit, page }) {
+exports.list = function list ({ filter, limit, page }) {
   log.debug('get ReactionRule list')
-  return ReactionRule.paginate({}, { page, limit })
+  log.info('filter: ' + filter)
+  if (filter !== undefined) {
+    let filterToJSON = JSON.parse(filter)
+    if (filterToJSON.name) {     
+      filterToJSON.name = { $regex: filterToJSON.name, $options: 'i' }
+    }
+    return ReactionRule.paginate(filterToJSON, { page, limit })
+  } else {
+    return ReactionRule.paginate({}, { page, limit })
+  }
 }
 
 /**

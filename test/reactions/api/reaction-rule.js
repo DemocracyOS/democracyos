@@ -89,12 +89,12 @@ describe('/api/v1.0/reaction-rule', () => {
 
   describe('#listByName', () => {
     it('should list all reaction rule that matches a given string', async () => {
-      let firstReactionRule = await (new ReactionRule(sampleReactionRule)).save()
-      let secondReactionRule = await (new ReactionRule(anotherReactionRule)).save()
-      let thirdReactionRule = await (new ReactionRule(otherReactionRule)).save()
+      await (new ReactionRule(sampleReactionRule)).save()
+      await (new ReactionRule(anotherReactionRule)).save()
+      await (new ReactionRule(otherReactionRule)).save()
       const res = await chai.request('http://localhost:3000')
         .get('/api/v1.0/reaction-rule')
-        .query({ name: 'total', limit: 10, page: 1 })
+        .query({ filter: '{ "name": "total" }', limit: 10, page: 1 })
 
       expect(res).to.have.status(OK)
 
