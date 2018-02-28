@@ -55,7 +55,7 @@ export default () => (
         border-top: none;
       }
       .main-menu-list li a {
-        font-size: 14px;
+        font-size: 16px;
         color: var(--gray);
         text-decoration: none;
         margin: 5px 0;

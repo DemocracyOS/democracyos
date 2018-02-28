@@ -35,18 +35,17 @@ export default class Header extends React.Component {
         </div>
         <style jsx>{`
           header {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: center;
+            height: 100px;
+            width: 100%;
             padding: 20px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
           }
           header a {
             color: var(--black);
             text-decoration: none;
             cursor: pointer;
-          }
-          .header-title-container {
           }
           h1 {
             font-size: 36px;
