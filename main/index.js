@@ -15,6 +15,7 @@ const mongoose = require('./mongoose')
 
 const { NODE_ENV } = process.env
 const app = next({
+  dir: './client',
   dev: NODE_ENV !== 'production',
   quiet: NODE_ENV === 'test'
 })
@@ -47,7 +48,7 @@ module.exports = (async () => {
       expressApp: server,
       functions: authFunctions,
       port: PORT,
-      serverUrl: ROOT_URL,
+      serverUrl: 'ROOT_URL',
       sessionStore: new MongoStore({
         mongooseConnection: mongoose.connection,
         autoRemove: 'interval',
