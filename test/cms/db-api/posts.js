@@ -65,7 +65,7 @@ describe('db-api.posts', () => {
       const PostMock = sinon.mock(Post)
 
       PostMock
-        .expects('paginate').withArgs({}, { limit: 10, page: 1 })
+        .expects('paginate').withArgs({}, { limit: 10, page: 1, populate: { path: 'author', select: 'name' } })
         .resolves(samplePost)
 
       return post.list({ limit: 10, page: 1 })
