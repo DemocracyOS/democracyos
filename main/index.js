@@ -48,7 +48,7 @@ module.exports = (async () => {
       expressApp: server,
       functions: authFunctions,
       port: PORT,
-      serverUrl: 'ROOT_URL',
+      serverUrl: ROOT_URL,
       sessionStore: new MongoStore({
         mongooseConnection: mongoose.connection,
         autoRemove: 'interval',
