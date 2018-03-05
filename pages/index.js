@@ -36,7 +36,7 @@ export default class extends Page {
           <p className='lead mt-3 mb-3'>Work in progress.</p>
           <SignInMessage {...this.props} />
         </div>
-        <PostGrid />
+        <PostGrid filter={false} />
       </div>
     )
   }

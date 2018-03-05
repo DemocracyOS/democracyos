@@ -1,5 +1,6 @@
 import React from 'react'
-import { PostCard } from './post-card'
+import PostCard from './post-card'
+import PostFilter from './browse/post-filter'
 
 export default class PostGrid extends React.Component {
   constructor (props) {
@@ -51,10 +52,35 @@ export default class PostGrid extends React.Component {
       .catch((err) => console.log(err))
   }
 
+  sortNew = () => {
+    const sortedPosts = this.state.posts.sort((a, b) => {
+      return new Date(b.openingDate) - new Date(a.openingDate)
+    })
+    this.setState({
+      posts: sortedPosts
+    })
+  }
+
+  sortOld = () => {
+    const sortedPosts = this.state.posts.sort((a, b) => {
+      return new Date(a.openingDate) - new Date(b.openingDate)
+    })
+    this.setState({
+      posts: sortedPosts
+    })
+  }
+
+  filterByDate = (openingDate, closingDate) => {
+    console.log(openingDate, closingDate)
+  }
+
   render () {
     return (
       <section className='post-grid'>
         <h2>Posts</h2>
+        {this.props.filter &&
+          <PostFilter sortNew={this.sortNew} sortOld={this.sortOld} filterByDate={this.filterByDate} />
+        }
         {this.state.posts &&
           <div className='post-grid-card-container'>
             {this.state.posts.map((p, i) =>
