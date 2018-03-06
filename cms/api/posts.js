@@ -2,8 +2,7 @@ const express = require('express')
 // Requires status messages from http-status lib
 const {
   OK,
-  CREATED,
-  NO_CONTENT
+  CREATED
 } = require('http-status')
 // Requires CRUD apis
 const Post = require('../db-api/posts')
