@@ -3,8 +3,7 @@ import React from 'react'
 export default class PostFilter extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
-    const data = (e.target)
-    console.log(data)
+    this.props.filterByDate(this.fromDate.value, this.toDate.value)
   }
 
   render () {

@@ -70,8 +70,18 @@ export default class PostGrid extends React.Component {
     })
   }
 
-  filterByDate = (openingDate, closingDate) => {
-    console.log(openingDate, closingDate)
+  filterByDate = (from, to) => {
+    const fromDate = new Date(from).getTime()
+    const toDate = new Date(to).getTime()
+    const isBetweenDates = (post) => {
+      const date = new Date(post.openingDate).getTime()
+      if (date >= fromDate && date <= toDate) {
+        console.log(post)
+        return post
+      }
+    }
+    const filteredPosts = this.state.posts.filter(isBetweenDates)
+    console.log(filteredPosts)
   }
 
   render () {
