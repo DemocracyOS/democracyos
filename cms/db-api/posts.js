@@ -54,7 +54,6 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-
 exports.list = function list ({ filter, limit, page, ids }) {
   log.debug('post db-api list')
 
