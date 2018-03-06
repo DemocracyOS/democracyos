@@ -62,17 +62,17 @@ exports.list = function list ({ filter, limit, page, ids }) {
     if (filterToJSON.title) {
       filterToJSON.title = { $regex: filterToJSON.title, $options: 'i' }
     }
-    return Post.paginate(filterToJSON, { page, limit })
+    return Post.paginate(filterToJSON, { page, limit, populate: { path: 'author', select: 'name' } })
   }
   if (ids) {
     const idsToArray = JSON.parse(ids)
     idsToArray.map((id) => {
       return ObjectId(id)
     })
-    return Post.paginate({ '_id': { $in: idsToArray } }, { page, limit })
+    return Post.paginate({ '_id': { $in: idsToArray } }, { page, limit, populate: { path: 'author', select: 'name' } })
   }
   return Post
-    .paginate({}, { page, limit })
+    .paginate({}, { page, limit, populate: { path: 'author', select: 'name' } })
 }
 /**
  * Update post
