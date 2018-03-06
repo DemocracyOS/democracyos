@@ -26,7 +26,7 @@ router.route('/')
   .get(async (req, res, next) => {
     try {
       let results = []
-      results = await ReactionRule.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page })
+      results = results = await ReactionRule.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page, ids: req.query.ids })
       res.status(OK).json({
         results: results.docs,
         pagination: {

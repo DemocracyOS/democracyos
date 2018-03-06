@@ -65,7 +65,7 @@ exports.list = function list ({ filter, limit, page }) {
   log.info('filter: ' + filter)
   if (filter !== undefined) {
     let filterToJSON = JSON.parse(filter)
-    if (filterToJSON.name) {     
+    if (filterToJSON.name) {
       filterToJSON.name = { $regex: filterToJSON.name, $options: 'i' }
     }
     return ReactionRule.paginate(filterToJSON, { page, limit })
