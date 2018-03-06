@@ -54,12 +54,27 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.list = function list ({ limit, page }) {
-  log.debug('post db-api list')
-  return Post
-    .paginate({}, { page, limit, populate: { path: 'author', select: 'name' } })
-}
 
+exports.list = function list ({ filter, limit, page, ids }) {
+  log.debug('post db-api list')
+
+  if (filter !== undefined) {
+    let filterToJSON = JSON.parse(filter)
+    if (filterToJSON.title) {
+      filterToJSON.title = { $regex: filterToJSON.title, $options: 'i' }
+    }
+    return Post.paginate(filterToJSON, { page, limit })
+  }
+  if (ids) {
+    const idsToArray = JSON.parse(ids)
+    idsToArray.map((id) => {
+      return ObjectId(id)
+    })
+    return Post.paginate({ '_id': { $in: idsToArray } }, { page, limit })
+  }
+  return Post
+    .paginate({}, { page, limit })
+}
 /**
  * Update post
  * @method update

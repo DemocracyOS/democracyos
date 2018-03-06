@@ -9,11 +9,24 @@ import {
   RefreshButton,
   TextField,
   DateField,
-  ReferenceField
+  ReferenceField,
+  Filter,
+  TextInput,
+  ReferenceInput,
+  SelectInput
 } from 'admin-on-rest'
 
+const PostFilters = (props) => (
+  <Filter {...props}>
+    <TextInput label='Search' source='title' alwaysOn />
+    <ReferenceInput label='Author' source='author' reference='users'>
+      <SelectInput optionText='username' />
+    </ReferenceInput>
+  </Filter>
+)
+
 export const PostList = (props) => (
-  <List {...props}>
+  <List {...props} filters={<PostFilters />}>
     <Datagrid>
       <TextField source='title' label='Title' />
       <TextField source='description' label='Description' />
