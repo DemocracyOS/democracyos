@@ -76,12 +76,11 @@ export default class PostGrid extends React.Component {
     const isBetweenDates = (post) => {
       const date = new Date(post.openingDate).getTime()
       if (date >= fromDate && date <= toDate) {
-        console.log(post)
         return post
       }
     }
     const filteredPosts = this.state.posts.filter(isBetweenDates)
-    console.log(filteredPosts)
+    this.setState({ posts: filteredPosts })
   }
 
   render () {
