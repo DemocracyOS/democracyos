@@ -61,12 +61,7 @@ export class SettingsEdit extends React.Component {
           <ImageInput style={styles.ImageInput} source='logo' label='Community logo' accept='image/*'>
             <ImageField source='logo' src='url' title='title' />
           </ImageInput>
-          <SelectInput source='permissions' choices={[
-            { id: 'admin', name: 'admin', key: 1 },
-            { id: 'user', name: 'user', key: 2 },
-            { id: 'moderator', name: 'moderator', key: 3 }
-          ]} />
-          <RadioButtonGroupInput source='theme' choices={[
+          <RadioButtonGroupInput source='mainColor' choices={[
             { id: 'Dark', name: 'Dark', key: 1 },
             { id: 'Light', name: 'Light', key: 2 },
             { id: 'Siena', name: 'Siena', key: 3 },
