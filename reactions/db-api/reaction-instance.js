@@ -35,12 +35,27 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.list = function list ({ limit, page }) {
+exports.list = function list ({ filter, limit, page, ids }) {
   log.debug('get reactionInstance list')
+  if (filter !== undefined) {
+    let filterToJSON = JSON.parse(filter)
+    // Not neccesary ATM
+    // if (filterToJSON.title || filterToJSON.q) {
+    //   filterToJSON.title = { $regex: (filterToJSON.title || filterToJSON.q), $options: 'i' }
+    //   delete filterToJSON.q
+    // }
+    return ReactionInstance.paginate(filterToJSON, { page, limit })
+  }
+  if (ids) {
+    const idsToArray = JSON.parse(ids)
+    idsToArray.map((id) => {
+      return ObjectId(id)
+    })
+    return ReactionInstance.paginate({ '_id': { $in: idsToArray } }, { page, limit })
+  }
   return ReactionInstance
     .paginate({}, { page, limit })
 }
-
 /**
  * Update reactionInstance
  * @method update
