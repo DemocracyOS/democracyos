@@ -53,6 +53,16 @@ exports.list = function list({ filter, limit, page, ids }) {
     }
     return User.paginate(filterToJSON, { page, limit })
   }
+  if (ids) {
+    const idsToArray = JSON.parse(ids)
+    idsToArray.map((id) => {
+      return ObjectId(id)
+    })
+    return User.paginate({ '_id': { $in: idsToArray } }, { page, limit })
+  }
+  return User
+    .paginate({}, { page, limit })
+}
 
 /**
  * Update user
