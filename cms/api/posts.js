@@ -24,7 +24,7 @@ router.route('/')
   // GET ALL posts
   .get(async (req, res, next) => {
     try {
-      const results = await Post.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page, ids: req.query.ids })
+      const results = await Post.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page, sort: req.query.sort, ids: req.query.ids })
       // Sends the given results with status 200
       res.status(OK).json({
         results: results.docs,

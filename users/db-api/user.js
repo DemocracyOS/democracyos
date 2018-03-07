@@ -43,15 +43,16 @@ const get = exports.get = function get (query) {
  * @return {promise}
  */
 
-exports.list = function list({ filter, limit, page, ids }) {
+exports.list = function list({ filter, limit, page, ids, sort }) {
   log.debug('user db-api list')
   if (filter !== undefined) {
     let filterToJSON = JSON.parse(filter)
+    let sortToJSON = JSON.parse(sort)
     if (filterToJSON.name || filterToJSON.q) {
       filterToJSON.name = { $regex: (filterToJSON.name || filterToJSON.q), $options: 'i' }
       delete filterToJSON.q
     }
-    return User.paginate(filterToJSON, { page, limit })
+    return User.paginate(filterToJSON, { page, limit, sort: sortToJSON })
   }
   if (ids) {
     const idsToArray = JSON.parse(ids)
@@ -59,6 +60,10 @@ exports.list = function list({ filter, limit, page, ids }) {
       return ObjectId(id)
     })
     return User.paginate({ '_id': { $in: idsToArray } }, { page, limit })
+  }
+  if (sort) {
+    let sortToJSON = JSON.parse(sort)
+    return User.paginate({}, { page, limit, populate: { path: 'author', select: 'name', sort: sortToJSON } })
   }
   return User
     .paginate({}, { page, limit })

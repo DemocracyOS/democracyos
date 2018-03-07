@@ -27,7 +27,7 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
       const { page, perPage } = params.pagination
       const { field, order } = params.sort
       const query = {
-        sort: JSON.stringify([field, order]),
+        sort: JSON.stringify({ [field]: order === 'ASC' ? 1 : -1 }),
         page: JSON.stringify(page),
         limit: JSON.stringify(perPage),
         filter: JSON.stringify(params.filter)
