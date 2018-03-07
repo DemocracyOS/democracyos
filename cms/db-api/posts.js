@@ -79,7 +79,7 @@ exports.list = function list ({ filter, limit, page, sort, ids }) {
   }
   if (sort) {
     let sortToJSON = JSON.parse(sort)
-    return Post.paginate({}, { page, limit, populate: { path: 'author', select: 'name', sort: sortToJSON } })
+    return Post.paginate({}, { page, limit, populate: { path: 'author', select: 'name' }, sort: sortToJSON })
   }
   return Post
     .paginate({}, { page, limit, populate: { path: 'author', select: 'name' } })
