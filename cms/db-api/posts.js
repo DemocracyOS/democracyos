@@ -58,11 +58,17 @@ exports.list = function list ({ filter, limit, page, sort, ids }) {
   log.debug('post db-api list')
   if (filter !== undefined) {
     let filterToJSON = JSON.parse(filter)
-    let sortToJSON = JSON.parse(sort)
     if (filterToJSON.title) {
       filterToJSON.title = { $regex: filterToJSON.title, $options: 'i' }
     }
-    return Post.paginate(filterToJSON, { page, limit, populate: { path: 'author', select: 'name' }, sort: sortToJSON })
+    if (filterToJSON.openingDate) {
+      filterToJSON.openingDate = { '$gt': filterToJSON.openingDate[0], '$lt': filterToJSON.openingDate[1] }
+    }
+    if (sort) {
+      let sortToJSON = JSON.parse(sort)
+      return Post.paginate(filterToJSON, { page, limit, populate: { path: 'author', select: 'name' }, sort: sortToJSON })
+    }
+    return Post.paginate(filterToJSON, { page, limit, populate: { path: 'author', select: 'name' } })
   }
   if (ids) {
     const idsToArray = JSON.parse(ids)

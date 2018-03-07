@@ -1,4 +1,5 @@
 import React from 'react'
+import { stringify } from 'query-string'
 import PostCard from './post-card'
 import PostFilter from './browse/post-filter'
 
@@ -52,35 +53,39 @@ export default class PostGrid extends React.Component {
       .catch((err) => console.log(err))
   }
 
-  sortNew = () => {
-    const sortedPosts = this.state.posts.sort((a, b) => {
-      return new Date(b.openingDate) - new Date(a.openingDate)
-    })
-    this.setState({
-      posts: sortedPosts
-    })
-  }
-
-  sortOld = () => {
-    const sortedPosts = this.state.posts.sort((a, b) => {
-      return new Date(a.openingDate) - new Date(b.openingDate)
-    })
-    this.setState({
-      posts: sortedPosts
-    })
-  }
-
-  filterByDate = (from, to) => {
-    const fromDate = new Date(from).getTime()
-    const toDate = new Date(to).getTime()
-    const isBetweenDates = (post) => {
-      const date = new Date(post.openingDate).getTime()
-      if (date >= fromDate && date <= toDate) {
-        return post
-      }
+  sort = (field, order) => {
+    const query = {
+      page: JSON.stringify(1),
+      sort: JSON.stringify({ [field]: order })
     }
-    const filteredPosts = this.state.posts.filter(isBetweenDates)
-    this.setState({ posts: filteredPosts })
+    const url = `/api/v1.0/posts?${stringify(query)}`
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          posts: res.results,
+          page: 1
+        })
+      })
+      .catch((err) => console.log(err))
+  }
+
+  filterByDate = (openingDate, closingDate) => {
+    const datesToArray = [openingDate, closingDate]
+    const query = {
+      page: JSON.stringify(1),
+      filter: JSON.stringify({ openingDate: datesToArray })
+    }
+    const url = `/api/v1.0/posts?${stringify(query)}`
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          posts: res.results,
+          page: 1
+        })
+      })
+      .catch((err) => console.log(err))
   }
 
   render () {
@@ -88,7 +93,7 @@ export default class PostGrid extends React.Component {
       <section className='post-grid'>
         <h2>Posts</h2>
         {this.props.filter &&
-          <PostFilter sortNew={this.sortNew} sortOld={this.sortOld} filterByDate={this.filterByDate} />
+          <PostFilter sort={this.sort} filterByDate={this.filterByDate} />
         }
         {this.state.posts &&
           <div className='post-grid-card-container'>
