@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { stringify } from 'query-string'
 import PostCard from './post-card'
 import PostFilter from './browse/post-filter'
@@ -11,7 +12,8 @@ export default class PostGrid extends React.Component {
       posts: null,
       count: null,
       sort: false,
-      filter: false
+      filter: false,
+      words: false
     }
   }
 
@@ -34,7 +36,7 @@ export default class PostGrid extends React.Component {
   }
 
   clearFilter = (filter) => {
-    const nextPage =  1
+    const nextPage = 1
     let url = `/api/v1.0/posts?page=${nextPage}`
     if (this.state.sort || this.state.filter) {
       let query = {}
@@ -116,6 +118,23 @@ export default class PostGrid extends React.Component {
     }
   }
 
+  searchByWords = (words) => {
+    const query = {
+      page: JSON.stringify(1),
+      filter: JSON.stringify({ title: words })
+    }
+    const url = `/api/v1.0/posts?${stringify(query)}`
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          posts: res.results,
+          page: 1,
+          words: query.filter
+        })
+      })
+      .catch((err) => console.log(err))
+  }
   sortPosts = (field, order) => {
     const query = {
       page: JSON.stringify(1),
@@ -145,6 +164,7 @@ export default class PostGrid extends React.Component {
           <PostFilter
             handleSort={this.sortPosts}
             handleFilterByDate={this.filterByDate}
+            searchByWords={this.searchByWords}
             clearFilter={this.clearFilter} />
         }
         {this.state.posts &&
@@ -180,4 +200,8 @@ export default class PostGrid extends React.Component {
       </section>
     )
   }
+}
+
+PostGrid.propTypes = {
+  filter: PropTypes.bool
 }
