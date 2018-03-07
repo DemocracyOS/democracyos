@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-export const PostCard = ({ post }) => (
+const PostCard = ({ post }) => (
   <div className='post-card'>
     <div className='post-card-body'>
       <Link prefetch href={{ pathname: '/post', query: { id: post._id } }}>
@@ -72,3 +72,5 @@ export const PostCard = ({ post }) => (
 PostCard.propTypes = {
   post: PropTypes.object
 }
+
+export default PostCard

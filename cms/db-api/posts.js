@@ -54,13 +54,19 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.list = function list ({ filter, limit, page, ids }) {
+exports.list = function list ({ filter, limit, page, sort, ids }) {
   log.debug('post db-api list')
-
   if (filter !== undefined) {
     let filterToJSON = JSON.parse(filter)
     if (filterToJSON.title) {
       filterToJSON.title = { $regex: filterToJSON.title, $options: 'i' }
+    }
+    if (filterToJSON.openingDate) {
+      filterToJSON.openingDate = { '$gt': filterToJSON.openingDate[0], '$lt': filterToJSON.openingDate[1] }
+    }
+    if (sort) {
+      let sortToJSON = JSON.parse(sort)
+      return Post.paginate(filterToJSON, { page, limit, populate: { path: 'author', select: 'name' }, sort: sortToJSON })
     }
     return Post.paginate(filterToJSON, { page, limit, populate: { path: 'author', select: 'name' } })
   }
@@ -70,6 +76,10 @@ exports.list = function list ({ filter, limit, page, ids }) {
       return ObjectId(id)
     })
     return Post.paginate({ '_id': { $in: idsToArray } }, { page, limit, populate: { path: 'author', select: 'name' } })
+  }
+  if (sort) {
+    let sortToJSON = JSON.parse(sort)
+    return Post.paginate({}, { page, limit, populate: { path: 'author', select: 'name' }, sort: sortToJSON })
   }
   return Post
     .paginate({}, { page, limit, populate: { path: 'author', select: 'name' } })
