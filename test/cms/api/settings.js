@@ -2,8 +2,7 @@ const chai = require('chai')
 const chaiHttp = require('chai-http')
 const {
   OK,
-  CREATED,
-  NO_CONTENT
+  CREATED
 } = require('http-status')
 const Setting = require('../../../cms/models/setting')
 
@@ -22,8 +21,7 @@ describe('/api/v1.0/settings', () => {
   const sampleSetting = {
     communityName: 'test',
     logo: 'test',
-    permissions: 'test',
-    theme: 'test'
+    mainColor: 'test'
   }
 
   describe('#post', () => {
@@ -46,8 +44,7 @@ describe('/api/v1.0/settings', () => {
       expect(res.body).to.be.a('object')
       expect(res.body).to.have.property('communityName')
       expect(res.body).to.have.property('logo')
-      expect(res.body).to.have.property('permissions')
-      expect(res.body).to.have.property('theme')
+      expect(res.body).to.have.property('mainColor')
     })
   })
 
@@ -61,8 +58,7 @@ describe('/api/v1.0/settings', () => {
       expect(res.body).to.be.a('object')
       expect(res.body).to.have.property('communityName')
       expect(res.body).to.have.property('logo')
-      expect(res.body).to.have.property('permissions')
-      expect(res.body).to.have.property('theme')
+      expect(res.body).to.have.property('mainColor')
     })
   })
 
@@ -77,8 +73,7 @@ describe('/api/v1.0/settings', () => {
       expect(res.body).to.be.a('object')
       expect(res.body).to.have.property('communityName')
       expect(res.body).to.have.property('logo')
-      expect(res.body).to.have.property('permissions')
-      expect(res.body).to.have.property('theme')
+      expect(res.body).to.have.property('mainColor')
     })
   })
 
@@ -88,9 +83,9 @@ describe('/api/v1.0/settings', () => {
       const res = await chai.request('http://localhost:3000')
         .delete(`/api/v1.0/settings/${newSetting.id}`)
 
-        expect(res).to.have.status(OK)
-        expect(res.body).to.be.a('object')
-        expect(res.body).to.have.property('id')
+      expect(res).to.have.status(OK)
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('id')
     })
   })
 })
