@@ -7,7 +7,6 @@ const mongoosePaginate = require('mongoose-paginate')
 
 const Setting = new mongoose.Schema({
   communityName: String,
-  logo: String,
   mainColor: String
 }, { timestamps: true })
 

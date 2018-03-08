@@ -20,7 +20,6 @@ describe('/api/v1.0/settings', () => {
 
   const sampleSetting = {
     communityName: 'test',
-    logo: 'test',
     mainColor: 'test'
   }
 
@@ -43,7 +42,6 @@ describe('/api/v1.0/settings', () => {
       expect(res).to.have.status(OK)
       expect(res.body).to.be.a('object')
       expect(res.body).to.have.property('communityName')
-      expect(res.body).to.have.property('logo')
       expect(res.body).to.have.property('mainColor')
     })
   })
@@ -57,7 +55,6 @@ describe('/api/v1.0/settings', () => {
       expect(res).to.have.status(OK)
       expect(res.body).to.be.a('object')
       expect(res.body).to.have.property('communityName')
-      expect(res.body).to.have.property('logo')
       expect(res.body).to.have.property('mainColor')
     })
   })
@@ -72,7 +69,6 @@ describe('/api/v1.0/settings', () => {
       expect(res).to.have.status(OK)
       expect(res.body).to.be.a('object')
       expect(res.body).to.have.property('communityName')
-      expect(res.body).to.have.property('logo')
       expect(res.body).to.have.property('mainColor')
     })
   })
