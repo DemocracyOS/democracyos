@@ -1,4 +1,5 @@
 import React from 'react'
+import SettingsModal from './settings-modal'
 
 export default class SettingsForm extends React.Component {
   constructor (props) {
@@ -13,9 +14,29 @@ export default class SettingsForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const res = await fetch('/api/v1.0/settings', {
-      
+    fetch('/api/v1.0/settings', {
+      'method': 'POST',
+      'headers': {
+        'Content-Type': 'application/json'
+      },
+      'body': JSON.stringify({
+        'communityName': this.state.communityName,
+        'mainColor': this.state.mainColor
+      })
     })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log('hola')
+        this.setState({
+          success: true
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+        this.setState({
+          error: true
+        })
+      })
   }
 
   handleChange = (e) => {
@@ -33,10 +54,8 @@ export default class SettingsForm extends React.Component {
           <div className='form-group'>
             <h4>Settings</h4>
           </div>
-          { this.state.success && 
-            <div className='alert alert-success' role='alert'>
-              Settings are initialized!
-            </div>
+          { this.state.success &&
+            <SettingsModal />
           }
           { this.state.error && 
             <div className='alert alert-danger' role='alert'>
