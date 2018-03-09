@@ -35,8 +35,15 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.list = function list ({ limit, page }) {
+exports.list = function list ({ limit, page, ids }) {
   log.debug('get reactionVote list')
+  if (ids) {
+    const idsToArray = JSON.parse(ids)
+    idsToArray.map((id) => {
+      return ObjectId(id)
+    })
+    return ReactionVote.paginate({ '_id': { $in: idsToArray } }, { page, limit })
+  }
   return ReactionVote
     .paginate({}, { page, limit })
 }
