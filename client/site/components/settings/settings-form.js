@@ -8,7 +8,8 @@ export default class SettingsForm extends React.Component {
       'communityName': 'Default title',
       'mainColor': '#000000',
       'success': false,
-      'error': false
+      'error': false,
+      'errorMsg': 'An error ocurred, please try again later.'
     }
   }
 
@@ -26,10 +27,17 @@ export default class SettingsForm extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log('hola')
-        this.setState({
-          success: true
-        })
+        if (res.error) {
+          const message = res.message
+          this.setState({
+            error: true,
+            errorMsg: message
+          })
+        } else {
+          this.setState({
+            success: true
+          })
+        }
       })
       .catch((err) => {
         console.log(err)
@@ -47,6 +55,13 @@ export default class SettingsForm extends React.Component {
     })
   }
 
+  handleSkip = (e) => {
+    this.setState({
+      communityName: 'Default title',
+      mainColor: '#000000'
+    }, () => this.handleSubmit(e))
+  }
+
   render () {
     return (
       <section className='row settings-form-wrapper'>
@@ -57,16 +72,16 @@ export default class SettingsForm extends React.Component {
           { this.state.success &&
             <SettingsModal />
           }
-          { this.state.error && 
+          { this.state.error &&
             <div className='alert alert-danger' role='alert'>
-              An error ocurred, please try again.
+              {this.state.errorMsg}
             </div>
           }
           <div className='form-group'>
             <label htmlFor='communityName'>
               Community name:
             </label>
-            <input 
+            <input
               type='text'
               name='communityName'
               className='form-control'
@@ -87,6 +102,9 @@ export default class SettingsForm extends React.Component {
             <button className='btn btn-primary' type='submit'>
               Submit
             </button>
+            <button className='btn btn-default'>
+              Skip
+            </button>
           </div>
         </form>
         <style jsx>{`
@@ -97,7 +115,7 @@ export default class SettingsForm extends React.Component {
           }
           .button-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
           }
           label {
             display: block;
