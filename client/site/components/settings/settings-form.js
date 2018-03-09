@@ -8,8 +8,7 @@ export default class SettingsForm extends React.Component {
       'communityName': 'Default title',
       'mainColor': '#000000',
       'success': false,
-      'error': false,
-      'errorMsg': 'An error ocurred, please try again later.'
+      'error': false
     }
   }
 
@@ -27,17 +26,9 @@ export default class SettingsForm extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.error) {
-          const message = res.message
-          this.setState({
-            error: true,
-            errorMsg: message
-          })
-        } else {
-          this.setState({
-            success: true
-          })
-        }
+        this.setState({
+          success: true
+        })
       })
       .catch((err) => {
         console.log(err)
@@ -74,7 +65,7 @@ export default class SettingsForm extends React.Component {
           }
           { this.state.error &&
             <div className='alert alert-danger' role='alert'>
-              {this.state.errorMsg}
+              An error ocurred, please try again later.
             </div>
           }
           <div className='form-group'>
