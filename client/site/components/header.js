@@ -23,7 +23,7 @@ export default class Header extends React.Component {
         <div className='header-title-container'>
           <Link prefetch href='/'>
             <a>
-              <h1>{this.props.settings.communityName ? this.props.settings.communityName : 'Default title'}</h1>
+              <h1>{this.props.settings && this.props.settings.communityName ? this.props.settings.communityName : 'Democracy OS'}</h1>
             </a>
           </Link>
         </div>
