@@ -9,7 +9,7 @@ const ReactionInstance = new mongoose.Schema({
   reactionId: { type: mongoose.Schema.Types.ObjectId, refPath: 'reactionRule' },
   resourceType: String,
   resourceId: String,
-  results: [{}]
+  results: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ReactionVote' }]
 }, { timestamps: true })
 
 /**
