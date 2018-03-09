@@ -10,6 +10,7 @@ import {
   TextInput
 } from 'admin-on-rest'
 import restClient from '../../../client/admin/components/rest-client'
+import SettingsColorPicker from './settings-color-picker'
 
 const styles = {
   ImageInput: { width: '17em' }
@@ -65,13 +66,7 @@ export class SettingsEdit extends React.Component {
         <SimpleForm record={this.state.settings} save={this.handleSubmit}>
           <ViewTitle title='Settings' />
           <TextInput source='communityName' label='Community name' />
-          <RadioButtonGroupInput source='mainColor' choices={[
-            { id: 'Dark', name: 'Dark', key: 1 },
-            { id: 'Light', name: 'Light', key: 2 },
-            { id: 'Siena', name: 'Siena', key: 3 },
-            { id: 'Light Blue', name: 'Light Blue', key: 4 },
-            { id: 'Red', name: 'Red', key: 5 }
-          ]} />
+          <SettingsColorPicker source='mainColor' addLabel label='Main color' />
         </SimpleForm>
         <Snackbar
           open={this.state.open}
