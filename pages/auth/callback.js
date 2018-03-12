@@ -6,7 +6,8 @@ import { NextAuth } from 'next-auth-client'
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
     return {
-      session: await NextAuth.init({ force: true, req: req })
+      session: await NextAuth.init({ force: true, req: req }),
+      action: req.query.action
     }
   }
 
@@ -14,7 +15,11 @@ export default class extends React.Component {
     // Get latest session data after rendering on client then redirect.
     // The ensures client state is always updated after signing in or out.
     const session = await NextAuth.init({ force: true })
-    Router.push('/register')
+    // If user is logging in and it's the first time redirect to /register
+    if (this.props.action === 'signin' && this.props.session.user.firstLogin) {
+      Router.push('/register')
+    }
+    Router.push('/')
   }
 
   render () {

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Z_BUF_ERROR } from 'zlib';
+import Router from 'next/router'
 
 export default class RegisterForm extends React.Component {
   constructor (props) {
@@ -34,7 +34,9 @@ export default class RegisterForm extends React.Component {
       'body': JSON.stringify(body)
     })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then((res) => {
+        Router.push('/')
+      })
       .catch((err) => {
         console.log(err)
         this.setState({ error: true })

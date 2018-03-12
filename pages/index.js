@@ -32,7 +32,6 @@ export default class extends Page {
       <div className='container'>
         <Head {...this.props} />
         <Header settings={this.props.settings} user={this.props.session.user} />
-        {console.log(this.props.session)}
         <div className='text-center'>
           <p className='lead mt-3 mb-3'>Work in progress.</p>
           <SignInMessage {...this.props} />
