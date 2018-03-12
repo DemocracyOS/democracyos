@@ -56,6 +56,20 @@ exports.list = function list ({ filter, limit, page, ids }) {
   return ReactionInstance
     .paginate({}, { page, limit })
 }
+
+/**
+ * Update listByPost
+ * @method listByPost
+ * @param  {object} id
+ * @param  {string} limit
+ * @param  {object} page
+ * @return {promise}
+ */
+
+exports.listByPost = function listByPost ({ id, limit, page }) {
+  log.debug('get reactionInstances list by post id')
+  return ReactionInstance.paginate({ resourceId: ObjectId(id) }, { page, limit , populate: {path: 'results'} })
+}
 /**
  * Update reactionInstance
  * @method update
