@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
 import Router from 'next/router'
 import { NextAuth } from 'next-auth-client'
@@ -15,6 +14,7 @@ export default class extends React.Component {
     // Get latest session data after rendering on client then redirect.
     // The ensures client state is always updated after signing in or out.
     const session = await NextAuth.init({ force: true })
+    alert(this.props)
     Router.push('/')
   }
 
@@ -23,9 +23,8 @@ export default class extends React.Component {
     return (
       <React.Fragment>
         <Head>
-          {console.log(this.props)}
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
-          <script src="https://cdn.polyfill.io/v2/polyfill.min.js"/>
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <script src='https://cdn.polyfill.io/v2/polyfill.min.js' />
         </Head>
         <style jsx global>{`
           body{ 
@@ -68,9 +67,9 @@ export default class extends React.Component {
             100% {transform: rotate(360deg); }
           }
         `}</style>
-        <a href="/" className="circle-loader">
-          <svg className="circle" width="60" height="60" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="15"/>
+        <a href='/' className='circle-loader'>
+          <svg className='circle' width='60' height='60' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+            <circle cx='30' cy='30' r='15' />
           </svg>
         </a>
       </React.Fragment>
