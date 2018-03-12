@@ -14,8 +14,7 @@ export default class extends React.Component {
     // Get latest session data after rendering on client then redirect.
     // The ensures client state is always updated after signing in or out.
     const session = await NextAuth.init({ force: true })
-    alert(this.props)
-    Router.push('/')
+    Router.push('/register')
   }
 
   render () {

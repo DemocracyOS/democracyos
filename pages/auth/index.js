@@ -85,11 +85,11 @@ export default class extends React.Component {
               <div className='card mt-3 mb-3'>
                 <h4 className='card-header'>Sign In</h4>
                 <div className='card-body pb-0'>
-                  <SignInButtons providers={this.props.providers}/>
+                  <SignInButtons providers={this.props.providers} />
                   <form id='signin' method='post' action='/auth/email/signin' onSubmit={this.handleSignInSubmit}>
                     <input name='_csrf' type='hidden' value={this.state.session.csrfToken}/>
                     <p>
-                      <label htmlFor='email'>Email address</label><br/>
+                      <label htmlFor='email'>Email address</label> <br />
                       <input name='email' type='text' placeholder='j.smith@example.com' id='email' className='form-control' value={this.state.email} onChange={this.handleEmailChange}/>
                     </p>
                     <p className='text-right'>
