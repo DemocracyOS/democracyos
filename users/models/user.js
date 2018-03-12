@@ -13,6 +13,7 @@ const User = new mongoose.Schema({
   emailToken: String,
   role: String,
   emailVerified: { type: Boolean, default: false },
+  firstLogin: { type: Boolean, default: true },
   facebook: {
     id: String,
     accessToken: String,

@@ -23,6 +23,7 @@ export default class extends React.Component {
     return (
       <React.Fragment>
         <Head>
+          {console.log(this.props)}
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <script src="https://cdn.polyfill.io/v2/polyfill.min.js"/>
         </Head>
