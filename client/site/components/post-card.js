@@ -18,7 +18,11 @@ export const PostCard = ({ post }) => (
     </div>
     <div className='post-card-footer'>
       {post.author && post.author.name &&
-        <span className='post-card-footer-author'>{post.author.name}</span>
+        <Link prefetch href={{ pathname: '/profile', query: { id: post.author._id } }}>
+          <a>
+            <span className='post-card-footer-author'>{post.author.name}</span>
+          </a>
+        </Link>
       }
       <span className='post-card-footer-date'>{post.openingDate}</span>
     </div>
