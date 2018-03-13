@@ -10,11 +10,11 @@ const { log } = require('../main/logger')
 // Requires CRUD apis
 const router = express.Router()
 
-router.route('/posts/:id/graphs')
+router.route('/posts/:id/results')
   // GET reaction-instances
   .get(async (req, res, next) => {
     try {
-      const results = await ReactionInstance.listByPost({ id: req.params.id, limit: req.query.limit, page: req.query.page })
+      const results = await ReactionInstance.listResultsByPost({ id: req.params.id, limit: req.query.limit, page: req.query.page })
       let dataSet = []
       results.docs.forEach((instance) => {
         let options = new Set()
@@ -26,8 +26,8 @@ router.route('/posts/:id/graphs')
         })
         options.forEach((option) => {
           instanceResults.push({
-            value: option,
-            count: frequency[option]
+            option: option,
+            value: frequency[option]
           })
         })
         dataSet.push({
@@ -37,37 +37,37 @@ router.route('/posts/:id/graphs')
       })
 
       res.status(OK).json(dataSet)
-      // res.status(OK).json({
-      //   results: results.docs,
-      //   pagination: {
-      //     count: results.total,
-      //     page: results.page,
-      //     limit: results.limit
-      //   }
-      // })
     } catch (err) {
       next(err)
     }
   })
 
-router.route('/:id/graphs')
+router.route('/:id/result')
   // GET reaction-instances
   .get(async (req, res, next) => {
     try {
-      const results = await ReactionInstance.listByPost({ id: req.params.id, limit: req.query.limit, page: req.query.page })
-      let values = new Set()
-      let dataSet = []
-      results.forEach((element) => {
-        values.add(element.value)
+      const instance = await ReactionInstance.getResult({ id: req.params.id, limit: req.query.limit, page: req.query.page })
+      let dataSet = null
+      let options = new Set()
+      let frequency = []
+      let instanceResults = []
+      console.log(instance.docs)
+      instance.results.forEach((vote) => {
+        options.add(vote.value)
+        frequency[vote.value] = (frequency[vote.value] ? frequency[vote.value] : 0) + 1
       })
-      res.status(OK).json({
-        results: results.docs,
-        pagination: {
-          count: results.total,
-          page: results.page,
-          limit: results.limit
-        }
+      options.forEach((option) => {
+        instanceResults.push({
+          option: option,
+          value: frequency[option]
+        })
       })
+      dataSet = {
+        id: instance._id,
+        data: instanceResults
+      }
+
+      res.status(OK).json(dataSet)
     } catch (err) {
       next(err)
     }

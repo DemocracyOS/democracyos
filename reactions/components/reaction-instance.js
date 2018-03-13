@@ -1,6 +1,25 @@
 import React from 'react'
-import { ReferenceField, ShowButton, SimpleShowLayout, Show, ReferenceInput, Datagrid, FunctionField, NumberField, TextField, Create, Edit, SimpleForm, TextInput, SelectInput, DateInput, DateField, EditButton, DeleteButton, List, required, NumberInput, BooleanInput } from 'admin-on-rest'
+import {
+  ReferenceField,
+  ShowButton,
+  SimpleShowLayout,
+  Show,
+  ReferenceInput,
+  Datagrid,
+  FunctionField,
+  TextField,
+  Create,
+  Edit,
+  SimpleForm,
+  SelectInput,
+  DateField,
+  EditButton,
+  DeleteButton,
+  List,
+  required
+} from 'admin-on-rest'
 import FromCreateContentDialog from './FromCreateContentDialog'
+import ReactionResult from './ReactionResult'
 
 export const ReactionInstanceList = (props) => (
   <List {...props} title='List of reaction instances'>
@@ -28,7 +47,6 @@ export const ReactionInstanceCreate = (props) => (
       <ReferenceInput label='Select a rule' source='reactionId' reference='reaction-rule' allowEmpty validate={required}>
         <SelectInput optionText='name' />
       </ReferenceInput>
-
     </SimpleForm>
   </Create>
 )
@@ -42,14 +60,15 @@ export const ReactionInstanceEdit = (props) => (
 )
 
 export const ReactionInstanceShow = (props) => (
-  <Show {...props}>
+  <Show {...props} title='Reaction Instance'>
     <SimpleShowLayout>
+      <ReactionResult />
       <DateField source='createdAt' label='Created' />
       <FunctionField label='Results' render={(record) => `${record.results.length}`} />
-      <ReferenceField label='Select a content' source='resourceId' reference='posts' linkType='show'>
+      <ReferenceField label='Content title' source='resourceId' reference='posts' linkType='show'>
         <TextField source='title' />
       </ReferenceField>
-      <ReferenceField label='Select a rule' source='reactionId' reference='reaction-rule'>
+      <ReferenceField label='Name of the rule' source='reactionId' reference='reaction-rule'>
         <TextField source='name' />
       </ReferenceField>
       <ReferenceField label='Type of rule' source='reactionId' reference='reaction-rule' linkType={false}>

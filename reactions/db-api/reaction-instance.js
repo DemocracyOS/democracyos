@@ -66,10 +66,16 @@ exports.list = function list ({ filter, limit, page, ids }) {
  * @return {promise}
  */
 
-exports.listByPost = function listByPost ({ id, limit, page }) {
-  log.debug('get reactionInstances list by post id')
-  return ReactionInstance.paginate({ resourceId: ObjectId(id) }, { page, limit , populate: {path: 'results'} })
+exports.listResultsByPost = function listResultsByPost ({ id, limit, page }) {
+  log.debug('get reactionInstances results list by post id')
+  return ReactionInstance.paginate({ resourceId: ObjectId(id) }, { page, limit, populate: { path: 'results' } })
 }
+
+exports.getResult = function getResult ({ id, limit, page }) {
+  log.debug('get reactionInstance result')
+  return ReactionInstance.findOne({ _id: ObjectId(id) }).populate('results')
+}
+
 /**
  * Update reactionInstance
  * @method update
