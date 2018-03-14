@@ -6,10 +6,10 @@ import { PrivateProfile } from '../client/site/components/profile/private-profil
 import { PublicProfile } from '../client/site/components/profile/public-profile'
 
 export default class extends Page {
-  static async getInitialProps ({ req }) {
+  static async getInitialProps ({ req, query }) {
     let props = await super.getInitialProps({ req })
     const userId = (props.session.user.id).toString()
-    console.log(req.url.query)
+    props.id = query.id
     props.isOwner = userId === props.id
     return props
   }
