@@ -19,11 +19,60 @@ export class PrivateProfile extends React.Component {
     })
   }
 
+  handleInputChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    this.setState({
+      [name]: value
+    })
+  }
+
   render () {
     return (
-      <section className='private-profile-container'>
-        {console.log(this.props.user)}
-        <p>Soy un perfil privado</p>
+      <section className='row private-profile-container'>
+        <form className='col-md-6'>
+          <div className='form-group'>
+            <h2>My account</h2>
+          </div>
+          <div className='form-group'>
+            <label htmlFor='username'>
+              Username
+            </label>
+            <input className='form-control' type='text' name='username' value={this.state.username} onChange={this.handleInputChange} />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='name'>
+              Name
+            </label>
+            <input className='form-control' type='text' name='name' value={this.state.name}  onChange={this.handleInputChange} />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='bio'>
+              Bio
+            </label>
+            <textarea className='form-control' name='bio' rows='5' value={this.state.bio}  onChange={this.handleInputChange} />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='email'>
+              Email
+            </label>
+            <input className='form-control' type='email' name='email' value={this.props.user.email} disabled readOnly />
+          </div>
+          <div className='form-group text-center'>
+            <button className='btn btn-primary' type='submit'>
+              Apply changes
+            </button>
+          </div>
+        </form>
+        <style jsx>{`
+          .private-profile-container {
+            display: flex;
+            justify-content: center;
+          }
+          input:disabled {
+            cursor: not-allowed;
+          }
+        `}</style>
       </section>
     )
   }

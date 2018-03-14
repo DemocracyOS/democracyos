@@ -9,8 +9,8 @@ export default class extends Page {
   static async getInitialProps ({ req }) {
     let props = await super.getInitialProps({ req })
     const userId = (props.session.user.id).toString()
-    props.isOwner = userId === req.query.id
-    props.id = req.query.id
+    console.log(req.url.query)
+    props.isOwner = userId === props.id
     return props
   }
 
@@ -36,7 +36,7 @@ export default class extends Page {
         <Head {...this.props} />
         <Header settings={this.props.settings} user={this.props.session.user} />
         {!(!this.state.user) &&
-          <div className='row profile-wrapper'>
+          <div className='profile-wrapper'>
             {this.props.isOwner ? (
               <PrivateProfile user={this.state.user} />
             ) : (
