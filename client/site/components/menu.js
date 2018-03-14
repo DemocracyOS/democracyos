@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 export const Menu = ({ userId }) => (
   <nav className='main-menu' role='navigation'>
-    {console.log(userId)}
     <ul className='main-menu-list'>
       <li>
         <Link href='/admin'>
