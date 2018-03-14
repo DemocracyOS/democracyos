@@ -9,6 +9,7 @@ export default class RegisterForm extends React.Component {
       fistLogin: false,
       username: '',
       bio: '',
+      name: '',
       error: false
     }
   }
@@ -24,7 +25,8 @@ export default class RegisterForm extends React.Component {
     const body = {
       firstLogin: this.state.fistLogin,
       username: this.state.username,
-      bio: this.state.bio
+      bio: this.state.bio,
+      name: this.state.name
     }
     fetch(`/api/v1.0/users/${this.props.id}`, {
       'method': 'PUT',
@@ -68,6 +70,15 @@ export default class RegisterForm extends React.Component {
               placeholder='Username'
               name='username'
               value={this.state.username}
+              onChange={this.handleInputChange} />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='name'>Name:</label>
+            <input type='text'
+              className='form-control'
+              placeholder='Name'
+              name='name'
+              value={this.state.name}
               onChange={this.handleInputChange} />
           </div>
           <div className='form-group'>
