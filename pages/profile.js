@@ -44,6 +44,13 @@ export default class extends Page {
             )}
           </div>
         }
+        <style jsx>{`
+          .profile-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        `}</style>
       </div>
     )
   }
