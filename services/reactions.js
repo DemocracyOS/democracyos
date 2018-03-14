@@ -10,6 +10,45 @@ const { log } = require('../main/logger')
 // Requires CRUD apis
 const router = express.Router()
 
+const dataForLike = function (instance) {
+  let data = null
+  let userParticipants = instance.results.map((x) => x.userId)
+  data = {
+    id: instance._id,
+    reactionRule: instance.reactionId,
+    participants: userParticipants,
+    data: {
+      name: 'LIKE',
+      value: instance.results.length
+    }
+  }
+  return data
+}
+
+const dataForVote = function (instance) {
+  let data = null
+  let options = new Set()
+  let frequency = []
+  let instanceResults = []
+  let userParticipants = instance.results.map((x) => x.userId)
+  instance.results.forEach((vote) => {
+    options.add(vote.value)
+    frequency[vote.value] = (frequency[vote.value] ? frequency[vote.value] : 0) + 1
+  })
+  options.forEach((option) => {
+    instanceResults.push({
+      option: option,
+      value: frequency[option]
+    })
+  })
+  data = {
+    id: instance._id,
+    reactionRule: instance.reactionId,
+    data: instanceResults
+  }
+  return data
+}
+
 router.route('/posts/:id/results')
   // GET reaction-instances
   .get(async (req, res, next) => {
@@ -46,28 +85,22 @@ router.route('/:id/result')
   // GET reaction-instances
   .get(async (req, res, next) => {
     try {
-      const instance = await ReactionInstance.getResult({ id: req.params.id, limit: req.query.limit, page: req.query.page })
-      let dataSet = null
-      let options = new Set()
-      let frequency = []
-      let instanceResults = []
-      console.log(instance.docs)
-      instance.results.forEach((vote) => {
-        options.add(vote.value)
-        frequency[vote.value] = (frequency[vote.value] ? frequency[vote.value] : 0) + 1
-      })
-      options.forEach((option) => {
-        instanceResults.push({
-          option: option,
-          value: frequency[option]
-        })
-      })
-      dataSet = {
-        id: instance._id,
-        data: instanceResults
+      const instance = await ReactionInstance.getResult({ id: req.params.id })
+      let data = {}
+      switch (instance.reactionId.method) {
+        case 'LIKE':
+          data = dataForLike(instance)
+          break
+          // This is for future implementations..
+          // Depending of the type of rule, it needs to process data in a different way
+        case 'VOTE':
+          data = dataForVote(instance)
+          break
+        default:
+          break
       }
 
-      res.status(OK).json(dataSet)
+      res.status(OK).json(data)
     } catch (err) {
       next(err)
     }
