@@ -71,9 +71,9 @@ exports.listResultsByPost = function listResultsByPost ({ id, limit, page }) {
   return ReactionInstance.paginate({ resourceId: ObjectId(id) }, { page, limit, populate: { path: 'results' } })
 }
 
-exports.getResult = function getResult ({ id, limit, page }) {
+exports.getResult = function getResult ({ id }) {
   log.debug('get reactionInstance result')
-  return ReactionInstance.findOne({ _id: ObjectId(id) }).populate('results')
+  return ReactionInstance.findOne({ _id: ObjectId(id) }).populate({ path: 'results', populate: { path: 'userId', select: 'name _id' } }).populate('reactionId')
 }
 
 /**
