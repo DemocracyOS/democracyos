@@ -1,5 +1,18 @@
 import React from 'react'
-import { Datagrid, TextField, Create, Edit, SimpleForm, Filter, TextInput, SelectInput, DateInput, DateField, EditButton, DeleteButton, List, NumberInput, BooleanInput } from 'admin-on-rest'
+import { Datagrid,
+  TextField,
+  Create,
+  Edit,
+  SimpleForm,
+  Filter,
+  TextInput,
+  SelectInput,
+  DateInput,
+  DateField,
+  EditButton,
+  DeleteButton,
+  List,
+  NumberInput } from 'admin-on-rest'
 import ClosingDateField from './ClosingDateField'
 const METHODS = require('../enum/methods')
 // import BookIcon from 'material-ui/svg-icons/action/book'

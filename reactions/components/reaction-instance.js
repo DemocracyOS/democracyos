@@ -59,21 +59,32 @@ export const ReactionInstanceEdit = (props) => (
   </Edit>
 )
 
+const styleShow = {
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'auto auto'
+  }
+}
+
 export const ReactionInstanceShow = (props) => (
   <Show {...props} title='Reaction Instance'>
-    <SimpleShowLayout>
-      <ReactionResult />
-      <DateField source='createdAt' label='Created' />
-      <FunctionField label='Results' render={(record) => `${record.results.length}`} />
-      <ReferenceField label='Content title' source='resourceId' reference='posts' linkType='show'>
-        <TextField source='title' />
-      </ReferenceField>
-      <ReferenceField label='Name of the rule' source='reactionId' reference='reaction-rule'>
-        <TextField source='name' />
-      </ReferenceField>
-      <ReferenceField label='Type of rule' source='reactionId' reference='reaction-rule' linkType={false}>
-        <TextField source='method' />
-      </ReferenceField>
+    <SimpleShowLayout style={styleShow.grid}>
+      <SimpleShowLayout>
+        <DateField source='createdAt' label='Created' />
+        <FunctionField label='Results' render={(record) => `${record.results.length}`} />
+        <ReferenceField label='Content title' source='resourceId' reference='posts' linkType='show'>
+          <TextField source='title' />
+        </ReferenceField>
+        <ReferenceField label='Name of the rule' source='reactionId' reference='reaction-rule'>
+          <TextField source='name' />
+        </ReferenceField>
+        <ReferenceField label='Type of rule' source='reactionId' reference='reaction-rule' linkType={false}>
+          <TextField source='method' />
+        </ReferenceField>
+      </SimpleShowLayout>
+      <SimpleShowLayout>
+        <ReactionResult />
+      </SimpleShowLayout>
     </SimpleShowLayout>
   </Show>
 )
