@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Editor, EditorState, convertFromRaw } from 'draft-js'
 
 export default class extends React.Component {
@@ -18,7 +19,11 @@ export default class extends React.Component {
           <div className='post-author'>
             <div className='post-author-profile-pic' />
             <div className='post-author-text'>
-              <span className='post-author-name'>{post.author.name}</span>
+              <Link prefetch href={{ pathname: '/profile', query: { id: post.author._id } }}>
+                <a>
+                  <span className='post-author-name'>{post.author.name}</span>
+                </a>
+              </Link>
               <span className='post-date'>{post.openingDate}</span>
             </div>
           </div>
@@ -34,7 +39,11 @@ export default class extends React.Component {
           <div className='post-footer'>
             <div className='post-author-profile-pic' />
             <div className='post-author-text'>
-              <span className='post-author-name'>{post.author.name}</span>
+              <Link prefetch href={{ pathname: '/profile', query: { id: post.author._id } }}>
+                <a>
+                  <span className='post-author-name'>{post.author.name}</span>
+                </a>
+              </Link>
             </div>
           </div>
         </div>

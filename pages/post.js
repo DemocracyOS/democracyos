@@ -8,7 +8,7 @@ export default class extends Page {
   constructor (props) {
     super(props)
     this.state = {
-      post: null
+      post: false
     }
   }
 

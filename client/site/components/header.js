@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import Menu from './menu'
+import { Menu } from './menu'
 
 export default class Header extends React.Component {
   constructor (props) {
@@ -30,7 +30,7 @@ export default class Header extends React.Component {
         <div className='header-avatar-container'>
           <div className='avatar' onClick={this.handleMainMenu} />
           {this.state.menu &&
-            <Menu />
+            <Menu userId={this.props.user.id} />
           }
         </div>
         <style jsx>{`
@@ -68,5 +68,6 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
-  settings: PropTypes.object
+  settings: PropTypes.object,
+  user: PropTypes.object
 }

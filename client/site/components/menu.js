@@ -1,31 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-const links = [
-  {
-    name: 'Settings',
-    path: '/admin'
-  },
-  {
-    name: 'Profile',
-    path: '/'
-  },
-  {
-    name: 'Sign out',
-    path: '/'
-  }
-]
-
-export default () => (
+export const Menu = ({ userId }) => (
   <nav className='main-menu' role='navigation'>
     <ul className='main-menu-list'>
-      {links.map((li, i) =>
-        <li key={i}>
-          <Link href={li.path}>
-            <a>{li.name}</a>
-          </Link>
-        </li>
-      )}
+      <li>
+        <Link href='/admin'>
+          <a>Settings</a>
+        </Link>
+      </li>
+      <li>
+        <Link href={{ pathname: '/profile', query: { id: userId } }}>
+          <a>Profile</a>
+        </Link>
+      </li>
+      <li>
+        <Link href='/'>
+          <a>Sign Out</a>
+        </Link>
+      </li>
     </ul>
     <style jsx>{`
       .main-menu {
@@ -75,3 +69,7 @@ export default () => (
     `}</style>
   </nav>
 )
+
+Menu.propTypes = {
+  userId: PropTypes.string
+}
