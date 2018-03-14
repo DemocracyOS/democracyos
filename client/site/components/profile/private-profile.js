@@ -59,8 +59,8 @@ export class PrivateProfile extends React.Component {
 
   render () {
     return (
-      <section className='row private-profile-container'>
-        <form className='col-md-6' onSubmit={this.handleSubmit}>
+      <section className='private-profile-container'>
+        <form onSubmit={this.handleSubmit}>
           {this.state.success &&
             <div className='alert alert-success'>
               Changes have been successfully applied.
@@ -108,6 +108,9 @@ export class PrivateProfile extends React.Component {
           .private-profile-container {
             display: flex;
             justify-content: center;
+          }
+          form {
+            width: 640px;
           }
           input:disabled {
             cursor: not-allowed;
