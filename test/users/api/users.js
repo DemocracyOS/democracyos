@@ -23,7 +23,8 @@ describe('/api/v1.0/users', () => {
     username: 'test',
     name: 'Test T. Test',
     bio: 'test bio',
-    email: 'test@te.st'
+    email: 'test@te.st',
+    firstLogin: true
   }
 
   describe('#post', () => {
@@ -66,6 +67,7 @@ describe('/api/v1.0/users', () => {
       expect(res.body).to.have.property('name')
       expect(res.body).to.have.property('bio')
       expect(res.body).to.have.property('email')
+      expect(res.body).to.have.property('firstLogin')
     })
   })
 

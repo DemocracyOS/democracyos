@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
 import Router from 'next/router'
 import { NextAuth } from 'next-auth-client'
@@ -7,7 +6,8 @@ import { NextAuth } from 'next-auth-client'
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
     return {
-      session: await NextAuth.init({ force: true, req: req })
+      session: await NextAuth.init({ force: true, req: req }),
+      action: req.query.action
     }
   }
 
@@ -15,6 +15,10 @@ export default class extends React.Component {
     // Get latest session data after rendering on client then redirect.
     // The ensures client state is always updated after signing in or out.
     const session = await NextAuth.init({ force: true })
+    // If user is logging in and it's the first time redirect to /register
+    if (this.props.action === 'signin' && this.props.session.user.firstLogin) {
+      Router.push('/register')
+    }
     Router.push('/')
   }
 
@@ -23,8 +27,8 @@ export default class extends React.Component {
     return (
       <React.Fragment>
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
-          <script src="https://cdn.polyfill.io/v2/polyfill.min.js"/>
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <script src='https://cdn.polyfill.io/v2/polyfill.min.js' />
         </Head>
         <style jsx global>{`
           body{ 
@@ -67,9 +71,9 @@ export default class extends React.Component {
             100% {transform: rotate(360deg); }
           }
         `}</style>
-        <a href="/" className="circle-loader">
-          <svg className="circle" width="60" height="60" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="15"/>
+        <a href='/' className='circle-loader'>
+          <svg className='circle' width='60' height='60' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+            <circle cx='30' cy='30' r='15' />
           </svg>
         </a>
       </React.Fragment>
