@@ -5,6 +5,7 @@ import Header from '../client/site/components/header'
 import BrowseGrid from '../client/site/components/browse/browse-grid'
 
 export default class extends Page {
+  
   render () {
     return (
       <div className='container'>

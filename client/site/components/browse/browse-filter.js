@@ -5,7 +5,7 @@ export default class extends React.Component {
     return (
       <nav className='browse-filter-wrapper'>
         <div className='search-box'>
-          <h6>Search by words</h6>
+          <h5>Search by words</h5>
           <div>
             <input type='text' placeholder='Serch by words' name='search' />
             <button>
@@ -14,7 +14,7 @@ export default class extends React.Component {
           </div>
         </div>
         <div className='sort-box'>
-          <h6>Sort by</h6>
+          <h5>Sort by</h5>
           <select>
             <option>
               Newest first
@@ -25,8 +25,8 @@ export default class extends React.Component {
           </select>
         </div>
         <div className='filter-box'>
-          <h6>Filter by date</h6>
-          <div>
+          <h5>Filter by date</h5>
+          <div className='filter-box-container'>
             <label>From:</label>
             <input type='date' />
             <label>To:</label>
@@ -39,6 +39,12 @@ export default class extends React.Component {
         <style jsx>{`
           .browse-filter-wrapper {
             width: 25%;
+          }
+          .filter-box-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding-right: 30px;
           }
         `}</style>
       </nav>
