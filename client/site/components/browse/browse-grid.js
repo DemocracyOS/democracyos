@@ -1,7 +1,8 @@
 import React from 'react'
-import PostCard from './post-card'
+import BrowseFilter from './browse-filter'
+import BrowseCard from './browse-card'
 
-export default class PostGrid extends React.Component {
+export default class BrowseGrid extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -53,21 +54,35 @@ export default class PostGrid extends React.Component {
 
   render () {
     return (
-      <section className='post-grid'>
-        <h2>Posts</h2>
-        {this.state.posts &&
-          <div className='post-grid-card-container'>
-            {this.state.posts.map((p, i) =>
-              <PostCard post={p}
-                key={i} />
-            )}
-          </div>
-        }
-        { this.state.posts && this.state.posts.length >= this.state.count &&
-          <h5>You have reached all the posts</h5>
-        }
+      <section className='browse-grid'>
+        <div className='browse-grid-header'>
+          <h2>Browse</h2>
+        </div>
+        <div className='browse-grid-body'>
+          <BrowseFilter />
+          {this.state.posts &&
+            <div className='browse-grid-card-container'>
+              {this.state.posts.map((p, i) =>
+                <BrowseCard post={p}
+                  key={i} />
+              )}
+            </div>
+          }
+          { this.state.posts && this.state.posts.length >= this.state.count &&
+            <h5>You have reached all the posts</h5>
+          }
+        </div>
         <style jsx>{`
-          .post-grid-card-container {
+          .browse-grid {
+            padding: 0 20px;
+          }
+          .browse-grid-body {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+          }
+          .browse-grid-card-container {
+            width: 75%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -77,7 +92,7 @@ export default class PostGrid extends React.Component {
             text-align: center;
           }
           @media screen and (max-width: 767px) {
-            .post-grid-card-container {
+            .browse-grid-card-container {
               justify-content: center;
             }
           }
