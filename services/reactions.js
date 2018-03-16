@@ -55,28 +55,43 @@ router.route('/posts/:id/results')
   .get(async (req, res, next) => {
     try {
       const results = await ReactionInstance.listResultsByPost({ id: req.params.id, limit: req.query.limit, page: req.query.page })
-      let dataSet = []
+      let dataArray = []
       results.docs.forEach((instance) => {
-        let options = new Set()
-        let frequency = []
-        let instanceResults = []
-        instance.results.forEach((vote) => {
-          options.add(vote.value)
-          frequency[vote.value] = (frequency[vote.value] ? frequency[vote.value] : 0) + 1
-        })
-        options.forEach((option) => {
-          instanceResults.push({
-            option: option,
-            value: frequency[option]
-          })
-        })
-        dataSet.push({
-          id: instance._id,
-          data: instanceResults
-        })
+        let dataInstance = {}
+        // let options = new Set()
+        // let frequency = []
+        // let instanceResults = []
+        // instance.results.forEach((vote) => {
+        //   options.add(vote.value)
+        //   frequency[vote.value] = (frequency[vote.value] ? frequency[vote.value] : 0) + 1
+        // })
+        // options.forEach((option) => {
+        //   instanceResults.push({
+        //     option: option,
+        //     value: frequency[option]
+        //   })
+        // })
+        // dataSet.push({
+        //   id: instance._id,
+        //   data: instanceResults
+        // })
+        console.log(instance)
+        switch (instance.reactionId.method) {
+          case 'LIKE':
+            dataInstance = dataForLike(instance)
+            break
+          // This is for future implementations..
+          // Depending of the type of rule, it needs to process data in a different way
+          case 'VOTE':
+            dataInstance = dataForChoose(instance)
+            break
+          default:
+            break
+        }
+        dataArray.push(dataInstance)
       })
 
-      res.status(OK).json(dataSet)
+      res.status(OK).json(dataArray)
     } catch (err) {
       next(err)
     }
