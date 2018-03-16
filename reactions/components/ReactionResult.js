@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardText
 } from 'material-ui'
+import { Link } from 'react-router-dom'
 
 class ReactionResult extends React.Component {
   constructor (props) {
@@ -71,7 +72,7 @@ class ReactionResult extends React.Component {
     const listUsers = this.state.instanceResult.participants.length > 0
       ? this.state.instanceResult.participants.map((x) => {
         return (
-          <ListItem primaryText={x.name} />
+          <ListItem containerElement={<Link to={'/admin/users/' + x._id} />} primaryText={x.name} />
         )
       }) : (
         <p>No users have participated yet</p>
