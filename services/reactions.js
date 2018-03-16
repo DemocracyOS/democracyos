@@ -25,7 +25,7 @@ const dataForLike = function (instance) {
   return data
 }
 
-const dataForVote = function (instance) {
+const dataForChoose = function (instance) {
   let data = null
   let options = new Set()
   let frequency = []
@@ -44,7 +44,8 @@ const dataForVote = function (instance) {
   data = {
     id: instance._id,
     reactionRule: instance.reactionId,
-    data: instanceResults
+    data: instanceResults,
+    participants: userParticipants
   }
   return data
 }
@@ -94,7 +95,7 @@ router.route('/:id/result')
           // This is for future implementations..
           // Depending of the type of rule, it needs to process data in a different way
         case 'VOTE':
-          data = dataForVote(instance)
+          data = dataForChoose(instance)
           break
         default:
           break
