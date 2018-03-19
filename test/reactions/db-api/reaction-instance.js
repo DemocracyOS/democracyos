@@ -16,7 +16,7 @@ const reactionInstance = require('../../../reactions/db-api/reaction-instance')
 const sampleReactionInstance = {
   reactionId: sampleReactionRule._id,
   resourceType: 'Article',
-  resourceId: '000001',
+  resourceId: ObjectId('abc123abc123'),
   results: []
 }
 
@@ -118,6 +118,48 @@ describe('db-api.reactionInstance', function () {
           ReactionInstanceMock.verify()
           ReactionInstanceMock.restore()
           sinon.assert.calledOnce(remove)
+        })
+    })
+  })
+
+  describe('#listResultsByPost', function () {
+    it('should list all the reactions instances ', function () {
+      const ReactionInstanceMock = sinon.mock(ReactionInstance)
+
+      ReactionInstanceMock
+        .expects('find').withArgs({ resourceId: ObjectId('abc123abc123') })
+        .chain('populate', { path: 'results', populate: { path: 'userId', select: 'name _id' } })
+        .chain('populate', 'reactionId')
+        .resolves(sampleReactionInstance)
+
+      return reactionInstance.listResultsByPost(ObjectId('abc123abc123'))
+        .then((result) => {
+          ReactionInstanceMock.verify()
+          ReactionInstanceMock.restore()
+          assert.equal(result, sampleReactionInstance)
+        })
+    })
+  })
+
+  describe('#getResult', function () {
+    it('should get the result of a reaction instance', function () {
+      const ReactionInstanceMock = sinon.mock(ReactionInstance)
+
+      ReactionInstanceMock
+        .expects('findOne')
+        .withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
+        .chain('populate', { path: 'results', populate: { path: 'userId', select: 'name _id' } })
+        .chain('populate', 'reactionId')
+        .chain('exec')
+        .resolves(sampleReactionInstance)
+
+      return reactionInstance.getResult(ObjectId('5a5e29d948a9cc2fbeed02fa'))
+        .then((result) => {
+          console.log(result)
+          console.log(sampleReactionInstance)
+          ReactionInstanceMock.verify()
+          ReactionInstanceMock.restore()
+          assert.equal(result, sampleReactionInstance)
         })
     })
   })
