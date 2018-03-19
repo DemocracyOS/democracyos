@@ -54,25 +54,46 @@ exports.get = function get (id) {
  * @return {promise}
  */
 
-exports.list = function list ({ filter, limit, page, ids }) {
+exports.list = function list ({ filter, sort, limit, page, ids }) {
   log.debug('post db-api list')
+
+  let query = {}
+  let options = {
+    page: page,
+    limit: limit,
+    populate: { path: 'author', select: 'name' }
+  }
+
+  if (sort !== undefined) {
+    let sortToJSON = JSON.parse(sort)
+    options.sort = { [sortToJSON[0]]: sortToJSON[1].toLowerCase() }
+  }
 
   if (filter !== undefined) {
     let filterToJSON = JSON.parse(filter)
+    let filters = {}
     if (filterToJSON.title) {
-      filterToJSON.title = { $regex: filterToJSON.title, $options: 'i' }
+      filters.title = { $regex: filterToJSON.title, $options: 'i' }
     }
-    return Post.paginate(filterToJSON, { page, limit, populate: { path: 'author', select: 'name' } })
+    if (filterToJSON.openingDate) {
+      filters.openingDate = { '$gte': filterToJSON.openingDate[0], '$lt': filterToJSON.openingDate[1] }
+    }
+    if (filterToJSON.author) {
+      filters.author = { _id: ObjectId(filterToJSON.author) }
+    }
+    query = filters
   }
+
   if (ids) {
     const idsToArray = JSON.parse(ids)
     idsToArray.map((id) => {
       return ObjectId(id)
     })
-    return Post.paginate({ '_id': { $in: idsToArray } }, { page, limit, populate: { path: 'author', select: 'name' } })
+    query._id = { $in: idsToArray }
   }
+
   return Post
-    .paginate({}, { page, limit, populate: { path: 'author', select: 'name' } })
+    .paginate(query, options)
 }
 /**
  * Update post

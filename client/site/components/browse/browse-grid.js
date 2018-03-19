@@ -1,4 +1,5 @@
 import React from 'react'
+import { stringify } from 'query-string'
 import BrowseFilter from './browse-filter'
 import BrowseCard from './browse-card'
 
@@ -30,10 +31,10 @@ export default class BrowseGrid extends React.Component {
   handleFetch = (filters) => {
     const query = {
       sort: filters.sort,
-      page: JSON.stringify(this.state.page),
+      page: this.state.page,
       filter: JSON.stringify(filters.filter)
     }
-    fetch(`/api/v1.0/posts?${JSON.stringify(query)}`)
+    fetch(`/api/v1.0/posts?${stringify(query)}`)
       .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((err) => console.error(err))

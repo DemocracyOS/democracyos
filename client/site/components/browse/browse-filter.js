@@ -34,7 +34,7 @@ class BrowseFilter extends React.Component {
       filters.filter.title = this.state.word
     }
     if (this.state.dateFrom !== '' && this.state.dateTo !== '') {
-      filters.filter.date = [new Date(this.state.dateFrom), new Date(this.state.dateTo)]
+      filters.filter.openingDate = [new Date(this.state.dateFrom), new Date(this.state.dateTo)]
     }
     this.props.handleFetch(filters)
   }
