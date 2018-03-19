@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import createHistory from 'history/createBrowserHistory'
 import { stringify, parse } from 'query-string'
 import BrowseFilter from './browse-filter'
 import BrowseCard from './browse-card'
 
-export default class BrowseGrid extends React.Component {
+class BrowseGrid extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -128,3 +129,9 @@ export default class BrowseGrid extends React.Component {
     )
   }
 }
+
+BrowseGrid.propTypes = {
+  query: PropTypes.object
+}
+
+export default BrowseGrid

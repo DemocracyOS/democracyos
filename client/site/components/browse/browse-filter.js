@@ -12,6 +12,25 @@ class BrowseFilter extends React.Component {
     }
   }
 
+  deleteDates = () => {
+    this.setState({
+      dateFrom: '',
+      dateTo: ''
+    }, () => this.sendFilters())
+  }
+
+  deleteSort = () => {
+    this.setState({
+      sort: '["id", "DESC"]'
+    }, () => this.sendFilters())
+  }
+
+  deleteWord = () => {
+    this.setState({
+      word: ''
+    }, () => this.sendFilters())
+  }
+
   handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -44,6 +63,11 @@ class BrowseFilter extends React.Component {
       <nav className='browse-filter-wrapper'>
         <div className='search-box'>
           <h5>Search by words</h5>
+          {this.state.word !== '' &&
+            <button onClick={this.deleteWord}>
+              x
+            </button>
+          }
           <div>
             <input type='text' placeholder='Search by words' name='word' value={this.state.word} onChange={this.handleChange} />
             <button onClick={this.handleSubmit}>
@@ -53,17 +77,27 @@ class BrowseFilter extends React.Component {
         </div>
         <div className='sort-box'>
           <h5>Sort by</h5>
+          {this.state.sort !== '["id", "DESC"]' &&
+            <button onClick={this.deleteSort}>
+              x
+            </button>
+          }
           <select name='sort' onChange={this.handleChange} value={this.state.sort}>
-            <option value={'["date", "ASC"]'}>
+            <option value={'["openingDate", "DESC"]'}>
               Newest first
             </option>
-            <option value={'["date", "DESC"]'}>
+            <option value={'["openingDate", "ASC"]'}>
               Older first
             </option>
           </select>
         </div>
         <div className='filter-box'>
           <h5>Filter by date</h5>
+          {this.state.dateFrom !== '' && this.state.dateTo !== '' &&
+            <button onClick={this.deleteDates}>
+              x
+            </button>
+          }
           <div className='filter-box-container'>
             <form onSubmit={this.handleSubmit}>
               <label htmlFor='dateFrom'>From:</label>
