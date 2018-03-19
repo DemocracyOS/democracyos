@@ -62,63 +62,127 @@ class BrowseFilter extends React.Component {
     return (
       <nav className='browse-filter-wrapper'>
         <div className='search-box'>
-          <h5>Search by words</h5>
-          {this.state.word !== '' &&
-            <button onClick={this.deleteWord}>
-              x
-            </button>
-          }
-          <div>
-            <input type='text' placeholder='Search by words' name='word' value={this.state.word} onChange={this.handleChange} />
-            <button onClick={this.handleSubmit}>
+          <div className='browse-filter-header'>
+            <h5>Search</h5>
+            {this.state.word !== '' &&
+              <button className='browse-filter-delete-button' onClick={this.deleteWord}>
+                <span>
+                  &times;
+                </span>
+              </button>
+            }
+          </div>
+          <div className='form-group'>
+            <input type='text' className='form-control' placeholder='Search by words' name='word' value={this.state.word} onChange={this.handleChange} />
+          </div> 
+          <div className='btn-container text-center'>
+            <button className='btn btn-primary' onClick={this.handleSubmit}>
               Search
             </button>
           </div>
         </div>
         <div className='sort-box'>
-          <h5>Sort by</h5>
-          {this.state.sort !== '["id", "DESC"]' &&
-            <button onClick={this.deleteSort}>
-              x
-            </button>
-          }
-          <select name='sort' onChange={this.handleChange} value={this.state.sort}>
-            <option value={'["openingDate", "DESC"]'}>
+          <div className='browse-filter-header'>
+            <h5>Sort</h5>
+            {this.state.sort !== '["id", "DESC"]' &&
+              <button className='browse-filter-delete-button' onClick={this.deleteSort}>
+                <span>
+                  &times;
+                </span>
+              </button>
+            }
+          </div>
+          <select name='sort' className='custom-select form-group' onChange={this.handleChange} value={this.state.sort}>
+            <option selected disabled value='["id", "DESC"]'>
+              Choose an option
+            </option>
+            <option value='["openingDate", "DESC"]'>
               Newest first
             </option>
-            <option value={'["openingDate", "ASC"]'}>
+            <option value='["openingDate", "ASC"]'>
               Older first
             </option>
           </select>
         </div>
         <div className='filter-box'>
-          <h5>Filter by date</h5>
-          {this.state.dateFrom !== '' && this.state.dateTo !== '' &&
-            <button onClick={this.deleteDates}>
-              x
-            </button>
-          }
-          <div className='filter-box-container'>
-            <form onSubmit={this.handleSubmit}>
+          <div className='browse-filter-header'>
+            <h5>Filter by date</h5>
+            {this.state.dateFrom !== '' && this.state.dateTo !== '' &&
+              <button className='browse-filter-delete-button' onClick={this.deleteDates}>
+                <span>  
+                  &times;
+                </span>
+              </button>
+            }
+          </div>
+          <form className='filter-box-container' onSubmit={this.handleSubmit}>
+            <div className='form-group'>
               <label htmlFor='dateFrom'>From:</label>
-              <input type='date' name='dateFrom' value={this.state.dateFrom} onChange={this.handleChange} />
+              <div className='input-group date'>
+                <input type='date'
+                  name='dateFrom'
+                  value={this.state.dateFrom} 
+                  onChange={this.handleChange}
+                  className='form-control' />
+                <span className='input-group-addon'>
+                  <span className='glyphicon glyphicon-calendar' />
+                </span>
+              </div>
+            </div>
+            <div className='form-group'>
               <label htmlFor='dateTo'>To:</label>
-              <input type='date' name='dateTo' value={this.state.dateTo} onChange={this.handleChange} />
-              <button type='submit'>
+              <div className='input-group date'>
+                <input type='date'
+                  name='dateTo'
+                  value={this.state.dateTo} 
+                  onChange={this.handleChange}
+                  className='form-control' />
+                <span className='input-group-addon'>
+                  <span className='glyphicon glyphicon-calendar' />
+                </span>
+              </div>
+            </div>
+            <div className='button-container text-center'>
+              <button className='btn btn-primary' type='submit'>
                 Apply
               </button>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
         <style jsx>{`
           .browse-filter-wrapper {
             width: 25%;
+            padding-right: 25px;
           }
           .filter-box-container {
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
             padding-right: 30px;
+          }
+          .browse-filter-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 10px;
+          }
+          .browse-filter-delete-button {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: var(--primary);
+            border: 0px;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 2px 5px;
+            line-height: normal;
+          }
+          .browse-filter-delete-button span {
+            color: var(--white);
+          }
+          .browse-filter-delete-button:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
           }
         `}</style>
       </nav>
