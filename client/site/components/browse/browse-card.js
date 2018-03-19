@@ -6,7 +6,7 @@ const BrowseCard = ({ post }) => (
   <section className='browse-card-wrapper'>
     <div>
       <span>{post.author.name}</span>
-      <span>{post.createdAt}</span>
+      <span>{post.openingDate}</span>
     </div>
     <div className='browse-card-body'>
       <h3>{post.title}</h3>
