@@ -32,6 +32,7 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
         limit: JSON.stringify(perPage),
         filter: JSON.stringify(params.filter)
       }
+      console.log(query)
       url = `${API_URL}/${resource}?${stringify(query)}`
       break
     }
