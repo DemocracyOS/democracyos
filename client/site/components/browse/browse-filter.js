@@ -36,7 +36,7 @@ class BrowseFilter extends React.Component {
     const value = e.target.value
     this.setState({
       [name]: value
-    }, () => name === 'sort' && this.sendFilters())
+    })
   }
 
   handleSubmit = (e) => {
@@ -74,7 +74,7 @@ class BrowseFilter extends React.Component {
           </div>
           <div className='form-group'>
             <input type='text' className='form-control' placeholder='Search by words' name='word' value={this.state.word} onChange={this.handleChange} />
-          </div> 
+          </div>
           <div className='btn-container text-center'>
             <button className='btn btn-primary' onClick={this.handleSubmit}>
               Search
@@ -93,7 +93,7 @@ class BrowseFilter extends React.Component {
             }
           </div>
           <select name='sort' className='custom-select form-group' onChange={this.handleChange} value={this.state.sort}>
-            <option selected disabled value='["id", "DESC"]'>
+            <option defaultValue disabled value='["id", "DESC"]'>
               Choose an option
             </option>
             <option value='["openingDate", "DESC"]'>
@@ -103,13 +103,18 @@ class BrowseFilter extends React.Component {
               Older first
             </option>
           </select>
+          <div className='button-container text-center'>
+            <button className='btn btn-primary' type='submit' onClick={this.sendFilters}>
+              Apply
+            </button>
+          </div>
         </div>
         <div className='filter-box'>
           <div className='browse-filter-header'>
             <h5>Filter by date</h5>
             {this.state.dateFrom !== '' && this.state.dateTo !== '' &&
               <button className='browse-filter-delete-button' onClick={this.deleteDates}>
-                <span>  
+                <span>
                   &times;
                 </span>
               </button>
@@ -121,7 +126,7 @@ class BrowseFilter extends React.Component {
               <div className='input-group date'>
                 <input type='date'
                   name='dateFrom'
-                  value={this.state.dateFrom} 
+                  value={this.state.dateFrom}
                   onChange={this.handleChange}
                   className='form-control' />
                 <span className='input-group-addon'>
@@ -134,7 +139,7 @@ class BrowseFilter extends React.Component {
               <div className='input-group date'>
                 <input type='date'
                   name='dateTo'
-                  value={this.state.dateTo} 
+                  value={this.state.dateTo}
                   onChange={this.handleChange}
                   className='form-control' />
                 <span className='input-group-addon'>
@@ -183,6 +188,9 @@ class BrowseFilter extends React.Component {
           .browse-filter-delete-button:hover {
             background-color: #0069d9;
             border-color: #0062cc;
+          }
+          .button-container {
+            margin-bottom: 10px;
           }
         `}</style>
       </nav>

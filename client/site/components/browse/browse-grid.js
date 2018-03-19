@@ -64,7 +64,6 @@ class BrowseGrid extends React.Component {
   handlePagination = () => {
     let query = parse(location.search)
     query.page = this.state.page + 1
-    console.log(query)
     const url = `/api/v1.0/posts?${stringify(query)}`
     fetch(url)
       .then((res) => res.json())
@@ -74,7 +73,7 @@ class BrowseGrid extends React.Component {
           page: query.page
         })
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.error(err))
   }
 
   render () {
@@ -85,19 +84,21 @@ class BrowseGrid extends React.Component {
         </div>
         <div className='browse-grid-body'>
           <BrowseFilter handleFetch={this.handleFetch} />
-          {this.state.posts &&
-            <div className='browse-grid-card-container'>
-              {this.state.posts.map((p, i) =>
-                <BrowseCard post={p}
-                  key={i} />
-              )}
-            </div>
-          }
-          { this.state.posts && this.state.posts.length >= this.state.count &&
-            <div className='browse-grid-footer'>
-              <h5>{this.state.count > 0 ? 'You have reached all the posts' : 'Sorry, no posts matched your criteria'}</h5>
-            </div>
-          }
+          <div>
+            {this.state.posts &&
+              <div className='browse-grid-card-container'>
+                {this.state.posts.map((p, i) =>
+                  <BrowseCard post={p}
+                    key={i} />
+                )}
+              </div>
+            }
+            { this.state.posts && this.state.posts.length >= this.state.count &&
+              <div className='browse-grid-footer'>
+                <h5>{this.state.count > 0 ? 'You have reached all the posts' : 'Sorry, no posts matched your criteria'}</h5>
+              </div>
+            }
+          </div>
         </div>
         <style jsx>{`
           .browse-grid {
@@ -105,15 +106,14 @@ class BrowseGrid extends React.Component {
           }
           .browse-grid-body {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-content: space-betweeen;;
             margin-top: 40px;
           }
           .browse-grid-card-container {
-            width: 75%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            padding-left: 10px;
           }
           h5 {
             margin: 40px 0;
