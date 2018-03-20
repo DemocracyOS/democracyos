@@ -118,9 +118,9 @@ describe('/api/v1.0/reaction-instance', () => {
       const res = await chai.request('http://localhost:3000')
         .delete(`/api/v1.0/reaction-instance/${newReactionInstance.id}`)
 
-        expect(res).to.have.status(OK)
-        expect(res.body).to.be.a('object')
-        expect(res.body).to.have.property('id')
+      expect(res).to.have.status(OK)
+      expect(res.body).to.be.a('object')
+      expect(res.body).to.have.property('id')
     })
   })
 })

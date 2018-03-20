@@ -6,10 +6,10 @@ const mongoosePaginate = require('mongoose-paginate')
  */
 
 const ReactionInstance = new mongoose.Schema({
-  reactionId: { type: mongoose.Schema.Types.ObjectId, refPath: 'reactionRule' },
+  reactionId: { type: mongoose.Schema.Types.ObjectId, ref: 'ReactionRule' },
   resourceType: String,
   resourceId: String,
-  results: [{}]
+  results: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ReactionVote' }]
 }, { timestamps: true })
 
 /**

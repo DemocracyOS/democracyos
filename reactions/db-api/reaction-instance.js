@@ -56,6 +56,35 @@ exports.list = function list ({ filter, limit, page, ids }) {
   return ReactionInstance
     .paginate({}, { page, limit })
 }
+
+/**
+ * Update listResultsByPost
+ * @method list
+ * @param  {object} id
+ * @param  {string} limit
+ * @param  {object} page
+ * @return {promise}
+ */
+
+exports.listResultsByPost = function listResultsByPost ({ id }) {
+  log.debug('get reactionInstances results list by post id')
+  return ReactionInstance.find({ resourceId: ObjectId(id) }).populate({ path: 'results', populate: { path: 'userId', select: 'name _id' } }).populate('reactionId')
+}
+
+/**
+ * Update getResult
+ * @method get
+ * @param  {object} id
+ * @param  {string} limit
+ * @param  {object} page
+ * @return {promise}
+ */
+
+exports.getResult = function getResult ({ id }) {
+  log.debug('get reactionInstance result')
+  return ReactionInstance.findOne({ _id: ObjectId(id) }).populate({ path: 'results', populate: { path: 'userId', select: 'name _id' } }).populate('reactionId')
+}
+
 /**
  * Update reactionInstance
  * @method update

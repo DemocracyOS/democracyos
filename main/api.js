@@ -21,6 +21,7 @@ router.use('/reaction-rule', require('../reactions/api/reaction-rule'))
 router.use('/reaction-instance', require('../reactions/api/reaction-instance'))
 router.use('/reaction-vote', require('../reactions/api/reaction-vote'))
 router.use('/posts', require('../cms/api/posts'))
+router.use('/services/reactions', require('../services/reactions'))
 
 // Catch 404 and forward to error handler.
 router.use((req, res, next) => {
