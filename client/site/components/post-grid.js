@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostCard } from './post-card'
+import PostCard from './post-card'
 
 export default class PostGrid extends React.Component {
   constructor (props) {
@@ -30,7 +30,7 @@ export default class PostGrid extends React.Component {
 
   onScroll = () => {
     if (
-      (window.innerHeight + window.scrollY) >= (document.body.offsetHeight ) &&
+      (window.innerHeight + window.scrollY) >= (document.body.offsetHeight) &&
       this.state.posts
     ) {
       this.handlePagination()

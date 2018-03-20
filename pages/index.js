@@ -49,7 +49,7 @@ export class SignInMessage extends React.Component {
         <React.Fragment>
           <p><Link href='/auth'><a className='btn btn-secondary'>Manage Account</a></Link></p>
           <form id='signout' method='post' action='/auth/signout' onSubmit={this.handleSignOutSubmit}>
-            <input name='_csrf' type='hidden' value={this.props.session.csrfToken}/>
+            <input name='_csrf' type='hidden' value={this.props.session.csrfToken} />
             <button type='submit' className='btn btn-outline-secondary'>Sign out</button>
           </form>
         </React.Fragment>

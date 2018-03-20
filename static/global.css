@@ -19,7 +19,13 @@ body {
   background-color: var(--white);
 }
 
+a {
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+}
 a:hover {
   cursor: pointer;
+  color: var(--black);
   text-decoration: none;
 }
