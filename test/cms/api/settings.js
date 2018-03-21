@@ -2,7 +2,8 @@ const chai = require('chai')
 const chaiHttp = require('chai-http')
 const {
   OK,
-  CREATED
+  CREATED,
+  BAD_REQUEST
 } = require('http-status')
 const Setting = require('../../../cms/models/setting')
 
@@ -30,6 +31,22 @@ describe('/api/v1.0/settings', () => {
         .send(sampleSetting)
 
       expect(res).to.have.status(CREATED)
+    })
+  })
+
+  describe('#post /error/400', () => {
+    it('should return an error if a setting is already created', async () => {
+      let newSetting = await(new Setting(sampleSetting)).save()
+      try {
+        const res = await chai.request('http://localhost:3000')
+          .post('/api/v1.0/settings')
+          .send(sampleSetting)
+        expect.fail(null, null, 'Should not succeed.')
+      } catch (err) {
+        expect(err).to.have.status(BAD_REQUEST)
+        expect(err).to.have.property('message')
+        expect(err.message).to.be.eql('Bad Request')
+      }
     })
   })
 
