@@ -24,7 +24,7 @@ const PostFilters = (props) => (
 )
 
 export const PostList = (props) => (
-  <List {...props} filters={<PostFilters />}>
+  <List {...props} filters={<PostFilters />} resource='posts'>
     <Datagrid>
       <TextField source='title' label='Title' />
       <TextField source='description' label='Description' />
