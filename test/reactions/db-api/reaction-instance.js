@@ -155,8 +155,6 @@ describe('db-api.reactionInstance', function () {
 
       return reactionInstance.getResult(ObjectId('5a5e29d948a9cc2fbeed02fa'))
         .then((result) => {
-          console.log(result)
-          console.log(sampleReactionInstance)
           ReactionInstanceMock.verify()
           ReactionInstanceMock.restore()
           assert.equal(result, sampleReactionInstance)
