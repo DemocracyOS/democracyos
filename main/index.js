@@ -38,6 +38,10 @@ module.exports = (async () => {
     // Apply API routes
     server.use('/api/v1.0', require('./api'))
 
+    server.get('/admin/*', (req, res) => {
+      app.render(req, res, '/admin')
+    })
+
     // Init authentication and next server
     await nextAuth(app, {
       sessionSecret: SESSION_SECRET,
