@@ -4,8 +4,8 @@
       "NOT_FOUND": "Resource not found",
       "MISSING_PARAM": "Paramether is missing",
       "PARAM_LENGTH": "Paramether is too long" ,
-      "SETTINGS_NOT_INIT": "Los ajustes no fueron configurados",
-      "SETTINGS_INIT": "Los ajustes ya fueron configurados" 
+      "SETTINGS_NOT_INIT": "Settings have not been initialized",
+      "SETTINGS_INIT": "Settings have already been initialized" 
     },
     "index": {
       "title": "DemocracyOS"
@@ -18,21 +18,13 @@
       "settings": "settings",
       "posts": "Posts",
       "reactions": "Reactions",
+      "reaction-rules": "Reaction rules",
+      "reaction-instances": "Reactions instances",
       "users": "Users",
       "profile": "Profile",
       "create": "Create",
       "edit": "Edit",
-      "delete": "Delete",
-      "refresh": "Refresh",
-      "content": "Content",
-      "workingprogress": "Work in progress",
-      "manage": "manage",
-      "signIn": "Sign In",
-      "signOut": "Sign Out"
-    },
-    "posts" : {
-      "openingDate": "hola",
-      "closingDate": "chau"
-     }
+      "delete": "Delete"
+    }
   }
 }

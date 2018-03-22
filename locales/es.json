@@ -18,22 +18,14 @@
       "settings": "Ajustes",
       "posts": "Publicaciones",
       "reactions": "Reacciones",
+      "reaction-rules": "Reglas de reacciones",
+      "reaction-instances": "Reglas de instancias",
       "users": "Usuarios",
       "profile": "Perfil",
       "create": "Crear",
       "edit": "Editar",
       "delete": "Borrar",
-      "refresh": "Actualizar",
-      "content": "Contenido",
-      "workingprogress": "Sitio en construcción",
-      "manage": "manage",
-      "signIn": "Sign In",
-      "signOut": "Sign Out"
-
-    },
-    "posts" : {
-      "openingDate": "hola",
-      "closingDate": "chau"
-     }
+      ""
+    }
   }
 }
