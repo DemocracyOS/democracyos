@@ -4,7 +4,7 @@ import { ViewTitle } from 'admin-on-rest/lib/mui'
 
 export default () => (
   <Card>
-    <ViewTitle title="Welcome" />
+    <ViewTitle title='Welcome' />
     <CardText>Lorem ipsum sic dolor amet...</CardText>
   </Card>
 )

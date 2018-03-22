@@ -3,5 +3,5 @@ import { Route } from 'react-router-dom'
 import { SettingsEdit } from './settings-edit'
 
 export default [
-  <Route exact path='/admin/settings' component={SettingsEdit} />
+  <Route exact path='/settings' component={SettingsEdit} />
 ]
