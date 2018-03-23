@@ -14,6 +14,8 @@ const sampleReactionRule = new ReactionRule({
 const ReactionInstance = require('../../../reactions/models/reaction-instance')
 const reactionInstance = require('../../../reactions/db-api/reaction-instance')
 const sampleReactionInstance = {
+  title: 'Would you support me?',
+  instruction: 'We need 200 people to support this project',
   reactionId: sampleReactionRule._id,
   resourceType: 'Article',
   resourceId: ObjectId('abc123abc123'),

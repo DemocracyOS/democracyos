@@ -10,9 +10,12 @@ const ReactionRule = require('../../../reactions/models/reaction-rule')
 const sampleReactionRule = new ReactionRule({
   method: 'LIKE',
   startingDate: new Date('2017-12-20 00:00:00'),
-  closingDate: new Date('2018-02-20 00:00:00')
+  closingDate: new Date('2018-02-20 00:00:00'),
+  options: {}
 })
 const sampleReactionInstance = {
+  title: 'Would you support me?',
+  instruction: 'We need 200 people to support this project',
   reactionId: sampleReactionRule._id,
   resourceType: 'Article',
   resourceId: '000001',
@@ -22,9 +25,12 @@ const sampleReactionInstance = {
 const anotherReactionRule = new ReactionRule({
   method: 'LIKE',
   startingDate: new Date('2017-12-24 00:00:00'),
-  closingDate: new Date('2018-02-25 00:00:00')
+  closingDate: new Date('2018-02-25 00:00:00'),
+  options: {}
 })
 const anotherReactionInstance = {
+  title: 'Did you liked the post?',
+  instruction: 'With 5000 likes people will listen to us!',
   reactionId: anotherReactionRule._id,
   resourceType: 'Video',
   resourceId: '000002',
@@ -34,9 +40,12 @@ const anotherReactionInstance = {
 const otherReactionRule = new ReactionRule({
   method: 'LIKE',
   startingDate: new Date('2017-12-23 00:00:00'),
-  closingDate: new Date('2018-02-28 00:00:00')
+  closingDate: new Date('2018-02-28 00:00:00'),
+  options: {}
 })
 const otherReactionInstance = {
+  title: 'Would you like to get involved?',
+  instruction: 'We need 600 people to support this project',
   reactionId: otherReactionRule._id,
   resourceType: 'Post',
   resourceId: '000003',

@@ -22,17 +22,23 @@ const otherUser = new User({
 
 const sampleReactionVote = {
   userId: sampleUser._id,
-  value: 'LIKE'
+  meta: {
+    value: 'LIKE'
+  }
 }
 
 const anotherReactionVote = {
   userId: anotherUser._id,
-  value: 'LIKE'
+  meta: {
+    value: 'LIKE'
+  }
 }
 
 const otherReactionVote = {
   userId: otherUser._id,
-  value: 'LIKE'
+  meta: {
+    value: 'LIKE'
+  }
 }
 
 const expect = chai.expect

@@ -13,7 +13,9 @@ const ReactionVote = require('../../../reactions/models/reaction-vote')
 const reactionVote = require('../../../reactions/db-api/reaction-vote')
 const sampleReactionVote = {
   userId: sampleUser._id,
-  value: 'My test value'
+  meta: {
+    value: 'My test value'
+  }
 }
 
 describe('db-api.reactionVote', function () {

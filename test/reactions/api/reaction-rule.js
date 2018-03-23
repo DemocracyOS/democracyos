@@ -24,21 +24,30 @@ describe('/api/v1.0/reaction-rule', () => {
     method: 'LIKE',
     startingDate: new Date('2017-12-20 00:00:00'),
     closingDate: new Date('2018-04-20 18:00:00'),
-    limit: 5
+    limit: 5,
+    options: {
+      commentsAvailable: true
+    }
   }
   const anotherReactionRule = {
     name: 'MyReactionRule',
     method: 'LIKE',
     startingDate: new Date('2017-12-21 00:00:00'),
     closingDate: new Date('2018-04-21 18:00:00'),
-    limit: 8
+    limit: 8,
+    options: {
+      commentsAvailable: true
+    }
   }
   const otherReactionRule = {
     name: 'TotallyDifferentName',
     method: 'LIKE',
     startingDate: new Date('2017-12-22 00:00:00'),
     closingDate: new Date('2018-04-22 18:00:00'),
-    limit: 20
+    limit: 20,
+    options: {
+      commentsAvailable: true
+    }
   }
 
   describe('#post', () => {

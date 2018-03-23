@@ -45,8 +45,8 @@ const ReactionRuleFilters = (props) => (
 export const ReactionRuleList = (props) => (
   <List {...props} filters={<ReactionRuleFilters />} title='List of reaction rules'>
     <Datagrid>
-      <TextField source='name' label='Regla' style={{ fontWeight: 'bold' }} />
-      <TextField source='method' label='Reaction' style={{ textTransform: 'capitalize' }} />
+      <TextField source='name' label='Name' style={{ fontWeight: 'bold' }} />
+      <TextField source='method' label='Type of Reaction' style={{ textTransform: 'capitalize' }} />
       <DateField source='startingDate' label='Start' />
       <DateField source='closingDate' label='Ends' />
       <EditButton style={{ textAlign: 'center' }} />
@@ -59,10 +59,10 @@ export const ReactionRuleCreate = (props) => (
   <Create {...props} title='Create a reaction rule'>
     <SimpleForm>
       <TextInput source='name' label='Name your rule' />
-      <SelectInput source='method' label='Type of Reaction' choices={getChoices()} />
+      <SelectInput source='method' label='What type of reaction is it gonna be?' choices={getChoices()} />
       <NumberInput source='limit' step={1} />
-      <DateInput label='Opening date' source='startingDate' defaultValue={new Date()} options={{ minDate: new Date() }} />
-      <DateInput label='Closing date' source='closingDate' options={{ minDate: minClosingDate() }} />
+      <DateInput label='When will it start?' source='startingDate' defaultValue={new Date()} options={{ minDate: new Date() }} />
+      <DateInput label='Add a closing date? If yes, select a date' source='closingDate' options={{ minDate: minClosingDate() }} />
     </SimpleForm>
   </Create>
 )
@@ -71,9 +71,9 @@ export const ReactionRuleEdit = (props) => (
   <Edit {...props} title='Edit a reaction rule'>
     <SimpleForm>
       <TextInput source='name' label='Name your rule' />
-      <TextField source='method' label='Type of Reaction' />
+      <TextField source='method' label='What type of reaction is it gonna be?' />
       <NumberInput source='limit' step={1} />
-      <DateField label='Opening date' source='startingDate' />
+      <DateField label='When will it start?' source='startingDate' />
       {/* <DateInput label='Closing date' source='closingDate' options={{ minDate: minClosingDate() }} /> */}
       <ClosingDateField />
     </SimpleForm>

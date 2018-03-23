@@ -6,6 +6,8 @@ const mongoosePaginate = require('mongoose-paginate')
  */
 
 const ReactionInstance = new mongoose.Schema({
+  title: String,
+  instruction: String,
   reactionId: { type: mongoose.Schema.Types.ObjectId, ref: 'ReactionRule' },
   resourceType: String,
   resourceId: String,

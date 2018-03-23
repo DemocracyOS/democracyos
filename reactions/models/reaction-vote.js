@@ -7,7 +7,7 @@ const mongoosePaginate = require('mongoose-paginate')
 
 const ReactionVote = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  value: {}
+  meta: {}
 }, { timestamps: true })
 
 /**
