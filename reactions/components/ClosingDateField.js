@@ -35,7 +35,6 @@ class NullClosingDate extends React.Component {
   }
 
   handleChange = (event, active) => {
-    console.log(this.state.showCalendar)
     if (active === true) {
       // closingDate is set to null, hide calendar and updateValue.
       this.setState({ showCalendar: false })
@@ -49,7 +48,6 @@ class NullClosingDate extends React.Component {
 
   handleChangeDate = (event, date) => {
     // date has changed!
-    console.log(this)
     this.props.input.onChange(date)
   }
 
