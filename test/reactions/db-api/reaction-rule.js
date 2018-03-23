@@ -11,7 +11,8 @@ const sampleReactionRule = {
   method: 'LIKE',
   startingDate: new Date('2017-12-20 00:00:00'),
   closingDate: new Date('2018-02-20 00:00:00'),
-  limit: 5
+  limit: 5,
+  options: {}
 }
 
 describe('db-api.reactionRule', function () {
