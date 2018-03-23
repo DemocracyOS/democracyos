@@ -13,7 +13,8 @@ const ReactionRule = new mongoose.Schema({
   },
   startingDate: Date,
   closingDate: Date,
-  limit: String
+  limit: Number,
+  options: {}
 }, { timestamps: true })
 
 /**

@@ -16,6 +16,8 @@ import {
   EditButton,
   DeleteButton,
   List,
+  TextInput,
+  LongTextInput,
   required
 } from 'admin-on-rest'
 import FromCreateContentDialog from './FromCreateContentDialog'
@@ -24,6 +26,7 @@ import ReactionResult from './ReactionResult'
 export const ReactionInstanceList = (props) => (
   <List {...props} title='List of reaction instances'>
     <Datagrid>
+      <TextField source="title" />
       <ReferenceField label='Resource' source='resourceId' reference='posts' linkType='show'>
         <TextField source='title' />
       </ReferenceField>
@@ -41,10 +44,16 @@ export const ReactionInstanceCreate = (props) => (
   <Create {...props} title='Create a reaction instances'>
     <SimpleForm>
       <FromCreateContentDialog />
-      <ReferenceInput label='Select a content' source='resourceId' reference='posts' allowEmpty validate={required}>
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>To what your voters are going to react?</h4>
+      <TextInput source='title' label='The rule' />
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Add instructions or descriptions about this reaction so people understands</h4>
+      <LongTextInput source='instruction' label='Type here..' />
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Select the content you want people to react</h4>
+      <ReferenceInput label="Post to react" source='resourceId' reference='posts' allowEmpty>
         <SelectInput optionText='title' />
       </ReferenceInput>
-      <ReferenceInput label='Select a rule' source='reactionId' reference='reaction-rule' allowEmpty validate={required}>
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Select what kind of reactions do you expect</h4>
+      <ReferenceInput label="Reaction Rule" source='reactionId' reference='reaction-rule' allowEmpty validate={required}>
         <SelectInput optionText='name' />
       </ReferenceInput>
     </SimpleForm>
@@ -54,7 +63,10 @@ export const ReactionInstanceCreate = (props) => (
 export const ReactionInstanceEdit = (props) => (
   <Edit {...props} title='Edit a reaction instances'>
     <SimpleForm>
-      <span>Soon..</span>
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>To what your voters are going to react?</h4>
+      <TextInput source='title' label='The rule' />
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Add instructions or descriptions about this reaction so people understands</h4>
+      <LongTextInput source='instruction' label='Type here..' />
     </SimpleForm>
   </Edit>
 )
