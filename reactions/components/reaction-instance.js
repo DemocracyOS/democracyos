@@ -82,6 +82,8 @@ export const ReactionInstanceShow = (props) => (
   <Show {...props} title='Reaction Instance'>
     <SimpleShowLayout style={styleShow.grid}>
       <SimpleShowLayout>
+        <TextField source='title' />
+        <TextField source='instruction' />
         <DateField source='createdAt' label='Created' />
         <FunctionField label='Results' render={(record) => `${record.results.length}`} />
         <ReferenceField label='Content title' source='resourceId' reference='posts' linkType='show'>
