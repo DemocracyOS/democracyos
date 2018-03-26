@@ -6,7 +6,6 @@ const Admin = dynamic(import('../cms/components/admin'), {
   ssr: false
 })
 
-
 export default () => (
   <div>
     <Head>

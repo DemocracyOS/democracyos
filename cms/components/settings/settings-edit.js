@@ -5,16 +5,20 @@ import {
   ViewTitle,
   GET_ONE,
   UPDATE,
-  RadioButtonGroupInput,
   SimpleForm,
-  TextInput
+  TextInput,
+  SaveButton,
+  Toolbar
 } from 'admin-on-rest'
+import { t } from '../../../client/i18n'
 import restClient from '../../../client/admin/components/rest-client'
 import SettingsColorPicker from './settings-color-picker'
 
-const styles = {
-  ImageInput: { width: '17em' }
-}
+const SaveSettingsToolbar = (props) => (
+  <Toolbar {...props} >
+    <SaveButton label={t('admin/save')} redirect={false} submitOnEnter />
+  </Toolbar>
+)
 
 export class SettingsEdit extends React.Component {
   constructor (props) {
@@ -32,7 +36,7 @@ export class SettingsEdit extends React.Component {
         this.setState({ settings: req.data })
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
       })
   }
 
@@ -63,14 +67,16 @@ export class SettingsEdit extends React.Component {
   render () {
     return (
       <Card>
-        <SimpleForm record={this.state.settings} save={this.handleSubmit}>
-          <ViewTitle title='Settings' />
-          <TextInput source='communityName' label='Community name' />
-          <SettingsColorPicker source='mainColor' addLabel label='Main color' />
+        <SimpleForm record={this.state.settings}
+          save={this.handleSubmit}
+          toolbar={<SaveSettingsToolbar />} >
+          <ViewTitle title={t('admin/settings')} />
+          <TextInput source='communityName' label={t('admin/communityName')} />
+          <SettingsColorPicker source='mainColor' addLabel label={t('admin/mainColor')} />
         </SimpleForm>
         <Snackbar
           open={this.state.open}
-          message={this.state.status === 'error' ? 'Error: Can not update. Please try again' : 'Settings updated'}
+          message={this.state.status === 'error' ? t('admin/settingsError') : t('admin/settingsUpdated')}
           autoHideDuration={3000}
           onRequestClose={this.handleRequestClose} />
       </Card>
