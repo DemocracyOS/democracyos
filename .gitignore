@@ -9,5 +9,5 @@ node_modules
 /*.override.yml
 .env
 
-.tmp-globalize-webpack/
+.tmp-globalize-webpack
 

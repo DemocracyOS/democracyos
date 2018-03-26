@@ -17,9 +17,7 @@
       "title": "DemocracyOS"
     },
     "admin" : {
-      "title": "Democracy OS",
       "welcome": "Welcome",
-      "description": "Lorem ipsum sic dolor amet...",
       "home": "Home",
       "settings": "settings",
       "posts": "Posts",
@@ -30,7 +28,23 @@
       "profile": "Profile",
       "create": "Create",
       "edit": "Edit",
-      "delete": "Delete"
+      "save": "Save",
+      "delete": "Delete",
+      "list": "List",
+      "show": "Show",
+      "communityName": "Community name",
+      "mainColor": "Main color",
+      "settingsUpdated": "Settings updated",
+      "settingsError": "Error: Can not update. Please try again",
+      "addFilter": "Add filter",
+      "refresh": "Refresh",
+      "search": "Search",
+      "title": "Title",
+      "content": "Content",
+      "description": "Description",
+      "openingDate": "Opening date",
+      "closingDate": "Closing date",
+      "author": "Author"
     }
   }
 }
