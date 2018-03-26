@@ -13,7 +13,7 @@
     "admin" : {
       "welcome": "Welcome",
       "home": "Home",
-      "settings": "settings",
+      "settings": "Settings",
       "posts": "Posts",
       "reactions": "Reactions",
       "reaction-rules": "Reaction rules",
