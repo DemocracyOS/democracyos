@@ -1,6 +1,0 @@
-{
-  "core": [
-      "https://github.com/unicode-cldr/cldr-core/archive/30.0.3.zip",
-      "https://github.com/unicode-cldr/cldr-misc-modern/archive/32.0.0.zip"
-  ]
-}

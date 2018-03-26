@@ -38,6 +38,8 @@ router.use((err, req, res, next) => {
       message: res.locals.t(`error/${err.translationKey}`),
       error: err
     })
+    console.log(err.translationKey)
+    console.log(res.locals.t(`error/${err.translationKey}`))
   } else {
     res.status(500).json({})
   }

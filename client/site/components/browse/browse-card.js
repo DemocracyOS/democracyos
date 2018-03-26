@@ -1,24 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import { date } from '../../../i18n'
 
 const BrowseCard = ({ post }) => (
   <section className='browse-card-wrapper'>
     <div className='browse-card-header'>
       <div className='profile'>
-        <Link href={{ pathname: '/profile', query: { id: post.author._id } }}>
-          <a>
-            <div className='profile-picture' />
-          </a>
-        </Link>
+        {post.author &&
+          <Link href={{ pathname: '/profile', query: { id: post.author._id } }}>
+            <a>
+              <div className='profile-picture' />
+            </a>
+          </Link>
+        }
       </div>
       <div className='post-data'>
-        <Link href={{ pathname: '/profile', query: { id: post.author._id } }}>
-          <a>
-            <span>{post.author.name}</span>
-          </a>
-        </Link>
-        <span>{post.openingDate}</span>
+        {post.author &&
+          <Link href={{ pathname: '/profile', query: { id: post.author._id } }}>
+            <a>
+              <span>{post.author.name}</span>
+            </a>
+          </Link>
+        }
+        <span>{date({ date: 'full' }, post.openingDate)}</span>
       </div>
     </div>
     <div className='browse-card-body'>

@@ -34,7 +34,6 @@ module.exports = (async () => {
     server.use(passport.session())
     // server.use(loggerMiddleware)
     server.use(i18nMiddleware)
-
     // Apply API routes
     server.use('/api/v1.0', require('./api'))
 

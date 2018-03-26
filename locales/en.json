@@ -5,7 +5,40 @@
       "MISSING_PARAM": "Paramether is missing",
       "PARAM_LENGTH": "Paramether is too long" ,
       "SETTINGS_NOT_INIT": "Settings have not been initialized",
-      "SETTINGS_INIT": "Settings are already initialized"
+      "SETTINGS_INIT": "Settings have already been initialized" 
+    },
+    "index": {
+      "title": "DemocracyOS"
+    },
+    "admin" : {
+      "welcome": "Welcome",
+      "home": "Home",
+      "settings": "Settings",
+      "posts": "Posts",
+      "reactions": "Reactions",
+      "reaction-rules": "Reaction rules",
+      "reaction-instances": "Reactions instances",
+      "users": "Users",
+      "profile": "Profile",
+      "create": "Create",
+      "edit": "Edit",
+      "save": "Save",
+      "delete": "Delete",
+      "list": "List",
+      "show": "Show",
+      "communityName": "Community name",
+      "mainColor": "Main color",
+      "settingsUpdated": "Settings updated",
+      "settingsError": "Error: Can not update. Please try again",
+      "addFilter": "Add filter",
+      "refresh": "Refresh",
+      "search": "Search",
+      "title": "Title",
+      "content": "Content",
+      "description": "Description",
+      "openingDate": "Opening date",
+      "closingDate": "Closing date",
+      "author": "Author"
     }
   }
 }

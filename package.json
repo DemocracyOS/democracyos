@@ -6,7 +6,8 @@
     "url": "git://github.com/DemocracyOS/democracyos.git"
   },
   "engines": {
-    "node": "^8"
+    "node": "^8.9.4",
+    "npm": "^5.6.0"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive --timeout 10000",
@@ -50,10 +51,10 @@
     "chai-http": "^3.0.0",
     "eslint": "^4.17.0",
     "eslint-config-democracyos": "^2.0.2",
+    "globalize-webpack-plugin": "^2.1.0",
     "mocha": "^5.0.0",
     "rewire": "^3.0.2",
     "sinon": "^4.2.2",
     "sinon-mongoose": "^2.0.2"
-  },
-  "cldr-data-urls-json": "../../cldr.json"
+  }
 }

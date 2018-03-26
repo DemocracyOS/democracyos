@@ -6,6 +6,7 @@ import Page from '../client/site/components/page'
 import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'
 import PostGrid from '../client/site/components/post-grid'
+import { t, setLocale } from '../client/i18n'
 
 export default class extends Page {
   constructor (props) {
@@ -14,6 +15,7 @@ export default class extends Page {
       posts: []
     }
     this.handleSignOutSubmit = this.handleSignOutSubmit.bind(this)
+    setLocale(this.props.locale)
   }
 
   handleSignOutSubmit (event) {
@@ -26,10 +28,10 @@ export default class extends Page {
         Router.push('/auth/error?action=signout')
       })
   }
-
   render () {
     return (
       <div className='container'>
+        {console.log(this.props.locale)}
         <Head {...this.props} />
         <Header settings={this.props.settings} user={this.props.session.user} />
         <div className='text-center'>
