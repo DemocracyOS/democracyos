@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import { date } from '../../i18n'
 
 const PostCard = ({ post }) => (
   <div className='post-card'>
@@ -24,7 +25,7 @@ const PostCard = ({ post }) => (
           </a>
         </Link>
       }
-      <span className='post-card-footer-date'>{post.openingDate}</span>
+      <span className='post-card-footer-date'>{date({ date: 'short' }, post.openingDate)}</span>
     </div>
     <style jsx>{`
       .post-card {
