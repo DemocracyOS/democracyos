@@ -1,5 +1,4 @@
 import React from 'react'
-import Globalize from 'globalize'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth-client'
@@ -11,13 +10,6 @@ import PostGrid from '../client/site/components/post-grid'
 import { t, setLocale } from '../client/i18n'
 
 export default class extends Page {
-  static async getInitialProps ({ req }) {
-    return {
-      session: await NextAuth.init({ req }),
-      locale: 'es'
-    }
-  }
-
   constructor (props) {
     super(props)
     this.state = {
@@ -40,6 +32,7 @@ export default class extends Page {
   render () {
     return (
       <div className='container'>
+        {console.log(this.props.locale)}
         <Head {...this.props} />
         <Header
           settings={this.props.settings}
