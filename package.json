@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive --timeout 10000",
-    "start": "node main"
+    "start": "nodemon main"
   },
   "dependencies": {
     "accepts": "^1.3.4",
@@ -32,7 +32,6 @@
     "next-auth": "^1.4.1",
     "next-auth-client": "^1.1.3",
     "nodemailer": "^4.4.2",
-    "nodemon": "^1.17.2",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
@@ -52,6 +51,7 @@
     "eslint": "^4.17.0",
     "eslint-config-democracyos": "^2.0.2",
     "mocha": "^5.0.0",
+    "nodemon": "^1.17.2",
     "rewire": "^3.0.2",
     "sinon": "^4.2.2",
     "sinon-mongoose": "^2.0.2"

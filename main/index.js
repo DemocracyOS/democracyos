@@ -38,6 +38,7 @@ module.exports = (async () => {
     // Apply API routes
     server.use('/api/v1.0', require('./api'))
 
+    // Admin page
     server.get('/admin/*', (req, res) => {
       app.render(req, res, '/admin')
     })
