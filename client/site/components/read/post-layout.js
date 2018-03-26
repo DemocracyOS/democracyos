@@ -1,7 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import { Editor, EditorState, convertFromRaw } from 'draft-js'
+<<<<<<< 74fa2d7c851026a0fdcfb13da4fb09aba849393c
 import PostReactions from '../reactions/post-reactions'
+=======
+import { date } from '../../../i18n'
+>>>>>>> Add globalize date formatter
 
 export default class extends React.Component {
   constructor (props) {
@@ -25,7 +29,7 @@ export default class extends React.Component {
                   <span className='post-author-name'>{post.author.name}</span>
                 </a>
               </Link>
-              <span className='post-date'>{post.openingDate}</span>
+              <span className='post-date'>{date({ date: 'full' }, post.openingDate)}</span>
             </div>
           </div>
           <div className='post-header'>
