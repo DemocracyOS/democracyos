@@ -8,6 +8,7 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const authFunctions = require('../users/auth/functions')
 const authProviders = require('../users/auth/providers')
+const { setup } = require('../services/setup')
 const { PORT, SESSION_SECRET, ROOT_URL } = require('./config')
 const { middleware: loggerMiddleware, log } = require('./logger')
 const { middleware: i18nMiddleware } = require('./i18n')
@@ -34,6 +35,9 @@ module.exports = (async () => {
     server.use(passport.session())
     // server.use(loggerMiddleware)
     server.use(i18nMiddleware)
+
+    // Apply setup service
+    server.use(setup)
 
     // Apply API routes
     server.use('/api/v1.0', require('./api'))
