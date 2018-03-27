@@ -1,0 +1,10 @@
+{
+  "restartable": "rs",  
+  "verbose": true,
+  "ignore": ["node_modules", ".next"],
+  "watch": ["main", "services", "cms", "reactions", "users"],
+  "env": {
+    "NODE_ENV": "dev"
+  },
+  "ext": "js json"
+}
