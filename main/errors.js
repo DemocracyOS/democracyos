@@ -23,7 +23,7 @@ class APIError extends Error {
   }
 }
 
-const ErrNotFound = new APIError('not found', {
+const ErrNotFound = (message) => new APIError(message, {
   translationKey: 'NOT_FOUND',
   status: NOT_FOUND
 })

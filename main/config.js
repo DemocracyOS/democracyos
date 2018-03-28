@@ -21,6 +21,8 @@ const CONFIG = {
 
   ROOT_URL: process.env.DEMOCRACYOS_ROOT_URL || null,
 
+  ADMIN_MAIL: process.env.DEMOCRACYOS_ADMIN_MAIL || null,
+
   // ------------------------------------------------------------------------------
   //  Identity providers
   // ------------------------------------------------------------------------------
