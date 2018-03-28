@@ -9,20 +9,21 @@ const setup = async (req, res, next) => {
   // Find if settings is already init
   try {
     await Settings.getOne()
-    // Settings are init continue
+    // If Settings are init continue
     return next()
-  } catch (e) {
     // If not, search if ADMIN_MAIL is set
+  } catch (e) {
     if (ADMIN_MAIL !== null) {
       // If ADMIN_MAIL is setted and is saved in DB continue
       const admin = await User.get({ email: ADMIN_MAIL })
       if (admin !== null) {
         return next()
       } else {
-        // If ADMIN_MAIL is not saved in DB redirect to 'limbo'
-        res.redirect('/limbo')
+        // If ADMIN_MAIL is not saved in DB redirect to 'limbo' page :P
+        return res.redirect('/limbo')
       }
     } else {
+      // If ADMIN_MAIL is not setted find other admin users in db
       const admins = await User.list({ filter: JSON.stringify({ role: 'admin' }) })
       console.log(admins)
     }
