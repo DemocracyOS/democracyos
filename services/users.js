@@ -4,7 +4,8 @@ const {
 } = require('http-status')
 // Requires winston lib for log
 const { log } = require('../main/logger')
-const User = require('../users/db-api/user')
+const { ErrNotFound } = require('../main/errors')
+const User = require('../users/models/user')
 // Requires CRUD apis
 const router = express.Router()
 
@@ -13,8 +14,14 @@ router.route('/admins')
   .get(async (req, res, next) => {
     log.debug('GET admin service')
     try {
-      const admins = await User.get({ 'role': 'admin' })
-      res.status(OK).json(admins)
+      const results = await User.find({ role: 'admin' })
+      if (results.length >= 1) {
+        res.status(OK).json({
+          admins: results
+        })
+      } else {
+        throw ErrNotFound('Not admin users found')
+      }
     } catch (err) {
       next(err)
     }

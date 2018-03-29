@@ -51,7 +51,6 @@ exports.list = function list ({ filter, limit, page, ids }) {
       filterToJSON.name = { $regex: (filterToJSON.name || filterToJSON.q), $options: 'i' }
       delete filterToJSON.q
     }
-    console.log(filterToJSON)
     return User.paginate(filterToJSON, { page, limit })
   }
   if (ids) {
