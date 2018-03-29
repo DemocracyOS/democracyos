@@ -126,24 +126,21 @@ router.route('/:idInstance/vote')
   // GET reaction-instances
   .post(async (req, res, next) => {
     try {
-      console.log(req.body)
       // Check if the user has voted before
-      console.log(req.body.reactionVoteId)
       if (req.body.reactionVoteId != null) {
         // Get the Reaction
         let reactionVote = await ReactionVote.get(req.body.reactionVoteId)
-        console.log(reactionVote)
+        // Was the vote deleted?
         if (reactionVote.meta.deleted) {
-          reactionVote.meta.deleted = !reactionVote.meta.deleted
+          // It was. Now re-enable it and add one more vote.
           reactionVote.meta.timesVoted += 1
-        } else {
-          reactionVote.meta.deleted = !reactionVote.meta.deleted
         }
-        await ReactionVote.update({ id: req.body.reactionVoteId, reactionVote: reactionVote })
-        console.log(reactionVote)        
-        res.status(OK).json({
-          data: reactionVote
-        })
+        // Update the deleted state
+        reactionVote.meta.deleted = !reactionVote.meta.deleted
+        // Now save it to the DB
+        const savedVote = await (await ReactionVote.update({ id: reactionVote._id, reactionVote: reactionVote }))
+        // Return response with the updated value
+        res.status(OK).json(savedVote)
       } else {
         let voteData = null
         switch (req.body.reactionRule.method) {
@@ -155,13 +152,10 @@ router.route('/:idInstance/vote')
         }
         console.log(req.params.idInstance)
         let reactionInstance = await ReactionInstance.get(req.params.idInstance)
-        let reactionVote = await ReactionVote.create(voteData)
-        reactionInstance.results.push(reactionVote._id)
+        const savedVote = await ReactionVote.create(voteData)
+        reactionInstance.results.push(savedVote._id)
         await ReactionInstance.update({ id: req.params.idInstance, reactionInstance: reactionInstance })
-
-        res.status(CREATED).json({
-          data: reactionVote
-        })
+        res.status(CREATED).json(savedVote)
       }
       // res.status(OK).json(data)
     } catch (err) {

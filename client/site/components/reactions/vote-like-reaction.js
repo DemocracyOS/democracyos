@@ -34,7 +34,7 @@ export default class extends React.Component {
           'Content-Type': 'application/json'
         }
       })).json()
-      this.setState({ myVote: response.data })
+      this.setState({ myVote: response })
       this.forceUpdate()
     } else {
       const body = {
@@ -49,7 +49,7 @@ export default class extends React.Component {
           'Content-Type': 'application/json'
         }
       })).json()
-      this.setState({ myVote: response.data })
+      this.setState({ myVote: response })
       this.forceUpdate()
     }
   }
