@@ -20,12 +20,14 @@ const setup = async (req, res, next) => {
         return next()
       } else {
         // If ADMIN_MAIL is not saved in DB redirect to 'limbo' page :P
-        return res.redirect('/limbo')
+        // return res.redirect('/limbo')
+        return next()
       }
     } else {
       // If ADMIN_MAIL is not setted find other admin users in db
       const admins = await User.list({ filter: JSON.stringify({ role: 'admin' }) })
-      console.log(admins)
+      console.log(admins.docs)
+      return next()
     }
   }
 }

@@ -35,12 +35,12 @@ module.exports = (async () => {
     server.use(passport.session())
     // server.use(loggerMiddleware)
     server.use(i18nMiddleware)
-
-    // Apply setup service
-    server.use(setup)
     
     // Apply API routes
     server.use('/api/v1.0', require('./api'))
+
+    // Apply setup service
+    server.use(setup)
 
     // Admin page
     server.get('/admin/*', (req, res) => {

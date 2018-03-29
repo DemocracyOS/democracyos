@@ -61,7 +61,11 @@ exports.update = function update ({ id, reactionVote }) {
   log.debug('update reactionVote')
   // return Promise.resolve()
   return ReactionVote.findOne({ _id: ObjectId(id) })
-    .then((_ReactionVote) => Object.assign(_ReactionVote, reactionVote).save())
+    .then((_ReactionVote) => {
+      console.log(_ReactionVote)
+      console.log(reactionVote)
+      return Object.assign(_ReactionVote, reactionVote).save()
+    })
 }
 
 /**

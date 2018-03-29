@@ -45,13 +45,13 @@ const get = exports.get = function get (query) {
 
 exports.list = function list ({ filter, limit, page, ids }) {
   log.debug('user db-api list')
-  console.log(filter)
   if (filter !== undefined) {
     let filterToJSON = JSON.parse(filter)
     if (filterToJSON.name || filterToJSON.q) {
       filterToJSON.name = { $regex: (filterToJSON.name || filterToJSON.q), $options: 'i' }
       delete filterToJSON.q
     }
+    console.log(filterToJSON)
     return User.paginate(filterToJSON, { page, limit })
   }
   if (ids) {
