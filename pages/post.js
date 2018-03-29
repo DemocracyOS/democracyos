@@ -23,7 +23,7 @@ export default class extends Page {
         <Head {...this.props} />
         <Header settings={this.props.settings} user={this.props.session.user} />
         {this.state.post &&
-          <PostLayout post={this.state.post} />
+          <PostLayout user={this.props.session.user} post={this.state.post} />
         }
       </div>
     )

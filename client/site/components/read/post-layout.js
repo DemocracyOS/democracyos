@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Editor, EditorState, convertFromRaw } from 'draft-js'
+import PostReactions from '../reactions/post-reactions'
 
 export default class extends React.Component {
   constructor (props) {
@@ -11,7 +12,7 @@ export default class extends React.Component {
   }
 
   render () {
-    const { post } = this.props
+    const { post, user } = this.props
     const { editorState } = this.state
     return (
       <section className='post'>
@@ -36,6 +37,7 @@ export default class extends React.Component {
           <div className='post-content'>
             <Editor editorState={editorState} />
           </div>
+          <PostReactions user={user} post={post}/>
           <div className='post-footer'>
             <div className='post-author-profile-pic' />
             <div className='post-author-text'>
