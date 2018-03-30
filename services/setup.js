@@ -9,12 +9,12 @@ const setup = async (req, res, next) => {
   // Find if settings is already init
   try {
     await Settings.getOne()
-    // If Settings are init continue
+    // If Settings are init return next()
     return next()
     // If not, search if ADMIN_MAIL is set
   } catch (e) {
     if (ADMIN_MAIL !== null) {
-      // If ADMIN_MAIL is setted and is saved in DB continue
+      // If ADMIN_MAIL is setted and is saved in DB return next()
       const admin = await User.get({ email: ADMIN_MAIL })
       if (admin !== null) {
         return next()
@@ -30,8 +30,14 @@ const setup = async (req, res, next) => {
         page: 1,
         limit: 10
       })
-      console.log(admins)
-      return next()
+      // If there are other admin users return next()
+      if (admins.docs.length >= 1) {
+        return next()
+      } else {
+      // If no admin users in DB redirect to init page
+      //  return res.redirect('/init')
+        return next()
+      }
     }
   }
 }
