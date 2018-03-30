@@ -12,10 +12,15 @@ const { log } = require('../main/logger')
 const router = express.Router()
 
 const dataForLike = function (instance) {
-  let data = null
   let userParticipants = instance.results
-  // let userParticipants = instance.results.map((x) => x.userId)
-  data = {
+  // Count the votes that are not deleted
+  let countVotes = instance.results.reduce((accumulator, currentValue) => {
+    if (!currentValue.meta.deleted) {
+      return accumulator + 1
+    }
+    return accumulator
+  }, 0)
+  let data = {
     id: instance._id,
     title: instance.title,
     instruction: instance.instruction,
@@ -23,7 +28,8 @@ const dataForLike = function (instance) {
     participants: userParticipants,
     data: {
       name: 'LIKE',
-      value: instance.results.length
+      value: countVotes
+      // value: instance.results.length
     }
   }
   return data
@@ -107,8 +113,8 @@ router.route('/:id/result')
         case 'LIKE':
           data = dataForLike(instance)
           break
-          // This is for future implementations..
-          // Depending of the type of rule, it needs to process data in a different way
+        // This is for future implementations..
+        // Depending of the type of rule, it needs to process data in a different way
         case 'VOTE':
           data = dataForChoose(instance)
           break
@@ -129,16 +135,17 @@ router.route('/:idInstance/vote')
       // Check if the user has voted before
       if (req.body.reactionVoteId != null) {
         // Get the Reaction
-        let reactionVote = await ReactionVote.get(req.body.reactionVoteId)
+        const reactionVote = await ReactionVote.get(req.body.reactionVoteId)
+        let dataChange = { meta: reactionVote.meta }
         // Was the vote deleted?
-        if (reactionVote.meta.deleted) {
+        if (dataChange.meta.deleted) {
           // It was. Now re-enable it and add one more vote.
-          reactionVote.meta.timesVoted += 1
+          dataChange.meta.timesVoted += 1
         }
         // Update the deleted state
-        reactionVote.meta.deleted = !reactionVote.meta.deleted
+        dataChange.meta.deleted = !dataChange.meta.deleted
         // Now save it to the DB
-        const savedVote = await (await ReactionVote.update({ id: reactionVote._id, reactionVote: reactionVote }))
+        const savedVote = await ReactionVote.update({ id: reactionVote._id, reactionVote: dataChange })
         // Return response with the updated value
         res.status(OK).json(savedVote)
       } else {

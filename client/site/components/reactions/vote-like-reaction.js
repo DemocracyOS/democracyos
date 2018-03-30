@@ -1,19 +1,22 @@
 import React from 'react'
-import VoteLikeReaction from './vote-like-reaction'
 import Results from './results-like-reaction'
+import ActionFavorite from 'material-ui/svg-icons/action/favorite'
+import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
+
 
 export default class extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      reaction: this.props.reaction,
       myVote: null,
       justVoted: null
     }
   }
 
   async componentWillMount () {
-    let vote = this.props.reaction.participants.find((x) => { return x.userId._id == this.props.user.id })
-    if (vote != undefined) {
+    let vote = this.state.reaction.participants.find((x) => { return x.userId._id == this.props.user.id })
+    if (vote !== undefined) {
       this.setState({ myVote: vote })
     }
   }
@@ -24,47 +27,61 @@ export default class extends React.Component {
       const body = {
         userId: this.props.user.id,
         reactionVoteId: this.state.myVote._id,
-        reactionRule: this.props.reaction.reactionRule
+        reactionRule: this.state.reaction.reactionRule
       }
       // No. Then lets create his firt vote
-      let response = await (await fetch(`/api/v1.0/services/reactions/${this.props.reaction.id}/vote`, {
+      let response = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/vote`, {
         'body': JSON.stringify(body),
         'method': 'POST',
         'headers': {
           'Content-Type': 'application/json'
         }
       })).json()
-      this.setState({ myVote: response })
-      this.forceUpdate()
+      let updatedReaction = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/result`)).json()
+      this.setState({
+        myVote: response,
+        reaction: updatedReaction,
+        justVoted: true
+      })
     } else {
       const body = {
         userId: this.props.user.id,
-        reactionRule: this.props.reaction.reactionRule
+        reactionRule: this.state.reaction.reactionRule
       }
       // No. Then lets create his firt vote
-      let response = await (await fetch(`/api/v1.0/services/reactions/${this.props.reaction.id}/vote`, {
+      let response = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/vote`, {
         'body': JSON.stringify(body),
         'method': 'POST',
         'headers': {
           'Content-Type': 'application/json'
         }
       })).json()
-      this.setState({ myVote: response })
-      this.forceUpdate()
+      let updatedReaction = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/result`)).json()
+      this.setState({
+        myVote: response,
+        reaction: updatedReaction,
+        justVoted: true
+      })
+      // this.setState({ myVote: response })
+      // this.setState({ justVoted: true })
     }
   }
 
   render () {
-    const { user, reaction } = this.props
     const state = this.state
     return (
       <section className='reaction-wrapper reaction-vote'>
         <div className='reaction-content'>
-          <button className={'vote-reaction ' + (state.myVote ? 'has-voted' : 'hasnt-voted')} onClick={this.voteAction}>{(state.myVote ? ':D' : 'Vote!')}</button>
-          <h3 className='reaction-title'>{reaction.title}</h3>
-          <h6 className='reaction-instruction'>{reaction.instruction}</h6>
+          <button className={'vote-reaction ' + (state.myVote !== null && !state.myVote.meta.deleted ? 'has-voted' : 'hasnt-voted')}
+            disabled={state.myVote !== null && state.myVote.meta.timesVoted >= state.reaction.reactionRule.limit}
+            onClick={this.voteAction}>{(state.myVote !== null && !state.myVote.meta.deleted ? '♥' : '♡')}</button>
+          <h3 className='reaction-title'>{state.reaction.title}</h3>
+          <h6 className='reaction-instruction'>{state.reaction.instruction}</h6>
         </div>
-        <Results reaction={reaction} />
+
+        {state.myVote !== null && state.justVoted ? <div className='reaction-just-voted'>Saved! Thanks for voting!</div> : ''}
+        {state.myVote !== null && state.myVote.meta.timesVoted >= state.reaction.reactionRule.limit ? <div className='reaction-limit-reached'>You've reached the max ammount of votes.</div> : ''}
+        <Results reaction={state.reaction} />
         <style jsx>{`
           .reaction-wrapper {
             margin-bottom: 10px;
@@ -77,6 +94,17 @@ export default class extends React.Component {
             background-color:  #1b85b8;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+          }
+          .reaction-just-voted{
+            background-color: #52862E;
+            color: #fff;
+            padding: 4px 15px;
+            text-align: right; 
+          }
+          .reaction-limit-reached{
+            background-color: #FFD14D;
+            color: #141414;
+            padding: 4px 15px;
           }
           .vote-reaction{
             display:block;

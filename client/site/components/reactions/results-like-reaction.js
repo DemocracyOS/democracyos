@@ -19,8 +19,10 @@ export default class extends React.Component {
           </div>
           <div className='avatars'>
             {reaction.participants.map((x) => {
-              return (<figure className='participant-avatar' />) 
-})
+              if (!x.meta.deleted) {
+                return (<figure className='participant-avatar' />)
+              }
+            })
             }
           </div>
         </div>
