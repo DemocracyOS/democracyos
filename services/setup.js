@@ -25,8 +25,12 @@ const setup = async (req, res, next) => {
       }
     } else {
       // If ADMIN_MAIL is not setted find other admin users in db
-      const admins = await User.list({ filter: JSON.stringify({ role: 'admin' }) })
-      console.log(admins.docs)
+      const admins = await User.list({
+        filter: JSON.stringify({ role: 'admin' }),
+        page: 1,
+        limit: 10
+      })
+      console.log(admins)
       return next()
     }
   }
