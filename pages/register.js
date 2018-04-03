@@ -9,8 +9,15 @@ export default class extends Page {
     return (
       <div className='container'>
         <Head {...this.props} />
-        <Header settings={this.props.settings} user={this.props.session.user} />
-        <RegisterForm id={this.props.session.user.id} />
+        {!this.props.settings.error ? 
+          <Header settings={this.props.settings} user={this.props.session.user} />
+          : <header className='text-center'>
+            <h1>1/1 User register</h1>
+          </header>
+        }
+        <RegisterForm
+          id={this.props.session.user.id}
+          settingsInit={!this.props.settings.error} />
       </div>
     )
   }

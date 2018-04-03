@@ -6,7 +6,7 @@ export default class RegisterForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      fistLogin: false,
+      firstLogin: false,
       username: '',
       bio: '',
       name: '',
@@ -23,7 +23,8 @@ export default class RegisterForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const body = {
-      firstLogin: this.state.fistLogin,
+      firstLogin: this.state.firstLogin,
+      role: this.props.settingsInit ? 'user' : 'admin',
       username: this.state.username,
       bio: this.state.bio,
       name: this.state.name
@@ -37,11 +38,10 @@ export default class RegisterForm extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        Router.push('/')
+        this.props.settingsInit ? Router.push('/') : Router.push('/init-settings')
       })
       .catch((err) => {
-        console.log(err)
-        this.setState({ error: true })
+        this.setState({ error: true }, () => console.err(err))
       })
   }
 
@@ -57,12 +57,6 @@ export default class RegisterForm extends React.Component {
               An error ocurred. Please try again.
             </div>
           }
-          <div className='form-group'>
-            <input type='hidden'
-              className='form-control'
-              name='firstLogin'
-              defaultValue={this.state.fistLogin} />
-          </div>
           <div className='form-group'>
             <label htmlFor='username'>Username:</label>
             <input type='text'
