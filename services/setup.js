@@ -20,8 +20,8 @@ const setup = async (req, res, next) => {
         return next()
       } else {
         // If ADMIN_MAIL is not saved in DB redirect to 'limbo' page :P
-        // return res.redirect('/limbo')
-        return next()
+        return res.redirect('/limbo')
+        // return next()
       }
     } else {
       // If ADMIN_MAIL is not setted find other admin users in db
@@ -35,8 +35,8 @@ const setup = async (req, res, next) => {
         return next()
       } else {
       // If no admin users in DB redirect to init page
-      //  return res.redirect('/init')
-        return next()
+        return res.redirect('/init')
+      //  return next()
       }
     }
   }
