@@ -14,15 +14,11 @@ const setup = async (req, res, next) => {
     // If not, search if ADMIN_MAIL is set
   } catch (e) {
     if (ADMIN_MAIL !== null) {
-      // If ADMIN_MAIL is setted and is saved in DB return next()
+      // If ADMIN_MAIL is setted and is saved in DB there is no content to show, so redirect to 'li
       const admin = await User.get({ email: ADMIN_MAIL })
-      if (admin !== null) {
-        return next()
-      } else {
-        // If ADMIN_MAIL is not saved in DB redirect to 'limbo' page :P
-        return res.redirect('/limbo')
-        // return next()
-      }
+      if (admin !== null) return res.redirect('/limbo')
+      // If ADMIN_MAIL is not saved in DB redirect to init page so platform can be initialized
+      return res.redirect('/init')
     } else {
       // If ADMIN_MAIL is not setted find other admin users in db
       const admins = await User.list({
@@ -31,13 +27,9 @@ const setup = async (req, res, next) => {
         limit: 10
       })
       // If there are other admin users return next()
-      if (admins.docs.length >= 1) {
-        return next()
-      } else {
+      if (admins.docs.length >= 1) return res.redirect('/limbo')
       // If no admin users in DB redirect to init page
-        return res.redirect('/init')
-      //  return next()
-      }
+      return res.redirect('/init')
     }
   }
 }
