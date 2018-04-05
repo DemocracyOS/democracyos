@@ -48,7 +48,8 @@ module.exports = {
           name: user.name,
           email: user.email,
           emailVerified: user.emailVerified,
-          firstLogin: user.firstLogin
+          firstLogin: user.firstLogin,
+          role: user.role
         })
       })
   },

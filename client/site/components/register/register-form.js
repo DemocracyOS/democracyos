@@ -6,7 +6,6 @@ export default class RegisterForm extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      firstLogin: false,
       username: '',
       bio: '',
       name: '',
@@ -23,8 +22,7 @@ export default class RegisterForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const body = {
-      firstLogin: this.state.firstLogin,
-      role: this.props.settingsInit ? 'user' : 'admin',
+      firstLogin: false,
       username: this.state.username,
       bio: this.state.bio,
       name: this.state.name
@@ -38,7 +36,7 @@ export default class RegisterForm extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        this.props.settingsInit ? Router.push('/') : Router.push('/init-settings')
+        this.props.role === 'admin' ? Router.push('/init-settings') : Router.push('/')
       })
       .catch((err) => {
         this.setState({ error: true }, () => console.err(err))
@@ -103,5 +101,6 @@ export default class RegisterForm extends React.Component {
 }
 
 RegisterForm.propTypes = {
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired
 }
