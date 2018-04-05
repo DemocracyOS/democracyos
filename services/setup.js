@@ -1,6 +1,6 @@
 // Requires winston lib for log
 const { log } = require('../main/logger')
-const { ADMIN_MAIL } = require('../main/config')
+const { ADMIN_EMAIL } = require('../main/config')
 const Settings = require('../cms/db-api/settings')
 const User = require('../users/db-api/user')
 
@@ -13,9 +13,9 @@ const setup = async (req, res, next) => {
     return next()
     // If not, search if ADMIN_MAIL is set
   } catch (e) {
-    if (ADMIN_MAIL !== null) {
+    if (ADMIN_EMAIL !== null) {
       // If ADMIN_MAIL is setted and is saved in DB there is no content to show, so redirect to 'li
-      const admin = await User.get({ email: ADMIN_MAIL })
+      const admin = await User.get({ email: ADMIN_EMAIL, role: 'admin' })
       if (admin !== null) return res.redirect('/limbo')
       // If ADMIN_MAIL is not saved in DB redirect to init page so platform can be initialized
       return res.redirect('/init')

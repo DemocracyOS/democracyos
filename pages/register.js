@@ -12,7 +12,7 @@ export default class extends Page {
         {!this.props.settings.error ? 
           <Header settings={this.props.settings} user={this.props.session.user} />
           : <header className='text-center'>
-            <h1>1/1 User register</h1>
+            <h1>1/2 User register</h1>
           </header>
         }
         <RegisterForm
