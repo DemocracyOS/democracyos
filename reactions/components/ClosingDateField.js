@@ -35,14 +35,16 @@ class NullClosingDate extends React.Component {
   }
 
   handleChange = (event, active) => {
+    console.log(event)
+    console.log(active)
     if (active === true) {
-      // closingDate is set to null, hide calendar and updateValue.
-      this.setState({ showCalendar: false })
-      this.props.input.onChange(null)
-    } else {
       // closingDate will be defined, show calendar and set the calendar to the original date
       this.setState({ showCalendar: true })
       this.props.input.onChange(this.state.originalClosingDate)
+    } else {
+      // closingDate is set to null, hide calendar and updateValue.
+      this.setState({ showCalendar: false })
+      this.props.input.onChange(null)
     }
   }
 
@@ -61,7 +63,7 @@ class NullClosingDate extends React.Component {
         <Toggle
           label='Yes, add a closing date'
           labelPosition='right'
-          defaultToggled={!this.state.showCalendar}
+          toggled={this.state.showCalendar}
           onToggle={this.handleChange}
           style={this.style.toggle} />
       </div>

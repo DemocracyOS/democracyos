@@ -23,7 +23,7 @@ export default class extends React.Component {
         { this.state.reactions.map((reaction) => {
           switch (reaction.reactionRule.method) {
             case 'LIKE':
-              return <VoteLikeReaction user={user} reaction={reaction} />
+              return <VoteLikeReaction key={reaction.id} user={user} reaction={reaction} />
             default:
               return 'Nothing :('
           }

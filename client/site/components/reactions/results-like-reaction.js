@@ -15,12 +15,12 @@ export default class extends React.Component {
       <section className='reaction-users'>
         <div className='grid-container'>
           <div>
-            <b>{reaction.data.value} users have participated</b>. <a className='link'>Results</a>
+            <b>{reaction.data.value} users reacted</b>
           </div>
           <div className='avatars'>
             {reaction.participants.map((x) => {
               if (!x.meta.deleted) {
-                return (<figure className='participant-avatar' />)
+                return (<figure key={x._id} className='participant-avatar' />)
               }
             })
             }
