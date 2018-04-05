@@ -5,6 +5,14 @@ import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'
 import SettingsForm from '../client/site/components/settings/settings-form'
 
+const Nav = () => (
+  <header>
+    <nav className='navbar mt-3'>
+      <h1>Democracy OS</h1>
+    </nav>
+  </header>
+)
+
 export default class extends Page {
   componentDidMount () {
     // Redirects to admin if settings is already defined
@@ -20,12 +28,12 @@ export default class extends Page {
         <Head />
         {!this.props.settings.error 
           ? <Header settings={this.props.settings} user={this.props.session.user} />
-          : <header className='text-center'>
-            <h1>2/2 Settings init</h1>
-          </header>
+          : <Nav />
         }
         {this.props.settings.error &&
-          <SettingsForm />
+          <div className='row'>
+            <SettingsForm />
+          </div>
         }
       </div>
     )

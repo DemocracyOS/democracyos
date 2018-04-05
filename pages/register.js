@@ -4,6 +4,14 @@ import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'
 import RegisterForm from '../client/site/components/register/register-form'
 
+const Nav = () => (
+  <header>
+    <nav className='navbar mt-3'>
+      <h1>Democracy OS</h1>
+    </nav>
+  </header>
+)
+
 export default class extends Page {
   render () {
     return (
@@ -11,13 +19,13 @@ export default class extends Page {
         <Head {...this.props} />
         {!this.props.settings.error
           ? <Header settings={this.props.settings} user={this.props.session.user} />
-          : <header className='text-center'>
-            <h1>1/2 User register</h1>
-          </header>
+          : <Nav />
         }
-        <RegisterForm
-          role={this.props.session.user.role}
-          id={this.props.session.user.id} />
+        <div className='row'>
+          <RegisterForm
+            role={this.props.session.user.role}
+            id={this.props.session.user.id} />
+        </div>
       </div>
     )
   }

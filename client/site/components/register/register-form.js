@@ -45,15 +45,13 @@ export default class RegisterForm extends React.Component {
 
   render () {
     return (
-      <section className='row register-form-wrapper'>
-        <form className='col-md-6' onSubmit={this.handleSubmit}>
-          <div className='form-group'>
-            <h2>User register</h2>
-          </div>
+      <form className='col-sm-6 offset-sm-3 mt-1 card' onSubmit={this.handleSubmit}>
+        <h2 className='card-header'>User register</h2>
+        <div className='card-body'>
           {this.state.error &&
-            <div className='alert alert-danger' role='alert'>
-              An error ocurred. Please try again.
-            </div>
+          <div className='alert alert-danger' role='alert'>
+            An error ocurred. Please try again.
+          </div>
           }
           <div className='form-group'>
             <label htmlFor='username'>Username:</label>
@@ -82,20 +80,21 @@ export default class RegisterForm extends React.Component {
               value={this.state.bio}
               onChange={this.handleInputChange} />
           </div>
-          <div className='form-group text-center'>
-            <button type='submit' className='btn btn-primary'>
+        </div>
+        <div className='card-footer text-right'>
+          <button type='submit' className='btn btn-primary'>
               Submit
-            </button>
-          </div>
-        </form>
+          </button>
+          <button className='btn btn-default ml-3' onClick={() => Router.push('/init-settings')}>
+              Skip
+          </button>
+        </div>
         <style jsx>{`
-          .register-form-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+          .card {
+            padding: 0;
           }
         `}</style>
-      </section>
+      </form>
     )
   }
 }
