@@ -44,16 +44,19 @@ export const ReactionInstanceCreate = (props) => (
   <Create {...props} title='Create a reaction instances'>
     <SimpleForm>
       <FromCreateContentDialog />
-      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>To what your voters are going to react?</h4>
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>In short, explain the purpose</h4>
+      <h5 style={{ fontWeight: 400, marginTop: '5px' }}>Ex: "Do you think this is a good project?", "Want to help us? Join us!"</h5>
       <TextInput source='title' label='The rule' />
       <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Add instructions or descriptions about this reaction so people understands</h4>
+      <h5 style={{ fontWeight: 400, marginTop: '5px' }}>Ex: "If we reach 2000 likes we will present this to the townhall.", "With your support we will contact you to help us with our project" </h5>      
       <LongTextInput source='instruction' label='Type here..' />
       <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Select the content you want people to react</h4>
       <ReferenceInput label="Post to react" source='resourceId' reference='posts' allowEmpty>
         <SelectInput optionText='title' />
       </ReferenceInput>
-      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Select what kind of reactions do you expect</h4>
-      <ReferenceInput label="Reaction Rule" source='reactionId' reference='reaction-rule' allowEmpty validate={required}>
+      <h4 style={{ fontWeight: 600, marginTop: '15px' }}>Select the rule of the reaction</h4>
+      <h5 style={{ fontWeight: 400, marginTop: '5px' }}>This states the type and rules of your reaction. Make sure you've create them before creating the instance.</h5>      
+      <ReferenceInput label="Reaction rule" source='reactionId' reference='reaction-rule' allowEmpty validate={required}>
         <SelectInput optionText='name' />
       </ReferenceInput>
     </SimpleForm>

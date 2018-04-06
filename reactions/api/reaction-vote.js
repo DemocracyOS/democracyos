@@ -50,7 +50,7 @@ router.route('/:id')
   })
   .put(async (req, res, next) => {
     try {
-      const updatedReactionVote = await ReactionVote.update({ id: req.params.id, reactionRule: req.body })
+      const updatedReactionVote = await ReactionVote.update({ id: req.params.id, reactionVote: req.body })
       res.status(OK).json(updatedReactionVote)
     } catch (err) {
       next(err)

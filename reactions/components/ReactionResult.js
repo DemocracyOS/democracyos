@@ -19,7 +19,8 @@ class ReactionResult extends React.Component {
         participants: [],
         reactionRule: {}
       },
-      showParticipants: false
+      showParticipantsOptIn: false,
+      showParticipantsOptOut: false
     }
     this.style = {
 
@@ -39,12 +40,20 @@ class ReactionResult extends React.Component {
       })
       .catch((error) => console.error('Error:', error))
   }
-  handleOpen = () => {
-    this.setState({ showParticipants: true })
+  showModalParticipantsOptIn = () => {
+    this.setState({ showParticipantsOptIn: true })
   };
 
-  handleClose = () => {
-    this.setState({ showParticipants: false })
+  closeModalParticipantsOptIn = () => {
+    this.setState({ showParticipantsOptIn: false })
+  };
+
+  showModalParticipantsOptOut = () => {
+    this.setState({ showParticipantsOptOut: true })
+  };
+
+  closeModalParticipantsOptOut = () => {
+    this.setState({ showParticipantsOptOut: false })
   };
 
   render () {
@@ -69,13 +78,26 @@ class ReactionResult extends React.Component {
       }
     }
 
-    const listUsers = this.state.instanceResult.participants.length > 0
+    const listParticipantsOptIn = this.state.instanceResult.participants.length > 0
       ? this.state.instanceResult.participants.map((x) => {
-        return (
-          <ListItem containerElement={<Link to={'/admin/users/' + x._id} />} primaryText={x.name} />
-        )
+        if (!x.meta.deleted) {
+          return (
+            <ListItem containerElement={<Link to={'/users/' + x.userId._id} />} primaryText={x.userId.name} />
+          )
+        }
       }) : (
-        <p>No users have participated yet</p>
+        <p>No participants here!</p>
+      )
+
+    const listParticipantsOptOut = this.state.instanceResult.participants.length > 0
+      ? this.state.instanceResult.participants.map((x) => {
+        if (x.meta.deleted) {
+          return (
+            <ListItem containerElement={<Link to={'/users/' + x.userId._id} />} primaryText={x.userId.name} />
+          )
+        }
+      }) : (
+        <p>No participants here!</p>
       )
 
     // CARD for ReactionLIKE
@@ -86,20 +108,29 @@ class ReactionResult extends React.Component {
             title={this.state.instanceResult.reactionRule.method + ' Results'}
             subtitle={'Reaction Rule: ' + this.state.instanceResult.reactionRule.name} />
           <CardText>
-            <h3 style={styles.counter.title}>LIKES</h3>
-            <h1 style={styles.counter.number}>{this.state.instanceResult.data.value}</h1>
+            <h3 style={styles.counter.title}>LIKES / OPT-OUT</h3>
+            <h1 style={styles.counter.number}>{this.state.instanceResult.data.value} / {this.state.instanceResult.participants.length - this.state.instanceResult.data.value}</h1>
           </CardText>
           <CardActions>
-            <FlatButton label='List participants' onClick={this.handleOpen} />
+            <FlatButton label='List participants' onClick={this.showModalParticipantsOptIn} />
+            <FlatButton label='Who opt-out?' onClick={this.showModalParticipantsOptOut} />
           </CardActions>
         </Card >
         <Dialog
           title='List of participants'
           modal={false}
-          open={this.state.showParticipants}
-          onRequestClose={this.handleClose}
+          open={this.state.showParticipantsOptIn}
+          onRequestClose={this.closeModalParticipantsOptIn}
           autoScrollBodyContent>
-          {listUsers}
+          {listParticipantsOptIn}
+        </Dialog>
+        <Dialog
+          title='List of participants who opt-out from the instance'
+          modal={false}
+          open={this.state.showParticipantsOptOut}
+          onRequestClose={this.closeModalParticipantsOptOut}
+          autoScrollBodyContent>
+          {listParticipantsOptOut}
         </Dialog>
       </div>
     )

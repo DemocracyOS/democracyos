@@ -59,10 +59,10 @@ export const ReactionRuleCreate = (props) => (
   <Create {...props} title='Create a reaction rule'>
     <SimpleForm>
       <TextInput source='name' label='Name your rule' />
-      <SelectInput source='method' label='What type of reaction is it gonna be?' choices={getChoices()} />
+      <SelectInput source='method' label='Type of reaction?' choices={getChoices()} />
       <NumberInput source='limit' step={1} />
       <DateInput label='When will it start?' source='startingDate' defaultValue={new Date()} options={{ minDate: new Date() }} />
-      <DateInput label='Add a closing date? If yes, select a date' source='closingDate' options={{ minDate: minClosingDate() }} />
+      <ClosingDateField />      
     </SimpleForm>
   </Create>
 )
@@ -74,7 +74,6 @@ export const ReactionRuleEdit = (props) => (
       <TextField source='method' label='What type of reaction is it gonna be?' />
       <NumberInput source='limit' step={1} />
       <DateField label='When will it start?' source='startingDate' />
-      {/* <DateInput label='Closing date' source='closingDate' options={{ minDate: minClosingDate() }} /> */}
       <ClosingDateField />
     </SimpleForm>
   </Edit>
