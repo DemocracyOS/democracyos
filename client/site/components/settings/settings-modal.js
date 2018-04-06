@@ -3,8 +3,9 @@ import Link from 'next/link'
 
 export default () => (
   <div className='overlay'>
-    <div className='settings-modal'>
+    <div className='settings-modal text-center'>
       <h5>Settings successfully saved.</h5>
+      <p>Now, you can start creating content and using your platform.✨</p>
       <Link href='/admin'>
         <button className='btn btn-primary'>
           Continue
@@ -29,7 +30,7 @@ export default () => (
       .settings-modal {
         width: 400px;
         height: 200px;
-        padding: 40px 10px;
+        padding: 35px 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

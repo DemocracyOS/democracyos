@@ -55,19 +55,17 @@ export default class SettingsForm extends React.Component {
 
   render () {
     return (
-      <section className='row settings-form-wrapper'>
-        <form className='settings-form' onSubmit={this.handleSubmit}>
-          <div className='form-group'>
-            <h4>Settings</h4>
+      <form className='col-sm-6 offset-sm-3 mt-5 card' onSubmit={this.handleSubmit}>
+        <h2 className='card-header'>Settings</h2>
+        { this.state.success &&
+          <SettingsModal />
+        }
+        { this.state.error &&
+          <div className='alert alert-danger' role='alert'>
+            An error ocurred, please try again later.
           </div>
-          { this.state.success &&
-            <SettingsModal />
-          }
-          { this.state.error &&
-            <div className='alert alert-danger' role='alert'>
-              An error ocurred, please try again later.
-            </div>
-          }
+        }
+        <div className='card-body'>
           <div className='form-group'>
             <label htmlFor='communityName'>
               Community name:
@@ -87,32 +85,28 @@ export default class SettingsForm extends React.Component {
               type='color'
               name='mainColor'
               value={this.state.mainColor}
-              onChange={this.handleChange} />
+              onChange={this.handleChange}
+              className='color-input' />
           </div>
-          <div className='button-container'>
-            <button className='btn btn-primary' type='submit'>
+        </div>
+        <div className='card-footer text-right'>
+          <button className='btn btn-primary' type='submit'>
               Submit
-            </button>
-            <button className='btn btn-default'>
-              Skip
-            </button>
-          </div>
-        </form>
+          </button>
+          <button className='btn btn-default ml-3' onClick={this.handleSubmit}>
+            Skip
+          </button>
+        </div>
         <style jsx>{`
-          .settings-form-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+          .card {
+            padding: 0;
           }
-          .button-container {
-            display: flex;
-            justify-content: space-between;
-          }
-          label {
+          .color-input {
             display: block;
+            width: 100px;
           }
         `}</style>
-      </section>
+      </form>
     )
   }
 }

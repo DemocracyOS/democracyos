@@ -11,7 +11,7 @@ import {
 } from 'admin-on-rest'
 import { stringify } from 'query-string'
 
-const API_URL = 'http://localhost:3000/api/v1.0'
+const API_URL = '/api/v1.0'
 
 /**
  * @param {String} type One of the constants appearing at the top if this file, e.g. 'UPDATE'

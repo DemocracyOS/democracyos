@@ -1,6 +1,7 @@
 const User = require('../db-api/user')
 const mailer = require('../../main/mailer')
 const { log } = require('../../main/logger')
+const { ADMIN_EMAIL } = require('../../main/config')
 
 module.exports = {
   find: ({ id, email, emailToken, provider } = {}) => {
@@ -18,7 +19,15 @@ module.exports = {
 
     return User.get(query)
   },
-  insert: (user) => User.create(user),
+  insert: async (user) => {
+    if (ADMIN_EMAIL !== null) {
+      user.email === ADMIN_EMAIL ? user.role = 'admin' : user.role = 'user'
+    } else {
+      const users = await User.list({ page: 1, limit: 10 })
+      users.total === 0 ? user.role = 'admin' : user.role = 'user'
+    }
+    return User.create(user)
+  },
   update: (user) => User.update({ id: user.id, user }),
   remove: (id) => User.remove(id),
   serialize: (user) => {
@@ -39,7 +48,8 @@ module.exports = {
           name: user.name,
           email: user.email,
           emailVerified: user.emailVerified,
-          firstLogin: user.firstLogin
+          firstLogin: user.firstLogin,
+          role: user.role
         })
       })
   },

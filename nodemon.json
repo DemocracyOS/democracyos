@@ -1,5 +1,5 @@
 {
-  "restartable": "rs",  
+  "restartable": true,  
   "verbose": true,
   "ignore": ["node_modules", ".next"],
   "watch": ["main", "services", "cms", "reactions", "users"],
