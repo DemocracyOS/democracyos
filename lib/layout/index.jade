@@ -9,7 +9,9 @@ html(lang=locale)
     meta(charset='utf-8')
     meta(name='description', content=config.socialshare.siteDescription)
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
-  
+
+    include includes/analytics
+
     //-
     //-   Styles
     //-   ==================================================
@@ -40,8 +42,6 @@ html(lang=locale)
       
     - if (config.segmentKey)
       include includes/segment
-
-    include includes/analytics
       
     - if (config.env !== 'development' && config.warnHTTP && config.protocol !== 'https')
       include includes/ssl-warning
