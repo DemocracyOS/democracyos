@@ -23,6 +23,7 @@ router.route('/')
   })
   // GET ALL posts
   .get(async (req, res, next) => {
+    console.log(req.user)
     try {
       const results = await Post.list({
         filter: req.query.filter,

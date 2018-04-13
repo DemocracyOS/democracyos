@@ -40,6 +40,8 @@ module.exports = (async () => {
     const nextAuthOptions = await nextAuth(app, {
       sessionSecret: SESSION_SECRET,
       providers: authProviders(),
+      bodyParser: false,
+      cookieParser: false,
       expressApp: server,
       functions: authFunctions,
       serverUrl: ROOT_URL,
