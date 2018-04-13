@@ -36,27 +36,14 @@ module.exports = (async () => {
     // server.use(loggerMiddleware)
     server.use(i18nMiddleware)
 
-    // Apply setup service
-    server.all('/', setup)
-
-    // Apply API routes
-    server.use('/api/v1.0', require('./api'))
-
-    // Admin page
-    server.get('/admin/*', (req, res) => {
-      app.render(req, res, '/admin')
-    })
-
     // Init authentication and next server
-    await nextAuth(app, {
+    const nextAuthOptions = await nextAuth(app, {
       sessionSecret: SESSION_SECRET,
       providers: authProviders(),
-      bodyParser: false,
-      cookieParser: false,
       expressApp: server,
       functions: authFunctions,
-      port: PORT,
       serverUrl: ROOT_URL,
+      expressSession: session,
       sessionStore: new MongoStore({
         mongooseConnection: mongoose.connection,
         autoRemove: 'interval',
@@ -65,7 +52,30 @@ module.exports = (async () => {
         stringify: false
       })
     })
-    return server
+    // Express App
+    const expressApp = nextAuthOptions.expressApp
+    // Apply setup service
+    expressApp.all('/', setup)
+
+    // Apply API routes
+    expressApp.use('/api/v1.0', require('./api'))
+
+    // Admin page
+    expressApp.get('/admin/*', (req, res) => {
+      app.render(req, res, '/admin')
+    })
+
+    expressApp.all('*', (req, res) => {
+      let nextRequestHandler = app.getRequestHandler()
+      return nextRequestHandler(req, res)
+    })
+
+    return expressApp.listen(PORT, (err) => {
+      if (err) {
+        throw err
+      }
+      console.log('> Ready on http://localhost:' + PORT + ' [' + NODE_ENV + ']')
+    })
   } catch (err) {
     log.error('An error occurred, unable to start the server')
     log.error(err)

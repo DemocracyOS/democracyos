@@ -35,6 +35,7 @@ router.route('/')
 
 router.route('/:id')
   .get(async (req, res, next) => {
+    console.log(req)
     try {
       const user = await User.get({ id: req.params.id })
       res.status(OK).json(user)
