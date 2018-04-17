@@ -13,7 +13,9 @@ export default class PostGrid extends React.Component {
 
   componentDidMount () {
     window.addEventListener('scroll', this.onScroll, false)
-    fetch(`/api/v1.0/posts?page=${this.state.page}`)
+    fetch(`/api/v1.0/posts?page=${this.state.page}`, {
+      'credentials': 'include'
+    })
       .then((res) => res.json())
       .then((res) => {
         this.setState({
