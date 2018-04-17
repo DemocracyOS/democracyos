@@ -31,8 +31,8 @@ module.exports = (async () => {
     server.use(compression())
     server.use(express.json())
     server.use(express.urlencoded({ extended: true }))
-    // server.use(passport.initialize())
-    // server.use(passport.session())
+    server.use(passport.initialize())
+    server.use(passport.session())
     // server.use(loggerMiddleware)
     server.use(i18nMiddleware)
 

@@ -32,15 +32,20 @@ export class PrivateProfile extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const url = `/api/v1.0/users/${this.props.user._id}`
+    const session = JSON.parse(localStorage.getItem('session'))
+    console.log(session)
+    const csrf = session.csrfToken
     const body = {
       bio: this.state.bio,
       name: this.state.name,
-      username: this.state.username
+      username: this.state.username,
+      _csrf: csrf
     }
     fetch(url, {
       'headers': {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       method: 'PUT',
       body: JSON.stringify(body)
     })

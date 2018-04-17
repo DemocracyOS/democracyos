@@ -121,6 +121,10 @@ const convertHTTPResponseToREST = (response, type, resource, params) => {
 export default (type, resource, params) => {
   const { fetchJson } = fetchUtils
   const { url, options } = convertRESTRequestToHTTP(type, resource, params)
+  options.credentials = 'same-origin'
+  const body = JSON.parse(options.body)
+  body['_csrf'] = JSON.parse(localStorage.getItem('session')).csrfToken
+  options.body = JSON.stringify(body)
   return fetchJson(url, options)
     .then((response) => convertHTTPResponseToREST(response, type, resource, params))
 }
