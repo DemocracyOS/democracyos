@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
-import { NextAuth } from 'next-auth-client'
+import { NextAuth } from 'next-auth/client'
 import Head from '../client/site/components/head'
 
 export default class Init extends React.Component {

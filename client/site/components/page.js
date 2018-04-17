@@ -1,14 +1,13 @@
 import React from 'react'
-import { NextAuth } from 'next-auth-client'
+import { NextAuth } from 'next-auth/client'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
     const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : ''
-    const res = await fetch(baseUrl + '/api/v1.0/settings')
-    const settings = await res.json()
     return {
       session: await NextAuth.init({ req }),
-      settings: settings
+      settings: await (await fetch(baseUrl + '/api/v1.0/settings', {
+        credentials: 'include' })).json()
     }
   }
 }
