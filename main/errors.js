@@ -1,7 +1,8 @@
 const {
   INTERNAL_SERVER_ERROR,
   NOT_FOUND,
-  BAD_REQUEST
+  BAD_REQUEST,
+  FORBIDDEN
 } = require('http-status')
 
 class APIError extends Error {
@@ -52,11 +53,22 @@ const ErrSettingsInit = new APIError('Settings is already initialized', {
   status: BAD_REQUEST
 })
 
+const ErrUserNotLoggedIn = new APIError('User is not logged in', {
+  translationKey: 'USER_NOT_LOGGED_IN',
+  status: FORBIDDEN
+})
+
+const ErrNotAdmin = new APIError('User needs to be an admin', {
+  translationKey: 'USER_NOT_ADMIN',
+  status: FORBIDDEN
+})
+
 module.exports = {
   APIError,
   ErrNotFound,
   ErrMissingParam,
   ErrParamTooLong,
   ErrSettingsNotInit,
-  ErrSettingsInit
-}
+  ErrSettingsInit,
+  ErrUserNotLoggedIn
+} 

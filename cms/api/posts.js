@@ -6,21 +6,23 @@ const {
 } = require('http-status')
 // Requires CRUD apis
 const Post = require('../db-api/posts')
+const { isLoggedIn }  = require('../../services/users')
 
 const router = express.Router()
 
 router.route('/')
   // POST route
-  .post(async (req, res, next) => {
-    try {
-      const newPost = await Post.create(req.body)
-      res.status(CREATED).json({
-        data: newPost
-      })
-    } catch (err) {
-      next(err)
-    }
-  })
+  .post(isLoggedIn,
+    async (req, res, next) => {
+      try {
+        const newPost = await Post.create(req.body)
+        res.status(CREATED).json({
+          data: newPost
+        })
+      } catch (err) {
+        next(err)
+      }
+    })
   // GET ALL posts
   .get(async (req, res, next) => {
     try {
