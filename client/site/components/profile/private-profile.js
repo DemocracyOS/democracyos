@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { fetchWrapper } from '../../../utils/fetch-wrapper'
 
 export class PrivateProfile extends React.Component {
   constructor (props) {
@@ -29,37 +30,28 @@ export class PrivateProfile extends React.Component {
     })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault()
     const url = `/api/v1.0/users/${this.props.user._id}`
-    const session = JSON.parse(localStorage.getItem('session'))
-    console.log(session)
-    const csrf = session.csrfToken
-    const body = {
-      bio: this.state.bio,
-      name: this.state.name,
-      username: this.state.username,
-      _csrf: csrf
-    }
-    fetch(url, {
-      'headers': {
-        'Content-Type': 'application/json'
-      },
+    const options = {
+      'headers': { 'Content-Type': 'application/json' },
       credentials: 'include',
       method: 'PUT',
-      body: JSON.stringify(body)
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({ success: true })
-        setTimeout(() => this.setState({
-          success: false
-        }), 5000)
-      })
-      .catch((err) => {
-        console.error(err)
-        this.setState({ error: true })
-      })
+      body: {
+        bio: this.state.bio,
+        name: this.state.name,
+        username: this.state.username
+      }
+    }
+    try {
+      fetchWrapper(url, options)
+      this.setState({ success: true })
+      setTimeout(() => this.setState({
+        success: false
+      }), 5000)
+    } catch (error) {
+      this.setState({ error: true }, () => console.error(err))
+    }
   }
 
   render () {

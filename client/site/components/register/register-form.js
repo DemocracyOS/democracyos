@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
+import { fetchWrapper } from '../../../utils/fetch-wrapper'
 
 export default class RegisterForm extends React.Component {
   constructor (props) {
@@ -19,28 +20,27 @@ export default class RegisterForm extends React.Component {
     this.setState({ [name]: value })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault()
-    const body = {
-      firstLogin: false,
-      username: this.state.username,
-      bio: this.state.bio,
-      name: this.state.name
-    }
-    fetch(`/api/v1.0/users/${this.props.id}`, {
+    const url = `/api/v1.0/users/${this.props.id}`
+    const options = {
       'method': 'PUT',
       'headers': {
         'Content-Type': 'application/json'
       },
-      'body': JSON.stringify(body)
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.props.role === 'admin' ? Router.push('/init-settings') : Router.push('/')
-      })
-      .catch((err) => {
-        this.setState({ error: true }, () => console.err(err))
-      })
+      'body': {
+        firstLogin: false,
+        username: this.state.username,
+        bio: this.state.bio,
+        name: this.state.name
+      }
+    }
+    try {
+      await fetchWrapper(url, options)
+      this.props.role === 'admin' ? Router.push('/init-settings') : Router.push('/')
+    } catch (error) {
+      this.setState({ error: true }, () => console.error(error))
+    }
   }
 
   render () {

@@ -13,9 +13,7 @@ export default class PostGrid extends React.Component {
 
   componentDidMount () {
     window.addEventListener('scroll', this.onScroll, false)
-    fetch(`/api/v1.0/posts?page=${this.state.page}`, {
-      'credentials': 'include'
-    })
+    fetch(`/api/v1.0/posts?page=${this.state.page}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -42,9 +40,7 @@ export default class PostGrid extends React.Component {
   handlePagination = () => {
     const nextPage = this.state.page + 1
     const url = `/api/v1.0/posts?page=${nextPage}`
-    fetch(url, {
-      credentials: 'include'
-    })
+    fetch(url)
       .then((res) => res.json())
       .then((res) => {
         this.setState({

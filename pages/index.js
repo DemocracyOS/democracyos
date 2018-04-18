@@ -30,7 +30,6 @@ export default class extends Page {
   render () {
     return (
       <div className='container'>
-        {console.log(this.props)}
         <Head {...this.props} />
         <Header settings={this.props.settings} user={this.props.session.user} />
         <div className='text-center'>

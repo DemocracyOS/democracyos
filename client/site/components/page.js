@@ -6,8 +6,7 @@ export default class extends React.Component {
     const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : ''
     return {
       session: await NextAuth.init({ req }),
-      settings: await (await fetch(baseUrl + '/api/v1.0/settings', {
-        credentials: 'include' })).json()
+      settings: await (await fetch(baseUrl + '/api/v1.0/settings')).json()
     }
   }
 }

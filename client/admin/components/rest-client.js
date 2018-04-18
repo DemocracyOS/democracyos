@@ -128,7 +128,6 @@ export default (type, resource, params) => {
   const { fetchJson } = fetchUtils
   const { url, options } = convertRESTRequestToHTTP(type, resource, params)
   options.credentials = 'include'
-  console.log(options.body)
   return fetchJson(url, options)
     .then((response) => convertHTTPResponseToREST(response, type, resource, params))
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { fetchWrapper } from '../../../utils/fetch-wrapper'
 import SettingsModal from './settings-modal'
 
 export default class SettingsForm extends React.Component {
@@ -12,30 +13,25 @@ export default class SettingsForm extends React.Component {
     }
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault()
-    fetch('/api/v1.0/settings', {
+    const url = '/api/v1.0/settings'
+    const options = {
       'method': 'POST',
       'headers': {
         'Content-Type': 'application/json'
       },
-      'body': JSON.stringify({
+      'body': {
         'communityName': this.state.communityName,
         'mainColor': this.state.mainColor
-      })
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          success: true
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-        this.setState({
-          error: true
-        })
-      })
+      }
+    }
+    try {
+      await fetchWrapper(url, options)
+      this.setState({ success: true })
+    } catch (error) {
+      this.setState({ error: true }, () => console.error(error))
+    }
   }
 
   handleChange = (e) => {
