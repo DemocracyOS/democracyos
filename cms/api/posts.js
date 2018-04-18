@@ -6,13 +6,17 @@ const {
 } = require('http-status')
 // Requires CRUD apis
 const Post = require('../db-api/posts')
-const { isLoggedIn }  = require('../../services/users')
+const {
+  isLoggedIn,
+  isAdmin
+} = require('../../services/users')
 
 const router = express.Router()
 
 router.route('/')
   // POST route
   .post(isLoggedIn,
+    isAdmin,
     async (req, res, next) => {
       try {
         const newPost = await Post.create(req.body)

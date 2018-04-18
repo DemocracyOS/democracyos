@@ -70,5 +70,6 @@ module.exports = {
   ErrParamTooLong,
   ErrSettingsNotInit,
   ErrSettingsInit,
-  ErrUserNotLoggedIn
+  ErrUserNotLoggedIn,
+  ErrNotAdmin
 } 
