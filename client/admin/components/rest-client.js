@@ -45,16 +45,22 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
     case UPDATE:
       url = `${API_URL}/${resource}/${params.id}`
       options.method = 'PUT'
-      options.body = JSON.stringify(params.data)
+      options.body = params.data
+      options.body['_csrf'] = JSON.parse(localStorage.getItem('session')).csrfToken
+      options.body = JSON.stringify(options.body)
       break
     case CREATE:
       url = `${API_URL}/${resource}`
       options.method = 'POST'
-      options.body = JSON.stringify(params.data)
+      options.body = params.data
+      options.body['_csrf'] = JSON.parse(localStorage.getItem('session')).csrfToken
+      options.body = JSON.stringify(options.body)
       break
     case DELETE:
       url = `${API_URL}/${resource}/${params.id}`
       options.method = 'DELETE'
+      options.body['_csrf'] = JSON.parse(localStorage.getItem('session')).csrfToken
+      options.body = JSON.stringify(options.body)
       break
     case GET_MANY:
       const query = {
@@ -121,10 +127,8 @@ const convertHTTPResponseToREST = (response, type, resource, params) => {
 export default (type, resource, params) => {
   const { fetchJson } = fetchUtils
   const { url, options } = convertRESTRequestToHTTP(type, resource, params)
-  options.credentials = 'same-origin'
-  const body = JSON.parse(options.body)
-  body['_csrf'] = JSON.parse(localStorage.getItem('session')).csrfToken
-  options.body = JSON.stringify(body)
+  options.credentials = 'include'
+  console.log(options.body)
   return fetchJson(url, options)
     .then((response) => convertHTTPResponseToREST(response, type, resource, params))
 }
