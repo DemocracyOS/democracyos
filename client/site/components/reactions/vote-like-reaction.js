@@ -2,6 +2,8 @@ import React from 'react'
 import Results from './results-like-reaction'
 import PleaseLogInModal from './please-login-modal'
 import VotingClosedModal from './voting-closed-modal'
+import { fetchWrapper } from '../../../utils/fetch-wrapper'
+
 
 export default class extends React.Component {
   constructor (props) {
@@ -34,17 +36,17 @@ export default class extends React.Component {
         pleaseLogIn: true
       })
     } else {
-      const body = {
-        userId: this.props.user.id,
-      }
       // No. Then lets create his firt vote
-      let response = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/vote`, {
-        'body': JSON.stringify(body),
-        'method': 'POST',
-        'headers': {
-          'Content-Type': 'application/json'
+      const url = `/api/v1.0/services/reactions/${this.state.reaction.id}/vote`
+      const options = {
+        'headers': { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        method: 'POST',
+        body: {
+          userId: this.props.user.id,
         }
-      })).json()
+      }
+      let response = await (await fetchWrapper(url, options)).json()
       let updatedReaction = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/result`)).json()
       this.setState({
         myVote: response,
