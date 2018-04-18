@@ -22,9 +22,7 @@ export default class extends Page {
   }
 
   async componentDidMount () {
-    fetch(`/api/v1.0/users/${this.props.id}`, {
-      credentials: 'include'
-    })
+    fetch(`/api/v1.0/users/${this.props.id}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({ user: res })

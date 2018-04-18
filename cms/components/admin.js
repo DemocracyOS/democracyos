@@ -16,7 +16,7 @@ import Navbar from './navbar'
 const history = createHistory({ basename: '/admin' })
 
 export default (props) => (
-  <Admin title='Democracy OS' restClient={RestClient} customRoutes={CustomRoutes} history={history} dashboard={Dashboard} menu={Navbar} >
+  <Admin title='Democracy OS' restClient={RestClient} customRoutes={CustomRoutes} history={history} dashboard={Dashboard} menu={Navbar}  >
     <Resource name='posts' list={PostList} show={PostShow} create={PostCreate} edit={PostEdit} remove={Delete} />
     <Resource name='reaction-rule' options={{ label: 'Reaction Rules' }} list={ReactionRuleList} create={ReactionRuleCreate} edit={ReactionRuleEdit} />
     <Resource name='reaction-instance' options={{ label: 'Reaction Instances' }} show={ReactionInstanceShow} list={ReactionInstanceList} create={ReactionInstanceCreate} edit={ReactionInstanceEdit} />

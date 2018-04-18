@@ -14,7 +14,7 @@ export default class extends Page {
 
   async componentDidMount () {
     const post = await (await fetch(`/api/v1.0/posts/${this.props.url.query.id}`)).json()
-    this.setState({post: post})
+    this.setState({ post })
   }
 
   render () {
