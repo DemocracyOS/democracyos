@@ -22,7 +22,12 @@ export default class extends Page {
   }
 
   async componentDidMount () {
-    fetch(`/api/v1.0/users/${this.props.id}`)
+    fetch(`/api/v1.0/users/${this.props.id}`, {
+      credentials: 'include',
+      body: {
+        '_csrf': JSON.parse(localStorage.getItem('session')).csrfToken
+      }
+    })
       .then((res) => res.json())
       .then((res) => {
         this.setState({ user: res })

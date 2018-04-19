@@ -5,6 +5,7 @@ const {
   NO_CONTENT
 } = require('http-status')
 const User = require('../db-api/user')
+const { isOwner } = require('../../services/users')
 
 const router = express.Router()
 
@@ -35,7 +36,6 @@ router.route('/')
 
 router.route('/:id')
   .get(async (req, res, next) => {
-    console.log(req)
     try {
       const user = await User.get({ id: req.params.id })
       res.status(OK).json(user)
