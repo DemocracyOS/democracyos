@@ -22,7 +22,6 @@ router.route('/')
     }
   })
   .get(async (req, res, next) => {
-    console.log(req.user)
     // returns Settings only record
     try {
       const results = await Setting.getOne()

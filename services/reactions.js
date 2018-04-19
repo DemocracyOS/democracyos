@@ -219,7 +219,6 @@ router.route('/:idInstance/test')
             res.status(FORBIDDEN).json('Reaction Method not found!')
             return
         }
-        console.log(req.params.idInstance)
         const savedVote = await ReactionVote.create(voteData)
         reactionInstance.results.push(savedVote._id)
         await ReactionInstance.update({ id: req.params.idInstance, reactionInstance: reactionInstance })
