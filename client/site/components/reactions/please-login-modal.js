@@ -1,21 +1,25 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default () => (
-  <div className='overlay'>
-    <div className='settings-modal text-center'>
-      <h5>Participate today! 🙌</h5>
-      <p>To save your action, we need you to be logged in!</p>
-      <Link href='/auth'>
-        <button className='btn btn-primary'>
-          Log in
-        </button>
-      </Link>
-      <button onClick={this.props.closeModal} className='btn btn-primary'>
-        Log in
-      </button>
-    </div>
-    <style jsx>{`
+export default class extends React.Component {
+  render () {
+    const props = this.props
+
+    return (
+      <div className='overlay'>
+        <div className='settings-modal text-center'>
+          <h5>Participate today! 🙌</h5>
+          <p>To save your action, we need you to be logged in!</p>
+          <Link href='/auth'>
+            <button className='btn btn-primary'>
+              Log in
+            </button>
+          </Link>
+          <button onClick={props.closeModal} className='btn btn-white'>
+            Go back
+          </button>
+        </div>
+        <style jsx>{`
       .overlay {
         position: fixed; 
         display: flex;
@@ -43,5 +47,7 @@ export default () => (
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
       }
     `}</style>
-  </div>
-)
+      </div>
+    )
+  }
+}

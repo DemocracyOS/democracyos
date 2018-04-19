@@ -8,9 +8,9 @@ export default class extends React.Component {
     return (
       <div className='overlay'>
         <div className='settings-modal text-center'>
-          <h5>The voting has closed! ⛔</h5>
-          <button onClick={props.closeModal} className='btn btn-primary'>
-              Close
+          <h5>The voting for this reaction is closed! ⛔</h5>
+          <button onClick={props.closeModal} className='btn btn-white'>
+              Go back
           </button>
         </div>
         <style jsx>{`

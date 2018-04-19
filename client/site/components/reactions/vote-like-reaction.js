@@ -1,9 +1,8 @@
 import React from 'react'
+import { fetchWrapper } from '../../../utils/fetch-wrapper'
 import Results from './results-like-reaction'
 import PleaseLogInModal from './please-login-modal'
 import VotingClosedModal from './voting-closed-modal'
-import { fetchWrapper } from '../../../utils/fetch-wrapper'
-
 
 export default class extends React.Component {
   constructor (props) {
@@ -20,18 +19,18 @@ export default class extends React.Component {
   }
 
   async componentWillMount () {
-    if (this.props.user != null) {
-      let vote = this.state.reaction.participants.find((x) => { return x.userId._id == this.props.user.id })
+    if (this.props.user !== undefined) {
+      let vote = this.state.reaction.participants.find((x) => { return x.userId._id === this.props.user.id })
       if (vote !== undefined) {
         this.setState({ myVote: vote })
       }
     } else {
-      this.setState({ myVote: false })
+      this.setState({ myVote: {} })
     }
   }
 
   voteAction = async () => {
-    if (this.props.user == null) {
+    if (this.props.user === undefined) {
       this.setState({
         pleaseLogIn: true
       })
@@ -42,9 +41,7 @@ export default class extends React.Component {
         'headers': { 'Content-Type': 'application/json' },
         credentials: 'include',
         method: 'POST',
-        body: {
-          userId: this.props.user.id,
-        }
+        body: {}
       }
       let response = await (await fetchWrapper(url, options)).json()
       let updatedReaction = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/result`)).json()
@@ -104,7 +101,7 @@ export default class extends React.Component {
     this.setState({ voteClosed: false })
   }
 
-  closeModalPleaseLogIn = (e) =>{
+  closeModalPleaseLogIn = (e) => {
     this.setState({ pleaseLogIn: false })
   }
 

@@ -65,9 +65,9 @@ const dataForChoose = function (instance) {
   return data
 }
 
-const createLikeVote = function (data) {
+const createLikeVote = function (userId) {
   return {
-    userId: data.userId,
+    userId: userId,
     meta: {
       timesVoted: 1,
       deleted: false
@@ -133,6 +133,11 @@ router.route('/:id/result')
 router.route('/:idInstance/vote')
   .post(async (req, res, next) => {
     try {
+      if (req.user === undefined) {
+        res.status(FORBIDDEN).json('No user in session')
+        return
+      }
+
       let reactionInstance = await ReactionInstance.get(req.params.idInstance)
       let reactionRule = await ReactionRule.get('' + reactionInstance.reactionId)
 
@@ -145,81 +150,18 @@ router.route('/:idInstance/vote')
       // Check if the user has voted before
       let reactionInstanceResults = await ReactionInstance.getResult({ id: req.params.idInstance })
       let vote = reactionInstanceResults.results.filter((x) => {
-        return x.userId._id !== req.body.userId
+        return x.userId.id !== req.user.id
       })
       if (vote.length === 0) {
         let voteData = null
         switch (reactionRule.method) {
           case 'LIKE':
-            voteData = createLikeVote(req.body)
+            voteData = createLikeVote(req.user.id)
             break
           default:
             res.status(FORBIDDEN).json('Reaction Method not found!')
             return
         }
-        console.log(req.params.idInstance)
-        const savedVote = await ReactionVote.create(voteData)
-        reactionInstance.results.push(savedVote._id)
-        await ReactionInstance.update({ id: req.params.idInstance, reactionInstance: reactionInstance })
-        res.status(CREATED).json(savedVote)
-        return
-      } else {
-        // Get the vote 
-        vote = vote[0]
-        const reactionVote = await ReactionVote.get(vote._id)
-        console.log(reactionVote)
-        if (reactionVote.meta.timesVoted >= reactionRule.limit) {
-          res.status(FORBIDDEN).json(reactionVote)
-          return
-        }
-        let dataChange = { meta: reactionVote.meta }
-        // Was the vote deleted?
-        if (dataChange.meta.deleted) {
-          // It was. Now re-enable it and add one more vote.
-          dataChange.meta.timesVoted += 1
-        }
-        // Update the deleted state
-        dataChange.meta.deleted = !dataChange.meta.deleted
-        // Now save it to the DB
-        const savedVote = await ReactionVote.update({ id: reactionVote._id, reactionVote: dataChange })
-        // Return response with the updated value
-        res.status(OK).json(savedVote)
-        return
-      }
-    } catch (err) {
-      next(err)
-    }
-  })
-
-router.route('/:idInstance/test')
-  // GET reaction-instances
-  .post(async (req, res, next) => {
-    try {
-      let reactionInstance = await ReactionInstance.get(req.params.idInstance)
-      let reactionRule = await ReactionRule.get('' + reactionInstance.reactionId)
-
-      // Check if the closing date is > than NOW
-      if (reactionRule.closingDate !== undefined && (new Date() - new Date(reactionRule.closingDate) > 0)) {
-        res.status(FORBIDDEN).json('The voting has closed')
-        return
-      }
-
-      // Check if the user has voted before
-      let reactionInstanceResults = await ReactionInstance.getResult({ id: req.params.idInstance })
-      let vote = reactionInstanceResults.results.filter((x) => {
-        return x.userId._id !== req.body.userId
-      })
-      if (vote.length === 0) {
-        let voteData = null
-        switch (reactionRule.method) {
-          case 'LIKE':
-            voteData = createLikeVote(req.body)
-            break
-          default:
-            res.status(FORBIDDEN).json('Reaction Method not found!')
-            return
-        }
-        console.log(req.params.idInstance)
         const savedVote = await ReactionVote.create(voteData)
         reactionInstance.results.push(savedVote._id)
         await ReactionInstance.update({ id: req.params.idInstance, reactionInstance: reactionInstance })
@@ -227,8 +169,8 @@ router.route('/:idInstance/test')
         return
       } else {
         // Get the vote
+        vote = vote[0]
         const reactionVote = await ReactionVote.get(vote._id)
-        console.log(reactionVote)
         if (reactionVote.meta.timesVoted >= reactionRule.limit) {
           res.status(FORBIDDEN).json(reactionVote)
           return
@@ -251,5 +193,70 @@ router.route('/:idInstance/test')
       next(err)
     }
   })
+
+// router.route('/:idInstance/test')
+//   // GET reaction-instances
+//   .post(async (req, res, next) => {
+//     try {
+//       console(req.user._id)
+//       if (req.user === undefined) {
+//         res.status(FORBIDDEN).json('No user in session')
+//         return
+//       }
+
+//       let reactionInstance = await ReactionInstance.get(req.params.idInstance)
+//       let reactionRule = await ReactionRule.get('' + reactionInstance.reactionId)
+
+//       // Check if the closing date is > than NOW
+//       if (reactionRule.closingDate !== undefined && (new Date() - new Date(reactionRule.closingDate) > 0)) {
+//         res.status(FORBIDDEN).json('Voting has closed')
+//         return
+//       }
+
+//       // Check if the user has voted before
+//       let reactionInstanceResults = await ReactionInstance.getResult({ id: req.params.idInstance })
+//       let vote = reactionInstanceResults.results.filter((x) => {
+//         return x.userId._id !== req.user._id
+//       })
+//       if (vote.length === 0) {
+//         let voteData = null
+//         switch (reactionRule.method) {
+//           case 'LIKE':
+//             voteData = createLikeVote(req.user)
+//             break
+//           default:
+//             res.status(FORBIDDEN).json('Reaction Method not found!')
+//             return
+//         }
+//         const savedVote = await ReactionVote.create(voteData)
+//         reactionInstance.results.push(savedVote._id)
+//         await ReactionInstance.update({ id: req.params.idInstance, reactionInstance: reactionInstance })
+//         res.status(CREATED).json(savedVote)
+//         return
+//       } else {
+//         // Get the vote
+//         const reactionVote = await ReactionVote.get(vote._id)
+//         if (reactionVote.meta.timesVoted >= reactionRule.limit) {
+//           res.status(FORBIDDEN).json(reactionVote)
+//           return
+//         }
+//         let dataChange = { meta: reactionVote.meta }
+//         // Was the vote deleted?
+//         if (dataChange.meta.deleted) {
+//           // It was. Now re-enable it and add one more vote.
+//           dataChange.meta.timesVoted += 1
+//         }
+//         // Update the deleted state
+//         dataChange.meta.deleted = !dataChange.meta.deleted
+//         // Now save it to the DB
+//         const savedVote = await ReactionVote.update({ id: reactionVote._id, reactionVote: dataChange })
+//         // Return response with the updated value
+//         res.status(OK).json(savedVote)
+//         return
+//       }
+//     } catch (err) {
+//       next(err)
+//     }
+//   })
 
 module.exports = router
