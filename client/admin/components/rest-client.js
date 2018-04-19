@@ -59,7 +59,9 @@ const convertRESTRequestToHTTP = (type, resource, params) => {
     case DELETE:
       url = `${API_URL}/${resource}/${params.id}`
       options.method = 'DELETE'
-      options.body['_csrf'] = JSON.parse(localStorage.getItem('session')).csrfToken
+      options.body = {
+        '_csrf': JSON.parse(localStorage.getItem('session')).csrfToken
+      }
       options.body = JSON.stringify(options.body)
       break
     case GET_MANY:
