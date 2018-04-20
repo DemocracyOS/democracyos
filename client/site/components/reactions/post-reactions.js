@@ -12,7 +12,6 @@ export default class extends React.Component {
   async componentDidMount () {
     const reactions = await (await fetch(`/api/v1.0/services/reactions/posts/${this.props.post._id}/results`)).json()
     this.setState({ reactions: reactions })
-    console.log(reactions)
   }
 
   render () {

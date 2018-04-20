@@ -106,7 +106,6 @@ export default class extends React.Component {
   }
 
   showModalVoteClosed = (e) => {
-    console.log('help!')
     this.setState({ voteClosed: true })
   }
 
