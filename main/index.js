@@ -58,13 +58,27 @@ module.exports = (async () => {
     // Apply API routes
     expressApp.use('/api/v1.0', require('./api'))
 
-    // Admin page
-    expressApp.get('/admin/*', (req, res) => {
-      app.render(req, res, '/admin')
+    //Admin page
+    expressApp.get('/admin', (req, res) => {
+      if (!req.user || req.user.role !== 'admin') {
+        app.render(req, res, '/404')
+      } else {
+        app.render(req, res, '/admin')
+      }
     })
+
+    expressApp.get('/admin/*', (req, res) => {
+      if (!req.user || req.user.role !== 'admin') {
+        app.render(req, res, '/404')
+      } else {
+        app.render(req, res, '/admin')
+      }
+    })
+    
 
     expressApp.all('*', (req, res) => {
       let nextRequestHandler = app.getRequestHandler()
+      console.log('hola')
       return nextRequestHandler(req, res)
     })
 
