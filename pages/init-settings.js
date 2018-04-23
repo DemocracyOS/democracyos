@@ -27,7 +27,7 @@ export default class extends Page {
       <div className='container'>
         <Head />
         {!this.props.settings.error 
-          ? <Header settings={this.props.settings} user={this.props.session.user} />
+          ? <Header settings={this.props.settings} session={this.props.session} />
           : <Nav />
         }
         {this.props.settings.error &&

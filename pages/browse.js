@@ -15,7 +15,7 @@ export default class extends Page {
     return (
       <div className='container'>
         <Head {...this.props} />
-        <Header settings={this.props.settings} user={this.props.session.user} />
+        <Header settings={this.props.settings} session={this.props.session} />
         <BrowseGrid query={this.props.query} />
       </div>
     )
