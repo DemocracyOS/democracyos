@@ -23,7 +23,7 @@ export default class extends Page {
 
   async componentDidMount () {
     fetch(`/api/v1.0/users/${this.props.id}`, {
-      credentials: 'include',
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((res) => {
