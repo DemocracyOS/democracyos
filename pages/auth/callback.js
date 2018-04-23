@@ -4,10 +4,10 @@ import Router from 'next/router'
 import { NextAuth } from 'next-auth/client'
 
 export default class extends React.Component {
-  static async getInitialProps ({ req }) {
+  static async getInitialProps ({ req, query }) {
     return {
-      session: await NextAuth.init({ force: true, req: req }),
-      action: req.query.action
+      action: query.action,
+      session: await NextAuth.init({ force: true, req: req })
     }
   }
 
