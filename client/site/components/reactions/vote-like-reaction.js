@@ -25,7 +25,7 @@ export default class extends React.Component {
         this.setState({ myVote: vote })
       }
     } else {
-      this.setState({ myVote: {} })
+      this.setState({ myVote: null })
     }
   }
 
