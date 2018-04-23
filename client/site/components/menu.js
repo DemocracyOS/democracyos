@@ -47,11 +47,13 @@ export default class extends React.Component {
               <a>Profile</a>
             </Link>
           </li>
+          <li>
+            <form id='signout' method='post' action='/auth/signout' onSubmit={this.handleSignOutSubmit}>
+              <input name='_csrf' type='hidden' value={this.props.session.csrfToken} />
+              <button type='submit' className='btn sign-out-button'>Sign out</button>
+            </form>
+          </li>
         </ul>
-        <form id='signout' method='post' action='/auth/signout' onSubmit={this.handleSignOutSubmit}>
-          <input name='_csrf' type='hidden' value={this.props.session.csrfToken} />
-          <button type='submit' className='btn btn-outline-secondary'>Sign out</button>
-        </form>
         <style jsx>{`
           .main-menu {
             width: 150px;

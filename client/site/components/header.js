@@ -81,6 +81,5 @@ export default class Header extends React.Component {
 
 Header.propTypes = {
   settings: PropTypes.object,
-  session: PropTypes.object,
-  handleSignOutSubmit: PropTypes.func
+  session: PropTypes.object
 }

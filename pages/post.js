@@ -21,7 +21,7 @@ export default class extends Page {
     return (
       <div className='container'>
         <Head {...this.props} />
-        <Header settings={this.props.settings} user={this.props.session.user} />
+        <Header settings={this.props.settings} session={this.props.session} />
         {this.state.post &&
           <PostLayout user={this.props.session.user} post={this.state.post} />
         }

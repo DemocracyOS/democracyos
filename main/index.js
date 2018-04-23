@@ -74,11 +74,9 @@ module.exports = (async () => {
         app.render(req, res, '/admin')
       }
     })
-    
 
     expressApp.all('*', (req, res) => {
       let nextRequestHandler = app.getRequestHandler()
-      console.log('hola')
       return nextRequestHandler(req, res)
     })
 
