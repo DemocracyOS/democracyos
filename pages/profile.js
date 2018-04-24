@@ -8,7 +8,7 @@ import { PublicProfile } from '../client/site/components/profile/public-profile'
 export default class extends Page {
   static async getInitialProps ({ req, query }) {
     let props = await super.getInitialProps({ req })
-    const userId = (props.session.user.id).toString()
+    const userId = props.session.user ? (props.session.user.id).toString() : null
     props.id = query.id
     props.isOwner = userId === props.id
     return props
@@ -23,10 +23,7 @@ export default class extends Page {
 
   async componentDidMount () {
     fetch(`/api/v1.0/users/${this.props.id}`, {
-      credentials: 'include',
-      body: {
-        '_csrf': JSON.parse(localStorage.getItem('session')).csrfToken
-      }
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((res) => {
@@ -39,7 +36,7 @@ export default class extends Page {
     return (
       <div className='container'>
         <Head {...this.props} />
-        <Header settings={this.props.settings} user={this.props.session.user} />
+        <Header settings={this.props.settings} session={this.props.session} />
         {!(!this.state.user) &&
           <div className='profile-wrapper'>
             {this.props.isOwner ? (

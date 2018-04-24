@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import { Menu } from './menu'
+import Menu from './menu'
 
 export default class Header extends React.Component {
   constructor (props) {
@@ -27,12 +27,24 @@ export default class Header extends React.Component {
             </a>
           </Link>
         </div>
-        <div className='header-avatar-container'>
-          <div className='avatar' onClick={this.handleMainMenu} />
-          {this.state.menu &&
-            <Menu userId={this.props.user.id} />
-          }
-        </div>
+        {this.props.session.user &&
+          <div className='header-avatar-container'>
+            <p>{this.props.session.user.name}</p>
+            <div className='avatar' onClick={this.handleMainMenu} />
+            {this.state.menu &&
+              <Menu session={this.props.session} />
+            }
+          </div>
+        }
+        {!this.props.session.user &&
+          <div>
+            <Link href='/auth'>
+              <a className='btn btn-primary'>
+                Sign in
+              </a>
+            </Link>
+          </div>
+        }
         <style jsx>{`
           header {
             height: 100px;
@@ -41,19 +53,19 @@ export default class Header extends React.Component {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
-          }
-          header a {
-            color: var(--black);
-            text-decoration: none;
-            cursor: pointer;
+            align-items: center;
           }
           h1 {
             font-size: 36px;
           }
           .header-avatar-container {
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
           }
           .avatar {
+            margin-left: 20px;
             width: 35px;
             height: 35px;
             background-color: var(--gray);
@@ -69,5 +81,5 @@ export default class Header extends React.Component {
 
 Header.propTypes = {
   settings: PropTypes.object,
-  user: PropTypes.object
+  session: PropTypes.object
 }
