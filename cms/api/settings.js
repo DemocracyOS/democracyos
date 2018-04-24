@@ -7,20 +7,26 @@ const {
 } = require('http-status')
 const { log } = require('../../main/logger')
 const Setting = require('../db-api/settings')
-
+const {
+  isLoggedIn,
+  isAdmin
+} = require('../../services/users')
 const router = express.Router()
 
 router.route('/')
-  .post(async (req, res, next) => {
-    try {
-      const newSetting = await Setting.create(req.body)
-      res.status(CREATED).json({
-        data: newSetting
-      })
-    } catch (err) {
-      next(err)
-    }
-  })
+  .post(
+    isLoggedIn,
+    isAdmin,
+    async (req, res, next) => {
+      try {
+        const newSetting = await Setting.create(req.body)
+        res.status(CREATED).json({
+          data: newSetting
+        })
+      } catch (err) {
+        next(err)
+      }
+    })
   .get(async (req, res, next) => {
     // returns Settings only record
     try {
@@ -40,21 +46,27 @@ router.route('/:id')
       next(err)
     }
   })
-  .put(async (req, res, next) => {
-    try {
-      const updatedSetting = await Setting.update({ id: req.params.id, setting: req.body })
-      res.status(OK).json(updatedSetting)
-    } catch (err) {
-      next(err)
-    }
-  })
-  .delete(async (req, res, next) => {
-    try {
-      await Setting.remove(req.params.id)
-      res.status(OK).json({ id: req.params.id })
-    } catch (err) {
-      next(err)
-    }
-  })
+  .put(
+    isLoggedIn,
+    isAdmin,
+    async (req, res, next) => {
+      try {
+        const updatedSetting = await Setting.update({ id: req.params.id, setting: req.body })
+        res.status(OK).json(updatedSetting)
+      } catch (err) {
+        next(err)
+      }
+    })
+  .delete(
+    isLoggedIn,
+    isAdmin,
+    async (req, res, next) => {
+      try {
+        await Setting.remove(req.params.id)
+        res.status(OK).json({ id: req.params.id })
+      } catch (err) {
+        next(err)
+      }
+    })
 
 module.exports = router
