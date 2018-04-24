@@ -62,23 +62,29 @@ router.route('/:id')
     }
   })
   // UPDATE a post with a given ID
-  .put(async (req, res, next) => {
-    try {
-      const updatedPost = await Post.update({ id: req.params.id, post: req.body })
-      res.status(OK).json(updatedPost)
-    } catch (err) {
-      next(err)
-    }
-  })
+  .put(
+    isLoggedIn,
+    isAdmin,
+    async (req, res, next) => {
+      try {
+        const updatedPost = await Post.update({ id: req.params.id, post: req.body })
+        res.status(OK).json(updatedPost)
+      } catch (err) {
+        next(err)
+      }
+    })
   // DELETE  a post with a given ID
-  .delete(async (req, res, next) => {
-    try {
-      await Post.remove(req.params.id)
-      res.status(OK).json({ id: req.params.id })
-    } catch (err) {
-      next(err)
-    }
-  })
+  .delete(
+    isLoggedIn,
+    isAdmin,
+    async (req, res, next) => {
+      try {
+        await Post.remove(req.params.id)
+        res.status(OK).json({ id: req.params.id })
+      } catch (err) {
+        next(err)
+      }
+    })
 
 // Exports all the functions
 module.exports = router
