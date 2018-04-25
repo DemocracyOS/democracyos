@@ -3,45 +3,14 @@
 violet = rgb(100, 71, 110)
 
 .topics-slider {
-  .input-great-labels {
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 50px;
-  }
-  .input-small-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-
-    .input-small-wrapper {
-      width: 48%;
-      display: flex;
-      justify-content: space-between;
-
-      .input-small-label {
-        width: 50px;
-        max-width: 50px;
-        text-align: center;
-
-        span {
-          font-size: 12px;
-          width: 50px;
-          max-width: 50px;
-        }
-      }
-    }
-  }
-
   .input-range {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
   .input-range__slider {
     appearance: none;
-    background: #3995D6;
-    border: 1px solid #3995D6;
+    background: violet;
+    border: 1px solid violet;
     border-radius: 100%;
     cursor: pointer;
     display: block;
@@ -81,30 +50,31 @@ violet = rgb(100, 71, 110)
     white-space: nowrap;
   }
 
-  .input-range__label--value {
-    margin-left: -20px;
-  }
-
   .input-range__label--min,
   .input-range__label--max {
-    display: none;
     bottom: -1.4rem;
     position: absolute;
   }
 
   .input-range__label--min {
     left: 0;
-    font-weight: bold;
   }
 
   .input-range__label--max {
     right: 0;
-    font-weight: bold;
   }
 
   .input-range__label--value {
     position: absolute;
     top: -1.8rem;
+  }
+
+  .input-range__label-container {
+    left: -50%;
+    position: relative;
+  }
+  .input-range__label--max .input-range__label-container {
+    left: 50%;
   }
 
   .input-range__track {
@@ -137,56 +107,5 @@ violet = rgb(100, 71, 110)
     height: 1rem;
     position: relative;
     width: 100%;
-  }
-
-  .row-slider-labels {
-    margin-top: 35px;
-    margin-bottom: 80px;
-
-    p {
-      font-weight: bold;
-    }
-  }
-
-  .voted-box, .vote-box {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .voted-box {
-    margin-top: 100px;
-    margin-bottom: 60px;
-  }
-
-  .row-result {
-    margin: 25px;
-    box-shadow: 3px 2px 6px 1px rgba(0,0,0,0.23);
-  }
-
-  .VictoryContainer {
-    height: 400px !important;
-  }
-}
-
-.topics-slider.neutral {
-  .input-range__track--active {
-    background-color: #eee;
-  }
-}
-
-.topics-slider.positive {
-  .input-range__track--active {
-    background-color: #3995D6;
-  }
-}
-
-.topics-slider.negative {
-  .input-range__slider {
-    background: violet;
-    border: 1px solid violet;
-  }
-
-  .input-range__track--active {
-    background-color: violet;
   }
 }
