@@ -62,6 +62,7 @@
   "admin-tags-moderation.popup.replace": "Replace:",
   "admin-tags-moderation.popup.button": "Save",
   "admin-topics-form.action.cause": "Cause",
+  "admin-topics-form.action.slider": "Slider",
   "admin-topics-form.action.none": "No action",
   "admin-topics-form.action.poll": "Poll",
   "admin-topics-form.action.vote": "Vote",
