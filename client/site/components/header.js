@@ -14,7 +14,7 @@ export default class Header extends React.Component {
   }
 
   handleSearchChange = (e) => {
-    this.setState({search: e.target.value})
+    this.setState({ search: e.target.value })
   }
 
   handleSearchSubmit = (e) => {
@@ -44,10 +44,15 @@ export default class Header extends React.Component {
             </a>
           </Link>
         </div>
-        <div className='header-browser-container'>
+        <div className='header-browse-container'>
           <form onSubmit={this.handleSearchSubmit}>
-            <input type='text' value={this.state.search} onChange={this.handleSearchChange} />
-            <button type='submit' className='btn btn-primary'>🔍</button>
+            <button type='submit' className='btn btn-search'>🔍</button>
+            <input
+              className='input-search'
+              type='text'
+              value={this.state.search}
+              onChange={this.handleSearchChange}
+              placeholder='Search...' />
           </form>
         </div>
         {this.props.session.user &&
@@ -75,17 +80,28 @@ export default class Header extends React.Component {
             padding: 20px;
             display: flex;
             flex-flow: row wrap;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
+          }
+          .header-title-container {
+            margin-right: auto;
           }
           h1 {
             font-size: 36px;
+          }
+          .header-browse-container {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
           }
           .header-avatar-container {
             position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
+          }
+          .header-avatar-container p {
+            margin-bottom: 0px;
           }
           .avatar {
             margin-left: 20px;
@@ -95,6 +111,12 @@ export default class Header extends React.Component {
             border: 1px solid var(--dark-gray);
             border-radius: 100%;
             cursor: pointer;
+          }
+          .input-search {
+            border: 0px;
+          }
+          .btn-search {
+            background-color: var(--white);
           }
         `}</style>
       </header>
