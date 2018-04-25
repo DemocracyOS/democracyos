@@ -1,5 +1,5 @@
 - function te (str) { return t(str) !== str }
-  
+
 #topic-wrapper(class=forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'collaborative' : '')
   - if (tags.length === 0)
     if (user.staff)
@@ -86,6 +86,7 @@
               option(value='vote')= t('admin-topics-form.action.vote')
               option(value='poll')= t('admin-topics-form.action.poll')
               option(value='cause')= t('admin-topics-form.action.cause')
+              option(value='slider')= t('admin-topics-form.action.slider')
           - if (te('admin-topics-form.description.action'))
             span.help-text= t('admin-topics-form.description.action')
           - if (!pollOpen)
@@ -94,6 +95,7 @@
               option(value='vote')= t('admin-topics-form.action.vote')
               option(value='poll')= t('admin-topics-form.action.poll')
               option(value='cause')= t('admin-topics-form.action.cause')
+              option(value='slider')= t('admin-topics-form.action.slider')
         .form-group.poll-options.hide
           - var pollOpen = !!(topic.action && topic.action.count > 0)
           - var pollOptions = topic.action && topic.action.results && topic.action.results.map(function(o){ return o.value })

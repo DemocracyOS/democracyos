@@ -66,6 +66,7 @@
   "admin-tags-moderation.popup.replace": "Reemplazar:",
   "admin-tags-moderation.popup.button": "Guardar",
   "admin-topics-form.action.cause": "Causa",
+  "admin-topics-form.action.slider": "Rango",
   "admin-topics-form.action.none": "Sin acción",
   "admin-topics-form.action.poll": "Encuesta",
   "admin-topics-form.action.vote": "Voto",
