@@ -1,10 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const PublicProfile = ({ user }) => (
+export const PublicProfile = ({ user, isOwner, handleEditMode }) => (
   <div className='public-profile-wrapper'>
     <div className='public-profile-container'>
-      <h2>{user.name}</h2>
+      <div className='public-profile-title'>
+        <h2>{user.name}</h2>
+        {isOwner &&
+          <button className='btn btn-success btn-edit-profile' onClick={handleEditMode}>
+            Edit 🖉
+          </button>
+        }
+      </div>
       <p className='public-profile-date'>Member since: {user.createdAt}</p>
       <p className='public-profile-bio'>{user.bio}</p>
     </div>
@@ -12,6 +19,14 @@ export const PublicProfile = ({ user }) => (
       .public-profile-wrapper {
         width: 740px;
         padding: 20px;
+      }
+      .public-profile-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .btn-edit-profile {
+        margin-left: auto;
       }
       h2 {
         font-size: 33px;
@@ -37,5 +52,7 @@ export const PublicProfile = ({ user }) => (
 )
 
 PublicProfile.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  isOwner: PropTypes.bool.isRequired,
+  handleEditMode: PropTypes.func
 }

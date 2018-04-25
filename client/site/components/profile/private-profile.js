@@ -48,7 +48,7 @@ export class PrivateProfile extends React.Component {
       this.setState({ success: true })
       setTimeout(() => this.setState({
         success: false
-      }), 5000)
+      }, this.props.handleEditMode()), 5000)     
     } catch (error) {
       this.setState({ error: true }, () => console.error(err))
     }
@@ -119,5 +119,6 @@ export class PrivateProfile extends React.Component {
 }
 
 PrivateProfile.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  handleEditMode: PropTypes.func
 }
