@@ -1,14 +1,31 @@
 import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import Router from 'next/router'
 import Menu from './menu'
 
 export default class Header extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      menu: false
+      menu: false,
+      search: ''
     }
+  }
+
+  handleSearchChange = (e) => {
+    this.setState({search: e.target.value})
+  }
+
+  handleSearchSubmit = (e) => {
+    e.preventDefault()
+    const queryToString = JSON.stringify({
+      title: this.state.search
+    })
+    Router.push({
+      pathname: '/browse',
+      query: { filter: queryToString }
+    })
   }
 
   handleMainMenu = () => {
@@ -26,6 +43,12 @@ export default class Header extends React.Component {
               <h1>{this.props.settings && this.props.settings.communityName ? this.props.settings.communityName : 'Democracy OS'}</h1>
             </a>
           </Link>
+        </div>
+        <div className='header-browser-container'>
+          <form onSubmit={this.handleSearchSubmit}>
+            <input type='text' value={this.state.search} onChange={this.handleSearchChange} />
+            <button type='submit' className='btn btn-primary'>🔍</button>
+          </form>
         </div>
         {this.props.session.user &&
           <div className='header-avatar-container'>
