@@ -17,7 +17,8 @@ export default class extends Page {
   constructor (props) {
     super(props)
     this.state = {
-      user: false
+      user: false,
+      editMode: false
     }
   }
 
@@ -32,6 +33,12 @@ export default class extends Page {
       .catch((err) => console.log(err))
   }
 
+  handleEditMode = () => {
+    this.setState({
+      editMode: !this.state.editMode
+    })
+  }
+
   render () {
     return (
       <div className='container'>
@@ -39,10 +46,15 @@ export default class extends Page {
         <Header settings={this.props.settings} session={this.props.session} />
         {!(!this.state.user) &&
           <div className='profile-wrapper'>
-            {this.props.isOwner ? (
-              <PrivateProfile user={this.state.user} />
+            {this.state.editMode ? (
+              <PrivateProfile
+                user={this.state.user}
+                handleEditMode={this.handleEditMode} />
             ) : (
-              <PublicProfile user={this.state.user} />
+              <PublicProfile
+                user={this.state.user}
+                isOwner={this.props.isOwner}
+                handleEditMode={this.handleEditMode} />
             )}
           </div>
         }
