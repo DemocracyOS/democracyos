@@ -1,7 +1,8 @@
 const { log } = require('../main/logger')
 const {
   ErrUserNotLoggedIn,
-  ErrNotAdmin
+  ErrNotAdmin,
+  ErrNotAdminNorOwner
 } = require('../main/errors')
 
 const isLoggedIn = (req, res, next) => {
@@ -22,8 +23,39 @@ const isOwner = (req, res, next) => {
   return next()
 }
 
+const isAdminOrOwner = (req, res, next) => {
+  log.debug('isAdminOrOwner middleware')
+  if (req.user && req.user.role === 'admin') return next()
+  if (req.params.id === req.user.id.toString()) return next()
+  return next(ErrNotAdminNorOwner)
+}
+
+const isAnon = (req, res, next) => {
+  log.debug('isAnon middleware')
+  if (req.user === undefined) req.user = { role: null }
+  return next()
+}
+
+const allowedFieldsFor = (subject) => {
+  let selectedFields = {}
+  switch (subject) {
+    case 'admin':
+      return {} // Allow all fields
+    case 'owner':
+      selectedFields.email = 1
+  }
+  selectedFields._id = 1
+  selectedFields.name = 1
+  selectedFields.bio = 1
+  selectedFields.username = 1
+  return selectedFields
+}
+
 module.exports = {
   isLoggedIn,
   isAdmin,
-  isOwner
+  isOwner,
+  isAdminOrOwner,
+  isAnon,
+  allowedFieldsFor
 }

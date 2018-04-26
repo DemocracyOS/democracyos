@@ -3,21 +3,6 @@ const { log } = require('../../main/logger')
 const { ErrNotFound } = require('../../main/errors')
 const User = require('../models/user')
 
-function allowedFieldsFor (subject) {
-  let selectedFields = {}
-  switch (subject) {
-    case 'admin':
-      return {} // Allow all fields
-    case 'owner':
-      selectedFields.email = 1
-  }
-  selectedFields._id = 1
-  selectedFields.name = 1
-  selectedFields.bio = 1
-  selectedFields.username = 1
-  return selectedFields
-}
-
 /**
  * Create user
  * @method create
@@ -38,7 +23,7 @@ exports.create = function create (user) {
  * @return {promise}
  */
 
-const get = exports.get = function get (query) {
+const get = exports.get = function get (query, fields) {
   log.debug('user db-api get')
   if (query.id) {
     let _id = ObjectId(query.id)
@@ -46,10 +31,7 @@ const get = exports.get = function get (query) {
     delete query.id
     query._id = _id
   }
-  // FLOR! Look, i am not passing a "subject" param to the get function
-  // But "null" would be if who requested the call was a anon.
-  // In a log-in process, the app is the one calling this get function.
-  return User.findOne(query).select(allowedFieldsFor(null))
+  return User.findOne(query).select(fields)
 }
 
 /**
@@ -61,7 +43,7 @@ const get = exports.get = function get (query) {
  * @return {promise}
  */
 
-exports.list = function list ({ filter, limit, page, ids, subject }) {
+exports.list = function list ({ filter, limit, page, ids, fields }) {
   log.debug('user db-api list')
   let query = {}
   if (filter !== undefined) {
@@ -80,7 +62,7 @@ exports.list = function list ({ filter, limit, page, ids, subject }) {
     query._id = { $in: idsToArray }
   }
   return User
-    .paginate(query, { select: allowedFieldsFor(subject), page, limit })
+    .paginate(query, { select: fields, page, limit })
 }
 
 /**
