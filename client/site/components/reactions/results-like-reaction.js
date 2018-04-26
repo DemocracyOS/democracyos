@@ -18,10 +18,8 @@ export default class extends React.Component {
             <b>{reaction.data.value} users reacted</b>
           </div>
           <div className='avatars'>
-            {reaction.participants.map((x) => {
-              if (!x.meta.deleted) {
-                return (<figure key={x._id} className='participant-avatar' />)
-              }
+            {reaction.participants.map((user) => {
+              return (<figure key={user._id} className='participant-avatar' />)
             })
             }
           </div>

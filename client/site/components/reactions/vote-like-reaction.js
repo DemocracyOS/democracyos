@@ -20,7 +20,7 @@ export default class extends React.Component {
 
   async componentWillMount () {
     if (this.props.user !== undefined) {
-      let vote = this.state.reaction.participants.find((x) => { return x.userId._id === this.props.user.id })
+      let vote = this.state.reaction.userVote
       if (vote !== undefined) {
         this.setState({ myVote: vote })
       }
@@ -44,57 +44,19 @@ export default class extends React.Component {
         body: {}
       }
       let response = await (await fetchWrapper(url, options)).json()
-      let updatedReaction = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/result`)).json()
+      const urlUpdate = `/api/v1.0/services/reactions/${this.state.reaction.id}/result`
+      const optionsUpdate = {
+        'headers': { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        method: 'GET'
+      }
+      let updatedReaction = await (await fetchWrapper(urlUpdate, optionsUpdate)).json()
       this.setState({
         myVote: response,
         reaction: updatedReaction,
         justVoted: true
       })
     }
-
-    // Has the user voted?
-    // if (this.state.myVote != null) {
-    //   const body = {
-    //     userId: this.props.user.id,
-    //     reactionVoteId: this.state.myVote._id,
-    //     reactionRule: this.state.reaction.reactionRule
-    //   }
-    //   // No. Then lets create his firt vote
-    //   let response = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/vote`, {
-    //     'body': JSON.stringify(body),
-    //     'method': 'POST',
-    //     'headers': {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   })).json()
-    //   let updatedReaction = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/result`)).json()
-    //   this.setState({
-    //     myVote: response,
-    //     reaction: updatedReaction,
-    //     justVoted: true
-    //   })
-    // } else {
-    //   const body = {
-    //     userId: this.props.user.id,
-    //     reactionRule: this.state.reaction.reactionRule
-    //   }
-    //   // No. Then lets create his firt vote
-    //   let response = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/vote`, {
-    //     'body': JSON.stringify(body),
-    //     'method': 'POST',
-    //     'headers': {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   })).json()
-    //   let updatedReaction = await (await fetch(`/api/v1.0/services/reactions/${this.state.reaction.id}/result`)).json()
-    //   this.setState({
-    //     myVote: response,
-    //     reaction: updatedReaction,
-    //     justVoted: true
-    //   })
-    //   // this.setState({ myVote: response })
-    //   // this.setState({ justVoted: true })
-    // }
   }
 
   closeModalVoteClosed = (e) => {
