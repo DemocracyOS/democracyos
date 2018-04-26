@@ -5,22 +5,30 @@ const {
   NO_CONTENT
 } = require('http-status')
 const User = require('../db-api/user')
-const { isOwner } = require('../../services/users')
+const {
+  isLoggedIn,
+  isAdmin,
+  isAnon,
+  isAdminOrOwner,
+  allowedFieldsFor
+} = require('../../services/users')
 
 const router = express.Router()
 
 router.route('/')
-  .post(async (req, res, next) => {
+  .post(
+    isLoggedIn,
+    async (req, res, next) => {
+      try {
+        await User.create(req.body)
+        res.status(CREATED).end()
+      } catch (err) {
+        next(err)
+      }
+    })
+  .get(isAnon, async (req, res, next) => {
     try {
-      await User.create(req.body)
-      res.status(CREATED).end()
-    } catch (err) {
-      next(err)
-    }
-  })
-  .get(async (req, res, next) => {
-    try {
-      const results = await User.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page, ids: req.query.ids })
+      const results = await User.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page, ids: req.query.ids, fields: allowedFieldsFor(req.user.role) })
       res.status(OK).json({
         results: results.docs,
         pagination: {
@@ -37,27 +45,33 @@ router.route('/')
 router.route('/:id')
   .get(async (req, res, next) => {
     try {
-      const user = await User.get({ id: req.params.id })
+      const user = await User.get({ id: req.params.id }, allowedFieldsFor(req.user.role))
       res.status(OK).json(user)
     } catch (err) {
       next(err)
     }
   })
-  .put(async (req, res, next) => {
-    try {
-      const updatedUser = await User.update({ id: req.params.id, user: req.body })
-      res.status(OK).json(updatedUser)
-    } catch (err) {
-      next(err)
-    }
-  })
-  .delete(async (req, res, next) => {
-    try {
-      await User.remove(req.params.id)
-      res.status(OK).json({ id: req.params.id })
-    } catch (err) {
-      next(err)
-    }
-  })
+  .put(
+    isLoggedIn,
+    isAdminOrOwner,
+    async (req, res, next) => {
+      try {
+        const updatedUser = await User.update({ id: req.params.id, user: req.body })
+        res.status(OK).json(updatedUser)
+      } catch (err) {
+        next(err)
+      }
+    })
+  .delete(
+    isLoggedIn,
+    isAdmin,
+    async (req, res, next) => {
+      try {
+        await User.remove(req.params.id)
+        res.status(OK).json({ id: req.params.id })
+      } catch (err) {
+        next(err)
+      }
+    })
 
 module.exports = router
