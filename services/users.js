@@ -19,7 +19,7 @@ const isAdmin = (req, res, next) => {
 
 const isOwner = (req, res, next) => {
   log.debug('isOwner middleware')
-  req.params.id === req.user.id.toString() ? req.isOwner = true : req.isOwner = false
+  req.params.id.toString() === req.user.id.toString() ? req.isOwner = true : req.isOwner = false
   return next()
 }
 
@@ -48,6 +48,7 @@ const allowedFieldsFor = (subject) => {
   selectedFields.name = 1
   selectedFields.bio = 1
   selectedFields.username = 1
+  selectedFields.createdAt = 1
   return selectedFields
 }
 

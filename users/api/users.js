@@ -9,6 +9,7 @@ const {
   isLoggedIn,
   isAdmin,
   isAnon,
+  isOwner,
   isAdminOrOwner,
   allowedFieldsFor
 } = require('../../services/users')
@@ -43,9 +44,9 @@ router.route('/')
   })
 
 router.route('/:id')
-  .get(async (req, res, next) => {
+  .get(isOwner, async (req, res, next) => {
     try {
-      const user = await User.get({ id: req.params.id }, allowedFieldsFor(req.user.role))
+      const user = await User.get({ id: req.params.id }, allowedFieldsFor(req.isOwner ? 'owner' : req.user.role))
       res.status(OK).json(user)
     } catch (err) {
       next(err)
