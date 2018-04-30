@@ -8,7 +8,6 @@ const User = require('../db-api/user')
 const {
   isLoggedIn,
   isAdmin,
-  isAnon,
   isOwner,
   isAdminOrOwner,
   allowedFieldsFor
@@ -27,31 +26,35 @@ router.route('/')
         next(err)
       }
     })
-  .get(isAnon, async (req, res, next) => {
-    try {
-      const results = await User.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page, ids: req.query.ids, fields: allowedFieldsFor(req.user.role) })
-      res.status(OK).json({
-        results: results.docs,
-        pagination: {
-          count: results.total,
-          page: results.page,
-          limit: results.limit
-        }
-      })
-    } catch (err) {
-      next(err)
-    }
-  })
+  .get(
+    isLoggedIn,
+    async (req, res, next) => {
+      try {
+        const results = await User.list({ filter: req.query.filter, limit: req.query.limit, page: req.query.page, ids: req.query.ids, fields: allowedFieldsFor(req.user) })
+        res.status(OK).json({
+          results: results.docs,
+          pagination: {
+            count: results.total,
+            page: results.page,
+            limit: results.limit
+          }
+        })
+      } catch (err) {
+        next(err)
+      }
+    })
 
 router.route('/:id')
-  .get(isOwner, async (req, res, next) => {
-    try {
-      const user = await User.get({ id: req.params.id }, allowedFieldsFor(req.isOwner ? 'owner' : req.user.role))
-      res.status(OK).json(user)
-    } catch (err) {
-      next(err)
-    }
-  })
+  .get(
+    isOwner,
+    async (req, res, next) => {
+      try {
+        const user = await User.get({ id: req.params.id }, allowedFieldsFor(req.user))
+        res.status(OK).json(user)
+      } catch (err) {
+        next(err)
+      }
+    })
   .put(
     isLoggedIn,
     isAdminOrOwner,

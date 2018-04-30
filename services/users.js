@@ -19,7 +19,14 @@ const isAdmin = (req, res, next) => {
 
 const isOwner = (req, res, next) => {
   log.debug('isOwner middleware')
-  req.params.id.toString() === req.user.id.toString() ? req.isOwner = true : req.isOwner = false
+  if (req.user && req.params.id.toString() === req.user.id.toString()) {
+    req.user.isOwner = true
+    console.log('true')
+  }
+  else {
+    req.user.isOwner = false
+    console.log('true')    
+  }
   return next()
 }
 
@@ -30,20 +37,16 @@ const isAdminOrOwner = (req, res, next) => {
   return next(ErrNotAdminNorOwner)
 }
 
-const isAnon = (req, res, next) => {
-  log.debug('isAnon middleware')
-  if (req.user === undefined) req.user = { role: null }
-  return next()
-}
+// const isAnon = (req, res, next) => {
+//   log.debug('isAnon middleware')
+//   if (req.user === undefined) req.user = { role: null }
+//   return next()
+// }
 
-const allowedFieldsFor = (subject) => {
+const allowedFieldsFor = (user) => {
   let selectedFields = {}
-  switch (subject) {
-    case 'admin':
-      return {} // Allow all fields
-    case 'owner':
-      selectedFields.email = 1
-  }
+  if (user && user.role === 'admin') return {}
+  if (user && user.isOwner) selectedFields.email = 1
   selectedFields._id = 1
   selectedFields.name = 1
   selectedFields.bio = 1
@@ -57,6 +60,5 @@ module.exports = {
   isAdmin,
   isOwner,
   isAdminOrOwner,
-  isAnon,
   allowedFieldsFor
 }
