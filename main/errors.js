@@ -63,6 +63,11 @@ const ErrNotAdmin = new APIError('User needs to be an admin', {
   status: FORBIDDEN
 })
 
+const ErrNotAdminNorOwner = new APIError('User don\'t have permission', {
+  translationKey: 'USER_NOT_ADMIN_NOR_OWNER',
+  status: FORBIDDEN
+})
+
 module.exports = {
   APIError,
   ErrNotFound,
@@ -71,5 +76,6 @@ module.exports = {
   ErrSettingsNotInit,
   ErrSettingsInit,
   ErrUserNotLoggedIn,
-  ErrNotAdmin
+  ErrNotAdmin,
+  ErrNotAdminNorOwner
 } 

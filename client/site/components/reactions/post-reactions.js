@@ -1,5 +1,7 @@
 import React from 'react'
 import VoteLikeReaction from './vote-like-reaction'
+import { fetchWrapper } from '../../../utils/fetch-wrapper'
+
 
 export default class extends React.Component {
   constructor (props) {
@@ -10,7 +12,13 @@ export default class extends React.Component {
   }
 
   async componentDidMount () {
-    const reactions = await (await fetch(`/api/v1.0/services/reactions/posts/${this.props.post._id}/results`)).json()
+    const url = `/api/v1.0/services/reactions/posts/${this.props.post._id}/results`
+    const options = {
+      'headers': { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      method: 'GET'
+    }
+    const reactions = await (await fetchWrapper(url, options)).json()
     this.setState({ reactions: reactions })
   }
 

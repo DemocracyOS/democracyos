@@ -13,8 +13,22 @@ const { log } = require('../main/logger')
 // Requires CRUD apis
 const router = express.Router()
 
-const dataForLike = function (instance) {
-  let userParticipants = instance.results
+const {
+  isLoggedIn
+} = require('./users')
+
+const dataForLike = function (instance, user) {
+  let userParticipants = []
+  instance.results.forEach((vote) => {
+    if (!vote.meta.deleted) userParticipants.push(vote.userId)
+  })
+  let userVote = null
+  if (user !== undefined) {
+    userVote = instance.results.find((vote) => {
+      return vote.userId._id.toString() === user.id.toString()
+    })
+  }
+  console.log(userVote)
   // Count the votes that are not deleted
   let countVotes = instance.results.reduce((accumulator, currentValue) => {
     if (!currentValue.meta.deleted) {
@@ -28,6 +42,7 @@ const dataForLike = function (instance) {
     instruction: instance.instruction,
     reactionRule: instance.reactionId,
     participants: userParticipants,
+    userVote: userVote,
     data: {
       name: 'LIKE',
       value: countVotes
@@ -86,7 +101,7 @@ router.route('/posts/:id/results')
 
         switch (instance.reactionId.method) {
           case 'LIKE':
-            dataInstance = dataForLike(instance)
+            dataInstance = dataForLike(instance, req.user)
             break
           // This is for future implementations..
           // Depending of the type of rule, it needs to process data in a different way
@@ -113,7 +128,7 @@ router.route('/:id/result')
       let data = {}
       switch (instance.reactionId.method) {
         case 'LIKE':
-          data = dataForLike(instance)
+          data = dataForLike(instance, req.user)
           break
         // This is for future implementations..
         // Depending of the type of rule, it needs to process data in a different way
@@ -131,13 +146,8 @@ router.route('/:id/result')
   })
 
 router.route('/:idInstance/vote')
-  .post(async (req, res, next) => {
+  .post(isLoggedIn, async (req, res, next) => {
     try {
-      if (req.user === undefined) {
-        res.status(FORBIDDEN).json('No user in session')
-        return
-      }
-
       let reactionInstance = await ReactionInstance.get(req.params.idInstance)
       let reactionRule = await ReactionRule.get('' + reactionInstance.reactionId)
 
