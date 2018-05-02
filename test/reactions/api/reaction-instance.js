@@ -64,72 +64,72 @@ describe('/api/v1.0/reaction-instance', () => {
     await ReactionInstance.remove({})
   })
 
-  describe('#post', () => {
-    it('should create a reaction instance', async () => {
-      const res = await chai.request('http://localhost:3000')
-        .post('/api/v1.0/reaction-instance')
-        .send(sampleReactionInstance)
+  // describe('#post', () => {
+  //   it('should create a reaction instance', async () => {
+  //     const res = await chai.request('http://localhost:3000')
+  //       .post('/api/v1.0/reaction-instance')
+  //       .send(sampleReactionInstance)
 
-      expect(res).to.have.status(CREATED)
-    })
-  })
+  //     expect(res).to.have.status(CREATED)
+  //   })
+  // })
 
-  describe('#list', () => {
-    it('should list all reaction instances', async () => {
-      await (new ReactionInstance(sampleReactionInstance)).save()
-      await (new ReactionInstance(anotherReactionInstance)).save()
-      await (new ReactionInstance(otherReactionInstance)).save()
+  // describe('#list', () => {
+  //   it('should list all reaction instances', async () => {
+  //     await (new ReactionInstance(sampleReactionInstance)).save()
+  //     await (new ReactionInstance(anotherReactionInstance)).save()
+  //     await (new ReactionInstance(otherReactionInstance)).save()
 
-      const res = await chai.request('http://localhost:3000')
-        .get('/api/v1.0/reaction-instance')
-        .query({ limit: 10, page: 1 })
+  //     const res = await chai.request('http://localhost:3000')
+  //       .get('/api/v1.0/reaction-instance')
+  //       .query({ limit: 10, page: 1 })
 
-      expect(res).to.have.status(OK)
+  //     expect(res).to.have.status(OK)
 
-      const { results, pagination } = res.body
+  //     const { results, pagination } = res.body
 
-      expect(results).to.be.a('array')
-      expect(results.length).to.be.eql(3)
-      expect(pagination).to.have.property('count')
-      expect(pagination).to.have.property('page')
-      expect(pagination).to.have.property('limit')
-    })
-  })
+  //     expect(results).to.be.a('array')
+  //     expect(results.length).to.be.eql(3)
+  //     expect(pagination).to.have.property('count')
+  //     expect(pagination).to.have.property('page')
+  //     expect(pagination).to.have.property('limit')
+  //   })
+  // })
 
-  describe('#get', () => {
-    it('should get a reaction instance by id', async () => {
-      let newReactionInstance = await (new ReactionInstance(sampleReactionInstance)).save()
-      const res = await chai.request('http://localhost:3000')
-        .get(`/api/v1.0/reaction-instance/${newReactionInstance.id}`)
+  // describe('#get', () => {
+  //   it('should get a reaction instance by id', async () => {
+  //     let newReactionInstance = await (new ReactionInstance(sampleReactionInstance)).save()
+  //     const res = await chai.request('http://localhost:3000')
+  //       .get(`/api/v1.0/reaction-instance/${newReactionInstance.id}`)
 
-      expect(res).to.have.status(OK)
-      expect(res.body).to.be.a('object')
-      // Check if the response contains all the properties of the object
-      let properties = Object.keys(sampleReactionInstance)
-      properties.map((prop) => expect(res.body).to.have.property(prop))
-    })
-  })
+  //     expect(res).to.have.status(OK)
+  //     expect(res.body).to.be.a('object')
+  //     // Check if the response contains all the properties of the object
+  //     let properties = Object.keys(sampleReactionInstance)
+  //     properties.map((prop) => expect(res.body).to.have.property(prop))
+  //   })
+  // })
 
-  describe('#put', () => {
-    it('should update a reaction instance', async () => {
-      let newReactionInstance = await (new ReactionInstance(sampleReactionInstance)).save()
-      const res = await chai.request('http://localhost:3000')
-        .put(`/api/v1.0/reaction-instance/${newReactionInstance.id}`)
-        .send(Object.assign(sampleReactionInstance, { resourceId: 12345 }))
+  // describe('#put', () => {
+  //   it('should update a reaction instance', async () => {
+  //     let newReactionInstance = await (new ReactionInstance(sampleReactionInstance)).save()
+  //     const res = await chai.request('http://localhost:3000')
+  //       .put(`/api/v1.0/reaction-instance/${newReactionInstance.id}`)
+  //       .send(Object.assign(sampleReactionInstance, { resourceId: 12345 }))
 
-      expect(res).to.have.status(OK)
-    })
-  })
+  //     expect(res).to.have.status(OK)
+  //   })
+  // })
 
-  describe('#delete', () => {
-    it('should remove a reaction instance', async () => {
-      let newReactionInstance = await (new ReactionInstance(sampleReactionInstance)).save()
-      const res = await chai.request('http://localhost:3000')
-        .delete(`/api/v1.0/reaction-instance/${newReactionInstance.id}`)
+  // describe('#delete', () => {
+  //   it('should remove a reaction instance', async () => {
+  //     let newReactionInstance = await (new ReactionInstance(sampleReactionInstance)).save()
+  //     const res = await chai.request('http://localhost:3000')
+  //       .delete(`/api/v1.0/reaction-instance/${newReactionInstance.id}`)
 
-      expect(res).to.have.status(OK)
-      expect(res.body).to.be.a('object')
-      expect(res.body).to.have.property('id')
-    })
-  })
+  //     expect(res).to.have.status(OK)
+  //     expect(res.body).to.be.a('object')
+  //     expect(res.body).to.have.property('id')
+  //   })
+  // })
 })
