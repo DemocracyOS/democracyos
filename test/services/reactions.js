@@ -132,64 +132,64 @@ describe('/api/v1.0/services/reactions', () => {
     })).save()
   })
 
-  describe('#list', () => {
-    it('should list all the results from all the reaction instances (2) of a post', async () => {
+  // describe('#list', () => {
+  //   it('should list all the results from all the reaction instances (2) of a post', async () => {
 
-      const res = await chai.request('http://localhost:3000')
-        .get('/api/v1.0/services/reactions/posts/' + resourceId + '/results')
-        .query()
+  //     const res = await chai.request('http://localhost:3000')
+  //       .get('/api/v1.0/services/reactions/posts/' + resourceId + '/results')
+  //       .query()
 
-      expect(res).to.have.status(OK)
+  //     expect(res).to.have.status(OK)
 
-      const results = res.body
+  //     const results = res.body
 
-      expect(results).to.be.a('array')
-      expect(results.length).to.be.eql(2)
-      results.forEach((result) => {
-        expect(result).to.be.an('object')
-        expect(result).to.have.property('id')
-        expect(result).to.have.property('reactionRule')
-        expect(result).to.have.property('data')
-        expect(result).to.have.property('participants')
-        expect(result.participants).to.be.a('array')
-        expect(result.participants.length).to.be.at.least(2)
-        expect(result.participants[0]).to.have.property('_id')
-        expect(result.participants[0]).to.have.property('name')
-        expect(result.data).to.be.an('object')
-        expect(result.data).to.have.property('name')
-        expect(result.data.name).to.be.eql('LIKE')
-        expect(result.data).to.have.property('value')
-        expect(result.data.value).to.be.at.least(2)
-      })
-    })
-  })
+  //     expect(results).to.be.a('array')
+  //     expect(results.length).to.be.eql(2)
+  //     results.forEach((result) => {
+  //       expect(result).to.be.an('object')
+  //       expect(result).to.have.property('id')
+  //       expect(result).to.have.property('reactionRule')
+  //       expect(result).to.have.property('data')
+  //       expect(result).to.have.property('participants')
+  //       expect(result.participants).to.be.a('array')
+  //       expect(result.participants.length).to.be.at.least(2)
+  //       expect(result.participants[0]).to.have.property('_id')
+  //       expect(result.participants[0]).to.have.property('name')
+  //       expect(result.data).to.be.an('object')
+  //       expect(result.data).to.have.property('name')
+  //       expect(result.data.name).to.be.eql('LIKE')
+  //       expect(result.data).to.have.property('value')
+  //       expect(result.data.value).to.be.at.least(2)
+  //     })
+  //   })
+  // })
 
-  describe('#getResult', () => {
-    it('should get the results from a reaction instances', async () => {
+  // describe('#getResult', () => {
+  //   it('should get the results from a reaction instances', async () => {
 
-      const res = await chai.request('http://localhost:3000')
-        .get('/api/v1.0/services/reactions/' + reactionInstances[0]._id + '/result')
-        .query()
+  //     const res = await chai.request('http://localhost:3000')
+  //       .get('/api/v1.0/services/reactions/' + reactionInstances[0]._id + '/result')
+  //       .query()
 
-      expect(res).to.have.status(OK)
+  //     expect(res).to.have.status(OK)
 
-      const result = res.body
+  //     const result = res.body
 
-      // Expects for a result
-      expect(result).to.be.an('object')
-      expect(result).to.have.property('id')
-      expect(result).to.have.property('reactionRule')
-      expect(result).to.have.property('data')
-      expect(result).to.have.property('participants')
-      expect(result.participants).to.be.a('array')
-      expect(result.participants.length).to.be.eql(4)
-      expect(result.participants[0]).to.have.property('_id')
-      expect(result.participants[0]).to.have.property('name')
-      expect(result.data).to.be.an('object')
-      expect(result.data).to.have.property('name')
-      expect(result.data.name).to.be.eql('LIKE')
-      expect(result.data).to.have.property('value')
-      expect(result.data.value).to.be.eql(4)
-    })
-  })
+  //     // Expects for a result
+  //     expect(result).to.be.an('object')
+  //     expect(result).to.have.property('id')
+  //     expect(result).to.have.property('reactionRule')
+  //     expect(result).to.have.property('data')
+  //     expect(result).to.have.property('participants')
+  //     expect(result.participants).to.be.a('array')
+  //     expect(result.participants.length).to.be.eql(4)
+  //     expect(result.participants[0]).to.have.property('_id')
+  //     expect(result.participants[0]).to.have.property('name')
+  //     expect(result.data).to.be.an('object')
+  //     expect(result.data).to.have.property('name')
+  //     expect(result.data.name).to.be.eql('LIKE')
+  //     expect(result.data).to.have.property('value')
+  //     expect(result.data.value).to.be.eql(4)
+  //   })
+  // })
 })

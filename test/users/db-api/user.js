@@ -61,10 +61,10 @@ describe('db-api.users', () => {
       const UserMock = sinon.mock(User)
 
       UserMock
-        .expects('paginate').withArgs({}, { select: undefined, limit: 10, page: 1 })
+        .expects('paginate').withArgs({}, { select: {}, limit: 10, page: 1 })
         .resolves(sampleUser)
 
-      return user.list({ limit: 10, page: 1, select: undefined })
+      return user.list({ limit: 10, page: 1, fields: {} })
         .then((result) => {
           UserMock.verify()
           UserMock.restore()
