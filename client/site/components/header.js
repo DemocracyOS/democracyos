@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
+import { t } from '../../i18n'
 import Menu from './menu'
 
 export default class Header extends React.Component {
@@ -52,7 +53,7 @@ export default class Header extends React.Component {
               type='text'
               value={this.state.search}
               onChange={this.handleSearchChange}
-              placeholder='Search...' />
+              placeholder={t('index/search')} />
           </form>
         </div>
         {this.props.session.user &&

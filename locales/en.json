@@ -8,6 +8,30 @@
       "SETTINGS_INIT": "Settings are already initialized",
       "USER_NOT_ADMIN": "User is not an admin",
       "USER_NOT_LOGGED_IN": "User needs to be logged in to do this action"
+    },
+    "index": {
+      "title": "DemocracyOS",
+      "search": "Search"
+    },
+    "lol":{
+      "title": "Oops, there is no content available right now!"
+    },
+    "workInProgress": "Il trabajio in progressi",
+    "admin": {
+      "title": "Democracy OS",
+      "welcome": "Welcome",
+      "description": "Lorem ipsum sic dolor amet...",
+      "home": "Home",
+      "settings": "settings",
+      "posts": "Posts",
+      "reactions": "Reactions",
+      "reaction-rules": "Reaction rules",
+      "reaction-instances": "Reactions instances",
+      "users": "Users",
+      "profile": "Profile",
+      "create": "Create",
+      "edit": "Edit",
+      "delete": "Delete"
     }
   }
 }

@@ -49,6 +49,7 @@
     "chai-http": "^3.0.0",
     "eslint": "^4.17.0",
     "eslint-config-democracyos": "^2.0.2",
+    "globalize-webpack-plugin": "^2.1.0",
     "mocha": "^5.0.0",
     "nodemon": "^1.17.2",
     "rewire": "^3.0.2",

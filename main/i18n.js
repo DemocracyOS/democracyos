@@ -3,6 +3,7 @@ const path = require('path')
 const Globalize = require('globalize')
 const accepts = require('accepts')
 const { DEFAULT_LANG } = require('./config')
+const { log } = require('./logger')
 
 Globalize.load(
   require('cldr-data/supplemental/likelySubtags'),
@@ -46,6 +47,8 @@ module.exports = {
     const lang = accepts(req).language(locales)
     const language = lang || DEFAULT_LANG
     res.locals.t = GlobalizeInstances[language]
+    log.debug(language)
+    Globalize.locale(language) // This gets bypassed.. its like its not working at all..
     next()
   }
 }

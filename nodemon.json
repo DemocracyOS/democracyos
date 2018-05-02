@@ -2,7 +2,7 @@
   "restartable": true,  
   "verbose": true,
   "ignore": ["node_modules", ".next"],
-  "watch": ["main", "services", "cms", "reactions", "users"],
+  "watch": ["main", "services", "cms", "reactions", "users", "locales"],
   "env": {
     "NODE_ENV": "dev"
   },

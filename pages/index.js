@@ -2,6 +2,8 @@ import React from 'react'
 import Router from 'next/router'
 import Link from 'next/link'
 import { NextAuth } from 'next-auth/client'
+// Globalize
+import { t, setLocale } from '../client/i18n'
 import Page from '../client/site/components/page'
 import Head from '../client/site/components/head'
 import Header from '../client/site/components/header'
@@ -35,7 +37,7 @@ export default class extends Page {
           settings={this.props.settings}
           session={this.props.session} />
         <div className='text-center'>
-          <p className='lead mt-3 mb-3'>Work in progress.</p>
+          <p className='lead mt-3 mb-3'>{t('workInProgress')}</p>
         </div>
         <PostGrid />
       </div>
