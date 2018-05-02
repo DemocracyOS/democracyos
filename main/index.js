@@ -1,4 +1,6 @@
+const path = require('path')
 const express = require('express')
+const globalizeExpress = require('globalize-express')
 const next = require('next')
 const nextAuth = require('next-auth')
 const compression = require('compression')
@@ -20,6 +22,30 @@ const app = next({
   quiet: NODE_ENV === 'test'
 })
 
+let configGlobalize = {
+  // list of supported locales
+  locales: ['en', 'es'],
+
+  // locale chosen if the requested locales was not found in the 'locales' array
+  defaultLocale: 'en',
+
+  // A custom cookie name which may contain the locale to use
+  cookieName: null,
+
+  // location of all the locale json files on disk
+  messages: path.join(__dirname, '..', 'locales'),
+
+  // An OPTIONAL array of cldr data to load into globalize
+  // Checkout: https://github.com/jquery/globalize#2-cldr-content
+  // If this property is not provided, globalize-express will dynamically load
+  // all possible cldr-data for the locales listed above.
+  localeData: [
+  ],
+
+  // Set this to true if running in development mode. This will delete cache before every access for localized string
+  devMode: false
+}
+
 module.exports = (async () => {
   try {
     await app.prepare()
@@ -31,6 +57,7 @@ module.exports = (async () => {
     server.use(compression())
     server.use(express.json())
     server.use(express.urlencoded({ extended: true }))
+    server.use(globalizeExpress(configGlobalize))
     server.use(passport.initialize())
     server.use(passport.session())
     // server.use(loggerMiddleware)

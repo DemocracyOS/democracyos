@@ -1,13 +1,21 @@
 import React from 'react'
 import Head from '../client/site/components/head'
+import { t } from '../client/i18n'
 
 export default class extends React.Component {
+  static async getInitialProps ({ req }) {
+    return {
+      locale: req.Globalize
+    }
+  }
+
   render () {
+
     return (
       <div className='container'>
         <Head />
         <div className='limbo-container'>
-          <h1>Oops, there is no content available right now!</h1>
+          <h1>{t('testing')}</h1>
           <img src='/static/assets/unicorn.png' alt='Unicorn typing' className='unicorn' />
           <p className='limbo-text'>Our unicorns are working a lot to make it available soon. <br /> Please, try again later. ✨</p>
         </div>

@@ -8,6 +8,7 @@
       "SETTINGS_INIT": "Settings are already initialized",
       "USER_NOT_ADMIN": "User is not an admin",
       "USER_NOT_LOGGED_IN": "User needs to be logged in to do this action"
-    }
+    },
+    "testing": "Probandinho"
   }
 }
