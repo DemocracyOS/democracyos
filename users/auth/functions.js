@@ -2,6 +2,7 @@ const User = require('../db-api/user')
 const mailer = require('../../main/mailer')
 const { log } = require('../../main/logger')
 const { ADMIN_EMAIL } = require('../../main/config')
+require('dotenv').config()
 
 module.exports = {
   find: ({ id, email, emailToken, provider } = {}) => {
@@ -63,5 +64,23 @@ module.exports = {
       log.error('Error sending email to ' + email, err)
     }
     log.debug('Generated sign in link ' + url + ' for ' + email)
+  },
+  signIn: async ({ form, req }) => {
+    log.debug('Testing logging user')
+    console.log(form)    
+    return new Promise((resolve, reject) => {
+      if (process.env.NODE_ENV === 'test') {
+        log.debug('Entered into test user')
+        return User.get({ email: form.email })
+          .then((user) => {
+            console.log('User: ' + user)
+            if (!user) return resolve(null)
+            return resolve(user)
+          })
+      } else {
+        log.debug('No test env. Sign In methods not allowed')
+        return reject((new Error('Not allowed')))
+      }
+    })
   }
 }
