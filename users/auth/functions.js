@@ -66,19 +66,19 @@ module.exports = {
     log.debug('Generated sign in link ' + url + ' for ' + email)
   },
   signIn: async ({ form, req }) => {
-    log.debug('Testing logging user')
-    console.log(form)    
+    // log.debug('Testing logging user')
+    // console.log(form)    
     return new Promise((resolve, reject) => {
       if (process.env.NODE_ENV === 'test') {
-        log.debug('Entered into test user')
+        // log.debug('Entered into test user')
         return User.get({ email: form.email })
           .then((user) => {
-            console.log('User: ' + user)
+            // console.log('User: ' + user)
             if (!user) return resolve(null)
             return resolve(user)
           })
       } else {
-        log.debug('No test env. Sign In methods not allowed')
+        log.error('No test environemt. Sign In method not allowed')
         return reject((new Error('Not allowed')))
       }
     })

@@ -19,13 +19,12 @@ const isAdmin = (req, res, next) => {
 
 const isOwner = (req, res, next) => {
   log.debug('isOwner middleware')
-  if (req.user && req.params.id.toString() === req.user.id.toString()) {
-    req.user.isOwner = true
-    console.log('true')
-  }
-  else {
-    req.user.isOwner = false
-    console.log('true')    
+  if (req.user) {
+    if (eq.params.id.toString() === req.user.id.toString()) {
+      req.user.isOwner = true
+    } else {
+      req.user.isOwner = false
+    }
   }
   return next()
 }

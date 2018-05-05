@@ -3,29 +3,113 @@ const chaiHttp = require('chai-http')
 const {
   OK,
   CREATED,
+  FORBIDDEN,
   NO_CONTENT
 } = require('http-status')
 const User = require('../../../users/models/user')
+const { fakeUser } = require('../utils')
 
 const expect = chai.expect
 chai.use(chaiHttp)
 
+const sampleUser1 = fakeUser('user')
+const sampleUser2 = fakeUser('user')
+const sampleUser3 = fakeUser('user')
+const sampleAdmin = fakeUser('admin')
+
+let newUser1 = null
 describe('/api/v1.0/users', () => {
   before(async () => {
     await require('../../../main')
-  })
-
-  beforeEach(async () => {
     await User.remove({})
   })
 
-  const sampleUser = {
-    username: 'test',
-    name: 'Test T. Test',
-    bio: 'test bio',
-    email: 'test@te.st',
-    firstLogin: true
-  }
+  beforeEach(async () => {
+  })
+
+  describe('As Anonymous', () => {
+    before(async () => {
+      newUser1 = await (new User(sampleUser1)).save()
+    })
+    it('GET / should not be able to access the list of all users', async () => {
+      await chai.request('http://localhost:3000')
+        .get('/api/v1.0/users')
+        .query({ limit: 10, page: 1 })
+        .then((res) => {
+          /* eslint-disable no-unused-expressions */
+          expect(res).to.be.null
+          throw res
+        })
+        .catch((err) => {
+          // Should get a FORBIDDEN
+          expect(err).to.have.status(FORBIDDEN)
+        })
+    })
+    it('POST / should not be able to create a user', async () => {
+      await chai.request('http://localhost:3000')
+        .post('/api/v1.0/users')
+        .then((res) => {
+          /* eslint-disable no-unused-expressions */
+          expect(res).to.be.null
+          throw res
+        })
+        .catch((err) => {
+          // Should get a FORBIDDEN
+          expect(err).to.have.status(FORBIDDEN)
+        })
+    })
+    it('GET /:id should be able to get an user without private data a user', async () => {
+      await chai.request('http://localhost:3000')
+        .get(`/api/v1.0/users/${newUser1.id}`)
+        .then((res) => {
+          /* eslint-disable no-unused-expressions */
+          expect(res).to.have.status(OK)
+          expect(res.body).to.be.a('object')
+          expect(res.body).to.have.property('username')
+          expect(res.body).to.have.property('name')
+          expect(res.body).to.have.property('bio')
+          expect(res.body).to.have.property('createdAt')
+          expect(res.body).to.not.have.property('email')
+          expect(res.body).to.not.have.property('firstLogin')
+          expect(res.body).to.not.have.property('updatedAt')
+          expect(res.body).to.not.have.property('role')
+          expect(res.body).to.not.have.property('updatedAt')
+        })
+        .catch((err) => {
+          // Should get an Error!
+          console.error(err)
+          throw err
+        })
+    })
+
+    it('PUT /:id should not be able to modify a user', async () => {
+      await chai.request('http://localhost:3000')
+        .put(`/api/v1.0/users/${newUser1.id}`)
+        .send(Object.assign(sampleUser1, { name: 'Updated Name' }))
+        .then((res) => {
+          /* eslint-disable no-unused-expressions */
+          expect(res).to.be.null
+          throw res
+        })
+        .catch((err) => {
+          // Should get a FORBIDDEN
+          expect(err).to.have.status(FORBIDDEN)
+        })
+    })
+
+    it('DELETE /:id should not be able to delete a user', async () => {
+      await chai.request('http://localhost:3000')
+        .delete(`/api/v1.0/users/${newUser1.id}`)
+        .then((res) => {
+          /* eslint-disable no-unused-expressions */
+          expect(res).to.be.null
+          throw res
+        })
+        .catch((err) => {
+          // Should get a FORBIDDEN
+          expect(err).to.have.status(FORBIDDEN)
+        })
+    })
 
   // describe('#post', () => {
   //   it('should create a user', async () => {
@@ -93,4 +177,5 @@ describe('/api/v1.0/users', () => {
   //     expect(res.body).to.have.property('id')
   //   })
   // })
+  })
 })
