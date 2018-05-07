@@ -2,7 +2,9 @@ const express = require('express')
 const {
   OK,
   CREATED,
-  NO_CONTENT
+  NO_CONTENT,
+  FORBIDDEN,
+  NOT_FOUND
 } = require('http-status')
 const User = require('../db-api/user')
 const {
@@ -12,16 +14,20 @@ const {
   isAdminOrOwner,
   allowedFieldsFor
 } = require('../../services/users')
-
+const {
+  ErrNotFound
+} = require('../../main/errors')
 const router = express.Router()
 
 router.route('/')
   .post(
-    isLoggedIn,
+    // isLoggedIn,
     async (req, res, next) => {
       try {
-        await User.create(req.body)
-        res.status(CREATED).end()
+        res.status(FORBIDDEN).end()
+        // throw ErrNotFound
+      //   await User.create(req.body)
+      //   res.status(CREATED).end()
       } catch (err) {
         next(err)
       }
@@ -60,7 +66,15 @@ router.route('/:id')
     isAdminOrOwner,
     async (req, res, next) => {
       try {
-        const updatedUser = await User.update({ id: req.params.id, user: req.body })
+        let updatedUser = await User.update({ id: req.params.id, user: req.body })
+        // If its not an admin, filter unalllowed fields.
+        updatedUser = updatedUser.toJSON()
+        let allowed = Object.keys(allowedFieldsFor(req.user))
+        if (allowed.length) {
+          Object.keys(updatedUser)
+            .filter((key) => !allowed.includes(key))
+            .forEach((key) => delete updatedUser[key])
+        }
         res.status(OK).json(updatedUser)
       } catch (err) {
         next(err)

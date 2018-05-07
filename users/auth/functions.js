@@ -70,7 +70,7 @@ module.exports = {
     // console.log(form)    
     return new Promise((resolve, reject) => {
       if (process.env.NODE_ENV === 'test') {
-        // log.debug('Entered into test user')
+        log.debug('TEST env - SignIn available')
         return User.get({ email: form.email })
           .then((user) => {
             // console.log('User: ' + user)
@@ -78,8 +78,8 @@ module.exports = {
             return resolve(user)
           })
       } else {
-        log.error('No test environemt. Sign In method not allowed')
-        return reject((new Error('Not allowed')))
+        log.error('No TEST env. SignIn method not allowed')
+        return reject(new Error('Not allowed'))
       }
     })
   }

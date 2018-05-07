@@ -32,7 +32,10 @@ const isOwner = (req, res, next) => {
 const isAdminOrOwner = (req, res, next) => {
   log.debug('isAdminOrOwner middleware')
   if (req.user && req.user.role === 'admin') return next()
-  if (req.params.id === req.user.id.toString()) return next()
+  if (req.params.id === req.user.id.toString()) {
+    req.user.isOwner = true
+    return next()
+  }
   return next(ErrNotAdminNorOwner)
 }
 
