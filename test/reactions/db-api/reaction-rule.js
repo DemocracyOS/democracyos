@@ -16,140 +16,120 @@ const sampleReactionRule = {
 }
 
 describe('db-api.reactionRule', function () {
-  describe('#create', function () {
-    it('should create a reaction rule', function () {
+  it('should #create a reaction rule', function () {
     // require module with rewire to override its internal ReactionRule reference
-      const reactionRule = rewire('../../../reactions/db-api/reaction-rule')
+    const reactionRule = rewire('../../../reactions/db-api/reaction-rule')
 
-      // replace ReactionRule constructor for a spy
-      const ReactionRuleMock = sinon.spy()
+    // replace ReactionRule constructor for a spy
+    const ReactionRuleMock = sinon.spy()
 
-      // add a save method that only returns the data
-      ReactionRuleMock.prototype.save = function () { return Promise.resolve(sampleReactionRule) }
+    // add a save method that only returns the data
+    ReactionRuleMock.prototype.save = function () { return Promise.resolve(sampleReactionRule) }
 
-      // create a spy for the save method
-      const save = sinon.spy(ReactionRuleMock.prototype, 'save')
+    // create a spy for the save method
+    const save = sinon.spy(ReactionRuleMock.prototype, 'save')
 
-      // override ReactionRule inside `reactionRule/db-api/reaction-rule`
-      reactionRule.__set__('ReactionRule', ReactionRuleMock)
+    // override ReactionRule inside `reactionRule/db-api/reaction-rule`
+    reactionRule.__set__('ReactionRule', ReactionRuleMock)
 
-      // call create method
-      return reactionRule.create(sampleReactionRule)
-        .then((result) => {
-          sinon.assert.calledWithNew(ReactionRuleMock)
-          sinon.assert.calledWith(ReactionRuleMock, sampleReactionRule)
-          sinon.assert.calledOnce(save)
-          assert.equal(result, sampleReactionRule)
-        })
-    })
+    // call create method
+    return reactionRule.create(sampleReactionRule)
+      .then((result) => {
+        sinon.assert.calledWithNew(ReactionRuleMock)
+        sinon.assert.calledWith(ReactionRuleMock, sampleReactionRule)
+        sinon.assert.calledOnce(save)
+        assert.equal(result, sampleReactionRule)
+      })
   })
+  it('should #get a reactionRule', function () {
+    const ReactionRuleMock = sinon.mock(ReactionRule)
 
-  describe('#get', function () {
-    it('should get a reactionRule', function () {
-      const ReactionRuleMock = sinon.mock(ReactionRule)
+    ReactionRuleMock
+      .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
+      .chain('exec')
+      .resolves(sampleReactionRule)
 
-      ReactionRuleMock
-        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
-        .chain('exec')
-        .resolves(sampleReactionRule)
-
-      return reactionRule.get('5a5e29d948a9cc2fbeed02fa')
-        .then((result) => {
-          ReactionRuleMock.verify()
-          ReactionRuleMock.restore()
-          assert.equal(result, sampleReactionRule)
-        })
-    })
+    return reactionRule.get('5a5e29d948a9cc2fbeed02fa')
+      .then((result) => {
+        ReactionRuleMock.verify()
+        ReactionRuleMock.restore()
+        assert.equal(result, sampleReactionRule)
+      })
   })
+  it('should #get a reactionRule by a specific name', function () {
+    const ReactionRuleMock = sinon.mock(ReactionRule)
 
-  describe('#getOneByName', function () {
-    it('should get a reactionRule by a specific name', function () {
-      const ReactionRuleMock = sinon.mock(ReactionRule)
+    ReactionRuleMock
+      .expects('findOne').withArgs({ name: 'MyReactionConfig' })
+      .chain('exec')
+      .resolves(sampleReactionRule)
 
-      ReactionRuleMock
-        .expects('findOne').withArgs({ name: 'MyReactionConfig' })
-        .chain('exec')
-        .resolves(sampleReactionRule)
-
-      return reactionRule.getByName('MyReactionConfig')
-        .then((result) => {
-          ReactionRuleMock.verify()
-          ReactionRuleMock.restore()
-          assert.equal(result, sampleReactionRule)
-        })
-    })
+    return reactionRule.getByName('MyReactionConfig')
+      .then((result) => {
+        ReactionRuleMock.verify()
+        ReactionRuleMock.restore()
+        assert.equal(result, sampleReactionRule)
+      })
   })
+  it('should #list all reactionRules by a partial name', function () {
+    const ReactionRuleMock = sinon.mock(ReactionRule)
 
-  describe('#listByName', function () {
-    it('should list all reactionRules by a partial name', function () {
-      const ReactionRuleMock = sinon.mock(ReactionRule)
+    ReactionRuleMock
+      .expects('paginate').withArgs({ name: { $regex: 'mYrEaCtIo', $options: 'i' } }, { limit: 10, page: 1 })
+      .resolves(sampleReactionRule)
 
-      ReactionRuleMock
-        .expects('paginate').withArgs({ name: { $regex: 'mYrEaCtIo', $options: 'i' } }, { limit: 10, page: 1 })
-        .resolves(sampleReactionRule)
-
-      return reactionRule.listByName({ name: 'mYrEaCtIo', limit: 10, page: 1 })
-        .then((result) => {
-          ReactionRuleMock.verify()
-          ReactionRuleMock.restore()
-          assert.equal(result, sampleReactionRule)
-        })
-    })
+    return reactionRule.listByName({ name: 'mYrEaCtIo', limit: 10, page: 1 })
+      .then((result) => {
+        ReactionRuleMock.verify()
+        ReactionRuleMock.restore()
+        assert.equal(result, sampleReactionRule)
+      })
   })
+  it('should #list all reactionRules', function () {
+    const ReactionRuleMock = sinon.mock(ReactionRule)
 
-  describe('#list', function () {
-    it('should list all reactionRules', function () {
-      const ReactionRuleMock = sinon.mock(ReactionRule)
+    ReactionRuleMock
+      .expects('paginate').withArgs({}, { limit: 10, page: 1 })
+      .resolves(sampleReactionRule)
 
-      ReactionRuleMock
-        .expects('paginate').withArgs({}, { limit: 10, page: 1 })
-        .resolves(sampleReactionRule)
-
-      return reactionRule.list({ limit: 10, page: 1 })
-        .then((result) => {
-          ReactionRuleMock.verify()
-          ReactionRuleMock.restore()
-          assert.equal(result, sampleReactionRule)
-        })
-    })
+    return reactionRule.list({ limit: 10, page: 1 })
+      .then((result) => {
+        ReactionRuleMock.verify()
+        ReactionRuleMock.restore()
+        assert.equal(result, sampleReactionRule)
+      })
   })
+  it('should #update a reactionRule', function () {
+    const ReactionRuleMock = sinon.mock(ReactionRule)
+    const save = sinon.spy(() => sampleReactionRule)
 
-  describe('#update', function () {
-    it('should update a reactionRule', function () {
-      const ReactionRuleMock = sinon.mock(ReactionRule)
-      const save = sinon.spy(() => sampleReactionRule)
+    ReactionRuleMock
+      .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
+      .chain('exec')
+      .resolves({ save })
 
-      ReactionRuleMock
-        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
-        .chain('exec')
-        .resolves({ save })
-
-      return reactionRule.update({ id: '5a5e29d948a9cc2fbeed02fa', reactionRule: {} })
-        .then((result) => {
-          ReactionRuleMock.verify()
-          ReactionRuleMock.restore()
-          sinon.assert.calledOnce(save)
-          assert.equal(result, sampleReactionRule)
-        })
-    })
+    return reactionRule.update({ id: '5a5e29d948a9cc2fbeed02fa', reactionRule: {} })
+      .then((result) => {
+        ReactionRuleMock.verify()
+        ReactionRuleMock.restore()
+        sinon.assert.calledOnce(save)
+        assert.equal(result, sampleReactionRule)
+      })
   })
+  it('should #remove a reactionRule', function () {
+    const ReactionRuleMock = sinon.mock(ReactionRule)
+    const remove = sinon.spy()
 
-  describe('#remove', function () {
-    it('should remove a reactionRule', function () {
-      const ReactionRuleMock = sinon.mock(ReactionRule)
-      const remove = sinon.spy()
+    ReactionRuleMock
+      .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
+      .chain('exec')
+      .resolves({ remove })
 
-      ReactionRuleMock
-        .expects('findOne').withArgs({ _id: ObjectId('5a5e29d948a9cc2fbeed02fa') })
-        .chain('exec')
-        .resolves({ remove })
-
-      return reactionRule.remove('5a5e29d948a9cc2fbeed02fa')
-        .then(() => {
-          ReactionRuleMock.verify()
-          ReactionRuleMock.restore()
-          sinon.assert.calledOnce(remove)
-        })
-    })
+    return reactionRule.remove('5a5e29d948a9cc2fbeed02fa')
+      .then(() => {
+        ReactionRuleMock.verify()
+        ReactionRuleMock.restore()
+        sinon.assert.calledOnce(remove)
+      })
   })
 })

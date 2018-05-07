@@ -19,6 +19,17 @@ const fakeUser = (role) => {
   return user
 }
 
+const fakeSetting = (role) => {
+  let setting = {
+    communityName: faker.address.city(),
+    mainColor: faker.internet.color(),
+    // permissions: role === 'admin' ? 'admin' : 'user'
+    // logo: faker.image.avatar(),
+  }
+  return setting
+}
+
 module.exports = {
-  fakeUser
+  fakeUser,
+  fakeSetting
 }

@@ -11,12 +11,11 @@ const Post = require('../../../cms/models/post')
 const expect = chai.expect
 chai.use(chaiHttp)
 
+
+
 describe('/api/v1.0/posts', () => {
   before(async () => {
     await require('../../../main')
-  })
-
-  beforeEach(async () => {
     await Post.remove({})
   })
 
