@@ -1,4 +1,6 @@
 const faker = require('faker')
+const { Types: { ObjectId } } = require('mongoose')
+
 
 const fakeUser = (role) => {
   let user = {
@@ -29,7 +31,20 @@ const fakeSetting = (role) => {
   return setting
 }
 
+const fakePost = (author) => {
+  let post = {
+    title: faker.lorem.sentence(),
+    description: faker.lorem.sentence(12),
+    content: faker.lorem.paragraphs(6),
+    author: author.id,
+    openingDate: faker.date.recent(),
+    closingDate: faker.date.future()
+  }
+  return post
+}
+
 module.exports = {
   fakeUser,
-  fakeSetting
+  fakeSetting,
+  fakePost
 }

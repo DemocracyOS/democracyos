@@ -84,7 +84,6 @@ describe('/api/v1.0/settings', () => {
     })
     it('GET /:id should be able to access a setting', async () => {
       await agent.get(`/api/v1.0/settings/${newSetting.id}`)
-        .query({ limit: 10, page: 1 })
         .then((res) => {
           expect(res).to.have.status(OK)
           expect(res.body).to.have.property('communityName')
@@ -211,7 +210,6 @@ describe('/api/v1.0/settings', () => {
     })
     it('GET /:id should be able to access a setting', async () => {
       await agent.get(`/api/v1.0/settings/${newSetting.id}`)
-        .query({ limit: 10, page: 1 })
         .then((res) => {
           expect(res).to.have.status(OK)
           expect(res.body).to.have.property('communityName')
@@ -339,7 +337,6 @@ describe('/api/v1.0/settings', () => {
     })
     it('GET /:id should be able to access a setting', async () => {
       await agent.get(`/api/v1.0/settings/${newSetting.id}`)
-        .query({ limit: 10, page: 1 })
         .then((res) => {
           expect(res).to.have.status(OK)
           expect(res.body).to.have.property('communityName')
