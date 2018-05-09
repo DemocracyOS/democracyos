@@ -95,7 +95,6 @@ describe('/api/v1.0/posts', () => {
           expect(pagination).to.have.property('limit')
         })
         .catch((err) => {
-          
           // expect(err).to.have.status(FORBIDDEN)
           throw err
         })
@@ -111,7 +110,6 @@ describe('/api/v1.0/posts', () => {
           expect(res).to.be.null
         })
         .catch((err) => {
-          
           expect(err).to.have.status(FORBIDDEN)
         })
     })
@@ -119,7 +117,7 @@ describe('/api/v1.0/posts', () => {
       await agent.get(`/api/v1.0/posts/${newPost1.id}`)
         .then((res) => {
           expect(res).to.have.status(OK)
-          expect(res.body).to.be.a('object')          
+          expect(res.body).to.be.a('object')
           expect(res.body).to.have.property('title')
           expect(res.body).to.have.property('description')
           expect(res.body).to.have.property('content')
@@ -130,7 +128,6 @@ describe('/api/v1.0/posts', () => {
           expect(res.body).to.have.property('closingDate')
         })
         .catch((err) => {
-          
           // expect(err).to.have.status(FORBIDDEN)
           throw err
         })
@@ -145,7 +142,6 @@ describe('/api/v1.0/posts', () => {
           expect(res).to.be.null
         })
         .catch((err) => {
-          
           expect(err).to.have.status(FORBIDDEN)
         })
     })
@@ -159,7 +155,6 @@ describe('/api/v1.0/posts', () => {
           expect(res).to.be.null
         })
         .catch((err) => {
-          
           expect(err).to.have.status(FORBIDDEN)
         })
     })
@@ -235,7 +230,6 @@ describe('/api/v1.0/posts', () => {
           expect(pagination).to.have.property('limit')
         })
         .catch((err) => {
-          
           // expect(err).to.have.status(FORBIDDEN)
           throw err
         })
@@ -251,7 +245,6 @@ describe('/api/v1.0/posts', () => {
           expect(res).to.be.null
         })
         .catch((err) => {
-          
           expect(err).to.have.status(FORBIDDEN)
         })
     })
@@ -270,7 +263,6 @@ describe('/api/v1.0/posts', () => {
           expect(res.body).to.have.property('closingDate')
         })
         .catch((err) => {
-          
           // expect(err).to.have.status(FORBIDDEN)
           throw err
         })
@@ -285,7 +277,6 @@ describe('/api/v1.0/posts', () => {
           expect(res).to.be.null
         })
         .catch((err) => {
-          
           expect(err).to.have.status(FORBIDDEN)
         })
     })
@@ -299,7 +290,6 @@ describe('/api/v1.0/posts', () => {
           expect(res).to.be.null
         })
         .catch((err) => {
-          
           expect(err).to.have.status(FORBIDDEN)
         })
     })
@@ -374,7 +364,6 @@ describe('/api/v1.0/posts', () => {
           expect(pagination).to.have.property('limit')
         })
         .catch((err) => {
-          
           // expect(err).to.have.status(FORBIDDEN)
           throw err
         })
@@ -397,7 +386,7 @@ describe('/api/v1.0/posts', () => {
           expect(res.body).to.have.property('openingDate')
           expect(res.body).to.have.property('closingDate')
         })
-        .catch((err) => {          
+        .catch((err) => {
           throw err
         })
     })
@@ -416,7 +405,6 @@ describe('/api/v1.0/posts', () => {
           expect(res.body).to.have.property('closingDate')
         })
         .catch((err) => {
-
           throw err
         })
     })
@@ -426,7 +414,7 @@ describe('/api/v1.0/posts', () => {
         .set('X-CSRF-TOKEN', csrfToken)
         .set('X-Requested-With', 'XMLHttpRequest')
         .set('Content-Type', 'application/x-www-form-urlencoded')
-        .send({title: newTitle})
+        .send({ title: newTitle })
         .then((res) => {
           expect(res).to.have.status(OK)
           expect(res.body).to.be.a('object')

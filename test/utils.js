@@ -1,7 +1,6 @@
 const faker = require('faker')
 const { Types: { ObjectId } } = require('mongoose')
 
-
 const fakeUser = (role) => {
   let user = {
     username: faker.internet.userName(),
@@ -24,7 +23,7 @@ const fakeUser = (role) => {
 const fakeSetting = (role) => {
   let setting = {
     communityName: faker.address.city(),
-    mainColor: faker.internet.color(),
+    mainColor: faker.internet.color()
     // permissions: role === 'admin' ? 'admin' : 'user'
     // logo: faker.image.avatar(),
   }
@@ -43,8 +42,39 @@ const fakePost = (author) => {
   return post
 }
 
+const fakeVote = (author, timesVoted, deleted) => {
+  let vote = {
+    userId: author.id,
+    meta: {
+      timesVoted: timesVoted || 0,
+      deleted: deleted || false
+    }
+  }
+  return vote
+}
+
+const fakeReactionRule = (method, limit, startingDate, closingDate) => {
+  let rule = {
+    name: faker.lorem.sentence(3),
+    limit: limit || 5,
+    startingDate: startingDate || faker.date.recent(),
+    closingDate: closingDate || null
+  }
+  switch (method) {
+    case 'LIKE':
+      rule['method'] = 'LIKE'
+      break
+    default:
+      rule['method'] = 'LIKE'
+      break
+  }
+  return rule
+}
+
 module.exports = {
   fakeUser,
   fakeSetting,
-  fakePost
+  fakePost,
+  fakeVote,
+  fakeReactionRule
 }
