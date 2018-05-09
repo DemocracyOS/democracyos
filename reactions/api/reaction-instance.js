@@ -18,15 +18,12 @@ router.route('/')
     isLoggedIn,
     isAdmin,
     async (req, res, next) => {
-      // try {
-      //   const newReactionInstance = await ReactionInstance.create(req.body)
-      //   res.status(CREATED).json({
-      //     data: newReactionInstance
-      //   })
-      // } catch (err) {
-      //   next(err)
-      // }
-      res.status(FORBIDDEN).end()
+      try {
+        const newReactionInstance = await ReactionInstance.create(req.body)
+        res.status(CREATED).json(newReactionInstance)
+      } catch (err) {
+        next(err)
+      }
     })
   // GET reaction-instances
   .get(
@@ -54,9 +51,8 @@ router.route('/:id')
     isAdmin,
     async (req, res, next) => {
       try {
-        // const user = await ReactionInstance.get(req.params.id)
-        // res.status(OK).json(user)
-        res.status(FORBIDDEN).end()
+        const user = await ReactionInstance.get(req.params.id)
+        res.status(OK).json(user)
       } catch (err) {
         next(err)
       }
@@ -66,9 +62,8 @@ router.route('/:id')
     isAdmin,
     async (req, res, next) => {
       try {
-        // const updatedReactionInstance = await ReactionInstance.update({ id: req.params.id, reactionInstance: req.body })
-        // res.status(OK).json(updatedReactionInstance)
-        res.status(FORBIDDEN).end()
+        const updatedReactionInstance = await ReactionInstance.update({ id: req.params.id, reactionInstance: req.body })
+        res.status(OK).json(updatedReactionInstance)
       } catch (err) {
         next(err)
       }
@@ -78,9 +73,8 @@ router.route('/:id')
     isAdmin,
     async (req, res, next) => {
       try {
-        // await ReactionInstance.remove(req.params.id)
-        // res.status(OK).json({ id: req.params.id })
-        res.status(FORBIDDEN).end()
+        await ReactionInstance.remove(req.params.id)
+        res.status(OK).json({ id: req.params.id })
       } catch (err) {
         next(err)
       }

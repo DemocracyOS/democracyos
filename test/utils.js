@@ -71,10 +71,25 @@ const fakeReactionRule = (method, limit, startingDate, closingDate) => {
   return rule
 }
 
+const fakeReactionInstance = (rule, voters) => {
+  let instance = {
+    title: faker.lorem.sentence(6) + '?',
+    instruction: faker.lorem.sentence(24),
+    reactionId: rule.id,
+    resourceType: 'Article',
+    resourceId: faker.finance.account().toString() + faker.finance.account().toString() + faker.finance.account().toString(),
+    results: voters.map((el) => {
+      return el.id
+    })
+  }
+  return instance
+}
+
 module.exports = {
   fakeUser,
   fakeSetting,
   fakePost,
   fakeVote,
-  fakeReactionRule
+  fakeReactionRule,
+  fakeReactionInstance
 }

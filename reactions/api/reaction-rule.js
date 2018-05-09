@@ -19,7 +19,7 @@ router.route('/')
     async (req, res, next) => {
       try {
         const newReactionRule = await ReactionRule.create(req.body)
-        res.status(CREATED).json(newReactionRule)
+        res.status(CREATED).json(newReactionRule  )
       } catch (err) {
         next(err)
       }
