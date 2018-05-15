@@ -57,7 +57,7 @@ const fakeReactionRule = (method, limit, startingDate, closingDate) => {
   let rule = {
     name: faker.lorem.sentence(3),
     limit: limit || 5,
-    startingDate: startingDate || faker.date.recent(),
+    startingDate: startingDate || faker.date.past(),
     closingDate: closingDate || null
   }
   switch (method) {
@@ -71,13 +71,13 @@ const fakeReactionRule = (method, limit, startingDate, closingDate) => {
   return rule
 }
 
-const fakeReactionInstance = (rule, voters) => {
+const fakeReactionInstance = (rule, voters, resourceId) => {
   let instance = {
     title: faker.lorem.sentence(6) + '?',
     instruction: faker.lorem.sentence(24),
     reactionId: rule.id,
     resourceType: 'Article',
-    resourceId: faker.finance.account().toString() + faker.finance.account().toString() + faker.finance.account().toString(),
+    resourceId: resourceId || faker.finance.account().toString() + faker.finance.account().toString() + faker.finance.account().toString(),
     results: voters.map((el) => {
       return el.id
     })
