@@ -468,11 +468,9 @@ describe('/api/v1.0/services/reactions', () => {
           .set('X-Requested-With', 'XMLHttpRequest')
           .set('Content-Type', 'application/x-www-form-urlencoded')
           .then((res) => {
-            // console.log(res)
             expect(res).to.be.null
           })
           .catch((err) => {
-            // console.log(err)
             expect(err).to.have.status(FORBIDDEN)
           })
       })
@@ -578,7 +576,6 @@ describe('/api/v1.0/services/reactions', () => {
       })
       it('should have the vote of the user', async () => {
         (response.body).forEach((element) => {
-          console.log(element)
           expect(element).to.not.have.property('userVote')
         })
       })
@@ -613,18 +610,15 @@ describe('/api/v1.0/services/reactions', () => {
           .set('X-Requested-With', 'XMLHttpRequest')
           .set('Content-Type', 'application/x-www-form-urlencoded')
           .then((res) => {
-            // console.log(res)
             expect(res).to.be.null
           })
           .catch((err) => {
-            // console.log(err)
             expect(err).to.have.status(FORBIDDEN)
           })
       })
       it('GET the just voted reaction instance. Should have status OK', async () => {
         await agent.get(`/api/v1.0/services/reactions/${newInstance3.id}/result`)
           .then((res) => {
-            console.log(res)
             expect(res).to.have.status(OK)
             response = res
           })
