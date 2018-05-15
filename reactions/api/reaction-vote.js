@@ -2,6 +2,7 @@ const express = require('express')
 const {
   OK,
   CREATED,
+  FORBIDDEN,
   NO_CONTENT
 } = require('http-status')
 const ReactionVote = require('../db-api/reaction-vote')
@@ -18,10 +19,11 @@ router.route('/')
     isAdmin,
     async (req, res, next) => {
       try {
-        const newReactionVote = await ReactionVote.create(req.body)
-        res.status(CREATED).json({
-          data: newReactionVote
-        })
+        // const newReactionVote = await ReactionVote.create(req.body)
+        // res.status(CREATED).json({
+        //   data: newReactionVote
+        // })
+        res.status(FORBIDDEN).end()
       } catch (err) {
         next(err)
       }
@@ -63,8 +65,9 @@ router.route('/:id')
     isAdmin,
     async (req, res, next) => {
       try {
-        const updatedReactionVote = await ReactionVote.update({ id: req.params.id, reactionVote: req.body })
-        res.status(OK).json(updatedReactionVote)
+        // const updatedReactionVote = await ReactionVote.update({ id: req.params.id, reactionVote: req.body })
+        // res.status(OK).json(updatedReactionVote)
+        res.status(FORBIDDEN).end()
       } catch (err) {
         next(err)
       }
@@ -74,8 +77,9 @@ router.route('/:id')
     isAdmin,
     async (req, res, next) => {
       try {
-        await ReactionVote.remove(req.params.id)
-        res.status(OK).json({ id: req.params.id })
+        // await ReactionVote.remove(req.params.id)
+        // res.status(OK).json({ id: req.params.id })
+        res.status(FORBIDDEN).end()
       } catch (err) {
         next(err)
       }

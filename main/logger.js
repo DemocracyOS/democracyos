@@ -4,7 +4,7 @@ const expressWinston = require('express-winston')
 const log = new winston.Logger({
   transports: [
     new winston.transports.Console({
-      level: process.env.NODE_ENV === 'test' ? 'error' : 'debug',
+      level: process.env.NODE_ENV === 'test' ? 'critic' : 'debug',
       colorize: true,
       timestamp: function () {
         return new Date().toISOString()

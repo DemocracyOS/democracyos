@@ -2,6 +2,7 @@ const express = require('express')
 const {
   OK,
   CREATED,
+  FORBIDDEN,
   NO_CONTENT
 } = require('http-status')
 const ReactionInstance = require('../db-api/reaction-instance')
@@ -19,9 +20,7 @@ router.route('/')
     async (req, res, next) => {
       try {
         const newReactionInstance = await ReactionInstance.create(req.body)
-        res.status(CREATED).json({
-          data: newReactionInstance
-        })
+        res.status(CREATED).json(newReactionInstance)
       } catch (err) {
         next(err)
       }
@@ -33,7 +32,6 @@ router.route('/')
     async (req, res, next) => {
       try {
         const results = await ReactionInstance.list({ limit: req.query.limit, page: req.query.page })
-
         res.status(OK).json({
           results: results.docs,
           pagination: {

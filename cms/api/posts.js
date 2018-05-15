@@ -20,9 +20,7 @@ router.route('/')
     async (req, res, next) => {
       try {
         const newPost = await Post.create(req.body)
-        res.status(CREATED).json({
-          data: newPost
-        })
+        res.status(CREATED).json(newPost)
       } catch (err) {
         next(err)
       }

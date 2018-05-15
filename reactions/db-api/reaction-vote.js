@@ -62,8 +62,6 @@ exports.update = function update ({ id, reactionVote }) {
   // return Promise.resolve()
   return ReactionVote.findOne({ _id: ObjectId(id) })
     .then((_ReactionVote) => {
-      console.log(_ReactionVote)
-      console.log(reactionVote)
       return Object.assign(_ReactionVote, reactionVote).save()
     })
 }
