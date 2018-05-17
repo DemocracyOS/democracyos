@@ -1,51 +1,116 @@
-const fs = require('fs')
-const path = require('path')
-const Globalize = require('globalize')
-const accepts = require('accepts')
-const { DEFAULT_LANG } = require('./config')
+const i18next = require('i18next')
+const XHR = require('i18next-xhr-backend')
+const LanguageDetector = require('i18next-browser-languagedetector')
 
-Globalize.load(
-  require('cldr-data/supplemental/likelySubtags'),
-  require('cldr-data/supplemental/plurals')
-)
+const options = {
+  fallbackLng: 'en',
+  load: 'languageOnly', // we only provide en, de -> no region specific locals like en-US, de-DE
 
-const locales = fs
-  .readdirSync(path.join(__dirname, '..', 'locales'))
-  .filter((filename) => path.extname(filename) === '.json')
-  .map((filename) => filename.split('.')[0])
+  // have a common namespace used around the full app
+  ns: ['common'],
+  defaultNS: 'common',
 
-const messages = locales
-  .map((filename) => fs.readFileSync(path.join(__dirname, '..', 'locales', `${filename}.json`), 'utf8'))
-  .reduce((packs, contents) => {
-    const pack = JSON.parse(contents)
+  debug: process.env.NODE_ENV !== 'production',
+  saveMissing: true,
 
-    return Object.assign(packs, pack)
-  }, {})
-
-Globalize.loadMessages(messages)
-
-const GlobalizeInstances = locales.map((locale) => ({
-  [locale]: (function () {
-    const G = new Globalize(locale)
-    const messagesFormaters = {}
-
-    return (key, params) => {
-      if (Object.keys(messagesFormaters).includes(key)) {
-        return messagesFormaters[key](params)
-      } else {
-        messagesFormaters[key] = G.messageFormatter(key)
-
-        return messagesFormaters[key](params)
-      }
+  interpolation: {
+    escapeValue: false, // not needed for react!!
+    formatSeparator: ',',
+    format: (value, format, lng) => {
+      if (format === 'uppercase') return value.toUpperCase()
+      return value
     }
-  }())
-})).reduce((instancesObject, instance) => Object.assign(instancesObject, instance), {})
-
-module.exports = {
-  middleware: (req, res, next) => {
-    const lang = accepts(req).language(locales)
-    const language = lang || DEFAULT_LANG
-    res.locals.t = GlobalizeInstances[language]
-    next()
   }
 }
+
+const i18nInstance = i18next
+
+// for browser use xhr backend to load translations and browser lng detector
+if (process.browser) {
+  i18nInstance
+    .use(XHR)
+    // .use(Cache)
+    .use(LanguageDetector)
+}
+
+// initialize if not already initialized
+if (!i18nInstance.isInitialized) i18nInstance.init(options)
+
+// a simple helper to getInitialProps passed on loaded i18n data
+const getInitialProps = (req, namespaces) => {
+  if (!namespaces) namespaces = i18nInstance.options.defaultNS
+  if (typeof namespaces === 'string') namespaces = [namespaces]
+
+  req.i18n.toJSON = () => null // do not serialize i18next instance and send to client
+
+  const initialI18nStore = {}
+  req.i18n.languages.forEach((l) => {
+    initialI18nStore[l] = {}
+    namespaces.forEach((ns) => {
+      initialI18nStore[l][ns] = (req.i18n.services.resourceStore.data[l] || {})[ns] || {}
+    })
+  })
+
+  return {
+    i18n: req.i18n, // use the instance on req - fixed language on request (avoid issues in race conditions with lngs of different users)
+    initialI18nStore,
+    initialLanguage: req.i18n.language
+  }
+}
+
+module.exports = {
+  getInitialProps,
+  i18nInstance,
+  I18n: i18next.default
+}
+// const fs = require('fs')
+// const path = require('path')
+// const Globalize = require('globalize')
+// const accepts = require('accepts')
+// const { DEFAULT_LANG } = require('./config')
+
+// Globalize.load(
+//   require('cldr-data/supplemental/likelySubtags'),
+//   require('cldr-data/supplemental/plurals')
+// )
+
+// const locales = fs
+//   .readdirSync(path.join(__dirname, '..', 'locales'))
+//   .filter((filename) => path.extname(filename) === '.json')
+//   .map((filename) => filename.split('.')[0])
+
+// const messages = locales
+//   .map((filename) => fs.readFileSync(path.join(__dirname, '..', 'locales', `${filename}.json`), 'utf8'))
+//   .reduce((packs, contents) => {
+//     const pack = JSON.parse(contents)
+
+//     return Object.assign(packs, pack)
+//   }, {})
+
+// Globalize.loadMessages(messages)
+
+// const GlobalizeInstances = locales.map((locale) => ({
+//   [locale]: (function () {
+//     const G = new Globalize(locale)
+//     const messagesFormaters = {}
+
+//     return (key, params) => {
+//       if (Object.keys(messagesFormaters).includes(key)) {
+//         return messagesFormaters[key](params)
+//       } else {
+//         messagesFormaters[key] = G.messageFormatter(key)
+
+//         return messagesFormaters[key](params)
+//       }
+//     }
+//   }())
+// })).reduce((instancesObject, instance) => Object.assign(instancesObject, instance), {})
+
+// module.exports = {
+//   middleware: (req, res, next) => {
+//     const lang = accepts(req).language(locales)
+//     const language = lang || DEFAULT_LANG
+//     res.locals.t = GlobalizeInstances[language]
+//     next()
+//   }
+// }
