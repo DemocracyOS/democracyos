@@ -1,13 +1,11 @@
 {
-  "es": {
-    "error": {
-      "NOT_FOUND": "Recurso no encontrado",
-      "MISSING_PARAM": "Parámetro no encontrado",
-      "PARAM_LENGTH": "Parámetro muy largo",
-      "SETTINGS_NOT_INIT": "Los ajustes no fueron configurados",
-      "SETTINGS_INIT": "Los ajustes ya fueron configurados",
-      "USER_NOT_ADMIN": "El usuario no es un administrador",
-      "USER_NOT_LOGGED_IN": "Necesitás estar registrado para realizar esta acción"
-    }
+  "error": {
+    "NOT_FOUND": "Recurso no encontrado",
+    "MISSING_PARAM": "Parámetro no encontrado",
+    "PARAM_LENGTH": "Parámetro muy largo",
+    "SETTINGS_NOT_INIT": "Los ajustes no fueron configurados",
+    "SETTINGS_INIT": "Los ajustes ya fueron configurados",
+    "USER_NOT_ADMIN": "El usuario no es un administrador",
+    "USER_NOT_LOGGED_IN": "Necesitás estar registrado para realizar esta acción"
   }
 }

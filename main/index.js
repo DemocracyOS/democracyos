@@ -31,12 +31,20 @@ module.exports = (async () => {
       .use(Backend)
       .use(i18nextMiddleware.LanguageDetector)
       .init({
+        debug: false,
         fallbackLng: 'en',
         preload: ['en', 'es'], // preload all langages
+        nonExplicitWhitelist: true,
         ns: ['common', 'pages', 'admin'], // need to preload all the namespaces
         backend: {
           loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
           addPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.missing.json')
+        },
+        interpolation: {
+          escapeValue: false // not needed for react!!
+        },
+        react: {
+          wait: true
         }
       }, async () => {
         await app.prepare()
