@@ -26,7 +26,7 @@
         - if (pollOpen)
           div.overlay
             p.alert.alert-warning
-              = t('admin-topics-form.message.cant-edit-action')
+              = t('admin-topics-form.message.cant-edit')
         - if (topic.privileges && !topic.privileges.canEdit)
           .block-overlay
         - if (form.forum)

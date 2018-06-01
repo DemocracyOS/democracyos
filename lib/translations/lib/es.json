@@ -125,7 +125,7 @@
   "admin-topics-form.label.votable": "Votable",
   "admin-topics-form.message.cant-edit-topic": "La propuesta no puede ser modificada luego de realizado el primer voto.",
   "admin-topics-form.message.cant-edit-action.options": "Las opciones no pueden ser editadas luego de realizado el primer voto.",
-  "admin-topics-form.message.cant-edit-action": "El método de votación no puede ser editado luego de realizado el primer voto.",
+  "admin-topics-form.message.cant-edit": "El tema no puede ser editado luego de realizado el primer voto.",
   "admin-topics-form.message.onsuccess": "Tema guardado exitosamente",
   "admin-topics-form.message.private-status": "Este tema es un borrador",
   "admin-topics-form.message.public-status": "Este tema está abierto al público",
