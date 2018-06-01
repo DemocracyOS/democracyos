@@ -2,10 +2,6 @@
 
 #topic-wrapper(class=forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'collaborative' : '')
   - var pollOpen = !!(topic.action && topic.action.count > 0)
-  - if (pollOpen)
-    div.overlay
-      p.alert.alert-warning
-        = t('admin-topics-form.message.cant-edit-action')
   - if (tags.length === 0)
     if (user.staff)
       p.alert.alert-danger.text-center
@@ -27,6 +23,10 @@
     include commands
     .topic-admin
       form(action=form.action, method=form.method, role='form', autocomplete='off', novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+        - if (pollOpen)
+          div.overlay
+            p.alert.alert-warning
+              = t('admin-topics-form.message.cant-edit-action')
         - if (topic.privileges && !topic.privileges.canEdit)
           .block-overlay
         - if (form.forum)
