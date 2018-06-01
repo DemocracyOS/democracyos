@@ -109,7 +109,7 @@
   "admin-topics-form.label.topicId": "Identifiant officiel",
   "admin-topics-form.label.votable": "Objet du vote",
   "admin-topics-form.message.cant-edit-action.options": "Il y a déjà eu des votes, les options ne peuvent pas être modifiées après cela.",
-  "admin-topics-form.message.cant-edit-action": "Il y a déjà eu des votes, la méthode de vote ne peut pas être modifiée après cela.",
+  "admin-topics-form.message.cant-edit": "Il y a déjà eu des votes, loi ne peut pas être modifiée après cela.",
   "admin-topics-form.message.onsuccess": "Loi a été sauvegardée avec succès",
   "admin-topics-form.message.private-status": "Cette loi est un brouillon",
   "admin-topics-form.message.public-status": "Cette loi est ouverte au public",
