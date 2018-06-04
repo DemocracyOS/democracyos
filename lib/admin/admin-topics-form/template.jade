@@ -26,7 +26,7 @@
         - if (pollOpen)
           div.overlay
             p.alert.alert-warning
-              = t('admin-topics-form.message.cant-edit')
+              = t('admin-topics-form.message.cant-edit-action')
         - if (topic.privileges && !topic.privileges.canEdit)
           .block-overlay
         - if (form.forum)
@@ -90,13 +90,17 @@
               option(value='poll')= t('admin-topics-form.action.poll')
               option(value='cause')= t('admin-topics-form.action.cause')
               option(value='slider')= t('admin-topics-form.action.slider')
+              option(value='hierarchy')= t('admin-topics-form.action.hierarchy')
         .form-group.poll-options.hide
           - var pollOptions = topic.action && topic.action.results && topic.action.results.map(function(o){ return o.value })
           label= t('admin-topics-form.label.poll-options')
           - if (te('admin-topics-form.description.poll-options'))
             span.help-text= t('admin-topics-form.description.poll-options')
           input.form-control(type='tags', name='action.options', value=pollOptions)
-
+        .form-group.hierarchy-options.hide
+          - var hierarchyOptions = topic.action && topic.action.results && topic.action.results.map(function(o){ return o.value })
+          label= t('admin-topics-form.label.hierarchy-options')
+          input.form-control(type='tags', name='action.options', value=hierarchyOptions)
         .form-group
           label= t('admin-topics-form.label.source')
           - if (te('admin-topics-form.description.source'))
