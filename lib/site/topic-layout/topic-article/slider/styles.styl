@@ -5,7 +5,7 @@ violet = rgb(100, 71, 110)
 .topics-slider {
   .input-range {
     margin-top: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
   .input-range__slider {
     appearance: none;
@@ -50,6 +50,10 @@ violet = rgb(100, 71, 110)
     white-space: nowrap;
   }
 
+  .input-range__label--value {
+    margin-left: -20px;
+  }
+
   .input-range__label--min,
   .input-range__label--max {
     bottom: -1.4rem;
@@ -58,10 +62,12 @@ violet = rgb(100, 71, 110)
 
   .input-range__label--min {
     left: 0;
+    font-weight: bold;
   }
 
   .input-range__label--max {
     right: 0;
+    font-weight: bold;
   }
 
   .input-range__label--value {
@@ -110,8 +116,14 @@ violet = rgb(100, 71, 110)
     }
   }
 
-  .voted-box {
+  .voted-box, .vote-box {
     text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .voted-box {
+    margin-top: 100px;
+    margin-bottom: 60px;
   }
 
   .row-result {
