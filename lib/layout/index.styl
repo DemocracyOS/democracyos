@@ -206,7 +206,17 @@ body
   .overlay
     background unquote("radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%)")
     z-index 9999998
-    position: fixed
+
+  .sortable-li-focus {
+    list-style-type: none;
+    user-select: none;
+    height:60px;
+    text-align: center;
+    line-height: 60px;
+    box-shadow: 0 5px 5px -5px rgba(0,0,0,0.2), 0 -5px 5px -5px rgba(0,0,0,0.2);
+    background-color: rgba(255,255,255,0.8);
+    cursor: row-resize;
+  }
 
   .dialog
     position fixed

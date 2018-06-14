@@ -1,5 +1,5 @@
 - function te (str) { return t(str) !== str }
-  
+
 #topic-wrapper(class=forum.visibility === 'collaborative' && !forum.privileges.canChangeTopics ? 'collaborative' : '')
   - if (tags.length === 0)
     if (user.staff)
@@ -86,6 +86,8 @@
               option(value='vote')= t('admin-topics-form.action.vote')
               option(value='poll')= t('admin-topics-form.action.poll')
               option(value='cause')= t('admin-topics-form.action.cause')
+              option(value='slider')= t('admin-topics-form.action.slider')
+              option(value='hierarchy')= t('admin-topics-form.action.hierarchy')
           - if (te('admin-topics-form.description.action'))
             span.help-text= t('admin-topics-form.description.action')
           - if (!pollOpen)
@@ -94,6 +96,8 @@
               option(value='vote')= t('admin-topics-form.action.vote')
               option(value='poll')= t('admin-topics-form.action.poll')
               option(value='cause')= t('admin-topics-form.action.cause')
+              option(value='slider')= t('admin-topics-form.action.slider')
+              option(value='hierarchy')= t('admin-topics-form.action.hierarchy')
         .form-group.poll-options.hide
           - var pollOpen = !!(topic.action && topic.action.count > 0)
           - var pollOptions = topic.action && topic.action.results && topic.action.results.map(function(o){ return o.value })
@@ -106,6 +110,16 @@
             input.form-control(type='text', value=pollOptions.join(', '), disabled)
           - if (!pollOpen)
             input.form-control(type='tags', name='action.options', value=pollOptions)
+        .form-group.hierarchy-options.hide
+          - var hierarchyOpen = !!(topic.action && topic.action.count > 0)
+          - var hierarchyOptions = topic.action && topic.action.results && topic.action.results.map(function(o){ return o.value })
+          label= t('admin-topics-form.label.hierarchy-options')
+          - if (hierarchyOpen)
+            p.alert.alert-warning
+              = t('admin-topics-form.message.cant-edit-action.options')
+            input.form-control(type='text', value=hierarchyOptions.join(', '), disabled)
+          - if (!hierarchyOpen)
+            input.form-control(type='tags', name='action.options', value=hierarchyOptions)
 
         .form-group
           label= t('admin-topics-form.label.source')
