@@ -8,33 +8,40 @@ violet = rgb(100, 71, 110)
     justify-content: space-between;
     text-transform: uppercase;
     font-weight: 600;
+    margin-top: 50px;
   }
   .input-small-container {
     display: flex;
     justify-content: space-between;
-    margin: 0 -5px 50px;
+    margin-bottom: 50px;
 
     .input-small-wrapper {
-      width: 45%;
+      width: 48%;
       display: flex;
       justify-content: space-between;
 
-      span {
-        font-size: 12px;
+      .input-small-label {
+        width: 50px;
+        max-width: 50px;
         text-align: center;
-        max-width: 60px;
+
+        span {
+          font-size: 12px;
+          width: 50px;
+          max-width: 50px;
+        }
       }
     }
   }
 
   .input-range {
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
   .input-range__slider {
     appearance: none;
-    background: violet;
-    border: 1px solid violet;
+    background: #3995D6;
+    border: 1px solid #3995D6;
     border-radius: 100%;
     cursor: pointer;
     display: block;
@@ -158,5 +165,28 @@ violet = rgb(100, 71, 110)
 
   .VictoryContainer {
     height: 400px !important;
+  }
+}
+
+.topics-slider.neutral {
+  .input-range__track--active {
+    background-color: #eee;
+  }
+}
+
+.topics-slider.positive {
+  .input-range__track--active {
+    background-color: #3995D6;
+  }
+}
+
+.topics-slider.negative {
+  .input-range__slider {
+    background: violet;
+    border: 1px solid violet;
+  }
+
+  .input-range__track--active {
+    background-color: violet;
   }
 }
