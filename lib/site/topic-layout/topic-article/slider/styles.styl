@@ -3,9 +3,33 @@
 violet = rgb(100, 71, 110)
 
 .topics-slider {
+  .input-great-labels {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .input-small-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -5px 50px;
+
+    .input-small-wrapper {
+      width: 45%;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-size: 12px;
+        text-align: center;
+        max-width: 60px;
+      }
+    }
+  }
+
   .input-range {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 10px;
   }
   .input-range__slider {
     appearance: none;
@@ -56,6 +80,7 @@ violet = rgb(100, 71, 110)
 
   .input-range__label--min,
   .input-range__label--max {
+    display: none;
     bottom: -1.4rem;
     position: absolute;
   }
