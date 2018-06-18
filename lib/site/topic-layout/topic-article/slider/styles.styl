@@ -3,14 +3,45 @@
 violet = rgb(100, 71, 110)
 
 .topics-slider {
+  .input-great-labels {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 50px;
+  }
+  .input-small-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .input-small-wrapper {
+      width: 48%;
+      display: flex;
+      justify-content: space-between;
+
+      .input-small-label {
+        width: 50px;
+        max-width: 50px;
+        text-align: center;
+
+        span {
+          font-size: 12px;
+          width: 50px;
+          max-width: 50px;
+        }
+      }
+    }
+  }
+
   .input-range {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   .input-range__slider {
     appearance: none;
-    background: violet;
-    border: 1px solid violet;
+    background: #3995D6;
+    border: 1px solid #3995D6;
     border-radius: 100%;
     cursor: pointer;
     display: block;
@@ -56,6 +87,7 @@ violet = rgb(100, 71, 110)
 
   .input-range__label--min,
   .input-range__label--max {
+    display: none;
     bottom: -1.4rem;
     position: absolute;
   }
@@ -133,5 +165,28 @@ violet = rgb(100, 71, 110)
 
   .VictoryContainer {
     height: 400px !important;
+  }
+}
+
+.topics-slider.neutral {
+  .input-range__track--active {
+    background-color: #eee;
+  }
+}
+
+.topics-slider.positive {
+  .input-range__track--active {
+    background-color: #3995D6;
+  }
+}
+
+.topics-slider.negative {
+  .input-range__slider {
+    background: violet;
+    border: 1px solid violet;
+  }
+
+  .input-range__track--active {
+    background-color: violet;
   }
 }
