@@ -139,7 +139,7 @@
           - var closingAtTime = ''
           - if (topic.closingAt)
             - closingAt = new Date(topic.closingAt)
-            - var closingAtTime = moment(closingAt).format('H:mm')
+            - var closingAtTime = (config.locale === 'fa' ? moment(closingAt).locale('en').format('H:mm') : moment(closingAt).format('H:mm'))
             - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
           .form-inline
             .form-group
