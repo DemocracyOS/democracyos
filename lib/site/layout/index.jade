@@ -1,10 +1,10 @@
 extends ../../layout/index.jade
 
 block styles
-  link(rel='stylesheet', href='/site.css')
-  
+  link(rel='stylesheet', href=(locale == 'fa')?'/site-rtl.css':'/site.css')
+
 block content
   #root
-  
+
 block scripts
   script(src='/site.js')

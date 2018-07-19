@@ -9,7 +9,7 @@ html(lang='en')
     link(rel='icon', type='image/x-icon', href=config.favicon)
     block title
       title DemocracyOS
-    link(rel='stylesheet', href='/site.css')
+    link(rel='stylesheet', href=(locale == 'fa')?'/site-rtl.css':'/site.css')
     link(rel='stylesheet', href='/styleguide.css')
   body(class=className)
     block content
