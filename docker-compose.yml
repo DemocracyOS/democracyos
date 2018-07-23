@@ -17,7 +17,6 @@ services:
       - ./lib:/usr/src/lib
       - ./migrations:/usr/src/migrations
       - ./test:/usr/src/test
-      - /usr/src/node_modules
     depends_on:
       - mongo
     tty: true
