@@ -178,7 +178,7 @@
     "string-natural-compare": "~2.0.2",
     "striptags": "~3.0.1",
     "stylus": "~0.54.5",
-    "superagent": "^2.0.0",
+    "superagent": "^3.8.1",
     "t-component": "^1.0.0",
     "tags-input": "^1.1.1",
     "through2-concurrent": "~1.1.1",
