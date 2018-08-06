@@ -312,6 +312,8 @@
   "privileges-alert.not-can-view": "This is a Secret Community, to be allowed to participate the owner should give you permissions.",
   "privileges-alert.not-can-vote-and-comment": "This is a Restricted Community, to be allowed to participate the owner should give you permissions.",
   "proposal-behavior.hierarchy.result": "Results",
+  "proposal-behavior.hierarchy.show.answer": "Show my answer",
+  "proposal-behavior.hierarchy.show.results": "Show results",
   "proposal-behavior.hierarchy": "Choose your hierarchy according to your priority.",
   "proposal-article.article.alert.learn-more": "Learn more",
   "proposal-article.article.alert.text": "This is DemocracyOS's public demo.",

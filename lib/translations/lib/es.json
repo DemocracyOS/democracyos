@@ -317,6 +317,8 @@
   "privileges-alert.not-can-view": "Esta es una Comunidad Secreta, necesitas permiso para participar.",
   "privileges-alert.not-can-vote-and-comment": "Esta es una Comunidad restringida, necesitas permiso para participar.",
   "proposal-behavior.hierarchy.result": "Resultados",
+  "proposal-behavior.hierarchy.show.answer": "Mostrar mi respuesta",
+  "proposal-behavior.hierarchy.show.results": "Mostrar resultados",
   "proposal-behavior.hierarchy": "Podés organizar o arrastrar las opciones en el orden que mas se ajuste a tus prioridades.",
   "proposal-article.article.alert.learn-more": "Más información",
   "proposal-article.article.alert.text": "Esta es una versión demo de DemocracyOS.",
