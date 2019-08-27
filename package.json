@@ -184,7 +184,7 @@
     "through2-concurrent": "~1.1.1",
     "transliteration": "~1.5.3",
     "type-component": "0.0.1",
-    "uglifyify": "^3.0.2",
+    "uglifyify": "^5.0.2",
     "valid-url": "^1.0.9",
     "verigy": "2.0.1",
     "victory": "^0.26.1",
