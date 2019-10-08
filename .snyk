@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.13.5
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -71,3 +71,8 @@ patch:
         patched: '2017-05-23T04:32:26.626Z'
     - migrate-mongoose > mongoose > mquery > debug > ms:
         patched: '2017-05-23T04:32:26.626Z'
+  SNYK-JS-HTTPSPROXYAGENT-469131:
+    - snyk > proxy-agent > https-proxy-agent:
+        patched: '2019-10-08T06:22:18.543Z'
+    - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
+        patched: '2019-10-08T06:22:18.543Z'
