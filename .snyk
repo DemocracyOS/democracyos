@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -71,3 +71,772 @@ patch:
         patched: '2017-05-23T04:32:26.626Z'
     - migrate-mongoose > mongoose > mquery > debug > ms:
         patched: '2017-05-23T04:32:26.626Z'
+  SNYK-JS-LODASH-567746:
+    - express-error-slack > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - react-refetch > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > inquirer > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - mongoose > async > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - victory > victory-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - victory > victory-chart > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - victory > victory-pie > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-duplicate-keys > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-shorthand-properties > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-sticky-regex > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-sticky-regex > babel-helper-regex > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-unicode-regex > babel-helper-regex > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-generator > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-generator > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - express-error-slack > slack-node > requestretry > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > mongoose > async > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - victory > victory-chart > victory-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - victory > victory-pie > victory-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-optimise-call-expression > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-plugin-transform-strict-mode > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-helper-hoist-variables > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-sticky-regex > babel-helper-regex > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-unicode-regex > babel-helper-regex > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-regenerator > regenerator-transform > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-react > babel-plugin-transform-react-jsx > babel-helper-builder-react-jsx > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-generator > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-generator > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-register > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-register > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-plugin-transform-class-properties > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-helper-optimise-call-expression > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-helper-optimise-call-expression > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-duplicate-keys > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-plugin-transform-strict-mode > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-helper-hoist-variables > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-shorthand-properties > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-sticky-regex > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-sticky-regex > babel-helper-regex > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-unicode-regex > babel-helper-regex > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-generator > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-generator > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-generator > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-optimise-call-expression > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-plugin-transform-strict-mode > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-plugin-transform-strict-mode > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-helper-hoist-variables > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-sticky-regex > babel-helper-regex > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-unicode-regex > babel-helper-regex > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-regenerator > regenerator-transform > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2016 > babel-plugin-transform-exponentiation-operator > babel-helper-builder-binary-assignment-operator-visitor > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-block-scoping > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-computed-properties > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-systemjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-helper-optimise-call-expression > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-helper-optimise-call-expression > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-plugin-transform-strict-mode > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-parameters > babel-helper-call-delegate > babel-helper-hoist-variables > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2016 > babel-plugin-transform-exponentiation-operator > babel-helper-builder-binary-assignment-operator-visitor > babel-helper-explode-assignable-expression > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2016 > babel-plugin-transform-exponentiation-operator > babel-helper-builder-binary-assignment-operator-visitor > babel-helper-explode-assignable-expression > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-helper-get-function-arity > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-function-name > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-replace-supers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-object-super > babel-helper-replace-supers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - babelify > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-cli > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2016 > babel-plugin-transform-exponentiation-operator > babel-helper-builder-binary-assignment-operator-visitor > babel-helper-explode-assignable-expression > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-plugin-transform-strict-mode > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2017 > babel-plugin-transform-async-to-generator > babel-helper-remap-async-to-generator > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
+    - migrate-mongoose > babel-preset-latest > babel-preset-es2015 > babel-plugin-transform-es2015-modules-umd > babel-plugin-transform-es2015-modules-amd > babel-plugin-transform-es2015-modules-commonjs > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-05-05T06:17:36.616Z'
