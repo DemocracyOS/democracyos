@@ -1,11 +1,14 @@
-# DemocracyOS [![Deploy](https://www.herokucdn.com/deploy/button.png)](http://bit.ly/1iHAcWz)
+# ⚠️ IMPORTANT 
+
+> We would like to inform you that currently DemocracyOS became an inactive project of [Democracia en Red](https://democraciaenred.org) and will no longer be officially updated nor maintained. Please, refer to the original authors of the repository for support, as "Democracia en Red" cannot offer proper answers for the issues. **For now**, the repository works. If you decide to update dependencies, do it at your own risk.
+
+---
+
+# DemocracyOS
 [![Dependencies](https://david-dm.org/DemocracyOS/democracyos.svg)](https://david-dm.org/DemocracyOS/democracyos.svg)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DemocracyOS/democracyos)
 [![Code Climate](https://codeclimate.com/github/DemocracyOS/democracyos/badges/gpa.svg)](https://codeclimate.com/github/DemocracyOS/democracyos)
 
 DemocracyOS is an online space for deliberation and voting on political proposals. It is a platform for a more open and participatory government.The software aims to stimulate better arguments and come to better rulings, as peers.
-
-Check out the [live DemocracyOS demo](https://app.democracyos.org/).
 
 ![DemocracyOS](https://cldup.com/5UCVpUnOhO.png)
 
@@ -35,7 +38,6 @@ See [CONTRIBUTORS.md](https://github.com/DemocracyOS/app/blob/master/CONTRIBUTOR
 * [DemocracyOS official site](http://democracyos.org). The project's official site.
 * [DemocracyOS official documentation site](http://docs.democracyos.org). The project's official site.
 * [DemocracyOS mailing list](https://groups.google.com/forum/#!forum/democracyos-app): questions about DemocracyOS exclusively. For bug reports or feature requests please use the project's [Issues](https://github.com/DemocracyOS/app/issues).
-* [DemocracyOS chat room](https://gitter.im/democracyos/app/).
 * [Democracia en Red](http://democraciaenred.org): The `Net Democracy Foundation` official site.
 
 ## Browser support
