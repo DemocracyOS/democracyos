@@ -1,6 +1,6 @@
 # ⚠️ IMPORTANT 
 
-> We would like to inform you that currently DemocracyOS became an inactive project of [Democracia en Red](https://democraciaenred.org) and will no longer be officially updated nor maintained. Please, refer to the original authors of the repository for support, as "Democracia en Red" cannot offer proper answers for the issues. **For now**, the repository works. If you decide to update dependencies, do it at your own risk.
+> DemocracyOS is currently without maintenance. More information about it will be published soon. For now you can check [democraciaos.org](https://democraciaos.org/en/)
 
 ---
 
