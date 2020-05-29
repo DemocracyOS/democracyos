@@ -66,7 +66,7 @@
     "batch": "~0.5.2",
     "bean": "^1.0.15",
     "body-parser": "1.17.2",
-    "browserify": "~14.1.0",
+    "browserify": "~15.0.0",
     "bus": "0.1.0",
     "chart.js": "~1.1.1",
     "check-node-version": "~2.0.1",
@@ -189,7 +189,7 @@
     "verigy": "2.0.1",
     "victory": "^0.26.1",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "~3.9.0",
+    "watchify": "~3.10.0",
     "whatwg-fetch": "~2.0.3",
     "xss": "~0.3.3",
     "yargs": "~7.0.2"
