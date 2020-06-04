@@ -26,5 +26,5 @@ services:
     ports:
       - 27017:27017
     # Optionally mount external data directory
-    volumes:
-      - ./tmp/db:/data/db
+    #volumes:
+     # - ./tmp/db:/data/db
