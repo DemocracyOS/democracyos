@@ -150,7 +150,7 @@
     "mongoose-connection-ready": "^1.0.1",
     "mongoose-gravatar": "0.3.0",
     "mongoose-validators": "^0.1.0",
-    "mout": "~1.0.0",
+    "mout": "~1.2.4",
     "nanomodal": "5.1.1",
     "native-promise-only": "^0.8.0-a",
     "nowww": "~1.1.2",
