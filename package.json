@@ -114,7 +114,7 @@
     "fuzzysearch": "^1.0.3",
     "geopattern": "^1.2.3",
     "get-form-data": "~1.2.5",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-add-src": "0.2.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "~3.0.4",
@@ -158,7 +158,7 @@
     "passport": "~0.3.2",
     "passport-facebook": "~2.1.1",
     "passport-local": "~1.0.0",
-    "passport-local-mongoose": "~4.0.0",
+    "passport-local-mongoose": "~6.0.0",
     "prop-types": "~15.5.10",
     "react": "^15.3.0",
     "react-async-script": "^0.9.1",
@@ -177,7 +177,7 @@
     "snyk": "^1.30.1",
     "string-natural-compare": "~2.0.2",
     "striptags": "~3.0.1",
-    "stylus": "~0.54.5",
+    "stylus": "~0.56.0",
     "superagent": "^2.0.0",
     "t-component": "^1.0.0",
     "tags-input": "^1.1.1",
@@ -192,7 +192,7 @@
     "watchify": "~3.9.0",
     "whatwg-fetch": "~2.0.3",
     "xss": "~0.3.3",
-    "yargs": "~7.0.2"
+    "yargs": "~10.0.0"
   },
   "devDependencies": {
     "arr-diff": "~3.0.0",
